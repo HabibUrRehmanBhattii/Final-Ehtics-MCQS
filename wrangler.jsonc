@@ -1,0 +1,9 @@
+{
+  "name": "ethics-mcqs",
+  "compatibility_date": "2026-02-04",
+  "assets": {
+    "directory": "./",
+    "include": ["*.html", "*.css", "*.js", "data/**"],
+    "exclude": [".git/**", "node_modules/**", ".gitignore", "README.md", "wrangler.jsonc"]
+  }
+}
