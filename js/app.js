@@ -473,14 +473,16 @@ const MCQApp = {
     document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
     document.getElementById('explanation-text').textContent = question.explanation;
     
-    // Show AI button and hide loading message
+    // Show AI button and ensure AI container is hidden until used
     const aiExplanationEl = document.getElementById('ai-explanation-text');
     const aiButton = document.getElementById('get-ai-explanation-btn');
     if (aiExplanationEl) {
       aiExplanationEl.innerHTML = '';
+      aiExplanationEl.style.display = 'none';
     }
     if (aiButton) {
       aiButton.style.display = 'inline-flex';
+      aiButton.disabled = false;
     }
     
     answerSection.classList.remove('hidden');
@@ -503,8 +505,9 @@ const MCQApp = {
     
     if (!element) return;
 
-    // Show loading state
+    // Show loading state and reveal AI container
     if (aiButton) aiButton.disabled = true;
+    element.style.display = 'block';
     element.innerHTML = '<div class="loading-spinner">⏳ Generating AI explanation...</div>';
 
     try {

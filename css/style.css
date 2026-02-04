@@ -620,34 +620,18 @@ body {
 }
 
 .ai-explanation-box #ai-explanation-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: var(--radius-md);
-  padding: 1.25rem;
-  color: white;
+  display: none; /* hidden when empty; JS will show when content/loading present */
 }
 
-.ai-explanation-box .ai-explanation {
-  font-size: 0.9375rem;
-  line-height: 1.7;
-  color: white;
-}
-
-.ai-explanation-box .loading-spinner {
-  text-align: center;
-  font-size: 1.25rem;
-  animation: spin 2s linear infinite;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 1.25rem;
-  border-radius: var(--radius-md);
-  color: white;
-}
-
+.ai-explanation-box .ai-explanation,
+.ai-explanation-box .loading-spinner,
 .ai-explanation-box .ai-error {
-  color: #fecaca;
-  font-size: 0.875rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 1.25rem;
   border-radius: var(--radius-md);
+  padding: 1.25rem;
+  color: white;
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 @keyframes spin {
