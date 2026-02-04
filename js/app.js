@@ -490,7 +490,12 @@ const MCQApp = {
       const userAnswer = question.options[selectedIndex];
       const correctAnswer = question.options[question.correctAnswer];
       
-      const response = await fetch('/api/explain', {
+      // Construct the API URL based on current location
+      const apiUrl = window.location.hostname === 'localhost' 
+        ? 'http://localhost:8000/api/explain'
+        : `${window.location.origin}/api/explain`;
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -508,11 +513,12 @@ const MCQApp = {
       if (data.success) {
         element.innerHTML = `<div class="ai-explanation"><strong>🤖 AI Insights:</strong> ${data.explanation}</div>`;
       } else {
-        element.innerHTML = '<div class="ai-error">Could not generate AI explanation</div>';
+        element.innerHTML = '<div class="ai-error">⚠️ AI service temporarily unavailable</div>';
+        console.error('AI Error:', data.error);
       }
     } catch (error) {
       console.error('Error generating AI explanation:', error);
-      element.innerHTML = '<div class="ai-error">AI service unavailable</div>';
+      element.innerHTML = '<div class="ai-error">⚠️ Could not connect to AI service. Check your connection.</div>';
     }
   },
 

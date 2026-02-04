@@ -4,29 +4,30 @@
  */
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     // Enable CORS
+    const corsHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    };
+
     if (request.method === 'OPTIONS') {
-      return new Response(null, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        },
-      });
+      return new Response(null, { headers: corsHeaders });
     }
 
     const url = new URL(request.url);
+    const path = url.pathname;
 
     // Health check
-    if (url.pathname === '/health') {
+    if (path === '/health') {
       return new Response(JSON.stringify({ status: 'ok' }), {
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
       });
     }
 
     // API endpoint for generating explanation
-    if (url.pathname === '/api/explain' && request.method === 'POST') {
+    if (path === '/api/explain' && request.method === 'POST') {
       try {
         const { question, correctAnswer, userAnswer, options } = await request.json();
 
@@ -46,15 +47,13 @@ Provide a brief, clear explanation (2-3 sentences) of:
 Keep the explanation educational and supportive.`;
 
         // Call Workers AI LLM
-        const messages = [
-          {
-            role: 'user',
-            content: prompt,
-          },
-        ];
-
         const response = await env.AI.run('@cf/meta/llama-2-7b-chat-int8', {
-          messages,
+          messages: [
+            {
+              role: 'user',
+              content: prompt,
+            },
+          ],
         });
 
         return new Response(
@@ -65,11 +64,12 @@ Keep the explanation educational and supportive.`;
           {
             headers: {
               'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
+              ...corsHeaders,
             },
           }
         );
       } catch (error) {
+        console.error('AI Error:', error);
         return new Response(
           JSON.stringify({
             success: false,
@@ -79,14 +79,19 @@ Keep the explanation educational and supportive.`;
             status: 500,
             headers: {
               'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
+              ...corsHeaders,
             },
           }
         );
       }
     }
 
-    // Serve static assets
-    return env.ASSETS.fetch(request);
+    // Serve static assets for all other routes
+    if (env.ASSETS) {
+      return env.ASSETS.fetch(request);
+    }
+
+    // Fallback if ASSETS binding is missing
+    return new Response('Not Found', { status: 404 });
   },
 };
