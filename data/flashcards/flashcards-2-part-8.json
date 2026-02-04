@@ -1,0 +1,127 @@
+{
+  "topic": "Flashcards - Policy Provisions & Health/Group (Set 2 - Part 8)",
+  "topicId": "flashcards-advanced-2-part-8",
+  "description": "Part 8 of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
+  "questions": [
+    {
+      "id": 141,
+      "question": "Which Unfair Trade Practice involves an agent telling a prospective client that a policy's dividends are guaranteed?",
+      "options": [
+        "Coercion",
+        "Fraud",
+        "Misrepresentation",
+        "Sliding"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An agent who tells a client that dividends are guaranteed may be guilty of misrepresentation."
+    },
+    {
+      "id": 142,
+      "question": "An example of false advertising would be",
+      "options": [
+        "Paid testimonials from celebrity endorsements",
+        "An insurer exaggerating its dividends in a magazine advertisement",
+        "An agent spending more than $25 on marketing gifts for a client",
+        "An insurer advertising in an insurance trade journal"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An insurance company may be judged guilty of false advertising if it exaggerates its dividends in a magazine advertisement."
+    },
+    {
+      "id": 143,
+      "question": "Which of the following is NOT considered rebating?",
+      "options": [
+        "Sharing commissions with an agent licensed in the same line of business",
+        "Returning premium to a client as an inducement for purchasing a policy",
+        "Giving something of value to an insured in exchange for their business",
+        "Offering special dividends"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Sharing commissions with other licensed agents is not considered rebating."
+    },
+    {
+      "id": 144,
+      "question": "Which Unfair Trade Practice involves an agent suggesting that an insurance policy is like a share of stock?",
+      "options": [
+        "Twisting",
+        "Intimidation",
+        "Misrepresentation",
+        "Sliding"
+      ],
+      "correctAnswer": 2,
+      "explanation": "If an agent tells an applicant that an insurance policy is like a share of stock, the agent may be guilty of misrepresentation."
+    },
+    {
+      "id": 145,
+      "question": "An example of rebating would be",
+      "options": [
+        "a mutual insurance company paying dividends to its policyowners",
+        "reducing the premiums across the board for a specific risk class",
+        "offering a client something of value not stated in the contract in exchange for their business",
+        "using intimidation in order to restrain or monopolize the business of insurance."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Rebating can be defined as offering a prospect something of value that is not specified in a contract in order to induce the purchase of that contract."
+    },
+    {
+      "id": 146,
+      "question": "S takes out a health insurance policy which contains a provision that states that the agent does not have the authority to change the policy or waive any of its provisions. Which health policy provision is this?",
+      "options": [
+        "Legal Actions",
+        "Insurance with other insurers",
+        "Entire Contract",
+        "Reinstatement"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Entire Contract provision states that the agent does NOT have the authority to change the policy or waive any of its provisions."
+    },
+    {
+      "id": 147,
+      "question": "The sections of an insurance contract which limit coverage are called",
+      "options": [
+        "waivers",
+        "riders",
+        "exclusions",
+        "limitations"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An exclusion limits coverage in an insurance contract."
+    },
+    {
+      "id": 148,
+      "question": "The Coordination of Benefits provision",
+      "options": [
+        "allows an insured covered by two health plans to make a profit on a covered loss",
+        "prevents an insured covered by two health plans from making a profit on a covered loss",
+        "allows an insurer to defer paying a claim for a work-related injury until Workers' Compensation Benefits have expired",
+        "prevents an insured to change insurers during a claim for a covered loss"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Coordination of Benefits prevents an insured covered by two health plans from making a profit on a covered loss."
+    },
+    {
+      "id": 149,
+      "question": "An accident policy will most likely pay a benefit for a(n)",
+      "options": [
+        "self-inflicted injury",
+        "critical illness",
+        "on-the-job accident",
+        "off-the-job accident"
+      ],
+      "correctAnswer": 3,
+      "explanation": "An accident policy would most likely pay a benefit for an off-the-job accident."
+    },
+    {
+      "id": 150,
+      "question": "What type of rider would be added to an Accident and Health policy if the policyowner wants to ensure the policy will continue if he/she ever becomes totally disabled?",
+      "options": [
+        "Accidental Death and Dismemberment rider",
+        "Disability Income rider",
+        "Guaranteed Insurability rider",
+        "Waiver of Premium rider"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A Waiver of Premium rider keeps the policy in force if the policyowner becomes totally disabled."
+    }
+  ]
+}

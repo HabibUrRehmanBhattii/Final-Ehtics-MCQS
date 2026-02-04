@@ -1,0 +1,247 @@
+{
+  "topic": "Flashcards - Policy Provisions & Health/Group (Set 2 - Part 6)",
+  "topicId": "flashcards-advanced-2-part-6",
+  "description": "Part 6 of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
+  "questions": [
+    {
+      "id": 101,
+      "question": "J has a Disability Income policy that does NOT provide benefits for losses occurring as the result of his employment. What kind of coverage is this?",
+      "options": [
+        "Limited coverage",
+        "Workers' Compensation coverage",
+        "Occupational coverage",
+        "Nonoccupational coverage"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The coverage provided by a Disability Income policy that does not provide benefits for losses occurring as the result of the insured's employment is called nonoccupational coverage."
+    },
+    {
+      "id": 102,
+      "question": "A comprehensive major medical health insurance policy contains an Eligible Expenses provision which identifies the types of health care services that are covered. All of the following health care services are typically covered EXCEPT for",
+      "options": [
+        "hospital charges",
+        "physician fees",
+        "experimental and investigative services",
+        "nursing services"
+      ],
+      "correctAnswer": 2,
+      "explanation": "All of these services are typically covered under a comprehensive major medical health insurance policy EXCEPT for \"experimental and investigative services\"."
+    },
+    {
+      "id": 103,
+      "question": "What do Dread Disease policies cover?",
+      "options": [
+        "A specific disease or illness",
+        "All diseases or illnesses",
+        "Only terminal illnesses",
+        "Only heart-related diseases"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dread Disease policies cover only a single disease or illness."
+    },
+    {
+      "id": 104,
+      "question": "An insurance company incorporated under the laws of the state in which its home office is located is called a(n) ____ company.",
+      "options": [
+        "domestic",
+        "alien",
+        "foreign",
+        "authorized"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A domestic insurance company is domiciled and incorporated under the laws of the state in which its home office is located."
+    },
+    {
+      "id": 105,
+      "question": "Which of the following unfair trade practices involves an agent who makes malicious statements about another person's financial condition?",
+      "options": [
+        "Boycotting",
+        "Defamation",
+        "Unfair discrimination",
+        "Misrepresentation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An agent who makes a statement that is maliciously critical of another person's financial condition is guilty of defamation."
+    },
+    {
+      "id": 106,
+      "question": "What is the required minimum percentage of employee participation for a noncontributory group health insurance plan according to Florida Law?",
+      "options": [
+        "0%",
+        "25%",
+        "75%",
+        "100%"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Most noncontributory group health plans require 100% participation by eligible members. Under Florida law, there is no specific minimum percentage participation for employees covered by employee group health insurance."
+    },
+    {
+      "id": 107,
+      "question": "What is required in the Florida Employee Health Care Access Act?",
+      "options": [
+        "Small group benefit plans are to be issued on a \"conditionally-issue\" basis",
+        "Small group benefit plans are to be issued on a \"guarantee-issue\" basis",
+        "All small group benefit plans have a 60 day grace period",
+        "All small group benefit plans have no lifetime benefit limits"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The provisions of the Florida Employee Health Care Access Act require that all small group health benefit plans be issued on a \"guaranteed-issue\" basis."
+    },
+    {
+      "id": 108,
+      "question": "Which of the following professional organizations has its code of ethics incorporated into Florida law?",
+      "options": [
+        "Financial Industry Regulatory Agency (FINRA)",
+        "National Association of Insurance Commissioners (NAIC)",
+        "National Association of Insurance and Financial Advisors (NAIFA)",
+        "The American College of Life Insurance"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The professional organization whose code of ethics is incorporated into Florida law is the National Association of Insurance and Financial Advisors (NAIFA)."
+    },
+    {
+      "id": 109,
+      "question": "The minimum age at which a person can sign a life insurance application is",
+      "options": [
+        "15 years",
+        "16 years",
+        "17 years",
+        "18 years"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A person 15 years or older may contract for life insurance on his/her own life."
+    },
+    {
+      "id": 110,
+      "question": "The waiting period for a pre-existing condition under a Medicare Supplement policy may NOT go beyond",
+      "options": [
+        "1 month",
+        "3 months",
+        "6 months",
+        "12 months"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Under a Medicare Supplement policy, the waiting period for pre-existing conditions may not exceed 6 months."
+    },
+    {
+      "id": 111,
+      "question": "A licensed agent must be appointed by an insurance company to solicit insurance in Florida. The agent's license will terminate if a certain period of time elapses without being appointed. How long is this period of time?",
+      "options": [
+        "12 months",
+        "24 months",
+        "36 months",
+        "48 months"
+      ],
+      "correctAnswer": 3,
+      "explanation": "An agent's license will terminate if the agent allows 48 months to elapse without being appointed for the class or classes of insurance listed on the license."
+    },
+    {
+      "id": 112,
+      "question": "In Florida, the underwriting and issuance of a master group health policy requires that all employees",
+      "options": [
+        "are eligible to participate, regardless of their individual health history",
+        "need to be individually approved or declined during the underwriting process",
+        "must contribute toward the group health policy's premiums",
+        "take a physical examination before the master policy is issued"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The underwriting and issuance of a master group health policy in Florida requires that all employees or members must be eligible to participate, regardless of individual health history."
+    },
+    {
+      "id": 113,
+      "question": "K is an agent who made an improper sale of an annuity to a client. Which of the following corrective actions would the Department of Financial Services likely order K to take?",
+      "options": [
+        "Sell the client a more appropriate annuity",
+        "Pay monetary restitution to the client",
+        "Provide a written apology letter",
+        "Pay a penalty of three times the client's loss"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Department of Financial Services may order the agent to pay monetary restitution to the client."
+    },
+    {
+      "id": 114,
+      "question": "Which of the following is a standard provision of the conversion privileges in a Group Life policy?",
+      "options": [
+        "Group Life coverage can only be converted if the employer pays for the individual policy",
+        "Group Life coverage can normally be converted to an individual policy within 6 months",
+        "Group Life coverage can only be converted by providing evidence of insurability",
+        "Group Life coverage can be converted to an individual policy at regular rates on an attained-age basis"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Conversion at regular rates on an attained-age basis without a medical exam is a standard provision for conversion privileges in Group Life policies."
+    },
+    {
+      "id": 115,
+      "question": "In Florida, which of the following practitioners normally do NOT receive payment from health insurance policies?",
+      "options": [
+        "Optometrists",
+        "Pediatricians",
+        "Dentists",
+        "Naturopaths"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Health insurance policies in Florida must cover payment to all of these practitioners EXCEPT naturopaths."
+    },
+    {
+      "id": 116,
+      "question": "Association Plans that are designed to provide health benefits to their members are regulated by the state because",
+      "options": [
+        "they are insured by an authorized insurer",
+        "they conduct business in Florida",
+        "they provide a service to their members",
+        "they require a certain level of member participation"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Association Plans must be fully insured by an authorized insurer. The insurer is subject to state regulation."
+    },
+    {
+      "id": 117,
+      "question": "What percentage of eligible persons must a policy cover in a noncontributory group?",
+      "options": [
+        "25%",
+        "50%",
+        "75%",
+        "100%"
+      ],
+      "correctAnswer": 3,
+      "explanation": "In a noncontributory group, the policy must cover 100% of eligible persons."
+    },
+    {
+      "id": 118,
+      "question": "All of the following will result in the suspension of an agent's license EXCEPT",
+      "options": [
+        "intentionally misrepresenting the provisions of a policy",
+        "acting with fiduciary responsibility",
+        "forging a name on an insurance application",
+        "being convicted of a felony"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Acting as a fiduciary would not result in suspension of an agent's license."
+    },
+    {
+      "id": 119,
+      "question": "Which of the following is NOT a consequence for placing business with an unauthorized insurer?",
+      "options": [
+        "Third degree felony",
+        "First degree misdemeanor",
+        "Insurance license revoked",
+        "Responsible for unpaid claims"
+      ],
+      "correctAnswer": 1,
+      "explanation": "All of these are possible consequences for placing business with an unauthorized insurer EXCEPT the conviction of a first degree misdemeanor."
+    },
+    {
+      "id": 120,
+      "question": "A life insurance policyowner may sell their policy to a(n) _____ in order to receive a percentage of the policy's face value.",
+      "options": [
+        "viatical settlement provider",
+        "broker",
+        "insurer",
+        "viator agent"
+      ],
+      "correctAnswer": 0,
+      "explanation": "To receive a percentage of the policy face value, an owner of a life policy may sell the policy to a viatical settlement provider."
+    }
+  ]
+}

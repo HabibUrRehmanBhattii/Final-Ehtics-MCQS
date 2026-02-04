@@ -1,0 +1,1807 @@
+{
+  "topic": "Flashcards - Policy Provisions & Health/Group",
+  "topicId": "flashcards-advanced",
+  "description": "Flashcards covering beneficiary rules, policy provisions, group and health insurance basics (set 2).",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What kind of life insurance beneficiary requires his/her consent when a change of beneficiary is made?",
+      "options": [
+        "Irrevocable beneficiary",
+        "Tertiary beneficiary",
+        "Primary beneficiary",
+        "Revocable beneficiary"
+      ],
+      "correctAnswer": 0,
+      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+    },
+    {
+      "id": 2,
+      "question": "When can a policyowner change a revocable beneficiary?",
+      "options": [
+        "Anytime",
+        "After the consent of the current beneficiary",
+        "Never",
+        "Only if primary beneficiary dies"
+      ],
+      "correctAnswer": 0,
+      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+    },
+    {
+      "id": 3,
+      "question": "M purchased an Accidental Death and Dismemberment (AD&D) policy and named his son as beneficiary. M has the right to change the beneficiary designation at anytime. What type of beneficiary is his son?",
+      "options": [
+        "Tertiary",
+        "Irrevocable",
+        "Revocable",
+        "Contingent"
+      ],
+      "correctAnswer": 2,
+      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+    },
+    {
+      "id": 4,
+      "question": "How would a contingent beneficiary receive the policy proceeds in an Accidental Death and Dismemberment (AD&D) policy?",
+      "options": [
+        "If the primary beneficiary is a minor at the time of the insured's death",
+        "If the primary beneficiary dies before the insured",
+        "If the insured died of accidental causes",
+        "If the insured died of natural causes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A contingent beneficiary will receive the policy proceeds if the primary beneficiary dies before the insured's death."
+    },
+    {
+      "id": 5,
+      "question": "Which statement regarding the Change of Beneficiary provision is true?",
+      "options": [
+        "The beneficiary can only be changed with the consent of the insurer",
+        "The policyowner can change the beneficiary",
+        "The insured can change the beneficiary",
+        "A beneficiary change is subject to underwriting procedures"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A policyowner may change a beneficiary at any time. However, consent may be needed by the current beneficiary if designated as irrevocable."
+    },
+    {
+      "id": 6,
+      "question": "A policyowner would like to change the beneficiary on a Life insurance policy and make the change permanent. Which type of designation would fulfill this need?",
+      "options": [
+        "Revocable",
+        "Contingent",
+        "Irrevocable",
+        "Primary"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+    },
+    {
+      "id": 7,
+      "question": "Which statement is true regarding a minor beneficiary?",
+      "options": [
+        "Normally, the death proceeds are required to be held in trust until the beneficiary reaches the age of 21",
+        "Normally, a guardian is required to be appointed in the Beneficiary clause of the contract",
+        "The minor must pay the debts of the insured's estate before receiving any of the proceeds",
+        "The minor is entitled to receive the death proceeds immediately"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In most cases, insurers require that a guardian be appointed in the Beneficiary clause of the policy or that a guardian be designated in the will."
+    },
+    {
+      "id": 8,
+      "question": "What is the underlying concept regarding level premiums?",
+      "options": [
+        "Level premiums build cash value quicker in the early years",
+        "The early years are charged more than what is needed",
+        "The early years are charged less than what is needed",
+        "Level premiums can only be paid annually"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The concept of level premiums charges more than needed in early years."
+    },
+    {
+      "id": 9,
+      "question": "A policyowner is able to choose the frequency of premium payments through what policy feature?",
+      "options": [
+        "Consideration",
+        "Payor benefit",
+        "Premium Mode",
+        "Assignment provision"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Premium Mode is the feature that allows the policyowner to select the timing of premium payment, such as monthly, quarterly, annually etc."
+    },
+    {
+      "id": 10,
+      "question": "A policyowner is allowed to pay premiums more than once a year under which provision?",
+      "options": [
+        "Insuring",
+        "Consideration",
+        "Payor",
+        "Mode of Premium"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The Mode of Premium provision permits an insured to pay premiums more than once every year."
+    },
+    {
+      "id": 11,
+      "question": "A life insurance application must be signed by all of these EXCEPT",
+      "options": [
+        "the policyowner",
+        "the agent",
+        "the insured (if an adult)",
+        "beneficiary"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A beneficiary is not required to sign the application."
+    },
+    {
+      "id": 12,
+      "question": "Any changes made on an insurance application requires the initials of whom?",
+      "options": [
+        "Insured",
+        "Agent",
+        "Applicant",
+        "Beneficiary"
+      ],
+      "correctAnswer": 2,
+      "explanation": "When an applicant makes a mistake, the applicant must initial the correction."
+    },
+    {
+      "id": 13,
+      "question": "T applies for a life insurance policy and is told by the producer that the insurer is bound to the coverage as of the date of the application or medical examination, whichever is later, provided that T is an acceptable risk. What item is given to T?",
+      "options": [
+        "Binding receipt",
+        "Conditional receipt",
+        "Warranty receipt",
+        "Backdated receipt"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A conditional receipt binds coverage as of the date of application or medical exam, provided the insured is acceptable."
+    },
+    {
+      "id": 14,
+      "question": "M completes an application for life insurance but does not pay the initial premium. All of these actions must occur before M's policy goes into effect EXCEPT",
+      "options": [
+        "policy is delivered",
+        "free-look period has expired",
+        "insurance company issues policy",
+        "initial premium is collected"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The policy will go into effect after delivery, issuance, and premium collection; the free-look period expiration is not required beforehand."
+    },
+    {
+      "id": 15,
+      "question": "A noncontributory group term life plan is characterized by",
+      "options": [
+        "the entire cost of the plan is paid for by the employer",
+        "the entire cost of the plan is paid for by the employee",
+        "the cost of the plan is shared by both employer and employee",
+        "both employer and employee must provide evidence of insurability"
+      ],
+      "correctAnswer": 0,
+      "explanation": "When an employer provides noncontributory group term life insurance, the employer pays the entire cost of the plan."
+    },
+    {
+      "id": 16,
+      "question": "Who is NOT required to sign a life insurance application?",
+      "options": [
+        "Adult insured",
+        "Policyowner",
+        "Agent",
+        "Beneficiary"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The beneficiary is not required to sign the application."
+    },
+    {
+      "id": 17,
+      "question": "What action should a producer take if the initial premium is NOT submitted with the application?",
+      "options": [
+        "Keep the application until premium is paid",
+        "Forward the application to the insurer after giving the applicant a binding receipt",
+        "Forward the application to the insurer without the initial premium",
+        "Forward the application to the insurer after giving the applicant a conditional receipt"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The producer should submit the application to the insurer without the premium; the policy is not valid until initial premium is collected."
+    },
+    {
+      "id": 18,
+      "question": "On August 6, D submitted an application for a $50,000 Life Insurance policy and did not pay the initial premium. On August 18, D went to his doctor complaining of chest pains and some tests were given. The life policy was delivered by the producer on August 20 and D explains what had recently taken place with the doctor. What action should the producer then take?",
+      "options": [
+        "Collect initial premium",
+        "Collect initial premium along with a signed health statement",
+        "Explain to the applicant the policy is no longer in effect due to change in health condition",
+        "Collect initial premium and leave a binding receipt"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Deliver the policy and obtain the premium payment along with a signed health statement."
+    },
+    {
+      "id": 19,
+      "question": "If its employees share in the cost of insurance, what type of group life insurance plan would a corporation have?",
+      "options": [
+        "Noneligible",
+        "Noncontributory",
+        "Eligible",
+        "Contributory"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Employees share in the premium costs with contributory plans."
+    },
+    {
+      "id": 20,
+      "question": "N, age 50, recently bought an annuity that will pay a guaranteed $2,000/month at age 70 for life. What type of annuity did N purchase?",
+      "options": [
+        "Fixed Period",
+        "Fixed Deferred",
+        "Fixed Immediate",
+        "Fixed Variable"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Fixed Deferred annuity pays out a fixed amount for life starting at a future date."
+    },
+    {
+      "id": 21,
+      "question": "W is a 39-year old female who just purchased an annuity to provide income for life starting at age 60. All of these would be acceptable annuity choices EXCEPT a(n)",
+      "options": [
+        "Flexible Premium Deferred annuity",
+        "Variable annuity",
+        "Immediate annuity",
+        "Straight Life annuity"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Immediate annuities start providing income payments usually starting within 30 days from the purchase date; deferred annuities start later."
+    },
+    {
+      "id": 22,
+      "question": "Q is severely injured in an automobile accident and becomes totally disabled. How many months must Q be disabled before being able to apply for Social Security disability benefits?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correctAnswer": 2,
+      "explanation": "You are eligible to file for Social Security Disability benefits after being totally disabled for 5 months."
+    },
+    {
+      "id": 23,
+      "question": "Which plan is intended to be used by a sole proprietor and the employees of that business?",
+      "options": [
+        "SEP Plan",
+        "Keogh Plan",
+        "Individual Retirement Account (IRA)",
+        "SIMPLE Plan"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Keogh Plan may be used by a sole proprietor only if the employees of the business are included."
+    },
+    {
+      "id": 24,
+      "question": "A Key Employee policy is taken out by Company X on its vice president. Ten years later, this employee leaves Company X and begins working for Company Y. If this individual were to die and the policy is still in force and unchanged, where would the death proceeds be directed?",
+      "options": [
+        "The employee's family",
+        "Company Y",
+        "Company X",
+        "The employee's estate"
+      ],
+      "correctAnswer": 2,
+      "explanation": "With Key Person Insurance, the company purchases, owns, pays the premiums and is the beneficiary of the life insurance policy on the key person."
+    },
+    {
+      "id": 25,
+      "question": "Which statement regarding a Key Employee Life policy is NOT true?",
+      "options": [
+        "The application must be signed by the key employee",
+        "Its purpose is to prevent the financial loss that may ensue if a key employee dies",
+        "The beneficiary is named by the key employee",
+        "The company purchases, owns, pays the premiums and is the beneficiary"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The company names the beneficiary, not the employee."
+    },
+    {
+      "id": 26,
+      "question": "At what point must a life insurance applicant be informed of their rights that fall under the Fair Credit Reporting Act?",
+      "options": [
+        "Before the appointment is scheduled",
+        "Upon completion of the application",
+        "At the policy's delivery",
+        "When the insurer receives the MIB report"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An applicant for life insurance must be informed of their rights upon completion of the application."
+    },
+    {
+      "id": 27,
+      "question": "Who elects the governing body of a mutual insurance company?",
+      "options": [
+        "chairman of the board",
+        "bondholders",
+        "stockholders",
+        "policyholders"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The governing body of a mutual insurance company is elected by the policyholders."
+    },
+    {
+      "id": 28,
+      "question": "S would like to use dividends from her life insurance policy to purchase paid-up additions. All of these would be factors that determine how much coverage can be purchased EXCEPT",
+      "options": [
+        "type of life insurance",
+        "S's attained age",
+        "dividend amount used toward purchase",
+        "beneficiary's age"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The age of the beneficiary is irrelevant in determining how much paid-up additions can be purchased."
+    },
+    {
+      "id": 29,
+      "question": "When an insurer issues a policy that refuses to cover certain risks, this is referred to as a(n)",
+      "options": [
+        "elimination",
+        "exclusion",
+        "limitation",
+        "exception"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Exclusions are features of a life insurance policy stating that the policy will not cover certain risks."
+    },
+    {
+      "id": 30,
+      "question": "What is the Suicide provision designed to do?",
+      "options": [
+        "decline an applicant who is contemplating suicide",
+        "safeguard the insurer from an applicant who is contemplating suicide",
+        "protect the insurer from ever paying a claim that results from suicide",
+        "allows the insurer the option to pay a death benefit in the"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The purpose of a Suicide provision is to protect the insurer against the purchase of a policy in contemplation of suicide."
+    },
+    {
+      "id": 31,
+      "question": "The agreement in a life insurance contract that states a specific sum of money will be paid to a designated person upon an insured's death is called a(n)",
+      "options": [
+        "Entire Contract provision",
+        "Consideration clause",
+        "Insuring agreement",
+        "Assignment agreement"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The insuring clause or provision sets forth the company's basic promise to pay benefits upon the insured's death."
+    },
+    {
+      "id": 32,
+      "question": "Which of the following provisions guarantees that premiums will be waived if a Juvenile Life policyowner becomes disabled?",
+      "options": [
+        "Family Maintenance clause",
+        "Payor clause",
+        "Assignment provision",
+        "Automatic Premium Loan provision"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Payor clause ensures that premiums will be waived for a Juvenile Life policy if the policyowner becomes disabled."
+    },
+    {
+      "id": 33,
+      "question": "Which of these is NOT considered to be a right given to a policyowner?",
+      "options": [
+        "Surrendering the policy's cash value",
+        "Modify a provision in the insurance contract",
+        "Assignment of ownership",
+        "Change the beneficiary, if revocable"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Changing contract provisions is not a policyowner right."
+    },
+    {
+      "id": 34,
+      "question": "P is blinded in an industrial accident. Which provision of his life insurance policy will pay a stated benefit amount?",
+      "options": [
+        "Accelerated Benefits provision",
+        "Entire Contract",
+        "Accidental Death and Dismemberment provision",
+        "Consideration clause"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An AD&D clause provides benefits for death due to an accident or for the loss of one or more hands, feet, arms, legs, or loss of sight."
+    },
+    {
+      "id": 35,
+      "question": "B owns a Whole Life policy with a guaranteed insurability option that allows him to purchase, without evidence of insurability, stated amounts of",
+      "options": [
+        "additional Term Life coverage at any time",
+        "additional Term Life coverage at specified intervals",
+        "additional Whole Life coverage at any time",
+        "additional Whole Life coverage at specified times"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A guaranteed insurability option in a Whole Life Policy permits the policyowner to purchase, without evidence of insurability, stated amounts of Whole Life insurance at specified times."
+    },
+    {
+      "id": 36,
+      "question": "Whose life is covered on a life insurance policy that contains a payor benefit clause?",
+      "options": [
+        "Parent",
+        "Beneficiary",
+        "Child",
+        "Spouse"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A payor benefit clause is generally added to a life policy that insures the life of a juvenile. It provides continuance of insurance coverage in the event of the death or total disability of the individual responsible for the payment of premiums."
+    },
+    {
+      "id": 37,
+      "question": "The automatic premium loan provision is designed to",
+      "options": [
+        "provide a source of revenue to the insurance company",
+        "avoid a policy lapse",
+        "allow a policyowner to request a policy loan",
+        "allow a policyowner to take out additional coverage without evidence of insurability"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The purpose of the automatic premium loan is to keep the policy from lapsing."
+    },
+    {
+      "id": 38,
+      "question": "A provision in a life insurance policy that pays the policyowner an amount that does not surpass the guaranteed cash value is called the",
+      "options": [
+        "Policy Loan provision",
+        "Automatic Premium Loan provision",
+        "Accelerated Benefits provision",
+        "Consideration clause"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A policy loan will pay the policyowner an amount that, with interest, does NOT exceed the guaranteed cash value."
+    },
+    {
+      "id": 39,
+      "question": "Which policy requires an agent to register with the National Association of Securities Dealers (NASD) before selling?",
+      "options": [
+        "Variable Life",
+        "Credit Life",
+        "Universal Life",
+        "Interest-Sensitive Whole Life"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Because of the transfer of investment risk from the insurer to the policyowner, variable insurance products are considered securities contracts as well as insurance contracts."
+    },
+    {
+      "id": 40,
+      "question": "Which of the following features of a group Term Life policy enables an individual to leave the group and continue his or her insurance without providing evidence of insurability?",
+      "options": [
+        "Owner's Rights clause",
+        "Incontestable Period",
+        "Insuring Agreement",
+        "Conversion privilege"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The conversion privilege allows an individual to leave the group term plan and continue his or her insurance without providing evidence of insurability."
+    },
+    {
+      "id": 41,
+      "question": "A Limited-Pay Life policy has",
+      "options": [
+        "graded death benefits",
+        "no cash value",
+        "premium payments limited to a specified number of years",
+        "premium payments that are paid to age 100"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In a Limited-Pay Life policy, premium payments are limited to a specified number of years."
+    },
+    {
+      "id": 42,
+      "question": "What type of life insurance gives the greatest amount of coverage for a limited period of time?",
+      "options": [
+        "Term life",
+        "Graded Premium Whole life",
+        "Whole life",
+        "Endowment policy"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Term insurance would provide the greatest amount of protection for a limited period of time."
+    },
+    {
+      "id": 43,
+      "question": "What type of life policy covers 2 lives and pays the face amount after the first one dies?",
+      "options": [
+        "Group Life",
+        "Joint Life Policy",
+        "Family Income Policy",
+        "Last Survivor Policy"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A policy that promises to pay the face amount on the death of first of 2 lives covered by the policy is called a Joint Life Policy."
+    },
+    {
+      "id": 44,
+      "question": "How does a typical Variable Life Policy investment account grow?",
+      "options": [
+        "Tied to price of gold",
+        "Through mutual funds, stocks, bonds",
+        "Based on returns from insurer's general account",
+        "Tied to Treasury Bills"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Variable Life Policy has investment values based instruments such as mutual funds, stocks, and bonds."
+    },
+    {
+      "id": 45,
+      "question": "All of these insurance products require an agent to have proper FINRA securities registration in order to sell them EXCEPT for",
+      "options": [
+        "Variable Life",
+        "Modified Whole Life",
+        "Universal Variable life",
+        "Variable Annuity"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An agent must have proper FINRA securities registration to sell all of these products EXCEPT Modified Whole Life."
+    },
+    {
+      "id": 46,
+      "question": "K buys a policy where the premium stays fixed for the first 5 years. The premium then increases in year 6 and stays level thereafter, all the while the death benefit remains the same. What kind of policy is this?",
+      "options": [
+        "Variable Life",
+        "Adjustable Life",
+        "Graded Premium Whole Life",
+        "Modified Whole Life"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The type of policy in this situation is a Modified Whole Life."
+    },
+    {
+      "id": 47,
+      "question": "A 15-year mortgage is best protected by what kind of life policy?",
+      "options": [
+        "Modified whole life",
+        "15-year level term",
+        "15-year decreasing term",
+        "Adjustable life"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A 15-year mortgage is best protected by a 15-year decreasing term policy."
+    },
+    {
+      "id": 48,
+      "question": "A father who dies within 3 years after purchasing a life insurance policy on his infant daughter can have the policy premiums waived under which provision?",
+      "options": [
+        "Payor provision",
+        "Accelerated Benefits provision",
+        "Assignment provision",
+        "Waiver of Premium provision"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A payor provision provides that in the event of death or disability of the adult premium payor, the premiums on a juvenile policy will be waived until the insured child reaches a specified age or the maturity date of the contract."
+    },
+    {
+      "id": 49,
+      "question": "D needs life insurance that provides coverage for only a limited amount of time while also paying the lowest possible premium. What kind of policy is needed?",
+      "options": [
+        "Limited-pay life",
+        "Graded Premium",
+        "Level term",
+        "Endowment"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Life insurance written to cover a need for a specified period of time at the lowest premium is called level term insurance."
+    },
+    {
+      "id": 50,
+      "question": "When is the face amount paid under a Joint Life and Survivor policy?",
+      "options": [
+        "when policy reaches maturation",
+        "upon death of the first insured",
+        "upon death of the last insured",
+        "when one of the insureds becomes disabled and no longer able to make premium payments"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A Joint Life and Survivor policy pays benefits after the death of the last insured."
+    },
+    {
+      "id": 51,
+      "question": "Which of these characteristics is consistent with a Straight Life policy?",
+      "options": [
+        "Owner can adjust both premium and death benefit",
+        "Premiums are lower for the first five years, increase the sixth year, then levels off for the remaining length of the contract",
+        "Owner has the option of converting to term insurance",
+        "Premiums are payable for as long as there is insurance coverage in force"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Straight whole life provides permanent level protection with level premiums from the time the policy is issued until the insured's death (or age 100)."
+    },
+    {
+      "id": 52,
+      "question": "Which statement is true concerning a Variable Universal Life policy?",
+      "options": [
+        "Policyowner controls where the investment will go and selects the amount of the premium payment",
+        "Policyowner has no say where the investment will go but can choose the premium mode",
+        "The investment vehicle for this type of policy is held in the insurer's general portfolio",
+        "The death benefit can vary but the policyowner has no say in the premium amount paid"
+      ],
+      "correctAnswer": 0,
+      "explanation": "With Variable Universal Life, the policyowner controls the investment of cash values and selects the timing and amount of premium payments."
+    },
+    {
+      "id": 53,
+      "question": "Which of these is considered a statement that is assured to be true in every respect?",
+      "options": [
+        "Estoppel",
+        "Warranty",
+        "Guarantee",
+        "Representation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A warranty is a statement that is considered guaranteed to be true."
+    },
+    {
+      "id": 54,
+      "question": "Insurance policies offered on a \"take it or leave it\" basis are considered what?",
+      "options": [
+        "Conditional Contracts",
+        "Aleatory Contracts",
+        "Unilateral Contracts",
+        "Contracts of Adhesion"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Because insurance policies are offered on a \"take it or leave it\" basis they are referred to as Contracts of Adhesion."
+    },
+    {
+      "id": 55,
+      "question": "Which of these is NOT considered to be an element of an insurance contract?",
+      "options": [
+        "the offer",
+        "acceptance",
+        "negotiating",
+        "consideration"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The elements of an insurance contract do not include negotiating."
+    },
+    {
+      "id": 56,
+      "question": "Who makes the legally enforceable promises in a unilateral contract?",
+      "options": [
+        "Beneficiary",
+        "Insurer",
+        "Insured",
+        "Applicant"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Under a unilateral insurance policy, the insurance company makes the legally enforceable promises."
+    },
+    {
+      "id": 57,
+      "question": "A Business Overhead Expense policy would cover which of the following if a business owner becomes disabled?",
+      "options": [
+        "Contributions to employee retirement plans",
+        "Utilities and office rent",
+        "Owner's salary",
+        "Meals and entertainment"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Business Overhead Expense policy is designed to cover certain overhead expenses (rent, taxes, utility bills, employee's salaries etc) that continue when the business owner is disabled."
+    },
+    {
+      "id": 58,
+      "question": "Which statement is TRUE regarding a group accident & health policy issued to an employer?",
+      "options": [
+        "Neither the employer or employee are policyowners",
+        "The employer is issued a certificate of coverage and each employee receives a policy",
+        "The employer is the policyowner and each employee receives a certificate of coverage",
+        "Both the employer and employee are policyowners"
+      ],
+      "correctAnswer": 2,
+      "explanation": "With a group accident and health plan, a master policy is issued to the employer and each employee receives a certificate of insurance."
+    },
+    {
+      "id": 59,
+      "question": "Many small business owners worry how their business would survive financially if the owner becomes disabled. The policy which BEST addresses this concern is",
+      "options": [
+        "Business Overhead Expense",
+        "Disability Income",
+        "Key Employee Life",
+        "Contributory"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A Business Overhead Expense policy's purpose is to cover certain overhead expenses that continue when the businessowner is disabled."
+    },
+    {
+      "id": 60,
+      "question": "J has an Accidental Death and Dismemberment policy with a principal sum of $50,000. While trimming the hedges, J cuts off one of his fingers. What is the MAXIMUM J will receive from his policy?",
+      "options": [
+        "$0",
+        "$100,000",
+        "$25,000",
+        "$50,000"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The maximum sum payable would be the capital sum, or $25,000."
+    },
+    {
+      "id": 61,
+      "question": "The federal income tax treatment of employer-provided group health insurance can be accurately described as",
+      "options": [
+        "Employee's coverage paid for by the employer is considered taxable income to the employee",
+        "Employee's coverage paid for by the employer is tax-deductible to the employer as a business expenditure",
+        "Employer is given tax credits for contributions made to an employer-provided group health plan",
+        "Benefits are taxable to the employee"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Premiums paid by an employer for an employee's coverage are deductible by the employer as a business expense."
+    },
+    {
+      "id": 62,
+      "question": "The reason for a business having a Business Overhead Expense Disability Plan is to cover",
+      "options": [
+        "the cost of providing group disability insurance to the employees",
+        "fixed business expenses",
+        "the owner's loss of income",
+        "all business-related expenses and salaries"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The reason for a business having a Business Overhead Expense Disability Plan is to cover the fixed business costs in the event the owner becomes disabled."
+    },
+    {
+      "id": 63,
+      "question": "J is a subscriber to a plan which contracts with doctors and hospitals to provide medical benefits at a preset price. What type of plan does J belong to?",
+      "options": [
+        "Multiple Employer Welfare Arrangement",
+        "Multiple Employer Trust",
+        "Health Maintenance Organization",
+        "Co-op Arrangement"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A Health Maintenance Organization (HMO) contracts with doctors and hospitals to provide medical benefits to subscribers at a predetermined price."
+    },
+    {
+      "id": 64,
+      "question": "M is insured under a basic Hospital/Surgical Expense policy. A physician performs surgery on M. What determines the claim M is eligible for?",
+      "options": [
+        "Claim payment is equal to physician's actual charges",
+        "Claim payment is negotiated between physician and patient",
+        "Determined by the schedule of benefits from the hospital",
+        "Determined by the terms of the policy"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Under a basic hospital/surgical expense policy, the amount of the patient's claim payment will be based on the terms of the policy."
+    },
+    {
+      "id": 65,
+      "question": "Which of these options can an individual use their medical flexible spending account to pay for?",
+      "options": [
+        "Vitamins and supplements",
+        "Prescription drugs",
+        "Household expenditures",
+        "Cosmetic procedures"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Prescription drugs are an allowable expense when paid for by a medical flexible spending account."
+    },
+    {
+      "id": 66,
+      "question": "Major Medical policies typically",
+      "options": [
+        "pay 100% of covered expenses",
+        "contain a deductible and coinsurance",
+        "require use of in-network facilities only",
+        "do not contain a deductible and coinsurance"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Major Medical policies typically contain a deductible and coinsurance."
+    },
+    {
+      "id": 67,
+      "question": "The first portion of a covered Major Medical insurance expense that the insured is required to pay is called the",
+      "options": [
+        "corridor deductible",
+        "initial deductible",
+        "stop-loss deductible",
+        "coinsurance deductible"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A provision that requires the insured to pay the first portion of covered expenses before Major Medical coverage applies is called an initial deductible."
+    },
+    {
+      "id": 68,
+      "question": "Which of the following policy features allows an insured to defer current health charges to the following year's deductible instead of the current year's deducitble?",
+      "options": [
+        "Deferral provision",
+        "Carryover provision",
+        "Stop Loss provision",
+        "Corridor provision"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Carryover provision permits expenses incurred during the last three months of the calendar year to be carried over into the new year if needed to satisfy the deductible for the next year."
+    },
+    {
+      "id": 69,
+      "question": "With a Basic Medical Expense policy, what does the hospitalization expense cover?",
+      "options": [
+        "hospital room and board",
+        "hospital administration expenses",
+        "surgeon's fees",
+        "physician fees"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The hospitalization expense of a Basic Medical Expense policy pays for hospital room and board."
+    },
+    {
+      "id": 70,
+      "question": "Which Accident and Health policy provision addresses preexisting conditions?",
+      "options": [
+        "Proof of Loss",
+        "Legal Actions",
+        "Time Limit on Certain Defenses",
+        "Payment of Claims"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Time Limit on Certain Defenses provision limits the period during which an insurer can deny a claim on the basis of a preexisting condition."
+    },
+    {
+      "id": 71,
+      "question": "What should an insured do if the insurer does not send claims forms within the time period set forth in a health policy's Claims Forms provision?",
+      "options": [
+        "File a lawsuit",
+        "Submit the claim in any form",
+        "Wait for the claim form to arrive",
+        "Resubmit the request for a claim form"
+      ],
+      "correctAnswer": 1,
+      "explanation": "If forms are not furnished, the insured should submit the claim in any form, which must be accepted by the company as adequate proof of loss."
+    },
+    {
+      "id": 72,
+      "question": "When an insurance company sends a policy to the insured with an attached application, the element that makes the application part of the contract between the insured and the insurer is called the",
+      "options": [
+        "Entire Contract provision",
+        "Insuring clause",
+        "Time Limit on Certain Defense provision",
+        "Legal Contract clause"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Entire Contract provision states that the application and policy contain all provisions and constitute the entire contract."
+    },
+    {
+      "id": 73,
+      "question": "If an individual has an Accidental Death and Dismemberment policy and dies, an autopsy can be performed in all these situations EXCEPT",
+      "options": [
+        "When the cause of death is unknown",
+        "When the state prohibits this by law",
+        "When consent for the autopsy is not obtained",
+        "When foul play was a contributing factor"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Applicable state laws that prevent an autopsy take precedence."
+    },
+    {
+      "id": 74,
+      "question": "Which of the following statements BEST describes what the Legal Actions provision of an Accident and Health policy requires?",
+      "options": [
+        "An insured must settle a claim within 60 days after Proof of Loss is submitted",
+        "An insured must wait at least 30 days after Proof of Loss has been submitted before a lawsuit can be filed",
+        "An insured must wait at least 60 days after Proof of Loss has been submitted before a lawsuit can be filed",
+        "An insured must settle a claim within 30 days after Proof of Loss is submitted"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Legal Actions provision of an Accident & Health policy requires that the insured must wait at least 60 days after Proof of Loss has been submitted before a lawsuit can be filed."
+    },
+    {
+      "id": 75,
+      "question": "Which of these statements accurately describes the Waiver of Premium provision in an Accident and Health policy?",
+      "options": [
+        "Past due premiums on a lapsed policy are waived and coverage is restored",
+        "The insured is paid a monthly benefit to keep insurance premiums current in the event of total disability",
+        "Premiums are waived after the insured has been unemployed for a specified time period",
+        "Premiums are waived after the insured has been totally disabled for a specified time period"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The Waiver of Premium provision waives the payment of premiums after the insured has been totally disabled for a specified period of time."
+    },
+    {
+      "id": 76,
+      "question": "G is involved in an automobile accident as a result of driving while intoxicated and suffers numerous injuries. According to the Intoxicants and Narcotics exclusion in G's policy, who is responsible for paying the medical bills?",
+      "options": [
+        "The reinsurer",
+        "The insured",
+        "The insurer",
+        "The Guaranty Association"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In this situation, the insured is liable for the medical bills."
+    },
+    {
+      "id": 77,
+      "question": "An agent takes an individual Disability Income application, collects the appropriate premium, and issues the prospective insured a conditional receipt. The next step the insurance company will take is to",
+      "options": [
+        "issue the policy only when the initial premium check has cleared",
+        "determine if the applicant is insurable by investigating family health history",
+        "issue the policy on a standard basis",
+        "determine if the applicant is an acceptable risk by completing standard underwriting procedures"
+      ],
+      "correctAnswer": 3,
+      "explanation": "With a conditional receipt, the insurance company will complete standard underwriting procedures before making a decision about whether to insure the applicant."
+    },
+    {
+      "id": 78,
+      "question": "R had received full disability income benefits for 6 months. When he returns to work, he is only able to resume half his normal daily workload. Which provision pays reduced benefits to R while he is not working at full capacity?",
+      "options": [
+        "Residual Disability",
+        "Recurrent Disability",
+        "Presumptive Disability",
+        "Occupational Disability"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A residual disability benefit is usually a percentage of the total disability benefit for periods when the insured is unable to perform some of the duties of his/her occupation."
+    },
+    {
+      "id": 79,
+      "question": "The provision in a health insurance policy that interrupts premiums being paid to the insurer while the insured is disabled is called the",
+      "options": [
+        "Probation Period",
+        "Grace Period",
+        "Waiver of Premium",
+        "Elimination Period"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Waiver of Premium provision in a health insurance contract suspends the insurer's right to receive premiums during a covered period of disability."
+    },
+    {
+      "id": 80,
+      "question": "With Disability Income insurance, an insurance company may limit the monthly benefit amount a prospective policy holder may obtain because of the insured's",
+      "options": [
+        "monthly expenditures at the time of disability",
+        "gross income at the time of purchase",
+        "gross income at the time of disability",
+        "occupation at the time of purchase"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The insured's earned income at the time of purchase limits the amount of the monthly benefit that an insured may purchase in a Disability Income Policy."
+    },
+    {
+      "id": 81,
+      "question": "An insured covered by life insurance has just died. What will happen if the primary beneficiary had already died before the insured and contingent beneficiary?",
+      "options": [
+        "Proceeds will go to the primary beneficiary's estate",
+        "Probate will decide who receives proceeds",
+        "Proceeds will go to the contingent beneficiary",
+        "Proceeds will go to the insured's estate"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In this situation, the contingent beneficiary will receive the proceeds."
+    },
+    {
+      "id": 82,
+      "question": "N is covered by a Term Life policy and does not make the required premium payment which was due August 1. N dies September 15. What action will the insurer take?",
+      "options": [
+        "Claim will be denied",
+        "Claim will be paid in full",
+        "Claim will be partially paid",
+        "Claim will be decided by an arbitrator"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In this situation, the insurance company will deny the claim, as the policy would have lapsed due to nonpayment by September 15."
+    },
+    {
+      "id": 83,
+      "question": "F needs life insurance that provides coverage for only a limited amount of time with a death benefit that changes regularly according to a schedule. What kind of policy is needed?",
+      "options": [
+        "Level term policy",
+        "Whole life policy",
+        "Limited-pay policy",
+        "Decreasing term policy"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A life insurance policy written for a specified period of time with a death benefit that changes regularly according to a schedule is a decreasing term policy."
+    },
+    {
+      "id": 84,
+      "question": "Q would like to purchase $100,000 of permanent protection on his wife and $50,000 of Term coverage on himself under the same policy. What kind of policy should Q purchase?",
+      "options": [
+        "Joint policy",
+        "Joint survivor policy",
+        "Whole life policy with other insured rider",
+        "Whole life policy with a Guaranteed Insurability option"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In this situation, a whole life policy with an other insured rider would be appropriate."
+    },
+    {
+      "id": 85,
+      "question": "E and F are business partners. Each takes out a $500,000 life insurance policy on the other, naming himself as primary beneficiary. E and F eventually terminate their business, and four months later E dies. Although E was married with three children at the time of death, the primary beneficiary is still F. However, an insurable interest no longer exists. Where will the proceeds from E's life insurance policy be directed to?",
+      "options": [
+        "F",
+        "The dissolved partnership",
+        "E's family",
+        "E's estate"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In this situation, the proceeds from E's life insurance policy will go to F. Insurable interest only needs to exist at the time of application."
+    },
+    {
+      "id": 86,
+      "question": "Under what system do a group of doctors and hospitals in a designated area contract with an insurer to provide services at a prearranged cost to the insured?",
+      "options": [
+        "HMO",
+        "PPO",
+        "EPO",
+        "PLHSO"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Under a Preferred Provider Organization (PPO), a group of doctors and hospitals in a designated area contract with an insurer to provide services at a prearranged cost to the insured."
+    },
+    {
+      "id": 87,
+      "question": "Which of these statements is INCORRECT regarding a Preferred Provider Organization (PPO)?",
+      "options": [
+        "PPO's normally have more providers to chose from as compared to an HMO",
+        "Prices are negotiated in advance for PPO providers",
+        "In-network PPO providers offer members better coverage of incurred expenses",
+        "PPO's are NOT a type of managed care systems"
+      ],
+      "correctAnswer": 3,
+      "explanation": "PPO's ARE considered to be a managed health care system."
+    },
+    {
+      "id": 88,
+      "question": "P is a Major Medical policyowner who is hospitalized as a result of injuries sustained from participating in a carjacking. How will the insurer most likely handle this claim?",
+      "options": [
+        "Claim will be denied and policy terminated",
+        "Claim will be partially paid",
+        "Claim will be paid",
+        "Claim will be denied"
+      ],
+      "correctAnswer": 3,
+      "explanation": "If a person is injured while committing an illegal act, health insurance will not cover the expense of the injury."
+    },
+    {
+      "id": 89,
+      "question": "A Disability Income policyowner suffers a disability which was due to the same cause as a previous disability. Both disabilities occurred within a five-month period. The insurer may cover the second disability without a new elimination period under the",
+      "options": [
+        "Residual Disability provision",
+        "Presumptive Disability provision",
+        "Recurrent Disability provision",
+        "Partial Disability provision"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The insurer will provide the same benefits without a new elimination period under the Recurrent Disability provision."
+    },
+    {
+      "id": 90,
+      "question": "Which of these actions should a producer take when submitting an insurance application to an insurer?",
+      "options": [
+        "Issue a binding receipt to applicant if no initial premium is submitted",
+        "Disclose to the applicant the amount of commissions to be earned on this transaction",
+        "Inform insurer of relevant information not included on the application",
+        "Arrange for a copy of the Attending Physician Statement (APS) to be sent to the producer"
+      ],
+      "correctAnswer": 2,
+      "explanation": "One of the actions a producer should take when submitting an application is to advise the insurer of any other relevant information not contained in the application."
+    },
+    {
+      "id": 91,
+      "question": "To receive a percentage of the policy face value, an owner of a life policy may sell the policy to a(n)",
+      "options": [
+        "viatical settlement provider",
+        "insurance company",
+        "viator",
+        "insured"
+      ],
+      "correctAnswer": 0,
+      "explanation": "To receive a percentage of the policy face value, an owner of a life policy may sell the policy to a viatical settlement provider."
+    },
+    {
+      "id": 92,
+      "question": "Which type of life policy contains a monthly mortality charge as well as self-directed investment choices?",
+      "options": [
+        "Joint Life",
+        "Adjustable Life",
+        "Variable Universal Life",
+        "Universal Life"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Variable Universal Life is comprised of monthly mortality charges and self directed investment choices."
+    },
+    {
+      "id": 93,
+      "question": "C is a key employee at ABC Incorporated. If a Key Employee life policy is purchased on her life, which of these statements would be true?",
+      "options": [
+        "ABC is the policyowner, C is the insured, and her husband is the beneficiary",
+        "ABC is the policyowner, C is the insured, and ABC is the beneficiary",
+        "C is the policyowner and the insured, and ABC is the beneficiary",
+        "C is the policyowner, the insured, and the beneficiary"
+      ],
+      "correctAnswer": 1,
+      "explanation": "ABC is the policyowner, C is the insured, and ABC is the beneficiary."
+    },
+    {
+      "id": 94,
+      "question": "P died five years after purchasing a life policy. While investigating the claim, the insurer discovered material misrepresentations made by P during the application process. Which of these actions will the insurer take?",
+      "options": [
+        "Beneficiary will be denied the claim",
+        "Beneficiary will be denied the claim and refunded all paid premiums",
+        "Beneficiary will be paid the Death Benefit",
+        "Beneficiary will be paid a partial Death Benefit"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The incontestable clause prevents the insurer from canceling the contract even for a material misrepresentation."
+    },
+    {
+      "id": 95,
+      "question": "A policy loan is made possible by which of these life insurance policy features?",
+      "options": [
+        "Policy loan clause",
+        "Cash value provision",
+        "Owner's rights provision",
+        "Consideration clause"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Cash value provision makes a policy loan possible."
+    },
+    {
+      "id": 96,
+      "question": "Which factors are taken into consideration when an insurance company determines the premium rate for a Whole Life policy on an applicant?",
+      "options": [
+        "Geographical location",
+        "Source of income",
+        "Risk classification",
+        "Marital status"
+      ],
+      "correctAnswer": 2,
+      "explanation": "To determine the premium rate on a Whole Life policy, an insurance company will consider the risk classification of the applicant."
+    },
+    {
+      "id": 97,
+      "question": "Which statement is TRUE in regards to a policy loan?",
+      "options": [
+        "Past-due interest payments not paid after 3 months will void the policy",
+        "Past-due interest on a policy loan is added to the total debt",
+        "Insurance companies can send delinquent interest accounts to a collection agency",
+        "Insurance companies can charge an interest rate based on the policyowner's credit report"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Interest on a loan which is not paid when due is added to the total debt."
+    },
+    {
+      "id": 98,
+      "question": "Which of these is NOT a characteristic of a Health Reimbursement Arrangement (HRA)?",
+      "options": [
+        "Employee funds the HRA entirely",
+        "Employer funds the HRA entirely",
+        "HRA's can be offered with other health plans",
+        "HRA's allow reimbursement for eligible medical expenses"
+      ],
+      "correctAnswer": 0,
+      "explanation": "HRA plans are employer-funded medical reimbursement plans"
+    },
+    {
+      "id": 99,
+      "question": "Which of these statements concerning an individual Disability Income policy is TRUE?",
+      "options": [
+        "Premiums are normally tax-deductible",
+        "Age of the insured determines the amount of the benefits",
+        "Normally includes an Elimination period",
+        "Benefits are normally taxable"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Disability Income policies typically contain an Elimination period."
+    },
+    {
+      "id": 100,
+      "question": "Periodic health claim payments MUST be made at least",
+      "options": [
+        "monthly",
+        "weekly",
+        "daily",
+        "annually"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Under an individual health policy, periodic claim payments must be made at least monthly."
+    },
+    {
+      "id": 101,
+      "question": "J has a Disability Income policy that does NOT provide benefits for losses occurring as the result of his employment. What kind of coverage is this?",
+      "options": [
+        "Limited coverage",
+        "Workers' Compensation coverage",
+        "Occupational coverage",
+        "Nonoccupational coverage"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The coverage provided by a Disability Income policy that does not provide benefits for losses occurring as the result of the insured's employment is called nonoccupational coverage."
+    },
+    {
+      "id": 102,
+      "question": "A comprehensive major medical health insurance policy contains an Eligible Expenses provision which identifies the types of health care services that are covered. All of the following health care services are typically covered EXCEPT for",
+      "options": [
+        "hospital charges",
+        "physician fees",
+        "experimental and investigative services",
+        "nursing services"
+      ],
+      "correctAnswer": 2,
+      "explanation": "All of these services are typically covered under a comprehensive major medical health insurance policy EXCEPT for \"experimental and investigative services\"."
+    },
+    {
+      "id": 103,
+      "question": "What do Dread Disease policies cover?",
+      "options": [
+        "A specific disease or illness",
+        "All diseases or illnesses",
+        "Only terminal illnesses",
+        "Only heart-related diseases"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dread Disease policies cover only a single disease or illness."
+    },
+    {
+      "id": 104,
+      "question": "An insurance company incorporated under the laws of the state in which its home office is located is called a(n) ____ company.",
+      "options": [
+        "domestic",
+        "alien",
+        "foreign",
+        "authorized"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A domestic insurance company is domiciled and incorporated under the laws of the state in which its home office is located."
+    },
+    {
+      "id": 105,
+      "question": "Which of the following unfair trade practices involves an agent who makes malicious statements about another person's financial condition?",
+      "options": [
+        "Boycotting",
+        "Defamation",
+        "Unfair discrimination",
+        "Misrepresentation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An agent who makes a statement that is maliciously critical of another person's financial condition is guilty of defamation."
+    },
+    {
+      "id": 106,
+      "question": "What is the required minimum percentage of employee participation for a noncontributory group health insurance plan according to Florida Law?",
+      "options": [
+        "0%",
+        "25%",
+        "75%",
+        "100%"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Most noncontributory group health plans require 100% participation by eligible members. Under Florida law, there is no specific minimum percentage participation for employees covered by employee group health insurance."
+    },
+    {
+      "id": 107,
+      "question": "What is required in the Florida Employee Health Care Access Act?",
+      "options": [
+        "Small group benefit plans are to be issued on a \"conditionally-issue\" basis",
+        "Small group benefit plans are to be issued on a \"guarantee-issue\" basis",
+        "All small group benefit plans have a 60 day grace period",
+        "All small group benefit plans have no lifetime benefit limits"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The provisions of the Florida Employee Health Care Access Act require that all small group health benefit plans be issued on a \"guaranteed-issue\" basis."
+    },
+    {
+      "id": 108,
+      "question": "Which of the following professional organizations has its code of ethics incorporated into Florida law?",
+      "options": [
+        "Financial Industry Regulatory Agency (FINRA)",
+        "National Association of Insurance Commissioners (NAIC)",
+        "National Association of Insurance and Financial Advisors (NAIFA)",
+        "The American College of Life Insurance"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The professional organization whose code of ethics is incorporated into Florida law is the National Association of Insurance and Financial Advisors (NAIFA)."
+    },
+    {
+      "id": 109,
+      "question": "The minimum age at which a person can sign a life insurance application is",
+      "options": [
+        "15 years",
+        "16 years",
+        "17 years",
+        "18 years"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A person 15 years or older may contract for life insurance on his/her own life."
+    },
+    {
+      "id": 110,
+      "question": "The waiting period for a pre-existing condition under a Medicare Supplement policy may NOT go beyond",
+      "options": [
+        "1 month",
+        "3 months",
+        "6 months",
+        "12 months"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Under a Medicare Supplement policy, the waiting period for pre-existing conditions may not exceed 6 months."
+    },
+    {
+      "id": 111,
+      "question": "A licensed agent must be appointed by an insurance company to solicit insurance in Florida. The agent's license will terminate if a certain period of time elapses without being appointed. How long is this period of time?",
+      "options": [
+        "12 months",
+        "24 months",
+        "36 months",
+        "48 months"
+      ],
+      "correctAnswer": 3,
+      "explanation": "An agent's license will terminate if the agent allows 48 months to elapse without being appointed for the class or classes of insurance listed on the license."
+    },
+    {
+      "id": 112,
+      "question": "In Florida, the underwriting and issuance of a master group health policy requires that all employees",
+      "options": [
+        "are eligible to participate, regardless of their individual health history",
+        "need to be individually approved or declined during the underwriting process",
+        "must contribute toward the group health policy's premiums",
+        "take a physical examination before the master policy is issued"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The underwriting and issuance of a master group health policy in Florida requires that all employees or members must be eligible to participate, regardless of individual health history."
+    },
+    {
+      "id": 113,
+      "question": "K is an agent who made an improper sale of an annuity to a client. Which of the following corrective actions would the Department of Financial Services likely order K to take?",
+      "options": [
+        "Sell the client a more appropriate annuity",
+        "Pay monetary restitution to the client",
+        "Provide a written apology letter",
+        "Pay a penalty of three times the client's loss"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Department of Financial Services may order the agent to pay monetary restitution to the client."
+    },
+    {
+      "id": 114,
+      "question": "Which of the following is a standard provision of the conversion privileges in a Group Life policy?",
+      "options": [
+        "Group Life coverage can only be converted if the employer pays for the individual policy",
+        "Group Life coverage can normally be converted to an individual policy within 6 months",
+        "Group Life coverage can only be converted by providing evidence of insurability",
+        "Group Life coverage can be converted to an individual policy at regular rates on an attained-age basis"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Conversion at regular rates on an attained-age basis without a medical exam is a standard provision for conversion privileges in Group Life policies."
+    },
+    {
+      "id": 115,
+      "question": "In Florida, which of the following practitioners normally do NOT receive payment from health insurance policies?",
+      "options": [
+        "Optometrists",
+        "Pediatricians",
+        "Dentists",
+        "Naturopaths"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Health insurance policies in Florida must cover payment to all of these practitioners EXCEPT naturopaths."
+    },
+    {
+      "id": 116,
+      "question": "Association Plans that are designed to provide health benefits to their members are regulated by the state because",
+      "options": [
+        "they are insured by an authorized insurer",
+        "they conduct business in Florida",
+        "they provide a service to their members",
+        "they require a certain level of member participation"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Association Plans must be fully insured by an authorized insurer. The insurer is subject to state regulation."
+    },
+    {
+      "id": 117,
+      "question": "What percentage of eligible persons must a policy cover in a noncontributory group?",
+      "options": [
+        "25%",
+        "50%",
+        "75%",
+        "100%"
+      ],
+      "correctAnswer": 3,
+      "explanation": "In a noncontributory group, the policy must cover 100% of eligible persons."
+    },
+    {
+      "id": 118,
+      "question": "All of the following will result in the suspension of an agent's license EXCEPT",
+      "options": [
+        "intentionally misrepresenting the provisions of a policy",
+        "acting with fiduciary responsibility",
+        "forging a name on an insurance application",
+        "being convicted of a felony"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Acting as a fiduciary would not result in suspension of an agent's license."
+    },
+    {
+      "id": 119,
+      "question": "Which of the following is NOT a consequence for placing business with an unauthorized insurer?",
+      "options": [
+        "Third degree felony",
+        "First degree misdemeanor",
+        "Insurance license revoked",
+        "Responsible for unpaid claims"
+      ],
+      "correctAnswer": 1,
+      "explanation": "All of these are possible consequences for placing business with an unauthorized insurer EXCEPT the conviction of a first degree misdemeanor."
+    },
+    {
+      "id": 120,
+      "question": "A life insurance policyowner may sell their policy to a(n) _____ in order to receive a percentage of the policy's face value.",
+      "options": [
+        "viatical settlement provider",
+        "broker",
+        "insurer",
+        "viator agent"
+      ],
+      "correctAnswer": 0,
+      "explanation": "To receive a percentage of the policy face value, an owner of a life policy may sell the policy to a viatical settlement provider."
+    },
+    {
+      "id": 121,
+      "question": "Which of the following is NOT an unfair claim settlement practice?",
+      "options": [
+        "Failing to acknowledge and act promptly with respect to an insurance claim",
+        "Compelling an insured to initiate a lawsuit by offering less on an insurance claim",
+        "Failing to accept or deny a claim within reasonable time after proof of loss is submitted",
+        "Needing written documentation of claim details"
+      ],
+      "correctAnswer": 3,
+      "explanation": "All of these are unfair claim settlement practices except 'Needing written documentation of claim details'."
+    },
+    {
+      "id": 122,
+      "question": "Which of the following is considered an accurate statement of an unfair trade practice?",
+      "options": [
+        "Coercion involves making a malicious statement about the financial condition of an insurance company",
+        "Twisting involves an agent using misrepresentation to convince a policyowner to cancel their current policy so that they can purchase a new life insurance policy with another company",
+        "No more than 25% of an agent's insurance sales are allowed to come from controlled business",
+        "Rebating occurs when someone intentionally deceives another with the intent to gain financially"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Twisting is a misrepresentation made by an agent in order to induce a policyholder to lapse a policy and switch insurance companies. It's considered an unfair trade practice."
+    },
+    {
+      "id": 123,
+      "question": "Which of the following documents must an agent submit to the replacing insurance company during the replacement of an existing life insurance policy?",
+      "options": [
+        "Notice to existing and replacing insurers of intention to replace",
+        "A list of all policies the agent has replaced in the last 3 years",
+        "A statement made by the agent that NAIC guidelines have been met during the replacement process",
+        "A copy of the agent's insurance license"
+      ],
+      "correctAnswer": 0,
+      "explanation": "When replacing an existing life insurance policy, an agent must submit notice to existing insurer and replacing insurer of intentions."
+    },
+    {
+      "id": 124,
+      "question": "According to Florida law, an additional lapse notice must be issued after the standard grace period has expired for policyowners age",
+      "options": [
+        "21 and under",
+        "59 1/2 or older",
+        "64 years or older",
+        "69 or older"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In Florida, insurers are required to issue an additional lapse notice after the applicable statutory grace period has expired for policyholders 64 years of age or older."
+    },
+    {
+      "id": 125,
+      "question": "In Florida, deceptive advertising is considered to be",
+      "options": [
+        "a form of coercion",
+        "a form of sliding",
+        "a form of rebating",
+        "a form of misrepresentation"
+      ],
+      "correctAnswer": 3,
+      "explanation": "According to Florida law, deceptive advertising is considered a form of misrepresentation."
+    },
+    {
+      "id": 126,
+      "question": "According to Florida's rules on disclosure, a life insurance applicant is expected to be provided with",
+      "options": [
+        "a Certificate of Coverage and Buyer's Guide",
+        "a Summary Statement and Buyer's Guide",
+        "a Buyer's Guide and Policy Summary",
+        "a Written Comparison and Policy Summary"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Florida's rules on disclosure require an insurance company to provide a purchaser of life insurance with a Buyer's Guide and a Policy Summary."
+    },
+    {
+      "id": 127,
+      "question": "The guarantee of insurability option provides a long-term care policyowner the ability to",
+      "options": [
+        "buy additional coverage at a later date",
+        "add the insured's spouse at a later date",
+        "pay the same premium for life",
+        "cancel the policy at anytime"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In long-term care insurance, the guarantee of insurability option provides the insured with the ability to purchase additional insurance at a later date without evidence of insurability."
+    },
+    {
+      "id": 128,
+      "question": "Which of the following requires insurers to disclose when an applicant's consumer or credit history is being investigated",
+      "options": [
+        "1970 - Fair Credit Reporting Act",
+        "1959 - Intervention by (SEC) The Securities and Exchange Commission",
+        "1999 - Financial Services Modernization Act",
+        "1945 - The McCarran-Ferguson Act"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Fair Credit Reporting Act requires the fair and accurate reporting of information about consumers. Insurers must inform applicants about any investigations being made. If the report is used to deny coverage or charge higher rates, the insurer must provide the applicant the name of the credit reporting agency conducting the investigation."
+    },
+    {
+      "id": 129,
+      "question": "Insurable interest must exist at what time?",
+      "options": [
+        "At the time of application",
+        "At the time of delivery",
+        "At the time of death",
+        "At all times"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Insurable interest must exist upon issuance of a life or health insurance contract (time of application)."
+    },
+    {
+      "id": 130,
+      "question": "What is the primary factor that determines the benefits paid under a disability income policy?",
+      "options": [
+        "Education level",
+        "Wages",
+        "Type of occupation",
+        "Age"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The major factor in determining the benefit amount paid under a disability income policy is wages."
+    },
+    {
+      "id": 131,
+      "question": "A disability elimination period is best described as a",
+      "options": [
+        "time deductible",
+        "dollar deductible",
+        "eligibility period",
+        "probation period"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The best way to describe a disability elimination period is a 'time deductible'."
+    },
+    {
+      "id": 132,
+      "question": "Bryce purchased a disability income policy with a rider that guarantees him the option of purchasing additional amounts of coverage at predetermined times without requiring to provide evidence of insurability. What kind of rider is this?",
+      "options": [
+        "Guaranteed insurability rider",
+        "Additional coverage rider",
+        "Paid-up option rider",
+        "Extended insurability rider"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A guaranteed insurability rider guarantees the insured the option of purchasing additional amounts of disability income coverage at predetermined times without requiring the insured to provide evidence of insurability."
+    },
+    {
+      "id": 133,
+      "question": "What is issued to each employee of an employer health plan?",
+      "options": [
+        "Provision",
+        "Receipt",
+        "Policy",
+        "Certificate"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Employees covered by an employer health plan are issued an insurance certificate."
+    },
+    {
+      "id": 134,
+      "question": "In health insurance policies, a waiver of premium provision keeps the coverage in force without premium payments",
+      "options": [
+        "Whenever an insured is unable to work",
+        "During the time an insured is confined in a hospital",
+        "Following an accidental injury, but not during sickness",
+        "After an insured has become totally disabled as defined in the policy"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The waiver of premium provision keeps the coverage in force without premium payments if the insured has become totally disabled as defined in the policy."
+    },
+    {
+      "id": 135,
+      "question": "Which of the following areas of state regulation is NOT protected by the savings clause in ERISA?",
+      "options": [
+        "Insurance",
+        "Commerce",
+        "Banking",
+        "Securities"
+      ],
+      "correctAnswer": 1,
+      "explanation": "All of these areas of state regulation are protected by the savings clause in ERISA EXCEPT for commerce."
+    },
+    {
+      "id": 136,
+      "question": "Which of the following types of insureds are life insurance companies allowed to make policy rate discriminations against?",
+      "options": [
+        "People of different religions",
+        "People that are married",
+        "People that smoke",
+        "People of different races"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A life insurance company may make policy rate discriminations against people that smoke."
+    },
+    {
+      "id": 137,
+      "question": "Florida's 14-day free-look period for life insurance policies begins at the",
+      "options": [
+        "date of delivery",
+        "date of approval",
+        "date of application",
+        "date of physical examination"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In Florida, the free-look period for life insurance contracts is 14 days from policy delivery."
+    },
+    {
+      "id": 138,
+      "question": "The insurer must provide a prospective buyer with a(n)",
+      "options": [
+        "Buyer's Guide and Policy Summary",
+        "A.M. Best report",
+        "actuarial table",
+        "copy of the application"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The insurer must provide a prospective buyer with a Buyer's Guide and Policy Summary."
+    },
+    {
+      "id": 139,
+      "question": "Which of the following activities will NOT result in the suspension of an agent's license?",
+      "options": [
+        "Making malicious and false statements about an insurer",
+        "Replacing an insurance policy from one insurer to another based on misrepresentation",
+        "Working for a foreign insurer",
+        "Misrepresenting any fact about an insurance policy"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Working for a foreign insurance company does not result in the revocation or suspension of an agent's license."
+    },
+    {
+      "id": 140,
+      "question": "Under an Individual Disability policy in Florida, what is the minimum schedule of time in which claims must be made to an insured?",
+      "options": [
+        "Annually",
+        "Weekly",
+        "Monthly",
+        "Daily"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Claims on an individual disability policies must be paid out at monthly intervals, at minimum."
+    },
+    {
+      "id": 141,
+      "question": "Which Unfair Trade Practice involves an agent telling a prospective client that a policy's dividends are guaranteed?",
+      "options": [
+        "Coercion",
+        "Fraud",
+        "Misrepresentation",
+        "Sliding"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An agent who tells a client that dividends are guaranteed may be guilty of misrepresentation."
+    },
+    {
+      "id": 142,
+      "question": "An example of false advertising would be",
+      "options": [
+        "Paid testimonials from celebrity endorsements",
+        "An insurer exaggerating its dividends in a magazine advertisement",
+        "An agent spending more than $25 on marketing gifts for a client",
+        "An insurer advertising in an insurance trade journal"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An insurance company may be judged guilty of false advertising if it exaggerates its dividends in a magazine advertisement."
+    },
+    {
+      "id": 143,
+      "question": "Which of the following is NOT considered rebating?",
+      "options": [
+        "Sharing commissions with an agent licensed in the same line of business",
+        "Returning premium to a client as an inducement for purchasing a policy",
+        "Giving something of value to an insured in exchange for their business",
+        "Offering special dividends"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Sharing commissions with other licensed agents is not considered rebating."
+    },
+    {
+      "id": 144,
+      "question": "Which Unfair Trade Practice involves an agent suggesting that an insurance policy is like a share of stock?",
+      "options": [
+        "Twisting",
+        "Intimidation",
+        "Misrepresentation",
+        "Sliding"
+      ],
+      "correctAnswer": 2,
+      "explanation": "If an agent tells an applicant that an insurance policy is like a share of stock, the agent may be guilty of misrepresentation."
+    },
+    {
+      "id": 145,
+      "question": "An example of rebating would be",
+      "options": [
+        "a mutual insurance company paying dividends to its policyowners",
+        "reducing the premiums across the board for a specific risk class",
+        "offering a client something of value not stated in the contract in exchange for their business",
+        "using intimidation in order to restrain or monopolize the business of insurance."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Rebating can be defined as offering a prospect something of value that is not specified in a contract in order to induce the purchase of that contract."
+    },
+    {
+      "id": 146,
+      "question": "S takes out a health insurance policy which contains a provision that states that the agent does not have the authority to change the policy or waive any of its provisions. Which health policy provision is this?",
+      "options": [
+        "Legal Actions",
+        "Insurance with other insurers",
+        "Entire Contract",
+        "Reinstatement"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Entire Contract provision states that the agent does NOT have the authority to change the policy or waive any of its provisions."
+    },
+    {
+      "id": 147,
+      "question": "The sections of an insurance contract which limit coverage are called",
+      "options": [
+        "waivers",
+        "riders",
+        "exclusions",
+        "limitations"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An exclusion limits coverage in an insurance contract."
+    },
+    {
+      "id": 148,
+      "question": "The Coordination of Benefits provision",
+      "options": [
+        "allows an insured covered by two health plans to make a profit on a covered loss",
+        "prevents an insured covered by two health plans from making a profit on a covered loss",
+        "allows an insurer to defer paying a claim for a work-related injury until Workers' Compensation Benefits have expired",
+        "prevents an insured to change insurers during a claim for a covered loss"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Coordination of Benefits prevents an insured covered by two health plans from making a profit on a covered loss."
+    },
+    {
+      "id": 149,
+      "question": "An accident policy will most likely pay a benefit for a(n)",
+      "options": [
+        "self-inflicted injury",
+        "critical illness",
+        "on-the-job accident",
+        "off-the-job accident"
+      ],
+      "correctAnswer": 3,
+      "explanation": "An accident policy would most likely pay a benefit for an off-the-job accident."
+    },
+    {
+      "id": 150,
+      "question": "What type of rider would be added to an Accident and Health policy if the policyowner wants to ensure the policy will continue if he/she ever becomes totally disabled?",
+      "options": [
+        "Accidental Death and Dismemberment rider",
+        "Disability Income rider",
+        "Guaranteed Insurability rider",
+        "Waiver of Premium rider"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A Waiver of Premium rider keeps the policy in force if the policyowner becomes totally disabled."
+    }
+  ]
+}

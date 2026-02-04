@@ -1,0 +1,247 @@
+{
+  "topic": "Flashcards - Policy Provisions & Health/Group (Set 2 - Part 3)",
+  "topicId": "flashcards-advanced-2-part-3",
+  "description": "Part 3 of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
+  "questions": [
+    {
+      "id": 41,
+      "question": "A Limited-Pay Life policy has",
+      "options": [
+        "graded death benefits",
+        "no cash value",
+        "premium payments limited to a specified number of years",
+        "premium payments that are paid to age 100"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In a Limited-Pay Life policy, premium payments are limited to a specified number of years."
+    },
+    {
+      "id": 42,
+      "question": "What type of life insurance gives the greatest amount of coverage for a limited period of time?",
+      "options": [
+        "Term life",
+        "Graded Premium Whole life",
+        "Whole life",
+        "Endowment policy"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Term insurance would provide the greatest amount of protection for a limited period of time."
+    },
+    {
+      "id": 43,
+      "question": "What type of life policy covers 2 lives and pays the face amount after the first one dies?",
+      "options": [
+        "Group Life",
+        "Joint Life Policy",
+        "Family Income Policy",
+        "Last Survivor Policy"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A policy that promises to pay the face amount on the death of first of 2 lives covered by the policy is called a Joint Life Policy."
+    },
+    {
+      "id": 44,
+      "question": "How does a typical Variable Life Policy investment account grow?",
+      "options": [
+        "Tied to price of gold",
+        "Through mutual funds, stocks, bonds",
+        "Based on returns from insurer's general account",
+        "Tied to Treasury Bills"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Variable Life Policy has investment values based instruments such as mutual funds, stocks, and bonds."
+    },
+    {
+      "id": 45,
+      "question": "All of these insurance products require an agent to have proper FINRA securities registration in order to sell them EXCEPT for",
+      "options": [
+        "Variable Life",
+        "Modified Whole Life",
+        "Universal Variable life",
+        "Variable Annuity"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An agent must have proper FINRA securities registration to sell all of these products EXCEPT Modified Whole Life."
+    },
+    {
+      "id": 46,
+      "question": "K buys a policy where the premium stays fixed for the first 5 years. The premium then increases in year 6 and stays level thereafter, all the while the death benefit remains the same. What kind of policy is this?",
+      "options": [
+        "Variable Life",
+        "Adjustable Life",
+        "Graded Premium Whole Life",
+        "Modified Whole Life"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The type of policy in this situation is a Modified Whole Life."
+    },
+    {
+      "id": 47,
+      "question": "A 15-year mortgage is best protected by what kind of life policy?",
+      "options": [
+        "Modified whole life",
+        "15-year level term",
+        "15-year decreasing term",
+        "Adjustable life"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A 15-year mortgage is best protected by a 15-year decreasing term policy."
+    },
+    {
+      "id": 48,
+      "question": "A father who dies within 3 years after purchasing a life insurance policy on his infant daughter can have the policy premiums waived under which provision?",
+      "options": [
+        "Payor provision",
+        "Accelerated Benefits provision",
+        "Assignment provision",
+        "Waiver of Premium provision"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A payor provision provides that in the event of death or disability of the adult premium payor, the premiums on a juvenile policy will be waived until the insured child reaches a specified age or the maturity date of the contract."
+    },
+    {
+      "id": 49,
+      "question": "D needs life insurance that provides coverage for only a limited amount of time while also paying the lowest possible premium. What kind of policy is needed?",
+      "options": [
+        "Limited-pay life",
+        "Graded Premium",
+        "Level term",
+        "Endowment"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Life insurance written to cover a need for a specified period of time at the lowest premium is called level term insurance."
+    },
+    {
+      "id": 50,
+      "question": "When is the face amount paid under a Joint Life and Survivor policy?",
+      "options": [
+        "when policy reaches maturation",
+        "upon death of the first insured",
+        "upon death of the last insured",
+        "when one of the insureds becomes disabled and no longer able to make premium payments"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A Joint Life and Survivor policy pays benefits after the death of the last insured."
+    },
+    {
+      "id": 51,
+      "question": "Which of these characteristics is consistent with a Straight Life policy?",
+      "options": [
+        "Owner can adjust both premium and death benefit",
+        "Premiums are lower for the first five years, increase the sixth year, then levels off for the remaining length of the contract",
+        "Owner has the option of converting to term insurance",
+        "Premiums are payable for as long as there is insurance coverage in force"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Straight whole life provides permanent level protection with level premiums from the time the policy is issued until the insured's death (or age 100)."
+    },
+    {
+      "id": 52,
+      "question": "Which statement is true concerning a Variable Universal Life policy?",
+      "options": [
+        "Policyowner controls where the investment will go and selects the amount of the premium payment",
+        "Policyowner has no say where the investment will go but can choose the premium mode",
+        "The investment vehicle for this type of policy is held in the insurer's general portfolio",
+        "The death benefit can vary but the policyowner has no say in the premium amount paid"
+      ],
+      "correctAnswer": 0,
+      "explanation": "With Variable Universal Life, the policyowner controls the investment of cash values and selects the timing and amount of premium payments."
+    },
+    {
+      "id": 53,
+      "question": "Which of these is considered a statement that is assured to be true in every respect?",
+      "options": [
+        "Estoppel",
+        "Warranty",
+        "Guarantee",
+        "Representation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A warranty is a statement that is considered guaranteed to be true."
+    },
+    {
+      "id": 54,
+      "question": "Insurance policies offered on a \"take it or leave it\" basis are considered what?",
+      "options": [
+        "Conditional Contracts",
+        "Aleatory Contracts",
+        "Unilateral Contracts",
+        "Contracts of Adhesion"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Because insurance policies are offered on a \"take it or leave it\" basis they are referred to as Contracts of Adhesion."
+    },
+    {
+      "id": 55,
+      "question": "Which of these is NOT considered to be an element of an insurance contract?",
+      "options": [
+        "the offer",
+        "acceptance",
+        "negotiating",
+        "consideration"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The elements of an insurance contract do not include negotiating."
+    },
+    {
+      "id": 56,
+      "question": "Who makes the legally enforceable promises in a unilateral contract?",
+      "options": [
+        "Beneficiary",
+        "Insurer",
+        "Insured",
+        "Applicant"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Under a unilateral insurance policy, the insurance company makes the legally enforceable promises."
+    },
+    {
+      "id": 57,
+      "question": "A Business Overhead Expense policy would cover which of the following if a business owner becomes disabled?",
+      "options": [
+        "Contributions to employee retirement plans",
+        "Utilities and office rent",
+        "Owner's salary",
+        "Meals and entertainment"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Business Overhead Expense policy is designed to cover certain overhead expenses (rent, taxes, utility bills, employee's salaries etc) that continue when the business owner is disabled."
+    },
+    {
+      "id": 58,
+      "question": "Which statement is TRUE regarding a group accident & health policy issued to an employer?",
+      "options": [
+        "Neither the employer or employee are policyowners",
+        "The employer is issued a certificate of coverage and each employee receives a policy",
+        "The employer is the policyowner and each employee receives a certificate of coverage",
+        "Both the employer and employee are policyowners"
+      ],
+      "correctAnswer": 2,
+      "explanation": "With a group accident and health plan, a master policy is issued to the employer and each employee receives a certificate of insurance."
+    },
+    {
+      "id": 59,
+      "question": "Many small business owners worry how their business would survive financially if the owner becomes disabled. The policy which BEST addresses this concern is",
+      "options": [
+        "Business Overhead Expense",
+        "Disability Income",
+        "Key Employee Life",
+        "Contributory"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A Business Overhead Expense policy's purpose is to cover certain overhead expenses that continue when the businessowner is disabled."
+    },
+    {
+      "id": 60,
+      "question": "J has an Accidental Death and Dismemberment policy with a principal sum of $50,000. While trimming the hedges, J cuts off one of his fingers. What is the MAXIMUM J will receive from his policy?",
+      "options": [
+        "$0",
+        "$100,000",
+        "$25,000",
+        "$50,000"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The maximum sum payable would be the capital sum, or $25,000."
+    }
+  ]
+}

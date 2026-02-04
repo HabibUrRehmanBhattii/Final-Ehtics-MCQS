@@ -1,0 +1,247 @@
+{
+  "topic": "Flashcards - Policy Provisions & Health/Group (Set 2 - Part 7)",
+  "topicId": "flashcards-advanced-2-part-7",
+  "description": "Part 7 of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
+  "questions": [
+    {
+      "id": 121,
+      "question": "Which of the following is NOT an unfair claim settlement practice?",
+      "options": [
+        "Failing to acknowledge and act promptly with respect to an insurance claim",
+        "Compelling an insured to initiate a lawsuit by offering less on an insurance claim",
+        "Failing to accept or deny a claim within reasonable time after proof of loss is submitted",
+        "Needing written documentation of claim details"
+      ],
+      "correctAnswer": 3,
+      "explanation": "All of these are unfair claim settlement practices except 'Needing written documentation of claim details'."
+    },
+    {
+      "id": 122,
+      "question": "Which of the following is considered an accurate statement of an unfair trade practice?",
+      "options": [
+        "Coercion involves making a malicious statement about the financial condition of an insurance company",
+        "Twisting involves an agent using misrepresentation to convince a policyowner to cancel their current policy so that they can purchase a new life insurance policy with another company",
+        "No more than 25% of an agent's insurance sales are allowed to come from controlled business",
+        "Rebating occurs when someone intentionally deceives another with the intent to gain financially"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Twisting is a misrepresentation made by an agent in order to induce a policyholder to lapse a policy and switch insurance companies. It's considered an unfair trade practice."
+    },
+    {
+      "id": 123,
+      "question": "Which of the following documents must an agent submit to the replacing insurance company during the replacement of an existing life insurance policy?",
+      "options": [
+        "Notice to existing and replacing insurers of intention to replace",
+        "A list of all policies the agent has replaced in the last 3 years",
+        "A statement made by the agent that NAIC guidelines have been met during the replacement process",
+        "A copy of the agent's insurance license"
+      ],
+      "correctAnswer": 0,
+      "explanation": "When replacing an existing life insurance policy, an agent must submit notice to existing insurer and replacing insurer of intentions."
+    },
+    {
+      "id": 124,
+      "question": "According to Florida law, an additional lapse notice must be issued after the standard grace period has expired for policyowners age",
+      "options": [
+        "21 and under",
+        "59 1/2 or older",
+        "64 years or older",
+        "69 or older"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In Florida, insurers are required to issue an additional lapse notice after the applicable statutory grace period has expired for policyholders 64 years of age or older."
+    },
+    {
+      "id": 125,
+      "question": "In Florida, deceptive advertising is considered to be",
+      "options": [
+        "a form of coercion",
+        "a form of sliding",
+        "a form of rebating",
+        "a form of misrepresentation"
+      ],
+      "correctAnswer": 3,
+      "explanation": "According to Florida law, deceptive advertising is considered a form of misrepresentation."
+    },
+    {
+      "id": 126,
+      "question": "According to Florida's rules on disclosure, a life insurance applicant is expected to be provided with",
+      "options": [
+        "a Certificate of Coverage and Buyer's Guide",
+        "a Summary Statement and Buyer's Guide",
+        "a Buyer's Guide and Policy Summary",
+        "a Written Comparison and Policy Summary"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Florida's rules on disclosure require an insurance company to provide a purchaser of life insurance with a Buyer's Guide and a Policy Summary."
+    },
+    {
+      "id": 127,
+      "question": "The guarantee of insurability option provides a long-term care policyowner the ability to",
+      "options": [
+        "buy additional coverage at a later date",
+        "add the insured's spouse at a later date",
+        "pay the same premium for life",
+        "cancel the policy at anytime"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In long-term care insurance, the guarantee of insurability option provides the insured with the ability to purchase additional insurance at a later date without evidence of insurability."
+    },
+    {
+      "id": 128,
+      "question": "Which of the following requires insurers to disclose when an applicant's consumer or credit history is being investigated",
+      "options": [
+        "1970 - Fair Credit Reporting Act",
+        "1959 - Intervention by (SEC) The Securities and Exchange Commission",
+        "1999 - Financial Services Modernization Act",
+        "1945 - The McCarran-Ferguson Act"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Fair Credit Reporting Act requires the fair and accurate reporting of information about consumers. Insurers must inform applicants about any investigations being made. If the report is used to deny coverage or charge higher rates, the insurer must provide the applicant the name of the credit reporting agency conducting the investigation."
+    },
+    {
+      "id": 129,
+      "question": "Insurable interest must exist at what time?",
+      "options": [
+        "At the time of application",
+        "At the time of delivery",
+        "At the time of death",
+        "At all times"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Insurable interest must exist upon issuance of a life or health insurance contract (time of application)."
+    },
+    {
+      "id": 130,
+      "question": "What is the primary factor that determines the benefits paid under a disability income policy?",
+      "options": [
+        "Education level",
+        "Wages",
+        "Type of occupation",
+        "Age"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The major factor in determining the benefit amount paid under a disability income policy is wages."
+    },
+    {
+      "id": 131,
+      "question": "A disability elimination period is best described as a",
+      "options": [
+        "time deductible",
+        "dollar deductible",
+        "eligibility period",
+        "probation period"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The best way to describe a disability elimination period is a 'time deductible'."
+    },
+    {
+      "id": 132,
+      "question": "Bryce purchased a disability income policy with a rider that guarantees him the option of purchasing additional amounts of coverage at predetermined times without requiring to provide evidence of insurability. What kind of rider is this?",
+      "options": [
+        "Guaranteed insurability rider",
+        "Additional coverage rider",
+        "Paid-up option rider",
+        "Extended insurability rider"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A guaranteed insurability rider guarantees the insured the option of purchasing additional amounts of disability income coverage at predetermined times without requiring the insured to provide evidence of insurability."
+    },
+    {
+      "id": 133,
+      "question": "What is issued to each employee of an employer health plan?",
+      "options": [
+        "Provision",
+        "Receipt",
+        "Policy",
+        "Certificate"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Employees covered by an employer health plan are issued an insurance certificate."
+    },
+    {
+      "id": 134,
+      "question": "In health insurance policies, a waiver of premium provision keeps the coverage in force without premium payments",
+      "options": [
+        "Whenever an insured is unable to work",
+        "During the time an insured is confined in a hospital",
+        "Following an accidental injury, but not during sickness",
+        "After an insured has become totally disabled as defined in the policy"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The waiver of premium provision keeps the coverage in force without premium payments if the insured has become totally disabled as defined in the policy."
+    },
+    {
+      "id": 135,
+      "question": "Which of the following areas of state regulation is NOT protected by the savings clause in ERISA?",
+      "options": [
+        "Insurance",
+        "Commerce",
+        "Banking",
+        "Securities"
+      ],
+      "correctAnswer": 1,
+      "explanation": "All of these areas of state regulation are protected by the savings clause in ERISA EXCEPT for commerce."
+    },
+    {
+      "id": 136,
+      "question": "Which of the following types of insureds are life insurance companies allowed to make policy rate discriminations against?",
+      "options": [
+        "People of different religions",
+        "People that are married",
+        "People that smoke",
+        "People of different races"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A life insurance company may make policy rate discriminations against people that smoke."
+    },
+    {
+      "id": 137,
+      "question": "Florida's 14-day free-look period for life insurance policies begins at the",
+      "options": [
+        "date of delivery",
+        "date of approval",
+        "date of application",
+        "date of physical examination"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In Florida, the free-look period for life insurance contracts is 14 days from policy delivery."
+    },
+    {
+      "id": 138,
+      "question": "The insurer must provide a prospective buyer with a(n)",
+      "options": [
+        "Buyer's Guide and Policy Summary",
+        "A.M. Best report",
+        "actuarial table",
+        "copy of the application"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The insurer must provide a prospective buyer with a Buyer's Guide and Policy Summary."
+    },
+    {
+      "id": 139,
+      "question": "Which of the following activities will NOT result in the suspension of an agent's license?",
+      "options": [
+        "Making malicious and false statements about an insurer",
+        "Replacing an insurance policy from one insurer to another based on misrepresentation",
+        "Working for a foreign insurer",
+        "Misrepresenting any fact about an insurance policy"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Working for a foreign insurance company does not result in the revocation or suspension of an agent's license."
+    },
+    {
+      "id": 140,
+      "question": "Under an Individual Disability policy in Florida, what is the minimum schedule of time in which claims must be made to an insured?",
+      "options": [
+        "Annually",
+        "Weekly",
+        "Monthly",
+        "Daily"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Claims on an individual disability policies must be paid out at monthly intervals, at minimum."
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "topic": "Flashcards - Policy Provisions & Health/Group (Set 2 - Part 1)",
+  "topicId": "flashcards-advanced-2-part-1",
+  "description": "Part 1 of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What kind of life insurance beneficiary requires his/her consent when a change of beneficiary is made?",
+      "options": [
+        "Irrevocable beneficiary",
+        "Tertiary beneficiary",
+        "Primary beneficiary",
+        "Revocable beneficiary"
+      ],
+      "correctAnswer": 0,
+      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+    },
+    {
+      "id": 2,
+      "question": "When can a policyowner change a revocable beneficiary?",
+      "options": [
+        "Anytime",
+        "After the consent of the current beneficiary",
+        "Never",
+        "Only if primary beneficiary dies"
+      ],
+      "correctAnswer": 0,
+      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+    },
+    {
+      "id": 3,
+      "question": "M purchased an Accidental Death and Dismemberment (AD&D) policy and named his son as beneficiary. M has the right to change the beneficiary designation at anytime. What type of beneficiary is his son?",
+      "options": [
+        "Tertiary",
+        "Irrevocable",
+        "Revocable",
+        "Contingent"
+      ],
+      "correctAnswer": 2,
+      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+    },
+    {
+      "id": 4,
+      "question": "How would a contingent beneficiary receive the policy proceeds in an Accidental Death and Dismemberment (AD&D) policy?",
+      "options": [
+        "If the primary beneficiary is a minor at the time of the insured's death",
+        "If the primary beneficiary dies before the insured",
+        "If the insured died of accidental causes",
+        "If the insured died of natural causes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A contingent beneficiary will receive the policy proceeds if the primary beneficiary dies before the insured's death."
+    },
+    {
+      "id": 5,
+      "question": "Which statement regarding the Change of Beneficiary provision is true?",
+      "options": [
+        "The beneficiary can only be changed with the consent of the insurer",
+        "The policyowner can change the beneficiary",
+        "The insured can change the beneficiary",
+        "A beneficiary change is subject to underwriting procedures"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A policyowner may change a beneficiary at any time. However, consent may be needed by the current beneficiary if designated as irrevocable."
+    },
+    {
+      "id": 6,
+      "question": "A policyowner would like to change the beneficiary on a Life insurance policy and make the change permanent. Which type of designation would fulfill this need?",
+      "options": [
+        "Revocable",
+        "Contingent",
+        "Irrevocable",
+        "Primary"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+    },
+    {
+      "id": 7,
+      "question": "Which statement is true regarding a minor beneficiary?",
+      "options": [
+        "Normally, the death proceeds are required to be held in trust until the beneficiary reaches the age of 21",
+        "Normally, a guardian is required to be appointed in the Beneficiary clause of the contract",
+        "The minor must pay the debts of the insured's estate before receiving any of the proceeds",
+        "The minor is entitled to receive the death proceeds immediately"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In most cases, insurers require that a guardian be appointed in the Beneficiary clause of the policy or that a guardian be designated in the will."
+    },
+    {
+      "id": 8,
+      "question": "What is the underlying concept regarding level premiums?",
+      "options": [
+        "Level premiums build cash value quicker in the early years",
+        "The early years are charged more than what is needed",
+        "The early years are charged less than what is needed",
+        "Level premiums can only be paid annually"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The concept of level premiums charges more than needed in early years."
+    },
+    {
+      "id": 9,
+      "question": "A policyowner is able to choose the frequency of premium payments through what policy feature?",
+      "options": [
+        "Consideration",
+        "Payor benefit",
+        "Premium Mode",
+        "Assignment provision"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Premium Mode is the feature that allows the policyowner to select the timing of premium payment, such as monthly, quarterly, annually etc."
+    },
+    {
+      "id": 10,
+      "question": "A policyowner is allowed to pay premiums more than once a year under which provision?",
+      "options": [
+        "Insuring",
+        "Consideration",
+        "Payor",
+        "Mode of Premium"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The Mode of Premium provision permits an insured to pay premiums more than once every year."
+    },
+    {
+      "id": 11,
+      "question": "A life insurance application must be signed by all of these EXCEPT",
+      "options": [
+        "the policyowner",
+        "the agent",
+        "the insured (if an adult)",
+        "beneficiary"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A beneficiary is not required to sign the application."
+    },
+    {
+      "id": 12,
+      "question": "Any changes made on an insurance application requires the initials of whom?",
+      "options": [
+        "Insured",
+        "Agent",
+        "Applicant",
+        "Beneficiary"
+      ],
+      "correctAnswer": 2,
+      "explanation": "When an applicant makes a mistake, the applicant must initial the correction."
+    },
+    {
+      "id": 13,
+      "question": "T applies for a life insurance policy and is told by the producer that the insurer is bound to the coverage as of the date of the application or medical examination, whichever is later, provided that T is an acceptable risk. What item is given to T?",
+      "options": [
+        "Binding receipt",
+        "Conditional receipt",
+        "Warranty receipt",
+        "Backdated receipt"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A conditional receipt binds coverage as of the date of application or medical exam, provided the insured is acceptable."
+    },
+    {
+      "id": 14,
+      "question": "M completes an application for life insurance but does not pay the initial premium. All of these actions must occur before M's policy goes into effect EXCEPT",
+      "options": [
+        "policy is delivered",
+        "free-look period has expired",
+        "insurance company issues policy",
+        "initial premium is collected"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The policy will go into effect after delivery, issuance, and premium collection; the free-look period expiration is not required beforehand."
+    },
+    {
+      "id": 15,
+      "question": "A noncontributory group term life plan is characterized by",
+      "options": [
+        "the entire cost of the plan is paid for by the employer",
+        "the entire cost of the plan is paid for by the employee",
+        "the cost of the plan is shared by both employer and employee",
+        "both employer and employee must provide evidence of insurability"
+      ],
+      "correctAnswer": 0,
+      "explanation": "When an employer provides noncontributory group term life insurance, the employer pays the entire cost of the plan."
+    },
+    {
+      "id": 16,
+      "question": "Who is NOT required to sign a life insurance application?",
+      "options": [
+        "Adult insured",
+        "Policyowner",
+        "Agent",
+        "Beneficiary"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The beneficiary is not required to sign the application."
+    },
+    {
+      "id": 17,
+      "question": "What action should a producer take if the initial premium is NOT submitted with the application?",
+      "options": [
+        "Keep the application until premium is paid",
+        "Forward the application to the insurer after giving the applicant a binding receipt",
+        "Forward the application to the insurer without the initial premium",
+        "Forward the application to the insurer after giving the applicant a conditional receipt"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The producer should submit the application to the insurer without the premium; the policy is not valid until initial premium is collected."
+    },
+    {
+      "id": 18,
+      "question": "On August 6, D submitted an application for a $50,000 Life Insurance policy and did not pay the initial premium. On August 18, D went to his doctor complaining of chest pains and some tests were given. The life policy was delivered by the producer on August 20 and D explains what had recently taken place with the doctor. What action should the producer then take?",
+      "options": [
+        "Collect initial premium",
+        "Collect initial premium along with a signed health statement",
+        "Explain to the applicant the policy is no longer in effect due to change in health condition",
+        "Collect initial premium and leave a binding receipt"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Deliver the policy and obtain the premium payment along with a signed health statement."
+    },
+    {
+      "id": 19,
+      "question": "If its employees share in the cost of insurance, what type of group life insurance plan would a corporation have?",
+      "options": [
+        "Noneligible",
+        "Noncontributory",
+        "Eligible",
+        "Contributory"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Employees share in the premium costs with contributory plans."
+    },
+    {
+      "id": 20,
+      "question": "N, age 50, recently bought an annuity that will pay a guaranteed $2,000/month at age 70 for life. What type of annuity did N purchase?",
+      "options": [
+        "Fixed Period",
+        "Fixed Deferred",
+        "Fixed Immediate",
+        "Fixed Variable"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Fixed Deferred annuity pays out a fixed amount for life starting at a future date."
+    }
+  ]
+}

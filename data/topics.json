@@ -19,18 +19,90 @@
         {
           "id": "practice-2",
           "name": "Practice Test 2",
-          "description": "Coming soon - Additional ethics scenarios",
-          "questionCount": 0,
-          "dataFile": "data/llqp-ethics/practice-2.json",
-          "status": "coming-soon"
+          "description": "Additional ethics scenarios",
+          "questionCount": 20,
+          "dataFile": "data/llqp-ethics/practice-2.json"
         },
         {
           "id": "practice-3",
           "name": "Practice Test 3",
-          "description": "Coming soon - Advanced ethics questions",
-          "questionCount": 0,
-          "dataFile": "data/llqp-ethics/practice-3.json",
-          "status": "coming-soon"
+          "description": "LLQP Scenario-Heavy Ethics + Legal MCQs",
+          "questionCount": 10,
+          "dataFile": "data/llqp-ethics/practice-3.json"
+        }
+      ]
+    },
+    {
+      "id": "flashcards-basic",
+      "name": "Flashcards - Beneficiaries & Policy Basics",
+      "slug": "flashcards-basic",
+      "description": "Quick flashcards to reinforce beneficiary rules and common policy provisions.",
+      "color": "#8b5cf6",
+      "icon": "🧠",
+      "status": "active",
+      "practiceTests": [
+        {
+          "id": "flash-1",
+          "name": "Flashcards Set 1",
+          "description": "Beneficiary rules & basic policy provisions",
+          "questionCount": 20,
+          "dataFile": "data/flashcards/flashcards-1.json"
+        },
+        {
+          "id": "flash-2-part-1",
+          "name": "Flashcards Set 2 - Part 1",
+          "description": "Part 1 — Policy provisions, group & health insurance basics",
+          "questionCount": 20,
+          "dataFile": "data/flashcards/flashcards-2-part-1.json"
+        },
+        {
+          "id": "flash-2-part-2",
+          "name": "Flashcards Set 2 - Part 2",
+          "description": "Part 2 — Policy provisions, group & health insurance basics",
+          "questionCount": 20,
+          "dataFile": "data/flashcards/flashcards-2-part-2.json"
+        },
+        {
+          "id": "flash-2-part-3",
+          "name": "Flashcards Set 2 - Part 3",
+          "description": "Part 3 — Policy provisions, group & health insurance basics",
+          "questionCount": 20,
+          "dataFile": "data/flashcards/flashcards-2-part-3.json"
+        },
+        {
+          "id": "flash-2-part-4",
+          "name": "Flashcards Set 2 - Part 4",
+          "description": "Part 4 — Policy provisions, group & health insurance basics",
+          "questionCount": 20,
+          "dataFile": "data/flashcards/flashcards-2-part-4.json"
+        },
+        {
+          "id": "flash-2-part-5",
+          "name": "Flashcards Set 2 - Part 5",
+          "description": "Part 5 — Policy provisions, group & health insurance basics",
+          "questionCount": 20,
+          "dataFile": "data/flashcards/flashcards-2-part-5.json"
+        },
+        {
+          "id": "flash-2-part-6",
+          "name": "Flashcards Set 2 - Part 6",
+          "description": "Part 6 — Policy provisions, group & health insurance basics",
+          "questionCount": 20,
+          "dataFile": "data/flashcards/flashcards-2-part-6.json"
+        },
+        {
+          "id": "flash-2-part-7",
+          "name": "Flashcards Set 2 - Part 7",
+          "description": "Part 7 — Policy provisions, group & health insurance basics",
+          "questionCount": 20,
+          "dataFile": "data/flashcards/flashcards-2-part-7.json"
+        },
+        {
+          "id": "flash-2-part-8",
+          "name": "Flashcards Set 2 - Part 8",
+          "description": "Part 8 — Policy provisions, group & health insurance basics",
+          "questionCount": 10,
+          "dataFile": "data/flashcards/flashcards-2-part-8.json"
         }
       ]
     },

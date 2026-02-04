@@ -1,0 +1,247 @@
+{
+  "topic": "Flashcards - Policy Provisions & Health/Group (Set 2 - Part 5)",
+  "topicId": "flashcards-advanced-2-part-5",
+  "description": "Part 5 of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
+  "questions": [
+    {
+      "id": 81,
+      "question": "An insured covered by life insurance has just died. What will happen if the primary beneficiary had already died before the insured and contingent beneficiary?",
+      "options": [
+        "Proceeds will go to the primary beneficiary's estate",
+        "Probate will decide who receives proceeds",
+        "Proceeds will go to the contingent beneficiary",
+        "Proceeds will go to the insured's estate"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In this situation, the contingent beneficiary will receive the proceeds."
+    },
+    {
+      "id": 82,
+      "question": "N is covered by a Term Life policy and does not make the required premium payment which was due August 1. N dies September 15. What action will the insurer take?",
+      "options": [
+        "Claim will be denied",
+        "Claim will be paid in full",
+        "Claim will be partially paid",
+        "Claim will be decided by an arbitrator"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In this situation, the insurance company will deny the claim, as the policy would have lapsed due to nonpayment by September 15."
+    },
+    {
+      "id": 83,
+      "question": "F needs life insurance that provides coverage for only a limited amount of time with a death benefit that changes regularly according to a schedule. What kind of policy is needed?",
+      "options": [
+        "Level term policy",
+        "Whole life policy",
+        "Limited-pay policy",
+        "Decreasing term policy"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A life insurance policy written for a specified period of time with a death benefit that changes regularly according to a schedule is a decreasing term policy."
+    },
+    {
+      "id": 84,
+      "question": "Q would like to purchase $100,000 of permanent protection on his wife and $50,000 of Term coverage on himself under the same policy. What kind of policy should Q purchase?",
+      "options": [
+        "Joint policy",
+        "Joint survivor policy",
+        "Whole life policy with other insured rider",
+        "Whole life policy with a Guaranteed Insurability option"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In this situation, a whole life policy with an other insured rider would be appropriate."
+    },
+    {
+      "id": 85,
+      "question": "E and F are business partners. Each takes out a $500,000 life insurance policy on the other, naming himself as primary beneficiary. E and F eventually terminate their business, and four months later E dies. Although E was married with three children at the time of death, the primary beneficiary is still F. However, an insurable interest no longer exists. Where will the proceeds from E's life insurance policy be directed to?",
+      "options": [
+        "F",
+        "The dissolved partnership",
+        "E's family",
+        "E's estate"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In this situation, the proceeds from E's life insurance policy will go to F. Insurable interest only needs to exist at the time of application."
+    },
+    {
+      "id": 86,
+      "question": "Under what system do a group of doctors and hospitals in a designated area contract with an insurer to provide services at a prearranged cost to the insured?",
+      "options": [
+        "HMO",
+        "PPO",
+        "EPO",
+        "PLHSO"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Under a Preferred Provider Organization (PPO), a group of doctors and hospitals in a designated area contract with an insurer to provide services at a prearranged cost to the insured."
+    },
+    {
+      "id": 87,
+      "question": "Which of these statements is INCORRECT regarding a Preferred Provider Organization (PPO)?",
+      "options": [
+        "PPO's normally have more providers to chose from as compared to an HMO",
+        "Prices are negotiated in advance for PPO providers",
+        "In-network PPO providers offer members better coverage of incurred expenses",
+        "PPO's are NOT a type of managed care systems"
+      ],
+      "correctAnswer": 3,
+      "explanation": "PPO's ARE considered to be a managed health care system."
+    },
+    {
+      "id": 88,
+      "question": "P is a Major Medical policyowner who is hospitalized as a result of injuries sustained from participating in a carjacking. How will the insurer most likely handle this claim?",
+      "options": [
+        "Claim will be denied and policy terminated",
+        "Claim will be partially paid",
+        "Claim will be paid",
+        "Claim will be denied"
+      ],
+      "correctAnswer": 3,
+      "explanation": "If a person is injured while committing an illegal act, health insurance will not cover the expense of the injury."
+    },
+    {
+      "id": 89,
+      "question": "A Disability Income policyowner suffers a disability which was due to the same cause as a previous disability. Both disabilities occurred within a five-month period. The insurer may cover the second disability without a new elimination period under the",
+      "options": [
+        "Residual Disability provision",
+        "Presumptive Disability provision",
+        "Recurrent Disability provision",
+        "Partial Disability provision"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The insurer will provide the same benefits without a new elimination period under the Recurrent Disability provision."
+    },
+    {
+      "id": 90,
+      "question": "Which of these actions should a producer take when submitting an insurance application to an insurer?",
+      "options": [
+        "Issue a binding receipt to applicant if no initial premium is submitted",
+        "Disclose to the applicant the amount of commissions to be earned on this transaction",
+        "Inform insurer of relevant information not included on the application",
+        "Arrange for a copy of the Attending Physician Statement (APS) to be sent to the producer"
+      ],
+      "correctAnswer": 2,
+      "explanation": "One of the actions a producer should take when submitting an application is to advise the insurer of any other relevant information not contained in the application."
+    },
+    {
+      "id": 91,
+      "question": "To receive a percentage of the policy face value, an owner of a life policy may sell the policy to a(n)",
+      "options": [
+        "viatical settlement provider",
+        "insurance company",
+        "viator",
+        "insured"
+      ],
+      "correctAnswer": 0,
+      "explanation": "To receive a percentage of the policy face value, an owner of a life policy may sell the policy to a viatical settlement provider."
+    },
+    {
+      "id": 92,
+      "question": "Which type of life policy contains a monthly mortality charge as well as self-directed investment choices?",
+      "options": [
+        "Joint Life",
+        "Adjustable Life",
+        "Variable Universal Life",
+        "Universal Life"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Variable Universal Life is comprised of monthly mortality charges and self directed investment choices."
+    },
+    {
+      "id": 93,
+      "question": "C is a key employee at ABC Incorporated. If a Key Employee life policy is purchased on her life, which of these statements would be true?",
+      "options": [
+        "ABC is the policyowner, C is the insured, and her husband is the beneficiary",
+        "ABC is the policyowner, C is the insured, and ABC is the beneficiary",
+        "C is the policyowner and the insured, and ABC is the beneficiary",
+        "C is the policyowner, the insured, and the beneficiary"
+      ],
+      "correctAnswer": 1,
+      "explanation": "ABC is the policyowner, C is the insured, and ABC is the beneficiary."
+    },
+    {
+      "id": 94,
+      "question": "P died five years after purchasing a life policy. While investigating the claim, the insurer discovered material misrepresentations made by P during the application process. Which of these actions will the insurer take?",
+      "options": [
+        "Beneficiary will be denied the claim",
+        "Beneficiary will be denied the claim and refunded all paid premiums",
+        "Beneficiary will be paid the Death Benefit",
+        "Beneficiary will be paid a partial Death Benefit"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The incontestable clause prevents the insurer from canceling the contract even for a material misrepresentation."
+    },
+    {
+      "id": 95,
+      "question": "A policy loan is made possible by which of these life insurance policy features?",
+      "options": [
+        "Policy loan clause",
+        "Cash value provision",
+        "Owner's rights provision",
+        "Consideration clause"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Cash value provision makes a policy loan possible."
+    },
+    {
+      "id": 96,
+      "question": "Which factors are taken into consideration when an insurance company determines the premium rate for a Whole Life policy on an applicant?",
+      "options": [
+        "Geographical location",
+        "Source of income",
+        "Risk classification",
+        "Marital status"
+      ],
+      "correctAnswer": 2,
+      "explanation": "To determine the premium rate on a Whole Life policy, an insurance company will consider the risk classification of the applicant."
+    },
+    {
+      "id": 97,
+      "question": "Which statement is TRUE in regards to a policy loan?",
+      "options": [
+        "Past-due interest payments not paid after 3 months will void the policy",
+        "Past-due interest on a policy loan is added to the total debt",
+        "Insurance companies can send delinquent interest accounts to a collection agency",
+        "Insurance companies can charge an interest rate based on the policyowner's credit report"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Interest on a loan which is not paid when due is added to the total debt."
+    },
+    {
+      "id": 98,
+      "question": "Which of these is NOT a characteristic of a Health Reimbursement Arrangement (HRA)?",
+      "options": [
+        "Employee funds the HRA entirely",
+        "Employer funds the HRA entirely",
+        "HRA's can be offered with other health plans",
+        "HRA's allow reimbursement for eligible medical expenses"
+      ],
+      "correctAnswer": 0,
+      "explanation": "HRA plans are employer-funded medical reimbursement plans"
+    },
+    {
+      "id": 99,
+      "question": "Which of these statements concerning an individual Disability Income policy is TRUE?",
+      "options": [
+        "Premiums are normally tax-deductible",
+        "Age of the insured determines the amount of the benefits",
+        "Normally includes an Elimination period",
+        "Benefits are normally taxable"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Disability Income policies typically contain an Elimination period."
+    },
+    {
+      "id": 100,
+      "question": "Periodic health claim payments MUST be made at least",
+      "options": [
+        "monthly",
+        "weekly",
+        "daily",
+        "annually"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Under an individual health policy, periodic claim payments must be made at least monthly."
+    }
+  ]
+}

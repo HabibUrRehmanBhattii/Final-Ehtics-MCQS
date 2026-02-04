@@ -1,0 +1,247 @@
+{
+  "topic": "Flashcards - Policy Provisions & Health/Group (Set 2 - Part 4)",
+  "topicId": "flashcards-advanced-2-part-4",
+  "description": "Part 4 of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
+  "questions": [
+    {
+      "id": 61,
+      "question": "The federal income tax treatment of employer-provided group health insurance can be accurately described as",
+      "options": [
+        "Employee's coverage paid for by the employer is considered taxable income to the employee",
+        "Employee's coverage paid for by the employer is tax-deductible to the employer as a business expenditure",
+        "Employer is given tax credits for contributions made to an employer-provided group health plan",
+        "Benefits are taxable to the employee"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Premiums paid by an employer for an employee's coverage are deductible by the employer as a business expense."
+    },
+    {
+      "id": 62,
+      "question": "The reason for a business having a Business Overhead Expense Disability Plan is to cover",
+      "options": [
+        "the cost of providing group disability insurance to the employees",
+        "fixed business expenses",
+        "the owner's loss of income",
+        "all business-related expenses and salaries"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The reason for a business having a Business Overhead Expense Disability Plan is to cover the fixed business costs in the event the owner becomes disabled."
+    },
+    {
+      "id": 63,
+      "question": "J is a subscriber to a plan which contracts with doctors and hospitals to provide medical benefits at a preset price. What type of plan does J belong to?",
+      "options": [
+        "Multiple Employer Welfare Arrangement",
+        "Multiple Employer Trust",
+        "Health Maintenance Organization",
+        "Co-op Arrangement"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A Health Maintenance Organization (HMO) contracts with doctors and hospitals to provide medical benefits to subscribers at a predetermined price."
+    },
+    {
+      "id": 64,
+      "question": "M is insured under a basic Hospital/Surgical Expense policy. A physician performs surgery on M. What determines the claim M is eligible for?",
+      "options": [
+        "Claim payment is equal to physician's actual charges",
+        "Claim payment is negotiated between physician and patient",
+        "Determined by the schedule of benefits from the hospital",
+        "Determined by the terms of the policy"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Under a basic hospital/surgical expense policy, the amount of the patient's claim payment will be based on the terms of the policy."
+    },
+    {
+      "id": 65,
+      "question": "Which of these options can an individual use their medical flexible spending account to pay for?",
+      "options": [
+        "Vitamins and supplements",
+        "Prescription drugs",
+        "Household expenditures",
+        "Cosmetic procedures"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Prescription drugs are an allowable expense when paid for by a medical flexible spending account."
+    },
+    {
+      "id": 66,
+      "question": "Major Medical policies typically",
+      "options": [
+        "pay 100% of covered expenses",
+        "contain a deductible and coinsurance",
+        "require use of in-network facilities only",
+        "do not contain a deductible and coinsurance"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Major Medical policies typically contain a deductible and coinsurance."
+    },
+    {
+      "id": 67,
+      "question": "The first portion of a covered Major Medical insurance expense that the insured is required to pay is called the",
+      "options": [
+        "corridor deductible",
+        "initial deductible",
+        "stop-loss deductible",
+        "coinsurance deductible"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A provision that requires the insured to pay the first portion of covered expenses before Major Medical coverage applies is called an initial deductible."
+    },
+    {
+      "id": 68,
+      "question": "Which of the following policy features allows an insured to defer current health charges to the following year's deductible instead of the current year's deducitble?",
+      "options": [
+        "Deferral provision",
+        "Carryover provision",
+        "Stop Loss provision",
+        "Corridor provision"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Carryover provision permits expenses incurred during the last three months of the calendar year to be carried over into the new year if needed to satisfy the deductible for the next year."
+    },
+    {
+      "id": 69,
+      "question": "With a Basic Medical Expense policy, what does the hospitalization expense cover?",
+      "options": [
+        "hospital room and board",
+        "hospital administration expenses",
+        "surgeon's fees",
+        "physician fees"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The hospitalization expense of a Basic Medical Expense policy pays for hospital room and board."
+    },
+    {
+      "id": 70,
+      "question": "Which Accident and Health policy provision addresses preexisting conditions?",
+      "options": [
+        "Proof of Loss",
+        "Legal Actions",
+        "Time Limit on Certain Defenses",
+        "Payment of Claims"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Time Limit on Certain Defenses provision limits the period during which an insurer can deny a claim on the basis of a preexisting condition."
+    },
+    {
+      "id": 71,
+      "question": "What should an insured do if the insurer does not send claims forms within the time period set forth in a health policy's Claims Forms provision?",
+      "options": [
+        "File a lawsuit",
+        "Submit the claim in any form",
+        "Wait for the claim form to arrive",
+        "Resubmit the request for a claim form"
+      ],
+      "correctAnswer": 1,
+      "explanation": "If forms are not furnished, the insured should submit the claim in any form, which must be accepted by the company as adequate proof of loss."
+    },
+    {
+      "id": 72,
+      "question": "When an insurance company sends a policy to the insured with an attached application, the element that makes the application part of the contract between the insured and the insurer is called the",
+      "options": [
+        "Entire Contract provision",
+        "Insuring clause",
+        "Time Limit on Certain Defense provision",
+        "Legal Contract clause"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Entire Contract provision states that the application and policy contain all provisions and constitute the entire contract."
+    },
+    {
+      "id": 73,
+      "question": "If an individual has an Accidental Death and Dismemberment policy and dies, an autopsy can be performed in all these situations EXCEPT",
+      "options": [
+        "When the cause of death is unknown",
+        "When the state prohibits this by law",
+        "When consent for the autopsy is not obtained",
+        "When foul play was a contributing factor"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Applicable state laws that prevent an autopsy take precedence."
+    },
+    {
+      "id": 74,
+      "question": "Which of the following statements BEST describes what the Legal Actions provision of an Accident and Health policy requires?",
+      "options": [
+        "An insured must settle a claim within 60 days after Proof of Loss is submitted",
+        "An insured must wait at least 30 days after Proof of Loss has been submitted before a lawsuit can be filed",
+        "An insured must wait at least 60 days after Proof of Loss has been submitted before a lawsuit can be filed",
+        "An insured must settle a claim within 30 days after Proof of Loss is submitted"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Legal Actions provision of an Accident & Health policy requires that the insured must wait at least 60 days after Proof of Loss has been submitted before a lawsuit can be filed."
+    },
+    {
+      "id": 75,
+      "question": "Which of these statements accurately describes the Waiver of Premium provision in an Accident and Health policy?",
+      "options": [
+        "Past due premiums on a lapsed policy are waived and coverage is restored",
+        "The insured is paid a monthly benefit to keep insurance premiums current in the event of total disability",
+        "Premiums are waived after the insured has been unemployed for a specified time period",
+        "Premiums are waived after the insured has been totally disabled for a specified time period"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The Waiver of Premium provision waives the payment of premiums after the insured has been totally disabled for a specified period of time."
+    },
+    {
+      "id": 76,
+      "question": "G is involved in an automobile accident as a result of driving while intoxicated and suffers numerous injuries. According to the Intoxicants and Narcotics exclusion in G's policy, who is responsible for paying the medical bills?",
+      "options": [
+        "The reinsurer",
+        "The insured",
+        "The insurer",
+        "The Guaranty Association"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In this situation, the insured is liable for the medical bills."
+    },
+    {
+      "id": 77,
+      "question": "An agent takes an individual Disability Income application, collects the appropriate premium, and issues the prospective insured a conditional receipt. The next step the insurance company will take is to",
+      "options": [
+        "issue the policy only when the initial premium check has cleared",
+        "determine if the applicant is insurable by investigating family health history",
+        "issue the policy on a standard basis",
+        "determine if the applicant is an acceptable risk by completing standard underwriting procedures"
+      ],
+      "correctAnswer": 3,
+      "explanation": "With a conditional receipt, the insurance company will complete standard underwriting procedures before making a decision about whether to insure the applicant."
+    },
+    {
+      "id": 78,
+      "question": "R had received full disability income benefits for 6 months. When he returns to work, he is only able to resume half his normal daily workload. Which provision pays reduced benefits to R while he is not working at full capacity?",
+      "options": [
+        "Residual Disability",
+        "Recurrent Disability",
+        "Presumptive Disability",
+        "Occupational Disability"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A residual disability benefit is usually a percentage of the total disability benefit for periods when the insured is unable to perform some of the duties of his/her occupation."
+    },
+    {
+      "id": 79,
+      "question": "The provision in a health insurance policy that interrupts premiums being paid to the insurer while the insured is disabled is called the",
+      "options": [
+        "Probation Period",
+        "Grace Period",
+        "Waiver of Premium",
+        "Elimination Period"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Waiver of Premium provision in a health insurance contract suspends the insurer's right to receive premiums during a covered period of disability."
+    },
+    {
+      "id": 80,
+      "question": "With Disability Income insurance, an insurance company may limit the monthly benefit amount a prospective policy holder may obtain because of the insured's",
+      "options": [
+        "monthly expenditures at the time of disability",
+        "gross income at the time of purchase",
+        "gross income at the time of disability",
+        "occupation at the time of purchase"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The insured's earned income at the time of purchase limits the amount of the monthly benefit that an insured may purchase in a Disability Income Policy."
+    }
+  ]
+}

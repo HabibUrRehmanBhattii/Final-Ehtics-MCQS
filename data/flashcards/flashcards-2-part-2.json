@@ -1,0 +1,247 @@
+{
+  "topic": "Flashcards - Policy Provisions & Health/Group (Set 2 - Part 2)",
+  "topicId": "flashcards-advanced-2-part-2",
+  "description": "Part 2 of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
+  "questions": [
+    {
+      "id": 21,
+      "question": "W is a 39-year old female who just purchased an annuity to provide income for life starting at age 60. All of these would be acceptable annuity choices EXCEPT a(n)",
+      "options": [
+        "Flexible Premium Deferred annuity",
+        "Variable annuity",
+        "Immediate annuity",
+        "Straight Life annuity"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Immediate annuities start providing income payments usually starting within 30 days from the purchase date; deferred annuities start later."
+    },
+    {
+      "id": 22,
+      "question": "Q is severely injured in an automobile accident and becomes totally disabled. How many months must Q be disabled before being able to apply for Social Security disability benefits?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correctAnswer": 2,
+      "explanation": "You are eligible to file for Social Security Disability benefits after being totally disabled for 5 months."
+    },
+    {
+      "id": 23,
+      "question": "Which plan is intended to be used by a sole proprietor and the employees of that business?",
+      "options": [
+        "SEP Plan",
+        "Keogh Plan",
+        "Individual Retirement Account (IRA)",
+        "SIMPLE Plan"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Keogh Plan may be used by a sole proprietor only if the employees of the business are included."
+    },
+    {
+      "id": 24,
+      "question": "A Key Employee policy is taken out by Company X on its vice president. Ten years later, this employee leaves Company X and begins working for Company Y. If this individual were to die and the policy is still in force and unchanged, where would the death proceeds be directed?",
+      "options": [
+        "The employee's family",
+        "Company Y",
+        "Company X",
+        "The employee's estate"
+      ],
+      "correctAnswer": 2,
+      "explanation": "With Key Person Insurance, the company purchases, owns, pays the premiums and is the beneficiary of the life insurance policy on the key person."
+    },
+    {
+      "id": 25,
+      "question": "Which statement regarding a Key Employee Life policy is NOT true?",
+      "options": [
+        "The application must be signed by the key employee",
+        "Its purpose is to prevent the financial loss that may ensue if a key employee dies",
+        "The beneficiary is named by the key employee",
+        "The company purchases, owns, pays the premiums and is the beneficiary"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The company names the beneficiary, not the employee."
+    },
+    {
+      "id": 26,
+      "question": "At what point must a life insurance applicant be informed of their rights that fall under the Fair Credit Reporting Act?",
+      "options": [
+        "Before the appointment is scheduled",
+        "Upon completion of the application",
+        "At the policy's delivery",
+        "When the insurer receives the MIB report"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An applicant for life insurance must be informed of their rights upon completion of the application."
+    },
+    {
+      "id": 27,
+      "question": "Who elects the governing body of a mutual insurance company?",
+      "options": [
+        "chairman of the board",
+        "bondholders",
+        "stockholders",
+        "policyholders"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The governing body of a mutual insurance company is elected by the policyholders."
+    },
+    {
+      "id": 28,
+      "question": "S would like to use dividends from her life insurance policy to purchase paid-up additions. All of these would be factors that determine how much coverage can be purchased EXCEPT",
+      "options": [
+        "type of life insurance",
+        "S's attained age",
+        "dividend amount used toward purchase",
+        "beneficiary's age"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The age of the beneficiary is irrelevant in determining how much paid-up additions can be purchased."
+    },
+    {
+      "id": 29,
+      "question": "When an insurer issues a policy that refuses to cover certain risks, this is referred to as a(n)",
+      "options": [
+        "elimination",
+        "exclusion",
+        "limitation",
+        "exception"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Exclusions are features of a life insurance policy stating that the policy will not cover certain risks."
+    },
+    {
+      "id": 30,
+      "question": "What is the Suicide provision designed to do?",
+      "options": [
+        "decline an applicant who is contemplating suicide",
+        "safeguard the insurer from an applicant who is contemplating suicide",
+        "protect the insurer from ever paying a claim that results from suicide",
+        "allows the insurer the option to pay a death benefit in the"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The purpose of a Suicide provision is to protect the insurer against the purchase of a policy in contemplation of suicide."
+    },
+    {
+      "id": 31,
+      "question": "The agreement in a life insurance contract that states a specific sum of money will be paid to a designated person upon an insured's death is called a(n)",
+      "options": [
+        "Entire Contract provision",
+        "Consideration clause",
+        "Insuring agreement",
+        "Assignment agreement"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The insuring clause or provision sets forth the company's basic promise to pay benefits upon the insured's death."
+    },
+    {
+      "id": 32,
+      "question": "Which of the following provisions guarantees that premiums will be waived if a Juvenile Life policyowner becomes disabled?",
+      "options": [
+        "Family Maintenance clause",
+        "Payor clause",
+        "Assignment provision",
+        "Automatic Premium Loan provision"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Payor clause ensures that premiums will be waived for a Juvenile Life policy if the policyowner becomes disabled."
+    },
+    {
+      "id": 33,
+      "question": "Which of these is NOT considered to be a right given to a policyowner?",
+      "options": [
+        "Surrendering the policy's cash value",
+        "Modify a provision in the insurance contract",
+        "Assignment of ownership",
+        "Change the beneficiary, if revocable"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Changing contract provisions is not a policyowner right."
+    },
+    {
+      "id": 34,
+      "question": "P is blinded in an industrial accident. Which provision of his life insurance policy will pay a stated benefit amount?",
+      "options": [
+        "Accelerated Benefits provision",
+        "Entire Contract",
+        "Accidental Death and Dismemberment provision",
+        "Consideration clause"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An AD&D clause provides benefits for death due to an accident or for the loss of one or more hands, feet, arms, legs, or loss of sight."
+    },
+    {
+      "id": 35,
+      "question": "B owns a Whole Life policy with a guaranteed insurability option that allows him to purchase, without evidence of insurability, stated amounts of",
+      "options": [
+        "additional Term Life coverage at any time",
+        "additional Term Life coverage at specified intervals",
+        "additional Whole Life coverage at any time",
+        "additional Whole Life coverage at specified times"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A guaranteed insurability option in a Whole Life Policy permits the policyowner to purchase, without evidence of insurability, stated amounts of Whole Life insurance at specified times."
+    },
+    {
+      "id": 36,
+      "question": "Whose life is covered on a life insurance policy that contains a payor benefit clause?",
+      "options": [
+        "Parent",
+        "Beneficiary",
+        "Child",
+        "Spouse"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A payor benefit clause is generally added to a life policy that insures the life of a juvenile. It provides continuance of insurance coverage in the event of the death or total disability of the individual responsible for the payment of premiums."
+    },
+    {
+      "id": 37,
+      "question": "The automatic premium loan provision is designed to",
+      "options": [
+        "provide a source of revenue to the insurance company",
+        "avoid a policy lapse",
+        "allow a policyowner to request a policy loan",
+        "allow a policyowner to take out additional coverage without evidence of insurability"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The purpose of the automatic premium loan is to keep the policy from lapsing."
+    },
+    {
+      "id": 38,
+      "question": "A provision in a life insurance policy that pays the policyowner an amount that does not surpass the guaranteed cash value is called the",
+      "options": [
+        "Policy Loan provision",
+        "Automatic Premium Loan provision",
+        "Accelerated Benefits provision",
+        "Consideration clause"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A policy loan will pay the policyowner an amount that, with interest, does NOT exceed the guaranteed cash value."
+    },
+    {
+      "id": 39,
+      "question": "Which policy requires an agent to register with the National Association of Securities Dealers (NASD) before selling?",
+      "options": [
+        "Variable Life",
+        "Credit Life",
+        "Universal Life",
+        "Interest-Sensitive Whole Life"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Because of the transfer of investment risk from the insurer to the policyowner, variable insurance products are considered securities contracts as well as insurance contracts."
+    },
+    {
+      "id": 40,
+      "question": "Which of the following features of a group Term Life policy enables an individual to leave the group and continue his or her insurance without providing evidence of insurability?",
+      "options": [
+        "Owner's Rights clause",
+        "Incontestable Period",
+        "Insuring Agreement",
+        "Conversion privilege"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The conversion privilege allows an individual to leave the group term plan and continue his or her insurance without providing evidence of insurability."
+    }
+  ]
+}
