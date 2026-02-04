@@ -29,9 +29,10 @@ export default {
     // API endpoint for generating explanation
     if (path === '/api/explain' && request.method === 'POST') {
       try {
-        const { question, correctAnswer, userAnswer, options } = await request.json();
+        const { question, correctAnswer, userAnswer, options, isCorrect, customPrompt } = await request.json();
 
-        const prompt = `You are an expert ethics instructor. A student answered this ethics question:
+        // Use custom prompt if provided, otherwise use default
+        const prompt = customPrompt || `You are an expert ethics instructor. A student answered this ethics question:
 
 Question: ${question}
 

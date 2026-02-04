@@ -349,7 +349,7 @@ const MCQApp = {
     document.getElementById('total-questions').textContent = totalQuestions;
 
     // Update question card
-    document.getElementById('q-num').textContent = question.id;
+    document.getElementById('q-num').textContent = questionIndex + 1;
     document.getElementById('question-text').textContent = question.question;
 
     // Render options
@@ -450,6 +450,9 @@ const MCQApp = {
       return; // Already showing answer, don't allow re-clicking
     }
 
+    // Store selected answer index for AI explanation
+    this.state.lastSelectedIndex = selectedIndex;
+
     // Highlight selected and correct answers
     const optionsContainer = document.getElementById('options-container');
     const options = optionsContainer.querySelectorAll('.option');
@@ -470,11 +473,14 @@ const MCQApp = {
     document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
     document.getElementById('explanation-text').textContent = question.explanation;
     
-    // Generate AI explanation if enabled
+    // Show AI button and hide loading message
     const aiExplanationEl = document.getElementById('ai-explanation-text');
+    const aiButton = document.getElementById('get-ai-explanation-btn');
     if (aiExplanationEl) {
-      aiExplanationEl.innerHTML = '<div class="loading-spinner">⏳ Generating AI explanation...</div>';
-      this.generateAIExplanation(question, selectedIndex, aiExplanationEl);
+      aiExplanationEl.innerHTML = '';
+    }
+    if (aiButton) {
+      aiButton.style.display = 'inline-flex';
     }
     
     answerSection.classList.remove('hidden');
@@ -485,15 +491,61 @@ const MCQApp = {
   },
 
   // Generate AI Explanation
-  async generateAIExplanation(question, selectedIndex, element) {
+  async generateAIExplanation() {
+    const question = this.getCurrentQuestion();
+    if (!question) return;
+
+    const selectedIndex = this.state.lastSelectedIndex;
+    if (selectedIndex === undefined) return;
+
+    const aiButton = document.getElementById('get-ai-explanation-btn');
+    const element = document.getElementById('ai-explanation-text');
+    
+    if (!element) return;
+
+    // Show loading state
+    if (aiButton) aiButton.disabled = true;
+    element.innerHTML = '<div class="loading-spinner">⏳ Generating AI explanation...</div>';
+
     try {
       const userAnswer = question.options[selectedIndex];
       const correctAnswer = question.options[question.correctAnswer];
+      const isCorrect = selectedIndex === question.correctAnswer;
       
       // Construct the API URL based on current location
       const apiUrl = window.location.hostname === 'localhost' 
         ? 'http://localhost:8000/api/explain'
         : `${window.location.origin}/api/explain`;
+
+      // Build appropriate prompt based on whether answer was correct
+      let prompt;
+      if (isCorrect) {
+        prompt = `You are an expert ethics instructor. A student answered this ethics question CORRECTLY:
+
+Question: ${question.question}
+
+Student's Answer: ${userAnswer}
+Correct Answer: ${correctAnswer}
+
+The student selected the CORRECT answer. Provide a brief, supportive explanation (2-3 sentences) explaining:
+1. Why this answer is correct
+2. Key concepts the student should remember
+
+Keep it educational and encouraging.`;
+      } else {
+        prompt = `You are an expert ethics instructor. A student answered this ethics question INCORRECTLY:
+
+Question: ${question.question}
+
+Student's Answer: ${userAnswer}
+Correct Answer: ${correctAnswer}
+
+The student selected an INCORRECT answer. Provide a brief, clear explanation (2-3 sentences) of:
+1. Why the correct answer is right
+2. Why the student's answer was incorrect
+
+Keep the explanation educational and supportive.`;
+      }
 
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -505,6 +557,8 @@ const MCQApp = {
           userAnswer: userAnswer,
           correctAnswer: correctAnswer,
           options: question.options,
+          isCorrect: isCorrect,
+          customPrompt: prompt,
         }),
       });
 
@@ -512,13 +566,16 @@ const MCQApp = {
       
       if (data.success) {
         element.innerHTML = `<div class="ai-explanation"><strong>🤖 AI Insights:</strong> ${data.explanation}</div>`;
+        if (aiButton) aiButton.style.display = 'none';
       } else {
         element.innerHTML = '<div class="ai-error">⚠️ AI service temporarily unavailable</div>';
         console.error('AI Error:', data.error);
+        if (aiButton) aiButton.disabled = false;
       }
     } catch (error) {
       console.error('Error generating AI explanation:', error);
       element.innerHTML = '<div class="ai-error">⚠️ Could not connect to AI service. Check your connection.</div>';
+      if (aiButton) aiButton.disabled = false;
     }
   },
 
@@ -584,7 +641,7 @@ const MCQApp = {
       return `
         <div class="list-question-card">
           <div class="list-question-header">
-            <span class="list-question-num">Question ${question.id}</span>
+            <span class="list-question-num">Question ${index + 1}</span>
             ${isBookmarked ? '<span class="bookmark-indicator">⭐</span>' : ''}
           </div>
           <div class="list-question-text">${question.question}</div>
