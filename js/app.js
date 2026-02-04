@@ -426,8 +426,8 @@ const MCQApp = {
       return `
         <button class="question-dot ${isActive ? 'active' : ''} ${isViewed ? 'viewed' : ''} ${isBookmarked ? 'bookmarked' : ''}"
                 onclick="MCQApp.jumpToQuestion(${index})"
-                aria-label="Question ${q.id}">
-          ${isBookmarked ? '⭐' : q.id}
+                aria-label="Question ${index + 1}">
+          ${isBookmarked ? '⭐' : index + 1}
         </button>
       `;
     }).join('');
