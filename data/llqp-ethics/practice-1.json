@@ -1,0 +1,148 @@
+{
+  "topic": "LLQP Ethics (Common Law)",
+  "topicId": "llqp-ethics",
+  "description": "Ultra-tricky, 'Least Wrong', Ethics-Heavy LLQP Exam-Style MCQs",
+  "examTips": "When answers feel close, choose the one that: Stops the sale, Protects the client, Creates distance between advisor and decision, Would look clean in court years later",
+  "questions": [
+    {
+      "id": 1,
+      "question": "An insurance agent recommends a permanent life insurance policy to a client. The agent will earn a significantly higher commission on this policy compared to a term policy. The agent believes the permanent policy may benefit the client in the long term, but does not disclose the commission difference.\n\nWhat is the agent's primary ethical failure?",
+      "options": [
+        "A. Recommending permanent insurance instead of term",
+        "B. Failing to act in the client's best interest",
+        "C. Failing to disclose a potential conflict of interest",
+        "D. Earning a higher commission"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Higher commission ≠ illegal. Belief ≠ proof. Undisclosed conflict = ethics breach even if advice is 'reasonable'.",
+      "difficulty": "hard",
+      "tags": ["conflict-of-interest", "disclosure", "commissions"]
+    },
+    {
+      "id": 2,
+      "question": "A client applying for life insurance omits a previous diagnosis because they believe it was minor and fully resolved. The agent becomes aware of this omission but submits the application anyway to avoid delaying coverage.\n\nWhat is the most likely consequence?",
+      "options": [
+        "A. The policy remains valid because the omission was unintentional",
+        "B. The insurer may void the policy for material misrepresentation",
+        "C. The agent acted reasonably to protect the client",
+        "D. The omission is non-material if the client believed it was irrelevant"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Materiality is decided by the insurer, not the client or agent. Intent does not erase misrepresentation.",
+      "difficulty": "hard",
+      "tags": ["misrepresentation", "materiality", "disclosure"]
+    },
+    {
+      "id": 3,
+      "question": "An elderly client appears confused during the application process. A family member insists on proceeding quickly and answers questions on the client's behalf. The agent feels uncomfortable but continues the sale.\n\nWhat should the agent have done?",
+      "options": [
+        "A. Proceed, as long as the application is accurate",
+        "B. Accept assistance from the family member",
+        "C. Delay the transaction and ensure the client fully understands",
+        "D. Complete the sale and document the interaction"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Vulnerability detected → duty to pause or stop. Documentation does not fix undue influence.",
+      "difficulty": "hard",
+      "tags": ["vulnerable-clients", "undue-influence", "capacity"]
+    },
+    {
+      "id": 4,
+      "question": "An agent replaces a client's existing policy with a new one offering additional features. The replacement increases premiums and resets the suicide and contestability periods. The client agrees after a brief explanation.\n\nWhich statement is most accurate?",
+      "options": [
+        "A. Replacement is acceptable because the client consented",
+        "B. Replacement is acceptable if new features exist",
+        "C. Replacement may be unethical if disadvantages were not fully explained",
+        "D. Replacement is unethical only if commission motivated"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Consent must be informed. Resetting exclusions = major disadvantage requiring clear disclosure.",
+      "difficulty": "hard",
+      "tags": ["policy-replacement", "informed-consent", "disclosure"]
+    },
+    {
+      "id": 5,
+      "question": "An agent fails to explain an exclusion clause because the client did not ask about it.\n\nWhich principle applies?",
+      "options": [
+        "A. Client responsibility to ask questions",
+        "B. Exclusions only need to be disclosed if requested",
+        "C. Failure to disclose material policy limitations",
+        "D. Acceptable omission if policy wording is clear"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Silence = misconduct when disclosure is required. Material limitations must be proactively explained.",
+      "difficulty": "medium",
+      "tags": ["disclosure", "exclusions", "duty-to-inform"]
+    },
+    {
+      "id": 6,
+      "question": "A client insists on proceeding with an application that includes inaccurate information. The agent warns the client but submits the application after the client signs a declaration.\n\nWhat is the agent's liability?",
+      "options": [
+        "A. None, client signed the declaration",
+        "B. Limited, because warning was provided",
+        "C. Full, because agent knowingly submitted false information",
+        "D. Shared with insurer"
+      ],
+      "correctAnswer": 2,
+      "explanation": "You cannot contract out of ethics. Knowingly submitting false info = full responsibility.",
+      "difficulty": "hard",
+      "tags": ["misrepresentation", "agent-liability", "professional-duty"]
+    },
+    {
+      "id": 7,
+      "question": "An agent delays disclosing a conflict of interest until after the policy is issued.\n\nThis disclosure is:",
+      "options": [
+        "A. Acceptable if made before the first premium",
+        "B. Acceptable if client is not harmed",
+        "C. Invalid because disclosure must be timely",
+        "D. Acceptable if documented later"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Disclosure after the decision = meaningless.",
+      "difficulty": "medium",
+      "tags": ["conflict-of-interest", "timing", "disclosure"]
+    },
+    {
+      "id": 8,
+      "question": "Which situation BEST demonstrates undue influence?",
+      "options": [
+        "A. Client requests advice",
+        "B. Advisor recommends a product",
+        "C. Client relies heavily on advisor's expertise",
+        "D. Client is pressured to act quickly while vulnerable"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Pressure + vulnerability = automatic red flag.",
+      "difficulty": "medium",
+      "tags": ["undue-influence", "vulnerable-clients", "pressure-tactics"]
+    },
+    {
+      "id": 9,
+      "question": "An agent uses the phrase 'this policy is approved by the government' to reassure a client.\n\nThis is best described as:",
+      "options": [
+        "A. Acceptable marketing language",
+        "B. Clarifying regulatory oversight",
+        "C. Misleading representation",
+        "D. Permitted if technically accurate"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Implied endorsement = prohibited sales practice.",
+      "difficulty": "medium",
+      "tags": ["misleading-statements", "marketing", "government-endorsement"]
+    },
+    {
+      "id": 10,
+      "question": "If an ethical breach occurs, which factor MOST increases regulatory severity?",
+      "options": [
+        "A. Client satisfaction",
+        "B. Agent's intent",
+        "C. Financial harm to the client",
+        "D. Length of agent's career"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Harm > intent > excuses.",
+      "difficulty": "medium",
+      "tags": ["regulatory-enforcement", "harm", "consequences"]
+    }
+  ]
+}

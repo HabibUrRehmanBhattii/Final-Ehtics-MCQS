@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LLQP and WFG Exam Preparation - Interactive MCQ Practice Platform">
+    <title>LLQP & WFG Exam Prep - MCQ Study Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div id="app">
+        
+        <!-- Home View: Topic Selection -->
+        <div id="home-view" class="view active">
+            <header class="main-header">
+                <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    🌙
+                </button>
+                <h1>📚 LLQP & WFG Exam Preparation</h1>
+                <p class="subtitle">Interactive MCQ Practice Platform</p>
+            </header>
+
+            <div class="container">
+                <div class="welcome-section">
+                    <h2>Select a Topic to Begin</h2>
+                    <p>Choose from the available study topics below. Your progress is automatically saved.</p>
+                </div>
+
+                <div id="topics-grid" class="topics-grid">
+                    <!-- Topics will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <p>&copy; 2026 LLQP & WFG Exam Prep | Built for Success</p>
+            </footer>
+        </div>
+
+        <!-- Practice Test Selection View -->
+        <div id="practice-test-view" class="view">
+            <header class="mcq-header">
+                <button id="back-to-topics-btn" class="btn-back" aria-label="Back to topics">
+                    ← Back to Topics
+                </button>
+                <h2 id="practice-topic-title" class="topic-title">Select Practice Test</h2>
+                <div class="topic-icon-header" id="practice-topic-icon">📚</div>
+            </header>
+
+            <div class="container">
+                <div class="practice-tests-info">
+                    <p class="practice-description" id="practice-description">Choose a practice test to begin. Each test contains multiple questions.</p>
+                </div>
+
+                <div id="practice-tests-grid" class="practice-tests-grid">
+                    <!-- Practice tests will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- MCQ View: Question Display -->
+        <div id="mcq-view" class="view">
+            <header class="mcq-header">
+                <button id="back-btn" class="btn-back" aria-label="Back to practice tests">
+                    ← Back to Tests
+                </button>
+                <h2 id="topic-title" class="topic-title">Topic Title</h2>
+                <div id="progress-indicator" class="progress-indicator">
+                    <span id="current-question-num">1</span> / <span id="total-questions">10</span>
+                </div>
+            </header>
+
+            <div class="container">
+                <!-- Question Navigation -->
+                <div class="question-nav">
+                    <button id="prev-question-btn" class="btn-nav" disabled>
+                        ← Previous
+                    </button>
+                    <div class="question-dots" id="question-dots">
+                        <!-- Question dots will be generated here -->
+                    </div>
+                    <button id="next-question-btn" class="btn-nav">
+                        Next →
+                    </button>
+                </div>
+
+                <!-- Question Card -->
+                <div id="question-card" class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">Question <span id="q-num">1</span></span>
+                        <button id="bookmark-btn" class="btn-bookmark" aria-label="Bookmark question">
+                            ⭐
+                        </button>
+                    </div>
+
+                    <div class="question-text" id="question-text">
+                        <!-- Question text will be inserted here -->
+                    </div>
+
+                    <div class="options-container" id="options-container">
+                        <!-- Options will be generated here -->
+                    </div>
+
+                    <div id="answer-section" class="answer-section hidden">
+                        <div class="correct-answer-badge">
+                            ✓ Correct Answer: <span id="correct-answer-text"></span>
+                        </div>
+                        
+                        <div class="explanation-box">
+                            <h3>📝 Explanation</h3>
+                            <p id="explanation-text"></p>
+                        </div>
+
+                        <button id="hide-answer-btn" class="btn-secondary">
+                            Hide Answer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filter & Actions -->
+                <div class="actions-bar">
+                    <button id="show-all-btn" class="btn-secondary">
+                        Show All Questions
+                    </button>
+                    <button id="bookmarked-only-btn" class="btn-secondary">
+                        📌 Bookmarked Only
+                    </button>
+                    <button id="reset-progress-btn" class="btn-secondary">
+                        Reset Progress
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Questions List View -->
+        <div id="list-view" class="view">
+            <header class="mcq-header">
+                <button id="back-to-mcq-btn" class="btn-back">
+                    ← Back to Practice
+                </button>
+                <h2 id="list-topic-title" class="topic-title">All Questions</h2>
+            </header>
+
+            <div class="container">
+                <div id="questions-list" class="questions-list">
+                    <!-- All questions will be listed here -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

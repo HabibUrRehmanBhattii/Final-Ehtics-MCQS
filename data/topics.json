@@ -1,0 +1,88 @@
+{
+  "topics": [
+    {
+      "id": "llqp-ethics",
+      "name": "LLQP Ethics (Common Law)",
+      "slug": "llqp-ethics",
+      "description": "Ethics-heavy exam-style MCQs covering conflicts of interest, disclosure requirements, and professional conduct.",
+      "color": "#3b82f6",
+      "icon": "⚖️",
+      "status": "active",
+      "practiceTests": [
+        {
+          "id": "practice-1",
+          "name": "Practice Test 1",
+          "description": "Ultra-tricky ethics scenarios with detailed explanations",
+          "questionCount": 10,
+          "dataFile": "data/llqp-ethics/practice-1.json"
+        },
+        {
+          "id": "practice-2",
+          "name": "Practice Test 2",
+          "description": "Coming soon - Additional ethics scenarios",
+          "questionCount": 0,
+          "dataFile": "data/llqp-ethics/practice-2.json",
+          "status": "coming-soon"
+        },
+        {
+          "id": "practice-3",
+          "name": "Practice Test 3",
+          "description": "Coming soon - Advanced ethics questions",
+          "questionCount": 0,
+          "dataFile": "data/llqp-ethics/practice-3.json",
+          "status": "coming-soon"
+        }
+      ]
+    },
+    {
+      "id": "wfg-ethics",
+      "name": "WFG Ethics Compliance Course",
+      "slug": "wfg-ethics",
+      "description": "World Financial Group ethics and compliance training questions.",
+      "color": "#10b981",
+      "icon": "🛡️",
+      "status": "coming-soon",
+      "practiceTests": []
+    },
+    {
+      "id": "wfg-aml",
+      "name": "WFG Anti-Money Laundering",
+      "slug": "wfg-aml",
+      "description": "Anti-Money Laundering and Terrorist Financing training questions.",
+      "color": "#8b5cf6",
+      "icon": "💼",
+      "status": "coming-soon",
+      "practiceTests": []
+    },
+    {
+      "id": "llqp-life",
+      "name": "LLQP Life Insurance",
+      "slug": "llqp-life",
+      "description": "Life insurance products, policies, and regulations.",
+      "color": "#f59e0b",
+      "icon": "🏥",
+      "status": "coming-soon",
+      "practiceTests": []
+    },
+    {
+      "id": "llqp-accident",
+      "name": "LLQP Accident & Sickness Insurance",
+      "slug": "llqp-accident",
+      "description": "Accident and sickness insurance coverage and claims.",
+      "color": "#ef4444",
+      "icon": "🚑",
+      "status": "coming-soon",
+      "practiceTests": []
+    },
+    {
+      "id": "llqp-segregated",
+      "name": "LLQP Segregated Funds & Annuities",
+      "slug": "llqp-segregated",
+      "description": "Segregated fund contracts and annuity products.",
+      "color": "#ec4899",
+      "icon": "📊",
+      "status": "coming-soon",
+      "practiceTests": []
+    }
+  ]
+}
