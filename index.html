@@ -27,6 +27,18 @@
                     <p>Choose from the available study topics below. Your progress is automatically saved.</p>
                 </div>
 
+                <div id="wrong-questions-section" class="wrong-questions-section">
+                    <div class="wrong-questions-card" onclick="MCQApp.startWrongQuestionsReview()">
+                        <div class="wrong-icon">❌</div>
+                        <h3>Review Wrong Answers</h3>
+                        <p>Practice questions you answered incorrectly</p>
+                        <div class="wrong-count">
+                            <span id="wrong-count-badge">0</span> Questions to Review
+                        </div>
+                        <button class="btn-start">Start Review →</button>
+                    </div>
+                </div>
+
                 <div id="topics-grid" class="topics-grid">
                     <!-- Topics will be dynamically loaded here -->
                 </div>
@@ -134,6 +146,9 @@
                     </button>
                     <button id="reset-progress-btn" class="btn-secondary">
                         Reset Progress
+                    </button>
+                    <button id="clear-wrong-btn" class="btn-secondary">
+                        Clear Wrong Answers
                     </button>
                 </div>
             </div>

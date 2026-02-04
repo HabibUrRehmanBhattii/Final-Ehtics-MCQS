@@ -150,6 +150,71 @@ body {
   color: var(--text-secondary);
 }
 
+/* ===== Wrong Questions Section ===== */
+.wrong-questions-section {
+  margin-bottom: 1.5rem;
+}
+
+.wrong-questions-card {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.wrong-questions-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.wrong-questions-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.wrong-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.wrong-questions-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.wrong-questions-card p {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-bottom: 0.75rem;
+}
+
+.wrong-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+#wrong-count-badge {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.wrong-questions-card .btn-start {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
 /* ===== Topics Grid ===== */
 .topics-grid {
   display: grid;

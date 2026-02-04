@@ -14,7 +14,10 @@ const MCQApp = {
     viewedQuestions: new Set(),
     answersRevealed: new Set(),
     currentView: 'home',
-    filterMode: 'all' // 'all' or 'bookmarked'
+    filterMode: 'all', // 'all' or 'bookmarked'
+    wrongQuestions: [],
+    lastSelectedIndex: undefined,
+    isReviewMode: false
   },
 
   // Utility: Shuffle Array (Fisher-Yates)
@@ -27,12 +30,114 @@ const MCQApp = {
     return shuffled;
   },
 
+  // Log Wrong Answer
+  logWrongAnswer(question) {
+    if (!question) return;
+    const topicId = this.state.currentTopic?.id || 'unknown-topic';
+    const testId = this.state.currentPracticeTest?.id || 'unknown-test';
+    const key = `${topicId}|${testId}|${question.id}`;
+    if (!this.state.wrongQuestions.some(q => q.key === key)) {
+      this.state.wrongQuestions.push({
+        key,
+        topicId,
+        testId,
+        questionId: question.id,
+        timestamp: new Date().toISOString()
+      });
+      this.saveWrongQuestions();
+    }
+  },
+
+  loadWrongQuestions() {
+    const data = JSON.parse(localStorage.getItem('wrong_questions') || '[]');
+    this.state.wrongQuestions = data;
+  },
+
+  saveWrongQuestions() {
+    localStorage.setItem('wrong_questions', JSON.stringify(this.state.wrongQuestions));
+  },
+
+  removeFromWrongQuestions(questionId) {
+    this.state.wrongQuestions = this.state.wrongQuestions.filter(q => q.questionId !== questionId);
+    this.saveWrongQuestions();
+    this.updateWrongQuestionsCount();
+  },
+
+  // Start Wrong Questions Review
+  async startWrongQuestionsReview() {
+    if (this.state.wrongQuestions.length === 0) {
+      alert('No wrong answers to review yet. Keep practicing!');
+      return;
+    }
+
+    // Load all wrong questions from different topics/tests
+    const wrongQuestionsToReview = [];
+    
+    for (const wrongQ of this.state.wrongQuestions) {
+      // Find the topic and test
+      const topic = this.state.topics.find(t => t.id === wrongQ.topicId);
+      if (!topic) continue;
+
+      const test = topic.practiceTests?.find(t => t.id === wrongQ.testId);
+      if (!test) continue;
+
+      // Load questions from that test
+      try {
+        const response = await fetch(test.dataFile);
+        const data = await response.json();
+        const question = data.questions.find(q => q.id === wrongQ.questionId);
+        
+        if (question) {
+          wrongQuestionsToReview.push({
+            ...question,
+            topicName: topic.name,
+            testName: test.name
+          });
+        }
+      } catch (error) {
+        console.error('Error loading question:', error);
+      }
+    }
+
+    if (wrongQuestionsToReview.length === 0) {
+      alert('Could not load wrong questions. They may have been deleted.');
+      return;
+    }
+
+    // Set up review mode
+    this.state.questions = wrongQuestionsToReview;
+    this.state.currentQuestionIndex = 0;
+    this.state.filterMode = 'all';
+    this.state.currentTopic = { name: 'Wrong Answers Review', icon: '❌' };
+    this.state.currentPracticeTest = { name: 'Review Mode' };
+    this.state.isReviewMode = true;
+    
+    // Don't track progress for review mode
+    this.state.viewedQuestions = new Set();
+    this.state.bookmarkedQuestions = new Set();
+    this.state.answersRevealed = new Set();
+    
+    this.showView('mcq');
+    this.renderQuestion();
+  },
+
+  // Clear Wrong Questions History
+  clearWrongQuestions() {
+    if (!confirm('Are you sure you want to clear all wrong answers history? This cannot be undone.')) {
+      return;
+    }
+    this.state.wrongQuestions = [];
+    this.saveWrongQuestions();
+    this.updateWrongQuestionsCount();
+    alert('Wrong answers history cleared!');
+  },
+
   // Initialize Application
   async init() {
     console.log('🚀 Initializing MCQ App...');
     this.initDarkMode();
+    this.loadWrongQuestions();
     await this.loadTopics();
-    this.loadProgress();
     this.setupEventListeners();
     this.renderTopicsGrid();
     console.log('✅ App initialized successfully');
@@ -146,10 +251,34 @@ const MCQApp = {
     document.getElementById('back-to-mcq-btn')?.addEventListener('click', () => {
       this.showView('mcq');
     });
+
+    // Clear wrong questions
+    document.getElementById('clear-wrong-btn')?.addEventListener('click', () => {
+      this.clearWrongQuestions();
+    });
+  },
+
+  // Update Wrong Questions Count
+  updateWrongQuestionsCount() {
+    const badge = document.getElementById('wrong-count-badge');
+    const section = document.getElementById('wrong-questions-section');
+    
+    if (badge) {
+      badge.textContent = this.state.wrongQuestions.length;
+    }
+    
+    if (section) {
+      if (this.state.wrongQuestions.length === 0) {
+        section.style.display = 'none';
+      } else {
+        section.style.display = 'block';
+      }
+    }
   },
 
   // Render Topics Grid
   renderTopicsGrid() {
+    this.updateWrongQuestionsCount();
     const grid = document.getElementById('topics-grid');
     if (!grid) return;
 
@@ -261,6 +390,7 @@ const MCQApp = {
     this.state.currentPracticeTest = practiceTest;
     this.state.currentQuestionIndex = 0;
     this.state.filterMode = 'all';
+    this.state.isReviewMode = false;
     this.loadProgress();
     this.showView('mcq');
     this.renderQuestion();
@@ -468,6 +598,13 @@ const MCQApp = {
         option.classList.add('dimmed');
       }
     });
+
+    if (selectedIndex !== question.correctAnswer) {
+      this.logWrongAnswer(question);
+    } else if (this.state.isReviewMode) {
+      // Remove from wrong questions if answered correctly in review mode
+      this.removeFromWrongQuestions(question.id);
+    }
 
     // Show explanation
     document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
@@ -730,11 +867,15 @@ Keep the explanation educational and supportive.`;
 
   // Load Progress
   loadProgress() {
-    if (!this.state.currentTopic || !this.state.currentPracticeTest) return;
+    if (!this.state.currentTopic || !this.state.currentPracticeTest) {
+      this.state.viewedQuestions = new Set();
+      this.state.bookmarkedQuestions = new Set();
+      this.state.answersRevealed = new Set();
+      return;
+    }
 
     const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
     const saved = localStorage.getItem(key);
-    
     if (saved) {
       const data = JSON.parse(saved);
       this.state.viewedQuestions = new Set(data.viewed || []);
@@ -747,25 +888,21 @@ Keep the explanation educational and supportive.`;
     }
   },
 
-  // Reset Progress
   resetProgress() {
+    if (!this.state.currentTopic || !this.state.currentPracticeTest) return;
     if (!confirm('Are you sure you want to reset all progress for this practice test? This cannot be undone.')) {
       return;
     }
 
-    if (this.state.currentTopic && this.state.currentPracticeTest) {
-      const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
-      localStorage.removeItem(key);
-      
-      this.state.viewedQuestions.clear();
-      this.state.bookmarkedQuestions.clear();
-      this.state.answersRevealed.clear();
-      
-      this.state.currentQuestionIndex = 0;
-      this.renderQuestion();
-      
-      alert('Progress reset successfully!');
-    }
+    const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
+    localStorage.removeItem(key);
+    this.state.viewedQuestions.clear();
+    this.state.bookmarkedQuestions.clear();
+    this.state.answersRevealed.clear();
+
+    this.state.currentQuestionIndex = 0;
+    this.renderQuestion();
+    alert('Progress reset successfully!');
   }
 };
 
