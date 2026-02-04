@@ -470,11 +470,50 @@ const MCQApp = {
     document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
     document.getElementById('explanation-text').textContent = question.explanation;
     
+    // Generate AI explanation if enabled
+    const aiExplanationEl = document.getElementById('ai-explanation-text');
+    if (aiExplanationEl) {
+      aiExplanationEl.innerHTML = '<div class="loading-spinner">⏳ Generating AI explanation...</div>';
+      this.generateAIExplanation(question, selectedIndex, aiExplanationEl);
+    }
+    
     answerSection.classList.remove('hidden');
 
     // Track answer reveal
     this.state.answersRevealed.add(question.id);
     this.saveProgress();
+  },
+
+  // Generate AI Explanation
+  async generateAIExplanation(question, selectedIndex, element) {
+    try {
+      const userAnswer = question.options[selectedIndex];
+      const correctAnswer = question.options[question.correctAnswer];
+      
+      const response = await fetch('/api/explain', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          question: question.question,
+          userAnswer: userAnswer,
+          correctAnswer: correctAnswer,
+          options: question.options,
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        element.innerHTML = `<div class="ai-explanation"><strong>🤖 AI Insights:</strong> ${data.explanation}</div>`;
+      } else {
+        element.innerHTML = '<div class="ai-error">Could not generate AI explanation</div>';
+      }
+    } catch (error) {
+      console.error('Error generating AI explanation:', error);
+      element.innerHTML = '<div class="ai-error">AI service unavailable</div>';
+    }
   },
 
   // Hide Answer

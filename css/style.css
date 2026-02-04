@@ -582,7 +582,44 @@ body {
   background: #374151;
 }
 
-/* ===== Actions Bar ===== */
+/* ===== AI Explanation Box ===== */
+.ai-explanation-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ai-explanation-box .ai-explanation {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: white;
+}
+
+.ai-explanation-box .loading-spinner {
+  text-align: center;
+  font-size: 1.25rem;
+  animation: spin 2s linear infinite;
+}
+
+.ai-explanation-box .ai-error {
+  color: #fecaca;
+  font-size: 0.875rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+[data-theme="dark"] .ai-explanation-box {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
 .actions-bar {
   display: flex;
   gap: 1rem;

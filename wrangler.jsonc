@@ -1,9 +1,29 @@
 {
   "name": "ethics-mcqs",
+  "type": "javascript",
+  "main": "src/worker.js",
   "compatibility_date": "2026-02-04",
   "assets": {
     "directory": "./",
-    "include": ["*.html", "*.css", "*.js", "data/**"],
-    "exclude": [".git/**", "node_modules/**", ".gitignore", "README.md", "wrangler.jsonc"]
+    "include": ["*.html", "*.css", "js/**", "data/**", "css/**"],
+    "exclude": [".git/**", "node_modules/**", ".gitignore", "README.md", "wrangler.jsonc", "src/**"]
+  },
+  "env": {
+    "production": {
+      "routes": [
+        {
+          "pattern": "example.com/api/*",
+          "zone_name": "example.com"
+        }
+      ]
+    }
+  },
+  "ai": {
+    "bindings": [
+      {
+        "name": "AI",
+        "type": "ai"
+      }
+    ]
   }
 }
