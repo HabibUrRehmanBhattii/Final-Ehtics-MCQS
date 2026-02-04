@@ -5,10 +5,7 @@
   "assets": {
     "directory": "./"
   },
-  "bindings": [
-    {
-      "name": "AI",
-      "type": "ai"
-    }
-  ]
+  "ai": {
+    "binding": "AI"
+  }
 }
