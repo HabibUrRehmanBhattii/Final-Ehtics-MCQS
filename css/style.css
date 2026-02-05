@@ -306,6 +306,44 @@ body {
   opacity: 0.5;
 }
 
+.option.was-attempted {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  position: relative;
+}
+
+[data-theme="dark"] .option.was-attempted {
+  background: #451a03;
+  border-color: #f59e0b;
+}
+
+.option-feedback {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #92400e;
+}
+
+[data-theme="dark"] .option-feedback {
+  background: #451a03;
+  color: #fde68a;
+  border-color: #f59e0b;
+}
+
+.option.was-attempted:hover {
+  border-color: #f59e0b;
+  background: #fef3c7;
+  transform: none;
+  cursor: not-allowed;
+}
+
+[data-theme="dark"] .option.was-attempted:hover {
+  background: #451a03;
+}
+
 /* ===== Answer Section ===== */
 .answer-section {
   margin-top: 1rem;

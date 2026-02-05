@@ -1,0 +1,7 @@
+Manual update needed for line 38 in data/topics.json:
+
+Change:
+"dataFile": "data/llqp-ethics/practice-4.json"
+
+To:
+"dataFile": "data/llqp-ethics/practice-4.json?v=20260205b"

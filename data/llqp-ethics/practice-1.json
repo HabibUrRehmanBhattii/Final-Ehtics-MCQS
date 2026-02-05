@@ -14,6 +14,12 @@
         "D. Earning a higher commission"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Recommending permanent coverage can be suitable in some cases; the ethical issue isn’t the product type by itself.",
+        "A best-interest breach isn’t established just because a different product exists; the core duty at issue is transparency.",
+        null,
+        "Higher compensation alone isn’t unethical if the recommendation is suitable and properly disclosed."
+      ],
       "explanation": "Higher commission ≠ illegal. Belief ≠ proof. Undisclosed conflict = ethics breach even if advice is 'reasonable'.",
       "difficulty": "hard",
       "tags": ["conflict-of-interest", "disclosure", "commissions"]
@@ -28,6 +34,12 @@
         "D. The omission is non-material if the client believed it was irrelevant"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Unintentional errors can still be material, and material misrepresentation can jeopardize coverage.",
+        null,
+        "Protecting the client doesn’t justify submitting incomplete information; accuracy is mandatory.",
+        "Materiality is assessed by the insurer, not by the client’s personal view of relevance."
+      ],
       "explanation": "Materiality is decided by the insurer, not the client or agent. Intent does not erase misrepresentation.",
       "difficulty": "hard",
       "tags": ["misrepresentation", "materiality", "disclosure"]
@@ -42,6 +54,12 @@
         "D. Complete the sale and document the interaction"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Accuracy alone doesn’t solve capacity concerns; the client must be able to understand and consent.",
+        "Family help can cross into undue influence if the client is confused and not independently informed.",
+        null,
+        "Documentation is useful, but it doesn’t cure proceeding with a potentially vulnerable or confused client."
+      ],
       "explanation": "Vulnerability detected → duty to pause or stop. Documentation does not fix undue influence.",
       "difficulty": "hard",
       "tags": ["vulnerable-clients", "undue-influence", "capacity"]
@@ -56,6 +74,12 @@
         "D. Replacement is unethical only if commission motivated"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Consent must be informed; a brief or incomplete explanation doesn’t make replacement automatically acceptable.",
+        "New features don’t erase material disadvantages like reset contestability or suicide periods.",
+        null,
+        "Motivation matters, but nondisclosure of disadvantages is an ethical problem regardless of commission."
+      ],
       "explanation": "Consent must be informed. Resetting exclusions = major disadvantage requiring clear disclosure.",
       "difficulty": "hard",
       "tags": ["policy-replacement", "informed-consent", "disclosure"]
@@ -70,6 +94,12 @@
         "D. Acceptable omission if policy wording is clear"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Agents must proactively explain material limitations; clients aren’t expected to discover them alone.",
+        "Disclosure duties apply even when the client doesn’t ask about exclusions.",
+        null,
+        "Clear wording doesn’t eliminate the duty to highlight material exclusions and limitations."
+      ],
       "explanation": "Silence = misconduct when disclosure is required. Material limitations must be proactively explained.",
       "difficulty": "medium",
       "tags": ["disclosure", "exclusions", "duty-to-inform"]
@@ -84,6 +114,12 @@
         "D. Shared with insurer"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "A client’s signature doesn’t excuse knowingly submitting false information.",
+        "A warning helps but does not permit filing an application the agent knows is inaccurate.",
+        null,
+        "The insurer relies on the agent’s duty of accuracy; liability isn’t shifted by submitting known falsehoods."
+      ],
       "explanation": "You cannot contract out of ethics. Knowingly submitting false info = full responsibility.",
       "difficulty": "hard",
       "tags": ["misrepresentation", "agent-liability", "professional-duty"]
@@ -98,6 +134,12 @@
         "D. Acceptable if documented later"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Disclosure must occur before the client’s decision, not after the sale or premium payment.",
+        "Harm is not required; the duty is to disclose potential conflicts upfront.",
+        null,
+        "Later documentation doesn’t fix disclosure that was too late to inform the decision."
+      ],
       "explanation": "Disclosure after the decision = meaningless.",
       "difficulty": "medium",
       "tags": ["conflict-of-interest", "timing", "disclosure"]
@@ -112,6 +154,12 @@
         "D. Client is pressured to act quickly while vulnerable"
       ],
       "correctAnswer": 3,
+      "optionFeedback": [
+        "Seeking advice is normal and doesn’t indicate coercion or pressure by itself.",
+        "A recommendation alone isn’t undue influence unless it involves pressure or manipulation.",
+        "Relying on expertise can be appropriate; undue influence requires pressure or exploitation.",
+        null
+      ],
       "explanation": "Pressure + vulnerability = automatic red flag.",
       "difficulty": "medium",
       "tags": ["undue-influence", "vulnerable-clients", "pressure-tactics"]
@@ -126,6 +174,12 @@
         "D. Permitted if technically accurate"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Implying government approval or endorsement is not acceptable marketing in insurance sales.",
+        "Saying a policy is “approved by the government” goes beyond oversight and implies endorsement.",
+        null,
+        "Even if a statement has a kernel of truth, it is still improper if it misleads clients."
+      ],
       "explanation": "Implied endorsement = prohibited sales practice.",
       "difficulty": "medium",
       "tags": ["misleading-statements", "marketing", "government-endorsement"]
@@ -140,6 +194,12 @@
         "D. Length of agent's career"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Client satisfaction doesn’t reduce the seriousness of an ethical breach.",
+        "Intent matters, but regulators weigh client harm more heavily in severity decisions.",
+        null,
+        "Tenure doesn’t offset the impact of a breach; consequences drive severity."
+      ],
       "explanation": "Harm > intent > excuses.",
       "difficulty": "medium",
       "tags": ["regulatory-enforcement", "harm", "consequences"]

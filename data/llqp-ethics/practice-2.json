@@ -14,6 +14,12 @@
         "D. Disclosure is optional if client requests confidentiality"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Coverage decisions depend on full disclosure; an undisclosed condition can change underwriting outcomes.",
+        "Protecting the client does not justify withholding material facts from the insurer.",
+        null,
+        "Confidentiality does not override the duty to disclose material information on an application."
+      ],
       "explanation": "Materiality is determined by the insurer, not the agent’s perception. Failure to disclose a known condition = misrepresentation.",
       "difficulty": "hard",
       "tags": ["misrepresentation","disclosure","materiality"]
@@ -28,6 +34,12 @@
         "D. No issue if agent believes it is in client’s best interest"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Consent is not meaningful without disclosure of material changes like a reset suicide clause.",
+        null,
+        "Material disadvantages matter even if no immediate loss is shown.",
+        "An agent’s belief in suitability doesn’t remove the duty to disclose significant drawbacks."
+      ],
       "explanation": "Suicide clause reset = material disadvantage. Consent without disclosure = meaningless; agent must disclose.",
       "difficulty": "hard",
       "tags": ["replacement","disclosure","materiality"]
@@ -42,6 +54,12 @@
         "D. Only problematic if fee exceeds 10%"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Knowing general fees doesn’t address a specific referral incentive that could bias advice.",
+        "Undisclosed conflicts are not minor; they undermine trust and decision-making.",
+        null,
+        "No percentage threshold removes the disclosure requirement for conflicts."
+      ],
       "explanation": "Any personal benefit that could influence advice is a conflict of interest and must be disclosed, regardless of size.",
       "difficulty": "medium",
       "tags": ["conflict-of-interest","referrals","disclosure"]
@@ -56,6 +74,12 @@
         "D. Valid as long as insurer signs"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Consent alone doesn’t solve a capacity problem for the assignee.",
+        null,
+        "The agent shares responsibility to ensure the transaction is legally valid.",
+        "Insurer approval doesn’t cure defects if the assignee lacks legal capacity."
+      ],
       "explanation": "Legal capacity is required to transfer contracts. Failure to confirm capacity exposes agent and insurer to legal risk.",
       "difficulty": "medium",
       "tags": ["assignment","capacity","legal-risk"]
@@ -70,6 +94,12 @@
         "D. Only unethical if client complains"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "A signature isn’t enough when the client may be pressured or not fully informed.",
+        null,
+        "Family assistance doesn’t justify skipping an assessment of the client’s understanding.",
+        "Ethical duties apply regardless of whether a client later complains."
+      ],
       "explanation": "Vulnerable client + pressure = undue influence; agent must protect client and pause the sale.",
       "difficulty": "hard",
       "tags": ["undue-influence","vulnerable-clients"]
@@ -84,6 +114,12 @@
         "D. Only problematic if client loses money"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "A small benefit doesn’t justify steering a client for personal gain.",
+        null,
+        "A signature does not replace the duty to avoid or disclose conflicts and ensure suitability.",
+        "Conflict-of-interest rules apply even without proven financial loss."
+      ],
       "explanation": "Undisclosed personal benefit influencing recommendation = ethics breach; disclosure is required.",
       "difficulty": "medium",
       "tags": ["conflict-of-interest","commissions"]
@@ -98,6 +134,12 @@
         "D. Insurance company must verify all info"
       ],
       "correctAnswer": 2,
+      "optionFeedback": [
+        "Unintentional errors can still be material, especially when the agent suspects inaccuracies.",
+        "Proceeding without clarification breaches the agent’s duty to verify and correct information.",
+        null,
+        "Insurers rely on agent and client disclosures; verification doesn’t remove the agent’s duty."
+      ],
       "explanation": "Suspicion obligates the agent to investigate and clarify; unintentional error does not remove misrepresentation risk.",
       "difficulty": "hard",
       "tags": ["misrepresentation","duty-to-investigate"]
@@ -112,6 +154,12 @@
         "D. Policyholder’s estate"
       ],
       "correctAnswer": 3,
+      "optionFeedback": [
+        "After absolute assignment, the former owner no longer controls the policy or its proceeds.",
+        "Ownership transfers, but if the new owner dies without action, the proceeds do not go to them personally.",
+        "Beneficiary designations can be changed by the new owner; ownership rules govern the outcome here.",
+        null
+      ],
       "explanation": "An absolute assignment transfers ownership; if the new owner dies without action, the benefit passes to their estate.",
       "difficulty": "medium",
       "tags": ["assignment","beneficiary","estate"]
@@ -126,6 +174,12 @@
         "D. Product recommendation based on suitability"
       ],
       "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "A transparent, informed replacement is permitted when it benefits the client.",
+        "Commission disclosure is required and is not a prohibited practice by itself.",
+        "Suitability-based recommendations are expected, not prohibited."
+      ],
       "explanation": "Churning (unnecessary replacements for gain) is prohibited; the others are ethical or neutral when done properly.",
       "difficulty": "medium",
       "tags": ["prohibited-practices","churning"]
@@ -140,6 +194,12 @@
         "D. Proceed as sale already closed"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Immediate denial ignores required complaint-handling procedures.",
+        null,
+        "A rebate doesn’t replace the duty to document and report the complaint.",
+        "Closing the sale doesn’t eliminate reporting obligations."
+      ],
       "explanation": "Documenting and reporting the complaint is the correct first step per regulatory and ethical standards.",
       "difficulty": "medium",
       "tags": ["complaints","regulatory"]
@@ -154,6 +214,12 @@
         "D. Common-law partner has all rights of a spouse"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Property division rules for common-law partners often differ from marriage and are not automatic.",
+        null,
+        "Agreements can define terms going forward but don’t typically create retroactive statutory rights.",
+        "Common-law partners do not automatically receive all legal rights of married spouses."
+      ],
       "explanation": "Common-law status may create spousal support obligations; property division rules differ from marriage in many jurisdictions.",
       "difficulty": "medium",
       "tags": ["common-law","spousal-support"]
@@ -168,6 +234,12 @@
         "D. Only an issue if creditor sues"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Creditor protection varies by province and policy details; blanket assurances are risky.",
+        null,
+        "Client trust doesn’t excuse giving unverified legal advice.",
+        "Misrepresentation exists at the time of advice, regardless of whether litigation occurs."
+      ],
       "explanation": "Legal protections vary by province; the agent must verify and not assume protections.",
       "difficulty": "medium",
       "tags": ["legal-advice","misrepresentation"]
@@ -182,6 +254,12 @@
         "D. Report must be filed only if client threatens legal action"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Reporting obligations are set by law, not by peer perceptions.",
+        null,
+        "Potential client harm does not remove statutory reporting requirements.",
+        "FINTRAC reporting is unrelated to client litigation threats."
+      ],
       "explanation": "FINTRAC rules require timely reporting (within 15 days) for suspicious transactions; good-faith protection applies.",
       "difficulty": "medium",
       "tags": ["fintrac","reporting"]
@@ -196,6 +274,12 @@
         "D. Client autonomy"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Suitability may still be fine; the issue is failure to explain a material benefit.",
+        null,
+        "There is no personal gain indicated, so conflict of interest isn’t the core breach.",
+        "Autonomy is supported by disclosure, but the primary breach is the duty to explain material features."
+      ],
       "explanation": "Failing to explain material features breaches the duty of care owed to the client.",
       "difficulty": "medium",
       "tags": ["duty-of-care","disclosure"]
@@ -210,6 +294,12 @@
         "D. Giving commission disclosure"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Presenting options is standard practice and not coercive by itself.",
+        null,
+        "Clear explanations support informed consent, not undue influence.",
+        "Commission disclosure is a transparency requirement, not a pressure tactic."
+      ],
       "explanation": "High-pressure tactics on a vulnerable client are classic undue influence.",
       "difficulty": "easy",
       "tags": ["undue-influence"]
@@ -224,6 +314,12 @@
         "D. Valid if minor signs"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Minors generally cannot enter binding contracts, so assignment is not automatically valid.",
+        null,
+        "Insurer agreement doesn’t override legal capacity rules.",
+        "A minor’s signature alone does not create legal capacity."
+      ],
       "explanation": "Minors generally lack capacity to hold contracts; parental consent alone does not make assignment valid.",
       "difficulty": "medium",
       "tags": ["capacity","assignment"]
@@ -238,6 +334,12 @@
         "D. Replacement is always ethical"
       ],
       "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Verbal-only disclosure lacks a reliable record and is insufficient for ethical replacement.",
+        "Convenience cannot replace the required disclosure and documentation process.",
+        "Replacement can be unethical if not in the client’s interest or if disadvantages are hidden."
+      ],
       "explanation": "Written disclosure with documentation provides a clear record and safeguards the client; verbal alone is insufficient.",
       "difficulty": "medium",
       "tags": ["replacement","documentation","disclosure"]
@@ -252,6 +354,12 @@
         "D. Discretionary if client trusts agent"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Any rewarded referral creates a potential conflict and requires disclosure.",
+        null,
+        "There is no dollar threshold that removes the duty to disclose referral incentives.",
+        "Client trust does not eliminate disclosure obligations for conflicts."
+      ],
       "explanation": "Any financial incentive creating potential influence must be disclosed to the client.",
       "difficulty": "medium",
       "tags": ["conflict-of-interest","referrals"]
@@ -266,6 +374,12 @@
         "D. Only if policyholder loses money"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Duty to disclose material facts exists even if the client doesn’t ask.",
+        null,
+        "Silence can mislead when it hides material information the client needs.",
+        "Misrepresentation by omission doesn’t depend on proving a financial loss."
+      ],
       "explanation": "Withholding material information that the client should know constitutes misrepresentation.",
       "difficulty": "medium",
       "tags": ["misrepresentation","silence","disclosure"]
@@ -280,6 +394,12 @@
         "D. Only issue if claim denied"
       ],
       "correctAnswer": 1,
+      "optionFeedback": [
+        "Paying premiums doesn’t prove the client understood the transaction.",
+        null,
+        "Family approval cannot substitute for the client’s own informed consent.",
+        "Ethical duties apply at the time of sale, not only after a claim is denied."
+      ],
       "explanation": "Proceeding without ensuring informed consent is unethical; agent must confirm understanding before completing the transaction.",
       "difficulty": "hard",
       "tags": ["informed-consent","vulnerable-clients"]

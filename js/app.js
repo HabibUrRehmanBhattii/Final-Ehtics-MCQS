@@ -17,7 +17,9 @@ const MCQApp = {
     filterMode: 'all', // 'all' or 'bookmarked'
     wrongQuestions: [],
     lastSelectedIndex: undefined,
-    isReviewMode: false
+    isReviewMode: false,
+    attemptedOptions: {}, // Track which options were attempted for each question
+    firstAttemptCorrect: {} // Track if first attempt was correct for each question
   },
 
   // Utility: Shuffle Array (Fisher-Yates)
@@ -484,11 +486,28 @@ const MCQApp = {
 
     // Render options
     const optionsContainer = document.getElementById('options-container');
-    optionsContainer.innerHTML = question.options.map((option, index) => `
-      <div class="option" data-index="${index}" onclick="MCQApp.selectOption(${index})">
-        <span class="option-text">${option}</span>
-      </div>
-    `).join('');
+    const attemptedForQuestion = this.state.attemptedOptions[question.id] || [];
+    
+    optionsContainer.innerHTML = question.options.map((option, index) => {
+      const wasAttempted = attemptedForQuestion.includes(index);
+      const isCorrect = index === question.correctAnswer;
+      const isRevealed = this.state.answersRevealed.has(question.id);
+      const feedbackText = wasAttempted && !isRevealed ? this.getWrongAnswerFeedback(question, index) : '';
+      const feedbackHtml = feedbackText ? `
+            <div class="option-feedback">
+              <p>${feedbackText}</p>
+            </div>
+          ` : '';
+      
+      return `
+        <div class="option ${wasAttempted ? 'was-attempted' : ''} ${isRevealed && isCorrect ? 'is-correct' : ''}" 
+             data-index="${index}" 
+             onclick="MCQApp.selectOption(${index})">
+          <span class="option-text">${option}</span>
+          ${feedbackHtml}
+        </div>
+      `;
+    }).join('');
 
     // Update bookmark button
     const bookmarkBtn = document.getElementById('bookmark-btn');
@@ -617,70 +636,111 @@ const MCQApp = {
     this.renderQuestion();
   },
 
+  // Get wrong answer feedback from question explanation
+  getWrongAnswerFeedback(question, optionIndex) {
+    // Check if question has optionFeedback array
+    if (question.optionFeedback && question.optionFeedback[optionIndex]) {
+      return question.optionFeedback[optionIndex];
+    }
+
+    // Fallback to explanation if specific feedback is not provided
+    if (question.explanation) {
+      return question.explanation;
+    }
+    
+    // No feedback provided
+    return '';
+  },
+
   // Select Option
   selectOption(selectedIndex) {
     const question = this.getCurrentQuestion();
     if (!question) return;
 
-    // Check if already revealed
-    const answerSection = document.getElementById('answer-section');
-    if (!answerSection.classList.contains('hidden')) {
-      return; // Already showing answer, don't allow re-clicking
+    // Initialize tracking for this question if not exists
+    if (!this.state.attemptedOptions[question.id]) {
+      this.state.attemptedOptions[question.id] = [];
+    }
+    
+    // Check if this option was already attempted
+    const alreadyAttempted = this.state.attemptedOptions[question.id].includes(selectedIndex);
+    if (alreadyAttempted) {
+      return; // Don't allow clicking the same wrong answer again
     }
 
+    // Check if this is the first attempt for this question
+    const isFirstAttempt = this.state.attemptedOptions[question.id].length === 0;
+    
     // Store selected answer index for AI explanation
     this.state.lastSelectedIndex = selectedIndex;
 
-    // Highlight selected and correct answers
-    const optionsContainer = document.getElementById('options-container');
-    const options = optionsContainer.querySelectorAll('.option');
+    // Check if correct answer
+    const isCorrect = selectedIndex === question.correctAnswer;
     
-    options.forEach((option, index) => {
-      option.style.pointerEvents = 'none'; // Disable further clicks
+    if (isCorrect) {
+      // CORRECT ANSWER - Show full explanation and reveal
       
-      if (index === question.correctAnswer) {
-        option.classList.add('is-correct');
-      } else if (index === selectedIndex) {
-        option.classList.add('is-incorrect');
-      } else {
-        option.classList.add('is-dimmed');
+      // Track if first attempt was correct
+      if (isFirstAttempt) {
+        this.state.firstAttemptCorrect[question.id] = true;
       }
-    });
+      
+      // If answered correctly in review mode, remove from wrong questions
+      if (this.state.isReviewMode) {
+        this.removeFromWrongQuestions(question.id);
+      }
+      
+      // Disable all options
+      const optionsContainer = document.getElementById('options-container');
+      const options = optionsContainer.querySelectorAll('.option');
+      options.forEach(option => {
+        option.style.pointerEvents = 'none';
+      });
+      
+      // Show explanation
+      const answerSection = document.getElementById('answer-section');
+      document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
+      document.getElementById('explanation-text').textContent = question.explanation;
+      
+      // Show AI button and ensure AI container is hidden until used
+      const aiExplanationEl = document.getElementById('ai-explanation-text');
+      const aiButton = document.getElementById('get-ai-explanation-btn');
+      if (aiExplanationEl) {
+        aiExplanationEl.innerHTML = '';
+        aiExplanationEl.style.display = 'none';
+      }
+      if (aiButton) {
+        aiButton.style.display = 'inline-flex';
+        aiButton.disabled = false;
+      }
+      
+      answerSection.classList.remove('hidden');
 
-    if (selectedIndex !== question.correctAnswer) {
-      this.logWrongAnswer(question);
-    } else if (this.state.isReviewMode) {
-      // Remove from wrong questions if answered correctly in review mode
-      this.removeFromWrongQuestions(question.id);
-    }
+      // Show Next button after answering
+      const nextBtn = document.getElementById('next-question-btn');
+      if (nextBtn) {
+        nextBtn.classList.remove('hidden');
+      }
 
-    // Show explanation
-    document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
-    document.getElementById('explanation-text').textContent = question.explanation;
-    
-    // Show AI button and ensure AI container is hidden until used
-    const aiExplanationEl = document.getElementById('ai-explanation-text');
-    const aiButton = document.getElementById('get-ai-explanation-btn');
-    if (aiExplanationEl) {
-      aiExplanationEl.innerHTML = '';
-      aiExplanationEl.style.display = 'none';
+      // Track answer reveal
+      this.state.answersRevealed.add(question.id);
+      this.saveProgress();
+      
+    } else {
+      // WRONG ANSWER - Show individual feedback, don't reveal correct answer
+      
+      // Add to attempted options
+      this.state.attemptedOptions[question.id].push(selectedIndex);
+      
+      // If this is the first attempt and it's wrong, log it as wrong
+      if (isFirstAttempt) {
+        this.state.firstAttemptCorrect[question.id] = false;
+        this.logWrongAnswer(question);
+      }
+      
+      // Re-render to show the feedback for this wrong answer
+      this.renderQuestion();
     }
-    if (aiButton) {
-      aiButton.style.display = 'inline-flex';
-      aiButton.disabled = false;
-    }
-    
-    answerSection.classList.remove('hidden');
-
-    // Show Next button after answering (before AI explanation)
-    const nextBtn = document.getElementById('next-question-btn');
-    if (nextBtn) {
-      nextBtn.classList.remove('hidden');
-    }
-
-    // Track answer reveal
-    this.state.answersRevealed.add(question.id);
-    this.saveProgress();
   },
 
   // Generate AI Explanation

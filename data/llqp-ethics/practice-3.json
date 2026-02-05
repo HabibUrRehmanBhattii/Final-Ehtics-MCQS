@@ -14,10 +14,135 @@
         "Definitely not"
       ],
       "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "In a timed exam like the LLQP, every strategy counts! Understanding how to navigate long ethics scenarios is key to passing.",
+        "You definitely want this one. Reading the question before the scenario helps you avoid 'distractor' information in the case study.",
+        "Skipping strategies can lead to running out of time on the 20-question Ethics module."
+      ],
       "explanation": "The tip is RTQF: Read The Question First. In long ethics scenarios, don't start with the story. Read the actual question at the bottom first so you know what details to look for in the scenario.",
       "difficulty": "easy",
       "tags": ["exam-tips", "llqp", "ethics", "seewhy-learning"]
+    },
+    {
+      "id": 2,
+      "question": "(PPE-047) EPP\nDonald was injured when a skid at Home Depot fell from an upper shelf and landed on his shoulder and upper back. After pursuing the matter in court, he was awarded $1,000,000 to compensate for the loss of his ability to earn an income.\nWhat tax implications would be associated with the award?",
+      "options": [
+        "Half of the award would be received tax free.",
+        "He would receive it tax free.",
+        "It would be taxed as regular income in the taxation year received.",
+        "It would be taxed as regular income; however, the taxation could be spread out evenly until age 65."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "There is no provision in the Income Tax Act that taxes only half of a personal injury award.",
+        null,
+        "Personal injury awards are not considered 'income' for taxation purposes under Section 81(1)(g.1) of the Income Tax Act.",
+        "While structured settlements allow for periodic payments, the principal award for personal injury remains non-taxable regardless of the payout timing."
+      ],
+      "explanation": "In Canada, the CRA (Bulletin IT-365R2) states that all amounts received as special or general damages for personal injury or death are excluded from income, even if the amount was determined with reference to a loss of earnings.\n\nDamages for personal injury caused by a negligent third party are considered to be compensation for the loss of an ability to earn an income (not income itself) and therefore are received tax free.\n\nThink about it this way—you pay tax when you actually earn income; however, you are not taxed simply because you are physically able to work. Likewise, Donald's settlement is not considered taxable income. Instead, it should be thought of as a settlement for an injured shoulder and back that now prevent him from enjoying certain aspects of life, including the ability to work.",
+      "difficulty": "medium",
+      "tags": ["taxation", "personal-injury", "cra", "ppe-047"]
+    },
+    {
+      "id": 3,
+      "question": "(PPE-036) EPP\nDante is a captive insurance agent with Willis Insurance. Bruno enters Dante's office with a third-party cheque for $250,000 that he would like to use to purchase an annuity. Bruno is withdrawn and nervous, and he seems more interested in the consequences of terminating the annuity than its long-term advantages.\n\nHow should Dante proceed?",
+      "options": [
+        "Dante should report the transaction to FINTRAC within 30 days as a suspicious transaction.",
+        "Dante should report the transaction to CISRO within 30 days as a suspicious transaction.",
+        "Dante should report the transaction to FSCO within 30 days as a suspicious transaction.",
+        "Dante should report the transaction to PIPEDA within 30 days as a suspicious transaction."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "CISRO is not the correct agency for reporting suspicious financial transactions in Canada.",
+        "FSCO (Financial Services Commission of Ontario) is not the federal agency responsible for anti-money laundering reports.",
+        "PIPEDA is privacy legislation, not the agency for reporting suspicious transactions."
+      ],
+      "explanation": "FINTRAC is Canada's financial intelligence agency responsible for receiving and analyzing reports of suspicious financial transactions to combat money laundering and terrorist financing. Insurance agents must report suspicious transactions to FINTRAC within 30 days.\n\nSuspicious transactions or even an attempt at a transaction that appears suspicious must be reported to FINTRAC within 30 days.\n\nThe following are things that should be viewed as red flags (hints that something isn't right):\n• The client does not want to provide identification documents.\n• The client seems nervous.\n• The client is unusually curious about internal controls.\n• The client deposits third-party cheques for large amounts (cheques written to him or her by someone else).\n• The client is more interested in how to cancel a transaction than the long-term nature of the product (i.e. may want to just put the money in and then withdraw it to make it look as if it came from a legitimate source).\n• The transaction is more complex than it needs to be (i.e. the client is trying to blur an audit trail).\n• The transaction does not seem to fit the client's risk tolerance or client profile.\n• The client uses a post office box and lives in an area where that is not common.",
+      "difficulty": "medium",
+      "tags": ["aml", "fintrac", "suspicious-transaction", "ppe-036"]
+    },
+    {
+      "id": 4,
+      "question": "(PPE-015) EPP\nWhich of the following deaths could be excluded on an AD&D policy?\nI. Joel, who died while racing his brother on snowmobiles at the family cottage.\nII. Paul, who lost a leg from frostbite when he got lost for several days during a winter hike.\nIII. Michael, who died after being hit by a car as he ran away from a security guard after sneaking into a movie without paying.\nIV. Nancy, who accidentally died from a drug overdose.",
+      "options": [
+        "IV",
+        "I, III, IV",
+        "III, IV",
+        "I, II, III, IV"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "While Nancy's death could be excluded under drug/alcohol clauses, she is not the only one.",
+        null,
+        "This omitted Joel, whose death while racing is also a standard exclusion for hazardous hobbies.",
+        "Paul (II) lost a leg but did not die. Since the question asks specifically for 'deaths,' Paul's scenario does not fit the criteria."
+      ],
+      "explanation": "Joel died during a high-risk/racing activity, Michael died while committing/fleeing an illegal act, and Nancy died from a drug-related cause—all common exclusions. Paul (II) is not included because he did not die; he suffered a dismemberment, so his case is not an \"excluded death\".\n\nNote: Only Paul's loss would be covered.\n\nAdditional Learning:\n• Joel's death would be excluded because vehicle racing is an exclusion on an accidental death and dismemberment policy.\n• Michael's death was caused by an illegal act (sneaking into a theater without paying is considered theft).\n• Nancy's death would not be considered accidental because she intentionally took the drugs that caused her death.",
+      "difficulty": "medium",
+      "tags": ["ad&d", "exclusions", "insurance", "ppe-015"]
+    },
+    {
+      "id": 5,
+      "question": "(PPE-003) EPP\nJoshua applied for a $250,000 participating whole life insurance policy. He answered \"No\" to all of the applicable health-related questions and submitted the first monthly premium along with the application. At the time, he was provided with a temporary insurance agreement (TIA) that provided him with interim coverage during the underwriting process. The TIA covered him for the lesser of $100,000 or the amount for which he was applying under the main policy. A few days later, the initial premium was returned for non-sufficient funds (NSF) from Joshua's financial institution.\nWhat impact would this have on the TIA?",
+      "options": [
+        "The TIA would not be in force.",
+        "The TIA has already been issued and would remain in force. In the event of a claim, the first month's premium would be deducted from the death benefit.",
+        "The TIA would lapse after a 31-day grace period.",
+        "The initial premium is for the main policy; therefore, the TIA would still remain in force."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Unlike a policy already in force, a TIA is strictly conditional upon the actual payment of the initial premium.",
+        "Grace periods (typically 30-31 days) only apply to existing policies that have already taken effect, not to the initial TIA application process.",
+        "The TIA and the main policy application are linked by the same initial premium; without the payment, the interim coverage fails."
+      ],
+      "explanation": "A TIA is a conditional contract that only takes effect if the required \"consideration\" (the premium) is received. Because the check was returned for NSF, the premium was never truly received, meaning the TIA never came into force.\n\nA temporary insurance agreement exposes the insurer to some level of risk during the underwriting process and therefore should not be issued, unless some form of \"consideration\" (premium) has been received by the insurer.\n\nAn agent should never give a client a TIA unless:\n• The client answered \"No\" to all the applicable health questions, such as \"Have you ever been diagnosed with cancer?\"\n• The agent has no reason to disbelieve the client's answers.\n• The client has paid the first premium via cheque or pre-authorized debit.\n\nNote: In order for the TIA to be considered in force, the first premium payment must also be honoured by the financial institution from which it is drawn. A statement to this effect would be included in the terms and conditions of the TIA.",
+      "difficulty": "medium",
+      "tags": ["tia", "temporary-insurance", "premium", "consideration", "ppe-003"]
+    },
+    {
+      "id": 6,
+      "question": "(PPE-029) EPP\nVictor is a licensed life insurance agent. When discussing retirement planning for his client Joseph, it became clear that Joseph was risk averse. His risk tolerance would likely cause Joseph to not meet his goal of retirement at age 55. Victor placed Joseph's portfolio in a high-risk equity fund knowing it would pay him a higher commission, but he was confident that, in time, it would generate a return that would be higher than with a lower-risk fund. Over the next 10 years, the fund had double-digit returns.\nDid Victor act appropriately?",
+      "options": [
+        "Yes, the client's risk tolerance and desire to retire at age 55 were unreasonable.",
+        "No, Victor did not act in the client's best interest.",
+        "Yes, the client benefited from Victor's actions.",
+        "No, in order to sell segregated funds, Victor would be required to have a securities or mutual fund licence."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Even if a client's goals seem difficult to reach, an agent cannot unilaterally ignore their stated risk tolerance.",
+        null,
+        "A positive investment result does not retroactively justify an unsuitable recommendation that violated the client's risk tolerance at the time of sale.",
+        "In Canada, a life insurance license allows an agent to sell segregated funds (individual variable insurance contracts) without needing a separate mutual fund or securities license."
+      ],
+      "explanation": "An agent's primary duty is to provide recommendations that match the client's needs and risk profile. Ignoring Joseph's risk-averse nature to chase higher returns (and commissions) is a breach of the duty of care, regardless of the eventual financial outcome.",
+      "difficulty": "medium",
+      "tags": ["duty-of-care", "suitability", "risk-tolerance", "ethics", "ppe-029"]
+    },
+    {
+      "id": 7,
+      "question": "(PPE-049) EPP\nLorence died at the age of 80. During his life, he had married twice and had two daughters, Lory and Linda, from his first marriage but no children from his second marriage. Lorence did not have much trust in banks and kept almost all of his savings in his home. Lory found a last will and testament drafted 15 years ago naming Linda as the sole beneficiary; however, Linda died a few weeks prior to Lorence.\nHow will Lorence's assets be distributed?",
+      "options": [
+        "His assets will go directly to Lory, his only other known child.",
+        "His assets will go to Linda's estate to be distributed according to her will.",
+        "His assets will be divided evenly among his 3 remaining next-of-kin according to the provincial rules that apply.",
+        "His assets will go to his estate and be distributed in accordance with applicable provincial rules."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "While Lory is a child, the law does not automatically jump to the next child without following the legal process for a lapsed gift or intestacy.",
+        "Because Linda predeceased Lorence, the gift to her 'lapses.' A dead person cannot inherit property to then pass it through their own will.",
+        "This assumes a specific distribution (3 people) that may not match the actual provincial intestate laws regarding a surviving spouse and children.",
+        null
+      ],
+      "explanation": "When a sole beneficiary predeceases the testator and there is no \"gift over\" (backup) or residuary clause, the gift lapses. Since there is no other valid direction in the will, the assets fall into the estate to be distributed according to the provincial rules of intestacy.",
+      "difficulty": "medium",
+      "tags": ["estate-planning", "intestacy", "beneficiary", "lapsed-gift", "ppe-049"]
     }
   ]
-}
 }
