@@ -506,6 +506,13 @@ const MCQApp = {
     // Update navigation buttons
     this.updateNavigationButtons();
     this.renderQuestionDots();
+
+    // Hide Next until answered (show if already answered)
+    const nextBtn = document.getElementById('next-question-btn');
+    const hasAnswered = this.state.answersRevealed.has(question.id);
+    if (nextBtn) {
+      nextBtn.classList.toggle('hidden', !hasAnswered);
+    }
   },
 
   // Get Current Question
@@ -543,24 +550,65 @@ const MCQApp = {
     nextBtn.disabled = this.state.currentQuestionIndex === filtered.length - 1;
   },
 
-  // Render Question Dots
+  // Render Question Dots with Pagination
   renderQuestionDots() {
     const dotsContainer = document.getElementById('question-dots');
     const filtered = this.getFilteredQuestions();
+    const totalQuestions = filtered.length;
+    const currentIndex = this.state.currentQuestionIndex;
     
-    dotsContainer.innerHTML = filtered.map((q, index) => {
-      const isActive = index === this.state.currentQuestionIndex;
+    // For mobile/small screens: show only 5 dots at a time in a window
+    // For desktop: show more dots (up to 12)
+    const isMobile = window.innerWidth < 768;
+    const dotsPerWindow = isMobile ? 5 : 12;
+    
+    // Calculate which window the current question is in
+    const currentWindow = Math.floor(currentIndex / dotsPerWindow);
+    const windowStart = currentWindow * dotsPerWindow;
+    const windowEnd = Math.min(windowStart + dotsPerWindow, totalQuestions);
+    
+    let html = '';
+    
+    // Add previous window button if not first window
+    if (windowStart > 0) {
+      html += `
+        <button class="dot-nav-btn dot-nav-prev" 
+                onclick="MCQApp.jumpToQuestion(${Math.max(0, windowStart - dotsPerWindow)})"
+                aria-label="Previous questions">
+          ‹
+        </button>
+      `;
+    }
+    
+    // Add question dots for current window
+    for (let i = windowStart; i < windowEnd; i++) {
+      const q = filtered[i];
+      const isActive = i === currentIndex;
       const isBookmarked = this.state.bookmarkedQuestions.has(q.id);
       const isViewed = this.state.viewedQuestions.has(q.id);
       
-      return `
-        <button class="question-dot ${isActive ? 'active' : ''} ${isViewed ? 'viewed' : ''} ${isBookmarked ? 'bookmarked' : ''}"
-                onclick="MCQApp.jumpToQuestion(${index})"
-                aria-label="Question ${index + 1}">
-          ${isBookmarked ? '⭐' : index + 1}
+      html += `
+        <button class="question-dot ${isActive ? 'is-active' : ''} ${isViewed ? 'is-viewed' : ''} ${isBookmarked ? 'is-bookmarked' : ''}"
+                onclick="MCQApp.jumpToQuestion(${i})"
+                title="Question ${i + 1}"
+                aria-label="Question ${i + 1}">
+          ${isBookmarked ? '⭐' : i + 1}
         </button>
       `;
-    }).join('');
+    }
+    
+    // Add next window button if not last window
+    if (windowEnd < totalQuestions) {
+      html += `
+        <button class="dot-nav-btn dot-nav-next" 
+                onclick="MCQApp.jumpToQuestion(${Math.min(windowEnd, totalQuestions - 1)})"
+                aria-label="Next questions">
+          ›
+        </button>
+      `;
+    }
+    
+    dotsContainer.innerHTML = html;
   },
 
   // Jump to Question
@@ -591,11 +639,11 @@ const MCQApp = {
       option.style.pointerEvents = 'none'; // Disable further clicks
       
       if (index === question.correctAnswer) {
-        option.classList.add('correct');
+        option.classList.add('is-correct');
       } else if (index === selectedIndex) {
-        option.classList.add('incorrect');
+        option.classList.add('is-incorrect');
       } else {
-        option.classList.add('dimmed');
+        option.classList.add('is-dimmed');
       }
     });
 
@@ -623,6 +671,12 @@ const MCQApp = {
     }
     
     answerSection.classList.remove('hidden');
+
+    // Show Next button after answering (before AI explanation)
+    const nextBtn = document.getElementById('next-question-btn');
+    if (nextBtn) {
+      nextBtn.classList.remove('hidden');
+    }
 
     // Track answer reveal
     this.state.answersRevealed.add(question.id);

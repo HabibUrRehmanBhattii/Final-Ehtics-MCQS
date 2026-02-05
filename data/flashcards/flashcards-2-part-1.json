@@ -5,243 +5,243 @@
   "questions": [
     {
       "id": 1,
-      "question": "What kind of life insurance beneficiary requires his/her consent when a change of beneficiary is made?",
+      "question": "What is a grace period in life insurance?",
       "options": [
-        "Irrevocable beneficiary",
-        "Tertiary beneficiary",
-        "Primary beneficiary",
-        "Revocable beneficiary"
+        "A period during which premiums can be paid late without forfeiting the policy",
+        "A period of free coverage after death",
+        "A period before the policy becomes effective",
+        "A period to change the beneficiary"
       ],
       "correctAnswer": 0,
-      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+      "explanation": "A grace period allows the policyowner to pay an overdue premium within a specified time without losing coverage."
     },
     {
       "id": 2,
-      "question": "When can a policyowner change a revocable beneficiary?",
+      "question": "Which provision allows an insured to reinstate a lapsed policy?",
       "options": [
-        "Anytime",
-        "After the consent of the current beneficiary",
-        "Never",
-        "Only if primary beneficiary dies"
+        "Reinstatement provision",
+        "Grace period provision",
+        "Non-forfeiture provision",
+        "Incontestable clause"
       ],
       "correctAnswer": 0,
-      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+      "explanation": "The reinstatement provision allows a policyowner to restore a lapsed policy by paying back premiums and interest."
     },
     {
       "id": 3,
-      "question": "M purchased an Accidental Death and Dismemberment (AD&D) policy and named his son as beneficiary. M has the right to change the beneficiary designation at anytime. What type of beneficiary is his son?",
+      "question": "What is the incontestable clause?",
       "options": [
-        "Tertiary",
-        "Irrevocable",
-        "Revocable",
-        "Contingent"
+        "A clause that prevents the insurer from testing policy values",
+        "A clause that prevents the insurer from contesting the validity of the policy after a specified period",
+        "A clause that prevents the policyowner from changing beneficiaries",
+        "A clause that prevents claims from being paid"
       ],
-      "correctAnswer": 2,
-      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+      "correctAnswer": 1,
+      "explanation": "The incontestable clause prevents the insurer from denying claims after the policy has been in force for a specified period (typically 2 years)."
     },
     {
       "id": 4,
-      "question": "How would a contingent beneficiary receive the policy proceeds in an Accidental Death and Dismemberment (AD&D) policy?",
+      "question": "What is the suicide clause designed to do?",
       "options": [
-        "If the primary beneficiary is a minor at the time of the insured's death",
-        "If the primary beneficiary dies before the insured",
-        "If the insured died of accidental causes",
-        "If the insured died of natural causes"
+        "Prevent all suicide claims from being paid",
+        "Limit the insurer's liability for death by suicide during the first few years of the policy",
+        "Require the beneficiary to prove cause of death",
+        "Allow the insurer to investigate beneficiary motives"
       ],
       "correctAnswer": 1,
-      "explanation": "A contingent beneficiary will receive the policy proceeds if the primary beneficiary dies before the insured's death."
+      "explanation": "The suicide clause limits the insurer's liability for suicide deaths during the first 2 years of the policy."
     },
     {
       "id": 5,
-      "question": "Which statement regarding the Change of Beneficiary provision is true?",
+      "question": "Which policy provision allows the policyowner to receive dividends?",
       "options": [
-        "The beneficiary can only be changed with the consent of the insurer",
-        "The policyowner can change the beneficiary",
-        "The insured can change the beneficiary",
-        "A beneficiary change is subject to underwriting procedures"
+        "Dividend provision",
+        "Non-participating provision",
+        "Participation provision",
+        "Profit-sharing clause"
       ],
-      "correctAnswer": 1,
-      "explanation": "A policyowner may change a beneficiary at any time. However, consent may be needed by the current beneficiary if designated as irrevocable."
+      "correctAnswer": 0,
+      "explanation": "The dividend provision allows policyowners to receive a portion of the insurer's surplus profits."
     },
     {
       "id": 6,
-      "question": "A policyowner would like to change the beneficiary on a Life insurance policy and make the change permanent. Which type of designation would fulfill this need?",
+      "question": "What is a policy loan?",
       "options": [
-        "Revocable",
-        "Contingent",
-        "Irrevocable",
-        "Primary"
+        "A loan taken by the insurer against the policy",
+        "A loan that the policyowner can take against the policy's cash value",
+        "A loan to pay premiums",
+        "A loan from the insurance company to the beneficiary"
       ],
-      "correctAnswer": 2,
-      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+      "correctAnswer": 1,
+      "explanation": "A policy loan allows the policyowner to borrow against the accumulated cash value of the policy."
     },
     {
       "id": 7,
-      "question": "Which statement is true regarding a minor beneficiary?",
+      "question": "What does a non-forfeiture provision provide?",
       "options": [
-        "Normally, the death proceeds are required to be held in trust until the beneficiary reaches the age of 21",
-        "Normally, a guardian is required to be appointed in the Beneficiary clause of the contract",
-        "The minor must pay the debts of the insured's estate before receiving any of the proceeds",
-        "The minor is entitled to receive the death proceeds immediately"
+        "Protection against loss of benefits due to non-payment",
+        "Protection for beneficiaries only",
+        "A guarantee of policy renewal",
+        "An option to increase coverage"
       ],
-      "correctAnswer": 1,
-      "explanation": "In most cases, insurers require that a guardian be appointed in the Beneficiary clause of the policy or that a guardian be designated in the will."
+      "correctAnswer": 0,
+      "explanation": "Non-forfeiture provisions provide values such as cash surrender, paid-up insurance, or extended term if premiums lapse."
     },
     {
       "id": 8,
-      "question": "What is the underlying concept regarding level premiums?",
+      "question": "Which of the following is NOT a non-forfeiture option?",
       "options": [
-        "Level premiums build cash value quicker in the early years",
-        "The early years are charged more than what is needed",
-        "The early years are charged less than what is needed",
-        "Level premiums can only be paid annually"
+        "Cash surrender value",
+        "Paid-up insurance",
+        "Extended term insurance",
+        "Death benefit increase"
       ],
-      "correctAnswer": 1,
-      "explanation": "The concept of level premiums charges more than needed in early years."
+      "correctAnswer": 3,
+      "explanation": "The three non-forfeiture options are cash surrender, paid-up insurance, and extended term insurance."
     },
     {
       "id": 9,
-      "question": "A policyowner is able to choose the frequency of premium payments through what policy feature?",
+      "question": "What is the purpose of the free-look period?",
       "options": [
-        "Consideration",
-        "Payor benefit",
-        "Premium Mode",
-        "Assignment provision"
+        "To allow the insurer to review the application",
+        "To allow the policyowner to review the policy and return it if unsatisfied for a full refund",
+        "To delay premium payments",
+        "To extend the contestable period"
       ],
-      "correctAnswer": 2,
-      "explanation": "Premium Mode is the feature that allows the policyowner to select the timing of premium payment, such as monthly, quarterly, annually etc."
+      "correctAnswer": 1,
+      "explanation": "The free-look period (typically 10-30 days) allows the policyowner to cancel the policy and receive a full refund if unsatisfied."
     },
     {
       "id": 10,
-      "question": "A policyowner is allowed to pay premiums more than once a year under which provision?",
+      "question": "What type of group plan requires the employer to pay the entire cost?",
       "options": [
-        "Insuring",
-        "Consideration",
-        "Payor",
-        "Mode of Premium"
+        "Contributory plan",
+        "Noncontributory plan",
+        "Voluntary plan",
+        "Split-funded plan"
       ],
-      "correctAnswer": 3,
-      "explanation": "The Mode of Premium provision permits an insured to pay premiums more than once every year."
+      "correctAnswer": 1,
+      "explanation": "In a noncontributory group plan, the employer pays 100% of the insurance cost."
     },
     {
       "id": 11,
-      "question": "A life insurance application must be signed by all of these EXCEPT",
+      "question": "In a group health insurance plan, what is the waiting period?",
       "options": [
-        "the policyowner",
-        "the agent",
-        "the insured (if an adult)",
-        "beneficiary"
+        "The period before any benefits are paid",
+        "The period an employee must work before becoming eligible for coverage",
+        "The period between claims",
+        "The period to cancel the policy"
       ],
-      "correctAnswer": 3,
-      "explanation": "A beneficiary is not required to sign the application."
+      "correctAnswer": 1,
+      "explanation": "A waiting period is the time an employee must be employed before becoming eligible for group health insurance coverage."
     },
     {
       "id": 12,
-      "question": "Any changes made on an insurance application requires the initials of whom?",
+      "question": "What is COBRA?",
       "options": [
-        "Insured",
-        "Agent",
-        "Applicant",
-        "Beneficiary"
+        "A type of health insurance plan",
+        "A law requiring employers to offer continued health coverage to employees after separation",
+        "A benefit provided by all employers",
+        "A government health insurance program"
       ],
-      "correctAnswer": 2,
-      "explanation": "When an applicant makes a mistake, the applicant must initial the correction."
+      "correctAnswer": 1,
+      "explanation": "COBRA (Consolidated Omnibus Budget Reconciliation Act) requires group health plans to offer continuation coverage after employment ends."
     },
     {
       "id": 13,
-      "question": "T applies for a life insurance policy and is told by the producer that the insurer is bound to the coverage as of the date of the application or medical examination, whichever is later, provided that T is an acceptable risk. What item is given to T?",
+      "question": "What is coordination of benefits in group health insurance?",
       "options": [
-        "Binding receipt",
-        "Conditional receipt",
-        "Warranty receipt",
-        "Backdated receipt"
+        "Paying benefits from multiple policies to avoid overpayment",
+        "Combining benefits from different insurers",
+        "A method to determine which policy pays first",
+        "All of the above"
       ],
-      "correctAnswer": 1,
-      "explanation": "A conditional receipt binds coverage as of the date of application or medical exam, provided the insured is acceptable."
+      "correctAnswer": 3,
+      "explanation": "Coordination of benefits ensures that when an employee has multiple policies, payments don't exceed actual expenses."
     },
     {
       "id": 14,
-      "question": "M completes an application for life insurance but does not pay the initial premium. All of these actions must occur before M's policy goes into effect EXCEPT",
+      "question": "What is a pre-existing condition exclusion?",
       "options": [
-        "policy is delivered",
-        "free-look period has expired",
-        "insurance company issues policy",
-        "initial premium is collected"
+        "A period during which conditions existing before coverage began are not covered",
+        "A permanent exclusion from all coverage",
+        "An exclusion that applies only to the primary insured",
+        "A condition that can never be covered"
       ],
-      "correctAnswer": 1,
-      "explanation": "The policy will go into effect after delivery, issuance, and premium collection; the free-look period expiration is not required beforehand."
+      "correctAnswer": 0,
+      "explanation": "A pre-existing condition exclusion limits or delays coverage for conditions that existed before the policy effective date."
     },
     {
       "id": 15,
-      "question": "A noncontributory group term life plan is characterized by",
+      "question": "What is an HMO (Health Maintenance Organization)?",
       "options": [
-        "the entire cost of the plan is paid for by the employer",
-        "the entire cost of the plan is paid for by the employee",
-        "the cost of the plan is shared by both employer and employee",
-        "both employer and employee must provide evidence of insurability"
+        "A type of life insurance",
+        "A managed care health plan emphasizing preventive care and using network providers",
+        "A dental insurance plan",
+        "A government health program"
       ],
-      "correctAnswer": 0,
-      "explanation": "When an employer provides noncontributory group term life insurance, the employer pays the entire cost of the plan."
+      "correctAnswer": 1,
+      "explanation": "An HMO is a managed health care plan where members must use network providers and obtain referrals for specialists."
     },
     {
       "id": 16,
-      "question": "Who is NOT required to sign a life insurance application?",
+      "question": "What is a PPO (Preferred Provider Organization)?",
       "options": [
-        "Adult insured",
-        "Policyowner",
-        "Agent",
-        "Beneficiary"
+        "A type of life insurance",
+        "A health plan that offers incentives to use network providers but allows out-of-network care",
+        "A dental only plan",
+        "A short-term insurance product"
       ],
-      "correctAnswer": 3,
-      "explanation": "The beneficiary is not required to sign the application."
+      "correctAnswer": 1,
+      "explanation": "A PPO is a health plan offering flexibility to use both in-network providers (at lower cost) and out-of-network providers."
     },
     {
       "id": 17,
-      "question": "What action should a producer take if the initial premium is NOT submitted with the application?",
+      "question": "What is a deductible in health insurance?",
       "options": [
-        "Keep the application until premium is paid",
-        "Forward the application to the insurer after giving the applicant a binding receipt",
-        "Forward the application to the insurer without the initial premium",
-        "Forward the application to the insurer after giving the applicant a conditional receipt"
+        "A monthly premium payment",
+        "The amount the insured must pay out-of-pocket before coverage begins",
+        "The maximum the insurer will pay",
+        "A co-payment amount"
       ],
-      "correctAnswer": 2,
-      "explanation": "The producer should submit the application to the insurer without the premium; the policy is not valid until initial premium is collected."
+      "correctAnswer": 1,
+      "explanation": "A deductible is the amount of covered expenses the insured must pay before the insurance coverage begins."
     },
     {
       "id": 18,
-      "question": "On August 6, D submitted an application for a $50,000 Life Insurance policy and did not pay the initial premium. On August 18, D went to his doctor complaining of chest pains and some tests were given. The life policy was delivered by the producer on August 20 and D explains what had recently taken place with the doctor. What action should the producer then take?",
+      "question": "What is a co-payment (copay)?",
       "options": [
-        "Collect initial premium",
-        "Collect initial premium along with a signed health statement",
-        "Explain to the applicant the policy is no longer in effect due to change in health condition",
-        "Collect initial premium and leave a binding receipt"
+        "A shared cost between employer and employee",
+        "A fixed amount paid by the insured at the time of service",
+        "An annual premium",
+        "A percentage of total medical costs"
       ],
       "correctAnswer": 1,
-      "explanation": "Deliver the policy and obtain the premium payment along with a signed health statement."
+      "explanation": "A copay is a fixed dollar amount the insured pays for specific services (e.g., $20 per doctor visit)."
     },
     {
       "id": 19,
-      "question": "If its employees share in the cost of insurance, what type of group life insurance plan would a corporation have?",
+      "question": "What is coinsurance?",
       "options": [
-        "Noneligible",
-        "Noncontributory",
-        "Eligible",
-        "Contributory"
+        "Coverage shared between two insurers",
+        "A percentage of costs shared between the insured and insurer after the deductible",
+        "A type of group coverage",
+        "An optional rider on policies"
       ],
-      "correctAnswer": 3,
-      "explanation": "Employees share in the premium costs with contributory plans."
+      "correctAnswer": 1,
+      "explanation": "Coinsurance is a cost-sharing arrangement where the insured pays a percentage (e.g., 20%) and the insurer pays the rest (e.g., 80%)."
     },
     {
       "id": 20,
-      "question": "N, age 50, recently bought an annuity that will pay a guaranteed $2,000/month at age 70 for life. What type of annuity did N purchase?",
+      "question": "What is an out-of-pocket maximum?",
       "options": [
-        "Fixed Period",
-        "Fixed Deferred",
-        "Fixed Immediate",
-        "Fixed Variable"
+        "The maximum monthly premium",
+        "The total amount the insured must pay before the insurer covers 100% of costs",
+        "The annual deductible amount",
+        "A limit on emergency room visits"
       ],
       "correctAnswer": 1,
-      "explanation": "A Fixed Deferred annuity pays out a fixed amount for life starting at a future date."
+      "explanation": "An out-of-pocket maximum is the maximum amount the insured must pay in deductibles, copays, and coinsurance before the plan covers 100% of covered services."
     }
   ]
 }
