@@ -6,143 +6,18 @@
   "questions": [
     {
       "id": 1,
-      "question": "Elaine, age 72, wants to purchase a deferred life insurance policy to provide an inheritance for her grandchildren. She has some mild cognitive impairment, and her adult daughter is helping her complete the paperwork. During the application, Elaine occasionally forgets details about her health history. The agent notices this but continues the application without formally assessing Elaine’s understanding of the contract.\n\nWhich of the following best describes the agent’s obligations?",
+      "question": "Pssst. . . . Would you like a very important exam tip that may save you time on the exam and improve your result?",
       "options": [
-        "A. Proceeding with the application is acceptable because Elaine’s daughter is assisting.",
-        "B. The agent must ensure Elaine understands the contract and delay or stop the transaction if necessary.",
-        "C. Cognitive impairment is not relevant as long as premiums are paid.",
-        "D. The agent may rely solely on information from the daughter for disclosure."
+        "Absolutely",
+        "No",
+        "Maybe",
+        "Definitely not"
       ],
-      "correctAnswer": 1,
-      "explanation": "Vulnerable client + incomplete understanding = duty to protect. Assistance from family does not replace informed consent.",
-      "difficulty": "hard",
-      "tags": ["vulnerable-clients","capacity","informed-consent"]
-    },
-    {
-      "id": 2,
-      "question": "Roberto, a licensed agent, has agreed to share part of his commission with a local mortgage broker for every client referral. He does not inform the clients of this arrangement. One of the clients later claims that the policy recommended was more expensive than necessary.\n\nWhat is the regulatory and ethical concern in this situation?",
-      "options": [
-        "A. The referral arrangement is irrelevant because the client agreed to purchase.",
-        "B. The undisclosed financial relationship constitutes a conflict of interest.",
-        "C. The agent is allowed to share commission without disclosure if the policy suits the client.",
-        "D. The issue only arises if the referral fee exceeds 15% of the premium."
-      ],
-      "correctAnswer": 1,
-      "explanation": "Any financial incentive that could influence advice must be disclosed. Non-disclosure = ethics violation.",
-      "difficulty": "medium",
-      "tags": ["conflict-of-interest","referrals","disclosure"]
-    },
-    {
-      "id": 3,
-      "question": "Martha is replacing her existing term life insurance with a permanent policy. The replacement will increase her premiums and restart the suicide and contestability periods. The agent explains some benefits verbally but does not clearly explain the reset periods. Martha signs the application.\n\nWhich statement is correct?",
-      "options": [
-        "A. Replacement is acceptable because Martha consented.",
-        "B. The agent committed an ethical violation due to incomplete disclosure of material disadvantages.",
-        "C. Only intentional misrepresentation is a problem.",
-        "D. The replacement is valid as long as the new features are superior."
-      ],
-      "correctAnswer": 1,
-      "explanation": "Resetting exclusions is material. Consent without full disclosure is meaningless; agent must proactively disclose material disadvantages.",
-      "difficulty": "hard",
-      "tags": ["replacement","disclosure","materiality"]
-    },
-    {
-      "id": 4,
-      "question": "Yan, a new financial advisor, is preparing an email campaign to contacts from his professional network. He includes promotional material about life insurance. His manager notices the email includes people who may not have consented to receive commercial electronic messages.\n\nWhat is the most appropriate action for Yan’s manager?",
-      "options": [
-        "A. Advise Yan to remove the promotional content.",
-        "B. Remind Yan that sending emails to people without consent violates federal legislation (CASL).",
-        "C. Instruct Yan to contact clients by phone instead.",
-        "D. Only monitor future emails without intervention."
-      ],
-      "correctAnswer": 1,
-      "explanation": "CASL requires recipient consent for electronic communications. Knowledge of potential violation requires corrective action.",
-      "difficulty": "medium",
-      "tags": ["casl","compliance","marketing"]
-    },
-    {
-      "id": 5,
-      "question": "Clara is the beneficiary of her father’s accidental death policy. Her father, in a moment of anger, caused his own death accidentally. The insurer denies the claim citing legal exclusion clauses.\n\nWhich principle allows the insurer to deny the claim?",
-      "options": [
-        "A. Suicide exclusion",
-        "B. Exclusion imposed by law",
-        "C. Living benefit limitation",
-        "D. Material misrepresentation"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Legal or statutory exclusions may apply depending on circumstances; certain legal exclusions permit denial independent of suicide clauses.",
-      "difficulty": "medium",
-      "tags": ["exclusions","claims","legal"]
-    },
-    {
-      "id": 6,
-      "question": "Nevin owns a permanent life insurance policy with a Cash Surrender Value (CSV) of $200,000 and an Adjusted Cost Base (ACB) of $100,000. He withdraws $150,000 from the policy. The insurer informs him that $50,000 is taxable.\n\nWhat type of transaction has Nevin undertaken?",
-      "options": [
-        "A. Collateral loan",
-        "B. Policy loan",
-        "C. Partial surrender",
-        "D. Withdrawal"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Borrowing against CSV is a policy loan; the taxable portion is related to gain over ACB. Partial surrenders differ in structure and tax treatment.",
-      "difficulty": "medium",
-      "tags": ["tax","policy-loan","csv"]
-    },
-    {
-      "id": 7,
-      "question": "An agent receives a request to assign a policy to a minor. The agent proceeds with only the parent’s consent and ignores verifying the minor’s legal capacity.\n\nWhich is correct?",
-      "options": [
-        "A. Assignment is valid because the parent approved.",
-        "B. Assignment is invalid due to lack of legal capacity.",
-        "C. Assignment is valid if insurer co-signs.",
-        "D. Assignment is valid if minor eventually signs."
-      ],
-      "correctAnswer": 1,
-      "explanation": "Legal capacity is required for valid assignment; parental consent alone is insufficient.",
-      "difficulty": "medium",
-      "tags": ["assignment","capacity","legal-risk"]
-    },
-    {
-      "id": 8,
-      "question": "During a needs analysis, the agent recommends a policy primarily because it increases the agent’s commission. The client is unaware of this financial incentive.\n\nWhich principle has the agent violated?",
-      "options": [
-        "A. Product suitability",
-        "B. Conflict of interest / duty of disclosure",
-        "C. Client autonomy",
-        "D. Contractual capacity"
-      ],
-      "correctAnswer": 1,
-      "explanation": "The agent must disclose personal incentives; failing to do so breaches duty to disclose conflicts of interest.",
-      "difficulty": "medium",
-      "tags": ["conflict-of-interest","commissions","disclosure"]
-    },
-    {
-      "id": 9,
-      "question": "A common-law partner, Elaine, separates from Mellie after 15 years. Elaine contributed to household expenses and childcare but did not legally co-own property.\n\nWhich of the following applies?",
-      "options": [
-        "A. Elaine can claim full property division as in marriage.",
-        "B. Elaine is entitled only to spousal support.",
-        "C. Elaine can retroactively create a cohabitation agreement to claim property.",
-        "D. Elaine has no financial rights."
-      ],
-      "correctAnswer": 1,
-      "explanation": "Common-law partners may be eligible for spousal support; property division rules differ from marriage in many jurisdictions.",
-      "difficulty": "medium",
-      "tags": ["common-law","spousal-support"]
-    },
-    {
-      "id": 10,
-      "question": "A client requests advice on creditor protection for a life insurance policy. The agent replies that naming a family member as beneficiary ensures protection, without verifying provincial legislation.\n\nWhich is correct?",
-      "options": [
-        "A. Advice is acceptable if client trusts agent.",
-        "B. This is misrepresentation; advice must be verified.",
-        "C. Ethical because naming a beneficiary always protects the policy.",
-        "D. Only relevant if a creditor challenges the policy."
-      ],
-      "correctAnswer": 1,
-      "explanation": "Legal protections vary by province; giving definitive advice without verification is misrepresentation.",
-      "difficulty": "hard",
-      "tags": ["legal-advice","misrepresentation","creditor-protection"]
+      "correctAnswer": 0,
+      "explanation": "The tip is RTQF: Read The Question First. In long ethics scenarios, don't start with the story. Read the actual question at the bottom first so you know what details to look for in the scenario.",
+      "difficulty": "easy",
+      "tags": ["exam-tips", "llqp", "ethics", "seewhy-learning"]
     }
   ]
+}
 }

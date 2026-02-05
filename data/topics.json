@@ -27,8 +27,15 @@
           "id": "practice-3",
           "name": "Practice Test 3",
           "description": "LLQP Scenario-Heavy Ethics + Legal MCQs",
-          "questionCount": 10,
+          "questionCount": 1,
           "dataFile": "data/llqp-ethics/practice-3.json"
+        },
+        {
+          "id": "practice-4",
+          "name": "Common Law Practice Test",
+          "description": "Common Law ethics questions from seewhy learning",
+          "questionCount": 1,
+          "dataFile": "data/llqp-ethics/practice-4.json"
         }
       ]
     },

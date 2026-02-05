@@ -1,0 +1,22 @@
+{
+  "topic": "LLQP Ethics (Common Law)",
+  "topicId": "llqp-ethics",
+  "description": "Common Law ethics questions from seewhy learning",
+  "examTips": "Focus on ethical principles and professional conduct in common law jurisdictions",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Pssst. . . . Would you like a very important exam tip that may save you time on the exam and improve your result?",
+      "options": [
+        "Absolutely",
+        "No",
+        "Maybe",
+        "Definitely not"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Exam tips are valuable resources that can help you prepare more effectively and perform better on the exam.",
+      "difficulty": "easy",
+      "tags": ["exam-tips", "common-law", "seewhy-learning"]
+    }
+  ]
+}
