@@ -143,6 +143,46 @@
       "explanation": "When a sole beneficiary predeceases the testator and there is no \"gift over\" (backup) or residuary clause, the gift lapses. Since there is no other valid direction in the will, the assets fall into the estate to be distributed according to the provincial rules of intestacy.",
       "difficulty": "medium",
       "tags": ["estate-planning", "intestacy", "beneficiary", "lapsed-gift", "ppe-049"]
+    },
+    {
+      "id": 8,
+      "question": "(PPE-011) EPP\nAfter 10 years of marriage, Jules and Amanda recently divorced. As part of their separation agreement, Jules is required to pay Amanda $5,000 per month in spousal support as well as child support in accordance with provincial child support guidelines. Their child is only two years old, and therefore Jules will likely have to pay child support for 20-plus years. Amanda's lawyer insisted on a clause in the separation agreement that required Jules to purchase life insurance to ensure that the required payments will be made in the event of his death. Jules is responsible for making the premium payments.\n\nWhich of the following is most likely true of the policy?",
+      "options": [
+        "Jules is the annuitant, and their son is the beneficiary.",
+        "Amanda is the policy owner, and their son is contingent policy owner as well as beneficiary.",
+        "Jules is the policy owner, and Amanda is the beneficiary.",
+        "By guaranteeing payments, Jules is considered the insurer, and Amanda is the contract holder."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Jules cannot be the annuitant in a life insurance policy; annuitants are only used in annuity contracts. Additionally, the child would not be the primary beneficiary when the purpose is to protect Amanda's spousal and child support payments.",
+        "While Amanda has a strong insurable interest in Jules' life, having the two-year-old child as a contingent owner is impractical and legally problematic. The child cannot hold legal title to insurance.",
+        null,
+        "Jules cannot be the 'insurer'—he is the insured. An 'insurer' is the insurance company. Amanda is not the 'contract holder' because Jules, who makes the premium payments, is responsible for holding and maintaining the contract."
+      ],
+      "explanation": "In life insurance contracts designed to secure financial obligations (like spousal support), the person making the premium payments is typically the policy owner and the insured, while the person being protected by the payments is the beneficiary.\n\nIn this case:\n• Jules is the policy owner (he pays the premiums and controls the contract)\n• Jules is the insured (the policy pays out when he dies)\n• Amanda is the beneficiary (she receives the proceeds to fulfill his payment obligations)\n\nAlthough Amanda has a strong insurable interest and her lawyer negotiated this requirement, she would typically not own the policy herself—Jules owns it but maintains it for her benefit. This structure is common in spousal support and other obligation-securing life insurance arrangements.\n\nNote: The child, being only two years old, cannot be a policy owner or hold any legal interest in the contract.",
+      "difficulty": "medium",
+      "tags": ["life-insurance", "policy-ownership", "beneficiary", "spousal-support", "ppe-011"]
+    },
+    {
+      "id": 9,
+      "question": "(PPE-027) EPP\nWhat is a \"career agent\"?",
+      "options": [
+        "One who is not insurance licenced but can offer creditor insurance on behalf of his or her employer.",
+        "One who represents only one insurer.",
+        "One who is paid a salary as opposed to a commission.",
+        "One who sells insurance through a managing general agent (MGA)."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This describes an \"incidental sale of insurance,\" which often applies to employees of businesses like banks or dealerships who offer insurance secondary to their main business.",
+        null,
+        "While some career agents may receive a training stipend, they are primarily commission-based professionals rather than salaried employees.",
+        "Agents working through an MGA are typically independent advisors who can represent multiple carriers."
+      ],
+      "explanation": "WHAT IS A CAREER AGENT?\nA career agent works for ONE insurance company only. They represent that company exclusively.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n1️⃣ CAREER AGENT (Captive Agent)\n   • Works for: 1 insurer ONLY\n   • Can sell: Only that company's products\n   • Employment: Considered an employee of the insurer\n   • Examples: State Farm agent, Allstate agent, TD Insurance agent\n\n2️⃣ INDEPENDENT AGENT\n   • Works for: 2 or MORE insurers\n   • Can sell: Multiple companies' products\n   • How they work: Usually through an MGA\n   • Examples: Local insurance brokers, independent agencies\n\n3️⃣ MGA (Managing General Agent)\n   • What it is: A middleman/distributor\n   • Who it serves: Independent agents\n   • Has relationships with: Multiple insurers already\n   • Purpose: Makes it easy for independent agents to place policies\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 QUICK COMPARISON:\n\nCareer Agent = \"Captive\" to 1 company (no choice)\nIndependent Agent = Free to work with many companies\n\n💡 WHY \"CAPTIVE\"?\nThe word \"captive\" means the agent is captured or tied to ONE insurance company. They can't break free to work with competitors.",
+      "difficulty": "easy",
+      "tags": ["agent-types", "career-agent", "captive-agent", "licensing", "ppe-027"]
     }
   ]
 }

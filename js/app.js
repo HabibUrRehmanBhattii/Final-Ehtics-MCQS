@@ -258,6 +258,17 @@ const MCQApp = {
     document.getElementById('clear-wrong-btn')?.addEventListener('click', () => {
       this.clearWrongQuestions();
     });
+
+    // Finish banner buttons
+    document.getElementById('finish-home-btn')?.addEventListener('click', () => {
+      this.showView('home');
+    });
+    document.getElementById('finish-tests-btn')?.addEventListener('click', () => {
+      this.showView('practice-test');
+    });
+    document.getElementById('finish-retry-btn')?.addEventListener('click', () => {
+      this.retryCurrentTest();
+    });
   },
 
   // Update Wrong Questions Count
@@ -480,6 +491,13 @@ const MCQApp = {
     document.getElementById('current-question-num').textContent = questionIndex + 1;
     document.getElementById('total-questions').textContent = totalQuestions;
 
+    // Update progress bar
+    const progressFill = document.getElementById('progress-fill');
+    if (progressFill) {
+      const pct = ((questionIndex + 1) / totalQuestions) * 100;
+      progressFill.style.width = pct + '%';
+    }
+
     // Update question card
     document.getElementById('q-num').textContent = questionIndex + 1;
     document.getElementById('question-text').textContent = question.question;
@@ -488,10 +506,12 @@ const MCQApp = {
     const optionsContainer = document.getElementById('options-container');
     const attemptedForQuestion = this.state.attemptedOptions[question.id] || [];
     
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
     optionsContainer.innerHTML = question.options.map((option, index) => {
       const wasAttempted = attemptedForQuestion.includes(index);
       const isCorrect = index === question.correctAnswer;
       const isRevealed = this.state.answersRevealed.has(question.id);
+      const dimmedClass = isRevealed && !isCorrect && !wasAttempted ? 'is-dimmed' : '';
       const feedbackText = wasAttempted && !isRevealed ? this.getWrongAnswerFeedback(question, index) : '';
       const feedbackHtml = feedbackText ? `
             <div class="option-feedback">
@@ -500,10 +520,13 @@ const MCQApp = {
           ` : '';
       
       return `
-        <div class="option ${wasAttempted ? 'was-attempted' : ''} ${isRevealed && isCorrect ? 'is-correct' : ''}" 
+        <div class="option ${wasAttempted ? 'was-attempted' : ''} ${isRevealed && isCorrect ? 'is-correct' : ''} ${dimmedClass}" 
              data-index="${index}" 
              onclick="MCQApp.selectOption(${index})">
-          <span class="option-text">${option}</span>
+          <div class="option-main">
+            <span class="option-letter">${letters[index] || index + 1}</span>
+            <span class="option-text">${option}</span>
+          </div>
           ${feedbackHtml}
         </div>
       `;
@@ -518,6 +541,17 @@ const MCQApp = {
     // Hide answer section initially
     document.getElementById('answer-section').classList.add('hidden');
 
+    // If already answered, restore the answer display and disable options
+    if (this.state.answersRevealed.has(question.id)) {
+      const answerSection = document.getElementById('answer-section');
+      document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
+      document.getElementById('explanation-text').innerHTML = this.formatExplanation(question.explanation);
+      answerSection.classList.remove('hidden');
+      optionsContainer.querySelectorAll('.option').forEach(opt => {
+        opt.style.pointerEvents = 'none';
+      });
+    }
+
     // Mark as viewed
     this.state.viewedQuestions.add(question.id);
     this.saveProgress();
@@ -526,12 +560,19 @@ const MCQApp = {
     this.updateNavigationButtons();
     this.renderQuestionDots();
 
-    // Hide Next until answered (show if already answered)
+    // Hide Next until answered; always hide on last question (finish banner handles it)
     const nextBtn = document.getElementById('next-question-btn');
     const hasAnswered = this.state.answersRevealed.has(question.id);
+    const isLastQ = this.state.currentQuestionIndex === this.getFilteredQuestions().length - 1;
     if (nextBtn) {
-      nextBtn.classList.toggle('hidden', !hasAnswered);
+      nextBtn.classList.toggle('hidden', !hasAnswered || isLastQ);
     }
+
+    // Scroll to top on question change
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Check if all questions have been answered — show/hide finish banner
+    this.checkCompletion();
   },
 
   // Get Current Question
@@ -605,9 +646,12 @@ const MCQApp = {
       const isActive = i === currentIndex;
       const isBookmarked = this.state.bookmarkedQuestions.has(q.id);
       const isViewed = this.state.viewedQuestions.has(q.id);
+      const isAnswered = this.state.answersRevealed.has(q.id);
+      const wasFirstCorrect = this.state.firstAttemptCorrect[q.id];
+      const dotStateClass = isAnswered ? (wasFirstCorrect ? 'is-correct-dot' : 'is-wrong-dot') : '';
       
       html += `
-        <button class="question-dot ${isActive ? 'is-active' : ''} ${isViewed ? 'is-viewed' : ''} ${isBookmarked ? 'is-bookmarked' : ''}"
+        <button class="question-dot ${isActive ? 'is-active' : ''} ${isViewed ? 'is-viewed' : ''} ${isBookmarked ? 'is-bookmarked' : ''} ${dotStateClass}"
                 onclick="MCQApp.jumpToQuestion(${i})"
                 title="Question ${i + 1}"
                 aria-label="Question ${i + 1}">
@@ -633,6 +677,174 @@ const MCQApp = {
   // Jump to Question
   jumpToQuestion(index) {
     this.state.currentQuestionIndex = index;
+    this.renderQuestion();
+  },
+
+  // Format explanation text into styled HTML
+  formatExplanation(text) {
+    if (!text) return '';
+    
+    // Escape HTML to prevent XSS
+    const escapeHtml = (str) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const safeText = escapeHtml(text);
+    
+    // Split into paragraphs by double newlines
+    const sections = safeText.split(/\n\n+/);
+    
+    let html = '';
+    
+    sections.forEach(section => {
+      const trimmed = section.trim();
+      if (!trimmed) return;
+      
+      // Skip separator lines (━━━ or ─── or ---)
+      if (/^[━─\-=]{5,}$/.test(trimmed)) {
+        html += '<hr class="exp-divider">';
+        return;
+      }
+      
+      // Check if it's a heading-like line (all caps, emoji prefix, or ends with : or ?)
+      const lines = trimmed.split('\n');
+      const firstLine = lines[0].trim();
+      
+      // Detect section headers
+      const isHeader = (
+        /^[A-Z\s\d\?\!\:\"\']{10,}$/.test(firstLine.replace(/[^\w\s\?\!\:\"\']/g, '')) ||
+        /^[\u{1F300}-\u{1FAFF}]/u.test(firstLine) ||
+        /^(WHAT|WHY|HOW|KEY|QUICK|NOTE|ADDITIONAL|IMPORTANT|REMEMBER|TIP)/i.test(firstLine.replace(/[^\w\s]/g, ''))
+      );
+      
+      if (isHeader && lines.length === 1) {
+        // Standalone header
+        html += `<h4 class="exp-heading">${firstLine}</h4>`;
+        return;
+      }
+      
+      if (isHeader && lines.length > 1) {
+        // Header + content below
+        html += `<h4 class="exp-heading">${firstLine}</h4>`;
+        const rest = lines.slice(1);
+        const hasBullets = rest.some(l => /^\s*[•\-\d️⃣]/.test(l.trim()));
+        
+        if (hasBullets) {
+          html += '<ul class="exp-list">';
+          rest.forEach(l => {
+            const clean = l.trim().replace(/^[•\-]\s*/, '').replace(/^\d️⃣\s*/, '');
+            if (clean) {
+              // Bold the label before a colon
+              const formatted = clean.replace(/^([^:]+):/, '<strong>$1:</strong>');
+              html += `<li>${formatted}</li>`;
+            }
+          });
+          html += '</ul>';
+        } else {
+          html += `<p class="exp-text">${rest.join('<br>')}</p>`;
+        }
+        return;
+      }
+      
+      // Check if section is a bullet list
+      const hasBullets = lines.some(l => /^\s*[•\-]\s/.test(l.trim()));
+      if (hasBullets) {
+        html += '<ul class="exp-list">';
+        lines.forEach(l => {
+          const clean = l.trim().replace(/^[•\-]\s*/, '');
+          if (clean) {
+            const formatted = clean.replace(/^([^:]+):/, '<strong>$1:</strong>');
+            html += `<li>${formatted}</li>`;
+          }
+        });
+        html += '</ul>';
+        return;
+      }
+
+      // Check if section is a numbered list (1️⃣, 2️⃣, etc.)
+      const hasNumberedEmoji = lines.some(l => /^\s*\d️⃣/.test(l.trim()));
+      if (hasNumberedEmoji) {
+        let currentItem = null;
+        let subItems = [];
+        
+        const flushItem = () => {
+          if (currentItem) {
+            html += `<div class="exp-numbered-item"><div class="exp-numbered-title">${currentItem}</div>`;
+            if (subItems.length) {
+              html += '<ul class="exp-list">';
+              subItems.forEach(s => {
+                const formatted = s.replace(/^([^:]+):/, '<strong>$1:</strong>');
+                html += `<li>${formatted}</li>`;
+              });
+              html += '</ul>';
+            }
+            html += '</div>';
+          }
+        };
+        
+        lines.forEach(l => {
+          const t = l.trim();
+          if (/^\d️⃣/.test(t)) {
+            flushItem();
+            currentItem = t;
+            subItems = [];
+          } else if (/^\s*[•\-]/.test(t)) {
+            subItems.push(t.replace(/^[•\-]\s*/, ''));
+          } else if (t) {
+            if (currentItem) subItems.push(t);
+            else html += `<p class="exp-text">${t}</p>`;
+          }
+        });
+        flushItem();
+        return;
+      }
+      
+      // Regular paragraph
+      html += `<p class="exp-text">${trimmed.replace(/\n/g, '<br>')}</p>`;
+    });
+    
+    return html;
+  },
+
+  // Check if all questions have been answered
+  checkCompletion() {
+    const filtered = this.getFilteredQuestions();
+    const totalQ = filtered.length;
+    const answeredCount = filtered.filter(q => this.state.answersRevealed.has(q.id)).length;
+    const banner = document.getElementById('finish-banner');
+
+    if (answeredCount === totalQ && totalQ > 0) {
+      // Calculate score (first attempt correct)
+      const correctFirst = filtered.filter(q => this.state.firstAttemptCorrect[q.id] === true).length;
+      const pct = Math.round((correctFirst / totalQ) * 100);
+
+      document.getElementById('finish-correct').textContent = correctFirst;
+      document.getElementById('finish-total').textContent = totalQ;
+      document.getElementById('finish-percent').textContent = pct + '%';
+
+      if (banner) banner.classList.remove('hidden');
+    } else {
+      if (banner) banner.classList.add('hidden');
+    }
+  },
+
+  // Retry current test from scratch
+  async retryCurrentTest() {
+    if (!this.state.currentPracticeTest) return;
+    const testId = this.state.currentPracticeTest.id;
+    
+    // Clear progress for this test
+    if (this.state.currentTopic && this.state.currentPracticeTest) {
+      const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
+      localStorage.removeItem(key);
+    }
+    this.state.viewedQuestions = new Set();
+    this.state.bookmarkedQuestions = new Set();
+    this.state.answersRevealed = new Set();
+    this.state.attemptedOptions = {};
+    this.state.firstAttemptCorrect = {};
+    this.state.currentQuestionIndex = 0;
+    
+    // Reload and reshuffle questions
+    await this.loadQuestions(this.state.currentPracticeTest.dataFile || 
+      this.state.currentTopic.practiceTests.find(t => t.id === testId)?.dataFile);
     this.renderQuestion();
   },
 
@@ -690,17 +902,23 @@ const MCQApp = {
         this.removeFromWrongQuestions(question.id);
       }
       
-      // Disable all options
+      // Highlight correct option green, dim others
       const optionsContainer = document.getElementById('options-container');
       const options = optionsContainer.querySelectorAll('.option');
       options.forEach(option => {
+        const idx = parseInt(option.getAttribute('data-index'));
+        if (idx === question.correctAnswer) {
+          option.classList.add('is-correct');
+        } else if (!option.classList.contains('was-attempted')) {
+          option.classList.add('is-dimmed');
+        }
         option.style.pointerEvents = 'none';
       });
       
       // Show explanation
       const answerSection = document.getElementById('answer-section');
       document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
-      document.getElementById('explanation-text').textContent = question.explanation;
+      document.getElementById('explanation-text').innerHTML = this.formatExplanation(question.explanation);
       
       // Show AI button and ensure AI container is hidden until used
       const aiExplanationEl = document.getElementById('ai-explanation-text');
@@ -716,15 +934,21 @@ const MCQApp = {
       
       answerSection.classList.remove('hidden');
 
-      // Show Next button after answering
+      // Show Next button after answering (unless it's the last question)
       const nextBtn = document.getElementById('next-question-btn');
-      if (nextBtn) {
+      const filtered = this.getFilteredQuestions();
+      const isLastQuestion = this.state.currentQuestionIndex === filtered.length - 1;
+      if (nextBtn && !isLastQuestion) {
         nextBtn.classList.remove('hidden');
       }
 
       // Track answer reveal
       this.state.answersRevealed.add(question.id);
       this.saveProgress();
+
+      // Update dots to show answered state & check completion
+      this.renderQuestionDots();
+      this.checkCompletion();
       
     } else {
       // WRONG ANSWER - Show individual feedback, don't reveal correct answer
@@ -842,8 +1066,8 @@ Keep the explanation educational and supportive.`;
     const optionsContainer = document.getElementById('options-container');
     const options = optionsContainer.querySelectorAll('.option');
     options.forEach(option => {
-      option.classList.remove('correct', 'incorrect', 'dimmed');
-      option.style.pointerEvents = 'auto'; // Re-enable clicks
+      option.classList.remove('is-correct', 'is-incorrect', 'is-dimmed', 'was-attempted');
+      option.style.pointerEvents = 'auto';
     });
 
     document.getElementById('answer-section').classList.add('hidden');
@@ -1013,6 +1237,12 @@ Keep the explanation educational and supportive.`;
     this.state.viewedQuestions.clear();
     this.state.bookmarkedQuestions.clear();
     this.state.answersRevealed.clear();
+    this.state.attemptedOptions = {};
+    this.state.firstAttemptCorrect = {};
+
+    // Hide finish banner
+    const banner = document.getElementById('finish-banner');
+    if (banner) banner.classList.add('hidden');
 
     this.state.currentQuestionIndex = 0;
     this.renderQuestion();

@@ -1,178 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LLQP and WFG Exam Preparation - Interactive MCQ Practice Platform">
-    <title>LLQP & WFG Exam Prep - MCQ Study Platform</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>LLQP & WFG Exam Prep</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Main Container -->
     <div id="app">
-        
-        <!-- Home View: Topic Selection -->
+
+        <!-- HOME VIEW -->
         <div id="home-view" class="view active">
-            <header class="main-header">
-                <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                    🌙
-                </button>
-                <h1>📚 LLQP & WFG Exam Preparation</h1>
-                <p class="subtitle">Interactive MCQ Practice Platform</p>
-            </header>
-
-            <div class="container">
-                <div class="welcome-section">
-                    <h2>Select a Topic to Begin</h2>
-                    <p>Choose from the available study topics below. Your progress is automatically saved.</p>
+            <header class="hero">
+                <div class="hero-inner">
+                    <button id="dark-mode-toggle" class="dm-toggle" aria-label="Toggle dark mode">&#x1F319;</button>
+                    <h1 class="hero-title">&#x1F4DA; LLQP & WFG Exam Prep</h1>
+                    <p class="hero-sub">Interactive MCQ Practice Platform</p>
                 </div>
-
-                <div id="wrong-questions-section" class="wrong-questions-section">
-                    <div class="wrong-questions-card" onclick="MCQApp.startWrongQuestionsReview()">
-                        <div class="wrong-icon">❌</div>
-                        <h3>Review Wrong Answers</h3>
-                        <p>Practice questions you answered incorrectly</p>
-                        <div class="wrong-count">
-                            <span id="wrong-count-badge">0</span> Questions to Review
+            </header>
+            <main class="wrap">
+                <div class="section-label">Select a Topic to Begin</div>
+                <div id="wrong-questions-section" class="wrong-wrap">
+                    <div class="wrong-card" onclick="MCQApp.startWrongQuestionsReview()">
+                        <span class="wrong-icon">&#x274C;</span>
+                        <div class="wrong-info">
+                            <strong>Review Wrong Answers</strong>
+                            <span class="wrong-count"><span id="wrong-count-badge">0</span> to review</span>
                         </div>
-                        <button class="btn-start">Start Review →</button>
+                        <span class="wrong-arrow">&#x2192;</span>
                     </div>
                 </div>
-
-                <div id="topics-grid" class="topics-grid">
-                    <!-- Topics will be dynamically loaded here -->
-                </div>
-            </div>
-
-            <footer class="main-footer">
-                <p>&copy; 2026 LLQP & WFG Exam Prep | Built for Success</p>
-            </footer>
+                <div id="topics-grid" class="grid"></div>
+            </main>
+            <footer class="foot">&copy; 2026 LLQP & WFG Exam Prep</footer>
         </div>
 
-        <!-- Practice Test Selection View -->
+        <!-- PRACTICE TEST VIEW -->
         <div id="practice-test-view" class="view">
-            <header class="mcq-header">
-                <button id="back-to-topics-btn" class="btn-back" aria-label="Back to topics">
-                    ← Back to Topics
-                </button>
-                <h2 id="practice-topic-title" class="topic-title">Select Practice Test</h2>
-                <div class="topic-icon-header" id="practice-topic-icon">📚</div>
+            <header class="topbar">
+                <button id="back-to-topics-btn" class="btn-ghost">&#x2190; Back</button>
+                <h2 id="practice-topic-title" class="topbar-title">Tests</h2>
+                <div id="practice-topic-icon" class="topbar-icon">&#x1F4DA;</div>
             </header>
-
-            <div class="container">
-                <div class="practice-tests-info">
-                    <p class="practice-description" id="practice-description">Choose a practice test to begin. Each test contains multiple questions.</p>
-                </div>
-
-                <div id="practice-tests-grid" class="practice-tests-grid">
-                    <!-- Practice tests will be dynamically loaded here -->
-                </div>
-            </div>
+            <main class="wrap">
+                <p class="muted-text" id="practice-description"></p>
+                <div id="practice-tests-grid" class="grid"></div>
+            </main>
         </div>
 
-        <!-- MCQ View: Question Display -->
+        <!-- MCQ VIEW -->
         <div id="mcq-view" class="view">
-            <header class="mcq-header">
-                <button id="back-btn" class="btn-back" aria-label="Back to practice tests">
-                    ← Back to Tests
-                </button>
-                <h2 id="topic-title" class="topic-title">Topic Title</h2>
-                <div id="progress-indicator" class="progress-indicator">
-                    <span id="current-question-num">1</span> / <span id="total-questions">10</span>
-                </div>
+            <header class="topbar">
+                <button id="back-btn" class="btn-ghost">&#x2190; Back</button>
+                <h2 id="topic-title" class="topbar-title">Topic</h2>
+                <div id="progress-indicator" class="pill"><span id="current-question-num">1</span>/<span id="total-questions">10</span></div>
             </header>
-
-            <div class="container">
-                <!-- Question Navigation -->
-                <div class="question-nav">
-                    <button id="prev-question-btn" class="btn-nav" disabled>
-                        ← Previous
-                    </button>
-                    <div class="question-dots" id="question-dots">
-                        <!-- Question dots will be generated here -->
+            <div class="progress-track"><div id="progress-fill" class="progress-fill" style="width:0%"></div></div>
+            <main class="wrap">
+                <nav class="q-nav">
+                    <button id="prev-question-btn" class="btn-dot-nav" disabled>&#x2039;</button>
+                    <div class="q-dots" id="question-dots"></div>
+                    <button id="next-question-btn" class="btn-dot-nav">&#x203A;</button>
+                </nav>
+                <article class="card">
+                    <div class="card-head">
+                        <span class="q-badge">Question <span id="q-num">1</span></span>
+                        <button id="bookmark-btn" class="btn-star" aria-label="Bookmark">&#x2606;</button>
                     </div>
-                    <button id="next-question-btn" class="btn-nav">
-                        Next →
-                    </button>
-                </div>
-
-                <!-- Question Card -->
-                <div id="question-card" class="question-card">
-                    <div class="question-header">
-                        <span class="question-number">Question <span id="q-num">1</span></span>
-                        <button id="bookmark-btn" class="btn-bookmark" aria-label="Bookmark question">
-                            ⭐
-                        </button>
-                    </div>
-
-                    <div class="question-text" id="question-text">
-                        <!-- Question text will be inserted here -->
-                    </div>
-
-                    <div class="options-container" id="options-container">
-                        <!-- Options will be generated here -->
-                    </div>
-
-                    <div id="answer-section" class="answer-section hidden">
-                        <div class="correct-answer-badge">
-                            ✓ Correct Answer: <span id="correct-answer-text"></span>
+                    <div class="q-text" id="question-text"></div>
+                    <div class="opts" id="options-container"></div>
+                    <div id="answer-section" class="answer-box hidden">
+                        <div class="answer-correct">&#x2713; Correct Answer: <span id="correct-answer-text"></span></div>
+                        <div class="explain-box">
+                            <div class="explain-label">&#x1F4DD; Explanation</div>
+                            <div id="explanation-text" class="explain-body"></div>
                         </div>
-                        
-                        <div class="explanation-box">
-                            <h3>📝 Explanation</h3>
-                            <p id="explanation-text"></p>
-                        </div>
-
-                        <div class="ai-explanation-box">
-                            <button id="get-ai-explanation-btn" class="btn-ai" onclick="MCQApp.generateAIExplanation()" style="display: none;">
-                                🤖 Get AI Explanation
-                            </button>
+                        <div class="ai-box">
+                            <button id="get-ai-explanation-btn" class="btn-ai" onclick="MCQApp.generateAIExplanation()" style="display:none;">&#x1F916; Get AI Explanation</button>
                             <div id="ai-explanation-text"></div>
                         </div>
-
-                        <button id="hide-answer-btn" class="btn-secondary">
-                            Hide Answer
-                        </button>
+                        <button id="hide-answer-btn" class="btn-outline">Hide Answer</button>
+                    </div>
+                </article>
+                <!-- Finish Banner (shown when all questions answered) -->
+                <div id="finish-banner" class="finish-banner hidden">
+                    <div class="finish-icon">&#x1F389;</div>
+                    <h3 class="finish-title">Test Complete!</h3>
+                    <div class="finish-score">
+                        <span id="finish-correct">0</span> / <span id="finish-total">0</span> correct on first try
+                    </div>
+                    <div class="finish-percent" id="finish-percent">0%</div>
+                    <div class="finish-actions">
+                        <button id="finish-home-btn" class="btn-finish">&#x1F3E0; Main Menu</button>
+                        <button id="finish-tests-btn" class="btn-finish btn-finish-alt">&#x1F4CB; Back to Tests</button>
+                        <button id="finish-retry-btn" class="btn-finish btn-finish-alt">&#x1F504; Retry Test</button>
                     </div>
                 </div>
 
-                <!-- Filter & Actions -->
-                <div class="actions-bar">
-                    <button id="show-all-btn" class="btn-secondary">
-                        Show All Questions
-                    </button>
-                    <button id="bookmarked-only-btn" class="btn-secondary">
-                        📌 Bookmarked Only
-                    </button>
-                    <button id="reset-progress-btn" class="btn-secondary">
-                        Reset Progress
-                    </button>
-                    <button id="clear-wrong-btn" class="btn-secondary">
-                        Clear Wrong Answers
-                    </button>
+                <div class="actions">
+                    <button id="show-all-btn" class="btn-outline">Show All</button>
+                    <button id="bookmarked-only-btn" class="btn-outline">&#x1F4CC; Bookmarked</button>
+                    <button id="reset-progress-btn" class="btn-outline">Reset</button>
+                    <button id="clear-wrong-btn" class="btn-outline">Clear Wrong</button>
                 </div>
-            </div>
+            </main>
         </div>
 
-        <!-- All Questions List View -->
+        <!-- LIST VIEW -->
         <div id="list-view" class="view">
-            <header class="mcq-header">
-                <button id="back-to-mcq-btn" class="btn-back">
-                    ← Back to Practice
-                </button>
-                <h2 id="list-topic-title" class="topic-title">All Questions</h2>
+            <header class="topbar">
+                <button id="back-to-mcq-btn" class="btn-ghost">&#x2190; Back</button>
+                <h2 id="list-topic-title" class="topbar-title">All Questions</h2>
+                <div></div>
             </header>
-
-            <div class="container">
-                <div id="questions-list" class="questions-list">
-                    <!-- All questions will be listed here -->
-                </div>
-            </div>
+            <main class="wrap">
+                <div id="questions-list" class="q-list"></div>
+            </main>
         </div>
 
     </div>
-
     <script src="js/app.js"></script>
 </body>
 </html>
