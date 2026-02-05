@@ -183,6 +183,46 @@
       "explanation": "WHAT IS A CAREER AGENT?\nA career agent works for ONE insurance company only. They represent that company exclusively.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n1️⃣ CAREER AGENT (Captive Agent)\n   • Works for: 1 insurer ONLY\n   • Can sell: Only that company's products\n   • Employment: Considered an employee of the insurer\n   • Examples: State Farm agent, Allstate agent, TD Insurance agent\n\n2️⃣ INDEPENDENT AGENT\n   • Works for: 2 or MORE insurers\n   • Can sell: Multiple companies' products\n   • How they work: Usually through an MGA\n   • Examples: Local insurance brokers, independent agencies\n\n3️⃣ MGA (Managing General Agent)\n   • What it is: A middleman/distributor\n   • Who it serves: Independent agents\n   • Has relationships with: Multiple insurers already\n   • Purpose: Makes it easy for independent agents to place policies\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 QUICK COMPARISON:\n\nCareer Agent = \"Captive\" to 1 company (no choice)\nIndependent Agent = Free to work with many companies\n\n💡 WHY \"CAPTIVE\"?\nThe word \"captive\" means the agent is captured or tied to ONE insurance company. They can't break free to work with competitors.",
       "difficulty": "easy",
       "tags": ["agent-types", "career-agent", "captive-agent", "licensing", "ppe-027"]
+    },
+    {
+      "id": 10,
+      "question": "(PPE-032) EPP\nDanielle and Dustin saved for years to purchase their first home, and they have finally bought a single-family house in the suburbs. The purchase price was $525,000, and they were able to make a down payment of $125,000. At the time of purchase, Franco, the mortgage advisor at Big Bank, advised them to purchase mortgage insurance through the bank, which would pay out the outstanding mortgage balance in the event that Danielle or Dustin dies before the loan has been fully repaid. They agreed. The premium will be paid in conjunction with their mortgage payments and will add $85 to the amount that is debited from their account twice per month. Sunny is an independent, licensed life insurance agent. He met with Danielle and Dustin to discuss their life insurance needs and learned about the creditor insurance that they have in place with Big Bank. He suggested that a renewable convertible (RC) T-10 policy from one of the companies that they can contract with would be more appropriate and likely cheaper. He presented an RC T-10 policy that would cover the outstanding mortgage balance for $100 per month.\n\nBased only on the information in the scenario, how should Danielle and Dustin proceed?",
+      "options": [
+        "The premium on the policy Sunny is recommending is greater than what they are paying for the creditor (mortgage) insurance, so they should maintain the policy at Big Bank.",
+        "They should replace the creditor (mortgage) insurance with the policy offered by Sunny but make sure that the new policy is approved before cancelling the original policy.",
+        "As most mortgages are for greater than 10 years, the policy that Sunny is recommending is not appropriate.",
+        "Franco is guilty of tied selling, which is a prohibited practice. Danielle and Dustin should report Franco to the provincial regulator."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The bank's premium is $85 twice per month, totaling $170 per month. Sunny's recommendation is $100 per month, which is significantly cheaper.",
+        null,
+        "A Renewable and Convertible (RC) T-10 policy allows for continued coverage or conversion to permanent insurance, making it a flexible and appropriate option for a long-term mortgage.",
+        "Offering insurance at the time of a mortgage is not 'coercive tied selling' unless it was made a mandatory condition of obtaining the mortgage itself, which is not indicated here."
+      ],
+      "explanation": "When replacing any policy, it is a critical ethical and professional standard to ensure the new coverage is fully approved and in force before canceling the existing policy to avoid any gap in protection.\n\nKEY DETAILS FROM THE SCENARIO:\n\n• Creditor insurance premium: $85 × 2 per month = $170/month\n• Sunny's RC T-10 policy: $100/month (significantly cheaper)\n• The RC T-10 is renewable (can be renewed without new medical evidence) and convertible (can be changed to permanent insurance)\n\nWHY OPTION A IS WRONG:\nMany candidates misread the premium structure. The $85 is debited TWICE per month, making the total $170/month — not $85. Sunny's $100/month policy is clearly cheaper.\n\nWHY OPTION C IS WRONG:\nAn RC T-10 policy renews every 10 years and can also be converted to permanent insurance, making it perfectly suitable for a mortgage that exceeds 10 years.\n\nWHY OPTION D IS WRONG:\nTied selling occurs when obtaining one product (the mortgage) is conditional on purchasing another (the insurance). Franco merely \"advised\" them — he did not require it as a condition of the mortgage.\n\nADDITIONAL LEARNING:\n\nNote 1 - Critical Policy Replacement Rule:\nWhen replacing a policy, it is critical to ensure that the clients are approved for the new policy before they cancel the old one. Otherwise, the clients could be left with no insurance if the new policy is not approved for some reason.\n\nNote 2 - Not Tied Selling:\nThis is not a case of tied selling. Nothing in the scenario suggests that Franco made the purchase of Big Bank's mortgage insurance a condition of getting the mortgage. He simply recommended that Danielle and Dustin purchase the policy from Big Bank, but they would have been free to get the required insurance from any source.\n\nNote 3 - Cost Comparison:\nThe premium for the policy from Big Bank is $85 twice per month, which equates to $170 per month. This is much more expensive than the policy that Sunny is recommending.\n\nNote 4 - Policy Features:\nThe policy that Sunny is recommending is renewable and convertible, so it could be renewed for as long as is required to cover the mortgage.",
+      "difficulty": "medium",
+      "tags": ["replacement", "creditor-insurance", "mortgage-insurance", "rc-t10", "tied-selling", "ppe-032"]
+    },
+    {
+      "id": 11,
+      "question": "(PPE-007) EPP\nWhich of the following individuals is also known as the policyholder on a group insurance plan?",
+      "options": [
+        "Plan sponsor",
+        "Employee",
+        "Certificate holder",
+        "Plan member"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "Correct! The plan sponsor (usually the employer or an association) is the entity that owns the group contract and is legally recognized as the policyholder.",
+        "While employees are often the ones covered, the employer is the one acting as the policyholder in the group insurance contract.",
+        "The certificate holder is the individual (such as an employee) who is covered under the plan and receives a certificate of insurance rather than the master policy.",
+        "A plan member is the person belonging to the group who is insured under the policy; they do not own the master contract."
+      ],
+      "explanation": "In group insurance plans, the plan sponsor is the policyholder — not the individual members covered under the plan.\n\nKEY TERMINOLOGY:\n\n• Plan Sponsor/Policyholder: The group itself (usually an employer or association) that owns the master contract\n• Plan Members: The individuals covered under the plan who receive certificates of insurance\n• Certificate Holder: Another term for plan members who hold a certificate (not the policy itself)\n\nWHY OPTION B IS WRONG:\nEmployees are typically the ones receiving coverage, but they are not the policyholder. The employer is the entity that holds and owns the group insurance contract.\n\nWHY OPTION C IS WRONG:\nThe certificate holder receives a certificate of insurance, not the master policy. They are covered by the plan but do not own it.\n\nWHY OPTION D IS WRONG:\nA plan member is simply an individual insured under the group plan. The member does not own or control the master contract.\n\nADDITIONAL LEARNING:\n\nThe group itself (usually an employer) is the actual policyholder, not the members. At some point in time, you or your family may have been covered under a group plan. Did you actually see or even read the policy? The answer to this question is likely \"No.\" The reason you did not see the policy is you were not the policyholder (i.e., the employer). Instead, you were a member under the plan.\n\nKey Points:\n• The group itself (usually an employer), the plan sponsor, and the policyholder are all one and the same.\n• Those covered under the plan are referred to as plan members.",
+      "difficulty": "easy",
+      "tags": ["group-insurance", "plan-sponsor", "policyholder", "certificate-holder", "plan-member", "ppe-007"]
     }
   ]
 }
