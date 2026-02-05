@@ -145,7 +145,7 @@ const MCQApp = {
 
   // Initialize Dark Mode
   initDarkMode() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     this.updateDarkModeIcon(savedTheme);
   },
