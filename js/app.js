@@ -226,6 +226,11 @@ const MCQApp = {
       this.navigateQuestion(1);
     });
 
+    // Next question button (top, before explanation)
+    document.getElementById('next-question-btn-top')?.addEventListener('click', () => {
+      this.navigateQuestion(1);
+    });
+
     // Hide answer button
     document.getElementById('hide-answer-btn')?.addEventListener('click', () => {
       this.hideAnswer();
@@ -936,10 +941,14 @@ const MCQApp = {
 
       // Show Next button after answering (unless it's the last question)
       const nextBtn = document.getElementById('next-question-btn');
+      const nextBtnTop = document.getElementById('next-question-btn-top');
       const filtered = this.getFilteredQuestions();
       const isLastQuestion = this.state.currentQuestionIndex === filtered.length - 1;
       if (nextBtn && !isLastQuestion) {
         nextBtn.classList.remove('hidden');
+      }
+      if (nextBtnTop && !isLastQuestion) {
+        nextBtnTop.classList.remove('hidden');
       }
 
       // Track answer reveal
@@ -1071,6 +1080,12 @@ Keep the explanation educational and supportive.`;
     });
 
     document.getElementById('answer-section').classList.add('hidden');
+    
+    // Hide the top next button
+    const nextBtnTop = document.getElementById('next-question-btn-top');
+    if (nextBtnTop) {
+      nextBtnTop.classList.add('hidden');
+    }
   },
 
   // Toggle Bookmark
