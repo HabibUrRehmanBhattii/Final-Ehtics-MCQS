@@ -10,28 +10,16 @@
   "description": "Interactive MCQ practice platform for LLQP & WFG exam prep.",
   "icons": [
     {
-      "src": "/assets/icons/icon-192.svg",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'><defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%230f172a'/><stop offset='100%25' stop-color='%231e293b'/></linearGradient></defs><rect width='192' height='192' rx='32' fill='url(%23bg)'/><circle cx='96' cy='96' r='56' fill='%23111827' stroke='%2338bdf8' stroke-width='6'/><text x='96' y='104' text-anchor='middle' font-family='Inter, Arial, sans-serif' font-size='44' fill='%23e2e8f0'>LL</text><text x='96' y='136' text-anchor='middle' font-family='Inter, Arial, sans-serif' font-size='18' fill='%2394a3b8'>Prep</text></svg>",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/assets/icons/icon-180.svg",
-      "sizes": "180x180",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "/assets/icons/icon-512.svg",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%230f172a'/><stop offset='100%25' stop-color='%231e293b'/></linearGradient></defs><rect width='512' height='512' rx='96' fill='url(%23bg)'/><circle cx='256' cy='256' r='160' fill='%23111827' stroke='%2338bdf8' stroke-width='16'/><text x='256' y='280' text-anchor='middle' font-family='Inter, Arial, sans-serif' font-size='120' fill='%23e2e8f0'>LL</text><text x='256' y='350' text-anchor='middle' font-family='Inter, Arial, sans-serif' font-size='48' fill='%2394a3b8'>Prep</text></svg>",
       "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "/assets/icons/icon-512.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }

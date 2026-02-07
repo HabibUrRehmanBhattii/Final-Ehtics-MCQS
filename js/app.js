@@ -239,15 +239,28 @@ const MCQApp = {
       this.toggleDarkMode();
     });
 
-    // Read question aloud
-    document.getElementById('read-question-btn')?.addEventListener('click', () => {
-      if (!this.state.speechSupported) return;
-      if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
-        this.stopSpeech();
-        return;
-      }
-      this.speakCurrentQuestion();
-    });
+    // Read question aloud - use bind to preserve 'this' context
+    const readBtn = document.getElementById('read-question-btn');
+    if (readBtn) {
+      readBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Read button clicked', {
+          supported: this.state.speechSupported,
+          speaking: window.speechSynthesis?.speaking,
+          pending: window.speechSynthesis?.pending
+        });
+        if (!this.state.speechSupported) {
+          console.warn('Speech synthesis not supported');
+          return;
+        }
+        if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+          this.stopSpeech();
+          return;
+        }
+        this.speakCurrentQuestion();
+      });
+    }
 
     // Back to topics button from practice test selection
     document.getElementById('back-to-topics-btn')?.addEventListener('click', () => {
@@ -656,21 +669,40 @@ const MCQApp = {
 
   // Speak current question and options
   speakCurrentQuestion() {
-    if (!this.state.speechSupported) return;
+    if (!this.state.speechSupported) {
+      console.warn('Speech synthesis not supported');
+      return;
+    }
     const question = this.getCurrentQuestion();
-    if (!question) return;
+    if (!question) {
+      console.warn('No current question found');
+      return;
+    }
 
-    const text = this.buildSpeechText(question);
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = navigator.language || 'en-US';
-    utterance.rate = 1;
-    utterance.pitch = 1;
-    utterance.onend = () => this.updateSpeechButton(false);
-    utterance.onerror = () => this.updateSpeechButton(false);
+    try {
+      const text = this.buildSpeechText(question);
+      console.log('Speaking:', text.substring(0, 50) + '...');
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = navigator.language || 'en-US';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.onstart = () => console.log('Speech started');
+      utterance.onend = () => {
+        console.log('Speech ended');
+        this.updateSpeechButton(false);
+      };
+      utterance.onerror = (e) => {
+        console.error('Speech error:', e);
+        this.updateSpeechButton(false);
+      };
 
-    this.state.currentUtterance = utterance;
-    this.updateSpeechButton(true);
-    window.speechSynthesis.speak(utterance);
+      this.state.currentUtterance = utterance;
+      this.updateSpeechButton(true);
+      window.speechSynthesis.speak(utterance);
+    } catch (error) {
+      console.error('Error speaking question:', error);
+      this.updateSpeechButton(false);
+    }
   },
 
   // Stop any active speech

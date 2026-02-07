@@ -412,7 +412,7 @@ button { font-family: inherit; }
   border-bottom: 1.5px solid var(--c-border);
 }
 .card-actions {
-  display: flex; align-items: center; gap: .6rem;
+  display: flex; align-items: center; gap: .5rem;
 }
 .q-badge {
   font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
@@ -420,23 +420,29 @@ button { font-family: inherit; }
   color: #fff; padding: .35rem .8rem; border-radius: var(--radius-xs);
 }
 .btn-tts {
-  border: 1.5px solid var(--c-border);
-  background: var(--c-surface2);
-  color: var(--c-text);
-  padding: .35rem .7rem;
+  border: none;
+  background: var(--c-primary-a);
+  color: var(--c-primary);
+  padding: .4rem .7rem;
   border-radius: var(--radius-xs);
-  font-size: .78rem;
+  font-size: .75rem;
   font-weight: 700;
   cursor: pointer;
   transition: all .2s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
 }
 .btn-tts:hover {
-  background: var(--c-surface3);
+  background: var(--c-primary);
+  color: #fff;
   transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--c-primary-a);
 }
 .btn-tts[aria-pressed="true"] {
-  border-color: var(--c-primary);
-  background: var(--c-primary-a);
+  background: var(--c-primary);
+  color: #fff;
+  box-shadow: 0 2px 8px var(--c-primary-a);
 }
 .btn-star {
   background: none; border: none; font-size: 1.5rem; cursor: pointer;
