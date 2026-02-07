@@ -329,13 +329,36 @@ button { font-family: inherit; }
 }
 .question-dot.is-viewed   { background: var(--c-surface2); color: var(--c-text2); }
 .question-dot.is-bookmarked { border-color: var(--c-warn); border-width: 2.5px; }
+
+/* Answered questions - clear visual feedback */
 .question-dot.is-correct-dot {
   background: var(--c-ok); color: #fff; border-color: var(--c-ok);
   box-shadow: 0 2px 8px var(--c-ok-a);
+  position: relative;
 }
+.question-dot.is-correct-dot::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 .question-dot.is-wrong-dot {
   background: var(--c-err); color: #fff; border-color: var(--c-err);
   box-shadow: 0 2px 8px var(--c-err-a);
+  position: relative;
+}
+.question-dot.is-wrong-dot::after {
+  content: '✗';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .btn-dot-nav, .dot-nav-btn {

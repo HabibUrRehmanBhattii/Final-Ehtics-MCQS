@@ -420,39 +420,59 @@ const MCQApp = {
       const response = await fetch(dataFile);
       const data = await response.json();
       
-      // Randomize questions order
-      const shuffledQuestions = this.shuffleArray(data.questions);
+      // Check if we have a saved shuffled order for this test
+      const shuffleKey = `shuffle_${this.state.currentTopic?.id}_${this.state.currentPracticeTest?.id}`;
+      let savedShuffle = null;
+      try {
+        const saved = localStorage.getItem(shuffleKey);
+        if (saved) savedShuffle = JSON.parse(saved);
+      } catch (e) {
+        console.log('No saved shuffle found');
+      }
       
-      // Randomize answer options for each question
-      this.state.questions = shuffledQuestions.map(question => {
-        // Strip A. B. C. D. prefixes from options
-        const optionsWithoutPrefix = question.options.map(opt => 
-          opt.replace(/^[A-D]\.\s*/, '').trim()
-        );
+      // If we have saved shuffle data, use it; otherwise create new shuffle
+      if (savedShuffle && savedShuffle.length === data.questions.length) {
+        console.log('Using saved question order');
+        this.state.questions = savedShuffle;
+      } else {
+        console.log('Creating new randomized order');
+        // Randomize questions order
+        const shuffledQuestions = this.shuffleArray(data.questions);
         
-        const originalCorrectAnswer = question.correctAnswer;
-        
-        // Create array of indices and shuffle them
-        const indices = optionsWithoutPrefix.map((_, index) => index);
-        const shuffledIndices = this.shuffleArray(indices);
-        
-        // Shuffle options and re-add A, B, C, D prefixes
-        const shuffledOptions = shuffledIndices.map((originalIndex, newIndex) => {
-          const letter = ['A', 'B', 'C', 'D'][newIndex];
-          return `${letter}. ${optionsWithoutPrefix[originalIndex]}`;
+        // Randomize answer options for each question
+        this.state.questions = shuffledQuestions.map(question => {
+          // Strip A. B. C. D. prefixes from options
+          const optionsWithoutPrefix = question.options.map(opt => 
+            opt.replace(/^[A-D]\.\s*/, '').trim()
+          );
+          
+          const originalCorrectAnswer = question.correctAnswer;
+          
+          // Create array of indices and shuffle them
+          const indices = optionsWithoutPrefix.map((_, index) => index);
+          const shuffledIndices = this.shuffleArray(indices);
+          
+          // Shuffle options and re-add A, B, C, D prefixes
+          const shuffledOptions = shuffledIndices.map((originalIndex, newIndex) => {
+            const letter = ['A', 'B', 'C', 'D'][newIndex];
+            return `${letter}. ${optionsWithoutPrefix[originalIndex]}`;
+          });
+          
+          // Find new position of correct answer
+          const newCorrectAnswer = shuffledIndices.indexOf(originalCorrectAnswer);
+          
+          return {
+            ...question,
+            options: shuffledOptions,
+            correctAnswer: newCorrectAnswer
+          };
         });
         
-        // Find new position of correct answer
-        const newCorrectAnswer = shuffledIndices.indexOf(originalCorrectAnswer);
-        
-        return {
-          ...question,
-          options: shuffledOptions,
-          correctAnswer: newCorrectAnswer
-        };
-      });
+        // Save the shuffled order
+        localStorage.setItem(shuffleKey, JSON.stringify(this.state.questions));
+      }
       
-      console.log(`Loaded and randomized ${this.state.questions.length} questions`);
+      console.log(`Loaded ${this.state.questions.length} questions`);
     } catch (error) {
       console.error('Error loading questions:', error);
       this.state.questions = [];
@@ -654,13 +674,14 @@ const MCQApp = {
       const isAnswered = this.state.answersRevealed.has(q.id);
       const wasFirstCorrect = this.state.firstAttemptCorrect[q.id];
       const dotStateClass = isAnswered ? (wasFirstCorrect ? 'is-correct-dot' : 'is-wrong-dot') : '';
+      const dotContent = isAnswered ? '' : (isBookmarked ? '⭐' : i + 1);
       
       html += `
         <button class="question-dot ${isActive ? 'is-active' : ''} ${isViewed ? 'is-viewed' : ''} ${isBookmarked ? 'is-bookmarked' : ''} ${dotStateClass}"
                 onclick="MCQApp.jumpToQuestion(${i})"
-                title="Question ${i + 1}"
-                aria-label="Question ${i + 1}">
-          ${isBookmarked ? '⭐' : i + 1}
+                title="Question ${i + 1}${isAnswered ? (wasFirstCorrect ? ' - Correct' : ' - Wrong') : ''}"
+                aria-label="Question ${i + 1}${isAnswered ? (wasFirstCorrect ? ' - Correct' : ' - Wrong') : ''}">
+          ${dotContent}
         </button>
       `;
     }
@@ -1249,6 +1270,11 @@ Keep the explanation educational and supportive.`;
 
     const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
     localStorage.removeItem(key);
+    
+    // Clear saved shuffle order so questions will be re-randomized
+    const shuffleKey = `shuffle_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
+    localStorage.removeItem(shuffleKey);
+    
     this.state.viewedQuestions.clear();
     this.state.bookmarkedQuestions.clear();
     this.state.answersRevealed.clear();
