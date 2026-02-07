@@ -65,6 +65,7 @@
 - **Fast Loading:** < 1 second load time
 - **Tiny Bundle:** ~50KB total
 - **Cloudflare CDN:** Global edge network deployment
+- **Offline Mode:** Works without internet after first load (service worker)
 
 ---
 
@@ -700,6 +701,7 @@ Object.keys(localStorage).forEach(key => {
 - [x] Question dot tooltips with status
 - [x] Multiple topic/test support
 - [x] Responsive mobile design
+- [x] Offline mode with service worker
 
 ### 🔜 Planned Enhancements (v3.0)
 
@@ -730,7 +732,6 @@ Object.keys(localStorage).forEach(key => {
 - [ ] Question reporting system
 - [ ] Social features (share scores)
 - [ ] Mobile app version (PWA)
-- [ ] Offline mode with service worker
 
 ### 📝 Content Expansion
 

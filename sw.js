@@ -13,7 +13,22 @@ const CORE_ASSETS = [
   '/assets/icons/icon-512.svg',
   '/data/topics.json',
   '/data/topics-updated.json',
-  '/data/user_data.json'
+  '/data/user_data.json',
+  '/data/llqp-ethics/practice-1.json',
+  '/data/llqp-ethics/practice-2.json',
+  '/data/llqp-ethics/practice-3.json',
+  '/data/llqp-ethics/practice-4.json',
+  '/data/flashcards/flashcards-1.json',
+  '/data/flashcards/flashcards-2.json',
+  '/data/flashcards/flashcards-2-full.json',
+  '/data/flashcards/flashcards-2-part-1.json',
+  '/data/flashcards/flashcards-2-part-2.json',
+  '/data/flashcards/flashcards-2-part-3.json',
+  '/data/flashcards/flashcards-2-part-4.json',
+  '/data/flashcards/flashcards-2-part-5.json',
+  '/data/flashcards/flashcards-2-part-6.json',
+  '/data/flashcards/flashcards-2-part-7.json',
+  '/data/flashcards/flashcards-2-part-8.json'
 ];
 
 self.addEventListener('install', (event) => {
@@ -77,7 +92,7 @@ self.addEventListener('fetch', (event) => {
           })
           .catch(() => cached);
 
-        return cached || fetchPromise;
+        return cached || fetchPromise || new Response('Offline', { status: 503 });
       })
     );
     return;
