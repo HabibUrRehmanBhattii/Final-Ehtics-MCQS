@@ -1,5 +1,5 @@
 /* PWA Service Worker for LLQP & WFG Exam Prep */
-const CACHE_VERSION = 'v1.0.3';
+const CACHE_VERSION = 'v1.0.5';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const DATA_CACHE = `data-${CACHE_VERSION}`;
 
@@ -17,7 +17,7 @@ const CORE_ASSETS = [
   '/data/llqp-ethics/practice-1.json',
   '/data/llqp-ethics/practice-2.json',
   '/data/llqp-ethics/practice-3.json',
-  '/data/llqp-ethics/practice-4.json',
+  '/data/llqp-segregated/practice-1.json',
   '/data/flashcards/flashcards-1.json',
   '/data/flashcards/flashcards-2.json',
   '/data/flashcards/flashcards-2-full.json',

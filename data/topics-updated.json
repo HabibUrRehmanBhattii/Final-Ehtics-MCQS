@@ -28,14 +28,7 @@
           "name": "Practice Test 3",
           "description": "LLQP Scenario-Heavy Ethics + Legal MCQs",
           "questionCount": 26,
-          "dataFile": "data/llqp-ethics/practice-3.json?v=20260207e"
-        },
-        {
-          "id": "practice-4",
-          "name": "Common Law Practice Test",
-          "description": "Common Law ethics questions from seewhy learning",
-          "questionCount": 1,
-          "dataFile": "data/llqp-ethics/practice-4.json?v=20260207e"
+          "dataFile": "data/llqp-ethics/practice-3.json?v=20260207f"
         }
       ]
     },
@@ -127,7 +120,7 @@
           "name": "Practice Test 1",
           "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
           "questionCount": 13,
-          "dataFile": "data/llqp-ethics/llqp-segregated-practice-1.json?v=20260207d"
+          "dataFile": "data/llqp-segregated/practice-1.json?v=20260207g"
         }
       ]
     },
