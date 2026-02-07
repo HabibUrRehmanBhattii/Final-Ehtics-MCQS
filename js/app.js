@@ -160,7 +160,7 @@ const MCQApp = {
         btn.setAttribute('aria-pressed', 'false');
       }
     }
-  }
+  },
 
   // Register Service Worker (PWA)
   registerServiceWorker() {

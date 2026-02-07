@@ -285,6 +285,22 @@ button { font-family: inherit; }
   transform: translateY(-1px);
 }
 
+.btn-primary {
+  background: var(--c-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s var(--ease);
+  box-shadow: var(--shadow-xs);
+}
+.btn-primary:hover {
+  background: var(--c-primary2);
+  box-shadow: 0 6px 16px rgba(99,102,241,.25);
+  transform: translateY(-1px);
+}
+
 .test-number {
   width: 2.2rem; height: 2.2rem; border-radius: 50%;
   background: var(--c-primary); color: #fff;
