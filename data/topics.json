@@ -29,6 +29,13 @@
           "description": "LLQP Scenario-Heavy Ethics + Legal MCQs",
           "questionCount": 26,
           "dataFile": "data/llqp-ethics/practice-3.json?v=20260205d"
+        },
+        {
+          "id": "practice-4",
+          "name": "Common Law Practice Test",
+          "description": "Common Law ethics questions from seewhy learning",
+          "questionCount": 1,
+          "dataFile": "data/llqp-ethics/practice-4.json?v=20260207e"
         }
       ]
     },
@@ -107,6 +114,24 @@
       ]
     },
     {
+      "id": "llqp-segregated",
+      "name": "LLQP Segregated Funds & Annuities",
+      "slug": "llqp-segregated",
+      "description": "Segregated fund contracts and annuity products.",
+      "color": "#ec4899",
+      "icon": "📊",
+      "status": "active",
+      "practiceTests": [
+        {
+          "id": "llqp-segregated-1",
+          "name": "Practice Test 1",
+          "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
+          "questionCount": 13,
+          "dataFile": "data/llqp-ethics/llqp-segregated-practice-1.json?v=20260207d"
+        }
+      ]
+    },
+    {
       "id": "wfg-ethics",
       "name": "WFG Ethics Compliance Course",
       "slug": "wfg-ethics",
@@ -145,24 +170,6 @@
       "icon": "🚑",
       "status": "coming-soon",
       "practiceTests": []
-    },
-    {
-      "id": "llqp-segregated",
-      "name": "LLQP Segregated Funds & Annuities",
-      "slug": "llqp-segregated",
-      "description": "Segregated fund contracts and annuity products.",
-      "color": "#ec4899",
-      "icon": "📊",
-      "status": "active",
-      "practiceTests": [
-        {
-          "id": "llqp-segregated-1",
-          "name": "Practice Test 1",
-          "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
-          "questionCount": 13,
-          "dataFile": "data/llqp-ethics/llqp-segregated-practice-1.json?v=20260207b"
-        }
-      ]
     }
   ]
 }
