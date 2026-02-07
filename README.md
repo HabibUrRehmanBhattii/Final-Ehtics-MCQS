@@ -59,6 +59,7 @@
 - **Mobile Optimized:** Works perfectly on phones and tablets
 - **Desktop Ready:** Full-featured on larger screens
 - **Touch Friendly:** Easy navigation on all devices
+- **PWA Ready:** Installable on Android and iOS (Add to Home Screen)
 
 ### ⚡ **Performance**
 - **Zero Dependencies:** Pure vanilla JavaScript
