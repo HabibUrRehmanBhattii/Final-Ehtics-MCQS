@@ -138,12 +138,28 @@ const MCQApp = {
   async init() {
     console.log('🚀 Initializing MCQ App...');
     this.initDarkMode();
+    this.registerServiceWorker();
     this.loadWrongQuestions();
     await this.loadTopics();
     this.setupEventListeners();
     this.renderTopicsGrid();
     console.log('✅ App initialized successfully');
   },
+
+  // Register Service Worker (PWA)
+  registerServiceWorker() {
+    if (!('serviceWorker' in navigator)) {
+      return;
+    }
+
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .catch((error) => {
+          console.warn('Service worker registration failed:', error);
+        });
+    });
+  }
 
   // Initialize Dark Mode
   initDarkMode() {

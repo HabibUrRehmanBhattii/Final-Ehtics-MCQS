@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" role="img" aria-label="LLQP & WFG Exam Prep">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="32" fill="url(#bg)" />
+  <circle cx="96" cy="96" r="56" fill="#111827" stroke="#38bdf8" stroke-width="6" />
+  <text x="96" y="104" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="44" fill="#e2e8f0">LL</text>
+  <text x="96" y="136" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#94a3b8">Prep</text>
+</svg>
