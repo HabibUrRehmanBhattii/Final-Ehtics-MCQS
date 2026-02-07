@@ -159,7 +159,7 @@ const MCQApp = {
           console.warn('Service worker registration failed:', error);
         });
     });
-  }
+  },
 
   // Initialize Dark Mode
   initDarkMode() {
