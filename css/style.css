@@ -395,10 +395,32 @@ button { font-family: inherit; }
   padding-bottom: .85rem; margin-bottom: 1.15rem;
   border-bottom: 1.5px solid var(--c-border);
 }
+.card-actions {
+  display: flex; align-items: center; gap: .6rem;
+}
 .q-badge {
   font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
   background: linear-gradient(135deg, var(--c-primary), var(--c-primary2));
   color: #fff; padding: .35rem .8rem; border-radius: var(--radius-xs);
+}
+.btn-tts {
+  border: 1.5px solid var(--c-border);
+  background: var(--c-surface2);
+  color: var(--c-text);
+  padding: .35rem .7rem;
+  border-radius: var(--radius-xs);
+  font-size: .78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s var(--ease);
+}
+.btn-tts:hover {
+  background: var(--c-surface3);
+  transform: translateY(-1px);
+}
+.btn-tts[aria-pressed="true"] {
+  border-color: var(--c-primary);
+  background: var(--c-primary-a);
 }
 .btn-star {
   background: none; border: none; font-size: 1.5rem; cursor: pointer;

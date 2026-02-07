@@ -703,6 +703,7 @@ Object.keys(localStorage).forEach(key => {
 - [x] Multiple topic/test support
 - [x] Responsive mobile design
 - [x] Offline mode with service worker
+- [x] Audio reading of questions (accessibility)
 
 ### 🔜 Planned Enhancements (v3.0)
 
@@ -728,7 +729,6 @@ Object.keys(localStorage).forEach(key => {
 
 **Low Priority:**
 - [ ] Question shuffle settings (per-question vs per-test)
-- [ ] Audio reading of questions (accessibility)
 - [ ] Keyboard shortcuts for navigation
 - [ ] Question reporting system
 - [ ] Social features (share scores)

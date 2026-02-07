@@ -19,7 +19,9 @@ const MCQApp = {
     lastSelectedIndex: undefined,
     isReviewMode: false,
     attemptedOptions: {}, // Track which options were attempted for each question
-    firstAttemptCorrect: {} // Track if first attempt was correct for each question
+    firstAttemptCorrect: {}, // Track if first attempt was correct for each question
+    speechSupported: false,
+    currentUtterance: null
   },
 
   // Utility: Shuffle Array (Fisher-Yates)
@@ -138,6 +140,7 @@ const MCQApp = {
   async init() {
     console.log('🚀 Initializing MCQ App...');
     this.initDarkMode();
+    this.initSpeech();
     this.registerServiceWorker();
     this.loadWrongQuestions();
     await this.loadTopics();
@@ -145,6 +148,19 @@ const MCQApp = {
     this.renderTopicsGrid();
     console.log('✅ App initialized successfully');
   },
+
+  // Initialize Speech Synthesis (Accessibility)
+  initSpeech() {
+    this.state.speechSupported = 'speechSynthesis' in window;
+    const btn = document.getElementById('read-question-btn');
+    if (btn) {
+      if (!this.state.speechSupported) {
+        btn.style.display = 'none';
+      } else {
+        btn.setAttribute('aria-pressed', 'false');
+      }
+    }
+  }
 
   // Register Service Worker (PWA)
   registerServiceWorker() {
@@ -221,6 +237,16 @@ const MCQApp = {
     // Dark mode toggle
     document.getElementById('dark-mode-toggle')?.addEventListener('click', () => {
       this.toggleDarkMode();
+    });
+
+    // Read question aloud
+    document.getElementById('read-question-btn')?.addEventListener('click', () => {
+      if (!this.state.speechSupported) return;
+      if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+        this.stopSpeech();
+        return;
+      }
+      this.speakCurrentQuestion();
     });
 
     // Back to topics button from practice test selection
@@ -497,6 +523,9 @@ const MCQApp = {
 
   // Show View
   showView(viewName) {
+    if (viewName !== 'mcq') {
+      this.stopSpeech();
+    }
     this.state.currentView = viewName;
     document.querySelectorAll('.view').forEach(view => {
       view.classList.remove('active');
@@ -521,6 +550,7 @@ const MCQApp = {
 
   // Render Current Question
   renderQuestion() {
+    this.stopSpeech();
     const question = this.getCurrentQuestion();
     if (!question) return;
 
@@ -614,6 +644,50 @@ const MCQApp = {
 
     // Check if all questions have been answered — show/hide finish banner
     this.checkCompletion();
+  },
+
+  // Build speech text for current question
+  buildSpeechText(question) {
+    const optionsText = question.options
+      .map((opt, idx) => `Option ${idx + 1}: ${opt}`)
+      .join('. ');
+    return `Question. ${question.question}. ${optionsText}`;
+  },
+
+  // Speak current question and options
+  speakCurrentQuestion() {
+    if (!this.state.speechSupported) return;
+    const question = this.getCurrentQuestion();
+    if (!question) return;
+
+    const text = this.buildSpeechText(question);
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = navigator.language || 'en-US';
+    utterance.rate = 1;
+    utterance.pitch = 1;
+    utterance.onend = () => this.updateSpeechButton(false);
+    utterance.onerror = () => this.updateSpeechButton(false);
+
+    this.state.currentUtterance = utterance;
+    this.updateSpeechButton(true);
+    window.speechSynthesis.speak(utterance);
+  },
+
+  // Stop any active speech
+  stopSpeech() {
+    if (!this.state.speechSupported) return;
+    if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+      window.speechSynthesis.cancel();
+    }
+    this.updateSpeechButton(false);
+  },
+
+  // Update read button UI state
+  updateSpeechButton(isSpeaking) {
+    const btn = document.getElementById('read-question-btn');
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', isSpeaking ? 'true' : 'false');
+    btn.textContent = isSpeaking ? '⏹ Stop' : '🔊 Read';
   },
 
   // Get Current Question
