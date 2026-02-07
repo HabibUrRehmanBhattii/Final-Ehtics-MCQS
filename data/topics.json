@@ -153,8 +153,16 @@
       "description": "Segregated fund contracts and annuity products.",
       "color": "#ec4899",
       "icon": "📊",
-      "status": "coming-soon",
-      "practiceTests": []
+      "status": "active",
+      "practiceTests": [
+        {
+          "id": "llqp-segregated-1",
+          "name": "Practice Test 1",
+          "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
+          "questionCount": 1,
+          "dataFile": "data/llqp-ethics/llqp-segregated-practice-1.json?v=20260207a"
+        }
+      ]
     }
   ]
 }
