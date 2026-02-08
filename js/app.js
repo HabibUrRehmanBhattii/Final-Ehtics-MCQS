@@ -584,7 +584,7 @@ const MCQApp = {
 
     // Update question card
     document.getElementById('q-num').textContent = questionIndex + 1;
-    document.getElementById('question-text').textContent = question.question;
+    document.getElementById('question-text').innerHTML = question.question;
 
     // Render options
     const optionsContainer = document.getElementById('options-container');
@@ -1280,7 +1280,7 @@ Keep the explanation educational and supportive.`;
             <span class="list-question-num">Question ${index + 1}</span>
             ${isBookmarked ? '<span class="bookmark-indicator">⭐</span>' : ''}
           </div>
-          <div class="list-question-text">${question.question}</div>
+          <div class="list-question-text" style="overflow: auto;">${question.question}</div>
           <div class="list-options">
             ${question.options.map((opt, i) => `
               <div class="list-option ${i === question.correctAnswer && isRevealed ? 'correct-preview' : ''}">
