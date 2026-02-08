@@ -418,8 +418,8 @@ Get-Content 'data\topics.json' | ConvertFrom-Json
 2. **Flashcards - Beneficiaries & Policy Basics** - 170 questions
    - 9 flashcard sets (parts 1-8 of Set 2)
 
-3. **LLQP Segregated Funds & Annuities** - 13 questions
-   - Practice Test 1: 13 questions
+3. **LLQP Segregated Funds & Annuities** - 14 questions
+   - Practice Test 1: 14 questions
 
 **Coming Soon Topics:**
 - WFG Ethics Compliance Course
@@ -427,7 +427,7 @@ Get-Content 'data\topics.json' | ConvertFrom-Json
 - LLQP Life Insurance
 - LLQP Accident & Sickness Insurance
 
-**Service Worker Cache:** v1.0.5
+**Service Worker Cache:** v1.0.6
 
 ---
 
@@ -539,7 +539,7 @@ Get-Content 'data\topics.json' | ConvertFrom-Json
 - Segregated Funds: `data/llqp-segregated/practice-1.json`
 - Flashcards: `data/flashcards/flashcards-*.json`
 
-**Current cache version:** v1.0.5 (as of Feb 7, 2026)
+**Current cache version:** v1.0.6 (as of Feb 7, 2026)
 
 ---
 
