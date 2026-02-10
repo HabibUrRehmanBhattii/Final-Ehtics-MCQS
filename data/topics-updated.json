@@ -14,21 +14,21 @@
           "name": "Practice Test 1",
           "description": "Ultra-tricky ethics scenarios with detailed explanations",
           "questionCount": 10,
-          "dataFile": "data/llqp-ethics/practice-1.json?v=20260205b"
+            "dataFile": "data/llqp-ethics/llqp-ethics-1.json?v=20260205b"
         },
         {
           "id": "practice-2",
           "name": "Practice Test 2",
           "description": "Additional ethics scenarios",
           "questionCount": 20,
-          "dataFile": "data/llqp-ethics/practice-2.json?v=20260205b"
+            "dataFile": "data/llqp-ethics/llqp-ethics-2.json?v=20260205b"
         },
         {
           "id": "practice-3",
           "name": "Practice Test 3",
           "description": "LLQP Scenario-Heavy Ethics + Legal MCQs",
           "questionCount": 26,
-          "dataFile": "data/llqp-ethics/practice-3.json?v=20260207f"
+            "dataFile": "data/llqp-ethics/llqp-ethics-3.json?v=20260207f"
         }
       ]
     },
@@ -119,8 +119,8 @@
           "id": "llqp-segregated-1",
           "name": "Practice Test 1",
           "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
-          "questionCount": 14,
-          "dataFile": "data/llqp-segregated/practice-1.json?v=20260207i"
+            "questionCount": 19,
+            "dataFile": "data/llqp-segregated/llqp-segregated-1.json?v=20260209e"
         }
       ]
     },

@@ -395,6 +395,147 @@
                                       ],
                           "explanation":  "Because the annuity is an insurance contract and Jake has named his wife (a member of the \"family class\" of beneficiaries) as the beneficiary, the asset is exempt from seizure by creditors under provincial insurance laws. Furthermore, since the annuity was purchased five years ago, it is unlikely to be viewed as a \"fraudulent conveyance\" designed specifically to hide assets from this recent judgment. Insurance products (including annuities) qualify as protected when a family class beneficiary (spouse, child, parent, or grandchild) is named. The protection extends to both the commuted value (principal) and ongoing payments. Even though Jake is the contract holder, the beneficiary designation of his wife triggers protection under family class beneficiary rules. This applies in both bankruptcy and non-bankruptcy creditor claims.",
                           "correctAnswer":  3
+                      },
+                      {
+                          "id":  15,
+                          "question":  "(PPE-011) SFA\n\nFiona and Gerald are in their early 40s and have two children under the age of 10. Fiona is an executive for a waste management company in northern Ontario. She earns $125,000 per year plus bonuses and has a good pension through her employer. Her husband, Gerald, works from home to care for the children, which also allows him to manage his own home cleaning business called Daddy Dusters. While Daddy Dusters generated revenue of $145,000 last year, the net earnings after expenses was only $18,500, which is more than the company has profited in over 10 years. Fiona has $24,250 in total RRSP contribution room, and Gerald has $3,000. The couple have decided to contribute $8,000 to a spousal RRSP this year. When making their RRSP contributions, they first sought the advice of a qualified tax professional. What is the most likely situation for the RRSP and the contributions?",
+                          "options":  [
+                                          "A. Gerald is the account owner, and Fiona is the contributor. Fiona will receive the RRSP contribution (tax) receipt, and her contribution room will be reduced by $8,000.",
+                                          "B. Gerald is the account owner and the contributor. He will receive the RRSP contribution (tax) receipt, and his contribution room will be reduced by $8,000.",
+                                          "C. Fiona is the account owner, and Gerald is the contributor. Gerald will receive the RRSP contribution (tax) receipt, and his contribution room will be reduced by $3,000. The balance of the contribution ($5,000) will reduce Fiona\u0027s contribution room.",
+                                          "D. Fiona is the account owner and the contributor. She will receive the RRSP contribution (tax) receipt, and her contribution room will be reduced by $8,000."
+                                      ],
+                          "correctAnswer":  0,
+                          "optionFeedback":  [
+                                                 null,
+                                                 "If Gerald were both the owner and the contributor, it would simply be an individual RRSP, not a spousal RRSP. Furthermore, Gerald only has $3,000 in room, so he could not contribute $8,000 without incurring over-contribution penalties.",
+                                                 "RRSP contribution room is not \"shared\" or combined in this manner. A single contribution to a spousal RRSP must be attributed to one specific contributor\u0027s room. Additionally, it would be tax-inefficient for Gerald (the lower earner) to be the contributor.",
+                                                 "This describes a standard individual RRSP for Fiona. In a spousal RRSP, the spouse (Gerald) must be the owner of the account so that the income-splitting benefit can be realized in the future."
+                                             ],
+                          "explanation":  "In a spousal RRSP arrangement, the person with the higher income and more contribution room (Fiona) typically acts as the contributor. She uses her own contribution room and receives the tax deduction (the receipt) to lower her taxable income. The other spouse (Gerald) is the annuitant (account owner), meaning the assets belong to him and will eventually be taxed in his hands upon withdrawal. This is ideal for income splitting in retirement. Fiona (high earner) contributes $8,000 to spousal RRSP in Gerald\u0027s name, using her room and getting the receipt/deduction. Gerald is the owner (annuitant). Under CRA rules, contributions to a spousal RRSP reduce the contributor\u0027s RRSP deduction limit, not the annuitant\u0027s. The receipt is issued in the contributor\u0027s name. Key benefits: Fiona gets immediate tax savings (high bracket), and future withdrawals will be taxed to Gerald (likely lower bracket in retirement), especially since Fiona will have substantial pension income.",
+                          "difficulty":  "medium",
+                          "tags":  [
+                                       "spousal-rrsp",
+                                       "rrsp-contribution",
+                                       "income-splitting",
+                                       "tax-planning",
+                                       "annuitant",
+                                       "contributor",
+                                       "ppe-011"
+                                   ]
+                      },
+                      {
+                          "id":  16,
+                          "question":  "(PPE-018) SFA\n\nBrittany is considering investing in a segregated fund that offers a 100% guarantee upon death or the 10-year maturity date. While Brittany is only 40 years old, her life expectancy is much shorter than her peers\u0027 due to an irreversible health issue. She is considering investing $100,000. How would the insurer deal with her application to invest in the segregated fund?",
+                          "options":  [
+                                          "A. She would be declined and unable to make the investment because the death benefit guarantee relies on the health of the investor.",
+                                          "B. Segregated funds are not subject to a health underwriting; therefore, she can invest in the fund and take advantage of both guarantees.",
+                                          "C. She can make the investment, but the death benefit guarantee would not apply.",
+                                          "D. The medical underwriting will likely require the guarantee upon death to be reduced to 75%, which is the legal minimum for a segregated fund."
+                                      ],
+                          "correctAnswer":  1,
+                          "optionFeedback":  [
+                                                 "Unlike traditional life insurance, which requires medical underwriting to assess risk, segregated funds are investment products with an insurance \"wrapper.\" Insurers generally do not decline applications based on the annuitant\u0027s health.",
+                                                 null,
+                                                 "The death benefit guarantee is a core contractual feature of an Individual Variable Insurance Contract (IVIC). If the contract is issued, the guarantee applies regardless of the owner\u0027s health at the time of purchase.",
+                                                 "While 75% is the statutory minimum guarantee in Canada, the reduction from 100% to 75% is typically a choice made by the investor (often to reduce fees) or a restriction based on age (e.g., after age 80), not a result of medical underwriting."
+                                             ],
+                          "explanation":  "One of the unique features of segregated funds is the absence of medical underwriting. Even if an investor has a terminal illness or poor health, they can typically purchase the fund and receive the full 75% or 100% death benefit and maturity guarantees. Segregated funds are insurance-wrapped investment products where the maturity and death benefit guarantees (75% to 100% of premiums, less withdrawals/fees) are investment guarantees backed by the insurer\u0027s general funds and capital requirements, not life insurance-style mortality underwriting. No medical underwriting or health questions are required for segregated fund contracts. Investors with health issues (even severe/shortened life expectancy) can purchase and qualify for full guarantees including 100% death benefit. The death benefit guarantee pays the higher of market value or guaranteed amount to beneficiaries upon death, regardless of age or health. This is a product feature to attract investors seeking protection. Brittany, despite her shortened life expectancy, would be accepted normally and receive full 100/100 guarantees (maturity at 10 years plus death benefit anytime). Although some insurers may offer lower guarantees for older investors (but still subject to the 75% minimum), they do not underwrite segregated funds based on health. A young person with a shortened life expectancy gets the same guarantees as someone else at the same age who is healthy.",
+                          "difficulty":  "medium",
+                          "tags":  [
+                                       "segregated-fund",
+                                       "medical-underwriting",
+                                       "death-benefit",
+                                       "maturity-guarantee",
+                                       "health-issues",
+                                       "insurance-wrapper",
+                                       "ppe-018"
+                                   ]
+                      },
+                      {
+                          "id":  17,
+                          "question":  "(PPE-099) SFA\n\nBeth was at an investor education conference where she learned about the advantages of spousal RRSPs. She planned on contributing $10,000 into her husband\u0027s spousal RRSP, and based on her marginal tax rate, she would save roughly $4,000 in taxes. She was under the impression that her husband could then immediately withdraw $10,000 and pay much less tax due to his lower tax bracket. What prevents this from being possible?",
+                          "options":  [
+                                          "A. Probate fees",
+                                          "B. Tax rules on capital gains",
+                                          "C. Attribution rules",
+                                          "D. The 90-day rule"
+                                      ],
+                          "correctAnswer":  2,
+                          "optionFeedback":  [
+                                                 "Probate fees are a concern for estate planning after death. They do not impact the taxation of RRSP withdrawals made by a living annuitant.",
+                                                 "RRSP withdrawals are taxed as ordinary income, not capital gains. The preferential 50% inclusion rate for capital gains does not apply to funds coming out of any RRSP.",
+                                                 null,
+                                                 "While there is a \"90-day rule\" related to the Home Buyers\u0027 Plan (where funds must be in the RRSP for 90 days before withdrawal to be deductible), it does not govern general income splitting or spousal attribution."
+                                             ],
+                          "explanation":  "The Canada Revenue Agency (CRA) uses attribution rules specifically to prevent short-term income splitting. If a spouse withdraws funds from a spousal RRSP within three calendar years (the year of contribution plus the two previous years) of a contribution, that income is \"attributed\" back to the contributor (Beth) and taxed at her higher rate. This is designed to prevent the exact scenario Beth envisioned: contribute at a high tax rate, withdraw immediately at a low rate. Under Income Tax Act section 146(8.3), if the annuitant (husband) withdraws from any spousal RRSP in the year of contribution or the two preceding calendar years (a 3-year window from the last contribution), the withdrawn amount (up to the contributed amounts in those years) is attributed back to the contributor (Beth) and taxed in her hands at her higher rate. This blocks the \"contribute now, withdraw immediately\" loophole. The husband cannot pull $10,000 right away and pay low tax; it would be taxed to Beth instead. The rule applies to all withdrawals (not just the contributed amount) up to the recent contributions; any excess is taxed to the husband normally. Exceptions include death, relationship breakdown, or certain plans (HBP/LLP withdrawals have separate rules). Beth\u0027s plan to contribute $10,000 and have her husband withdraw $10,000 immediately would trigger full attribution: the $10,000 would be taxed to Beth at her higher rate, eliminating any tax savings. Attribution rules are designed to prevent abuse of certain tax opportunities. In this case, Beth would still be required to report and pay tax on the withdrawal.",
+                          "difficulty":  "medium",
+                          "tags":  [
+                                       "spousal-rrsp",
+                                       "attribution-rules",
+                                       "income-splitting",
+                                       "tax-planning",
+                                       "rrsp-withdrawal",
+                                       "cra-rules",
+                                       "ppe-099"
+                                   ]
+                      },
+                      {
+                          "id":  18,
+                          "question":  "(PPE-028) SFA\n\nKristoff invested $20,000 into a segregated fund. An $800 front-end load was charged, which meant that only $19,200 was actually invested into the fund. Kristoff was given the Information Folder at the time of the sale, and the transaction was completed at a NAVPU of $17.38 at the close of business. The very next day, stock markets around the world took a tumble, and the value of Kristoff\u0027s investment fell to $17,800. Kristoff became quite concerned, so he decided to closely scrutinize the Information Folder. After reading the Information Folder thoroughly, Kristoff contacted his insurance agent that same day asking to exercise the right of rescission. How much will Kristoff receive?",
+                          "options":  [
+                                          "A. $19,200",
+                                          "B. $18,600",
+                                          "C. $17,800",
+                                          "D. $20,000"
+                                      ],
+                          "correctAnswer":  1,
+                          "optionFeedback":  [
+                                                 "This is the net amount that was initially invested. This choice fails to account for the market drop and the specific rules regarding the refund of front-end loads.",
+                                                 null,
+                                                 "This is only the current market value. While the rescission calculation uses the market value if it is lower than the amount invested, it also mandates the return of the initial sales charges (the front-end load).",
+                                                 "This would imply that the right of rescission is a \"money-back guarantee\" regardless of market performance. However, the rule states the investor receives the lesser of the investment or market value, meaning the investor still bears the market loss during those two days."
+                                             ],
+                          "explanation":  "Under the right of rescission, the investor receives the lesser of the amount invested ($19,200) or the current market value of the units ($17,800). Crucially, the right of rescission also requires the insurer to refund any sales charges or fees paid (the $800 front-end load). Calculation: Market Value ($17,800) + Refunded Commission ($800) = $18,600. The right of rescission can be exercised within two business days of receiving the Information Folder. Kristoff received the folder at the time of sale and requested rescission the very next day, clearly within the permitted window. Under provincial insurance acts and CCIR/CLHIA Guideline G2 harmonized standards for segregated funds, rescission works as follows: the investor receives the lesser of the net amount invested (after upfront sales charges) or the current market value at the next valuation point, PLUS the full refund of any front-end load or commission paid. Here, the net invested was $19,200 (after $800 load), but the market dropped to $17,800. Lesser = $17,800. Additionally, the $800 front-end load is refunded separately because the transaction is unwound—the sale is rescinded, and the advisor/insurer does not keep the commission. Total refund: $17,800 (current market value) + $800 (refunded front-end load) = $18,600. This is the SFA exam-specific treatment: rescission refunds the lesser of net invested or market value, PLUS upfront fees separately refunded. This protects investors who realize within two days that the product is not suitable, while still exposing them to market risk during that brief period.",
+                          "difficulty":  "hard",
+                          "tags":  [
+                                       "right-of-rescission",
+                                       "segregated-funds",
+                                       "front-end-load",
+                                       "information-folder",
+                                       "investor-protection",
+                                       "navpu",
+                                       "market-value",
+                                       "ppe-028"
+                                   ]
+                      },
+                      {
+                          "id":  19,
+                          "question":  "(PPE-010) SFA\n\nMarsha owns her own engineering consulting firm. She has been wildly successful and has amassed a net worth of over $5,000,000. Last year, one of her projects collapsed, resulting in the death of three people. After a lengthy lawsuit, Marsha was ordered to pay a settlement of $10,000,000. Because her business was structured as a sole proprietorship and she had no liability insurance, Marsha knew her personal assets were at risk. She opted to purchase a term certain annuity and named her husband as the irrevocable beneficiary both in the contract itself and her last Will and testament. To what extent would her creditors have a claim on the annuity?",
+                          "options":  [
+                                          "A. The annuity was purchased in order to escape her financial obligations to her creditors and therefore would not be creditor-proof.",
+                                          "B. Her husband is part of the protected class; therefore Marsha\u0027s creditors would not have a valid claim against the annuity.",
+                                          "C. The annuity would only be creditor-proof if it is held within a registered plan.",
+                                          "D. Given her husband was named as irrevocable beneficiary, the annuity would be creditor-proof."
+                                      ],
+                          "correctAnswer":  0,
+                          "optionFeedback":  [
+                                                 null,
+                                                 "Under provincial Insurance Acts, a spouse is indeed a protected family class member. However, these statutes do not provide a \"get out of jail free\" card for someone already facing a legal judgment. Fraudulent conveyance laws take precedence when the intent is to hide existing assets from known liabilities.",
+                                                 "Both registered and non-registered insurance products (like annuities and segregated funds) can qualify for creditor protection. The issue here is not the tax status of the plan, but the timing and intent of the purchase relative to the lawsuit settlement.",
+                                                 "An irrevocable beneficiary designation is powerful in good-faith scenarios, but if the initial act of setting up that designation was done to move assets out of the reach of a current creditor, courts can still classify it as a fraudulent conveyance and overturn the protection."
+                                             ],
+                          "explanation":  "While naming a family class or irrevocable beneficiary usually protects an insurance product from creditors, that protection is void if the transfer is deemed a fraudulent conveyance. Marsha purchased the annuity after a $10,000,000 judgment was already rendered, which signals bad faith and an intent to hinder creditors. Courts can look through the contract and allow creditors to seize the funds. Insurance Act protections are conditional on good faith; they do not shield assets moved after known liabilities arise. This is a classic example of a post-judgment transfer to defeat creditors, so the annuity is not creditor-proof. In short: protected-class and irrevocable beneficiary rules apply only when the purchase is made in good faith, which is not the case here.",
+                          "difficulty":  "hard",
+                          "tags":  [
+                                       "creditor-protection",
+                                       "annuity",
+                                       "fraudulent-conveyance",
+                                       "irrevocable-beneficiary",
+                                       "protected-class",
+                                       "good-faith",
+                                       "ppe-010"
+                                   ]
                       }
                   ]
 }
