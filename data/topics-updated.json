@@ -179,8 +179,37 @@
       "description": "Accident and sickness insurance coverage and claims.",
       "color": "#ef4444",
       "icon": "🚑",
-      "status": "coming-soon",
-      "practiceTests": []
+      "status": "active",
+      "practiceTests": [
+        {
+          "id": "llqp-accident-1",
+          "name": "Practice Test 1",
+          "description": "A&S Insurance — LTC, disability calculations, and policy types (Questions 1–10)",
+          "questionCount": 10,
+          "dataFile": "data/llqp-accident/llqp-accident-1.json"
+        },
+        {
+          "id": "llqp-accident-2",
+          "name": "Practice Test 2",
+          "description": "A&S Insurance — CI, dental, travel, and tax treatment (Questions 11–20)",
+          "questionCount": 10,
+          "dataFile": "data/llqp-accident/llqp-accident-2.json"
+        },
+        {
+          "id": "llqp-accident-3",
+          "name": "Practice Test 3",
+          "description": "A&S Insurance — Business insurance, buy-sell, underwriting, and claims (Questions 21–30)",
+          "questionCount": 10,
+          "dataFile": "data/llqp-accident/llqp-accident-3.json"
+        },
+        {
+          "id": "llqp-accident-4",
+          "name": "Practice Test 4",
+          "description": "A&S Insurance — FPO, group benefits, EAP, and coordination of benefits (Questions 31–35)",
+          "questionCount": 5,
+          "dataFile": "data/llqp-accident/llqp-accident-4.json"
+        }
+      ]
     }
   ]
 }

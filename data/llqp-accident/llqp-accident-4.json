@@ -1,0 +1,108 @@
+{
+  "topic": "LLQP Accident & Sickness Insurance",
+  "topicId": "llqp-accident",
+  "description": "Accident & Sickness Insurance — Practice Test 4 (Questions 31–35)",
+  "examTips": "Group benefits, cafeteria plans, and coordination of benefits rules are essential topics. Know the birthday rule and how EAPs differ from extended health plans.",
+  "questions": [
+    {
+      "id": 31,
+      "question": "Liam earns $90,000 annually and has a disability insurance (DI) policy originally providing $4,500 in monthly coverage (60% of his income). The policy includes a 'future purchase option' (FPO) rider, allowing him to increase coverage by up to 20% of his original coverage provided he qualifies financially. This year, Liam's income increased by $9,000 due to a promotion. How much additional monthly coverage can he add?",
+      "options": [
+        "A. $450",
+        "B. $1,000",
+        "C. $750",
+        "D. $1,500"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "$1,000 exceeds the maximum allowable increase under the FPO rider and would not be supported by the income increase.",
+        "$750 would represent the entire income increase converted to a monthly amount ($9,000 ÷ 12), but the coverage must remain within the 60% income replacement ratio.",
+        "$1,500 would bring total coverage to $6,000/month, far exceeding 60% of Liam's new income and the FPO rider's 20% cap on the original coverage."
+      ],
+      "explanation": "The FPO rider allows an increase of up to 20% of original coverage without medical evidence: 20% × $4,500 = $900 maximum. However, the insurer also requires financial justification. Liam's income increased by $9,000/year. At a 60% income replacement ratio, the additional insurable amount is $9,000 × 60% = $5,400/year ÷ 12 = $450/month. The binding constraint is the lower of the two limits: $450/month.",
+      "difficulty": "hard",
+      "tags": ["future-purchase-option", "FPO", "calculations", "income-replacement"]
+    },
+    {
+      "id": 32,
+      "question": "Connor is a new employee at a large corporation. The brochure he received from human resources indicates the group plan is a cafeteria plan. In what way does a cafeteria plan specifically benefit Connor?",
+      "options": [
+        "A. Flexibility to modify coverage levels based on personal preferences.",
+        "B. Higher coverage amounts than individual policies typically offer.",
+        "C. Lower premiums due to risk pooling and employer contributions.",
+        "D. Guaranteed issue regardless of pre-existing conditions."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Coverage amounts are determined by the employer and insurer; a cafeteria structure does not inherently offer higher maximums than individual policies.",
+        "Lower premiums from risk pooling and employer contributions are features of group plans generally, not unique to a cafeteria plan structure.",
+        "Guaranteed issue for group members is a feature of group underwriting generally, not a defining characteristic of cafeteria plans."
+      ],
+      "explanation": "A cafeteria plan (also called a flexible benefits plan) allows employees to select from a menu of benefit options and allocate a set credits budget according to their personal needs. The defining advantage is the flexibility for each employee to customize their coverage — choosing more of the benefits they need and less of those they do not.",
+      "difficulty": "easy",
+      "tags": ["cafeteria-plan", "group-benefits", "flexible-benefits"]
+    },
+    {
+      "id": 33,
+      "question": "Keller works for a mid-sized tech company that offers an employee assistance program (EAP). Which of the following services is most likely to be covered under a group EAP with his firm?",
+      "options": [
+        "A. Financial counselling",
+        "B. Vision care",
+        "C. Dental care",
+        "D. Prescription drugs"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Vision care is a component of extended health benefit plans, not typically part of an Employee Assistance Program.",
+        "Dental care is covered under a separate dental benefit in group plans; EAPs focus on personal and counselling support services.",
+        "Prescription drugs are covered under extended health benefit plans; they are not an EAP service."
+      ],
+      "explanation": "Employee Assistance Programs (EAPs) provide confidential short-term counselling and support services to help employees deal with personal challenges that may affect work performance. Common EAP services include mental health counselling, financial counselling, legal advice, family and relationship support, and stress management. Vision, dental, and drug coverage belong to extended health benefit plans.",
+      "difficulty": "easy",
+      "tags": ["EAP", "employee-assistance", "group-benefits"]
+    },
+    {
+      "id": 34,
+      "question": "Roger and Peter are considering a group benefits and insurance plan for their business and employees. You are discussing the options with them and the responsibilities that will be undertaken by them as the plan sponsor versus the obligations that the insurance company will be responsible for. Which of the following statements is correct?",
+      "options": [
+        "A. The insurance company is responsible for plan member enrolment.",
+        "B. The plan sponsor is responsible for premium billing.",
+        "C. The insurance company is responsible for claims.",
+        "D. The plan sponsor is responsible for the payment of benefits."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Plan member enrolment is administered by the plan sponsor (the employer), not the insurance company.",
+        "Premium billing is handled by the insurance company, which invoices the plan sponsor; the plan sponsor pays the premiums.",
+        null,
+        "The payment of approved benefits is the responsibility of the insurance company (the insurer), not the plan sponsor."
+      ],
+      "explanation": "In a group benefits arrangement, the plan sponsor (employer) is responsible for enrolling members, remitting premium payments, and communicating plan details to employees. The insurance company is responsible for underwriting the coverage, adjudicating claims, and paying approved benefits to plan members.",
+      "difficulty": "medium",
+      "tags": ["group-benefits", "plan-sponsor", "insurer-responsibilities"]
+    },
+    {
+      "id": 35,
+      "question": "Stu, age 33, and his wife Svetlana, age 31, have one daughter named Ekaterina. Both Stu and Svetlana have extended health benefits available through their employer. Stu's birthday is in December and Svetlana's birthday is in January. Both plans offer basic dental coverage with a 75% co-insurance factor and neither plan has a deductible. Ekaterina has $500 in qualifying dental expenses. How much would Stu's plan pay in benefits?",
+      "options": [
+        "A. $0.00",
+        "B. $125.00",
+        "C. $93.75",
+        "D. $375.00"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Stu's plan does pay as the secondary plan; coordination of benefits allows both plans to contribute up to 100% of eligible expenses.",
+        null,
+        "$93.75 would result from incorrectly applying 75% to the $125 unpaid balance rather than using the coordination of benefits rules.",
+        "$375.00 is what each plan would pay as primary; Stu's plan is secondary, so it only covers the balance remaining after Svetlana's plan pays."
+      ],
+      "explanation": "Under the birthday rule, the parent whose birthday falls earliest in the calendar year has the primary plan for dependent children. Svetlana's birthday is in January and Stu's is in December, so Svetlana's plan is primary. Primary plan pays: 75% × $500 = $375. Remaining: $500 − $375 = $125. Stu's plan (secondary) pays the lesser of: (a) what it would pay as primary = $375, or (b) the remaining balance = $125. Stu's plan pays $125.",
+      "difficulty": "hard",
+      "tags": ["birthday-rule", "coordination-of-benefits", "dental", "calculations"]
+    }
+  ]
+}
