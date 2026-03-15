@@ -1,0 +1,508 @@
+{
+  "topic": "Insurance Legislation & Ethics Quiz",
+  "topicId": "insurance-legislation-ethics",
+  "description": "Canadian insurance legislation, licensing, contract law, and ethics scenarios.",
+  "examTips": "Watch for jurisdiction, licensing authority, contract formation, beneficiary rights, and tax treatment of benefits.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What type of life insurance agent is likely to have distribution contracts with more than one insurer and place his or her business through a managing general agent (MGA)?",
+      "options": [
+        "A. An independent agent",
+        "B. A career agent",
+        "C. A captive agent",
+        "D. An agent requiring enhanced supervision by the regulator"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Career agents are tied to a single carrier.",
+        "Captive agents work exclusively with one insurer.",
+        "Enhanced supervision is a compliance status, not a distribution model."
+      ],
+      "explanation": "Independent agents are not tied to one carrier. They typically access multiple insurers through an MGA.",
+      "difficulty": "easy",
+      "tags": ["agent-types", "distribution", "mga"]
+    },
+    {
+      "id": 2,
+      "question": "Which of the following holds supreme authority over Canadian law?",
+      "options": [
+        "A. The Uniform Law Conference of Canada",
+        "B. Common law",
+        "C. The Canadian Constitution",
+        "D. The Life Insurance Act"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "The Uniform Law Conference provides model laws but does not override the Constitution.",
+        "Common law is subordinate to constitutional requirements.",
+        null,
+        "The Life Insurance Act is ordinary legislation and must comply with the Constitution."
+      ],
+      "explanation": "The Constitution is the supreme law in Canada; all statutes and common law must align with it.",
+      "difficulty": "easy",
+      "tags": ["constitutional-law", "canada"]
+    },
+    {
+      "id": 3,
+      "question": "Jimmy was self-employed but is now retired. The government benefits that Jimmy receives form the majority of his modest income. Which of the following benefits that Jimmy receives is non-taxable and is meant to augment his existing government benefit?",
+      "options": [
+        "A. Canada Pension Plan (CPP)",
+        "B. Old Age Security (OAS)",
+        "C. Self-Employed Employment Insurance (EI) Benefit",
+        "D. Guaranteed Income Supplement (GIS)"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "CPP benefits are taxable income.",
+        "OAS benefits are taxable and subject to clawback.",
+        "Self-employed EI benefits would be taxable if payable.",
+        null
+      ],
+      "explanation": "The GIS is a non-taxable supplement for low-income seniors and is intended to top up other government benefits.",
+      "difficulty": "medium",
+      "tags": ["taxation", "senior-benefits"]
+    },
+    {
+      "id": 4,
+      "question": "Ying just turned sixteen and wants to buy an insurance policy. Under provincial legislation in British Columbia, which of the following statements is true?",
+      "options": [
+        "A. Ying can enter into an insurance contract today.",
+        "B. Ying must wait until age 19 to enter into an insurance contract.",
+        "C. Ying must wait until age 17 to enter into an insurance contract.",
+        "D. Ying must wait until age 18 to enter into an insurance contract."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Age of majority in BC is 19, but insurance capacity is granted at 16.",
+        "There is no 17-year threshold in BC insurance legislation.",
+        "Insurance capacity for minors starts at 16 under provincial law."
+      ],
+      "explanation": "BC legislation allows minors 16 or older to contract for insurance, even though the general age of majority is higher.",
+      "difficulty": "medium",
+      "tags": ["contract-capacity", "minors"]
+    },
+    {
+      "id": 5,
+      "question": "Nurinder graduates from university and decides to pursue a career as an insurance agent. Nurinder completes the educational requirements necessary to become licensed as an insurance agent. Which authority will govern the licensing of Nurinder as an insurance agent?",
+      "options": [
+        "A. The Insurance Regulator in the Province/Territory",
+        "B. The Canadian Insurance Services Regulatory Organization",
+        "C. The Canadian Life and Health Insurance Association",
+        "D. The Office of the Superintendent of Financial Institutions"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "CISRO coordinates standards but does not issue licenses.",
+        "CLHIA is an industry association, not the licensing authority.",
+        "OSFI regulates federally incorporated insurers, not individual agents."
+      ],
+      "explanation": "Agent licensing is handled by the provincial or territorial insurance regulator where the agent will practice.",
+      "difficulty": "medium",
+      "tags": ["licensing", "regulation"]
+    },
+    {
+      "id": 6,
+      "question": "As a soon-to-be licensed insurance agent, you attended a life insurance industry networking event. You met a seasoned agent named Leo, who shared with you that he is a career agent. What does that mean?",
+      "options": [
+        "A. He is an independent agent who can place insurance with several different insurers.",
+        "B. He works full time as an insurance agent with no outside employment activities.",
+        "C. He represents only one insurer.",
+        "D. He has been licensed for more than 10 years."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "That describes an independent advisor, not a career (captive) agent.",
+        "Career status refers to exclusivity to one carrier, not full-time hours.",
+        null,
+        "Length of licensing does not define a career agent."
+      ],
+      "explanation": "A career (captive) agent is contractually tied to a single insurer for product distribution.",
+      "difficulty": "easy",
+      "tags": ["agent-types", "career-agent"]
+    },
+    {
+      "id": 7,
+      "question": "Victoria had a colleague who became incapacitated and was unable to manage her own affairs. Victoria wants to be able to appoint a trusted person to manage her affairs should the same situation happen to her. Which of the following is the CORRECT option which will meet this need?",
+      "options": [
+        "A. Guardianship document",
+        "B. Designated trustee",
+        "C. Will",
+        "D. Enduring power of attorney"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Guardianship is typically court-appointed after incapacity arises.",
+        "A trustee arrangement alone does not grant broad decision-making authority for personal affairs.",
+        "A will only takes effect on death, not incapacity.",
+        null
+      ],
+      "explanation": "An enduring power of attorney allows the chosen attorney to continue acting even if the grantor becomes incapacitated.",
+      "difficulty": "medium",
+      "tags": ["estate-planning", "power-of-attorney"]
+    },
+    {
+      "id": 8,
+      "question": "Harp and Sanjita have mirror wills where they become both sole beneficiary and sole executor of each other's estate. They are now contemplating a marital separation or a divorce. Which of the following is true in respect of what will happen to the wills if they separate or divorce?",
+      "options": [
+        "A. Divorce will cause each of the wills to be interpreted as if the ex-spouse predeceased the other spouse.",
+        "B. Separation will revoke the wills and the estate will be distributed according to provincial law.",
+        "C. Separation under a separation agreement causes the wills to be interpreted as if they divorced.",
+        "D. Divorce has no effect and the former spouse continues as executor and beneficiary."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "A separation alone does not revoke a will.",
+        "A separation agreement does not trigger the same effect as a divorce on will interpretation.",
+        "Most provinces treat a former spouse as having predeceased upon divorce."
+      ],
+      "explanation": "In many provinces, divorce revokes a former spouse’s appointments, treating them as if they had died before the testator. Separation alone does not have this effect.",
+      "difficulty": "medium",
+      "tags": ["wills", "family-law", "beneficiary"]
+    },
+    {
+      "id": 9,
+      "question": "Legacy Insurance was struggling financially and was acquired by Shield Insurance. Andrew, a policyholder under Legacy, is concerned about the status of his policy. As required by the regulator, affected policyholders received certificates of assumption from Shield Insurance. What is the outcome for Andrew's policy following the acquisition of Legacy Insurance by Shield Insurance?",
+      "options": [
+        "A. Legacy will review each policy on a case-by-case basis and determine if they will assume the policy or direct the policyholder to Assuris.",
+        "B. Shield will be responsible for all rights and obligations of Andrew's policy.",
+        "C. Andrew assumes the risk of non-payment as a condition of Legacy Insurance making their best efforts to maintain the policy as originally issued.",
+        "D. Policies are automatically cancelled and premiums refunded when an insurer is acquired."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "An assumption reinsurance transfers all covered policies, not a case-by-case decision afterward.",
+        null,
+        "The acquiring insurer assumes the risk; the policyholder does not take on non-payment risk.",
+        "A valid assumption agreement keeps policies in force rather than cancelling them."
+      ],
+      "explanation": "The assumption certificate means Shield steps into Legacy’s obligations; policy terms continue with Shield responsible for benefits and premiums.",
+      "difficulty": "medium",
+      "tags": ["assumption-reinsurance", "policyholder-rights"]
+    },
+    {
+      "id": 10,
+      "question": "Felix sustained injuries in a workplace accident and received a $500,000 settlement to compensate for his reduced earning capacity. What tax implication applies to this settlement?",
+      "options": [
+        "A. It is taxable but can be fully contributed to an RRSP without impacting contribution room.",
+        "B. It is considered income but can be spread over multiple years for tax purposes.",
+        "C. It is received tax free.",
+        "D. It is considered taxable income in the year it is received."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "RRSP limits still apply and the award itself is not taxable.",
+        "Personal injury damages for lost capacity are not treated as income.",
+        null,
+        "Such settlements are excluded from income and are not taxed."
+      ],
+      "explanation": "Compensation for loss of earning capacity due to personal injury is excluded from income under CRA rules and is received tax free.",
+      "difficulty": "medium",
+      "tags": ["taxation", "injury-settlement"]
+    },
+    {
+      "id": 11,
+      "question": "Michelle suggests Jose complete an application and qualify for temporary insurance coverage while he thinks about a $325,000 life insurance recommendation. How long will the temporary insurance coverage typically be available for?",
+      "options": [
+        "A. 30 days",
+        "B. 120 days",
+        "C. 90 days",
+        "D. 60 days"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "TIAs generally extend longer than 30 days.",
+        "120 days is longer than standard TIA periods.",
+        null,
+        "60 days is shorter than common TIA maximums."
+      ],
+      "explanation": "Temporary insurance agreements generally provide up to 90 days of interim coverage during underwriting.",
+      "difficulty": "easy",
+      "tags": ["temporary-insurance", "underwriting"]
+    },
+    {
+      "id": 12,
+      "question": "Nancy applied for a life insurance policy on November 10th, and the application was approved and delivered to her on November 20th. Under common law jurisdictions, when was an \"offer\" made?",
+      "options": [
+        "A. When Nancy made the first premium payment.",
+        "B. When Nancy completed the application.",
+        "C. When the policy was delivered to Nancy.",
+        "D. When the insurer approved the policy."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Payment is part of acceptance, not the insurer's offer.",
+        "The application is a request from the client, not the insurer's offer.",
+        "Delivery alone does not constitute the offer under common law formation.",
+        null
+      ],
+      "explanation": "In insurance, the application is an invitation to treat; the insurer makes the offer when it approves the policy, which the client accepts by paying and taking delivery.",
+      "difficulty": "medium",
+      "tags": ["contract-formation", "common-law"]
+    },
+    {
+      "id": 13,
+      "question": "Mark and Leo were business partners and named each other as beneficiaries on their life insurance policies. Mark died in a car accident. Shortly after, Leo took his own life. How would a claim for the death benefit on each policy be handled?",
+      "options": [
+        "A. The policy on Mark's life will pay the death benefit to Leo's estate, and the policy on Leo's life will pay the death benefit to Mark's estate.",
+        "B. Neither policy will pay the death benefit because the event that caused the death was a result of the life insured's own actions.",
+        "C. Since the named beneficiary in each policy is deceased, the death benefit will be distributed in accordance with provincial intestacy rules.",
+        "D. The policy on Mark's life will pay the death benefit to Leo's estate, and the policy on Leo's life will pay the death benefit to his own estate."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Mark’s policy pays to Leo as beneficiary; Leo’s own policy pays to his estate.",
+        "Leo’s death occurred after the contestability/suicide period, so his policy can still pay.",
+        "A valid beneficiary designation directs proceeds before intestacy rules apply.",
+        null
+      ],
+      "explanation": "Mark predeceased Leo, so Mark’s benefit goes to Leo (now his estate). Leo’s suicide after the two-year exclusion means his own policy pays to his estate.",
+      "difficulty": "medium",
+      "tags": ["beneficiaries", "suicide-clause", "estate"]
+    },
+    {
+      "id": 14,
+      "question": "Jesse buys a 20-year term policy that is both guaranteed renewable and convertible. Which is the CORRECT response about expiry and termination of the policy and features?",
+      "options": [
+        "A. The policy will never expire as long as Jesse continues to renew.",
+        "B. The policy conversion option will eventually expire.",
+        "C. The policy renewable option is guaranteed and will not expire.",
+        "D. The insured cannot cancel coverage for any reason after paying the first premium."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Term policies have a final expiry age even if renewable.",
+        null,
+        "Renewal is usually available only to a certain terminal age.",
+        "Policyholders may cancel; they are not locked in after the first premium."
+      ],
+      "explanation": "Conversion privileges typically end at a set age (e.g., 65 or 70) even though the policy may be renewable to a later terminal age.",
+      "difficulty": "medium",
+      "tags": ["term-conversion", "renewability"]
+    },
+    {
+      "id": 15,
+      "question": "What is meant by a unilateral contract?",
+      "options": [
+        "A. The policy could be voidable by the insurer.",
+        "B. The insurer is entitled to amend the contract.",
+        "C. The insurer can cancel the policy at any time.",
+        "D. The policy owner can cancel the policy at any time."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Voidable refers to contract validity, not unilateral obligations.",
+        "The insurer generally cannot unilaterally amend the contract.",
+        "Insurers are bound once conditions are met; they cannot cancel at will.",
+        null
+      ],
+      "explanation": "Only the insurer is legally bound to perform; the policy owner can stop paying and walk away, making insurance a unilateral contract.",
+      "difficulty": "easy",
+      "tags": ["contract-law", "unilateral-contract"]
+    },
+    {
+      "id": 16,
+      "question": "Bo owns a life insurance policy that pays on the death of his wife Greta. The death benefit is payable to their daughter Moesha. However, if Moesha predeceases Greta, then the policy will pay to Bo’s brother Carl. In addition, if Bo were to predecease Greta, the policy will be transferred to Carl as well. Which of the following statements about Bo's life insurance policy is CORRECT?",
+      "options": [
+        "A. Carl is successor policyholder.",
+        "B. Bo is the life insured.",
+        "C. Greta is the policyholder.",
+        "D. Moesha is the contingent beneficiary."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "The insured life is Greta, not Bo.",
+        "Bo currently owns the policy, not Greta.",
+        "Moesha is the primary beneficiary; Carl is contingent."
+      ],
+      "explanation": "Carl is named to assume ownership if Bo dies first, making him the successor policyholder.",
+      "difficulty": "medium",
+      "tags": ["beneficiaries", "policy-ownership"]
+    },
+    {
+      "id": 17,
+      "question": "Barlow is receiving long-term disability benefits from his employer’s group plan. The employer may reduce benefits or cancel the plan. Which statement about Barlow's group plan is CORRECT?",
+      "options": [
+        "A. If the employer cancels the group insurance plan, Barlow will continue to receive his disability benefits.",
+        "B. The employer must receive the members’ permission prior to making changes to coverage.",
+        "C. The employer cannot cancel the group plan for existing members but may exclude new members.",
+        "D. Insurance law in Manitoba will apply in determining Barlow’s rights under his group policy."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Employers generally can amend or cancel plans without member consent.",
+        "Group plans can be cancelled entirely; vesting protects existing disability claims only.",
+        "Governing law follows the province where the contract was made, not necessarily the current workplace."
+      ],
+      "explanation": "Once a disability claim is in pay, the benefit is vested and must continue even if the employer later cancels the group policy.",
+      "difficulty": "medium",
+      "tags": ["group-disability", "vested-benefits"]
+    },
+    {
+      "id": 18,
+      "question": "Pedro and Alejandra want insurance payable to their daughter Yolanda. Which statement correctly explains revocable versus irrevocable beneficiary designations?",
+      "options": [
+        "A. Whether the beneficiary is revocable or irrevocable, Pedro and Alejandra could surrender the policy without Yolanda's permission.",
+        "B. If Yolanda is revocable, they could not later name another protected class beneficiary without her permission.",
+        "C. If Yolanda is revocable, the death benefit would not be protected from potential creditors.",
+        "D. If Yolanda is an irrevocable beneficiary, Pedro and Alejandra would need her consent before taking a policy loan."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Irrevocable beneficiaries generally must consent to surrenders.",
+        "A revocable designation can be changed without the beneficiary’s consent.",
+        "Creditor protection depends on class and provincial rules, not simply revocable status.",
+        null
+      ],
+      "explanation": "An irrevocable beneficiary gains control rights; the owner needs the beneficiary’s written consent for loans or surrender.",
+      "difficulty": "medium",
+      "tags": ["beneficiary", "irrevocable"]
+    },
+    {
+      "id": 19,
+      "question": "Veronica dies and the life insurance claim becomes subject to further investigation, a coroner’s autopsy, and a toxicology report. Which circumstance BEST explains why these additional investigative measures would be employed?",
+      "options": [
+        "A. The policy has very few restrictions or limitations about the cause of death.",
+        "B. The policy has no limitations or provisions for death by suicide.",
+        "C. The policy provides for an additional benefit where the death is by accident.",
+        "D. The policy does not have specific exclusions for certain events or activities."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Minimal restrictions alone do not require extensive investigation.",
+        "Suicide provisions are usually time-limited and separate from accidental benefits.",
+        null,
+        "Lack of exclusions does not specifically drive coroner and toxicology involvement."
+      ],
+      "explanation": "Accidental death benefits require proof that death was accidental; insurers seek medical and coroner evidence to confirm eligibility.",
+      "difficulty": "medium",
+      "tags": ["claims", "accidental-death"]
+    },
+    {
+      "id": 20,
+      "question": "Norm purchased an accidental death and dismemberment (AD&D) policy and lost his left arm in an accident. Which statement about Norm's AD&D policy is CORRECT?",
+      "options": [
+        "A. The benefit will be paid to his beneficiary Matthew.",
+        "B. The policy will pay Norm the benefit.",
+        "C. The policy will not pay a benefit because Norm was not killed.",
+        "D. The policy will pay Norm's estate the benefit upon his death."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Dismemberment benefits are living benefits paid to the insured, not the death beneficiary.",
+        null,
+        "AD&D policies pay for covered losses like dismemberment, not only death.",
+        "The benefit is payable now to the insured, not deferred to the estate."
+      ],
+      "explanation": "AD&D policies include living benefits for specified losses; Norm receives the dismemberment payment directly.",
+      "difficulty": "easy",
+      "tags": ["ad&d", "benefits"]
+    },
+    {
+      "id": 21,
+      "question": "Nathaniel would like to be a licensed insurance agent while maintaining another job. Which statements about his employment options are CORRECT?",
+      "options": [
+        "A. ii and iv",
+        "B. ii and iii",
+        "C. i and iv",
+        "D. i and ii"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Statement i allows any occupation with client approval, which is too broad.",
+        null,
+        "Option C includes statement i, which is incorrect.",
+        "Option D includes statement i, which is incorrect."
+      ],
+      "explanation": "Agents must avoid roles that compromise integrity or independence. Statements ii and iii capture those obligations.",
+      "difficulty": "medium",
+      "tags": ["ethics", "outside-employment"]
+    },
+    {
+      "id": 22,
+      "question": "Hannah pays Armando referral fees for client introductions and splits commission with Timothy, another licensed agent who assisted on an application. Which of the following is CORRECT?",
+      "options": [
+        "A. Timothy must be appropriately licensed in order for Hannah to split commissions with him.",
+        "B. Hannah's referral arrangement is permitted if she discloses the arrangement to the client.",
+        "C. Commission sharing is not allowed, and Hannah is in violation of the code of conduct.",
+        "D. Hannah may split commissions with either Timothy or Armando if she discloses the arrangement to the client."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Referral fee rules vary; the scenario focuses on commission splitting requirements.",
+        "Commission splits are allowed between licensed agents.",
+        "Armando is unlicensed; commissions cannot be split with him even with disclosure."
+      ],
+      "explanation": "Commission splitting is only permitted with another appropriately licensed agent such as Timothy.",
+      "difficulty": "medium",
+      "tags": ["commission", "referrals"]
+    },
+    {
+      "id": 23,
+      "question": "Elena sells her whole life policy to an investor for cash via an absolute assignment because she is terminally ill. Did the agent act appropriately?",
+      "options": [
+        "A. No, the agent’s actions constitute trafficking in insurance.",
+        "B. Yes, the agent's actions are appropriate provided all options were discussed first.",
+        "C. No, the agent's actions constitute tied selling, taking advantage of a vulnerable client.",
+        "D. Yes, the agent's actions are appropriate if a Life Insurance Replacement Declaration was completed and signed."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Viatical/trafficking arrangements are generally prohibited despite discussion of options.",
+        "The issue is trafficking, not tied selling.",
+        "A replacement declaration does not legalize trafficking transactions."
+      ],
+      "explanation": "Buying or selling life policies as investments (viaticals) is considered trafficking in insurance and is prohibited in most Canadian jurisdictions.",
+      "difficulty": "medium",
+      "tags": ["trafficking", "ethics"]
+    },
+    {
+      "id": 24,
+      "question": "Andrea, an Ontario resident, arrives to open an RRSP and contribute $100,000, planning to immediately purchase an annuity within the plan. What identification requirements apply under PCMLTF rules?",
+      "options": [
+        "A. Proper identification is required if the contribution amount is $15,000 or more.",
+        "B. A social insurance card can be used to verify identity.",
+        "C. Identification is not required because it is a registered plan.",
+        "D. Andrea is required to provide government-issued photo identification, or the account cannot be opened."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "The $15,000 trigger does not apply to registered plan openings.",
+        "A SIN card is not acceptable for identity verification on its own.",
+        null,
+        "Registered plans are exempt from standard PCMLTF identification at account opening."
+      ],
+      "explanation": "Registered plans like RRSPs are exempt from initial identity verification requirements because contributions are tracked by the CRA.",
+      "difficulty": "medium",
+      "tags": ["aml", "identification"]
+    },
+    {
+      "id": 25,
+      "question": "What is the primary mandate of the Canadian Insurance Services Regulatory Organizations (CISRO)?",
+      "options": [
+        "A. To enact federal legislation for insurance",
+        "B. To provide consumer protection to insurance policy holders",
+        "C. To develop consistent qualification standards for insurance agents",
+        "D. To provide independent complaint resolution services"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "CISRO is not a legislative body.",
+        "Consumer protection is a broad objective but CISRO's direct mandate is standard setting.",
+        null,
+        "Complaints are not CISRO's primary role."
+      ],
+      "explanation": "CISRO focuses on harmonizing qualification and conduct standards for insurance intermediaries across jurisdictions.",
+      "difficulty": "easy",
+      "tags": ["regulators", "standards"]
+    }
+  ]
+}
