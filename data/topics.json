@@ -119,8 +119,26 @@
           "id": "llqp-segregated-1",
           "name": "Practice Test 1",
           "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
-            "questionCount": 19,
-            "dataFile": "data/llqp-segregated/llqp-segregated-1.json?v=20260209e"
+          "questionCount": 19,
+          "dataFile": "data/llqp-segregated/llqp-segregated-1.json?v=20260209e"
+        }
+      ]
+    },
+    {
+      "id": "insurance-legislation-ethics",
+      "name": "Insurance Legislation & Ethics Quiz",
+      "slug": "insurance-legislation-ethics",
+      "description": "Canadian insurance legislation, ethics, licensing, and contract law scenarios.",
+      "color": "#0ea5e9",
+      "icon": "📜",
+      "status": "active",
+      "practiceTests": [
+        {
+          "id": "insurance-legislation-ethics-1",
+          "name": "Comprehensive Quiz (25 Qs)",
+          "description": "Insurance legislation and ethics questions with detailed reasoning.",
+          "questionCount": 25,
+          "dataFile": "data/insurance-legislation-ethics/insurance-legislation-ethics-1.json?v=20260315a"
         }
       ]
     },
