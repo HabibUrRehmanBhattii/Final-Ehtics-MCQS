@@ -114,62 +114,118 @@
       ]
     },
     {
-      "id": "llqp-segregated",
-      "name": "LLQP Segregated Funds & Annuities",
-      "slug": "llqp-segregated",
-      "description": "Segregated fund contracts and annuity products.",
-      "color": "#ec4899",
-      "icon": "📊",
-      "status": "active",
-      "practiceTests": [
-        {
-          "id": "llqp-segregated-1",
-          "name": "Practice Test 1",
-          "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
-          "questionCount": 19,
-          "dataFile": "data/llqp-segregated/llqp-segregated-1.json?v=20260209e"
-        }
-      ]
-    },
-    {
-      "id": "insurance-legislation-ethics",
-      "name": "Insurance Legislation & Ethics Quiz",
-      "slug": "insurance-legislation-ethics",
-      "description": "Canadian insurance legislation, ethics, licensing, and contract law scenarios.",
-      "color": "#0ea5e9",
-      "icon": "📜",
-      "status": "coming-soon",
-      "practiceTests": []
-    },
-    {
-      "id": "wfg-ethics",
-      "name": "WFG Ethics Compliance Course",
-      "slug": "wfg-ethics",
-      "description": "World Financial Group ethics and compliance training questions.",
-      "color": "#10b981",
-      "icon": "🛡️",
-      "status": "coming-soon",
-      "practiceTests": []
-    },
-    {
-      "id": "wfg-aml",
-      "name": "WFG Anti-Money Laundering",
-      "slug": "wfg-aml",
-      "description": "Anti-Money Laundering and Terrorist Financing training questions.",
-      "color": "#8b5cf6",
-      "icon": "💼",
-      "status": "coming-soon",
-      "practiceTests": []
-    },
-    {
       "id": "llqp-life",
       "name": "LLQP Life Insurance",
       "slug": "llqp-life",
       "description": "Life insurance products, policies, and regulations.",
       "color": "#f59e0b",
       "icon": "🏥",
-      "status": "coming-soon",
-      "practiceTests": []
+      "status": "active",
+      "practiceTests": [
+        {
+          "id": "llqp-life-01",
+          "name": "HLLQP - LIFE 01 QZ - Introduction to Life Insurance",
+          "description": "Chapter quiz covering life insurance fundamentals and mortality basics",
+          "questionCount": 19,
+          "dataFile": "data/llqp-life/llqp-life-01.json?v=20260315b"
+        },
+        {
+          "id": "llqp-life-02",
+          "name": "HLLQP - LIFE 02 QZ - Term Life Insurance",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-02.json"
+        },
+        {
+          "id": "llqp-life-03",
+          "name": "HLLQP - LIFE 03 QZ - Whole Life and Term-100 Insurance",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-03.json"
+        },
+        {
+          "id": "llqp-life-04",
+          "name": "HLLQP - LIFE 04 QZ - Universal Life Insurance",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-04.json"
+        },
+        {
+          "id": "llqp-life-05",
+          "name": "HLLQP - LIFE 05 QZ - Riders and Supplementary Benefits",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-05.json"
+        },
+        {
+          "id": "llqp-life-06",
+          "name": "HLLQP - LIFE 06 QZ - Group Life Insurance",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-06.json"
+        },
+        {
+          "id": "llqp-life-07",
+          "name": "HLLQP - LIFE 07 QZ - Taxation of Life Insurance and Tax Strategies",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-07.json"
+        },
+        {
+          "id": "llqp-life-08",
+          "name": "HLLQP - LIFE 08 QZ - Business Life Insurance",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-08.json"
+        },
+        {
+          "id": "llqp-life-09",
+          "name": "HLLQP - LIFE 09 QZ - Application and Underwriting",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-09.json"
+        },
+        {
+          "id": "llqp-life-10",
+          "name": "HLLQP - LIFE 10 QZ - Assessing the Client's Needs and Situations",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-10.json"
+        },
+        {
+          "id": "llqp-life-11",
+          "name": "HLLQP - LIFE 11 QZ - Recommending an Insurance Policy",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-11.json"
+        },
+        {
+          "id": "llqp-life-12",
+          "name": "HLLQP - LIFE 12 QZ - Ongoing Service",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-12.json"
+        },
+        {
+          "id": "llqp-life-13",
+          "name": "HLLQP - LIFE 13 QZ - Chapter 1 - 12 Review Test",
+          "description": "Coming soon",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-life/hllqp-life-13.json"
+        }
+      ]
     },
     {
       "id": "llqp-accident",
@@ -207,6 +263,24 @@
           "description": "A&S Insurance — FPO, group benefits, EAP, and coordination of benefits (Questions 31–35)",
           "questionCount": 5,
           "dataFile": "data/llqp-accident/llqp-accident-4.json"
+        }
+      ]
+    },
+    {
+      "id": "llqp-segregated",
+      "name": "LLQP Segregated Funds & Annuities",
+      "slug": "llqp-segregated",
+      "description": "Segregated fund contracts and annuity products.",
+      "color": "#ec4899",
+      "icon": "📊",
+      "status": "active",
+      "practiceTests": [
+        {
+          "id": "llqp-segregated-1",
+          "name": "Practice Test 1",
+          "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
+          "questionCount": 19,
+          "dataFile": "data/llqp-segregated/llqp-segregated-1.json?v=20260209e"
         }
       ]
     }

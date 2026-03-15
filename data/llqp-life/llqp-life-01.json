@@ -1,0 +1,388 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 01 QZ - Introduction to Life Insurance",
+  "examTips": "Focus on mortality terminology, life tables, and core risk-management strategies for death and longevity.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "There are two ways to quantify the risk of death. Which method does the following method describe?\n\n\"The likelihood that an individual in a certain group/age will die before their next birthday?\"",
+      "options": [
+        "A. Probability of death",
+        "B. Longevity risk",
+        "C. Morbidity risk",
+        "D. Life expectancy"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Longevity risk is the danger of living longer than expected and outliving assets.",
+        "Morbidity risk deals with illness or disability, not death.",
+        "Life expectancy is the average years remaining, not the annual probability of dying."
+      ],
+      "explanation": "The probability of death (mortality rate) measures the chance a person of a specific age dies before the next birthday.",
+      "difficulty": "easy",
+      "tags": ["mortality", "probability", "risk"]
+    },
+    {
+      "id": 2,
+      "question": "Peter was the policyholder and the life insured on a $500,000 whole life policy. His wife, Belinda, was named as the beneficiary and his sister, Gayle, was named as the contingent beneficiary. Peter died in a car accident last week. Unable to deal with her grief, Belinda died as a result of suicide last night.\n\nTo whom would the death benefit be paid?",
+      "options": [
+        "A. It would be paid to Belinda.",
+        "B. It would be paid to Gayle.",
+        "C. The death benefit would be denied on the basis that payment of the death benefit would go against public policy.",
+        "D. It would be paid to Belinda’s estate."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Belinda predeceased the payout, so proceeds cannot be paid directly to her.",
+        "The contingent only applies if the primary beneficiary dies before the insured.",
+        "Public policy/suicide clauses apply to the insured, not to a beneficiary who dies after the insured.",
+        null
+      ],
+      "explanation": "Belinda survived the insured. When she later died, her estate is entitled to the proceeds.",
+      "difficulty": "medium",
+      "tags": ["beneficiaries", "estate", "claims"]
+    },
+    {
+      "id": 3,
+      "question": "All else being equal, which of the following statements is true?",
+      "options": [
+        "A. The probability of death in a given year is exactly the same for males and females until age 40, which is referred to as the crossover age. At age 40, the probability of death is higher for males.",
+        "B. Gender impacts the risk of disability. However, it has been proven that gender has very little impact on life expectancy or probability of death.",
+        "C. A 40-year-old male would have a higher probability of death in a given year as compared to a 40-year-old female.",
+        "D. A male would have a higher life expectancy as compared to a female of the same age."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Mortality rates differ by gender well before age 40.",
+        "Gender is a significant mortality factor.",
+        null,
+        "Females typically have higher life expectancy than males."
+      ],
+      "explanation": "Mortality tables show males have higher probabilities of death than females at the same age, leading to lower male life expectancy.",
+      "difficulty": "medium",
+      "tags": ["mortality", "gender", "life-expectancy"]
+    },
+    {
+      "id": 4,
+      "question": "Tanya recently bought a brand-new vehicle. She purchased automobile coverage that will either repair at or guarantee full replacement value if the vehicle is damaged in an accident.\n\nWhich risk management strategy is she employing?",
+      "options": [
+        "A. Risk avoidance",
+        "B. Risk reduction",
+        "C. Risk transfer",
+        "D. Risk retention"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Avoidance would be not driving or not owning the car.",
+        "Reduction would be using safety features or defensive driving.",
+        null,
+        "Retention means paying for losses yourself."
+      ],
+      "explanation": "Buying insurance shifts the financial risk of loss to the insurer—classic risk transfer.",
+      "difficulty": "easy",
+      "tags": ["risk-management", "insurance-basics"]
+    },
+    {
+      "id": 5,
+      "question": "Nadia worries about who would care for her child if she dies. She named her sister as legal guardian but the sister struggles financially. Nadia is healthy and wonders if her family history will prevent her from buying life insurance.\n\nIn dealing with the financial risks associated with death, which strategy is definitely not available to Nadia?",
+      "options": [
+        "A. Risk retention",
+        "B. Risk reduction",
+        "C. Risk avoidance",
+        "D. Risk transfer"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "She could retain some risk by self-insuring, though it may be impractical.",
+        "She can reduce risk via healthy living and planning.",
+        null,
+        "She can transfer financial risk by buying life insurance."
+      ],
+      "explanation": "Death cannot be avoided; avoidance is impossible for mortality risk.",
+      "difficulty": "easy",
+      "tags": ["risk-management", "mortality"]
+    },
+    {
+      "id": 6,
+      "question": "Which of the following facts can be learned by analyzing a life table?",
+      "options": [
+        "A. As the probability of death increases, the individual’s life expectancy decreases.",
+        "B. Life expectancy and probability of death essentially refer to the same thing.",
+        "C. No correlation can be drawn between the probability of death and life expectancy.",
+        "D. As the probability of death increases, the individual’s life expectancy also increases."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "They are related but not identical; one is a probability, the other an average duration.",
+        "There is a clear inverse relationship between mortality and life expectancy.",
+        "Higher mortality shortens, not lengthens, life expectancy."
+      ],
+      "explanation": "Life tables show an inverse relationship: higher mortality rates reduce expected remaining years.",
+      "difficulty": "easy",
+      "tags": ["life-table", "mortality", "life-expectancy"]
+    },
+    {
+      "id": 7,
+      "question": "Brent is helping a 50-year-old male client with retirement planning. If the life table figures are accurate for the client, to what age could he expect to live?\n\n| Age | Probability of Death within the Year (Male) | Probability of Death within the Year (Female) | Life Expectancy (Years) (Male) | Life Expectancy (Years) (Female) |\n|-----|---------------------------------------------|-----------------------------------------------|--------------------------------|----------------------------------|\n| 30 years | 0.074% | 0.037% | 50.44 | 54.35 |\n| 40 years | 0.132% | 0.084% | 40.87 | 44.62 |\n| 50 years | 0.301% | 0.197% | 31.56 | 35.12 |",
+      "options": [
+        "A. He would be expected to live to age 85.12.",
+        "B. He would be expected to live to age 75.52.",
+        "C. He would be expected to live to age 81.56.",
+        "D. He would be expected to live to age 31.56."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "85.12 does not match the table values for age 50 male.",
+        "75.52 is incorrect math.",
+        null,
+        "31.56 is the remaining years, not the projected age at death."
+      ],
+      "explanation": "Life expectancy of 31.56 more years at age 50 implies an expected age of 81.56.",
+      "difficulty": "medium",
+      "tags": ["life-expectancy", "math", "life-table"]
+    },
+    {
+      "id": 8,
+      "question": "After looking at a life table, Graham determined that the probability of his dying by his next birthday was 1.26%. What term is used to describe the probability of dying at a specific age?",
+      "options": [
+        "A. Life expectancy",
+        "B. Mortality rate",
+        "C. Catastrophic loss",
+        "D. Morbidity rate"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Life expectancy is the average remaining years of life.",
+        null,
+        "Catastrophic loss refers to large, low-frequency events, not mortality probabilities.",
+        "Morbidity rate measures illness/disability frequency."
+      ],
+      "explanation": "The annual probability of death at a given age is the mortality rate (qₓ).",
+      "difficulty": "easy",
+      "tags": ["mortality", "terminology"]
+    },
+    {
+      "id": 9,
+      "question": "What are the two primary ways to quantify risk with respect to life insurance?",
+      "options": [
+        "A. ‘Family health history’ and ‘probability of death’",
+        "B. ‘Life expectancy’ and ‘probability of death’",
+        "C. ‘Current age’ and ‘anticipated of death’",
+        "D. ‘Life expectancy’ and ‘current age’"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Family history is an underwriting factor, not a primary quantification method.",
+        null,
+        "Current age is an input, but the key measures are probability of death and life expectancy.",
+        "Current age alone does not quantify risk; it feeds into the two primary measures."
+      ],
+      "explanation": "Insurers quantify mortality using life expectancy and probability of death derived from life tables.",
+      "difficulty": "easy",
+      "tags": ["mortality", "risk", "life-expectancy"]
+    },
+    {
+      "id": 10,
+      "question": "Why is ‘risk retention’ not usually an appropriate risk management strategy for dealing with the financial consequences of death?",
+      "options": [
+        "A. Death is a low-severity risk, but the probability is high.",
+        "B. Death is a high-severity risk.",
+        "C. Not everyone can afford a policy by which the insurer will accept the risk.",
+        "D. It is impossible to retain the risk of death because the deceased individual will no longer be around to deal with the consequences."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Death is high severity and relatively low probability, not high probability/low severity.",
+        null,
+        "Affordability is not the main reason retention is unsuitable.",
+        "The issue is severity of loss, not the inability to experience the consequences personally."
+      ],
+      "explanation": "Because the financial impact of death is catastrophic, self-insuring (retention) is rarely appropriate.",
+      "difficulty": "easy",
+      "tags": ["risk-management", "mortality"]
+    },
+    {
+      "id": 11,
+      "question": "Tracey is a 20-year-old female. If the figures in the life table turn out to be accurate for her, how old will she be when she dies?\n\n| Age | Probability of Death within the Year (Male) | Probability of Death within the Year (Female) | Life Expectancy (Years) (Male) | Life Expectancy (Years) (Female) |\n|-----|---------------------------------------------|-----------------------------------------------|--------------------------------|----------------------------------|\n| 20 years | 0.071% | 0.30% | 60.04 | 64.17 |\n| 30 years | 0.074% | 0.037% | 50.44 | 54.35 |\n| 40 years | 0.132% | 0.084% | 40.87 | 44.62 |",
+      "options": [
+        "A. 70.44 years",
+        "B. 64.17 years",
+        "C. 50.44 years",
+        "D. 84.17 years"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "70.44 uses the male expectancy figure from age 20 plus age 20; it does not match the female data.",
+        "64.17 is the remaining years, not the total age at death.",
+        "50.44 is the male remaining life expectancy at age 30.",
+        null
+      ],
+      "explanation": "Life expectancy of 64.17 additional years at age 20 implies an expected age of 84.17.",
+      "difficulty": "medium",
+      "tags": ["life-expectancy", "life-table", "math"]
+    },
+    {
+      "id": 12,
+      "question": "What is another name for a ‘life table’?",
+      "options": [
+        "A. Annex chart",
+        "B. Premium factor table",
+        "C. Morbidity table",
+        "D. Mortality table"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Annex chart is unrelated terminology.",
+        "Premium factor tables relate to pricing inputs, not life expectancy data.",
+        "Morbidity tables track illness/disability rates, not death.",
+        null
+      ],
+      "explanation": "Life tables are also called mortality tables because they chart mortality rates and expected remaining life.",
+      "difficulty": "easy",
+      "tags": ["terminology", "life-table"]
+    },
+    {
+      "id": 13,
+      "question": "Which of the following statements best describes the change in the “probability of death” as one ages?",
+      "options": [
+        "A. The probability of death starts low and increases incrementally each year at about the same rate until age 40. At age 40, the probability of death still increases but at a slower pace.",
+        "B. The probability of death remains level given the odds of dying in an accident is the same regardless of one’s health or age.",
+        "C. The probability of death starts low and increases incrementally each year at about the same rate.",
+        "D. With the exception of the first few years of life, the probability of death starts low and then increases slowly until age 40. At age 40, it begins to increase more dramatically."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Mortality increases more sharply after age 40, not more slowly.",
+        "Accident risk is only one factor; overall mortality is age dependent.",
+        "Increase is not uniform; it accelerates later in life.",
+        null
+      ],
+      "explanation": "Mortality curves show a slow increase after infancy that accelerates around age 40.",
+      "difficulty": "medium",
+      "tags": ["mortality", "life-table"]
+    },
+    {
+      "id": 14,
+      "question": "The probabilities of death for the four individuals below were extracted from a life table:\n• 30-year-old male non-smoker\n• 50-year-old male non-smoker\n• 30-year-old female non-smoker\n• 50-year-old female non-smoker\n\nIn random order, assume the probabilities of death are 0.076%, 0.038%, 0.305%, and 0.199%.\nMatch the probability of death with the applicable individual.\n\nNote: The probabilities provided are for learning/illustration purposes only.",
+      "options": [
+        "A. 30-year-old male: 0.305%; 50-year-old male: 0.076%; 30-year-old female: 0.038%; 50-year-old female: 0.199%",
+        "B. 30-year-old male: 0.199%; 50-year-old male: 0.305%; 30-year-old female: 0.038%; 50-year-old female: 0.076%",
+        "C. 30-year-old male: 0.076%; 50-year-old male: 0.305%; 30-year-old female: 0.038%; 50-year-old female: 0.199%",
+        "D. 30-year-old male: 0.076%; 50-year-old male: 0.305%; 30-year-old female: 0.199%; 50-year-old female: 0.038%"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This swaps the male probabilities between ages.",
+        "The female probabilities are reversed.",
+        null,
+        "Older females should not have lower probabilities than younger females or males."
+      ],
+      "explanation": "Mortality is higher for males than females and higher for older ages: 30M 0.076%; 50M 0.305%; 30F 0.038%; 50F 0.199%.",
+      "difficulty": "medium",
+      "tags": ["mortality", "life-table", "gender"]
+    },
+    {
+      "id": 15,
+      "question": "Jake and Hannah are both 20 years old and have just welcomed their first child. They purchased joint first-to-die life insurance that would provide sufficient funds to support the child until adulthood.\n\nWhich financial impact of death are they primarily addressing?",
+      "options": [
+        "A. Estate creation",
+        "B. Loss of a caregiver",
+        "C. Education funds",
+        "D. Charitable giving"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Guardianship addresses caregiving, but the policy is about funding an estate for the child.",
+        "Education is a possible use, but the primary goal stated is creating funds broadly for support.",
+        "No charitable intent is mentioned."
+      ],
+      "explanation": "The policy immediately creates funds (an estate) to care for the child if the parents die.",
+      "difficulty": "easy",
+      "tags": ["estate-creation", "life-insurance", "family-planning"]
+    },
+    {
+      "id": 16,
+      "question": "Lucas owns a property with a $250,000 mortgage. He wants his son to take over the property (and mortgage) upon his death. Lucas’s pension income is limited, and his son could continue making the payments.\n\nWhich of the following financial impacts of death should be the most concern?",
+      "options": [
+        "A. Debt repayment",
+        "B. Loss of Lucas’s income",
+        "C. Capital gains taxes on the property when Lucas dies",
+        "D. All of the above"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Mortgage repayment is one concern, but not the only one raised.",
+        "His income would cease, affecting affordability of the home.",
+        "A deemed disposition could trigger taxes at death.",
+        null
+      ],
+      "explanation": "All listed impacts apply: the mortgage, loss of income, and potential taxes must all be planned for.",
+      "difficulty": "medium",
+      "tags": ["estate-planning", "taxes", "debt"]
+    },
+    {
+      "id": 17,
+      "question": "Nicole’s agent has recommended an annuity to her. What risk is she likely trying to address?",
+      "options": [
+        "A. Risk of dying too soon",
+        "B. Risk of living too long",
+        "C. Risk of a disability prior to retirement",
+        "D. All of the above"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Life insurance, not an annuity, covers dying too soon.",
+        null,
+        "Disability insurance addresses disability risk.",
+        "Annuities mainly mitigate longevity risk."
+      ],
+      "explanation": "Annuities provide lifetime income, protecting against outliving assets (longevity risk).",
+      "difficulty": "easy",
+      "tags": ["annuity", "longevity-risk"]
+    },
+    {
+      "id": 18,
+      "question": "Using the life table below, who would most likely pay more for life insurance?\n\n| Age | Probability of Death within the Year (Male) | Probability of Death within the Year (Female) | Life Expectancy (Years) (Male) | Life Expectancy (Years) (Female) |\n|-----|---------------------------------------------|-----------------------------------------------|--------------------------------|----------------------------------|\n| 30 years | 0.074% | 0.037% | 50.44 | 54.35 |\n| 40 years | 0.132% | 0.084% | 40.87 | 44.62 |\n| 50 years | 0.301% | 0.197% | 31.56 | 35.12 |",
+      "options": [
+        "A. Anita, a 30-year-old female",
+        "B. Sam, a 40-year-old male",
+        "C. Alexis, a 50-year-old female",
+        "D. Blake, a 50-year-old male"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "She has the lowest mortality of the group.",
+        "Higher than Anita, but not the highest overall.",
+        "Lower mortality than the 50-year-old male.",
+        null
+      ],
+      "explanation": "Blake’s mortality rate (0.301%) is highest, so his premium would be highest.",
+      "difficulty": "easy",
+      "tags": ["mortality", "pricing"]
+    },
+    {
+      "id": 19,
+      "question": "Justin wants each of his children to receive $500,000 upon his death to help them purchase a home or start a business.\n\nWhich of the following best describes this estate objective?",
+      "options": [
+        "A. Loss of income",
+        "B. Charitable giving",
+        "C. Leaving a legacy",
+        "D. Estate creation"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This goal is not about replacing Justin’s income.",
+        "No charitable element is mentioned.",
+        null,
+        "Estate creation is a tool; his goal is to leave a legacy for his children."
+      ],
+      "explanation": "Providing a significant gift to heirs is a classic legacy objective.",
+      "difficulty": "easy",
+      "tags": ["estate-planning", "legacy"]
+    }
+  ]
+}

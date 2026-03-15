@@ -407,27 +407,33 @@ Get-Content 'data\topics.json' | ConvertFrom-Json
 
 ---
 
-## 📊 CURRENT STATE (as of Feb 7, 2026)
+## 📊 CURRENT STATE (as of Mar 15, 2026)
 
 **Active Topics (in order):**
-1. **LLQP Ethics (Common Law)** - 56 questions
+1. **LLQP Ethics (Common Law)** - 81 questions
    - Practice Test 1: 10 questions
    - Practice Test 2: 20 questions  
    - Practice Test 3: 26 questions
+   - Mock Exam Test: 25 questions
 
-2. **Flashcards - Beneficiaries & Policy Basics** - 170 questions
+2. **LLQP Life Insurance** - 19 questions
+   - Chapter Quiz 1: Introduction to Life Insurance (19 questions)
+   - Chapter Quizzes 2–13: Coming soon
+
+3. **LLQP Accident & Sickness Insurance** - 35 questions
+   - Practice Tests 1–3: 10 questions each
+   - Practice Test 4: 5 questions
+
+4. **LLQP Segregated Funds & Annuities** - 19 questions
+   - Practice Test 1: 19 questions
+
+5. **Flashcards - Beneficiaries & Policy Basics** - 170 cards
    - 9 flashcard sets (parts 1-8 of Set 2)
 
-3. **LLQP Segregated Funds & Annuities** - 14 questions
-   - Practice Test 1: 14 questions
+**Coming Soon:**
+- LLQP Life Chapter Quizzes 2–13 (term life, whole life & term-100, UL, riders, group life, taxation, business life, underwriting, needs analysis, recommendations, ongoing service, full review)
 
-**Coming Soon Topics:**
-- WFG Ethics Compliance Course
-- WFG Anti-Money Laundering
-- LLQP Life Insurance
-- LLQP Accident & Sickness Insurance
-
-**Service Worker Cache:** v1.0.6
+**Service Worker Cache:** v1.1.5
 
 ---
 

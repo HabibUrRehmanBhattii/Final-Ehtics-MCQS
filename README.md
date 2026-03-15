@@ -1,6 +1,6 @@
 # 📚 LLQP & WFG Exam Prep - MCQ Study Platform
 
-> **Comprehensive interactive study platform with 206+ practice questions and flashcards for LLQP exam preparation**
+> **Comprehensive interactive study platform with 324 practice questions and flashcards for LLQP exam preparation**
 
 [![Deploy to Cloudflare Pages](https://img.shields.io/badge/Deploy-Cloudflare%20Pages-F38020?style=flat&logo=cloudflare)](https://pages.cloudflare.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -10,7 +10,7 @@
 ## 🎯 Core Features
 
 ### 📝 **Multiple Learning Formats**
-- **Practice Tests:** 3 comprehensive ethics practice tests (56 MCQs)
+- **Practice Tests:** 154 MCQs across LLQP Ethics (incl. mock exam), LLQP Life Chapter Quiz 1, Accident & Sickness, and Segregated Funds & Annuities
 - **Flashcards:** 170 quick-review flashcards across 9 sets
 - **Review Mode:** Dedicated wrong answers review system
 
@@ -18,6 +18,11 @@
 - **Practice Test 1:** 10 questions - Ethics fundamentals & basic concepts
 - **Practice Test 2:** 20 questions - Core principles & regulations  
 - **Practice Test 3:** 26 questions - Scenario-heavy ethics & legal (trafficking, Assuris, beneficiaries, contract law, exclusions, misrepresentation, rebating)
+- **Mock Exam Test:** 25 questions - Insurance legislation, licensing, contract law, and ethics scenarios
+
+### 🏥 **LLQP Life Chapter Quizzes**
+- **Chapter Quiz 1:** 19 questions - Introduction to Life Insurance (active)
+- **Chapter Quizzes 2–13:** Coming soon (Term life, whole life & term-100, universal life, riders, group life, taxation, business life, underwriting, needs analysis, recommendations, ongoing service, and full review)
 
 ### 🧠 **Flashcard System**
 - **Set 1:** 20 cards - Beneficiaries & policy basics
@@ -144,10 +149,25 @@ llqp-ethics-mcq/
 │   ├── topics-updated.json # Updated version
 │   ├── user_data.json     # User data structure
 │   │
-│   ├── llqp-ethics/       # Practice test MCQs
-│   │   ├── practice-1.json    # 10 ethics fundamentals
-│   │   ├── practice-2.json    # 20 core concepts
-│   │   └── practice-3.json    # 26 advanced scenarios
+│   ├── llqp-ethics/       # Ethics practice tests
+│   │   ├── llqp-ethics-1.json    # 10 ethics fundamentals
+│   │   ├── llqp-ethics-2.json    # 20 core concepts
+│   │   └── llqp-ethics-3.json    # 26 advanced scenarios
+│   │
+│   ├── insurance-legislation-ethics/ # Mock exam (LLQP Ethics topic)
+│   │   └── insurance-legislation-ethics-1.json # 25 questions
+│   │
+│   ├── llqp-life/         # Life chapter quizzes
+│   │   └── hllqp-life-01.json    # Chapter Quiz 1 (19 questions)
+│   │
+│   ├── llqp-accident/     # Accident & Sickness practice tests
+│   │   ├── llqp-accident-1.json  # Questions 1–10
+│   │   ├── llqp-accident-2.json  # Questions 11–20
+│   │   ├── llqp-accident-3.json  # Questions 21–30
+│   │   └── llqp-accident-4.json  # Questions 31–35
+│   │
+│   ├── llqp-segregated/   # Segregated Funds & Annuities practice tests
+│   │   └── llqp-segregated-1.json # 19 questions
 │   │
 │   └── flashcards/        # Quick-review flashcards
 │       ├── flashcards-1.json       # 20 cards (beneficiaries)
@@ -395,12 +415,19 @@ Stored data: {
 ## 📊 Current Content Count
 
 ### Practice Tests (MCQs)
-| Test | Questions | Type | Status |
-|------|-----------|------|--------|
-| Practice Test 1 | **10** | Ethics Fundamentals | ✅ Active |
-| Practice Test 2 | **20** | Core Concepts | ✅ Active |
-| Practice Test 3 | **26** | Advanced Scenarios | ✅ Active |
-| **Subtotal** | **56** | | |
+| Topic/Test | Questions | Status |
+|------------|-----------|--------|
+| LLQP Ethics Practice Test 1 | **10** | ✅ Active |
+| LLQP Ethics Practice Test 2 | **20** | ✅ Active |
+| LLQP Ethics Practice Test 3 | **26** | ✅ Active |
+| LLQP Ethics Mock Exam Test | **25** | ✅ Active |
+| LLQP Life Chapter Quiz 1: Introduction to Life Insurance | **19** | ✅ Active |
+| LLQP Accident & Sickness Practice Test 1 | **10** | ✅ Active |
+| LLQP Accident & Sickness Practice Test 2 | **10** | ✅ Active |
+| LLQP Accident & Sickness Practice Test 3 | **10** | ✅ Active |
+| LLQP Accident & Sickness Practice Test 4 | **5** | ✅ Active |
+| LLQP Segregated Funds & Annuities Practice Test 1 | **19** | ✅ Active |
+| **MCQ Subtotal** | **154** | |
 
 ### Flashcards (Quick Review)
 | Set | Cards | Topic | Status |
@@ -414,18 +441,25 @@ Stored data: {
 | Flashcards Set 2 - Part 6 | **20** | Insurance Basics | ✅ Active |
 | Flashcards Set 2 - Part 7 | **20** | Advanced Topics | ✅ Active |
 | Flashcards Set 2 - Part 8 | **10** | Final Review | ✅ Active |
-| **Subtotal** | **170** | | |
+| **Flashcards Subtotal** | **170** | |
 
-### Coming Soon Topics
-| Topic | Status | Icon |
-|-------|--------|------|
-| WFG Ethics Compliance Course | 🔜 Coming Soon | 🛡️ |
-| WFG Anti-Money Laundering | 🔜 Coming Soon | 💼 |
-| LLQP Life Insurance | 🔜 Coming Soon | 🏥 |
-| LLQP Accident & Sickness | 🔜 Coming Soon | 🚑 |
-| LLQP Segregated Funds & Annuities | 🔜 Coming Soon | 📊 |
+### Coming Soon (LLQP Life Chapter Quizzes)
+| Quiz | Status |
+|------|--------|
+| HLLQP - LIFE 02 QZ - Term Life Insurance | 🔜 Coming Soon |
+| HLLQP - LIFE 03 QZ - Whole Life and Term-100 Insurance | 🔜 Coming Soon |
+| HLLQP - LIFE 04 QZ - Universal Life Insurance | 🔜 Coming Soon |
+| HLLQP - LIFE 05 QZ - Riders and Supplementary Benefits | 🔜 Coming Soon |
+| HLLQP - LIFE 06 QZ - Group Life Insurance | 🔜 Coming Soon |
+| HLLQP - LIFE 07 QZ - Taxation of Life Insurance and Tax Strategies | 🔜 Coming Soon |
+| HLLQP - LIFE 08 QZ - Business Life Insurance | 🔜 Coming Soon |
+| HLLQP - LIFE 09 QZ - Application and Underwriting | 🔜 Coming Soon |
+| HLLQP - LIFE 10 QZ - Assessing the Client's Needs and Situations | 🔜 Coming Soon |
+| HLLQP - LIFE 11 QZ - Recommending an Insurance Policy | 🔜 Coming Soon |
+| HLLQP - LIFE 12 QZ - Ongoing Service | 🔜 Coming Soon |
+| HLLQP - LIFE 13 QZ - Chapter 1 - 12 Review Test | 🔜 Coming Soon |
 
-### **Grand Total: 226 Questions** (56 MCQs + 170 Flashcards)
+### **Grand Total: 324 Questions** (154 MCQs + 170 Flashcards)
 
 ---
 
@@ -693,7 +727,7 @@ Object.keys(localStorage).forEach(key => {
 - [x] Persistent question order across sessions
 - [x] Progress tracking with localStorage
 - [x] Comprehensive question explanations with option feedback
-- [x] 226 total questions (56 MCQs + 170 flashcards)
+- [x] 324 total questions (154 MCQs + 170 flashcards)
 - [x] Wrong answer review system with cross-test support
 - [x] Dark/Light mode toggle
 - [x] Bookmark functionality with filter
@@ -737,11 +771,9 @@ Object.keys(localStorage).forEach(key => {
 ### 📝 Content Expansion
 
 **In Development:**
-- [ ] WFG Ethics Compliance Course questions
-- [ ] WFG Anti-Money Laundering training
-- [ ] LLQP Life Insurance questions
-- [ ] LLQP Accident & Sickness Insurance
-- [ ] LLQP Segregated Funds & Annuities
+- [ ] LLQP Life Chapter Quizzes 2–13 (Term life, whole life, UL, riders, group life, taxation, business life, underwriting, needs analysis, recommendations, ongoing service, full review)
+- [ ] Additional mock exams and scenario banks
+- [ ] Extended flashcard sets for LLQP Life and A&S
 
 **Target:** 500+ total questions by end of 2026
 
@@ -757,7 +789,7 @@ Good luck with your studies! 📚✨
 
 ### v2.0.0 - Current (February 2026)
 **Major Update - Feature Rich Platform**
-- ✨ Added 216 new questions (226 total: 56 MCQs + 170 flashcards)
+- ✨ Added LLQP Life Chapter Quiz 1 (+19 MCQs) and consolidated topics (324 total: 154 MCQs + 170 flashcards)
 - 🔄 Implemented persistent question order across sessions
 - ✓ Added visual indicators (✓/✗) for answered questions
 - 🎯 Dual "Next Question" buttons for better UX
