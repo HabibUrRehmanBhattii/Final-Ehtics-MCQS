@@ -1,0 +1,208 @@
+{
+  "topic": "LLQP Accident & Sickness Insurance",
+  "topicId": "llqp-accident",
+  "description": "Accident & Sickness Insurance — Practice Test 1 (Questions 1–10)",
+  "examTips": "Focus on policy purpose, benefit calculations, and which rider/policy type applies to the scenario. Read each scenario carefully before selecting your answer.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Edith has been making ends meet with the income derived from her retirement savings plan and non-registered investment account. She intended to use this income to fund her retirement while leaving a residual amount to her granddaughter Mandy. However, due to health issues, Edith now requires care in a nursing home at a cost of $33,000 per year, creating a monthly cash flow deficit. Fortunately, the long-term care policy she purchased in her 50s will adequately cover these costs. What need did the A&S policy address for Edith?",
+      "options": [
+        "A. Protection against longevity",
+        "B. Protection against loss of income",
+        "C. Protection of assets",
+        "D. Protection of income"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Longevity risk refers to outliving one's assets; the LTC policy here is preserving assets rather than addressing lifespan length.",
+        "Edith is retired and not earning employment income; the policy protects her investment assets from being depleted by care costs.",
+        null,
+        "Protection of income applies to earning individuals who need to replace lost wages; Edith's concern is preserving her existing assets for herself and her granddaughter."
+      ],
+      "explanation": "Without the LTC policy, Edith would have had to draw down her retirement savings and investment account to pay for nursing home care, depleting the assets she intended to preserve. The LTC policy protects those assets by covering the care costs directly.",
+      "difficulty": "medium",
+      "tags": ["long-term-care", "asset-protection", "policy-purpose"]
+    },
+    {
+      "id": 2,
+      "question": "Emma, an experienced insurance advisor, is conducting a policy review for an existing client who has experienced significant changes in health and finances. The client is concerned about maintaining his current level of coverage while ideally lowering premiums. What approach should Emma recommend to her client?",
+      "options": [
+        "A. Adjust the policy benefits or deductibles to reduce premiums while retaining core coverage.",
+        "B. Recommend adding riders to the policy to address new health risks.",
+        "C. Recommend keeping all insurance in place even if premium payments are funded by a loan.",
+        "D. Suggest discontinuing the policy and self-insuring to save on premium costs."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Adding riders would increase premiums, which is contrary to the client's goal of reducing costs.",
+        "Funding premiums through a loan increases debt and financial risk, which is not in the client's best interest.",
+        "Self-insuring after health changes is risky and inappropriate given the client's health concerns."
+      ],
+      "explanation": "When a client wants to maintain core coverage while reducing premiums, the best approach is to adjust policy features such as benefit amounts, elimination periods, or deductibles. This preserves essential protection while making the policy more affordable.",
+      "difficulty": "medium",
+      "tags": ["policy-review", "premiums", "client-needs"]
+    },
+    {
+      "id": 3,
+      "question": "Fateh (29) and Mahaan (28) are a married couple who live in Prince Albert, Saskatchewan. Fateh works as a farm hand for a local wheat farmer, and he operates the farming equipment including combine harvesters, harrows, and tractors. Mahaan has been a dentist for 5 years. Both are in their late twenties, non-smokers, and in good health. When they apply for disability insurance, they apply for the same level of disability benefit - $2,500 per month for each of them. Mahaan qualifies for a non-cancellable regular occupation policy and Fateh qualifies for a Cancellable any occupation policy. Why do they qualify for different coverage?",
+      "options": [
+        "A. Fateh has a greater chance of becoming disabled because he is male",
+        "B. Mahaan would have the most probability to want to cancel a policy than Fateh",
+        "C. Mahaan would qualify for a similar position whereas Fateh would qualify for any other position",
+        "D. Fateh works in a higher risk occupational class than Mahaan"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Gender alone does not determine the type or cancellability of a disability policy.",
+        "The insurer's right to cancel a policy is based on occupational risk classification, not the insured's likelihood of wanting to cancel.",
+        "This statement confuses the definition of disability ('regular occupation' vs. 'any occupation') but does not explain the cancellability difference.",
+        null
+      ],
+      "explanation": "Insurers classify occupations by risk level. Farm hands who operate heavy machinery are in a higher occupational risk class than professionals such as dentists. Higher-risk occupations typically qualify only for cancellable policies with broader 'any occupation' disability definitions, while lower-risk professionals can obtain non-cancellable 'regular occupation' coverage.",
+      "difficulty": "medium",
+      "tags": ["occupational-class", "disability-insurance", "policy-type"]
+    },
+    {
+      "id": 4,
+      "question": "Remy filed a claim under his disability policy after satisfying a 60-day elimination period. The policy provides a maximum monthly benefit of $5,000 for a 24-month benefit period and includes a recurrent disability clause. Remy was off work for a total of six months and then successfully returned to work. However, three months later, he became unable to work again due to a related condition, and his doctors now suspect he may never return to work. What is the maximum he could receive under the second claim?",
+      "options": [
+        "A. $90,000",
+        "B. $100,000",
+        "C. $0",
+        "D. $120,000"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "$100,000 would imply 20 months of benefits, but he has already used 6 months of his 24-month benefit period.",
+        "The recurrent disability clause means no new elimination period is required and the original benefit period continues.",
+        "$120,000 would be the full 24 months × $5,000, ignoring the 6 months already paid."
+      ],
+      "explanation": "Under the recurrent disability clause, the second disability (related to the first) is treated as a continuation of the original claim. Remy has already received 6 months of benefits, so the remaining benefit period is 24 − 6 = 18 months. Maximum = 18 × $5,000 = $90,000.",
+      "difficulty": "hard",
+      "tags": ["recurrent-disability", "benefit-period", "calculations"]
+    },
+    {
+      "id": 5,
+      "question": "Peggy is your client and she has disability coverage under her employer's group plan that will pay a monthly disability benefit of $3,000 (60% of her monthly income of $5,000) for 2 years. The offset in the group master contract states an 85% all source maximum. She approaches you to discuss additional coverage to increase the monthly benefit. Assuming that she qualifies from a medical and financial underwriting perspective, which of the following options would Peggy be permitted to do?",
+      "options": [
+        "A. Take out an individual disability income policy with a monthly disability benefit of $2,000",
+        "B. Take out an individual disability income policy with a monthly disability benefit of $2,550",
+        "C. Take out an individual disability income policy with a monthly disability benefit of $1,250",
+        "D. Take out an individual disability income policy with a monthly disability benefit of $3,000"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "$2,000 additional would bring total benefits to $5,000, which equals 100% of income — exceeding the 85% all-source maximum.",
+        "$2,550 additional would bring total to $5,550, far exceeding the 85% maximum of $4,250.",
+        null,
+        "$3,000 additional would bring total to $6,000, which greatly exceeds the 85% all-source maximum."
+      ],
+      "explanation": "The 85% all-source maximum means total disability benefits from all sources cannot exceed 85% × $5,000 = $4,250/month. Peggy already receives $3,000/month from her group plan, so additional individual coverage is capped at $4,250 − $3,000 = $1,250/month.",
+      "difficulty": "hard",
+      "tags": ["all-source-maximum", "coordination-of-benefits", "calculations"]
+    },
+    {
+      "id": 6,
+      "question": "Witt owns a whole life insurance policy with AD&D and CI riders. While on an overseas business trip, he had a severe allergic reaction and was hospitalized for two weeks. Unfortunately, Witt passed away in the hospital due to complications. Which rider(s) would most likely pay a benefit?",
+      "options": [
+        "A. Both riders",
+        "B. The CI rider",
+        "C. Neither rider",
+        "D. The AD&D rider"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "The CI rider cannot pay because Witt did not survive for the required 30-day survival period after diagnosis.",
+        "The CI rider requires the insured to survive 30 days post-diagnosis; Witt passed away in hospital, so this condition is not met.",
+        "The AD&D rider can pay since an accidental death (severe allergic reaction) occurred.",
+        null
+      ],
+      "explanation": "A severe allergic reaction (anaphylaxis) that leads to death is typically considered an accidental cause, so the AD&D (Accidental Death & Dismemberment) rider would pay. The CI (Critical Illness) rider requires a 30-day survival period after the qualifying diagnosis; since Witt died in hospital within two weeks, the CI rider's survival condition is not satisfied.",
+      "difficulty": "hard",
+      "tags": ["AD&D", "critical-illness", "survival-period", "riders"]
+    },
+    {
+      "id": 7,
+      "question": "The company Jerry just started working for pays him an annual salary of $120,000 and offers long-term disability (LTD) coverage. The non-evidence maximum amount of LTD coverage is 50% of salary, and the maximum benefit is set at 66.66% of salary to a maximum of $15,000 per month. This means he could receive annual coverage of $79,992. What is true about the coverage he could receive?",
+      "options": [
+        "A. The entire coverage amount would require confirmation of income.",
+        "B. Part of the coverage in the amount of $19,992 would require medical evidence of insurability.",
+        "C. Part of the coverage in the amount of $19,992 would require confirmation of income.",
+        "D. The entire coverage amount would require medical evidence of insurability."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Only the amount above the non-evidence maximum requires additional underwriting; not the entire amount.",
+        "Exceeding the non-evidence maximum triggers financial underwriting (confirmation of income), not medical evidence of insurability.",
+        null,
+        "Medical evidence of insurability applies in different contexts; exceeding the non-evidence maximum for LTD requires confirmation of income."
+      ],
+      "explanation": "The non-evidence maximum (NEM) is 50% × $120,000 = $60,000/year. Jerry's potential maximum benefit is 66.66% × $120,000 = $79,992/year. The amount above the NEM — $79,992 − $60,000 = $19,992 — requires financial underwriting (confirmation of income) to verify the coverage is proportionate to earnings.",
+      "difficulty": "hard",
+      "tags": ["non-evidence-maximum", "financial-underwriting", "LTD"]
+    },
+    {
+      "id": 8,
+      "question": "Chantelle has a cancellable disability policy with a presumptive disability clause; a recurrent disability clause; a three-month elimination period; a maximum benefit of $5,000 per month; and a maximum benefit period of two years. Chantelle was on disability for nine months due to a severe injury. She returned to work for a few months, but the injury resurfaced, leaving her unable to work for another two years. How much will she likely receive in total benefits for her second disability?",
+      "options": [
+        "A. $90,000",
+        "B. $75,000",
+        "C. $60,000",
+        "D. $0"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "$90,000 would represent 18 months of benefits, but the recurrent disability clause preserves remaining benefit period from the first claim, not a new 18-month count.",
+        null,
+        "$60,000 would represent 12 months; this understates the remaining benefit period after the first claim.",
+        "The recurrent disability clause means benefits continue without a new elimination period; $0 would only apply if the benefit period were exhausted."
+      ],
+      "explanation": "Under the recurrent disability clause, the second disability (same or related injury) is a continuation of the first claim. Chantelle used 9 months of her 24-month benefit period in the first claim, leaving 15 months. 15 × $5,000 = $75,000. No new elimination period applies.",
+      "difficulty": "hard",
+      "tags": ["recurrent-disability", "benefit-period", "calculations"]
+    },
+    {
+      "id": 9,
+      "question": "Paul and Katie are a married couple and self-employed business owners of the Bella Hair Salon. The salon has enjoyed steady success for 10 years and they are at the point where they need a financial plan. Paul and Katie want to start planning for retirement and they want to obtain disability insurance. While they feel that they need coverage in the event that either of them becomes disabled and cannot work, they also do not want to waste their money on premiums that they will see no return or benefit from. Which of the following statements is correct?",
+      "options": [
+        "A. A return of premium rider would typically provide a return (refund) of premiums paid which would be taxable when the policy expires.",
+        "B. A return of premium rider would typically not return premiums if the total benefits paid out over the life of the policy exceeded the total premiums paid.",
+        "C. A waiver of premium rider would typically pay the difference between the total premiums paid into the policy and less the benefits paid out at policy expiry as a taxable benefit.",
+        "D. A waiver of premium rider would typically refund 70% of all premiums paid to the policyholder when coverage expires, regardless of claims."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Returns of premium under an ROP rider on a disability policy are generally received tax-free, not as taxable income.",
+        null,
+        "A waiver of premium rider waives premium payments during a period of disability; it does not refund the difference between premiums and benefits at expiry.",
+        "A waiver of premium rider suspends premium obligations while disabled; it does not provide a cash refund at policy expiry."
+      ],
+      "explanation": "A return of premium (ROP) rider refunds a portion of premiums (typically if no or minimal claims were made). However, if total benefits paid out during the policy's life equal or exceed total premiums paid, there is generally nothing to return. This aligns with the concept that the policy's value was fully utilised through claims.",
+      "difficulty": "medium",
+      "tags": ["return-of-premium", "waiver-of-premium", "riders"]
+    },
+    {
+      "id": 10,
+      "question": "Sarah is entitled to $5,000 a month in benefits under a disability insurance (DI) policy. The benefits are indexed to the Consumer Price Index (CPI) each year on a compounded basis. The maximum indexing rate for any one year is 5%, but the policy allows for a carry-forward of unused indexing. During the first year, inflation was 2%. The next year, inflation was 6%. Based on this, what would the maximum monthly benefit be in the third year?",
+      "options": [
+        "A. $5,406",
+        "B. $5,350",
+        "C. $5,355",
+        "D. $5,100"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "$5,350 would result from applying exactly 5% in year 2 without using the carry-forward, then not applying carry-forward correctly.",
+        "$5,355 does not accurately reflect the compounded carry-forward calculation.",
+        "$5,100 would result from applying only the 2% first-year increase without any year-2 adjustment."
+      ],
+      "explanation": "Year 1: CPI = 2%, max = 5%, applied = 2%, carry-forward = 3%. Benefit after Year 1 = $5,000 × 1.02 = $5,100. Year 2: CPI = 6%, can apply up to 5% + 3% carry-forward = 8%; actual CPI is 6%, so 6% is applied. Benefit after Year 2 = $5,100 × 1.06 = $5,406. This is the benefit entering the third year.",
+      "difficulty": "hard",
+      "tags": ["CPI-indexing", "carry-forward", "calculations"]
+    }
+  ]
+}

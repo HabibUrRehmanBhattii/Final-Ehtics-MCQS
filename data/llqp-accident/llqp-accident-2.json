@@ -1,0 +1,206 @@
+{
+  "topic": "LLQP Accident & Sickness Insurance",
+  "topicId": "llqp-accident",
+  "description": "Accident & Sickness Insurance — Practice Test 2 (Questions 11–20)",
+  "examTips": "Pay close attention to tax treatment, policy definitions, and the distinction between different benefit types. Elimination periods, coverage limits, and survivor periods are common exam topics.",
+  "questions": [
+    {
+      "id": 11,
+      "question": "Rachel is single with no dependants. She is self-employed and currently has no disability insurance. She has been saving the maximum RRSP contribution limit each year so that she can retire well. She is considering purchasing a disability policy but is unsure how to structure it to balance affordability and sufficient coverage. Which policy structure would be most appropriate for Rachel's situation?",
+      "options": [
+        "A. A long-term disability plan with no waiting period and benefits until age 60.",
+        "B. A short-term disability insurance policy with a 30-day elimination period and a 5-year benefit period.",
+        "C. A long-term disability policy with no more than a 30% co-insurance factor.",
+        "D. A long-term disability insurance policy with a 90-day elimination period and coverage up to age 65."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "No waiting period maximises premiums; as a single person with RRSP savings, Rachel can afford a longer elimination period to reduce cost.",
+        "A short-term policy with a 5-year benefit period leaves her exposed to long-term disability risk, which is Rachel's greatest financial threat.",
+        "A 30% co-insurance factor means Rachel bears 30% of loss herself; with no dependants and savings, this is not the optimal concern here.",
+        null
+      ],
+      "explanation": "Rachel has no dependants and maintains savings, so she can absorb a 90-day elimination period, which significantly reduces premiums. Coverage to age 65 protects her RRSP contributions and retirement savings against a long-term disability that could derail her financial plan. This structure balances affordability with adequate long-term protection.",
+      "difficulty": "medium",
+      "tags": ["elimination-period", "benefit-period", "self-employed", "policy-structure"]
+    },
+    {
+      "id": 12,
+      "question": "Saul received a lump-sum payment from his critical illness insurance policy after being diagnosed with cancer. He is concerned about the tax implications of this payment and wants to ensure he reports it correctly. What is the correct tax treatment of the lump-sum payment received from Saul's critical illness insurance policy?",
+      "options": [
+        "A. The payment is considered taxable income and must be reported as such.",
+        "B. The extent that the benefits exceed premiums paid is taxable as employment income.",
+        "C. The extent that the benefits exceed premiums paid is taxed as investment income.",
+        "D. The lump-sum payment is tax free and does not need to be reported as income."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "CI lump-sum benefits paid to an individual under a personally owned policy are not taxable income.",
+        "CI benefits are not classified as employment income regardless of the relationship between premiums and benefits.",
+        "CI benefits are not investment income; they are insurance proceeds paid upon a qualifying diagnosis."
+      ],
+      "explanation": "Lump-sum critical illness insurance benefits received by an individual under a personally owned CI policy are non-taxable in Canada. The payment is made tax-free regardless of the amount of premiums paid, because it is an insurance benefit rather than income.",
+      "difficulty": "easy",
+      "tags": ["critical-illness", "tax-treatment", "lump-sum"]
+    },
+    {
+      "id": 13,
+      "question": "Lenox recently purchased a critical illness (CI) insurance policy with 10-condition coverage. After being diagnosed with a severe illness, Lenox asks under what conditions the policy would pay benefits. Under what circumstances would Lenox receive benefits?",
+      "options": [
+        "A. The illness must be diagnosed after the policy was issued, and he must die more than 30 days later.",
+        "B. The illness must be diagnosed after the policy was issued, and he must survive for 30 days after the diagnosis.",
+        "C. The illness must be diagnosed more than 30 days after the policy was issued, and he must survive for 30 days after the diagnosis.",
+        "D. The illness must be diagnosed, and he must survive for 30 days and incur medical expenses."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The 30-day condition requires survival, not death; the policy pays a living benefit.",
+        null,
+        "There is no requirement that the diagnosis occur 30 days after policy issuance; the standard condition is survival post-diagnosis.",
+        "CI benefits are paid as a lump sum upon diagnosis and survival; incurring specific medical expenses is not a required condition."
+      ],
+      "explanation": "A standard critical illness insurance policy pays benefits when: (1) the insured is diagnosed with a covered condition after the policy is issued, and (2) the insured survives a specified waiting period — typically 30 days — following the diagnosis. There is no requirement to incur particular expenses or to die.",
+      "difficulty": "medium",
+      "tags": ["critical-illness", "survival-period", "policy-conditions"]
+    },
+    {
+      "id": 14,
+      "question": "Dru and Olive are married, self-employed, and planning for their retirement. They want to ensure that if either of them becomes unable to perform activities of daily living, they have care services without burdening each other or their children. Dru is especially concerned because his dad suffered from Parkinson's disease for many years before his death. Which type of insurance would best address their concern?",
+      "options": [
+        "A. A joint life insurance policy naming each other as beneficiary",
+        "B. A self-employed health trust",
+        "C. Critical illness insurance",
+        "D. Long-term care insurance"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "A joint life insurance policy pays a death benefit; it does not fund ongoing care services during the insured's lifetime.",
+        "A self-employed health trust reimburses health and dental expenses but does not provide long-term custodial care coverage.",
+        "Critical illness insurance pays a one-time lump sum upon diagnosis; it does not provide ongoing funding for activities-of-daily-living care services."
+      ],
+      "explanation": "Long-term care (LTC) insurance specifically covers the cost of care services when an individual cannot perform activities of daily living (ADLs) such as bathing, dressing, or feeding. Given Dru's family history of Parkinson's and both partners' desire to avoid burdening their family, LTC insurance is the most appropriate solution.",
+      "difficulty": "easy",
+      "tags": ["long-term-care", "activities-of-daily-living", "policy-purpose"]
+    },
+    {
+      "id": 15,
+      "question": "Brooke quit her full-time job to care for her aging mother, Grace, who requires assistance 24/7. Although the situation is exhausting for Brooke, she receives some relief each quarter as Grace's long-term care (LTC) policy allows for a temporary five-day stay in a nursing home. This time provides Brooke with much-needed rest and relaxation, and the opportunity to perform important errands. What type of service does this describe?",
+      "options": [
+        "A. Home care",
+        "B. Assisted living",
+        "C. Respite care",
+        "D. Facility care"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Home care refers to health and support services delivered in the individual's own home, not temporary institutional stays.",
+        "Assisted living is a residential care option where individuals live independently with support services; it is not a temporary relief arrangement.",
+        null,
+        "Facility care refers to full-time residency in a nursing home or care facility, not a temporary short-term stay designed to give caregivers a break."
+      ],
+      "explanation": "Respite care is temporary, short-term relief provided to primary caregivers such as family members. It allows the caregiver to rest while the care recipient is supervised in a professional setting. LTC policies often include a respite care benefit for exactly this purpose.",
+      "difficulty": "easy",
+      "tags": ["long-term-care", "respite-care", "care-types"]
+    },
+    {
+      "id": 16,
+      "question": "Elaine and her husband, Merrick, both owned critical illness (CI) policies with four-condition coverage. After their policies were issued, Merrick suffered a severe stroke and passed away 40 days later. Elaine wants to know if Merrick's policy will pay a benefit to their family. Which statement best describes the benefit they will receive?",
+      "options": [
+        "A. No benefit will be paid because stroke is not a covered illness.",
+        "B. The full benefit will be paid because Merrick survived more than 30 days after diagnosis.",
+        "C. A partial benefit will be paid because Merrick survived 40 days.",
+        "D. The benefit will be denied because Merrick died from the illness."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Stroke is one of the most commonly covered conditions under CI policies, including basic four-condition coverage.",
+        null,
+        "CI policies pay the full benefit amount, not a prorated partial benefit based on how long the insured survived.",
+        "Death from the covered illness does not disqualify the claim; the full benefit is payable as long as the insured survived the required 30-day period."
+      ],
+      "explanation": "A standard CI policy requires the insured to survive 30 days after diagnosis of a covered condition. Merrick was diagnosed with a severe stroke and survived 40 days, satisfying the survival period requirement. Therefore, the full CI benefit is payable to his estate or beneficiary. Death after the 30-day survival period does not negate the claim.",
+      "difficulty": "medium",
+      "tags": ["critical-illness", "survival-period", "stroke", "benefit-payment"]
+    },
+    {
+      "id": 17,
+      "question": "Fryda has dental coverage under her extended health coverage. Her plan covers 80% for regular maintenance, 50% for restorative procedures, and no coverage for cosmetic procedures. Fryda goes to the dentist for a regular check-up and cleaning. During the visit, the dentist discovers that Fryda has a cracked molar. A second visit is scheduled and Fryda's cracked molar is extracted. Fryda then returns for several visits over the year to have a dental implant put in to replace her extracted molar. The total cost of her dental work is $4,525: $150 for the check-up and cleaning, $875 for the molar extraction, and $3,500 for the dental implant. If the provincial dental schedule sets the price of extractions at $750 and her dental plan considers the dental implant cosmetic, what is the amount of Fryda's dental work that will definitely be covered under her extended health coverage?",
+      "options": [
+        "A. $720",
+        "B. $1,025",
+        "C. $495",
+        "D. $2,245"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "$720 does not accurately reflect the combined co-insurance calculations for both eligible procedures.",
+        "$1,025 overcounts the extraction benefit by using the billed amount ($875) rather than the provincial schedule fee ($750).",
+        null,
+        "$2,245 would significantly overestimate benefits by including the dental implant, which is considered cosmetic and therefore not covered."
+      ],
+      "explanation": "Check-up and cleaning (regular maintenance): $150 × 80% = $120. Molar extraction (restorative): the plan pays based on the provincial schedule ($750), not the billed amount ($875): $750 × 50% = $375. Dental implant (cosmetic): $0 coverage. Total covered = $120 + $375 = $495.",
+      "difficulty": "hard",
+      "tags": ["dental-coverage", "co-insurance", "provincial-schedule", "calculations"]
+    },
+    {
+      "id": 18,
+      "question": "Sandra has just recently started working for GreenFields Inc., a small landscaping firm which operates solely in the city of Langley, British Columbia. As an employee of GreenFields, Sandra has joined the company group extended health insurance plan. The plan includes vision, dental, and prescription drug coverage. Which of the following statements CORRECTLY describes the tax implications of Sandra's group extended health insurance premiums and benefits?",
+      "options": [
+        "A. Premiums paid by Greenfields would be considered a taxable benefit to Sandra.",
+        "B. Premiums paid by Greenfields are a tax-deductible expense for Greenfields.",
+        "C. Prescription drug benefits received by Sandra are taxable.",
+        "D. Premiums paid by Sandra are tax-deductible for Sandra."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "In most provinces, employer-paid group health premiums are NOT a taxable benefit to the employee (Quebec is the main exception and is not applicable here).",
+        null,
+        "Benefits received under a group extended health plan, including prescription drugs, are not taxable to the employee.",
+        "Employee-paid premiums for group health insurance are not deductible by the employee for income tax purposes."
+      ],
+      "explanation": "For a business located in British Columbia, employer-paid group health insurance premiums are a tax-deductible expense for the employer (GreenFields). They are not considered a taxable benefit to Sandra. Benefits she receives under the plan (vision, dental, prescriptions) are also tax-free to her.",
+      "difficulty": "medium",
+      "tags": ["group-benefits", "tax-treatment", "employer-premiums"]
+    },
+    {
+      "id": 19,
+      "question": "Devon is planning a trip abroad to go scuba diving in the Caribbean. When Devon asks you about travel insurance, which of the following would be a CORRECT response that you could provide to Devon?",
+      "options": [
+        "A. Devon would typically not be covered if he was injured while scuba diving.",
+        "B. Travel insurance benefits are always provided on an indemnity basis.",
+        "C. Devon would typically undergo a medical examination if he were to apply for travel insurance.",
+        "D. Most credit cards offer travel insurance that is comparable to individual insurance plans."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Travel insurance benefits are not always provided on an indemnity basis; some benefits may be provided on a reimbursement or other basis depending on the policy.",
+        "Travel insurance typically does not require a medical examination; it usually involves a health questionnaire.",
+        "Credit card travel insurance usually provides limited coverage with significant exclusions and is generally not comparable to comprehensive individual travel insurance."
+      ],
+      "explanation": "Standard travel insurance policies commonly exclude high-risk recreational activities such as scuba diving. Devon should specifically confirm whether a policy covers scuba diving or whether an activity rider is available. Without such coverage, injuries sustained while scuba diving would typically not be covered.",
+      "difficulty": "medium",
+      "tags": ["travel-insurance", "exclusions", "high-risk-activities"]
+    },
+    {
+      "id": 20,
+      "question": "Ethan, a small business owner, is reviewing his insurance expenses for the year, including premiums paid for BOE insurance and long-term disability insurance for his employees. He also has an individually owned DI policy for his own protection. He is unsure how these premiums should be treated for tax purposes. Which statement best describes the general tax implications?",
+      "options": [
+        "A. Both BOE and personal DI insurance premiums are tax deductible for the business.",
+        "B. BOE insurance premiums are deductible for the business, but premiums for his personal DI policy are not.",
+        "C. Only premiums for employees' long-term disability insurance are deductible, not the BOE insurance.",
+        "D. None of the premiums are deductible because they are income protection plans."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Personal DI premiums paid by a business owner for their own individual policy are not deductible; only BOE premiums are.",
+        null,
+        "BOE (Business Overhead Expense) premiums are also deductible as a business expense because the benefits received are taxable income.",
+        "BOE premiums are deductible; the blanket statement that no income protection premiums are deductible is incorrect."
+      ],
+      "explanation": "Business Overhead Expense (BOE) insurance premiums are tax-deductible for the business because any benefits received are taxable income. However, premiums paid for a personally owned individual DI policy are not tax-deductible, and the benefits received are tax-free. Employee group LTD premiums may also be deductible as a business expense.",
+      "difficulty": "hard",
+      "tags": ["BOE-insurance", "tax-deductibility", "personal-DI", "business-owner"]
+    }
+  ]
+}
