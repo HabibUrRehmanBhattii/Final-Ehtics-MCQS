@@ -29,6 +29,13 @@
           "description": "LLQP Scenario-Heavy Ethics + Legal MCQs",
           "questionCount": 26,
             "dataFile": "data/llqp-ethics/llqp-ethics-3.json?v=20260207f"
+        },
+        {
+          "id": "mock-exam-test",
+          "name": "Mock Exam Test",
+          "description": "Full 25-question exam covering insurance legislation, licensing, contract law, and ethics scenarios",
+          "questionCount": 25,
+          "dataFile": "data/insurance-legislation-ethics/insurance-legislation-ethics-1.json?v=20260315a"
         }
       ]
     },
@@ -131,16 +138,8 @@
       "description": "Canadian insurance legislation, ethics, licensing, and contract law scenarios.",
       "color": "#0ea5e9",
       "icon": "📜",
-      "status": "active",
-      "practiceTests": [
-        {
-          "id": "insurance-legislation-ethics-1",
-          "name": "Comprehensive Quiz (25 Qs)",
-          "description": "Insurance legislation and ethics questions with detailed reasoning.",
-          "questionCount": 25,
-          "dataFile": "data/insurance-legislation-ethics/insurance-legislation-ethics-1.json?v=20260315a"
-        }
-      ]
+      "status": "coming-soon",
+      "practiceTests": []
     },
     {
       "id": "wfg-ethics",
