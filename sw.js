@@ -1,5 +1,5 @@
 /* PWA Service Worker for LLQP & WFG Exam Prep */
-const CACHE_VERSION = 'v1.1.5';
+const CACHE_VERSION = 'v1.2.6';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const DATA_CACHE = `data-${CACHE_VERSION}`;
 
@@ -19,6 +19,7 @@ const CORE_ASSETS = [
   '/data/llqp-ethics/llqp-ethics-3.json',
   '/data/llqp-segregated/llqp-segregated-1.json',
   '/data/llqp-life/llqp-life-01.json',
+  '/data/llqp-life/hllqp-life-02.json',
   '/data/insurance-legislation-ethics/insurance-legislation-ethics-1.json',
   '/data/flashcards/flashcards-1.json',
   '/data/flashcards/flashcards-2.json',
@@ -57,6 +58,12 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
@@ -65,6 +72,12 @@ self.addEventListener('fetch', (event) => {
   const sameOrigin = url.origin === self.location.origin;
 
   if (!sameOrigin) {
+    return;
+  }
+
+  // PDF + Range requests must go to network (cache can break PDF viewers)
+  if (request.headers.has('range') || url.pathname.toLowerCase().endsWith('.pdf')) {
+    event.respondWith(fetch(request));
     return;
   }
 
@@ -82,20 +95,36 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // JSON data: stale-while-revalidate
+  // JSON data: network-first (prevents stale content after deploy)
   if (url.pathname.startsWith('/data/') && url.pathname.endsWith('.json')) {
     event.respondWith(
-      caches.match(request).then((cached) => {
-        const fetchPromise = fetch(request)
-          .then((response) => {
-            const copy = response.clone();
-            caches.open(DATA_CACHE).then((cache) => cache.put(request, copy));
-            return response;
-          })
-          .catch(() => cached);
+      fetch(request)
+        .then((response) => {
+          const copy = response.clone();
+          caches.open(DATA_CACHE).then((cache) => cache.put(request, copy));
+          return response;
+        })
+        .catch(() => caches.match(request).then((cached) => cached || caches.match(url.pathname)))
+        .then((fallback) => fallback || new Response('Offline', { status: 503 }))
+    );
+    return;
+  }
 
-        return cached || fetchPromise || new Response('Offline', { status: 503 });
-      })
+  // Core UI assets: network-first so users get latest JS/CSS quickly after deploy
+  if (
+    url.pathname === '/js/app.js' ||
+    url.pathname === '/css/style.css' ||
+    url.pathname === '/index.html' ||
+    url.pathname === '/manifest.webmanifest'
+  ) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          const copy = response.clone();
+          caches.open(STATIC_CACHE).then((cache) => cache.put(request, copy));
+          return response;
+        })
+        .catch(() => caches.match(request).then((cached) => cached || caches.match(url.pathname)))
     );
     return;
   }
@@ -104,11 +133,14 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(request).then((cached) =>
       cached ||
-      fetch(request).then((response) => {
-        const copy = response.clone();
-        caches.open(STATIC_CACHE).then((cache) => cache.put(request, copy));
-        return response;
-      })
+      caches.match(url.pathname).then((pathCached) =>
+        pathCached ||
+        fetch(request).then((response) => {
+          const copy = response.clone();
+          caches.open(STATIC_CACHE).then((cache) => cache.put(request, copy));
+          return response;
+        })
+      )
     )
   );
 });

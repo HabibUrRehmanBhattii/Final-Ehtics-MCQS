@@ -124,70 +124,62 @@ npx http-server
 ## 📁 Project Structure
 
 ```
-llqp-ethics-mcq/
-├── index.html              # Main entry point with all views
-├── index_backup.html       # Backup version
-├── wrangler.jsonc         # Cloudflare Pages configuration
-├── README.md              # This file
-├── TEMP_UPDATE.txt        # Development notes
-│
+Ehtics MCQS/
+├── .github/
+│   └── copilot-instructions.md     # AI coding-agent instructions
+├── assets/
+│   └── icons/                      # PWA icons
 ├── css/
-│   ├── style.css          # Main application styling
-│   └── style_backup.css   # Backup version
-│
-├── js/
-│   └── app.js             # Core application (1298 lines)
-│                          # - State management
-│                          # - Question randomization logic
-│                          # - Progress tracking
-│                          # - Wrong answer system
-│                          # - Dark mode toggle
-│                          # - Bookmark functionality
-│
+│   ├── style.css                   # Main application styling
+│   └── style_backup.css            # Backup version
 ├── data/
-│   ├── topics.json        # Topic configuration & metadata
-│   ├── topics-updated.json # Updated version
-│   ├── user_data.json     # User data structure
-│   │
-│   ├── llqp-ethics/       # Ethics practice tests
-│   │   ├── llqp-ethics-1.json    # 10 ethics fundamentals
-│   │   ├── llqp-ethics-2.json    # 20 core concepts
-│   │   └── llqp-ethics-3.json    # 26 advanced scenarios
-│   │
-│   ├── insurance-legislation-ethics/ # Mock exam (LLQP Ethics topic)
-│   │   └── insurance-legislation-ethics-1.json # 25 questions
-│   │
-│   ├── llqp-life/         # Life chapter quizzes
-│   │   └── hllqp-life-01.json    # Chapter Quiz 1 (19 questions)
-│   │
-│   ├── llqp-accident/     # Accident & Sickness practice tests
-│   │   ├── llqp-accident-1.json  # Questions 1–10
-│   │   ├── llqp-accident-2.json  # Questions 11–20
-│   │   ├── llqp-accident-3.json  # Questions 21–30
-│   │   └── llqp-accident-4.json  # Questions 31–35
-│   │
-│   ├── llqp-segregated/   # Segregated Funds & Annuities practice tests
-│   │   └── llqp-segregated-1.json # 19 questions
-│   │
-│   └── flashcards/        # Quick-review flashcards
-│       ├── flashcards-1.json       # 20 cards (beneficiaries)
-│       ├── flashcards-2.json       # Full combined set
-│       ├── flashcards-2-full.json  # Complete version
-│       ├── flashcards-2-part-1.json # 20 cards
-│       ├── flashcards-2-part-2.json # 20 cards
-│       ├── flashcards-2-part-3.json # 20 cards
-│       ├── flashcards-2-part-4.json # 20 cards
-│       ├── flashcards-2-part-5.json # 20 cards
-│       ├── flashcards-2-part-6.json # 20 cards
-│       ├── flashcards-2-part-7.json # 20 cards
-│       └── flashcards-2-part-8.json # 10 cards
-│
-└── tools/                 # Python utility scripts
-    ├── debug_flash_json.py
-    ├── fix_explanation_inner_quotes.py
-    ├── fix_flashcards_quotes.py
-    ├── fix_single_option_quotes.py
-    └── split_flashcards.py
+│   ├── topics.json                 # Source of truth for topics/tests
+│   ├── topics-updated.json         # Secondary topic metadata copy
+│   ├── user_data.json
+│   ├── llqp-ethics/
+│   │   ├── llqp-ethics-1.json
+│   │   ├── llqp-ethics-2.json
+│   │   └── llqp-ethics-3.json
+│   ├── insurance-legislation-ethics/
+│   │   └── insurance-legislation-ethics-1.json
+│   ├── llqp-life/
+│   │   └── llqp-life-01.json
+│   ├── llqp-accident/
+│   │   ├── llqp-accident-1.json
+│   │   ├── llqp-accident-2.json
+│   │   ├── llqp-accident-3.json
+│   │   └── llqp-accident-4.json
+│   ├── llqp-segregated/
+│   │   └── llqp-segregated-1.json
+│   └── flashcards/
+│       ├── flashcards-1.json
+│       ├── flashcards-2.json
+│       ├── flashcards-2-full.json
+│       ├── flashcards-2-part-1.json
+│       ├── flashcards-2-part-2.json
+│       ├── flashcards-2-part-3.json
+│       ├── flashcards-2-part-4.json
+│       ├── flashcards-2-part-5.json
+│       ├── flashcards-2-part-6.json
+│       ├── flashcards-2-part-7.json
+│       └── flashcards-2-part-8.json
+├── js/
+│   └── app.js                      # Core SPA logic (single MCQApp object)
+├── src/
+│   └── worker.js                   # Cloudflare Worker /api/explain endpoint
+├── tools/                          # Python utility scripts
+│   ├── debug_flash_json.py
+│   ├── fix_explanation_inner_quotes.py
+│   ├── fix_flashcards_quotes.py
+│   ├── fix_single_option_quotes.py
+│   └── split_flashcards.py
+├── CODEBASE_REFERENCE.md
+├── index.html                      # Main entry point with all views
+├── index_backup.html
+├── manifest.webmanifest
+├── sw.js                           # Service worker (offline + caching)
+├── wrangler.jsonc                  # Cloudflare Worker configuration
+└── README.md
 ```
 
 ---

@@ -21,7 +21,10 @@ const MCQApp = {
     attemptedOptions: {}, // Track which options were attempted for each question
     firstAttemptCorrect: {}, // Track if first attempt was correct for each question
     speechSupported: false,
-    currentUtterance: null
+    currentUtterance: null,
+    lifeSection: null,
+    currentPdfResource: null,
+    currentPdfObjectUrl: null
   },
 
   // Utility: Shuffle Array (Fisher-Yates)
@@ -168,9 +171,54 @@ const MCQApp = {
       return;
     }
 
+    const host = window.location.hostname;
+    const isLocalhost = host === 'localhost' || host === '127.0.0.1' || host === '::1';
+
+    // Local development: disable SW to avoid cache/update issues with PDFs and rapid edits.
+    if (isLocalhost) {
+      navigator.serviceWorker.getRegistrations()
+        .then((registrations) => {
+          registrations.forEach((registration) => registration.unregister());
+        })
+        .catch(() => {});
+      return;
+    }
+
     window.addEventListener('load', () => {
+      let refreshing = false;
+
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refreshing) return;
+        refreshing = true;
+        window.location.reload();
+      });
+
       navigator.serviceWorker
-        .register('/sw.js')
+        .register('/sw.js?v=20260316g')
+        .then((registration) => {
+          // Proactively check for updates each load/session
+          registration.update();
+
+          const tryActivateWaitingWorker = () => {
+            if (registration.waiting) {
+              registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+            }
+          };
+
+          tryActivateWaitingWorker();
+
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            if (!newWorker) return;
+
+            newWorker.addEventListener('statechange', () => {
+              // If there's already a controlling SW, this is an update.
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                tryActivateWaitingWorker();
+              }
+            });
+          });
+        })
         .catch((error) => {
           console.warn('Service worker registration failed:', error);
         });
@@ -206,7 +254,7 @@ const MCQApp = {
   // Load Topics Configuration
   async loadTopics() {
     try {
-      const response = await fetch('data/topics.json');
+      const response = await fetch('data/topics.json?v=20260316b', { cache: 'no-store' });
       const data = await response.json();
       this.state.topics = data.topics;
     } catch (error) {
@@ -265,6 +313,31 @@ const MCQApp = {
     // Back to topics button from practice test selection
     document.getElementById('back-to-topics-btn')?.addEventListener('click', () => {
       this.showView('home');
+    });
+
+    // PDF viewer controls
+    document.getElementById('pdf-back-btn')?.addEventListener('click', () => {
+      const frame = document.getElementById('pdf-frame');
+      if (frame) frame.src = 'about:blank';
+      this.revokePdfObjectUrl();
+      this.showView('practice-test');
+    });
+
+    document.getElementById('pdf-open-new-tab-btn')?.addEventListener('click', () => {
+      const file = this.state.currentPdfObjectUrl || this.state.currentPdfResource?.dataFile;
+      if (!file) return;
+      window.open(file, '_blank');
+    });
+
+    document.getElementById('pdf-download-btn')?.addEventListener('click', () => {
+      const file = this.state.currentPdfResource?.dataFile;
+      if (!file) return;
+      const link = document.createElement('a');
+      link.href = file;
+      link.download = (this.state.currentPdfResource?.name || 'manual').replace(/[^a-z0-9]+/gi, '_').toLowerCase() + '.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     });
 
     // Back button from MCQ view
@@ -392,8 +465,83 @@ const MCQApp = {
     if (!topic) return;
     
     this.state.currentTopic = topic;
+    this.state.lifeSection = null;
     this.showView('practice-test');
     this.renderPracticeTests();
+  },
+
+  shouldUseSectionedCatalog(topic) {
+    const sectionedTopicIds = new Set([
+      'llqp-life',
+      'llqp-ethics',
+      'llqp-accident',
+      'llqp-segregated'
+    ]);
+    return sectionedTopicIds.has(topic?.id);
+  },
+
+  getLifeSections(topic) {
+    const tests = topic?.practiceTests || [];
+
+    // Guard against accidental duplicate entries in topic data.
+    const seen = new Set();
+    const uniqueTests = tests.filter((test) => {
+      const key = test?.id || test?.dataFile || test?.name;
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+    const sections = [
+      {
+        id: 'chapter-quizzes',
+        title: 'Chapter Quizzes',
+        description: 'All chapter quiz courses'
+      },
+      {
+        id: 'practice-certification-exam',
+        title: 'Practice Certification Exam',
+        description: 'Certification-style exam practice'
+      },
+      {
+        id: 'practice-provincial-exam',
+        title: 'Practice Provincial Exam',
+        description: 'Provincial exam-style practice'
+      },
+      {
+        id: 'practice-mcqs',
+        title: 'Practice MCQs',
+        description: 'General practice MCQ sets'
+      },
+      {
+        id: 'cisro-manuals',
+        title: 'CISRO Manuals',
+        description: 'Manual and reference material'
+      }
+    ];
+
+    const sectionBuckets = Object.fromEntries(sections.map(section => [section.id, []]));
+
+    uniqueTests.forEach((test) => {
+      const text = `${test?.name || ''} ${test?.description || ''}`;
+      if (/\bQZ\b/i.test(test?.name || '')) {
+        sectionBuckets['chapter-quizzes'].push(test);
+      } else if (/certification/i.test(text)) {
+        sectionBuckets['practice-certification-exam'].push(test);
+      } else if (/provincial/i.test(text)) {
+        sectionBuckets['practice-provincial-exam'].push(test);
+      } else if (/cisro|manual/i.test(text)) {
+        sectionBuckets['cisro-manuals'].push(test);
+      } else {
+        sectionBuckets['practice-mcqs'].push(test);
+      }
+    });
+
+    return sections.map(section => ({
+      ...section,
+      items: sectionBuckets[section.id],
+      count: sectionBuckets[section.id].length
+    }));
   },
 
   // Render Practice Tests
@@ -417,8 +565,98 @@ const MCQApp = {
       return;
     }
 
+    // Course-catalog style view (Main > Sub > Courses)
+    if (this.shouldUseSectionedCatalog(topic)) {
+      const sections = this.getLifeSections(topic);
+      const selectedSection = sections.find(s => s.id === this.state.lifeSection) || null;
+
+      // Step 1: Sub-heading chooser (Main -> Sub-heading)
+      if (!selectedSection) {
+        grid.classList.remove('catalog-list', 'catalog-tiles');
+        grid.innerHTML = `
+          <div class="catalog-shell" style="--topic-color: ${topic.color}">
+            <div class="catalog-breadcrumb">${topic.name}</div>
+            <h3 class="catalog-heading">Choose a Sub Heading</h3>
+            <div class="catalog-subgrid">
+              ${sections.map(section => `
+                <div class="catalog-subcard" style="--topic-color: ${topic.color}">
+                  <div class="catalog-subtitle">${section.title}</div>
+                  <div class="catalog-subdesc">${section.description}</div>
+                  <div class="catalog-submeta">
+                    <span class="catalog-chip">${section.count} Course${section.count !== 1 ? 's' : ''}</span>
+                  </div>
+                  <button class="btn-start-test" onclick="MCQApp.setLifeSection('${section.id}')">
+                    Open ${section.title} →
+                  </button>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      const scopedTopic = {
+        ...topic,
+        practiceTests: selectedSection.items
+      };
+      const items = scopedTopic.practiceTests || [];
+      grid.classList.remove('catalog-list', 'catalog-tiles');
+
+      const rowsHtml = items.map((test, index) => {
+        const isActive = test.status !== 'coming-soon';
+        const isPdf = this.isPdfResource(test);
+        const testProgress = this.getPracticeTestProgress(topic.id, test.id);
+
+        return `
+          <div class="practice-test-card ${!isActive ? 'coming-soon' : ''}"
+               ${isActive ? `onclick="MCQApp.selectPracticeTest('${test.id}')"` : ''}
+               style="--topic-color: ${topic.color}">
+            <div class="test-number">${index + 1}</div>
+            <h3 class="test-name">${test.name}</h3>
+            <p class="test-description">${test.description}</p>
+            <div class="test-meta">
+              ${isPdf ? `
+                <span class="question-count">📘 PDF Manual</span>
+              ` : `
+                <span class="question-count">
+                  📝 ${test.questionCount} Question${test.questionCount !== 1 ? 's' : ''}
+                </span>
+              `}
+              ${isActive && testProgress > 0 ? `
+                <span class="progress-badge">${testProgress}% Complete</span>
+              ` : ''}
+            </div>
+            ${isActive ? `
+              <button class="btn-start-test">${isPdf ? 'Open Manual →' : 'Start Test →'}</button>
+            ` : `
+              <span class="coming-soon-badge">Coming Soon</span>
+            `}
+          </div>
+        `;
+      }).join('');
+
+      grid.innerHTML = `
+        <div class="catalog-shell" style="--topic-color: ${topic.color}">
+          <div class="catalog-breadcrumb">${topic.name} / ${selectedSection.title}</div>
+          <h3 class="catalog-heading">${selectedSection.title}</h3>
+          <button class="btn-outline" onclick="MCQApp.setLifeSection(null)" style="margin-bottom:.75rem;">
+            ← Back to Sub Headings
+          </button>
+
+          <div class="catalog-courses is-list">
+            ${rowsHtml || '<div class="no-tests-message"><p>No courses available yet.</p></div>'}
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    grid.classList.remove('catalog-list', 'catalog-tiles');
+
     grid.innerHTML = topic.practiceTests.map((test, index) => {
       const isActive = test.status !== 'coming-soon';
+      const isPdf = this.isPdfResource(test);
       const testProgress = this.getPracticeTestProgress(topic.id, test.id);
       
       return `
@@ -429,15 +667,19 @@ const MCQApp = {
           <h3 class="test-name">${test.name}</h3>
           <p class="test-description">${test.description}</p>
           <div class="test-meta">
-            <span class="question-count">
-              📝 ${test.questionCount} Question${test.questionCount !== 1 ? 's' : ''}
-            </span>
+            ${isPdf ? `
+              <span class="question-count">📘 PDF Manual</span>
+            ` : `
+              <span class="question-count">
+                📝 ${test.questionCount} Question${test.questionCount !== 1 ? 's' : ''}
+              </span>
+            `}
             ${isActive && testProgress > 0 ? `
               <span class="progress-badge">${testProgress}% Complete</span>
             ` : ''}
           </div>
           ${isActive ? `
-            <button class="btn-start-test">Start Test →</button>
+            <button class="btn-start-test">${isPdf ? 'Open Manual →' : 'Start Test →'}</button>
           ` : `
             <span class="coming-soon-badge">Coming Soon</span>
           `}
@@ -454,6 +696,16 @@ const MCQApp = {
     const practiceTest = topic.practiceTests.find(t => t.id === testId);
     if (!practiceTest) return;
 
+    if (this.isPdfResource(practiceTest)) {
+      await this.openPdfResource(practiceTest);
+      return;
+    }
+
+    if (practiceTest.status === 'coming-soon' || Number(practiceTest.questionCount || 0) === 0) {
+      alert('This course is coming soon.');
+      return;
+    }
+
     await this.loadQuestions(practiceTest.dataFile);
     if (this.state.questions.length === 0) {
       alert('No questions available for this practice test yet.');
@@ -467,6 +719,61 @@ const MCQApp = {
     this.loadProgress();
     this.showView('mcq');
     this.renderQuestion();
+  },
+
+  setLifeSection(sectionId) {
+    this.state.lifeSection = sectionId;
+    this.renderPracticeTests();
+  },
+
+  isPdfResource(test) {
+    return /\.pdf(\?|$)/i.test(test?.dataFile || '');
+  },
+
+  revokePdfObjectUrl() {
+    if (this.state.currentPdfObjectUrl) {
+      URL.revokeObjectURL(this.state.currentPdfObjectUrl);
+      this.state.currentPdfObjectUrl = null;
+    }
+  },
+
+  async openPdfResource(test) {
+    this.state.currentPdfResource = test;
+
+    const topicTitle = document.getElementById('pdf-topic-title');
+    const manualTitle = document.getElementById('pdf-manual-title');
+    const helperText = document.getElementById('pdf-helper-text');
+    const frame = document.getElementById('pdf-frame');
+
+    if (topicTitle) topicTitle.textContent = this.state.currentTopic?.name || 'Manual';
+    if (manualTitle) manualTitle.textContent = test?.name || 'PDF Manual';
+    if (helperText) helperText.textContent = 'Loading manual...';
+    if (frame) frame.src = 'about:blank';
+
+    this.showView('pdf');
+
+    this.revokePdfObjectUrl();
+
+    try {
+      const response = await fetch(test.dataFile, { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`Failed to load PDF (${response.status})`);
+      }
+
+      const sourceBlob = await response.blob();
+      const pdfBlob = sourceBlob.type === 'application/pdf'
+        ? sourceBlob
+        : new Blob([await sourceBlob.arrayBuffer()], { type: 'application/pdf' });
+
+      const objectUrl = URL.createObjectURL(pdfBlob);
+      this.state.currentPdfObjectUrl = objectUrl;
+
+      if (frame) frame.src = `${objectUrl}#toolbar=1&navpanes=1&view=FitH`;
+      if (helperText) helperText.textContent = 'Use browser PDF search with Ctrl+F (or Find in page).';
+    } catch (error) {
+      console.error('PDF load failed:', error);
+      if (helperText) helperText.textContent = 'Unable to display PDF inline. Use Open in New Tab or Download PDF.';
+    }
   },
 
   // Load Questions from File
@@ -548,7 +855,8 @@ const MCQApp = {
       'home': 'home-view',
       'practice-test': 'practice-test-view',
       'mcq': 'mcq-view',
-      'list': 'list-view'
+      'list': 'list-view',
+      'pdf': 'pdf-view'
     };
 
     const targetView = document.getElementById(viewMap[viewName]);

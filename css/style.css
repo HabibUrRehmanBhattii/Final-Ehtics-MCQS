@@ -218,6 +218,45 @@ button { font-family: inherit; }
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(239,68,68,.3);
 }
+
+/* ════════════════════════════════════
+   PDF VIEWER
+   ════════════════════════════════════ */
+.pdf-wrap {
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.pdf-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-text);
+}
+
+.pdf-actions {
+  display: flex;
+  gap: .65rem;
+  flex-wrap: wrap;
+  margin-bottom: .35rem;
+}
+
+.pdf-frame-shell {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--c-surface);
+  box-shadow: var(--shadow);
+  min-height: 72vh;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 72vh;
+  border: 0;
+  background: #fff;
+}
 .wrong-icon  { font-size: 1.3rem; }
 .wrong-info  { flex: 1; display: flex; flex-direction: column; gap: .15rem; }
 .wrong-info strong { font-size: .92rem; }
@@ -311,6 +350,151 @@ button { font-family: inherit; }
 .test-name { font-size: 1.02rem; font-weight: 700; position: relative; }
 .test-description { font-size: .82rem; color: var(--c-text2); position: relative; }
 .test-meta { font-size: .75rem; color: var(--c-text2); margin-top: auto; position: relative; }
+
+/* ════════════════════════════════════
+   COURSE CATALOG (LLQP LIFE)
+   ════════════════════════════════════ */
+.catalog-shell {
+  grid-column: 1 / -1;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.catalog-breadcrumb {
+  font-size: .82rem;
+  color: var(--c-text2);
+  margin-bottom: .35rem;
+}
+
+.catalog-heading {
+  margin: 0 0 .9rem;
+  font-size: 1.15rem;
+}
+
+.catalog-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+  margin-bottom: .9rem;
+}
+
+.catalog-search {
+  min-width: 220px;
+  flex: 1 1 260px;
+  max-width: 440px;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface2);
+  color: var(--c-text);
+  border-radius: var(--radius-sm);
+  padding: .55rem .7rem;
+}
+
+.catalog-chip {
+  font-size: .74rem;
+  background: var(--c-surface3);
+  border: 1px solid var(--c-border);
+  color: var(--c-text2);
+  border-radius: 999px;
+  padding: .3rem .6rem;
+}
+
+.catalog-toggle {
+  font-size: .8rem;
+}
+
+.catalog-toggle.is-active {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
+
+.catalog-courses {
+  display: grid;
+  gap: .7rem;
+}
+
+.catalog-courses.is-tiles {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.catalog-courses.is-list {
+  grid-template-columns: 1fr;
+}
+
+.catalog-subgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: .75rem;
+}
+
+.catalog-subcard {
+  background: linear-gradient(135deg, var(--c-primary-a), transparent 60%), var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: .9rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+
+.catalog-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.catalog-subdesc {
+  font-size: .8rem;
+  color: var(--c-text2);
+  min-height: 2.2em;
+}
+
+.catalog-submeta {
+  margin-top: .2rem;
+}
+
+.catalog-course {
+  background: linear-gradient(135deg, var(--c-primary-a), transparent 50%), var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: .9rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+
+.catalog-course.is-locked {
+  opacity: .75;
+}
+
+.catalog-type {
+  font-size: .72rem;
+  color: var(--c-text3);
+}
+
+.catalog-name {
+  font-size: .98rem;
+  font-weight: 700;
+}
+
+.catalog-meta {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .8rem;
+  color: var(--c-text2);
+}
+
+.catalog-progress {
+  color: var(--c-ok);
+  font-weight: 700;
+}
+
+.catalog-actions {
+  margin-top: .2rem;
+}
 
 /* ════════════════════════════════════
    QUESTION NAV
