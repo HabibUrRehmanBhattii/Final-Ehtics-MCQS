@@ -1022,7 +1022,7 @@ button { font-family: inherit; }
 .loading-spinner {
   padding: .65rem; font-size: .9rem; color: var(--c-text2);
 }
-/* ════════════════════════════════════
+
 /* Enhanced AI Explanation Sections */
 .ai-explanation-enhanced {
   display: flex;
@@ -1131,8 +1131,9 @@ button { font-family: inherit; }
   cursor: wait;
 }
 
-   BUTTONS
-   ════════════════════════════════════ */
+/* ════════════════════════════════════
+  BUTTONS
+  ════════════════════════════════════ */
 .btn-ghost {
   background: none; border: none; color: var(--c-text);
   font-weight: 600; font-size: .88rem; cursor: pointer;

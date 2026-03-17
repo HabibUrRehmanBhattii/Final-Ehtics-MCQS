@@ -1936,6 +1936,56 @@ const MCQApp = {
     }
   },
 
+  extractAISections(rawText, isCorrect) {
+    if (!rawText || typeof rawText !== 'string') return {};
+
+    const text = rawText.replace(/\r/g, '').trim();
+    const sectionPatterns = {
+      mainExplanation: /\*\*?\s*MAIN_EXPLANATION\s*:?\s*\*\*?\s*([\s\S]*?)(?=(\*\*?\s*(WHY_CORRECT|WHY_INCORRECT|KEY_CONCEPT|STUDY_TIP|RELATED_CONCEPT)\s*:?\s*\*\*?)|$)/i,
+      whyCorrect: /\*\*?\s*WHY_CORRECT\s*:?\s*\*\*?\s*([\s\S]*?)(?=(\*\*?\s*(WHY_INCORRECT|KEY_CONCEPT|STUDY_TIP|RELATED_CONCEPT)\s*:?\s*\*\*?)|$)/i,
+      whyIncorrect: /\*\*?\s*WHY_INCORRECT\s*:?\s*\*\*?\s*([\s\S]*?)(?=(\*\*?\s*(KEY_CONCEPT|STUDY_TIP|RELATED_CONCEPT)\s*:?\s*\*\*?)|$)/i,
+      keyConcept: /\*\*?\s*KEY_CONCEPT\s*:?\s*\*\*?\s*([\s\S]*?)(?=(\*\*?\s*(STUDY_TIP|RELATED_CONCEPT)\s*:?\s*\*\*?)|$)/i,
+      studyTip: /\*\*?\s*STUDY_TIP\s*:?\s*\*\*?\s*([\s\S]*?)(?=(\*\*?\s*RELATED_CONCEPT\s*:?\s*\*\*?)|$)/i,
+      relatedConcept: /\*\*?\s*RELATED_CONCEPT\s*:?\s*\*\*?\s*([\s\S]*)$/i,
+    };
+
+    const sections = {};
+    for (const [key, pattern] of Object.entries(sectionPatterns)) {
+      const match = text.match(pattern);
+      if (match && match[1]) {
+        sections[key] = match[1].trim();
+      }
+    }
+
+    if (!sections.mainExplanation) {
+      const cleaned = text
+        .replace(/\*\*?\s*(MAIN_EXPLANATION|WHY_CORRECT|WHY_INCORRECT|KEY_CONCEPT|STUDY_TIP|RELATED_CONCEPT)\s*:?\s*\*\*?/gi, '')
+        .trim();
+      sections.mainExplanation = cleaned;
+    }
+
+    if (isCorrect && !sections.whyCorrect) {
+      sections.whyCorrect = 'You identified the correct principle and applied it correctly to the scenario.';
+    }
+
+    return sections;
+  },
+
+  normalizeAIResponse(data, isCorrect) {
+    if (!data || typeof data !== 'object') return {};
+
+    const hasStructured = data.mainExplanation || data.whyCorrect || data.keyConcept || data.studyTip || data.relatedConcept || (!isCorrect && data.whyIncorrect);
+    if (hasStructured) return data;
+
+    const fallbackText = data.explanation || data.response || data.text || '';
+    return this.extractAISections(fallbackText, isCorrect);
+  },
+
+  formatAIText(text) {
+    if (!text) return '';
+    return this.escapeHtml(String(text).trim()).replace(/\n/g, '<br>');
+  },
+
   // Generate AI Explanation
   async generateAIExplanation() {
     const question = this.getCurrentQuestion();
@@ -1997,54 +2047,56 @@ const MCQApp = {
       const data = await response.json();
       
       if (data.success) {
+        const parsed = this.normalizeAIResponse(data, isCorrect);
+
         // Build enhanced explanation HTML with multiple sections
         let html = '<div class="ai-explanation-enhanced">';
         
         // Main explanation
-        if (data.mainExplanation) {
+        if (parsed.mainExplanation) {
           html += `<div class="ai-section ai-main">
             <div class="ai-section-title">💡 Explanation</div>
-            <div class="ai-section-content">${data.mainExplanation}</div>
+            <div class="ai-section-content">${this.formatAIText(parsed.mainExplanation)}</div>
           </div>`;
         }
         
         // Why correct answer is right
-        if (data.whyCorrect) {
+        if (parsed.whyCorrect) {
           html += `<div class="ai-section ai-correct">
             <div class="ai-section-title">✅ Why This Is Correct</div>
-            <div class="ai-section-content">${data.whyCorrect}</div>
+            <div class="ai-section-content">${this.formatAIText(parsed.whyCorrect)}</div>
           </div>`;
         }
         
         // Why selected was wrong (if incorrect)
-        if (!isCorrect && data.whyIncorrect) {
+        if (!isCorrect && parsed.whyIncorrect) {
           html += `<div class="ai-section ai-incorrect">
             <div class="ai-section-title">❌ Why Your Answer Wasn't Correct</div>
-            <div class="ai-section-content">${data.whyIncorrect}</div>
+            <div class="ai-section-content">${this.formatAIText(parsed.whyIncorrect)}</div>
           </div>`;
         }
         
         // Key concept
-        if (data.keyConcept) {
+        if (parsed.keyConcept) {
           html += `<div class="ai-section ai-concept">
             <div class="ai-section-title">🎯 Key Concept</div>
-            <div class="ai-section-content">${data.keyConcept}</div>
+            <div class="ai-section-content">${this.formatAIText(parsed.keyConcept)}</div>
           </div>`;
         }
         
         // Study tip
-        if (data.studyTip) {
+        if (parsed.studyTip) {
           html += `<div class="ai-section ai-tip">
             <div class="ai-section-title">📚 Study Tip</div>
-            <div class="ai-section-content">${data.studyTip}</div>
+            <div class="ai-section-content">${this.formatAIText(parsed.studyTip)}</div>
           </div>`;
         }
         
         // Related concept (follow-up learning)
-        if (data.relatedConcept) {
+        if (parsed.relatedConcept) {
           html += `<div class="ai-section ai-related">
             <div class="ai-section-title">🔗 Related Concept</div>
-            <div class="ai-section-content">${data.relatedConcept}</div>
+            <div class="ai-section-content">${this.formatAIText(parsed.relatedConcept)}</div>
           </div>`;
         }
         
@@ -2052,7 +2104,7 @@ const MCQApp = {
         element.innerHTML = html;
         
         // Add follow-up button if AI suggests further study
-        if (data.relatedConcept) {
+        if (parsed.relatedConcept) {
           const followUpBtn = document.createElement('button');
           followUpBtn.className = 'btn-secondary btn-follow-up';
           followUpBtn.innerHTML = '🤔 Ask Another Question';
@@ -2106,7 +2158,7 @@ const MCQApp = {
       if (data.success && data.followUpInsight) {
         const followUpHtml = `<div class="ai-section ai-followup">
           <div class="ai-section-title">🌟 Deeper Insight</div>
-          <div class="ai-section-content">${data.followUpInsight}</div>
+          <div class="ai-section-content">${this.formatAIText(data.followUpInsight)}</div>
         </div>`;
         loadingDiv.remove();
         element.insertAdjacentHTML('beforeend', followUpHtml);

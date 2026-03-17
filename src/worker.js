@@ -29,7 +29,7 @@ export default {
     // API endpoint for generating explanation
     if (path === '/api/explain' && request.method === 'POST') {
       try {
-        const { 
+        const {
           question, 
           correctAnswer, 
           userAnswer, 
@@ -41,22 +41,16 @@ export default {
           correctFeedback,
           explanation,
           examTips,
-          isFollowUp,
-          requestType 
+          isFollowUp
         } = await request.json();
 
         // Build detailed prompt with rich context
-        let systemPrompt = `You are an expert ethics instructor for financial insurance exams (LLQP, HLLQP, WFG). 
-Your goal is to provide clear, structured, and educational explanations that help students understand not just the answer, but the underlying concepts.
-
-Key instructions:
-1. Be supportive and non-judgmental
-2. Explain concepts clearly and concisely
-3. Connect answers to real-world ethics scenarios
-4. Provide memory aids or mnemonics when helpful
-5. Suggest related concepts for deeper learning
-
-When generating explanations, structure your response with clear sections.`;
+        const systemPrompt = `You are an expert LLQP/HLLQP ethics tutor.
+Teach the student, do not just state the answer.
+Use plain language, short sentences, and exam-focused coaching.
+If the student is wrong, explain the misconception respectfully.
+Never output markdown headings or bold markers.
+Return ONLY valid JSON. No prose outside JSON.`;
 
         let userPrompt;
         
@@ -75,7 +69,10 @@ Provide a deeper insight that connects this concept to:
 2. Common misconceptions
 3. Real-world application scenarios
 
-Make it thought-provoking and help them see the bigger picture.`;
+Make it thought-provoking and help them see the bigger picture.
+
+Return JSON exactly in this shape:
+{"followUpInsight":"..."}`;
         } else {
           // Generate comprehensive explanation
           userPrompt = `Generate a comprehensive breakdown of this ethics question:
@@ -96,19 +93,17 @@ AVAILABLE CONTEXT:
 - Official Explanation: ${explanation || 'N/A'}
 - Exam Tips: ${examTips || 'N/A'}
 
-Please structure your response in this format (use these exact headers):
+Return JSON exactly in this shape:
+{
+  "mainExplanation": "2-4 sentences teaching the topic",
+  "whyCorrect": "2-3 sentences",
+  "whyIncorrect": "2-3 sentences, required only if student is incorrect",
+  "keyConcept": "1-2 sentences",
+  "studyTip": "practical memory aid",
+  "relatedConcept": "what to study next"
+}
 
-MAIN_EXPLANATION: [2-3 sentences explaining the core concept]
-
-WHY_CORRECT: [2-3 sentences on why the correct answer is right]
-
-${!isCorrect ? 'WHY_INCORRECT: [2-3 sentences on why the student\'s answer was incorrect and common misconceptions]' : ''}
-
-KEY_CONCEPT: [1-2 sentences on the fundamental principle being tested]
-
-STUDY_TIP: [A mnemonic, memory aid, or learning strategy]
-
-RELATED_CONCEPT: [Another related concept they should study next]`;
+No markdown. No extra keys. No text before/after JSON.`;
         }
 
         // Call Workers AI LLM with streaming response
@@ -126,35 +121,48 @@ RELATED_CONCEPT: [Another related concept they should study next]`;
           temperature: 0.7,
         });
 
-        // Parse the structured response
+        // Parse model output (prefer strict JSON, fallback to text extraction)
         const responseText = response.response;
         let result = { success: true };
 
-        if (isFollowUp) {
-          // For follow-up requests, extract the insight
-          result.followUpInsight = responseText.trim();
-        } else {
-          // Parse the structured sections from response
-          const sections = {
-            mainExplanation: 'MAIN_EXPLANATION',
-            whyCorrect: 'WHY_CORRECT',
-            whyIncorrect: 'WHY_INCORRECT',
-            keyConcept: 'KEY_CONCEPT',
-            studyTip: 'STUDY_TIP',
-            relatedConcept: 'RELATED_CONCEPT',
-          };
-
-          for (const [key, headerText] of Object.entries(sections)) {
-            const regex = new RegExp(`${headerText}:\\s*(.+?)(?=\\n(?:[A-Z_]+:|$))`, 's');
-            const match = responseText.match(regex);
-            if (match) {
-              result[key] = match[1].trim();
+        const safeJsonParse = (raw) => {
+          if (!raw || typeof raw !== 'string') return null;
+          const trimmed = raw.trim();
+          try {
+            return JSON.parse(trimmed);
+          } catch {
+            // Try extracting JSON object from surrounding text/fences
+            const start = trimmed.indexOf('{');
+            const end = trimmed.lastIndexOf('}');
+            if (start >= 0 && end > start) {
+              const sliced = trimmed.slice(start, end + 1);
+              try {
+                return JSON.parse(sliced);
+              } catch {
+                return null;
+              }
             }
+            return null;
+          }
+        };
+
+        if (isFollowUp) {
+          const parsed = safeJsonParse(responseText);
+          result.followUpInsight = parsed?.followUpInsight || responseText.trim();
+        } else {
+          const parsed = safeJsonParse(responseText);
+          if (parsed && typeof parsed === 'object') {
+            result.mainExplanation = parsed.mainExplanation;
+            result.whyCorrect = parsed.whyCorrect;
+            result.whyIncorrect = parsed.whyIncorrect;
+            result.keyConcept = parsed.keyConcept;
+            result.studyTip = parsed.studyTip;
+            result.relatedConcept = parsed.relatedConcept;
           }
 
-          // If parsing failed, use full response as main explanation
+          // Fallback for non-JSON responses
           if (!result.mainExplanation && responseText) {
-            result.mainExplanation = responseText.trim().substring(0, 500);
+            result.mainExplanation = responseText.trim().substring(0, 700);
           }
         }
 
