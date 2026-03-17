@@ -1,0 +1,240 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 02 QZ - Term Life Insurance - Section 2",
+  "examTips": "Focus on term vs permanent needs, convertibility, renewability, and joint-life structures (first-to-die vs last-to-die).",
+  "questions": [
+    {
+      "id": 11,
+      "question": "Noel is a single father raising a five-year-old boy. Noel works as a general labourer. While he earns a good living and enjoys his work, he hopes for a better life for his son. The cost of education seems to increase faster than the rate of inflation. Therefore, he is saving aggressively towards his son's education but worries about what would happen if he dies before reaching his goal. If the solution involves life insurance, he would like to keep the premium to a minimum.\nWhich of the following would be the most suitable solution to address Noel's concern?",
+      "options": [
+        "A. Whole life insurance",
+        "B. A registered education savings plan (RESP)",
+        "C. Increasing term insurance",
+        "D. Decreasing term insurance"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Whole life is generally too expensive for this temporary declining need.",
+        "RESP is savings/investment, not mortality protection.",
+        "Need declines as savings build, so increasing term mismatches.",
+        null
+      ],
+      "explanation": "A declining education-funding risk is typically matched by decreasing term at lower cost.",
+      "difficulty": "medium",
+      "tags": [
+        "education",
+        "decreasing-term",
+        "temporary-need"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Markus is an agent who places insurance with one of two insurance companies. Charlie bought a life insurance policy on his wife Peggy's life and named his only son, Michael, as the beneficiary. The policy was placed with Canada Life.\nWho is responsible for making all decisions regarding the policy such as paying premiums, cancelling the policy, etc.?",
+      "options": [
+        "A. Markus",
+        "B. Charlie",
+        "C. Michael",
+        "D. Peggy"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Agent does not own contract rights.",
+        null,
+        "Beneficiary typically does not control owner decisions.",
+        "Life-insured is not automatically policy owner."
+      ],
+      "explanation": "The policy owner (Charlie) holds contractual control rights.",
+      "difficulty": "easy",
+      "tags": [
+        "policy-owner",
+        "beneficiary",
+        "contract"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "A policy can be voided by the insurer and a death benefit denied if a material misrepresentation is realized within the first two years of the policy.\nWhich of the following could definitely not be considered a material misrepresentation?",
+      "options": [
+        "A. Known health issue",
+        "B. Unknown health issue",
+        "C. The last time the insured visited the doctor",
+        "D. Date of birth"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Known health issues can be material.",
+        null,
+        "Medical consultation history can be material to underwriting.",
+        "Date of birth is materially linked to pricing and risk."
+      ],
+      "explanation": "An applicant cannot misrepresent a condition they genuinely do not know exists.",
+      "difficulty": "easy",
+      "tags": [
+        "material-fact",
+        "underwriting"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Lloyd just bought a term insurance policy where the coverage will gradually decrease but the premium will remain level.\nWhat type of policy did he buy?",
+      "options": [
+        "A. Level term",
+        "B. Convertible term",
+        "C. Increasing term",
+        "D. Decreasing term"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Level term keeps face amount level.",
+        "Convertibility is a feature, not this specific coverage pattern.",
+        "Increasing term raises death benefit over time.",
+        null
+      ],
+      "explanation": "Decreasing term is designed for liabilities that decline over time, such as mortgages.",
+      "difficulty": "easy",
+      "tags": [
+        "decreasing-term"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Justine and Russell purchased their first home together five years ago. The purchase price was $600,000, and they took out a mortgage loan in the amount of $400,000. They also purchased a life insurance policy on a joint first-to-die basis. Sadly, Russell just passed away, and a $400,000 death benefit will be paid.\nWhat will most likely happen to the policy after the death benefit has been paid?",
+      "options": [
+        "A. The policy will continue with only Justine as the life-insured. The premium will remain unchanged.",
+        "B. Some plans will allow the surviving spouse the option to continue the same amount of coverage on his or her own life under a new policy without having to provide evidence of insurability.",
+        "C. The policy will continue with Justine as the life-insured. The premium will be reduced to reflect the fact that only one life-insured remains.",
+        "D. The policy remains in force with no further premiums being required."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Joint first-to-die usually terminates at first payout.",
+        null,
+        "Original joint contract generally terminates on first death claim.",
+        "No-premium continuation is not typical after full payout."
+      ],
+      "explanation": "Many insurers include a survivor option allowing new single-life coverage without new evidence.",
+      "difficulty": "medium",
+      "tags": [
+        "joint-first-to-die",
+        "survivor-option"
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Fred is considering purchasing an increasing term insurance policy. He is confused by how the death benefit can increase either by a dollar amount or by a percentage based upon the increase in the CPI.\nWhat is CPI?",
+      "options": [
+        "A. It is used to measure the rate of inflation.",
+        "B. It is used to measure mortality rates.",
+        "C. It is used to measure changes in interest rates.",
+        "D. It is used to measure morbidity rates."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Mortality is measured by actuarial mortality data, not CPI.",
+        "Interest rates are separate metrics.",
+        "Morbidity is illness incidence, unrelated to CPI definition."
+      ],
+      "explanation": "CPI stands for Consumer Price Index, a common inflation measure.",
+      "difficulty": "easy",
+      "tags": [
+        "cpi",
+        "inflation"
+      ]
+    },
+    {
+      "id": 17,
+      "question": "After doing a thorough life insurance needs analysis, it has been determined that Mike needs $1,000,000 in permanent insurance today. His agent has quoted him on the least expensive permanent policy, but Mike has still found the premium to be outside of his current budget. Fortunately, he is doing well at work and should see some sizeable raises in the next three to five years. He also anticipates his expenses going down when his newborn son starts full-time school in a few years.\nAs his agent, which of the following would you recommend?",
+      "options": [
+        "A. Purchase $1,000,000 in renewable term insurance.",
+        "B. Purchase $1,000,000 in convertible term insurance.",
+        "C. Purchase the correct type of permanent plan even if it is for a smaller coverage amount.",
+        "D. Delay making the purchase until income has increased and he can afford permanent insurance."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Renewable-only may not preserve guaranteed path to permanent without evidence.",
+        null,
+        "This leaves him underinsured relative to identified need.",
+        "Delaying can leave critical risk uninsured."
+      ],
+      "explanation": "Convertible term can lock in insurability now and allow later conversion as affordability improves.",
+      "difficulty": "medium",
+      "tags": [
+        "convertible-term",
+        "insurability",
+        "planning"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Which of the following is not true of term insurance?",
+      "options": [
+        "A. Term insurance is always renewable.",
+        "B. Term insurance can be converted into permanent insurance if the appropriate rider is in place.",
+        "C. Term insurance is cheaper than permanent insurance for the same amount of coverage.",
+        "D. Term insurance does not have a cash value."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This can be true when conversion feature exists.",
+        "This is generally true for equivalent face amount.",
+        "This is generally true for basic term products."
+      ],
+      "explanation": "Not all term products are renewable in all forms or beyond certain ages.",
+      "difficulty": "easy",
+      "tags": [
+        "term-insurance",
+        "renewability"
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Tina, age 20, bought a cottage for $100,000 and had a $25,000 down payment. The remaining $75,000 was financed through a bank mortgage. The amortization period (total repayment period) on her mortgage was 10 years with a five-year term. Over the next five years, her mortgage rate will be locked in at 5%. She would like to buy a life insurance policy that will pay out the mortgage upon her death. She has no other use for insurance and would therefore like to keep the premium to a minimum.\nWhat policy would you recommend to address Tina's stated needs?",
+      "options": [
+        "A. 10-year decreasing term insurance",
+        "B. 10-year renewable term insurance, renewable to age 40",
+        "C. Term-to-100",
+        "D. 5-year renewable level term insurance, renewable to age 35"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Level term may overinsure later years and cost more than decreasing term for this need.",
+        "T-100 is permanent and usually more expensive.",
+        "5-year base term does not match full 10-year repayment period as directly."
+      ],
+      "explanation": "A 10-year decreasing term aligns directly to the declining 10-year mortgage balance.",
+      "difficulty": "medium",
+      "tags": [
+        "mortgage",
+        "decreasing-term"
+      ]
+    },
+    {
+      "id": 20,
+      "question": "For which of the following clients would a joint last-to-die term insurance policy be most appropriate?",
+      "options": [
+        "A. Nancy and Steve, who are saving for their daughter's education. They both earn excellent incomes, so their goal would be at risk only if both of them were to die.",
+        "B. Sandy and Mike, who would like their mortgage paid out in full if one of them were to die.",
+        "C. Harold, who has a mortgage on a cottage that he would like to be paid in full upon his death.",
+        "D. Jane and Alex, who would like a policy that will pay the capital gains tax on a cottage upon death."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This could still be solved by other structures; classic estate tax trigger is cleaner for last-to-die.",
+        "Mortgage protection is usually first-to-die.",
+        "Single person cannot use joint policy.",
+        null
+      ],
+      "explanation": "Estate tax liabilities like cottage capital gains are often due at second death in spousal planning contexts.",
+      "difficulty": "medium",
+      "tags": [
+        "joint-last-to-die",
+        "capital-gains"
+      ]
+    }
+  ]
+}

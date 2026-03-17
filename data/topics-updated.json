@@ -127,22 +127,104 @@
           "name": "HLLQP - LIFE 01 QZ - Introduction to Life Insurance",
           "description": "Chapter quiz covering life insurance fundamentals and mortality basics",
           "questionCount": 19,
-          "dataFile": "data/llqp-life/llqp-life-01.json?v=20260315b"
+          "dataFile": "data/llqp-life/llqp-life-01.json?v=20260315b",
+          "subTests": [
+            {
+              "id": "llqp-life-01-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/llqp-life-01-part-1.json?v=20260317a"
+            },
+            {
+              "id": "llqp-life-01-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-19",
+              "questionCount": 9,
+              "dataFile": "data/llqp-life/llqp-life-01-part-2.json?v=20260317a"
+            }
+          ]
         },
         {
           "id": "llqp-life-02",
           "name": "HLLQP - LIFE 02 QZ - Term Life Insurance",
           "description": "Chapter quiz covering term insurance structures, conversion, renewability, and joint-life use cases",
           "questionCount": 36,
-          "dataFile": "data/llqp-life/hllqp-life-02.json?v=20260316c"
+          "dataFile": "data/llqp-life/hllqp-life-02.json?v=20260316c",
+          "subTests": [
+            {
+              "id": "llqp-life-02-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-02-part-1.json?v=20260317a"
+            },
+            {
+              "id": "llqp-life-02-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-02-part-2.json?v=20260317a"
+            },
+            {
+              "id": "llqp-life-02-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-28",
+              "questionCount": 8,
+              "dataFile": "data/llqp-life/hllqp-life-02-part-3.json?v=20260317a"
+            },
+            {
+              "id": "llqp-life-02-part-4",
+              "name": "Section 4",
+              "description": "Questions 29-36",
+              "questionCount": 8,
+              "dataFile": "data/llqp-life/hllqp-life-02-part-4.json?v=20260317a"
+            }
+          ]
         },
         {
           "id": "llqp-life-03",
           "name": "HLLQP - LIFE 03 QZ - Whole Life and Term-100 Insurance",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-03.json"
+          "description": "Chapter quiz covering whole life features, T-100, non-forfeiture options, participating vs non-participating, and dividend strategies",
+          "questionCount": 47,
+          "dataFile": "data/llqp-life/hllqp-life-03.json?v=20260316a",
+          "subTests": [
+            {
+              "id": "llqp-life-03-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-03-part-1.json?v=20260317a"
+            },
+            {
+              "id": "llqp-life-03-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-03-part-2.json?v=20260317a"
+            },
+            {
+              "id": "llqp-life-03-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-29",
+              "questionCount": 9,
+              "dataFile": "data/llqp-life/hllqp-life-03-part-3.json?v=20260317a"
+            },
+            {
+              "id": "llqp-life-03-part-4",
+              "name": "Section 4",
+              "description": "Questions 30-38",
+              "questionCount": 9,
+              "dataFile": "data/llqp-life/hllqp-life-03-part-4.json?v=20260317a"
+            },
+            {
+              "id": "llqp-life-03-part-5",
+              "name": "Section 5",
+              "description": "Questions 39-47",
+              "questionCount": 9,
+              "dataFile": "data/llqp-life/hllqp-life-03-part-5.json?v=20260317a"
+            }
+          ]
         },
         {
           "id": "llqp-life-04",

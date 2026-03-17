@@ -23,8 +23,12 @@ const MCQApp = {
     speechSupported: false,
     currentUtterance: null,
     lifeSection: null,
+    practiceTestParent: null,
     currentPdfResource: null,
-    currentPdfObjectUrl: null
+    currentPdfObjectUrl: null,
+    loadingCount: 0,
+    autoAdvanceEnabled: localStorage.getItem('auto-advance') === 'true',
+    autoAdvanceDelay: 1500
   },
 
   // Utility: Shuffle Array (Fisher-Yates)
@@ -56,12 +60,92 @@ const MCQApp = {
   },
 
   loadWrongQuestions() {
-    const data = JSON.parse(localStorage.getItem('wrong_questions') || '[]');
+    const data = this.readJSONFromStorage('wrong_questions', []);
     this.state.wrongQuestions = data;
   },
 
   saveWrongQuestions() {
     localStorage.setItem('wrong_questions', JSON.stringify(this.state.wrongQuestions));
+  },
+
+  readJSONFromStorage(key, fallback) {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (error) {
+      console.warn(`Invalid localStorage data for ${key}; resetting entry.`, error);
+      localStorage.removeItem(key);
+      return fallback;
+    }
+  },
+
+  showToast(message, type = 'info', title = '') {
+    const root = document.getElementById('toast-root');
+    if (!root || !message) return;
+
+    const toast = document.createElement('div');
+    toast.className = `toast is-${type}`;
+
+    const resolvedTitle = title || {
+      info: 'Notice',
+      success: 'Done',
+      warning: 'Heads up',
+      error: 'Problem'
+    }[type] || 'Notice';
+
+    toast.innerHTML = `
+      <div class="toast-title">${resolvedTitle}</div>
+      <div class="toast-message">${message}</div>
+    `;
+
+    root.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('is-visible'));
+
+    window.setTimeout(() => {
+      toast.classList.remove('is-visible');
+      window.setTimeout(() => toast.remove(), 220);
+    }, 2600);
+  },
+
+  beginLoading(message = 'Loading...') {
+    this.state.loadingCount += 1;
+    const overlay = document.getElementById('app-loading');
+    const text = document.getElementById('app-loading-text');
+    if (text) text.textContent = message;
+    if (overlay) {
+      overlay.classList.add('is-visible');
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+  },
+
+  endLoading() {
+    this.state.loadingCount = Math.max(0, this.state.loadingCount - 1);
+    if (this.state.loadingCount > 0) return;
+
+    const overlay = document.getElementById('app-loading');
+    if (overlay) {
+      overlay.classList.remove('is-visible');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+  },
+
+  getTopicPracticeUnits(topic) {
+    if (!topic?.practiceTests) return [];
+
+    return topic.practiceTests.flatMap((test) => {
+      if (Array.isArray(test.subTests) && test.subTests.length > 0) {
+        return test.subTests;
+      }
+      return [test];
+    });
+  },
+
+  findPracticeTestById(topic, testId) {
+    if (!topic || !testId) return null;
+
+    return topic.practiceTests?.find((test) => test.id === testId)
+      || this.getTopicPracticeUnits(topic).find((test) => test.id === testId)
+      || null;
   },
 
   removeFromWrongQuestions(questionId) {
@@ -73,41 +157,44 @@ const MCQApp = {
   // Start Wrong Questions Review
   async startWrongQuestionsReview() {
     if (this.state.wrongQuestions.length === 0) {
-      alert('No wrong answers to review yet. Keep practicing!');
+      this.showToast('No wrong answers to review yet. Keep practicing!', 'info');
       return;
     }
 
     // Load all wrong questions from different topics/tests
     const wrongQuestionsToReview = [];
     
-    for (const wrongQ of this.state.wrongQuestions) {
-      // Find the topic and test
-      const topic = this.state.topics.find(t => t.id === wrongQ.topicId);
-      if (!topic) continue;
+    this.beginLoading('Loading wrong-answer review...');
+    try {
+      for (const wrongQ of this.state.wrongQuestions) {
+        const topic = this.state.topics.find(t => t.id === wrongQ.topicId);
+        if (!topic) continue;
 
-      const test = topic.practiceTests?.find(t => t.id === wrongQ.testId);
-      if (!test) continue;
+        const test = this.findPracticeTestById(topic, wrongQ.testId);
+        if (!test) continue;
 
-      // Load questions from that test
-      try {
-        const response = await fetch(test.dataFile);
-        const data = await response.json();
-        const question = data.questions.find(q => q.id === wrongQ.questionId);
-        
-        if (question) {
-          wrongQuestionsToReview.push({
-            ...question,
-            topicName: topic.name,
-            testName: test.name
-          });
+        try {
+          const response = await fetch(test.dataFile);
+          const data = await response.json();
+          const question = data.questions.find(q => q.id === wrongQ.questionId);
+
+          if (question) {
+            wrongQuestionsToReview.push({
+              ...question,
+              topicName: topic.name,
+              testName: test.name
+            });
+          }
+        } catch (error) {
+          console.error('Error loading question:', error);
         }
-      } catch (error) {
-        console.error('Error loading question:', error);
       }
+    } finally {
+      this.endLoading();
     }
 
     if (wrongQuestionsToReview.length === 0) {
-      alert('Could not load wrong questions. They may have been deleted.');
+      this.showToast('Could not load wrong questions. They may have been deleted.', 'warning');
       return;
     }
 
@@ -136,7 +223,7 @@ const MCQApp = {
     this.state.wrongQuestions = [];
     this.saveWrongQuestions();
     this.updateWrongQuestionsCount();
-    alert('Wrong answers history cleared!');
+    this.showToast('Wrong answers history cleared.', 'success');
   },
 
   // Initialize Application
@@ -146,7 +233,12 @@ const MCQApp = {
     this.initSpeech();
     this.registerServiceWorker();
     this.loadWrongQuestions();
-    await this.loadTopics();
+    this.beginLoading('Loading topics...');
+    try {
+      await this.loadTopics();
+    } finally {
+      this.endLoading();
+    }
     this.setupEventListeners();
     this.renderTopicsGrid();
     console.log('✅ App initialized successfully');
@@ -194,7 +286,7 @@ const MCQApp = {
       });
 
       navigator.serviceWorker
-        .register('/sw.js?v=20260316g')
+        .register('/sw.js?v=20260317b')
         .then((registration) => {
           // Proactively check for updates each load/session
           registration.update();
@@ -254,29 +346,16 @@ const MCQApp = {
   // Load Topics Configuration
   async loadTopics() {
     try {
-      const response = await fetch('data/topics.json?v=20260316b', { cache: 'no-store' });
+      const response = await fetch('data/topics.json?v=20260316e', { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`Failed to load topics (${response.status})`);
+      }
       const data = await response.json();
       this.state.topics = data.topics;
     } catch (error) {
       console.error('Error loading topics:', error);
       this.state.topics = [];
-    }
-  },
-
-  // Load Questions for a Topic
-  async loadQuestions(topicId) {
-    const topic = this.state.topics.find(t => t.id === topicId);
-    if (!topic) return;
-
-    try {
-      const response = await fetch(topic.dataFile);
-      const data = await response.json();
-      this.state.questions = data.questions;
-      this.state.currentTopic = topic;
-      console.log(`Loaded ${this.state.questions.length} questions for ${topic.name}`);
-    } catch (error) {
-      console.error('Error loading questions:', error);
-      this.state.questions = [];
+      this.showToast('Unable to load topics right now.', 'error');
     }
   },
 
@@ -312,6 +391,12 @@ const MCQApp = {
 
     // Back to topics button from practice test selection
     document.getElementById('back-to-topics-btn')?.addEventListener('click', () => {
+      if (this.state.practiceTestParent) {
+        this.state.practiceTestParent = null;
+        this.state.currentPracticeTest = null;
+        this.renderPracticeTests();
+        return;
+      }
       this.showView('home');
     });
 
@@ -422,19 +507,43 @@ const MCQApp = {
     }
   },
 
+  getHomeTopicRank(topicId) {
+    const preferredOrder = {
+      'llqp-life': 1,
+      'llqp-accident': 2,
+      'llqp-segregated': 3,
+      'llqp-ethics': 4
+    };
+    return preferredOrder[topicId] || 99;
+  },
+
+  isCompactHomeTopic(topicId) {
+    return ['llqp-life', 'llqp-accident', 'llqp-segregated', 'llqp-ethics'].includes(topicId);
+  },
+
   // Render Topics Grid
   renderTopicsGrid() {
     this.updateWrongQuestionsCount();
     const grid = document.getElementById('topics-grid');
     if (!grid) return;
 
-    grid.innerHTML = this.state.topics.map(topic => {
+    const topics = [...this.state.topics].sort((a, b) => {
+      const rankDiff = this.getHomeTopicRank(a.id) - this.getHomeTopicRank(b.id);
+      if (rankDiff !== 0) return rankDiff;
+
+      if (a.status === 'active' && b.status !== 'active') return -1;
+      if (a.status !== 'active' && b.status === 'active') return 1;
+      return (a.name || '').localeCompare(b.name || '');
+    });
+
+    grid.innerHTML = topics.map(topic => {
       const progress = this.getTopicProgress(topic.id);
       const isActive = topic.status === 'active';
+      const isCompact = this.isCompactHomeTopic(topic.id);
       const totalQuestions = topic.practiceTests?.reduce((sum, test) => sum + test.questionCount, 0) || 0;
       
       return `
-        <div class="topic-card ${!isActive ? 'coming-soon' : ''}" 
+        <div class="topic-card ${isCompact ? 'compact-topic' : ''} ${!isActive ? 'coming-soon' : ''}" 
              ${isActive ? `onclick="MCQApp.selectTopic('${topic.id}')"` : ''}
              style="--topic-color: ${topic.color}">
           <div class="topic-icon">${topic.icon}</div>
@@ -466,8 +575,93 @@ const MCQApp = {
     
     this.state.currentTopic = topic;
     this.state.lifeSection = null;
+    this.state.practiceTestParent = null;
+    this.state.currentPracticeTest = null;
     this.showView('practice-test');
     this.renderPracticeTests();
+  },
+
+  renderSubPracticeTests(parentTest) {
+    const topic = this.state.currentTopic;
+    const grid = document.getElementById('practice-tests-grid');
+    const description = document.getElementById('practice-description');
+    if (!topic || !grid || !parentTest) return;
+
+    if (description) {
+      description.textContent = parentTest.description;
+    }
+
+    const items = parentTest.subTests || [];
+    grid.classList.remove('catalog-list', 'catalog-tiles');
+
+    grid.innerHTML = `
+      <div class="catalog-shell" style="--topic-color: ${topic.color}">
+        <div class="catalog-breadcrumb">${topic.name} / Chapter Quizzes / ${parentTest.name}</div>
+        <h3 class="catalog-heading">${parentTest.name}</h3>
+        <p class="muted-text">Choose a smaller section below.</p>
+        <button class="btn-outline" onclick="MCQApp.backToPracticeTests()" style="margin-bottom:.75rem;">
+          ← Back to Chapter Quizzes
+        </button>
+
+        <div class="catalog-courses is-list">
+          ${items.map((test, index) => {
+            const testProgress = this.getPracticeTestProgress(topic.id, test.id);
+            return `
+              <div class="practice-test-card"
+                   onclick="MCQApp.selectSubPracticeTest('${parentTest.id}', '${test.id}')"
+                   style="--topic-color: ${topic.color}">
+                <div class="test-number">${index + 1}</div>
+                <h3 class="test-name">${test.name}</h3>
+                <p class="test-description">${test.description}</p>
+                <div class="test-meta">
+                  <span class="question-count">
+                    📝 ${test.questionCount} Question${test.questionCount !== 1 ? 's' : ''}
+                  </span>
+                  ${testProgress > 0 ? `<span class="progress-badge">${testProgress}% Complete</span>` : ''}
+                </div>
+                <button class="btn-start-test">Open Section →</button>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  backToPracticeTests() {
+    this.state.practiceTestParent = null;
+    this.state.currentPracticeTest = null;
+    this.renderPracticeTests();
+  },
+
+  async selectSubPracticeTest(parentTestId, subTestId) {
+    const topic = this.state.currentTopic;
+    if (!topic) return;
+
+    const parentTest = topic.practiceTests.find(t => t.id === parentTestId);
+    const practiceTest = parentTest?.subTests?.find(t => t.id === subTestId);
+    if (!parentTest || !practiceTest) return;
+
+    this.state.practiceTestParent = parentTest;
+
+    this.beginLoading('Loading section...');
+    try {
+      await this.loadQuestions(practiceTest.dataFile, practiceTest.id);
+    } finally {
+      this.endLoading();
+    }
+    if (this.state.questions.length === 0) {
+      this.showToast('No questions available for this section yet.', 'warning');
+      return;
+    }
+
+    this.state.currentPracticeTest = practiceTest;
+    this.state.currentQuestionIndex = 0;
+    this.state.filterMode = 'all';
+    this.state.isReviewMode = false;
+    this.loadProgress();
+    this.showView('mcq');
+    this.renderQuestion();
   },
 
   shouldUseSectionedCatalog(topic) {
@@ -555,6 +749,11 @@ const MCQApp = {
 
     const grid = document.getElementById('practice-tests-grid');
     if (!grid) return;
+
+    if (this.state.practiceTestParent) {
+      this.renderSubPracticeTests(this.state.practiceTestParent);
+      return;
+    }
 
     if (!topic.practiceTests || topic.practiceTests.length === 0) {
       grid.innerHTML = `
@@ -696,19 +895,31 @@ const MCQApp = {
     const practiceTest = topic.practiceTests.find(t => t.id === testId);
     if (!practiceTest) return;
 
+    if (Array.isArray(practiceTest.subTests) && practiceTest.subTests.length > 0) {
+      this.state.practiceTestParent = practiceTest;
+      this.state.currentPracticeTest = null;
+      this.renderPracticeTests();
+      return;
+    }
+
     if (this.isPdfResource(practiceTest)) {
       await this.openPdfResource(practiceTest);
       return;
     }
 
     if (practiceTest.status === 'coming-soon' || Number(practiceTest.questionCount || 0) === 0) {
-      alert('This course is coming soon.');
+      this.showToast('This course is coming soon.', 'info');
       return;
     }
 
-    await this.loadQuestions(practiceTest.dataFile);
+    this.beginLoading('Loading practice test...');
+    try {
+      await this.loadQuestions(practiceTest.dataFile, practiceTest.id);
+    } finally {
+      this.endLoading();
+    }
     if (this.state.questions.length === 0) {
-      alert('No questions available for this practice test yet.');
+      this.showToast('No questions available for this practice test yet.', 'warning');
       return;
     }
 
@@ -753,6 +964,7 @@ const MCQApp = {
     this.showView('pdf');
 
     this.revokePdfObjectUrl();
+    this.beginLoading('Loading manual...');
 
     try {
       const response = await fetch(test.dataFile, { cache: 'no-store' });
@@ -773,17 +985,23 @@ const MCQApp = {
     } catch (error) {
       console.error('PDF load failed:', error);
       if (helperText) helperText.textContent = 'Unable to display PDF inline. Use Open in New Tab or Download PDF.';
+      this.showToast('Unable to display the PDF inline right now.', 'warning');
+    } finally {
+      this.endLoading();
     }
   },
 
   // Load Questions from File
-  async loadQuestions(dataFile) {
+  async loadQuestions(dataFile, testId = this.state.currentPracticeTest?.id) {
     try {
       const response = await fetch(dataFile);
+      if (!response.ok) {
+        throw new Error(`Failed to load questions (${response.status})`);
+      }
       const data = await response.json();
       
       // Check if we have a saved shuffled order for this test
-      const shuffleKey = `shuffle_${this.state.currentTopic?.id}_${this.state.currentPracticeTest?.id}`;
+      const shuffleKey = `shuffle_${this.state.currentTopic?.id}_${testId}`;
       let savedShuffle = null;
       try {
         const saved = localStorage.getItem(shuffleKey);
@@ -838,6 +1056,7 @@ const MCQApp = {
     } catch (error) {
       console.error('Error loading questions:', error);
       this.state.questions = [];
+      this.showToast('Unable to load questions right now.', 'error');
     }
   },
 
@@ -845,6 +1064,8 @@ const MCQApp = {
   showView(viewName) {
     if (viewName !== 'mcq') {
       this.stopSpeech();
+      // Clean up keyboard listeners when leaving quiz
+      this.cleanupQuizKeyboardListeners();
     }
     this.state.currentView = viewName;
     document.querySelectorAll('.view').forEach(view => {
@@ -863,6 +1084,8 @@ const MCQApp = {
     if (targetView) {
       targetView.classList.add('active');
     }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     if (viewName === 'home') {
       this.renderTopicsGrid();
@@ -892,7 +1115,9 @@ const MCQApp = {
 
     // Update question card
     document.getElementById('q-num').textContent = questionIndex + 1;
-    document.getElementById('question-text').innerHTML = question.question;
+    // Convert markdown tables to HTML and render question
+    const processedQuestion = this.convertMarkdownTablesToHTML(question.question);
+    document.getElementById('question-text').innerHTML = processedQuestion;
 
     // Render options
     const optionsContainer = document.getElementById('options-container');
@@ -903,6 +1128,7 @@ const MCQApp = {
       const wasAttempted = attemptedForQuestion.includes(index);
       const isCorrect = index === question.correctAnswer;
       const isRevealed = this.state.answersRevealed.has(question.id);
+      const isFocused = this.state.lastSelectedIndex === index && !isRevealed;
       const dimmedClass = isRevealed && !isCorrect && !wasAttempted ? 'is-dimmed' : '';
       const feedbackText = wasAttempted && !isRevealed ? this.getWrongAnswerFeedback(question, index) : '';
       const feedbackHtml = feedbackText ? `
@@ -912,8 +1138,9 @@ const MCQApp = {
           ` : '';
       
       return `
-        <div class="option ${wasAttempted ? 'was-attempted' : ''} ${isRevealed && isCorrect ? 'is-correct' : ''} ${dimmedClass}" 
+        <div class="option ${wasAttempted ? 'was-attempted' : ''} ${isRevealed && isCorrect ? 'is-correct' : ''} ${isFocused ? 'is-focused' : ''} ${dimmedClass}" 
              data-index="${index}" 
+             tabindex="0"
              onclick="MCQApp.selectOption(${index})">
           <div class="option-main">
             <span class="option-letter">${letters[index] || index + 1}</span>
@@ -958,6 +1185,16 @@ const MCQApp = {
     const isLastQ = this.state.currentQuestionIndex === this.getFilteredQuestions().length - 1;
     if (nextBtn) {
       nextBtn.classList.toggle('hidden', !hasAnswered || isLastQ);
+    }
+
+    // Setup keyboard listeners for this quiz
+    this.setupQuizKeyboardListeners();
+
+    // Update auto-advance toggle state display
+    const autoAdvanceBtn = document.getElementById('auto-advance-toggle');
+    if (autoAdvanceBtn) {
+      autoAdvanceBtn.classList.toggle('is-enabled', this.state.autoAdvanceEnabled);
+      autoAdvanceBtn.setAttribute('aria-pressed', this.state.autoAdvanceEnabled ? 'true' : 'false');
     }
 
     // Scroll to top on question change
@@ -1028,6 +1265,248 @@ const MCQApp = {
     if (!btn) return;
     btn.setAttribute('aria-pressed', isSpeaking ? 'true' : 'false');
     btn.textContent = isSpeaking ? '⏹ Stop' : '🔊 Read';
+  },
+
+  // Convert markdown tables to HTML tables with styling
+  convertMarkdownTablesToHTML(text) {
+    if (!text || !text.includes('|')) return text;
+    
+    // Split text by tables (separated by empty lines)
+    const parts = text.split(/\n\n+/);
+    
+    return parts.map(part => {
+      // Check if this part is a table (has pipe characters)
+      if (!part.includes('|')) {
+        return part;
+      }
+      
+      const lines = part.trim().split('\n');
+      
+      // Validate table format (must have at least 3 lines: header, separator, data)
+      if (lines.length < 3 || !lines[1].match(/^\s*\|?[\s\-|:]+\|?[\s\-|:]*$/)) {
+        return part; // Not a valid markdown table
+      }
+      
+      try {
+        // Parse headers
+        const headers = lines[0]
+          .split('|')
+          .map(h => h.trim())
+          .filter(h => h);
+        
+        // Parse data rows
+        const rows = lines.slice(2).map(line => 
+          line.split('|')
+            .map(cell => cell.trim())
+            .filter((cell, idx) => idx < headers.length)
+        ).filter(row => row.length > 0);
+        
+        // Build HTML table
+        let html = '<table class="life-table">';
+        
+        // Header
+        html += '<thead><tr>';
+        headers.forEach((header, idx) => {
+          const isNumeric = header.includes('Probability') || header.includes('Expectancy') || header.includes('Death');
+          html += `<th${isNumeric ? ' data-type="numeric"' : ''}>${this.escapeHtml(header)}</th>`;
+        });
+        html += '</tr></thead>';
+        
+        // Body
+        html += '<tbody>';
+        rows.forEach((row, rowIdx) => {
+          html += '<tr>';
+          row.forEach((cell, cellIdx) => {
+            const isAgeColumn = cellIdx === 0;
+            const isNumeric = headers[cellIdx] && (headers[cellIdx].includes('Probability') || headers[cellIdx].includes('Expectancy'));
+            const cellClass = isAgeColumn ? 'age-col' : (isNumeric ? 'data-type="numeric"' : '');
+            html += `<td${cellClass ? ' ' + cellClass : ''}>${this.escapeHtml(cell)}</td>`;
+          });
+          html += '</tr>';
+        });
+        html += '</tbody></table>';
+        
+        return html;
+      } catch (e) {
+        console.warn('Failed to parse table:', e);
+        return part; // Return original on error
+      }
+    }).join('\n\n');
+  },
+
+  // Escape HTML to prevent XSS
+  escapeHtml(text) {
+    if (!text) return '';
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return String(text).replace(/[&<>"']/g, m => map[m]);
+  },
+
+  // Toggle auto-advance feature
+  toggleAutoAdvance() {
+    this.state.autoAdvanceEnabled = !this.state.autoAdvanceEnabled;
+    localStorage.setItem('auto-advance', this.state.autoAdvanceEnabled ? 'true' : 'false');
+    
+    // Update button UI
+    const btn = document.getElementById('auto-advance-toggle');
+    if (btn) {
+      btn.classList.toggle('is-enabled', this.state.autoAdvanceEnabled);
+      btn.setAttribute('aria-pressed', this.state.autoAdvanceEnabled ? 'true' : 'false');
+    }
+    
+    // Show confirmation toast
+    const status = this.state.autoAdvanceEnabled ? 'enabled' : 'disabled';
+    this.showToast(`Auto-advance ${status}`, 2000);
+  },
+
+  // Auto-advance to next question after delay
+  autoAdvanceNext() {
+    if (!this.state.autoAdvanceEnabled) return;
+    const filtered = this.getFilteredQuestions();
+    const isLastQuestion = this.state.currentQuestionIndex === filtered.length - 1;
+    if (!isLastQuestion) {
+      window.setTimeout(() => {
+        this.navigateQuestion(1);
+      }, this.state.autoAdvanceDelay);
+    }
+  },
+
+  // Handle keyboard navigation
+  handleQuizKeydown(event) {
+    // Only handle keyboard shortcuts when in MCQ view
+    if (MCQApp.state.currentView !== 'mcq') return;
+    
+    // Ignore if focused on input/textarea
+    const target = event.target;
+    if (target.matches('input, textarea, [contenteditable]')) return;
+    
+    const key = event.key.toLowerCase();
+    
+    // Arrow Up/Down to navigate options
+    if (key === 'arrowup' || key === 'arrowdown') {
+      event.preventDefault();
+      const question = this.getCurrentQuestion();
+      if (!question || this.state.answersRevealed.has(question.id)) return; // Don't navigate if already answered
+      
+      const optionsContainer = document.getElementById('options-container');
+      if (!optionsContainer) return;
+      const options = optionsContainer.querySelectorAll('.option');
+      const selectedIndex = this.state.lastSelectedIndex ?? -1;
+      
+      let newIndex = selectedIndex;
+      if (key === 'arrowdown') {
+        newIndex = Math.min(newIndex + 1, options.length - 1);
+      } else {
+        newIndex = Math.max(newIndex - 1, 0);
+      }
+      
+      this.state.lastSelectedIndex = newIndex;
+      options.forEach((opt, idx) => {
+        opt.classList.toggle('is-focused', idx === newIndex);
+        if (idx === newIndex) opt.focus();
+      });
+      return;
+    }
+    
+    // Enter to select focused option
+    if (key === 'enter') {
+      event.preventDefault();
+      const question = this.getCurrentQuestion();
+      if (!question) return;
+      
+      const selectedIndex = this.state.lastSelectedIndex;
+      if (selectedIndex !== undefined && selectedIndex >= 0) {
+        this.selectOption(selectedIndex);
+      }
+      return;
+    }
+    
+    // Space to advance to next question (if already answered)
+    if (key === ' ') {
+      event.preventDefault();
+      const question = this.getCurrentQuestion();
+      if (!question || !this.state.answersRevealed.has(question.id)) return;
+      
+      const filtered = this.getFilteredQuestions();
+      if (this.state.currentQuestionIndex < filtered.length - 1) {
+        this.navigateQuestion(1);
+      }
+      return;
+    }
+    
+    // Left Arrow to go to previous question
+    if (key === 'arrowleft') {
+      event.preventDefault();
+      if (this.state.currentQuestionIndex > 0) {
+        this.navigateQuestion(-1);
+      }
+      return;
+    }
+    
+    // Right Arrow to go to next question
+    if (key === 'arrowright') {
+      event.preventDefault();
+      const filtered = this.getFilteredQuestions();
+      if (this.state.currentQuestionIndex < filtered.length - 1) {
+        this.navigateQuestion(1);
+      }
+      return;
+    }
+    
+    // Escape to toggle bookmark
+    if (key === 'escape') {
+      event.preventDefault();
+      const question = this.getCurrentQuestion();
+      if (question) {
+        const isBookmarked = this.state.bookmarkedQuestions.has(question.id);
+        if (isBookmarked) {
+          this.state.bookmarkedQuestions.delete(question.id);
+        } else {
+          this.state.bookmarkedQuestions.add(question.id);
+        }
+        this.saveProgress();
+        this.renderQuestion();
+      }
+      return;
+    }
+    
+    // 1-9 to jump to question by number
+    const charCode = key.charCodeAt(0);
+    if (charCode >= 48 && charCode <= 57) {
+      const num = parseInt(key);
+      if (num > 0) {
+        const filtered = this.getFilteredQuestions();
+        const targetIndex = num - 1;
+        if (targetIndex < filtered.length) {
+          this.jumpToQuestion(targetIndex);
+        }
+      }
+    }
+  },
+
+  // Initialize keyboard listeners for quiz
+  setupQuizKeyboardListeners() {
+    // Attach to document to capture all keyboard events, not just on mcq-view
+    // Remove old listener if exists
+    if (this.state.quizKeyboardHandler) {
+      document.removeEventListener('keydown', this.state.quizKeyboardHandler);
+    }
+    
+    // Bind new listener to document
+    this.state.quizKeyboardHandler = this.handleQuizKeydown.bind(this);
+    document.addEventListener('keydown', this.state.quizKeyboardHandler);
+  },
+
+  // Clean up keyboard listeners
+  cleanupQuizKeyboardListeners() {
+    if (this.state.quizKeyboardHandler) {
+      document.removeEventListener('keydown', this.state.quizKeyboardHandler);
+    }
   },
 
   // Get Current Question
@@ -1140,120 +1619,135 @@ const MCQApp = {
   formatExplanation(text) {
     if (!text) return '';
     
-    // Escape HTML to prevent XSS
-    const escapeHtml = (str) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    const safeText = escapeHtml(text);
+    // First, convert markdown tables to HTML tables
+    let processedText = this.convertMarkdownTablesToHTML(text);
     
-    // Split into paragraphs by double newlines
-    const sections = safeText.split(/\n\n+/);
+    // Escape HTML to prevent XSS (but preserve HTML from table conversion)
+    const escapeHtml = (str) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    
+    // Split by tables and non-tables to process separately
+    const parts = processedText.split(/(<table[\s\S]*?<\/table>)/);
     
     let html = '';
     
-    sections.forEach(section => {
-      const trimmed = section.trim();
-      if (!trimmed) return;
-      
-      // Skip separator lines (━━━ or ─── or ---)
-      if (/^[━─\-=]{5,}$/.test(trimmed)) {
-        html += '<hr class="exp-divider">';
+    parts.forEach(part => {
+      if (part.startsWith('<table')) {
+        // Already HTML table, add as-is
+        html += part;
         return;
       }
       
-      // Check if it's a heading-like line (all caps, emoji prefix, or ends with : or ?)
-      const lines = trimmed.split('\n');
-      const firstLine = lines[0].trim();
+      const safeText = escapeHtml(part);
       
-      // Detect section headers
-      const isHeader = (
-        /^[A-Z\s\d\?\!\:\"\']{10,}$/.test(firstLine.replace(/[^\w\s\?\!\:\"\']/g, '')) ||
-        /^[\u{1F300}-\u{1FAFF}]/u.test(firstLine) ||
-        /^(WHAT|WHY|HOW|KEY|QUICK|NOTE|ADDITIONAL|IMPORTANT|REMEMBER|TIP)/i.test(firstLine.replace(/[^\w\s]/g, ''))
-      );
+      // Split into paragraphs by double newlines
+      const sections = safeText.split(/\n\n+/);
       
-      if (isHeader && lines.length === 1) {
-        // Standalone header
-        html += `<h4 class="exp-heading">${firstLine}</h4>`;
-        return;
-      }
-      
-      if (isHeader && lines.length > 1) {
-        // Header + content below
-        html += `<h4 class="exp-heading">${firstLine}</h4>`;
-        const rest = lines.slice(1);
-        const hasBullets = rest.some(l => /^\s*[•\-\d️⃣]/.test(l.trim()));
+      sections.forEach(section => {
+        const trimmed = section.trim();
+        if (!trimmed) return;
         
+        // Skip separator lines (━━━ or ─── or ---)
+        if (/^[━─\-=]{5,}$/.test(trimmed)) {
+          html += '<hr class="exp-divider">';
+          return;
+        }
+        
+        // Check if it's a heading-like line (all caps, emoji prefix, or ends with : or ?)
+        const lines = trimmed.split('\n');
+        const firstLine = lines[0].trim();
+        
+        // Detect section headers
+        const isHeader = (
+          /^[A-Z\s\d\?\!\:\"\']{10,}$/.test(firstLine.replace(/[^\w\s\?\!\:\"\']/g, '')) ||
+          /^[\u{1F300}-\u{1FAFF}]/u.test(firstLine) ||
+          /^(WHAT|WHY|HOW|KEY|QUICK|NOTE|ADDITIONAL|IMPORTANT|REMEMBER|TIP)/i.test(firstLine.replace(/[^\w\s]/g, ''))
+        );
+        
+        if (isHeader && lines.length === 1) {
+          // Standalone header
+          html += `<h4 class="exp-heading">${firstLine}</h4>`;
+          return;
+        }
+        
+        if (isHeader && lines.length > 1) {
+          // Header + content below
+          html += `<h4 class="exp-heading">${firstLine}</h4>`;
+          const rest = lines.slice(1);
+          const hasBullets = rest.some(l => /^\s*[•\-\d️⃣]/.test(l.trim()));
+          
+          if (hasBullets) {
+            html += '<ul class="exp-list">';
+            rest.forEach(l => {
+              const clean = l.trim().replace(/^[•\-]\s*/, '').replace(/^\d️⃣\s*/, '');
+              if (clean) {
+                // Bold the label before a colon
+                const formatted = clean.replace(/^([^:]+):/, '<strong>$1:</strong>');
+                html += `<li>${formatted}</li>`;
+              }
+            });
+            html += '</ul>';
+          } else {
+            html += `<p class="exp-text">${rest.join('<br>')}</p>`;
+          }
+          return;
+        }
+        
+        // Check if section is a bullet list
+        const hasBullets = lines.some(l => /^\s*[•\-]\s/.test(l.trim()));
         if (hasBullets) {
           html += '<ul class="exp-list">';
-          rest.forEach(l => {
-            const clean = l.trim().replace(/^[•\-]\s*/, '').replace(/^\d️⃣\s*/, '');
+          lines.forEach(l => {
+            const clean = l.trim().replace(/^[•\-]\s*/, '');
             if (clean) {
-              // Bold the label before a colon
               const formatted = clean.replace(/^([^:]+):/, '<strong>$1:</strong>');
               html += `<li>${formatted}</li>`;
             }
           });
           html += '</ul>';
-        } else {
-          html += `<p class="exp-text">${rest.join('<br>')}</p>`;
+          return;
         }
-        return;
-      }
-      
-      // Check if section is a bullet list
-      const hasBullets = lines.some(l => /^\s*[•\-]\s/.test(l.trim()));
-      if (hasBullets) {
-        html += '<ul class="exp-list">';
-        lines.forEach(l => {
-          const clean = l.trim().replace(/^[•\-]\s*/, '');
-          if (clean) {
-            const formatted = clean.replace(/^([^:]+):/, '<strong>$1:</strong>');
-            html += `<li>${formatted}</li>`;
-          }
-        });
-        html += '</ul>';
-        return;
-      }
 
-      // Check if section is a numbered list (1️⃣, 2️⃣, etc.)
-      const hasNumberedEmoji = lines.some(l => /^\s*\d️⃣/.test(l.trim()));
-      if (hasNumberedEmoji) {
-        let currentItem = null;
-        let subItems = [];
-        
-        const flushItem = () => {
-          if (currentItem) {
-            html += `<div class="exp-numbered-item"><div class="exp-numbered-title">${currentItem}</div>`;
-            if (subItems.length) {
-              html += '<ul class="exp-list">';
-              subItems.forEach(s => {
-                const formatted = s.replace(/^([^:]+):/, '<strong>$1:</strong>');
-                html += `<li>${formatted}</li>`;
-              });
-              html += '</ul>';
+        // Check if section is a numbered list (1️⃣, 2️⃣, etc.)
+        const hasNumberedEmoji = lines.some(l => /^\s*\d️⃣/.test(l.trim()));
+        if (hasNumberedEmoji) {
+          let currentItem = null;
+          let subItems = [];
+          
+          const flushItem = () => {
+            if (currentItem) {
+              html += `<div class="exp-numbered-item"><div class="exp-numbered-title">${currentItem}</div>`;
+              if (subItems.length) {
+                html += '<ul class="exp-list">';
+                subItems.forEach(s => {
+                  const formatted = s.replace(/^([^:]+):/, '<strong>$1:</strong>');
+                  html += `<li>${formatted}</li>`;
+                });
+                html += '</ul>';
+              }
+              html += '</div>';
             }
-            html += '</div>';
-          }
-        };
+          };
+          
+          lines.forEach(l => {
+            const t = l.trim();
+            if (/^\d️⃣/.test(t)) {
+              flushItem();
+              currentItem = t;
+              subItems = [];
+            } else if (/^\s*[•\-]/.test(t)) {
+              subItems.push(t.replace(/^[•\-]\s*/, ''));
+            } else if (t) {
+              if (currentItem) subItems.push(t);
+              else html += `<p class="exp-text">${t}</p>`;
+            }
+          });
+          flushItem();
+          return;
+        }
         
-        lines.forEach(l => {
-          const t = l.trim();
-          if (/^\d️⃣/.test(t)) {
-            flushItem();
-            currentItem = t;
-            subItems = [];
-          } else if (/^\s*[•\-]/.test(t)) {
-            subItems.push(t.replace(/^[•\-]\s*/, ''));
-          } else if (t) {
-            if (currentItem) subItems.push(t);
-            else html += `<p class="exp-text">${t}</p>`;
-          }
-        });
-        flushItem();
-        return;
-      }
-      
-      // Regular paragraph
-      html += `<p class="exp-text">${trimmed.replace(/\n/g, '<br>')}</p>`;
+        // Regular paragraph
+        html += `<p class="exp-text">${trimmed.replace(/\n/g, '<br>')}</p>`;
+      });
     });
     
     return html;
@@ -1269,11 +1763,23 @@ const MCQApp = {
     if (answeredCount === totalQ && totalQ > 0) {
       // Calculate score (first attempt correct)
       const correctFirst = filtered.filter(q => this.state.firstAttemptCorrect[q.id] === true).length;
+      const wrongFirst = filtered.filter(q => this.state.firstAttemptCorrect[q.id] === false).length;
       const pct = Math.round((correctFirst / totalQ) * 100);
 
+      // Update banner with detailed stats
       document.getElementById('finish-correct').textContent = correctFirst;
       document.getElementById('finish-total').textContent = totalQ;
       document.getElementById('finish-percent').textContent = pct + '%';
+      
+      // Update detailed stats
+      const statsEl = document.getElementById('finish-stats');
+      if (statsEl) {
+        statsEl.innerHTML = `
+          <div class="finish-stat"><span class="stat-label">Correct on 1st try:</span> <span class="stat-value">${correctFirst}</span></div>
+          <div class="finish-stat"><span class="stat-label">Needed retry:</span> <span class="stat-value">${wrongFirst}</span></div>
+          <div class="finish-stat"><span class="stat-label">Accuracy:</span> <span class="stat-value">${pct}%</span></div>
+        `;
+      }
 
       if (banner) banner.classList.remove('hidden');
     } else {
@@ -1409,6 +1915,9 @@ const MCQApp = {
       // Update dots to show answered state & check completion
       this.renderQuestionDots();
       this.checkCompletion();
+
+      // Auto-advance to next question if enabled
+      this.autoAdvanceNext();
       
     } else {
       // WRONG ANSWER - Show individual feedback, don't reveal correct answer
@@ -1443,67 +1952,114 @@ const MCQApp = {
     // Show loading state and reveal AI container
     if (aiButton) aiButton.disabled = true;
     element.style.display = 'block';
-    element.innerHTML = '<div class="loading-spinner">⏳ Generating AI explanation...</div>';
+    element.innerHTML = '<div class="loading-spinner">⏳ Generating comprehensive explanation...</div>';
 
     try {
       const userAnswer = question.options[selectedIndex];
       const correctAnswer = question.options[question.correctAnswer];
       const isCorrect = selectedIndex === question.correctAnswer;
       
+      // Build rich context for better explanations
+      const optionFeedback = question.optionFeedback ? question.optionFeedback[selectedIndex] : null;
+      const correctFeedback = question.optionFeedback ? question.optionFeedback[question.correctAnswer] : null;
+      const difficulty = question.difficulty || 'Medium';
+      const tags = question.tags ? question.tags.join(', ') : '';
+      const examTips = this.state.currentTopic?.examTips || '';
+      
       // Construct the API URL based on current location
       const apiUrl = window.location.hostname === 'localhost' 
         ? 'http://localhost:8000/api/explain'
         : `${window.location.origin}/api/explain`;
 
-      // Build appropriate prompt based on whether answer was correct
-      let prompt;
-      if (isCorrect) {
-        prompt = `You are an expert ethics instructor. A student answered this ethics question CORRECTLY:
-
-Question: ${question.question}
-
-Student's Answer: ${userAnswer}
-Correct Answer: ${correctAnswer}
-
-The student selected the CORRECT answer. Provide a brief, supportive explanation (2-3 sentences) explaining:
-1. Why this answer is correct
-2. Key concepts the student should remember
-
-Keep it educational and encouraging.`;
-      } else {
-        prompt = `You are an expert ethics instructor. A student answered this ethics question INCORRECTLY:
-
-Question: ${question.question}
-
-Student's Answer: ${userAnswer}
-Correct Answer: ${correctAnswer}
-
-The student selected an INCORRECT answer. Provide a brief, clear explanation (2-3 sentences) of:
-1. Why the correct answer is right
-2. Why the student's answer was incorrect
-
-Keep the explanation educational and supportive.`;
-      }
+      // Build comprehensive prompt with rich context
+      const contextInfo = {
+        question: question.question,
+        userAnswer: userAnswer,
+        correctAnswer: correctAnswer,
+        options: question.options,
+        isCorrect: isCorrect,
+        difficulty: difficulty,
+        tags: tags,
+        optionFeedback: optionFeedback,
+        correctFeedback: correctFeedback,
+        explanation: question.explanation,
+        examTips: examTips,
+      };
 
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          question: question.question,
-          userAnswer: userAnswer,
-          correctAnswer: correctAnswer,
-          options: question.options,
-          isCorrect: isCorrect,
-          customPrompt: prompt,
-        }),
+        body: JSON.stringify(contextInfo),
       });
 
       const data = await response.json();
       
       if (data.success) {
-        element.innerHTML = `<div class="ai-explanation"><strong>🤖 AI Insights:</strong> ${data.explanation}</div>`;
+        // Build enhanced explanation HTML with multiple sections
+        let html = '<div class="ai-explanation-enhanced">';
+        
+        // Main explanation
+        if (data.mainExplanation) {
+          html += `<div class="ai-section ai-main">
+            <div class="ai-section-title">💡 Explanation</div>
+            <div class="ai-section-content">${data.mainExplanation}</div>
+          </div>`;
+        }
+        
+        // Why correct answer is right
+        if (data.whyCorrect) {
+          html += `<div class="ai-section ai-correct">
+            <div class="ai-section-title">✅ Why This Is Correct</div>
+            <div class="ai-section-content">${data.whyCorrect}</div>
+          </div>`;
+        }
+        
+        // Why selected was wrong (if incorrect)
+        if (!isCorrect && data.whyIncorrect) {
+          html += `<div class="ai-section ai-incorrect">
+            <div class="ai-section-title">❌ Why Your Answer Wasn't Correct</div>
+            <div class="ai-section-content">${data.whyIncorrect}</div>
+          </div>`;
+        }
+        
+        // Key concept
+        if (data.keyConcept) {
+          html += `<div class="ai-section ai-concept">
+            <div class="ai-section-title">🎯 Key Concept</div>
+            <div class="ai-section-content">${data.keyConcept}</div>
+          </div>`;
+        }
+        
+        // Study tip
+        if (data.studyTip) {
+          html += `<div class="ai-section ai-tip">
+            <div class="ai-section-title">📚 Study Tip</div>
+            <div class="ai-section-content">${data.studyTip}</div>
+          </div>`;
+        }
+        
+        // Related concept (follow-up learning)
+        if (data.relatedConcept) {
+          html += `<div class="ai-section ai-related">
+            <div class="ai-section-title">🔗 Related Concept</div>
+            <div class="ai-section-content">${data.relatedConcept}</div>
+          </div>`;
+        }
+        
+        html += '</div>';
+        element.innerHTML = html;
+        
+        // Add follow-up button if AI suggests further study
+        if (data.relatedConcept) {
+          const followUpBtn = document.createElement('button');
+          followUpBtn.className = 'btn-secondary btn-follow-up';
+          followUpBtn.innerHTML = '🤔 Ask Another Question';
+          followUpBtn.onclick = () => this.generateFollowUpExplanation(question, contextInfo);
+          element.appendChild(followUpBtn);
+        }
+        
         if (aiButton) aiButton.style.display = 'none';
       } else {
         element.innerHTML = '<div class="ai-error">⚠️ AI service temporarily unavailable</div>';
@@ -1514,6 +2070,53 @@ Keep the explanation educational and supportive.`;
       console.error('Error generating AI explanation:', error);
       element.innerHTML = '<div class="ai-error">⚠️ Could not connect to AI service. Check your connection.</div>';
       if (aiButton) aiButton.disabled = false;
+    }
+  },
+
+  // Generate follow-up question or deeper explanation
+  async generateFollowUpExplanation(question, contextInfo) {
+    const element = document.getElementById('ai-explanation-text');
+    if (!element) return;
+    
+    const followUpBtn = element.querySelector('.btn-follow-up');
+    if (followUpBtn) followUpBtn.disabled = true;
+    
+    // Show loading state
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'loading-spinner';
+    loadingDiv.innerHTML = '⏳ Generating follow-up...';
+    element.appendChild(loadingDiv);
+    
+    try {
+      const apiUrl = window.location.hostname === 'localhost' 
+        ? 'http://localhost:8000/api/explain'
+        : `${window.location.origin}/api/explain`;
+      
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...contextInfo,
+          isFollowUp: true,
+          requestType: 'deeper_insight',
+        }),
+      });
+      
+      const data = await response.json();
+      if (data.success && data.followUpInsight) {
+        const followUpHtml = `<div class="ai-section ai-followup">
+          <div class="ai-section-title">🌟 Deeper Insight</div>
+          <div class="ai-section-content">${data.followUpInsight}</div>
+        </div>`;
+        loadingDiv.remove();
+        element.insertAdjacentHTML('beforeend', followUpHtml);
+        if (followUpBtn) followUpBtn.remove();
+      } else {
+        loadingDiv.remove();
+      }
+    } catch (error) {
+      console.error('Follow-up error:', error);
+      loadingDiv.remove();
     }
   },
 
@@ -1559,7 +2162,7 @@ Keep the explanation educational and supportive.`;
     if (this.state.filterMode === 'all') {
       const bookmarkedCount = this.state.bookmarkedQuestions.size;
       if (bookmarkedCount === 0) {
-        alert('No bookmarked questions yet. Click the ☆ button to bookmark questions.');
+        this.showToast('No bookmarked questions yet. Click ☆ to save questions.', 'info');
         return;
       }
       this.state.filterMode = 'bookmarked';
@@ -1622,13 +2225,12 @@ Keep the explanation educational and supportive.`;
     let totalQuestions = 0;
     let totalViewed = 0;
 
-    topic.practiceTests.forEach(test => {
+    this.getTopicPracticeUnits(topic).forEach(test => {
       if (test.questionCount > 0) {
         const key = `progress_${topicId}_${test.id}`;
-        const saved = localStorage.getItem(key);
+        const saved = this.readJSONFromStorage(key, null);
         if (saved) {
-          const data = JSON.parse(saved);
-          totalViewed += data.viewed.length;
+          totalViewed += (saved.viewed || []).length;
         }
         totalQuestions += test.questionCount;
       }
@@ -1641,17 +2243,16 @@ Keep the explanation educational and supportive.`;
   // Get Practice Test Progress
   getPracticeTestProgress(topicId, testId) {
     const key = `progress_${topicId}_${testId}`;
-    const saved = localStorage.getItem(key);
+    const saved = this.readJSONFromStorage(key, null);
     if (!saved) return 0;
 
     const topic = this.state.topics.find(t => t.id === topicId);
     if (!topic) return 0;
 
-    const test = topic.practiceTests.find(t => t.id === testId);
+    const test = this.findPracticeTestById(topic, testId);
     if (!test || test.questionCount === 0) return 0;
 
-    const data = JSON.parse(saved);
-    return Math.round((data.viewed.length / test.questionCount) * 100);
+    return Math.round(((saved.viewed || []).length / test.questionCount) * 100);
   },
 
   // Save Progress
@@ -1679,12 +2280,11 @@ Keep the explanation educational and supportive.`;
     }
 
     const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
-    const saved = localStorage.getItem(key);
+    const saved = this.readJSONFromStorage(key, null);
     if (saved) {
-      const data = JSON.parse(saved);
-      this.state.viewedQuestions = new Set(data.viewed || []);
-      this.state.bookmarkedQuestions = new Set(data.bookmarked || []);
-      this.state.answersRevealed = new Set(data.revealed || []);
+      this.state.viewedQuestions = new Set(saved.viewed || []);
+      this.state.bookmarkedQuestions = new Set(saved.bookmarked || []);
+      this.state.answersRevealed = new Set(saved.revealed || []);
     } else {
       this.state.viewedQuestions = new Set();
       this.state.bookmarkedQuestions = new Set();
@@ -1717,7 +2317,7 @@ Keep the explanation educational and supportive.`;
 
     this.state.currentQuestionIndex = 0;
     this.renderQuestion();
-    alert('Progress reset successfully!');
+    this.showToast('Progress reset successfully.', 'success');
   }
 };
 

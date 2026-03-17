@@ -1,0 +1,243 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 02 QZ - Term Life Insurance - Section 1",
+  "examTips": "Focus on term vs permanent needs, convertibility, renewability, and joint-life structures (first-to-die vs last-to-die).",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Nancy and Robert are aged 62 and 65. They have decided to retire together and so they sold an active business that they both built from scratch and jointly owned. They sold the business for $1,700,000, which will be received tax-free given that they are both utilizing the lifetime capital gain exemption on a qualified small business.\nGiven the investment income that they believe they can generate on the sale proceeds, as well as entitlements under a government program, and their modest lifestyle, Nancy and Robert believe they can live on these income streams and thus leave their RRSP balances in tact.\nThey will only make the required minimum withdrawals once their RRSP has been converted into a RRIF. Any remaining funds in the RRSP upon their deaths, they would like to leave to their only son Ronald who is currently 30 years of age.\nWhat insurance strategy would you recommend that will help Nancy and Robert generate the required funds to pay the income taxes on the remaining RRSP funds upon their death?",
+      "options": [
+        "A. A joint-first-to-die permanent life insurance policy on Nancy and Robert's life that is equal to the anticipated income taxes owing upon death.",
+        "B. A joint-last-to-die permanent life insurance policy on Nancy and Robert's life that is equal to the anticipated income taxes owing upon death.",
+        "C. A permanent life insurance policy with Ronald as the life insured and his estate as the beneficiary that will ultimately be responsible for taxes on the RRSP upon his death.",
+        "D. None. Ronald is part of the protected class and therefore the RRSP balance will transfer tax-deferred to him upon his parent's death."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "First-to-die pays too early for this tax liability.",
+        null,
+        "Ronald's life is not the trigger for parents' RRSP tax at death.",
+        "A non-dependent adult child does not get automatic RRSP tax-deferred rollover."
+      ],
+      "explanation": "A joint-last-to-die permanent policy best matches RRSP tax liability that commonly crystallizes on the second death after spousal rollover opportunities.",
+      "difficulty": "medium",
+      "tags": [
+        "rrsp",
+        "joint-last-to-die",
+        "estate-planning"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Rick is opening a business and has borrowed $200,000 from his father as start-up capital. He will repay the principal amount in 10 years and will pay simple interest in the meantime. Rick is very confident he will pay the loan off in less than 10 years. He would like to purchase life insurance to ensure the loan would be paid in full in the event of his death, and he would like to keep the premium to a minimum.\nWhich of the following would be the most appropriate to insure the loan?",
+      "options": [
+        "A. $200,000 non-renewable T-10 level term insurance",
+        "B. $200,000 convertible term insurance",
+        "C. $200,000 renewable T-100 level term insurance",
+        "D. $200,000 T-100 (a type of permanent plan)"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Convertibility adds cost not required for this temporary need.",
+        "T-100 is permanent and typically more expensive.",
+        "Permanent insurance is not the minimum-cost fit for a 10-year debt."
+      ],
+      "explanation": "A non-renewable 10-year term typically provides the lowest cost for a fixed temporary debt over 10 years.",
+      "difficulty": "easy",
+      "tags": [
+        "term-insurance",
+        "temporary-need",
+        "loan-protection"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Whose health is the insurer concerned about when underwriting a life insurance policy?",
+      "options": [
+        "A. The life-insured",
+        "B. The insured and the life-insured (if two different people)",
+        "C. The beneficiary",
+        "D. The insured"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Underwriting risk is driven by the life insured, not owner/beneficiary health.",
+        "Beneficiary health is not relevant to mortality risk.",
+        "Owner health matters only if owner is also life insured."
+      ],
+      "explanation": "Life underwriting focuses on the mortality risk of the life-insured.",
+      "difficulty": "easy",
+      "tags": [
+        "underwriting",
+        "life-insured"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Abdul is 30 years old. His only experience with life insurance is a whole life policy that he bought five years ago. He now needs additional coverage and is considering renewable term insurance. His friend explained to him four things about term insurance.\nWhich of the following four statements is correct?",
+      "options": [
+        "A. The only way to get any financial benefit from the policy is if the life-insured dies while the policy is in force.",
+        "B. The policy can be renewed indefinitely; however, the premium will increase at each renewal period. For most people, the policy will become prohibitively expensive by around age 40.",
+        "C. The premium does not increase upon renewal.",
+        "D. The biggest variable when determining the premium on a term insurance rate is the morbidity rate."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Term renewability is not indefinite in practice and age 40 statement is inaccurate.",
+        "Term premiums generally increase at renewal.",
+        "Life premiums are primarily tied to mortality risk, not morbidity."
+      ],
+      "explanation": "Basic term insurance is pure death-benefit protection with no cash value unless specific riders exist.",
+      "difficulty": "medium",
+      "tags": [
+        "term-insurance",
+        "renewability"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "A policy can be voided by the insurer and a death benefit denied if a material misrepresentation is realized within the first two years of the policy.\nWhich of the following would be considered \"material\"?",
+      "options": [
+        "A. Smoking status",
+        "B. Known health issue",
+        "C. Financial status",
+        "D. All of the above"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Each can be material depending on underwriting impact.",
+        "Each can be material depending on underwriting impact.",
+        "Each can be material depending on underwriting impact.",
+        null
+      ],
+      "explanation": "Material facts are those that would have affected insurer decision, premium, or terms; all listed can be material.",
+      "difficulty": "easy",
+      "tags": [
+        "misrepresentation",
+        "contestability"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Marsha and Bradley purchased 10-year renewable and convertible term insurance when they were first married. They now have a five-year-old child and successful careers, and enjoy impressive but sporadic incomes. After doing a thorough needs analysis, it has been determined that they no longer need $500,000 in term insurance and instead require $500,000 in permanent insurance. They are both in excellent health and are therefore likely insurable.\nWhat would you recommend?",
+      "options": [
+        "A. Inquire as to whether the renewable policy has a re-entry term.",
+        "B. Compare the premium on a brand new policy to the premium of the proposed converted policy. If it is cheaper, they should consider buying a brand-new policy.",
+        "C. They should continue to renew the term policy indefinitely because it will be cheaper than buying a permanent plan at their current age.",
+        "D. Convert the existing term insurance policy because it does not require them to provide evidence of insurability."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Re-entry addresses renewal pricing, not the full permanent planning decision.",
+        null,
+        "Indefinite renewal is not an efficient permanent strategy.",
+        "Conversion is valuable but should be compared to new policy pricing when health is strong."
+      ],
+      "explanation": "When clients are healthy, a newly underwritten permanent policy may be cheaper than conversion; compare both.",
+      "difficulty": "medium",
+      "tags": [
+        "conversion",
+        "permanent-insurance",
+        "needs-analysis"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Kelly needs term insurance to ensure that her mortgage will be paid in full in the event that she dies before she has paid it off. It is very important to her that she select the right coverage but still keep the premium to a minimum.\nAll of the following policies could address her needs, but which policy would have the lowest premium during the first term?",
+      "options": [
+        "A. Renewable and convertible term insurance without a re-entry term",
+        "B. Renewable term insurance with a re-entry term",
+        "C. Renewable and convertible term insurance with a re-entry term",
+        "D. Renewable term insurance without a re-entry term"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Convertibility adds cost.",
+        null,
+        "Convertibility usually increases premium versus non-convertible equivalent.",
+        "Without re-entry, guaranteed renewal risk is priced in more heavily."
+      ],
+      "explanation": "Policies with re-entry terms often have lower initial premiums because future renewal pricing can be health-reassessed.",
+      "difficulty": "medium",
+      "tags": [
+        "term-insurance",
+        "re-entry",
+        "mortgage"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Which of the following is an example of a permanent insurance need?",
+      "options": [
+        "A. To provide funds for a child to go to university",
+        "B. To pay out a mortgage in the event of death",
+        "C. To provide a cash infusion into a business if a key employee were to die",
+        "D. To pay taxes at death"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Education funding is usually temporary.",
+        "Mortgage protection is typically temporary/declining.",
+        "Key-person needs may be temporary based on business context.",
+        null
+      ],
+      "explanation": "Tax liability at death is generally an inevitable, permanent need.",
+      "difficulty": "easy",
+      "tags": [
+        "permanent-need",
+        "estate-planning"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Marsha bought a renewable and convertible policy 10 years ago. The policy was initially purchased to address the risk of Marsha's dying prior to saving enough funds for her daughter's education. Her daughter has since graduated, but Marsha decided to retain the policy for other purposes. She converted the policy to a permanent one 18 months ago. Marsha died as a result of suicide last month.\nHow would the claim for a death benefit most likely be handled?",
+      "options": [
+        "A. Paying a death benefit as a result of suicide would contravene public policy, and therefore the insurance acts void the policy in the event of suicide.",
+        "B. The death benefit could be denied on the basis that there was no insurable interest (financial need for the insurance) at the time the death occurred.",
+        "C. The new policy will likely be treated as a continuation of the original policy. Therefore, the suicide exclusion period has passed, and the benefit will be paid.",
+        "D. The suicide occurred within two years of the permanent policy being issued. As a result, the insurer is within its contractual right to deny the claim."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Suicide exclusion is generally time-limited, not absolute forever.",
+        "Insurable interest concerns are not the key issue here.",
+        null,
+        "On many conversions, continuity rules can preserve original policy timelines."
+      ],
+      "explanation": "Converted policies are often treated as continuation of original contract terms, so original exclusion periods may already be satisfied.",
+      "difficulty": "hard",
+      "tags": [
+        "suicide-clause",
+        "conversion",
+        "claims"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Grace is a new life insurance agent. She is trying to compare three different policies.\nAll else being equal, which of the following policies would be the most expensive?",
+      "options": [
+        "A. A joint last-to-die policy",
+        "B. A joint first-to-die policy",
+        "C. A term policy on a single life",
+        "D. It is impossible to determine because the policies provided would be the most expensive without seeing the expense analysis of insurer's life tables."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Last-to-die generally pays later, often reducing cost relative to first-to-die.",
+        null,
+        "Single-life is often less expensive than first-to-die for equivalent assumptions.",
+        "General actuarial pattern here is determinable."
+      ],
+      "explanation": "Joint first-to-die has a higher probability of earlier claim payment than joint last-to-die.",
+      "difficulty": "medium",
+      "tags": [
+        "joint-life",
+        "pricing"
+      ]
+    }
+  ]
+}

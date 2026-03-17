@@ -1,0 +1,234 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 03 QZ - Whole Life and Term-100 Insurance - Section 5",
+  "examTips": "Focus on whole life policy features (guaranteed premium, CSV, non-forfeiture options), T-100 characteristics, participating vs non-participating policies, dividend options, and premium payment structures.",
+  "questions": [
+    {
+      "id": 39,
+      "question": "Chloe purchased a participating whole life policy because she requires permanent insurance. She would like to select a dividend option that will add the most coverage in the early years.\nWhich dividend option is suitable given Chloe's goals?",
+      "options": [
+        "A. Paid-up additions (PUAs)",
+        "B. Term insurance",
+        "C. Accumulation",
+        "D. Premium reduction"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "PUAs purchase permanent whole life insurance with each dividend, but at a lower face amount per dollar than one-year term insurance.",
+        null,
+        "Accumulation leaves dividends on deposit earning interest — it does not add life insurance coverage.",
+        "Premium reduction reduces the out-of-pocket premium but does not increase coverage."
+      ],
+      "explanation": "The one-year term insurance dividend option (listed here as 'Term insurance') uses each dividend to purchase a one-year term rider, which provides a significantly larger face amount per dividend dollar than PUAs. In the early years when dividends are modest, term insurance maximizes the coverage addition — making it the best option for Chloe's goal of maximum coverage in the near term.",
+      "difficulty": "medium",
+      "tags": [
+        "dividends",
+        "one-year-term",
+        "pua",
+        "coverage",
+        "participating"
+      ]
+    },
+    {
+      "id": 40,
+      "question": "Samuel purchased a non-participating adjustable whole life policy. How would an increase in interest rates affect his policy?",
+      "options": [
+        "A. It would decrease the expected policy dividend.",
+        "B. It would increase his premium.",
+        "C. It would decrease his premium.",
+        "D. It would increase the expected policy dividend."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "A non-participating policy pays no dividends — dividend effects are irrelevant.",
+        "Higher interest rates mean the insurer earns more on reserves, reducing the required premium — not increasing it.",
+        null,
+        "A non-participating policy pays no dividends regardless of investment performance."
+      ],
+      "explanation": "On a non-participating adjustable whole life policy, there are no dividends. However, because the policy is adjustable, the insurer can recalculate the premium when interest rates change. Higher interest rates allow the insurer to earn more on reserves, which reduces the amount they need to collect from the policyholder — resulting in a lower (decreased) premium.",
+      "difficulty": "medium",
+      "tags": [
+        "adjustable-whole-life",
+        "non-participating",
+        "interest-rates",
+        "premium"
+      ]
+    },
+    {
+      "id": 41,
+      "question": "Derrick purchased a $200,000 participating whole life policy five years ago. He is unsure of the dividend option he selected. He does recall that his agent stressed the dividend would be used to purchase permanent insurance, which would result in his coverage increasing each time a dividend is paid. What dividend option does this describe?",
+      "options": [
+        "A. PUA",
+        "B. Premium reduction",
+        "C. One-year term insurance dividend option",
+        "D. Accumulation dividend option"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Premium reduction uses the dividend to offset the next premium payment — it does not purchase additional insurance coverage.",
+        "The one-year term insurance dividend option purchases temporary one-year term coverage — not permanent insurance.",
+        "Accumulation leaves dividends on deposit with the insurer earning interest — it does not purchase additional insurance."
+      ],
+      "explanation": "The PUA (paid-up additions) dividend option uses each policy dividend to purchase a small, additional piece of paid-up whole life insurance. Because whole life is permanent, each dividend increases Derrick's total permanent coverage — exactly as his agent described.",
+      "difficulty": "easy",
+      "tags": [
+        "pua",
+        "dividends",
+        "permanent-insurance",
+        "participating"
+      ]
+    },
+    {
+      "id": 42,
+      "question": "Which of the following is not a dividend option available on a participating whole life policy?",
+      "options": [
+        "A. One-year term insurance",
+        "B. Paid-up additions (PUAs)",
+        "C. Reduced paid-up insurance",
+        "D. Premium reduction"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "One-year term insurance is a standard dividend option — the dividend is used to purchase a temporary term rider.",
+        "PUAs are a standard dividend option — the dividend is used to purchase paid-up whole life additions.",
+        null,
+        "Premium reduction is a standard dividend option — the dividend reduces the next scheduled premium payment."
+      ],
+      "explanation": "The dividend options available on a participating whole life policy are: cash, premium reduction, accumulation (left on deposit), paid-up additions (PUAs), and one-year term insurance. Reduced paid-up insurance is a NON-FORFEITURE option — not a dividend option. It uses the policy's cash surrender value, not a dividend.",
+      "difficulty": "medium",
+      "tags": [
+        "dividend-options",
+        "non-forfeiture",
+        "participating",
+        "whole-life"
+      ]
+    },
+    {
+      "id": 43,
+      "question": "Ozzieia is purchasing a whole life participating policy. She has a 13-year-old daughter and would like to have as much coverage as possible for the next few years.\nWhich dividend option would be most suitable for her?",
+      "options": [
+        "A. One-year term insurance",
+        "B. PUA",
+        "C. Accumulation",
+        "D. Cash payment"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "PUA adds permanent coverage, but not as much near-term coverage per dividend dollar as one-year term insurance.",
+        "Accumulation leaves dividends on deposit and does not maximize coverage over the next few years.",
+        "Cash payment does not add insurance coverage."
+      ],
+      "explanation": "Ozzieia wants as much coverage as possible for the next few years. The one-year term insurance dividend option provides the greatest amount of additional coverage per dividend dollar in the near term, making it the most suitable choice.",
+      "difficulty": "medium",
+      "tags": [
+        "dividends",
+        "one-year-term",
+        "coverage",
+        "participating"
+      ]
+    },
+    {
+      "id": 44,
+      "question": "Michael is a middle-aged man. The annual premium on his whole life policy is approximately $9,000. He bought the policy shortly after graduating from university. The policy now has a cash value of approximately $100,000. He is considering taking a five-year sabbatical to tour the world and write a thesis.\nHis insurance needs have changed. He does not need as much coverage today and he no longer wants to pay a premium, but he would still like to have permanent coverage even if it is for a lesser amount.\nWhich of the following would be a potential solution?",
+      "options": [
+        "A. Reduced paid-up insurance non-forfeiture option",
+        "B. Reduced paid-up insurance dividend option",
+        "C. Extended term insurance dividend option",
+        "D. Extended term insurance non-forfeiture option"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "There is no 'reduced paid-up insurance dividend option' — reduced paid-up insurance is a non-forfeiture option, not a dividend option.",
+        "There is no 'extended term insurance dividend option' — extended term insurance is a non-forfeiture option, not a dividend option.",
+        "Extended term insurance is a non-forfeiture option that preserves the original face amount but for a limited term — Michael wants permanent coverage, not temporary term coverage."
+      ],
+      "explanation": "The reduced paid-up insurance non-forfeiture option uses the $100,000 cash value to purchase a smaller, fully paid-up whole life policy. Michael stops paying premiums entirely, the face amount is reduced, but the coverage is permanent — exactly what he requires. Extended term would give him the original face amount but only for a term period, which is not what he wants.",
+      "difficulty": "medium",
+      "tags": [
+        "non-forfeiture",
+        "reduced-paid-up",
+        "permanent-insurance",
+        "csv"
+      ]
+    },
+    {
+      "id": 45,
+      "question": "Meagan is interested in purchasing a $100,000 face value guaranteed whole life policy. The premium on the policy will be $150 per month. Meagan understands that when setting premiums on a whole life policy, the insurer must make certain assumptions.\nWhich of the following statements is most correct regarding those assumptions?",
+      "options": [
+        "A. If the insurer's experience is better than assumed, they will reduce the premium.",
+        "B. If the insurer's experience is worse than assumed, they will increase the premium.",
+        "C. The insurer cannot change the premium even if their actual experience is different from their assumptions.",
+        "D. The insurer can only change the premium with the policyholder's consent."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This is a guaranteed whole life policy — the premium is fixed for life and is not reduced if experience is better than assumed.",
+        "A guaranteed whole life policy does not allow the insurer to increase the premium after issue.",
+        null,
+        "The insurer cannot change the premium at all, so policyholder consent does not create such a right."
+      ],
+      "explanation": "On a guaranteed whole life policy, the premium is fixed at issue and cannot be changed, even if the insurer's actual experience differs from its original assumptions.",
+      "difficulty": "medium",
+      "tags": [
+        "guaranteed-whole-life",
+        "actuarial-assumptions",
+        "premium",
+        "guaranteed"
+      ]
+    },
+    {
+      "id": 46,
+      "question": "Betsy is weighing the pros and cons of purchasing a participating versus non-participating whole life policy. Which of the following statements is correct?",
+      "options": [
+        "A. On a participating policy, if the policy realizes a shortfall, the insurer will charge an additional premium assessment that the policyholder would have to pay.",
+        "B. Participating policies allow the life-insured to spread death benefits among multiple beneficiaries.",
+        "C. On a participating policy, if the policy realizes a surplus, the insurer will share the surplus with policy owners in the form of policy dividends.",
+        "D. A participating policy will have a lower premium as compared to a non-participating policy."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "On a participating policy, if there is a shortfall, the insurer absorbs the loss — the policyholder is never charged an additional assessment.",
+        "The ability to name multiple beneficiaries has nothing to do with whether the policy is participating or non-participating.",
+        null,
+        "Participating policies have a HIGHER premium than non-participating policies, not lower — the higher premium reflects conservative pricing for potential dividend distribution."
+      ],
+      "explanation": "The defining feature of a participating whole life policy is that if the insurer's actual experience generates a surplus (better-than-assumed returns, lower-than-assumed mortality, or lower expenses), that surplus is shared with policyowners in the form of policy dividends. If there is a shortfall, the insurer absorbs it — the policyholder is never assessed.",
+      "difficulty": "easy",
+      "tags": [
+        "participating",
+        "non-participating",
+        "dividends",
+        "surplus"
+      ]
+    },
+    {
+      "id": 47,
+      "question": "Jack, age 55, has a huge bank account but very limited annual cash flow. He is purchasing a sizeable whole life insurance policy as part of his estate plan. After doing a thorough insurance needs analysis, it has been determined that permanent coverage is appropriate. Jack would like to make just one premium payment each year until death or until age 80, whichever comes first.\nWhich premium option would be ideal for Jack?",
+      "options": [
+        "A. Single premium",
+        "B. Adjustable whole life",
+        "C. Limited payment",
+        "D. Ongoing premium"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Single premium requires only one lump-sum payment upfront — Jack wants to make annual payments over a period of years, not one single payment.",
+        "Adjustable whole life refers to the insurer's ability to adjust the premium — it is a product type, not a payment option, and does not describe paying until age 80.",
+        null,
+        "Ongoing premium (straight life) means paying annually until death or age 100 — Jack specifically wants to stop at age 80."
+      ],
+      "explanation": "Limited payment whole life allows the policyholder to pay premiums for a defined, limited number of years — in Jack's case, until age 80. After that, the policy is paid-up and coverage continues for life with no further premiums required. This matches Jack's goal exactly: annual payments, stopping at age 80.",
+      "difficulty": "easy",
+      "tags": [
+        "limited-pay",
+        "premium-payment-options",
+        "whole-life",
+        "estate-planning"
+      ]
+    }
+  ]
+}

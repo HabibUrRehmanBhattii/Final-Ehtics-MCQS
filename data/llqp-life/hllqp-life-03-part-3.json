@@ -1,0 +1,232 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 03 QZ - Whole Life and Term-100 Insurance - Section 3",
+  "examTips": "Focus on whole life policy features (guaranteed premium, CSV, non-forfeiture options), T-100 characteristics, participating vs non-participating policies, dividend options, and premium payment structures.",
+  "questions": [
+    {
+      "id": 21,
+      "question": "Darcy owns three different life insurance policies. He understands that when the insurer sets the premium on a policy, they consider estimated investment returns, expenses of running the policy, and of course, mortality rates. Darcy mentions to you that he continually hears about the Bank of Canada lowering interest rates. He is concerned that the decline in interest rates will result in the insurer increasing the premium on one or more of his policies.\nWhich policy could be impacted by the change in interest rates?",
+      "options": [
+        "A. Guaranteed whole life insurance",
+        "B. Non-participating whole life insurance",
+        "C. Whole life insurance",
+        "D. Adjustable whole life"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "A guaranteed whole life policy has fixed, unchangeable premiums regardless of economic conditions.",
+        "Non-participating whole life also has guaranteed, fixed premiums that the insurer cannot adjust.",
+        "Traditional whole life (guaranteed) premiums are locked in at issue and are not subject to interest rate changes.",
+        null
+      ],
+      "explanation": "Adjustable whole life is specifically designed to allow the insurer to adjust the premium after a guaranteed period based on actual investment returns, mortality experience, and expenses. A decline in interest rates reduces the insurer's investment income, which could lead to a premium increase on an adjustable whole life policy.",
+      "difficulty": "medium",
+      "tags": [
+        "adjustable-whole-life",
+        "interest-rates",
+        "premium-adjustment"
+      ]
+    },
+    {
+      "id": 22,
+      "question": "Jules and Sandra have been married for 20 years. They own a cottage that was purchased for only $100,000. Today the cottage is estimated to be worth $900,000. The cottage is not their principal residence, so it would eventually attract capital gains taxes. They would like to gift the property to their only son upon their deaths and do not want the value of their estate to be eroded by the capital gains tax. As a result, they are purchasing participating whole life insurance.\nSandra is ecstatic every time she learns the cottage has appreciated in value, but then complains that it will only result in more capital gains tax.\nWhat dividend option should they select specifically to address Sandra's concern?",
+      "options": [
+        "A. Term insurance",
+        "B. Premium offset",
+        "C. Paid-up additions (PUAs)",
+        "D. Accumulation"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "The term insurance dividend option adds only temporary coverage — it would not grow the permanent death benefit to keep pace with increasing capital gains taxes.",
+        "Premium offset uses dividends to pay the base premium — it does not increase the death benefit to address a growing tax liability.",
+        null,
+        "Accumulation leaves dividends on deposit earning interest, but does not add permanent insurance coverage to match the growing capital gains tax liability."
+      ],
+      "explanation": "The PUA (paid-up additions) dividend option uses each dividend to purchase an additional piece of paid-up whole life insurance, permanently increasing the total death benefit. As the cottage continues to appreciate and the capital gains tax liability grows, the growing PUA coverage helps offset the increasing tax burden — directly addressing Sandra's concern.",
+      "difficulty": "medium",
+      "tags": [
+        "pua",
+        "dividends",
+        "capital-gains",
+        "estate-planning",
+        "participating"
+      ]
+    },
+    {
+      "id": 23,
+      "question": "Your client purchased a whole life policy 30 years ago. He is now in his early 90's and wonders for how much longer he is required to pay the premium.\nWhat should you tell him?",
+      "options": [
+        "A. He is required to pay the premium until he dies, until surrenders the policy, or until he reaches age 100. If he lives to be age 100, then the policy would automatically end and he would no longer have coverage.",
+        "B. He is required to pay the premium until he surrenders the policy or until he dies.",
+        "C. Whole life policies typically endow at age 90. Now that he is 90, he is not required to make any more premium payments and he would still retain his coverage.",
+        "D. He is required to pay the premium until he dies, until the policy is surrendered, or until he reaches age 100, whichever comes first."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This is mostly correct but misleading — at age 100, the policy does not simply 'end with no coverage.' It endows, meaning the insured receives the face value as an endowment payment.",
+        "This omits the important age-100 endowment provision — premiums stop and the policy matures at age 100.",
+        "Whole life policies endow at age 100, not age 90.",
+        null
+      ],
+      "explanation": "Whole life policies endow at age 100 — meaning the cash value equals the face amount and the policy matures. The policyholder must pay premiums until death, policy surrender, or reaching age 100, whichever comes first. At age 100, the insured receives the face value as an endowment payment.",
+      "difficulty": "medium",
+      "tags": [
+        "whole-life",
+        "endowment",
+        "age-100",
+        "premium"
+      ]
+    },
+    {
+      "id": 24,
+      "question": "All else being equal, which of the following policies would be the most expensive?\nNote: A waiver of premium rider waives the premium if the policyholder is disabled. This feature is discussed in a different chapter.",
+      "options": [
+        "A. Participating whole life insurance with a waiver of premium",
+        "B. Non-participating whole life insurance",
+        "C. Participating whole life insurance",
+        "D. Non-participating whole life insurance with a convertible feature"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Non-participating WL is less expensive than participating WL and has no additional rider.",
+        "Participating WL is more expensive than non-participating WL, but adding a waiver of premium rider makes option A even more expensive.",
+        "A convertible feature adds a small cost, but non-participating WL + convertible is still less expensive than participating WL + waiver of premium."
+      ],
+      "explanation": "Participating whole life already carries a higher premium than non-participating (due to conservative pricing for potential dividend distribution). Adding a waiver of premium rider — which waives premiums if the policyholder becomes disabled — adds further cost, making it the most expensive of the four options.",
+      "difficulty": "medium",
+      "tags": [
+        "participating",
+        "non-participating",
+        "premium-comparison",
+        "riders"
+      ]
+    },
+    {
+      "id": 25,
+      "question": "All else being equal, which of the following policies would result in the highest annual premium?",
+      "options": [
+        "A. Non-participating whole life",
+        "B. Participating whole life insurance",
+        "C. T-100",
+        "D. Limited payment participating whole life insurance"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Non-participating WL is less expensive than participating WL annually.",
+        "Participating WL has a higher annual premium than non-participating WL and T-100, but limited-pay compresses all premiums into fewer years.",
+        "T-100 is the lowest-cost permanent insurance option with no cash value.",
+        null
+      ],
+      "explanation": "Limited payment participating whole life insurance has the highest annual premium because: (1) it is participating (higher base premium than non-participating), and (2) the payment period is compressed into fewer years — meaning you pay more per year to achieve the same total coverage over a shorter payment period.",
+      "difficulty": "medium",
+      "tags": [
+        "limited-pay",
+        "participating",
+        "premium-comparison",
+        "whole-life"
+      ]
+    },
+    {
+      "id": 26,
+      "question": "Harvey recently learned that he is terminally ill and most likely will die within the next two years. The prognosis has been confirmed by several doctors. Harvey has a $500,000 face value whole life policy that has a cash value of $200,000. The annual premium on the policy is $3,200.\nWhich of the following is an option available to Harvey?",
+      "options": [
+        "A. He can continue to pay the premiums, keep the policy in force, and upon his death, the beneficiary will receive exactly $500,000.",
+        "B. He can continue to pay the premiums, keep the policy in force, and upon his death, the beneficiary will receive exactly $700,000.",
+        "C. He can stop making premiums and allow the APL non-forfeiture option to take care of the premium. Upon his death, his beneficiaries will receive the face amount of coverage plus the cash value of approximately $700,000.",
+        "D. He can stop paying premiums and allow the APL non-forfeiture option to take care of the premium. Upon his death, his beneficiaries will receive the face amount of coverage of $500,000."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "The death benefit on a whole life policy is the face value ($500,000) — not the face value plus the cash value. Cash value is not paid in addition to the death benefit.",
+        "The death benefit is the face value only, not face value plus cash value. Adding them to get $700,000 is incorrect.",
+        "While using APL is an option, the net death benefit would be the face value LESS the accumulated APL loan — not exactly $500,000."
+      ],
+      "explanation": "Harvey can simply continue paying the $3,200 annual premium. Upon his death (expected within two years), the beneficiary receives the full $500,000 face value. The cash value is not paid in addition — it is already embedded in the death benefit calculation. Using APL would keep the policy in force but would reduce the net payout by the loan balance.",
+      "difficulty": "hard",
+      "tags": [
+        "whole-life",
+        "death-benefit",
+        "cash-value",
+        "apl",
+        "terminal-illness"
+      ]
+    },
+    {
+      "id": 27,
+      "question": "Bobby and Chrissy have a $500,000 whole life policy that currently has a $10,000 cash value. The annual premium on the policy is $3,600. They have no outstanding policy loans or overdue premiums. Bobby left Chrissy a \"Honey, please do\" list while he was away on a two-day business trip. He asked her to:\n\nCall the insurer and find out how much they would receive if they surrendered their life insurance policy.\n\nCall the dealership and find out how much it would cost to buy out their car lease.\n\nGet a quote on a planned expansion of their home.\n\nCall the real estate agent to find out how much the cottage they viewed is listed for.\n\nChrissy completed the entire list and wrote the four numbers down on the same piece of paper. She is now having trouble remembering which number pertains to which. Of the four numbers, which is most likely to be the amount they would receive if surrendering the policy?",
+      "options": [
+        "A. $9,700",
+        "B. $10,500",
+        "C. $498,000",
+        "D. $508,000"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "$10,500 exceeds the stated cash value of $10,000; the surrender value is typically slightly less than, not more than, the cash value due to surrender charges.",
+        "$498,000 and $508,000 are far too large to be a life insurance surrender value — these are more consistent with a cottage listing price or home renovation quote.",
+        "$508,000 is far too large to be a life insurance surrender value."
+      ],
+      "explanation": "The cash surrender value (CSV) is typically slightly less than the gross cash value due to surrender charges. With a $10,000 cash value and no outstanding loans, the CSV of $9,700 is the most realistic surrender amount. The other numbers are far too large — they correspond more to the car lease buyout, home expansion quote, and cottage listing price.",
+      "difficulty": "easy",
+      "tags": [
+        "cash-surrender-value",
+        "whole-life",
+        "csv"
+      ]
+    },
+    {
+      "id": 28,
+      "question": "Which of the following best describes adjustable whole life insurance?",
+      "options": [
+        "A. The premium and coverage are guaranteed only for a certain number of years. After the guaranteed period, the insurer reserves the right to decrease the premium but not increase it, based on actual experience.",
+        "B. The premium and coverage are guaranteed only for a certain number of years. After the guaranteed period, the insurer can increase the coverage without evidence of insurability.",
+        "C. The premium and coverage are guaranteed only for a certain number of years. After the guaranteed period, the insurer reserves the right to adjust the premium.",
+        "D. The premium and coverage are guaranteed only for a certain number of years. After the guaranteed period, the insurer reserves the right to increase the premium but not decrease it, based on actual experience."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "The insurer can adjust the premium in either direction (up or down), not only decrease it.",
+        "Adjustable whole life refers to premium adjustments by the insurer, not the insurer unilaterally increasing coverage without evidence.",
+        null,
+        "The insurer can adjust the premium both upward and downward based on actual experience — not only upward."
+      ],
+      "explanation": "Adjustable whole life insurance guarantees the premium and coverage for an initial period. After that period, the insurer reserves the right to adjust (increase or decrease) the premium based on actual mortality experience, investment returns, and expenses. This is different from non-participating and participating whole life, which have fully guaranteed premiums.",
+      "difficulty": "medium",
+      "tags": [
+        "adjustable-whole-life",
+        "premium-adjustment",
+        "guaranteed-period"
+      ]
+    },
+    {
+      "id": 29,
+      "question": "Alex purchased a participating whole life policy and selected the PUA dividend option. The policy was purchased to cover capital gains tax on his cottage upon his death. Alex is counting on the increased coverage to offset the fact that the value of the cottage, and in turn, the tax liability, is likely to increase. Alex's agent advised him that participating policies are more expensive than non-participating policies.\nWhy is this?",
+      "options": [
+        "A. They offer higher death benefits.",
+        "B. The insurer charges a higher premium to cover the possibility of poor performance and potential dividends.",
+        "C. They have higher administrative costs.",
+        "D. They include more riders."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Participating policies do not inherently offer higher death benefits than non-participating policies.",
+        null,
+        "Higher administrative costs are not the main reason for the higher premium.",
+        "Riders are optional and not the reason participating policies cost more."
+      ],
+      "explanation": "Participating policies are more expensive because the insurer charges a higher premium using conservative assumptions. This helps cover the possibility of poorer-than-expected performance while also allowing for potential dividends if experience is favourable.",
+      "difficulty": "medium",
+      "tags": [
+        "participating",
+        "premium",
+        "dividends",
+        "conservative-pricing"
+      ]
+    }
+  ]
+}

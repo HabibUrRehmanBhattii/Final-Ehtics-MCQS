@@ -1,0 +1,255 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 03 QZ - Whole Life and Term-100 Insurance - Section 1",
+  "examTips": "Focus on whole life policy features (guaranteed premium, CSV, non-forfeiture options), T-100 characteristics, participating vs non-participating policies, dividend options, and premium payment structures.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Michael is 35 years old. He applied for $100,000 in whole life insurance. The insurer crunched the numbers and quoted him a premium of $162 per month. Michael will have to pay the premium every month, and it will never increase.\nOn a whole life policy, what is the primary purpose of the policy reserve?",
+      "options": [
+        "A. To provide for the payment of future death claims.",
+        "B. To pay for the insurer's administrative expenses.",
+        "C. To provide a source of policy dividends.",
+        "D. To fund the cash surrender value of the policy."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "The reserve is not primarily intended to pay the insurer's administrative expenses.",
+        "Policy dividends may come from surplus on participating policies, but that is not the primary purpose of the reserve.",
+        "Cash surrender value is supported by the reserve, but the reserve's primary purpose is to ensure future death claims can be paid."
+      ],
+      "explanation": "The policy reserve is funds set aside by the insurer to ensure it can pay the death benefit at any future point. Because premiums are level while actual mortality costs rise with age, the reserve builds up in early years to cover shortfalls in later years.",
+      "difficulty": "medium",
+      "tags": [
+        "whole-life",
+        "policy-reserve",
+        "premium"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Caleb is 50 and did not even consider insurance until he had a son, named Turner, a few years ago. Caleb has lived a very exciting life as the lead singer in a mildly successful band. While Caleb makes a decent living, it is unlikely that he will ever strike it rich. His lifestyle has caused him to gain weight, which has contributed to high blood pressure and type 2 diabetes.\nWhile he was still able to obtain life insurance, the policy was \"rated\", which resulted in a higher-than-usual premium. Caleb inquires if there is anything he can do today to ensure Turner can have some form of coverage in early adulthood regardless of his (Turner's) health.\nWhich of the following strategies would be appropriate?",
+      "options": [
+        "A. Caleb cannot purchase life insurance in Turner's name because his son has not reached the age of majority.",
+        "B. Caleb can provide the insurer with evidence of insurability for Turner today. This will lock in Turner's right to purchase life insurance throughout his life without providing evidence of insurability.",
+        "C. Caleb could purchase a whole life insurance policy with himself as the life-insured and policyholder. When Turner is older, Caleb can change the life-insured to Turner.",
+        "D. Caleb could purchase a life insurance policy with Turner as the life-insured. When his son is older, Caleb can absolutely assign (transfer) the policy to him."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "A parent can purchase life insurance on a minor child; the age of majority is not a barrier.",
+        "Evidence of insurability for the insured today does not lock in future insurability for a different person (Turner).",
+        "The life-insured cannot simply be changed to a different person on an existing policy.",
+        null
+      ],
+      "explanation": "A parent can purchase a life insurance policy on a minor child's life. When Turner is older, Caleb can absolutely assign (transfer) ownership of the policy to Turner, giving him permanent coverage regardless of his future health.",
+      "difficulty": "medium",
+      "tags": [
+        "whole-life",
+        "minor-insured",
+        "assignment",
+        "insurability"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Harvey has a $500,000 whole life policy with over $90,000 in cash value. The annual premium of $6,000 is significantly more than what a 10-year term policy would cost at his age. Harvey has just been told by his doctor that he has cancer, and his life expectancy is less than two years. He has had second and third opinions that confirm the prognosis. Harvey is confident that he will be dead within a few years. He would like to eliminate the premium entirely but also ensure that the beneficiaries receive exactly $500,000.\nWhich of the following options, if any, would allow for this?",
+      "options": [
+        "A. There is no way to eliminate the premium without reducing the eventual death benefit.",
+        "B. The reduced paid-up insurance non-forfeiture option",
+        "C. The extended term insurance non-forfeiture option",
+        "D. The automatic premium loan (APL) feature"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "The extended term insurance option does eliminate premiums while keeping the full face amount intact.",
+        "Reduced paid-up insurance eliminates premiums but reduces the death benefit to a lesser permanent amount.",
+        null,
+        "The APL keeps the policy in force but creates a growing loan that reduces the net death benefit below $500,000."
+      ],
+      "explanation": "Extended term insurance uses the CSV ($90,000+) to purchase term insurance for the exact same face value ($500,000) for a specified period. Since Harvey expects to die within two years, this option eliminates the premium while ensuring the beneficiary receives exactly $500,000.",
+      "difficulty": "hard",
+      "tags": [
+        "non-forfeiture",
+        "extended-term",
+        "whole-life",
+        "terminal-illness"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Grace purchased a participating whole life insurance policy over 20 years ago. Each time a policy dividend was paid, it was used to buy an additional piece of paid-up insurance. Her agent has advised her that if she would like to stop paying premiums, she can surrender part of those paid-up additions (PUAs) and use the CSV along with any additional dividends to cover the entire premium. While there are no guarantees, it looks as though Grace can do this indefinitely.\nWhat is this process referred to as?",
+      "options": [
+        "A. Reduced paid-up insurance",
+        "B. Paid-up additions (PUAs) dividend option",
+        "C. Premium offset",
+        "D. Limited payment whole life insurance"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Reduced paid-up insurance is a non-forfeiture option that permanently reduces the face amount; it is not a premium-offset strategy.",
+        "The PUA dividend option is how the dividends were accumulated — it is not the same as using accumulated PUAs to cover future premiums.",
+        null,
+        "Limited payment whole life has a set number of payment years decided at purchase, not a strategy using accumulated PUAs."
+      ],
+      "explanation": "Premium offset is the process of using accumulated PUA cash values and ongoing dividends to fund the base policy premiums, effectively allowing the policyholder to stop paying premiums out-of-pocket while the policy remains in force.",
+      "difficulty": "medium",
+      "tags": [
+        "participating",
+        "pua",
+        "premium-offset",
+        "dividends"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Kimberly purchased a T-100 policy a few months ago. She is confused about future premiums associated with the policy. What should you tell her about most T-100 policies?",
+      "options": [
+        "A. They apply a level premium approach throughout the life of the policy.",
+        "B. The premium will increase each policy year.",
+        "C. The premium is guaranteed to remain level for a certain number of years, after which the premium can be adjusted upwards but not downwards.",
+        "D. The premium will remain level for a certain number of years and then will be increased or decreased depending on what transpires with mortality costs, investment returns, and mortality rates."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "T-100 is not a yearly renewable term policy; the premium does not increase annually.",
+        "This describes an adjustable T-100 variant, not most standard T-100 policies.",
+        "While adjustable versions exist, most T-100 policies carry a fully level and guaranteed premium."
+      ],
+      "explanation": "Most T-100 (Term-to-100) policies feature a level premium that remains constant for the entire life of the policy. The policyholder pays the same amount each year until death or age 100.",
+      "difficulty": "easy",
+      "tags": [
+        "term-100",
+        "level-premium",
+        "permanent-insurance"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Whole life insurance is more expensive than term insurance. Which of the following things are guaranteed on a whole life policy?",
+      "options": [
+        "A. The death benefit.",
+        "B. The cash value.",
+        "C. The premium.",
+        "D. All of the above."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "The death benefit is guaranteed, but it is not the only guaranteed feature.",
+        "The cash value is also guaranteed on a whole life policy, but it is not the only guaranteed feature.",
+        "The premium is also guaranteed on a whole life policy, but it is not the only guaranteed feature.",
+        null
+      ],
+      "explanation": "On a guaranteed whole life policy, the premium, the death benefit (face value), and the minimum cash value accumulation schedule are all guaranteed for the life of the policy — making it more expensive than term but providing certainty.",
+      "difficulty": "easy",
+      "tags": [
+        "whole-life",
+        "guarantees",
+        "cash-value",
+        "death-benefit"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Carlos is looking to purchase a permanent insurance policy and would like the plan with the lowest annual premium.\nWhich policy would best suit his needs?",
+      "options": [
+        "A. Non-participating whole life policy",
+        "B. Universal life",
+        "C. Participating whole life policy",
+        "D. Term-100"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Non-participating whole life is less expensive than participating WL, but still more expensive than T-100.",
+        "Universal life premiums depend on the deposit chosen, but for basic permanent coverage, T-100 is typically cheaper.",
+        "Participating whole life is the most expensive due to built-in conservative pricing for dividend potential.",
+        null
+      ],
+      "explanation": "Term-100 (T-100) is a permanent insurance plan with no cash value, which makes it the lowest-cost permanent coverage option. Because there is no savings component, the premium is lower than whole life or universal life.",
+      "difficulty": "easy",
+      "tags": [
+        "term-100",
+        "permanent-insurance",
+        "premium-comparison"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Olivia purchased a participating policy last year. She has yet to receive a policy dividend. She is unsure of what circumstances would likely result in a dividend being paid.\nWhich of the following would most likely contribute to a policy dividend?",
+      "options": [
+        "A. Lower than expected mortality rates.",
+        "B. Higher than expected investment returns.",
+        "C. Lower than expected administrative expenses.",
+        "D. All of the above."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Lower mortality than expected can contribute to a surplus.",
+        "Higher investment returns can contribute to a surplus.",
+        "Lower expenses can contribute to a surplus.",
+        null
+      ],
+      "explanation": "Policy dividends on a participating policy arise when actual experience is better than the conservative assumptions used to price the policy — specifically, higher investment returns, lower mortality costs, and/or lower expenses than assumed all contribute to a surplus that is returned to policyholders as dividends.",
+      "difficulty": "medium",
+      "tags": [
+        "participating",
+        "dividends",
+        "surplus",
+        "investment-returns"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Curtis has a $500,000 whole life policy with over $90,000 in cash value. His daughter, Chloe, is the named beneficiary. The monthly premium is $600. Curtis was travelling through Africa for a period of six months. During that time, his bank account went into overdraft, causing $3,600 in premium payments to be returned non-sufficient funds to the insurer. Tragically, Curtis was killed when he was trampled by a herd of elephants.\nHow much can his daughter expect to receive from the life insurance policy?",
+      "options": [
+        "A. The policy would have lapsed after the 30-day grace period for missed premiums. A cheque would have been sent to Curtis for the cash surrender value. This payout will form part of the estate and will be distributed in accordance with his will.",
+        "B. $500,000 less any balance owing under an APL.",
+        "C. Nothing; the policy would have lapsed after a grace period (usually 30 days).",
+        "D. $500,000 less any balance owing under an APL."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "With $90,000+ in CSV, the APL non-forfeiture option would have automatically taken over — the policy would not have lapsed, and no CSV cheque would have been sent.",
+        null,
+        "The policy would not have lapsed because the APL feature automatically uses the CSV to pay overdue premiums when the CSV is sufficient.",
+        "While the net death benefit calculation is the same, option B is the primary correct answer here. The APL is automatically triggered before lapse occurs."
+      ],
+      "explanation": "With over $90,000 in cash value and only $3,600 in missed premiums, the automatic premium loan (APL) non-forfeiture feature would have kicked in to keep the policy in force. Upon Curtis's death, Chloe receives $500,000 less the APL loan balance (the $3,600 in advanced premiums plus interest).",
+      "difficulty": "hard",
+      "tags": [
+        "apl",
+        "non-forfeiture",
+        "cash-value",
+        "whole-life"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "After discussing the various dividend options available on a participating policy, Gabriel is leaning towards the PUA dividend option. Why is it a good idea for the agent to show her more than one dividend projection?",
+      "options": [
+        "A. To illustrate the impact of different dividend scales.",
+        "B. To comply with provincial regulations.",
+        "C. To show the flexibility of the policy.",
+        "D. To demonstrate the impact of policy loans."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "The purpose is not simply to satisfy a provincial regulation requirement.",
+        "The core reason is to compare how different dividend scales affect outcomes, not merely to show general flexibility.",
+        "Policy loans are separate from dividend scale illustrations."
+      ],
+      "explanation": "Policy dividends are not guaranteed — they depend on the insurer's actual investment returns, mortality experience, and expenses. Showing multiple projections (e.g., at current scale, lower scale, and higher scale) helps the client understand that actual results may vary and avoids overreliance on a single optimistic illustration.",
+      "difficulty": "medium",
+      "tags": [
+        "participating",
+        "dividends",
+        "pua",
+        "projections"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 02 QZ - Term Life Insurance - Section 3",
+  "examTips": "Focus on term vs permanent needs, convertibility, renewability, and joint-life structures (first-to-die vs last-to-die).",
+  "questions": [
+    {
+      "id": 21,
+      "question": "Graham bought a life insurance policy with a $1,000,000 face amount (coverage amount). When he bought the policy, he named his best friend, Walter, as irrevocable beneficiary on the policy. Graham died a few years later.\nHow much will Walter receive?",
+      "options": [
+        "A. Providing the premiums are totally up to date and the policy is in force, he will definitely receive the face amount of coverage.",
+        "B. Regardless of the type of policy, the death benefit is always equal to the face value unless the insurer is contesting the claim.",
+        "C. The amount will depend on the type of policy.",
+        "D. He will definitely receive $1,000,000."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Policy mechanics (e.g., loans, additions) can affect payout amount.",
+        "Death benefit can differ from face amount depending on product design/adjustments.",
+        null,
+        "Absolute statement is not always accurate."
+      ],
+      "explanation": "Actual proceeds can vary by policy type and policy values/adjustments.",
+      "difficulty": "medium",
+      "tags": [
+        "death-benefit",
+        "beneficiary"
+      ]
+    },
+    {
+      "id": 22,
+      "question": "Christina and Arlena are the older sisters and caretakers of Paul, who suffers from a severe disability and is unable to take care of himself on a day-to-day basis. In order to ensure that Paul would be taken care of if Christina and Arlena died, Christina bought a joint-last-to-die life insurance policy on her and Arlena's life and named Paul as an irrevocable beneficiary. Arlena was also named as contingent beneficiary.\nIn this situation, who would the policyholder(s) be?",
+      "options": [
+        "A. Christina",
+        "B. Arlena",
+        "C. Paul",
+        "D. Christina and Arlena"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Arlena is life-insured but not identified as owner here.",
+        "Beneficiary is not policy owner by default.",
+        "Facts state Christina bought/owns the policy."
+      ],
+      "explanation": "The owner is the person who applies for and controls the policy contract.",
+      "difficulty": "easy",
+      "tags": [
+        "policy-owner",
+        "joint-life"
+      ]
+    },
+    {
+      "id": 23,
+      "question": "What is the correct term for a marketing initiative wherein two separate policies are sold under the same contract?",
+      "options": [
+        "A. A joint life insurance policy",
+        "B. A joint last-to-die policy",
+        "C. A joint first-to-die policy",
+        "D. Combined insurance"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Joint policies are a different structure from separate combined contracts.",
+        "This is a type of joint coverage, not two separate policies under one contract.",
+        "This is a type of joint coverage, not two separate policies under one contract.",
+        null
+      ],
+      "explanation": "Combined insurance packages separate coverages under one administrative contract.",
+      "difficulty": "easy",
+      "tags": [
+        "combined-insurance",
+        "product-structure"
+      ]
+    },
+    {
+      "id": 24,
+      "question": "When Grey was 10 years old, he had a mole on the back of his neck. Upon the doctor's advice, the mole was removed and found to be cancerous. Fortunately, the cancer had not spread, the surgery was quick and easy, and Grey was given a clean bill of health. In fact, his parents never mentioned the cancer again.\nThirty years later when applying for life insurance, Grey forgot to answer \"yes\" to the question \"Have you ever had cancer?\" The policy was delivered on June 1, 2024. A few months later, Grey was inquiring about disability insurance and at that point advised the agent that he had forgotten to mention the cancerous mole when he applied for the life insurance policy.\nCan the life insurance policy be voided by the insurer?",
+      "options": [
+        "A. The information omitted would not be considered material, and therefore the policy cannot be amended in any way by the insurer.",
+        "B. It is within the contestability period, so the insurer can void the policy due to material misrepresentation.",
+        "C. The insurer can void the policy if they can prove the material misrepresentation was fraudulent.",
+        "D. The insurance company cannot amend the policy but would have a right to deny a claim if Grey dies from a cancer-related death."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Cancer history is generally material to underwriting.",
+        null,
+        "During early contestability, fraud proof is not always required for material misrepresentation.",
+        "Within contestability window, insurer may rescind for material misrepresentation."
+      ],
+      "explanation": "Within the contestability period, material misrepresentation can justify rescission.",
+      "difficulty": "hard",
+      "tags": [
+        "contestability",
+        "material-misrepresentation"
+      ]
+    },
+    {
+      "id": 25,
+      "question": "Mark and Stan are common-law partners. They own a home that has a $500,000 mortgage registered against it. They are comfortable making the mortgage payments today but would want the mortgage paid in full if either one of them were to die. Mark is not a big fan of insurance but is willing to accept your recommendation in order to protect Stan. That being said, he would like to keep the premium to a minimum.\nWhich of the following types of policies would best suit Mark's needs?",
+      "options": [
+        "A. Joint last-to-die level term insurance",
+        "B. Joint last-to-die decreasing term insurance",
+        "C. Joint first-to-die term insurance",
+        "D. Joint first-to-die decreasing term insurance"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Last-to-die does not address first-death mortgage risk.",
+        "Last-to-die still mismatches trigger event.",
+        "First-to-die helps, but level may cost more than needed for declining mortgage.",
+        null
+      ],
+      "explanation": "For a declining mortgage payable at first death, joint first-to-die decreasing term is usually most cost-efficient.",
+      "difficulty": "medium",
+      "tags": [
+        "mortgage",
+        "joint-first-to-die",
+        "decreasing-term"
+      ]
+    },
+    {
+      "id": 26,
+      "question": "Amanda and Kasey were recently married. They purchased their first home and financed it with a $400,000 mortgage. They wanted to ensure that upon one of their deaths, the mortgage would be paid in full. Their agent suggested that they purchase a decreasing term insurance policy in which the coverage would decline in a similar fashion to their mortgage balance.\nWhy would this be a cost effective solution?",
+      "options": [
+        "A. The premium will decrease each month as the coverage declines.",
+        "B. Although the premium will remain level, the decreasing coverage would have been factored into the premium when it was established.",
+        "C. Decreasing term insurance is actually not cost effective given that the client essentially receives less coverage per dollar of premium.",
+        "D. The premium will decrease annually in conjunction with the declining coverage."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Typical decreasing term premiums are usually level within term.",
+        null,
+        "It is often cost-effective for declining liabilities.",
+        "Premium generally does not mechanically decrease each year within the term."
+      ],
+      "explanation": "Insurers price expected declining risk into a level premium schedule for the term.",
+      "difficulty": "easy",
+      "tags": [
+        "decreasing-term",
+        "premium-structure"
+      ]
+    },
+    {
+      "id": 27,
+      "question": "Danny has two $100,000 convertible term insurance policies that he bought 10 years ago. They are identical to each other with the exception of the type of convertible option. In total, he currently has $200,000 in coverage. Danny's insurance needs have changed, resulting in his needing less coverage but coverage that is permanent.\nDanny was recently diagnosed with a controllable form of diabetes. He would like to surrender one of the policies and convert the remaining policy to a permanent plan. He has very little in the way of assets, but his current income is sufficient to cover the premium on the converted policy.\nWhich policy should he convert?",
+      "options": [
+        "A. Whichever policy will allow him to convert without evidence of insurability",
+        "B. The policy that offers retroactive conversion",
+        "C. The policy that offers original-age conversion",
+        "D. The policy that offers attained-age conversion"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "All convertible policies generally allow no-evidence conversion; this does not distinguish best fit.",
+        "Retroactive/original-age may require substantial catch-up cost.",
+        "Original-age often implies costly back-premium approach.",
+        null
+      ],
+      "explanation": "Given limited assets, attained-age conversion avoids large upfront catch-up costs while preserving conversion.",
+      "difficulty": "hard",
+      "tags": [
+        "conversion",
+        "attained-age",
+        "affordability"
+      ]
+    },
+    {
+      "id": 28,
+      "question": "Which of the following individuals has a permanent insurance need?",
+      "options": [
+        "A. Henry, who purchased a brand-new Porsche and financed it over 10 years; he would like the loan paid in full in the event of his death.",
+        "B. Burt, who is saving for his daughter's university education but worries about what would happen if he dies before reaching his goal.",
+        "C. Bobby and Janice, who would want their mortgage paid in full in the event that one of them is to die before it is paid off.",
+        "D. Danny, who wants sufficient insurance to pay for his funeral so as to not burden his loved ones."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Car loan is temporary debt.",
+        "Education funding goal is typically temporary.",
+        "Mortgage is usually temporary/declining.",
+        null
+      ],
+      "explanation": "Funeral costs are a certain end-of-life expense and commonly treated as a permanent need.",
+      "difficulty": "easy",
+      "tags": [
+        "permanent-need",
+        "funeral"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 03 QZ - Whole Life and Term-100 Insurance - Section 2",
+  "examTips": "Focus on whole life policy features (guaranteed premium, CSV, non-forfeiture options), T-100 characteristics, participating vs non-participating policies, dividend options, and premium payment structures.",
+  "questions": [
+    {
+      "id": 11,
+      "question": "Julius owns a cottage. Upon his death, he would like to bequeath the cottage to his children. Julius is inquiring about life insurance policies that would provide the required funds to address the tax liability on the cottage. While he estimates that the tax liability will be approximately $300,000, he acknowledges that the property has already appreciated more than what he had originally estimated.\nJulius also has a $200,000 mortgage with a 15-year amortization registered against the cottage and he would also like that to be paid in full upon his death. Julius has come to you for advice and would like to address his insurance needs in the most cost efficient manner.\nWhich one of the following policies would you recommend?",
+      "options": [
+        "A. $300,000 term-to-100 policy and a $200,000 20-year term insurance rider.",
+        "B. $500,000 Term-100 policy.",
+        "C. $300,000 universal life insurance policy with level death benefit and a 10-year decreasing term insurance policy.",
+        "D. $300,000 whole life participating policy with a PUA dividend option, and a $200,000 Term 10 removable rider."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "T-100 does not grow, so it cannot keep pace with the increasing capital gains tax liability as the cottage continues to appreciate.",
+        "A single $500,000 T-100 overfunds the permanent need (capital gains) and inefficiently insures the temporary mortgage need as permanent coverage.",
+        "Universal life is more expensive than whole life participating for this purpose, and the 10-year decreasing term does not cover the full 15-year mortgage amortization.",
+        null
+      ],
+      "explanation": "The capital gains tax liability is a permanent and growing need (as the cottage appreciates). A participating whole life policy with the PUA dividend option grows the coverage over time to keep pace. The mortgage is a temporary, decreasing need — addressed cost-efficiently by a removable Term 10 rider that can be dropped once the mortgage is repaid.",
+      "difficulty": "hard",
+      "tags": [
+        "estate-planning",
+        "capital-gains",
+        "whole-life",
+        "pua",
+        "term-rider"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Amanda purchased a $1,000,000 participating whole life policy 14 months ago at the age of 30. The policy performed very well, resulting in a modest policy dividend after the first year. Amanda recently passed away. Which dividend option would have most likely resulted in the largest death benefit?",
+      "options": [
+        "A. Investment in a segregated fund",
+        "B. One-year term addition dividend option",
+        "C. Accumulation dividend option",
+        "D. Paid-up addition (PUA) dividend option"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Investing the dividend in a segregated fund is not a standard participating policy dividend option.",
+        null,
+        "Accumulation leaves the dividend on deposit with the insurer earning interest — it does not purchase additional life insurance coverage.",
+        "PUAs purchase paid-up whole life insurance, which provides less face amount per dividend dollar than one-year term."
+      ],
+      "explanation": "The one-year term addition dividend option uses the dividend to purchase a one-year term insurance rider, which provides a significantly higher face amount per dollar than purchasing paid-up whole life (PUA). Since Amanda died only 14 months after purchase, with only one year's dividend, the one-year term addition would have added the most coverage at that point in time.",
+      "difficulty": "hard",
+      "tags": [
+        "participating",
+        "dividends",
+        "one-year-term",
+        "pua",
+        "death-benefit"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Larry suffered a severe back injury that required surgery. He had to take a leave of absence from work in order to properly recover. He is likely to earn very little income while he is recovering. As a result, he does not want to concern himself with paying insurance premiums. He wants a solution that can be \"undone\" (reversed) when he is back to work earning his full income.\nWhich of the non-forfeiture options would you recommend?",
+      "options": [
+        "A. Surrender the policy and receive the CSV",
+        "B. APL",
+        "C. Extended term insurance",
+        "D. Reduced paid-up insurance"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Surrendering the policy permanently terminates coverage — it cannot be undone.",
+        null,
+        "Extended term insurance converts the policy to a paid-up term plan — while it can sometimes be reinstated, it is not easily reversible.",
+        "Reduced paid-up insurance permanently reduces the face amount — it is not easily reversible."
+      ],
+      "explanation": "The APL (automatic premium loan) is the most reversible non-forfeiture option. The insurer lends Larry the premium amount secured against the policy CSV. When he returns to work, he can repay the loan with interest and the policy returns to its original state — making it the ideal temporary solution.",
+      "difficulty": "medium",
+      "tags": [
+        "non-forfeiture",
+        "apl",
+        "reversible",
+        "whole-life"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Michael owns a whole life policy. When he bought the policy, he was told about the non-forfeiture options.\nWhich of the following is not a non-forfeiture option?",
+      "options": [
+        "A. Reduced paid-up insurance",
+        "B. Extended term insurance",
+        "C. Cash surrender value",
+        "D. Policy loan"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Reduced paid-up insurance is a standard non-forfeiture option.",
+        "Extended term insurance is a standard non-forfeiture option.",
+        "Cash surrender value is a standard non-forfeiture option.",
+        null
+      ],
+      "explanation": "Non-forfeiture options include reduced paid-up insurance, extended term insurance, and cash surrender value. A policy loan is not a non-forfeiture option.",
+      "difficulty": "medium",
+      "tags": [
+        "non-forfeiture",
+        "dividend-options",
+        "whole-life"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which of the following statements is false about whole life insurance?",
+      "options": [
+        "A. Whole life can be renewable and convertible.",
+        "B. Whole life offers non-forfeiture options.",
+        "C. Once whole life is issued, coverage is available for life regardless of age.",
+        "D. Whole life can be participating or non-participating."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Whole life policies do offer non-forfeiture options (APL, extended term, reduced paid-up, and surrender for CSV).",
+        "Whole life coverage continues for the life of the insured (to age 100 when it endows).",
+        "Whole life can indeed be structured as either participating or non-participating."
+      ],
+      "explanation": "Renewable and convertible features apply to term insurance, not whole life. Whole life is already a permanent policy, so there is nothing to renew or convert — making statement A false.",
+      "difficulty": "easy",
+      "tags": [
+        "whole-life",
+        "term-vs-whole",
+        "features"
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Amanda is purchasing a whole life policy. Her agent has discussed the various premium payment options. Assuming she lives until age 100, which of the following would result in the lowest total premiums paid?",
+      "options": [
+        "A. Single premium",
+        "B. 10-pay life",
+        "C. 20-pay life",
+        "D. Life-pay (continuous premiums)"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "20-pay whole life requires 20 years of higher annual premiums, which totals more than a single premium in nominal terms.",
+        "10-pay whole life compresses payments into 10 years at an even higher annual amount, totalling more than a single premium.",
+        "Paying annually until age 100 results in many decades of payments that in nominal total exceed the single lump-sum premium."
+      ],
+      "explanation": "A single premium whole life policy requires just one upfront payment. Because the insurer can invest the lump sum immediately, the total nominal dollars paid is lower than any periodic payment option (which collectively adds up to more over time). All other payment structures result in a higher aggregate amount paid over the policyholder's lifetime.",
+      "difficulty": "medium",
+      "tags": [
+        "whole-life",
+        "premium-payment-options",
+        "single-premium",
+        "limited-pay"
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Caleb and Mona have a 25-year-old son who is severely ill and needs constant care. His life expectancy is another 20 years. He currently requires long-term care, which costs them approximately $20,000 per year. They are able to cover the costs from their incomes but would not be able to do so in the event of one of their deaths.\nWhat would you recommend to address their concern?",
+      "options": [
+        "A. Purchase a critical illness policy with Robert as the insured.",
+        "B. Purchase life insurance on Robert's life.",
+        "C. Purchase joint first-to-die with Caleb and Mona as the lives-insured.",
+        "D. Purchase joint last-to-die with Caleb and Mona as the lives-insured."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "A critical illness policy on Robert addresses Robert's health events, not the loss of parental income to fund his care.",
+        "Insuring Robert's life would pay upon Robert's death — it does not address the income gap created by a parent's death.",
+        null,
+        "Joint last-to-die pays only after both parents have died — but the concern is that the care cannot be funded after the FIRST death."
+      ],
+      "explanation": "The concern is that if EITHER parent dies, the surviving parent cannot cover the $20,000/year care costs alone. A joint first-to-die life insurance policy pays a death benefit upon the first of the two lives-insured to die, providing funds to address the care cost shortfall immediately when it occurs.",
+      "difficulty": "medium",
+      "tags": [
+        "joint-first-to-die",
+        "income-replacement",
+        "care-costs"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Assuming an insurance company offers such a policy (which would probably not be the case), which of the following amounts do you think would be closest to the annual premium for a 99-year-old purchasing $100,000 of one-year term insurance?",
+      "options": [
+        "A. $1,000",
+        "B. $5,000",
+        "C. $10,000",
+        "D. $90,000"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "$1,000 is far too low for a 99-year-old because the probability of death is extremely high.",
+        "$5,000 still significantly underestimates the near-certain probability of death at age 99.",
+        "$10,000 remains far too low given the near-certainty of death within one year at age 99.",
+        null
+      ],
+      "explanation": "At age 99, the probability of dying within the next year is extremely high — approaching near-certainty. The insurer must collect almost the full face amount as a premium to be able to pay the expected death claim. A premium approaching $90,000 is therefore the closest realistic figure among the choices provided.",
+      "difficulty": "easy",
+      "tags": [
+        "mortality",
+        "term-insurance",
+        "premium",
+        "age"
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Harold is explaining to his client how the premium on a yearly renewable term insurance policy would compare to the premium on a permanent insurance plan. All else being equal, which explanation is most accurate?",
+      "options": [
+        "A. The premium on a yearly renewable term policy will increase yearly until it plateaus at a level that is similar to the permanent plan premium. The downside is that the yearly renewable term policy will be renewable only until a certain maximum age.",
+        "B. The premium on a yearly renewable term insurance policy would be lower than the premium on a permanent plan in the first year. The premium on the yearly renewable term policy would increase at each renewal period and would eventually be more than the premium on the permanent plan.",
+        "C. The premiums would be very similar in all policy years; however, the term insurance will be renewable only until a certain maximum age.",
+        "D. Permanent insurance is more expensive than yearly renewable term insurance, and therefore the premium is higher in all policy years."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The YRT premium does not plateau at the level of the permanent plan premium — it continues to increase and will eventually exceed it.",
+        null,
+        "The premiums are not similar in all years; YRT starts much lower and increases each year.",
+        "Permanent insurance is more expensive in the early years, but the YRT premium will eventually surpass it — permanent insurance is NOT more expensive in all policy years."
+      ],
+      "explanation": "A yearly renewable term (YRT) policy starts with a lower premium than a permanent plan because the annual mortality cost at a younger age is low. Each year the premium increases to reflect rising mortality costs, and at some point the YRT premium exceeds the permanent plan premium. Unlike permanent insurance, YRT is also only renewable to a certain maximum age.",
+      "difficulty": "medium",
+      "tags": [
+        "term-vs-permanent",
+        "yearly-renewable-term",
+        "premium-comparison"
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Adam owns a cottage that he would like to pass along to his only child upon his death. The cottage was originally purchased for $200,000 and is currently worth over $1 million. Upon Adam's death, capital gains taxes will be triggered. Adam would like a life insurance policy that would pay out a death benefit equal to the anticipated capital gains tax.\nAdam earns a very good income and therefore is not concerned about ever missing a premium or letting the policy lapse. He does, however, loathe the thought of spending money on insurance. He therefore wants the lowest-cost solution that will also meet his needs.\nWhich of the following policies would you recommend?",
+      "options": [
+        "A. Whole life insurance",
+        "B. Renewable 10-year term insurance",
+        "C. Term-to-100",
+        "D. Universal life insurance"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Whole life insurance is permanent but more expensive than T-100 due to its cash value component.",
+        "Renewable term insurance is not permanent — the coverage may lapse or become too expensive later in life, and the capital gains tax liability is a permanent need.",
+        null,
+        "Universal life is permanent with investment flexibility but carries higher premiums than T-100 for basic coverage."
+      ],
+      "explanation": "Adam's need is permanent (capital gains tax is triggered upon his death, whenever that may be) and he wants the lowest cost. Term-to-100 is the lowest-cost permanent insurance option because it has no cash value component — ideal for someone who doesn't care about CSV and just wants affordable permanent coverage.",
+      "difficulty": "medium",
+      "tags": [
+        "term-100",
+        "capital-gains",
+        "permanent-insurance",
+        "cost"
+      ]
+    }
+  ]
+}

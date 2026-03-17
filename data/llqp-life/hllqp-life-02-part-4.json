@@ -1,0 +1,200 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 02 QZ - Term Life Insurance - Section 4",
+  "examTips": "Focus on term vs permanent needs, convertibility, renewability, and joint-life structures (first-to-die vs last-to-die).",
+  "questions": [
+    {
+      "id": 29,
+      "question": "Jordan is a single 52-year-old male. He was very close to his sister, who passed away last year. His niece continues to live with her father. Jordan has committed to saving $11,000 per year towards his niece's upcoming university education. Jordan earns an excellent income and is confident he can easily save the required funds. He does worry about what would happen if he dies before reaching his goal for his niece.\nWhat would you recommend to address Jordan's concerns?",
+      "options": [
+        "A. Buy a term insurance policy with himself as the life-insured.",
+        "B. Invest in a segregated fund (a type of investment offered by insurance companies) that guarantees 100% of the amount invested upon death.",
+        "C. Buy a whole life policy with himself as the life-insured.",
+        "D. Open a Registered Education Savings Plan (RESP) in lieu of purchasing any insurance."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Seg fund death guarantee may not fully replace planned future contributions immediately.",
+        "Whole life is often not necessary for this temporary objective.",
+        "RESP alone does not replace mortality protection for unfinished savings goal."
+      ],
+      "explanation": "A temporary education-funding risk is typically best addressed with term insurance.",
+      "difficulty": "medium",
+      "tags": [
+        "term-insurance",
+        "education",
+        "temporary-need"
+      ]
+    },
+    {
+      "id": 30,
+      "question": "Markus is an agent who places insurance with one of two insurance companies. Charlie bought a life insurance policy on his wife Margaret's life and named his only son, Michael, as the beneficiary. The policy was placed with Canada Life.\nIn this case, who is the insured?",
+      "options": [
+        "A. Charlie",
+        "B. Michael",
+        "C. Margaret",
+        "D. Canada Life"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Beneficiary is not the insured in this keyed answer set.",
+        "Margaret is the life-insured, but this question key defines insured as policy owner.",
+        "Insurer is the company, not insured party."
+      ],
+      "explanation": "Per the provided key terminology, insured refers to policy owner here, which is Charlie.",
+      "difficulty": "hard",
+      "tags": [
+        "definitions",
+        "policy-owner",
+        "life-insured"
+      ]
+    },
+    {
+      "id": 31,
+      "question": "Justine and Russell purchased their first home together five years ago. The purchase price was $400,000. They took out a mortgage loan in the amount of $400,000. The mortgage they selected has a 5-year term and a 20-year amortization period. They each have long-term group disability insurance through their employers which covers up to 60% of their incomes and would be sufficient to cover the mortgage payment should either of them become disabled. They would like to purchase a life insurance policy that would provide sufficient funds to pay out the mortgage if one of them were to die.\nWhich of the following life insurance policies would be most appropriate?",
+      "options": [
+        "A. Combined insurance involving a 20-year whole life insurance policy on Justine and a 20-year whole life insurance policy on Russell.",
+        "B. 20-year term insurance on a joint last-to-die basis",
+        "C. 10-year renewable term insurance on a joint first-to-die basis",
+        "D. 10-year renewable term insurance on a joint last-to-die basis"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Whole life is typically too costly for temporary mortgage need.",
+        "Last-to-die does not protect first-death mortgage risk.",
+        null,
+        "Last-to-die trigger is wrong for this objective."
+      ],
+      "explanation": "Joint first-to-die aligns with mortgage payoff need at first death; renewable term can bridge full amortization horizon.",
+      "difficulty": "medium",
+      "tags": [
+        "mortgage",
+        "joint-first-to-die",
+        "renewable-term"
+      ]
+    },
+    {
+      "id": 32,
+      "question": "Belinda and Walden are happily married. They are considering purchasing insurance for several different life insurance needs.\nWhich one of the following would be the best use of a joint-first-to-die T-100 life insurance policy?",
+      "options": [
+        "A. To leave an inheritance to the surviving spouse upon death.",
+        "B. To cover the tax liability on their RRSPs upon the second spouse's death.",
+        "C. To pay off their mortgage upon death.",
+        "D. To pay capital gains taxes on a cottage that they jointly own."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Second-death liabilities usually align better with last-to-die.",
+        "Mortgage is usually temporary and often term-based.",
+        "Capital gains in spousal context often aligns to second death."
+      ],
+      "explanation": "Joint first-to-die permanent insurance can provide immediate liquidity to surviving spouse at first death.",
+      "difficulty": "medium",
+      "tags": [
+        "joint-first-to-die",
+        "t100",
+        "inheritance"
+      ]
+    },
+    {
+      "id": 33,
+      "question": "Bobby and Marla met at age 50 and claim it was love at first sight. Both of them have had rewarding but challenging lives but have little in the way of assets. They are retired and are living modestly on their CPP and OAS pensions. They would like to purchase $25,000 in insurance on each of their lives to fund their funerals.\nWhat would you recommend to address their concern?",
+      "options": [
+        "A. A $25,000 joint first-to-die permanent insurance policy",
+        "B. A combined insurance policy that includes separate $25,000 permanent life insurance policies on each of their lives",
+        "C. A combined insurance policy that includes a joint first-to-die policy and a joint last-to-die policy",
+        "D. A $25,000 joint first-to-die temporary insurance policy"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "First-to-die pays once and leaves second funeral unfunded.",
+        null,
+        "Overly complex and mismatched for simple dual funeral objective.",
+        "Funeral funding is generally a permanent need."
+      ],
+      "explanation": "Two separate permanent coverages ensure each life has its own funeral benefit payout.",
+      "difficulty": "medium",
+      "tags": [
+        "funeral",
+        "combined-insurance",
+        "permanent"
+      ]
+    },
+    {
+      "id": 34,
+      "question": "Brad would like to purchase a life insurance policy that will provide a death benefit sufficient enough to cover the capital gains tax on a cottage upon death. His agent quoted him on the various permanent insurance plans, but the premium was too high for Brad's current income. He is considering purchasing a 10-year renewable and convertible term insurance policy. The policy is also available with a re-entry term.\nWhich of the following statements is true regarding the policy he is considering?",
+      "options": [
+        "A. The re-entry term will increase the premium from the start.",
+        "B. The convertible feature allows Brad the option of converting the policy to a permanent one during the policy term without providing evidence of insurability.",
+        "C. Most insurers will not allow a renewable policy to be renewed beyond a certain age.",
+        "D. Brad can renew the policy for an additional 10-year period without providing evidence of insurability. The premium will remain the same for the second term."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Re-entry commonly lowers initial premium assumptions for healthy renewers.",
+        null,
+        "This may be true generally, but not the key feature solving his stated objective in this question.",
+        "Renewal premium usually increases significantly."
+      ],
+      "explanation": "Convertibility is the core feature preserving access to permanent insurance without new medical evidence.",
+      "difficulty": "medium",
+      "tags": [
+        "convertibility",
+        "renewability",
+        "term-insurance"
+      ]
+    },
+    {
+      "id": 35,
+      "question": "Mark and Mindy own a large bungalow in the suburbs. They also own a cottage on the lake. The cottage is worth $250,000 and has a small mortgage of $75,000 registered against it. They would like the cottage to remain in the family for generations and do not want the property to be encumbered in any way upon the death of the first spouse. Mark and Mindy each have approximately $100,000 in RRSPs. Mindy has expressed her desire to leave the full amount of her RRSP to the church when she dies.\nFor which of the following needs would a joint first-to-die term policy be an appropriate solution?",
+      "options": [
+        "A. To pay out a mortgage at death",
+        "B. To pay taxes on the RRSP account at death",
+        "C. To create the funds for the charitable donation at death",
+        "D. To pay capital gains taxes on the cottage at death"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "RRSP tax need may be single-life or second-death specific depending planning context.",
+        "Charitable funding may be single-life specific depending donor intent.",
+        "Capital gains on jointly owned cottage often aligns with second-death planning."
+      ],
+      "explanation": "Joint first-to-die term is a standard fit for paying joint debts like mortgages at first death.",
+      "difficulty": "medium",
+      "tags": [
+        "joint-first-to-die",
+        "mortgage",
+        "term-insurance"
+      ]
+    },
+    {
+      "id": 36,
+      "question": "Marie purchased a five-year convertible term insurance policy at the age of 30. The policy is about to expire, so she has decided to exercise the convertible option. The policy will be converted to a whole life policy with the same amount of coverage. The premium on the converted policy will be based upon a 35-year-old female. Marie has some health concerns, so she was relieved to learn that she is allowed to convert without evidence of insurability.\nWhat type of conversion does her policy allow?",
+      "options": [
+        "A. Maturity conversion",
+        "B. Original-age conversion",
+        "C. Attained-age conversion",
+        "D. Retroactive conversion"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This is not the standard term used here.",
+        "Original-age would price from younger issue age with different cost implications.",
+        null,
+        "Retroactive/original-age concepts differ from attained-age pricing shown."
+      ],
+      "explanation": "Attained-age conversion prices the new permanent policy using the insured's current age at conversion.",
+      "difficulty": "easy",
+      "tags": [
+        "conversion",
+        "attained-age",
+        "whole-life"
+      ]
+    }
+  ]
+}

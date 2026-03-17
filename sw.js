@@ -1,5 +1,5 @@
 /* PWA Service Worker for LLQP & WFG Exam Prep */
-const CACHE_VERSION = 'v1.2.6';
+const CACHE_VERSION = 'v1.5.0';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const DATA_CACHE = `data-${CACHE_VERSION}`;
 
@@ -19,7 +19,19 @@ const CORE_ASSETS = [
   '/data/llqp-ethics/llqp-ethics-3.json',
   '/data/llqp-segregated/llqp-segregated-1.json',
   '/data/llqp-life/llqp-life-01.json',
+  '/data/llqp-life/llqp-life-01-part-1.json',
+  '/data/llqp-life/llqp-life-01-part-2.json',
   '/data/llqp-life/hllqp-life-02.json',
+  '/data/llqp-life/hllqp-life-02-part-1.json',
+  '/data/llqp-life/hllqp-life-02-part-2.json',
+  '/data/llqp-life/hllqp-life-02-part-3.json',
+  '/data/llqp-life/hllqp-life-02-part-4.json',
+  '/data/llqp-life/hllqp-life-03.json',
+  '/data/llqp-life/hllqp-life-03-part-1.json',
+  '/data/llqp-life/hllqp-life-03-part-2.json',
+  '/data/llqp-life/hllqp-life-03-part-3.json',
+  '/data/llqp-life/hllqp-life-03-part-4.json',
+  '/data/llqp-life/hllqp-life-03-part-5.json',
   '/data/insurance-legislation-ethics/insurance-legislation-ethics-1.json',
   '/data/flashcards/flashcards-1.json',
   '/data/flashcards/flashcards-2.json',
