@@ -1974,10 +1974,54 @@ const MCQApp = {
   normalizeAIResponse(data, isCorrect) {
     if (!data || typeof data !== 'object') return {};
 
+    const parseEmbeddedJson = (value) => {
+      if (typeof value !== 'string') return null;
+      const trimmed = value.trim();
+      if (!trimmed.startsWith('{')) return null;
+      try {
+        const parsed = JSON.parse(trimmed);
+        return parsed && typeof parsed === 'object' ? parsed : null;
+      } catch {
+        // Try extracting quoted fields from partial/truncated JSON-like text
+        const pick = (key) => {
+          const re = new RegExp(`"${key}"\\s*:\\s*"([\\s\\S]*?)(?=",\\s*"|"\\s*}|$)`, 'i');
+          const m = trimmed.match(re);
+          return m ? m[1].replace(/\\n/g, '\n').replace(/\\"/g, '"').trim() : '';
+        };
+        const guessed = {
+          mainExplanation: pick('mainExplanation'),
+          whyCorrect: pick('whyCorrect'),
+          whyIncorrect: pick('whyIncorrect'),
+          keyConcept: pick('keyConcept'),
+          studyTip: pick('studyTip'),
+          relatedConcept: pick('relatedConcept'),
+        };
+        if (guessed.mainExplanation || guessed.whyCorrect || guessed.keyConcept) {
+          return guessed;
+        }
+        return null;
+      }
+    };
+
     const hasStructured = data.mainExplanation || data.whyCorrect || data.keyConcept || data.studyTip || data.relatedConcept || (!isCorrect && data.whyIncorrect);
-    if (hasStructured) return data;
+    if (hasStructured) {
+      const embedded = parseEmbeddedJson(data.mainExplanation);
+      if (embedded) {
+        return {
+          mainExplanation: embedded.mainExplanation || '',
+          whyCorrect: embedded.whyCorrect || data.whyCorrect || '',
+          whyIncorrect: embedded.whyIncorrect || data.whyIncorrect || '',
+          keyConcept: embedded.keyConcept || data.keyConcept || '',
+          studyTip: embedded.studyTip || data.studyTip || '',
+          relatedConcept: embedded.relatedConcept || data.relatedConcept || '',
+        };
+      }
+      return data;
+    }
 
     const fallbackText = data.explanation || data.response || data.text || '';
+    const embedded = parseEmbeddedJson(fallbackText);
+    if (embedded) return embedded;
     return this.extractAISections(fallbackText, isCorrect);
   },
 

@@ -106,23 +106,62 @@ Return JSON exactly in this shape:
 No markdown. No extra keys. No text before/after JSON.`;
         }
 
-        // Call Workers AI LLM with streaming response
-        const response = await env.AI.run('@cf/meta/llama-2-7b-chat-int8', {
-          messages: [
-            {
-              role: 'system',
-              content: systemPrompt,
+        const messages = [
+          {
+            role: 'system',
+            content: systemPrompt,
+          },
+          {
+            role: 'user',
+            content: userPrompt,
+          },
+        ];
+
+        const responseSchema = isFollowUp
+          ? {
+              type: 'object',
+              properties: {
+                followUpInsight: { type: 'string' },
+              },
+              required: ['followUpInsight'],
+            }
+          : {
+              type: 'object',
+              properties: {
+                mainExplanation: { type: 'string' },
+                whyCorrect: { type: 'string' },
+                whyIncorrect: { type: 'string' },
+                keyConcept: { type: 'string' },
+                studyTip: { type: 'string' },
+                relatedConcept: { type: 'string' },
+              },
+              required: ['mainExplanation', 'whyCorrect', 'keyConcept', 'studyTip', 'relatedConcept'],
+            };
+
+        // Primary model: supports JSON mode and is more reliable for structured output.
+        let response;
+        try {
+          response = await env.AI.run('@cf/meta/llama-3.1-8b-instruct-fast', {
+            messages,
+            response_format: {
+              type: 'json_schema',
+              json_schema: responseSchema,
             },
-            {
-              role: 'user',
-              content: userPrompt,
-            },
-          ],
-          temperature: 0.7,
-        });
+            max_tokens: isFollowUp ? 300 : 700,
+            temperature: 0.2,
+          });
+        } catch (primaryErr) {
+          // Fallback model for compatibility.
+          response = await env.AI.run('@cf/meta/llama-2-7b-chat-int8', {
+            messages,
+            max_tokens: isFollowUp ? 300 : 700,
+            temperature: 0.2,
+          });
+        }
 
         // Parse model output (prefer strict JSON, fallback to text extraction)
-        const responseText = response.response;
+        const responsePayload = response.response;
+        const responseText = typeof responsePayload === 'string' ? responsePayload : JSON.stringify(responsePayload);
         let result = { success: true };
 
         const safeJsonParse = (raw) => {
@@ -147,10 +186,14 @@ No markdown. No extra keys. No text before/after JSON.`;
         };
 
         if (isFollowUp) {
-          const parsed = safeJsonParse(responseText);
+          const parsed = typeof responsePayload === 'object' && responsePayload !== null
+            ? responsePayload
+            : safeJsonParse(responseText);
           result.followUpInsight = parsed?.followUpInsight || responseText.trim();
         } else {
-          const parsed = safeJsonParse(responseText);
+          const parsed = typeof responsePayload === 'object' && responsePayload !== null
+            ? responsePayload
+            : safeJsonParse(responseText);
           if (parsed && typeof parsed === 'object') {
             result.mainExplanation = parsed.mainExplanation;
             result.whyCorrect = parsed.whyCorrect;
