@@ -108,7 +108,7 @@ const MCQApp = {
     }
   },
 
-  showToast(message, type = 'info', title = '') {
+  showToast(message, type = 'info', title = '', durationMs = 2600) {
     const root = document.getElementById('toast-root');
     if (!root || !message) return;
 
@@ -133,7 +133,7 @@ const MCQApp = {
     window.setTimeout(() => {
       toast.classList.remove('is-visible');
       window.setTimeout(() => toast.remove(), 220);
-    }, 2600);
+    }, Number.isFinite(durationMs) ? durationMs : 2600);
   },
 
   beginLoading(message = 'Loading...') {
@@ -465,6 +465,11 @@ const MCQApp = {
         this.renderPracticeTests();
         return;
       }
+      if (this.state.lifeSection) {
+        this.state.lifeSection = null;
+        this.renderPracticeTests();
+        return;
+      }
       this.showView('home');
     });
 
@@ -552,6 +557,9 @@ const MCQApp = {
 
     // Finish banner buttons
     document.getElementById('finish-home-btn')?.addEventListener('click', () => {
+      if (this.state.isReviewMode) {
+        this.state.isReviewMode = false;
+      }
       this.showView('home');
     });
     document.getElementById('finish-tests-btn')?.addEventListener('click', () => {
@@ -1590,6 +1598,10 @@ const MCQApp = {
     if (nextBtn) {
       nextBtn.classList.toggle('hidden', !hasAnswered || isLastQ);
     }
+    const nextBtnTop = document.getElementById('next-question-btn-top');
+    if (nextBtnTop) {
+      nextBtnTop.classList.toggle('hidden', !hasAnswered || isLastQ);
+    }
 
     // Setup keyboard listeners for this quiz
     this.setupQuizKeyboardListeners();
@@ -1723,8 +1735,10 @@ const MCQApp = {
           row.forEach((cell, cellIdx) => {
             const isAgeColumn = cellIdx === 0;
             const isNumeric = headers[cellIdx] && (headers[cellIdx].includes('Probability') || headers[cellIdx].includes('Expectancy'));
-            const cellClass = isAgeColumn ? 'age-col' : (isNumeric ? 'data-type="numeric"' : '');
-            html += `<td${cellClass ? ' ' + cellClass : ''}>${this.escapeHtml(cell)}</td>`;
+            const cellAttr = isAgeColumn
+              ? ' class="age-col"'
+              : (isNumeric ? ' data-type="numeric"' : '');
+            html += `<td${cellAttr}>${this.escapeHtml(cell)}</td>`;
           });
           html += '</tr>';
         });
@@ -1765,7 +1779,7 @@ const MCQApp = {
     
     // Show confirmation toast
     const status = this.state.autoAdvanceEnabled ? 'enabled' : 'disabled';
-    this.showToast(`Auto-advance ${status}`, 2000);
+    this.showToast(`Auto-advance ${status}`, 'info', '', 2000);
   },
 
   // Auto-advance to next question after delay
@@ -2685,13 +2699,33 @@ const MCQApp = {
         html += '</div>';
         element.innerHTML = html;
         
-        // Add follow-up button if AI suggests further study
+        // Add follow-up composer so user can ask a specific question
         if (parsed.relatedConcept) {
-          const followUpBtn = document.createElement('button');
-          followUpBtn.className = 'btn-secondary btn-follow-up';
-          followUpBtn.innerHTML = '🤔 Ask Another Question';
-          followUpBtn.onclick = () => this.generateFollowUpExplanation(question, contextInfo);
-          element.appendChild(followUpBtn);
+          const composer = document.createElement('div');
+          composer.className = 'follow-up-composer';
+          composer.innerHTML = `
+            <label for="follow-up-input" class="follow-up-label">Ask a specific follow-up question</label>
+            <textarea id="follow-up-input" class="follow-up-input" rows="3" placeholder="Type your exact question here..."></textarea>
+            <div class="follow-up-actions">
+              <button class="btn-secondary btn-follow-up" data-action="ask-follow-up">🤔 Ask Another Question</button>
+            </div>
+          `;
+          element.appendChild(composer);
+
+          const askBtn = composer.querySelector('[data-action="ask-follow-up"]');
+          const input = composer.querySelector('#follow-up-input');
+
+          if (askBtn && input) {
+            askBtn.addEventListener('click', () => {
+              this.generateFollowUpExplanation(question, contextInfo, input.value);
+            });
+            input.addEventListener('keydown', (ev) => {
+              if (ev.key === 'Enter' && (ev.ctrlKey || ev.metaKey)) {
+                ev.preventDefault();
+                this.generateFollowUpExplanation(question, contextInfo, input.value);
+              }
+            });
+          }
         }
         
         if (aiButton) aiButton.style.display = 'none';
@@ -2708,12 +2742,22 @@ const MCQApp = {
   },
 
   // Generate follow-up question or deeper explanation
-  async generateFollowUpExplanation(question, contextInfo) {
+  async generateFollowUpExplanation(question, contextInfo, customQuestion = '') {
     const element = document.getElementById('ai-explanation-text');
     if (!element) return;
     
     const followUpBtn = element.querySelector('.btn-follow-up');
+    const followUpInput = element.querySelector('#follow-up-input');
+    const trimmedQuestion = String(customQuestion || '').trim();
+
+    if (!trimmedQuestion) {
+      this.showToast('Please type your question first.', 'info');
+      if (followUpInput) followUpInput.focus();
+      return;
+    }
+
     if (followUpBtn) followUpBtn.disabled = true;
+    if (followUpInput) followUpInput.disabled = true;
     
     // Show loading state
     const loadingDiv = document.createElement('div');
@@ -2732,6 +2776,7 @@ const MCQApp = {
         body: JSON.stringify({
           ...contextInfo,
           isFollowUp: true,
+          followUpQuestion: trimmedQuestion,
           requestType: 'deeper_insight',
         }),
       });
@@ -2739,18 +2784,30 @@ const MCQApp = {
       const data = await response.json();
       if (data.success && data.followUpInsight) {
         const followUpHtml = `<div class="ai-section ai-followup">
-          <div class="ai-section-title">🌟 Deeper Insight</div>
+          <div class="ai-section-title">🌟 Follow-up Answer</div>
+          <div class="ai-followup-question">Q: ${this.formatAIText(trimmedQuestion)}</div>
           <div class="ai-section-content">${this.formatAIText(data.followUpInsight)}</div>
         </div>`;
         loadingDiv.remove();
         element.insertAdjacentHTML('beforeend', followUpHtml);
-        if (followUpBtn) followUpBtn.remove();
+        if (followUpBtn) followUpBtn.disabled = false;
+        if (followUpInput) {
+          followUpInput.disabled = false;
+          followUpInput.value = '';
+          followUpInput.focus();
+        }
       } else {
         loadingDiv.remove();
+        if (followUpBtn) followUpBtn.disabled = false;
+        if (followUpInput) followUpInput.disabled = false;
+        this.showToast('Could not generate a follow-up answer right now.', 'warning');
       }
     } catch (error) {
       console.error('Follow-up error:', error);
       loadingDiv.remove();
+      if (followUpBtn) followUpBtn.disabled = false;
+      if (followUpInput) followUpInput.disabled = false;
+      this.showToast('Follow-up request failed. Please try again.', 'error');
     }
   },
 
@@ -2758,8 +2815,27 @@ const MCQApp = {
   hideAnswer() {
     const question = this.getCurrentQuestion();
     if (!question) return;
+    const stateKey = this.getQuestionStateKey(question);
+    const isRevealed = this.state.answersRevealed.has(stateKey);
 
-    // Reset view
+    // If already revealed, keep lock state to prevent re-attempting answered questions.
+    if (isRevealed) {
+      const optionsContainerLocked = document.getElementById('options-container');
+      if (optionsContainerLocked) {
+        optionsContainerLocked.querySelectorAll('.option').forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+      }
+      document.getElementById('answer-section').classList.add('hidden');
+
+      const nextBtnTopLocked = document.getElementById('next-question-btn-top');
+      if (nextBtnTopLocked) {
+        nextBtnTopLocked.classList.add('hidden');
+      }
+      return;
+    }
+
+    // Reset view (only for unanswered questions)
     const optionsContainer = document.getElementById('options-container');
     if (!optionsContainer) return;
     const options = optionsContainer.querySelectorAll('.option');

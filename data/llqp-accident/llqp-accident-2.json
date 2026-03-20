@@ -42,7 +42,8 @@
       "optionFeedback": [
         "CI lump-sum benefits paid to an individual under a personally owned policy are not taxable income.",
         "CI benefits are not classified as employment income regardless of the relationship between premiums and benefits.",
-        "CI benefits are not investment income; they are insurance proceeds paid upon a qualifying diagnosis."
+        "CI benefits are not investment income; they are insurance proceeds paid upon a qualifying diagnosis.",
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. CI lump-sum benefits paid to an individual under a personally owned policy are not taxable income; CI benefits are not classified as employment income regardless of the relationship between premiums and benefits.\nStep 4: Select the best answer. Option D: The lump-sum payment is tax free and does not need to be reported as income.",
       "difficulty": "easy",
@@ -89,7 +90,8 @@
       "optionFeedback": [
         "A joint life insurance policy pays a death benefit; it does not fund ongoing care services during the insured's lifetime.",
         "A self-employed health trust reimburses health and dental expenses but does not provide long-term custodial care coverage.",
-        "Critical illness insurance pays a one-time lump sum upon diagnosis; it does not provide ongoing funding for activities-of-daily-living care services."
+        "Critical illness insurance pays a one-time lump sum upon diagnosis; it does not provide ongoing funding for activities-of-daily-living care services.",
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A joint life insurance policy pays a death benefit; it does not fund ongoing care services during the insured's lifetime; A self-employed health trust reimburses health and dental expenses but does not provide long-term custodial care coverage.\nStep 4: Select the best answer. Option D: Long-term care insurance.",
       "difficulty": "easy",

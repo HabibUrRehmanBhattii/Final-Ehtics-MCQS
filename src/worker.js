@@ -41,7 +41,8 @@ export default {
           correctFeedback,
           explanation,
           examTips,
-          isFollowUp
+          isFollowUp,
+          followUpQuestion
         } = await request.json();
 
         // Build detailed prompt with rich context
@@ -55,6 +56,7 @@ Return ONLY valid JSON. No prose outside JSON.`;
         let userPrompt;
         
         if (isFollowUp) {
+          const specificQuestion = (followUpQuestion || '').trim();
           // Generate a follow-up insight request
           userPrompt = `The student needs a DEEPER UNDERSTANDING of this ethics concept:
 
@@ -63,6 +65,9 @@ Correct Answer: ${correctAnswer}
 User's Answer: ${userAnswer}
 Difficulty: ${difficulty}
 Topics: ${tags}
+
+Student's specific follow-up question:
+${specificQuestion || 'Provide one additional exam-focused insight and practical application.'}
 
 Provide a deeper insight that connects this concept to:
 1. Related ethical principles

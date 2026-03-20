@@ -1266,6 +1266,54 @@ button { font-family: inherit; }
   cursor: wait;
 }
 
+.follow-up-composer {
+  margin-top: 0.75rem;
+  padding: 0.85rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+}
+
+.follow-up-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--c-text2);
+  margin-bottom: 0.45rem;
+}
+
+.follow-up-input {
+  width: 100%;
+  resize: vertical;
+  min-height: 82px;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-xs);
+  padding: 0.65rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--c-text);
+  background: var(--c-surface);
+}
+
+.follow-up-input:focus {
+  outline: none;
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 3px var(--c-primary-a);
+}
+
+.follow-up-actions {
+  margin-top: 0.55rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ai-followup-question {
+  font-size: 0.84rem;
+  color: var(--c-text2);
+  margin-bottom: 0.4rem;
+}
+
 /* ════════════════════════════════════
   BUTTONS
   ════════════════════════════════════ */
@@ -1768,6 +1816,20 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   .q-text table td,
   .explain-body table td {
     padding: 0.5rem 0.6rem;
+  }
+
+  .follow-up-composer {
+    padding: 0.7rem;
+  }
+
+  .follow-up-input {
+    font-size: 0.88rem;
+    min-height: 74px;
+  }
+
+  .follow-up-actions .btn-follow-up {
+    width: 100%;
+    min-height: 42px;
   }
 }
 

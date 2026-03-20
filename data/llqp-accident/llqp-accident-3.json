@@ -116,7 +116,8 @@
       "optionFeedback": [
         "At age 65, CPP disability benefits automatically convert to CPP retirement benefits; a person cannot receive both simultaneously.",
         "CPP contributions are split between employee and employer; a self-employed person pays both the employee and employer portions.",
-        "CPP disability requires the claimant to have a 'severe and prolonged' disability that prevents any substantially gainful work; it does not pay if the person can work in any capacity."
+        "CPP disability requires the claimant to have a 'severe and prolonged' disability that prevents any substantially gainful work; it does not pay if the person can work in any capacity.",
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. At age 65, CPP disability benefits automatically convert to CPP retirement benefits; a person cannot receive both simultaneously; CPP contributions are split between employee and employer; a self-employed person pays both the employee and employer portions.\nStep 4: Select the best answer. Option D: The CPP definition for disability is generally more severe than that of individual policies.",
       "difficulty": "medium",
@@ -164,7 +165,8 @@
       "optionFeedback": [
         "Whether making premiums a taxable benefit is most beneficial depends on the individual's tax situation and the value of receiving tax-free benefits; 'always' is too absolute.",
         "Deferring tax is not always the optimal strategy; individual circumstances, tax brackets, and preferences matter.",
-        "If the employer pays premiums and the premiums are not a taxable benefit to the employee, the disability benefits received are generally taxable, not tax-free."
+        "If the employer pays premiums and the premiums are not a taxable benefit to the employee, the disability benefits received are generally taxable, not tax-free.",
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whether making premiums a taxable benefit is most beneficial depends on the individual's tax situation and the value of receiving tax-free benefits; 'always' is too absolute; Deferring tax is not always the optimal strategy; individual circumstances, tax brackets, and preferences matter.\nStep 4: Select the best answer. Option D: Either structure is acceptable, but the employer and employee should understand the tax consequences of each approach.",
       "difficulty": "hard",
