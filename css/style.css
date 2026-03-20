@@ -79,6 +79,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 button { font-family: inherit; }
@@ -1631,32 +1632,131 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
    RESPONSIVE
    ════════════════════════════════════ */
 @media (max-width: 640px) {
+  .topbar {
+    padding: .65rem .75rem;
+    gap: .45rem;
+  }
+  .topbar-icon {
+    width: 34px;
+    font-size: 1.2rem;
+  }
+  .pill {
+    font-size: .7rem;
+    padding: .25rem .55rem;
+  }
+  .btn-ghost {
+    font-size: .8rem;
+    padding: .4rem .5rem;
+  }
+  .topbar-title {
+    font-size: .84rem;
+    line-height: 1.25;
+  }
+
   .hero       { padding: 2.25rem 1rem 2rem; }
   .hero-title { font-size: 1.4rem; }
   .hero-sub   { font-size: .92rem; }
   .wrap       { padding: 1.25rem .85rem; }
   .grid       { grid-template-columns: 1fr; }
   .card       { padding: 1.15rem; }
+
+  .card-head {
+    align-items: flex-start;
+    gap: .7rem;
+    flex-direction: column;
+  }
+  .card-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .45rem;
+  }
+  .btn-tts, .btn-toggle {
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    font-size: .76rem;
+    padding: .45rem .5rem;
+  }
+  .btn-star {
+    width: 100%;
+    min-height: 42px;
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--radius-xs);
+    background: var(--c-surface2);
+    font-size: 1.25rem;
+  }
+
+  .q-nav {
+    padding: .65rem;
+    gap: .4rem;
+  }
+  .q-dots {
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: .2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .question-dot {
+    flex: 0 0 auto;
+  }
+
   .q-text     { font-size: 1rem; line-height: 1.9; }
   .option-main { padding: .9rem; gap: .7rem; }
   .option     { font-size: .93rem; }
   .option-letter { width: 2rem; height: 2rem; min-width: 2rem; font-size: .72rem; }
   .option-feedback { padding-left: 3.6rem; font-size: .88rem; }
+
+  .answer-box {
+    padding: 1rem;
+  }
+  .answer-correct {
+    display: block;
+    font-size: .9rem;
+    line-height: 1.55;
+    padding: .55rem .75rem;
+  }
+  .explain-box {
+    padding: 1rem;
+  }
+  .explain-label {
+    font-size: .78rem;
+    margin-bottom: .7rem;
+  }
+  .explain-body {
+    font-size: .9rem;
+    line-height: 1.65;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .exp-heading {
+    font-size: .86rem;
+    margin-top: .9rem;
+  }
+  .exp-list li {
+    font-size: .88rem;
+    line-height: 1.55;
+  }
+
   .actions    { flex-direction: column; }
   .actions .btn-outline { width: 100%; text-align: center; }
-  .keyboard-shortcuts-hint { grid-template-columns: 1fr; }
+  .keyboard-shortcuts-hint { display: none; }
   .question-dot { width: 2.2rem; height: 2.2rem; font-size: .65rem; }
   .btn-dot-nav, .dot-nav-btn { width: 2.2rem; height: 2.2rem; font-size: 1rem; }
   .finish-banner { padding: 2rem 1.25rem; }
   .finish-percent { font-size: 2.2rem; }
-  .explain-body { font-size: .92rem; line-height: 1.9; }
-  .topbar-title { font-size: .92rem; }
   .toast-root { left: .85rem; right: .85rem; bottom: .85rem; }
   .toast { min-width: 100%; max-width: 100%; }
   
   /* Responsive tables for mobile */
   .q-text table,
   .explain-body table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     font-size: 0.75rem;
   }
   
