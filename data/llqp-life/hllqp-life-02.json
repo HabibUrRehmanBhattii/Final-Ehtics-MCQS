@@ -20,9 +20,13 @@
         "Ronald's life is not the trigger for parents' RRSP tax at death.",
         "A non-dependent adult child does not get automatic RRSP tax-deferred rollover."
       ],
-      "explanation": "A joint-last-to-die permanent policy best matches RRSP tax liability that commonly crystallizes on the second death after spousal rollover opportunities.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. First-to-die pays too early for this tax liability; Ronald's life is not the trigger for parents' RRSP tax at death.\nStep 4: Select the best answer. Option B: A joint-last-to-die permanent life insurance policy on Nancy and Robert's life that is equal to the anticipated income taxes owing upon death.",
       "difficulty": "medium",
-      "tags": ["rrsp", "joint-last-to-die", "estate-planning"]
+      "tags": [
+        "rrsp",
+        "joint-last-to-die",
+        "estate-planning"
+      ]
     },
     {
       "id": 2,
@@ -34,10 +38,19 @@
         "D. $200,000 T-100 (a type of permanent plan)"
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "Convertibility adds cost not required for this temporary need.", "T-100 is permanent and typically more expensive.", "Permanent insurance is not the minimum-cost fit for a 10-year debt."],
-      "explanation": "A non-renewable 10-year term typically provides the lowest cost for a fixed temporary debt over 10 years.",
+      "optionFeedback": [
+        null,
+        "Convertibility adds cost not required for this temporary need.",
+        "T-100 is permanent and typically more expensive.",
+        "Permanent insurance is not the minimum-cost fit for a 10-year debt."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Convertibility adds cost not required for this temporary need; T-100 is permanent and typically more expensive.\nStep 4: Select the best answer. Option A: $200,000 non-renewable T-10 level term insurance.",
       "difficulty": "easy",
-      "tags": ["term-insurance", "temporary-need", "loan-protection"]
+      "tags": [
+        "term-insurance",
+        "temporary-need",
+        "loan-protection"
+      ]
     },
     {
       "id": 3,
@@ -49,10 +62,18 @@
         "D. The insured"
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "Underwriting risk is driven by the life insured, not owner/beneficiary health.", "Beneficiary health is not relevant to mortality risk.", "Owner health matters only if owner is also life insured."],
-      "explanation": "Life underwriting focuses on the mortality risk of the life-insured.",
+      "optionFeedback": [
+        null,
+        "Underwriting risk is driven by the life insured, not owner/beneficiary health.",
+        "Beneficiary health is not relevant to mortality risk.",
+        "Owner health matters only if owner is also life insured."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Underwriting risk is driven by the life insured, not owner/beneficiary health; Beneficiary health is not relevant to mortality risk.\nStep 4: Select the best answer. Option A: The life-insured.",
       "difficulty": "easy",
-      "tags": ["underwriting", "life-insured"]
+      "tags": [
+        "underwriting",
+        "life-insured"
+      ]
     },
     {
       "id": 4,
@@ -64,10 +85,18 @@
         "D. The biggest variable when determining the premium on a term insurance rate is the morbidity rate."
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "Term renewability is not indefinite in practice and age 40 statement is inaccurate.", "Term premiums generally increase at renewal.", "Life premiums are primarily tied to mortality risk, not morbidity."],
-      "explanation": "Basic term insurance is pure death-benefit protection with no cash value unless specific riders exist.",
+      "optionFeedback": [
+        null,
+        "Term renewability is not indefinite in practice and age 40 statement is inaccurate.",
+        "Term premiums generally increase at renewal.",
+        "Life premiums are primarily tied to mortality risk, not morbidity."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Term renewability is not indefinite in practice and age 40 statement is inaccurate; Term premiums generally increase at renewal.\nStep 4: Select the best answer. Option A: The only way to get any financial benefit from the policy is if the life-insured dies while the policy is in force.",
       "difficulty": "medium",
-      "tags": ["term-insurance", "renewability"]
+      "tags": [
+        "term-insurance",
+        "renewability"
+      ]
     },
     {
       "id": 5,
@@ -79,10 +108,18 @@
         "D. All of the above"
       ],
       "correctAnswer": 3,
-      "optionFeedback": ["Each can be material depending on underwriting impact.", "Each can be material depending on underwriting impact.", "Each can be material depending on underwriting impact.", null],
-      "explanation": "Material facts are those that would have affected insurer decision, premium, or terms; all listed can be material.",
+      "optionFeedback": [
+        "Each can be material depending on underwriting impact.",
+        "Each can be material depending on underwriting impact.",
+        "Each can be material depending on underwriting impact.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Each can be material depending on underwriting impact; Each can be material depending on underwriting impact.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "easy",
-      "tags": ["misrepresentation", "contestability"]
+      "tags": [
+        "misrepresentation",
+        "contestability"
+      ]
     },
     {
       "id": 6,
@@ -94,10 +131,19 @@
         "D. Convert the existing term insurance policy because it does not require them to provide evidence of insurability."
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Re-entry addresses renewal pricing, not the full permanent planning decision.", null, "Indefinite renewal is not an efficient permanent strategy.", "Conversion is valuable but should be compared to new policy pricing when health is strong."],
-      "explanation": "When clients are healthy, a newly underwritten permanent policy may be cheaper than conversion; compare both.",
+      "optionFeedback": [
+        "Re-entry addresses renewal pricing, not the full permanent planning decision.",
+        null,
+        "Indefinite renewal is not an efficient permanent strategy.",
+        "Conversion is valuable but should be compared to new policy pricing when health is strong."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Re-entry addresses renewal pricing, not the full permanent planning decision; Indefinite renewal is not an efficient permanent strategy.\nStep 4: Select the best answer. Option B: Compare the premium on a brand new policy to the premium of the proposed converted policy. If it is cheaper, they should consider buying a brand-new policy.",
       "difficulty": "medium",
-      "tags": ["conversion", "permanent-insurance", "needs-analysis"]
+      "tags": [
+        "conversion",
+        "permanent-insurance",
+        "needs-analysis"
+      ]
     },
     {
       "id": 7,
@@ -109,10 +155,19 @@
         "D. Renewable term insurance without a re-entry term"
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Convertibility adds cost.", null, "Convertibility usually increases premium versus non-convertible equivalent.", "Without re-entry, guaranteed renewal risk is priced in more heavily."],
-      "explanation": "Policies with re-entry terms often have lower initial premiums because future renewal pricing can be health-reassessed.",
+      "optionFeedback": [
+        "Convertibility adds cost.",
+        null,
+        "Convertibility usually increases premium versus non-convertible equivalent.",
+        "Without re-entry, guaranteed renewal risk is priced in more heavily."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Convertibility adds cost; Convertibility usually increases premium versus non-convertible equivalent.\nStep 4: Select the best answer. Option B: Renewable term insurance with a re-entry term.",
       "difficulty": "medium",
-      "tags": ["term-insurance", "re-entry", "mortgage"]
+      "tags": [
+        "term-insurance",
+        "re-entry",
+        "mortgage"
+      ]
     },
     {
       "id": 8,
@@ -124,10 +179,18 @@
         "D. To pay taxes at death"
       ],
       "correctAnswer": 3,
-      "optionFeedback": ["Education funding is usually temporary.", "Mortgage protection is typically temporary/declining.", "Key-person needs may be temporary based on business context.", null],
-      "explanation": "Tax liability at death is generally an inevitable, permanent need.",
+      "optionFeedback": [
+        "Education funding is usually temporary.",
+        "Mortgage protection is typically temporary/declining.",
+        "Key-person needs may be temporary based on business context.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Education funding is usually temporary; Mortgage protection is typically temporary/declining.\nStep 4: Select the best answer. Option D: To pay taxes at death.",
       "difficulty": "easy",
-      "tags": ["permanent-need", "estate-planning"]
+      "tags": [
+        "permanent-need",
+        "estate-planning"
+      ]
     },
     {
       "id": 9,
@@ -139,10 +202,19 @@
         "D. The suicide occurred within two years of the permanent policy being issued. As a result, the insurer is within its contractual right to deny the claim."
       ],
       "correctAnswer": 2,
-      "optionFeedback": ["Suicide exclusion is generally time-limited, not absolute forever.", "Insurable interest concerns are not the key issue here.", null, "On many conversions, continuity rules can preserve original policy timelines."],
-      "explanation": "Converted policies are often treated as continuation of original contract terms, so original exclusion periods may already be satisfied.",
+      "optionFeedback": [
+        "Suicide exclusion is generally time-limited, not absolute forever.",
+        "Insurable interest concerns are not the key issue here.",
+        null,
+        "On many conversions, continuity rules can preserve original policy timelines."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Suicide exclusion is generally time-limited, not absolute forever; Insurable interest concerns are not the key issue here.\nStep 4: Select the best answer. Option C: The new policy will likely be treated as a continuation of the original policy. Therefore, the suicide exclusion period has passed, and the benefit will be paid.",
       "difficulty": "hard",
-      "tags": ["suicide-clause", "conversion", "claims"]
+      "tags": [
+        "suicide-clause",
+        "conversion",
+        "claims"
+      ]
     },
     {
       "id": 10,
@@ -154,10 +226,18 @@
         "D. It is impossible to determine because the policies provided would be the most expensive without seeing the expense analysis of insurer's life tables."
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Last-to-die generally pays later, often reducing cost relative to first-to-die.", null, "Single-life is often less expensive than first-to-die for equivalent assumptions.", "General actuarial pattern here is determinable."],
-      "explanation": "Joint first-to-die has a higher probability of earlier claim payment than joint last-to-die.",
+      "optionFeedback": [
+        "Last-to-die generally pays later, often reducing cost relative to first-to-die.",
+        null,
+        "Single-life is often less expensive than first-to-die for equivalent assumptions.",
+        "General actuarial pattern here is determinable."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Last-to-die generally pays later, often reducing cost relative to first-to-die; Single-life is often less expensive than first-to-die for equivalent assumptions.\nStep 4: Select the best answer. Option B: A joint first-to-die policy.",
       "difficulty": "medium",
-      "tags": ["joint-life", "pricing"]
+      "tags": [
+        "joint-life",
+        "pricing"
+      ]
     },
     {
       "id": 11,
@@ -169,10 +249,19 @@
         "D. Decreasing term insurance"
       ],
       "correctAnswer": 3,
-      "optionFeedback": ["Whole life is generally too expensive for this temporary declining need.", "RESP is savings/investment, not mortality protection.", "Need declines as savings build, so increasing term mismatches.", null],
-      "explanation": "A declining education-funding risk is typically matched by decreasing term at lower cost.",
+      "optionFeedback": [
+        "Whole life is generally too expensive for this temporary declining need.",
+        "RESP is savings/investment, not mortality protection.",
+        "Need declines as savings build, so increasing term mismatches.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life is generally too expensive for this temporary declining need; RESP is savings/investment, not mortality protection.\nStep 4: Select the best answer. Option D: Decreasing term insurance.",
       "difficulty": "medium",
-      "tags": ["education", "decreasing-term", "temporary-need"]
+      "tags": [
+        "education",
+        "decreasing-term",
+        "temporary-need"
+      ]
     },
     {
       "id": 12,
@@ -184,10 +273,19 @@
         "D. Peggy"
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Agent does not own contract rights.", null, "Beneficiary typically does not control owner decisions.", "Life-insured is not automatically policy owner."],
-      "explanation": "The policy owner (Charlie) holds contractual control rights.",
+      "optionFeedback": [
+        "Agent does not own contract rights.",
+        null,
+        "Beneficiary typically does not control owner decisions.",
+        "Life-insured is not automatically policy owner."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Agent does not own contract rights; Beneficiary typically does not control owner decisions.\nStep 4: Select the best answer. Option B: Charlie.",
       "difficulty": "easy",
-      "tags": ["policy-owner", "beneficiary", "contract"]
+      "tags": [
+        "policy-owner",
+        "beneficiary",
+        "contract"
+      ]
     },
     {
       "id": 13,
@@ -199,10 +297,18 @@
         "D. Date of birth"
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Known health issues can be material.", null, "Medical consultation history can be material to underwriting.", "Date of birth is materially linked to pricing and risk."],
-      "explanation": "An applicant cannot misrepresent a condition they genuinely do not know exists.",
+      "optionFeedback": [
+        "Known health issues can be material.",
+        null,
+        "Medical consultation history can be material to underwriting.",
+        "Date of birth is materially linked to pricing and risk."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Known health issues can be material; Medical consultation history can be material to underwriting.\nStep 4: Select the best answer. Option B: Unknown health issue.",
       "difficulty": "easy",
-      "tags": ["material-fact", "underwriting"]
+      "tags": [
+        "material-fact",
+        "underwriting"
+      ]
     },
     {
       "id": 14,
@@ -214,10 +320,17 @@
         "D. Decreasing term"
       ],
       "correctAnswer": 3,
-      "optionFeedback": ["Level term keeps face amount level.", "Convertibility is a feature, not this specific coverage pattern.", "Increasing term raises death benefit over time.", null],
-      "explanation": "Decreasing term is designed for liabilities that decline over time, such as mortgages.",
+      "optionFeedback": [
+        "Level term keeps face amount level.",
+        "Convertibility is a feature, not this specific coverage pattern.",
+        "Increasing term raises death benefit over time.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Level term keeps face amount level; Convertibility is a feature, not this specific coverage pattern.\nStep 4: Select the best answer. Option D: Decreasing term.",
       "difficulty": "easy",
-      "tags": ["decreasing-term"]
+      "tags": [
+        "decreasing-term"
+      ]
     },
     {
       "id": 15,
@@ -229,10 +342,18 @@
         "D. The policy remains in force with no further premiums being required."
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Joint first-to-die usually terminates at first payout.", null, "Original joint contract generally terminates on first death claim.", "No-premium continuation is not typical after full payout."],
-      "explanation": "Many insurers include a survivor option allowing new single-life coverage without new evidence.",
+      "optionFeedback": [
+        "Joint first-to-die usually terminates at first payout.",
+        null,
+        "Original joint contract generally terminates on first death claim.",
+        "No-premium continuation is not typical after full payout."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Joint first-to-die usually terminates at first payout; Original joint contract generally terminates on first death claim.\nStep 4: Select the best answer. Option B: Some plans will allow the surviving spouse the option to continue the same amount of coverage on his or her own life under a new policy without having to provide evidence of insurability.",
       "difficulty": "medium",
-      "tags": ["joint-first-to-die", "survivor-option"]
+      "tags": [
+        "joint-first-to-die",
+        "survivor-option"
+      ]
     },
     {
       "id": 16,
@@ -244,10 +365,18 @@
         "D. It is used to measure morbidity rates."
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "Mortality is measured by actuarial mortality data, not CPI.", "Interest rates are separate metrics.", "Morbidity is illness incidence, unrelated to CPI definition."],
-      "explanation": "CPI stands for Consumer Price Index, a common inflation measure.",
+      "optionFeedback": [
+        null,
+        "Mortality is measured by actuarial mortality data, not CPI.",
+        "Interest rates are separate metrics.",
+        "Morbidity is illness incidence, unrelated to CPI definition."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Mortality is measured by actuarial mortality data, not CPI; Interest rates are separate metrics.\nStep 4: Select the best answer. Option A: It is used to measure the rate of inflation.",
       "difficulty": "easy",
-      "tags": ["cpi", "inflation"]
+      "tags": [
+        "cpi",
+        "inflation"
+      ]
     },
     {
       "id": 17,
@@ -259,10 +388,19 @@
         "D. Delay making the purchase until income has increased and he can afford permanent insurance."
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Renewable-only may not preserve guaranteed path to permanent without evidence.", null, "This leaves him underinsured relative to identified need.", "Delaying can leave critical risk uninsured."],
-      "explanation": "Convertible term can lock in insurability now and allow later conversion as affordability improves.",
+      "optionFeedback": [
+        "Renewable-only may not preserve guaranteed path to permanent without evidence.",
+        null,
+        "This leaves him underinsured relative to identified need.",
+        "Delaying can leave critical risk uninsured."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Renewable-only may not preserve guaranteed path to permanent without evidence; This leaves him underinsured relative to identified need.\nStep 4: Select the best answer. Option B: Purchase $1,000,000 in convertible term insurance.",
       "difficulty": "medium",
-      "tags": ["convertible-term", "insurability", "planning"]
+      "tags": [
+        "convertible-term",
+        "insurability",
+        "planning"
+      ]
     },
     {
       "id": 18,
@@ -274,10 +412,18 @@
         "D. Term insurance does not have a cash value."
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "This can be true when conversion feature exists.", "This is generally true for equivalent face amount.", "This is generally true for basic term products."],
-      "explanation": "Not all term products are renewable in all forms or beyond certain ages.",
+      "optionFeedback": [
+        null,
+        "This can be true when conversion feature exists.",
+        "This is generally true for equivalent face amount.",
+        "This is generally true for basic term products."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This can be true when conversion feature exists; This is generally true for equivalent face amount.\nStep 4: Select the best answer. Option A: Term insurance is always renewable.",
       "difficulty": "easy",
-      "tags": ["term-insurance", "renewability"]
+      "tags": [
+        "term-insurance",
+        "renewability"
+      ]
     },
     {
       "id": 19,
@@ -289,10 +435,18 @@
         "D. 5-year renewable level term insurance, renewable to age 35"
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "Level term may overinsure later years and cost more than decreasing term for this need.", "T-100 is permanent and usually more expensive.", "5-year base term does not match full 10-year repayment period as directly."],
-      "explanation": "A 10-year decreasing term aligns directly to the declining 10-year mortgage balance.",
+      "optionFeedback": [
+        null,
+        "Level term may overinsure later years and cost more than decreasing term for this need.",
+        "T-100 is permanent and usually more expensive.",
+        "5-year base term does not match full 10-year repayment period as directly."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Level term may overinsure later years and cost more than decreasing term for this need; T-100 is permanent and usually more expensive.\nStep 4: Select the best answer. Option A: 10-year decreasing term insurance.",
       "difficulty": "medium",
-      "tags": ["mortgage", "decreasing-term"]
+      "tags": [
+        "mortgage",
+        "decreasing-term"
+      ]
     },
     {
       "id": 20,
@@ -304,10 +458,18 @@
         "D. Jane and Alex, who would like a policy that will pay the capital gains tax on a cottage upon death."
       ],
       "correctAnswer": 3,
-      "optionFeedback": ["This could still be solved by other structures; classic estate tax trigger is cleaner for last-to-die.", "Mortgage protection is usually first-to-die.", "Single person cannot use joint policy.", null],
-      "explanation": "Estate tax liabilities like cottage capital gains are often due at second death in spousal planning contexts.",
+      "optionFeedback": [
+        "This could still be solved by other structures; classic estate tax trigger is cleaner for last-to-die.",
+        "Mortgage protection is usually first-to-die.",
+        "Single person cannot use joint policy.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This could still be solved by other structures; classic estate tax trigger is cleaner for last-to-die; Mortgage protection is usually first-to-die.\nStep 4: Select the best answer. Option D: Jane and Alex, who would like a policy that will pay the capital gains tax on a cottage upon death.",
       "difficulty": "medium",
-      "tags": ["joint-last-to-die", "capital-gains"]
+      "tags": [
+        "joint-last-to-die",
+        "capital-gains"
+      ]
     },
     {
       "id": 21,
@@ -319,10 +481,18 @@
         "D. He will definitely receive $1,000,000."
       ],
       "correctAnswer": 2,
-      "optionFeedback": ["Policy mechanics (e.g., loans, additions) can affect payout amount.", "Death benefit can differ from face amount depending on product design/adjustments.", null, "Absolute statement is not always accurate."],
-      "explanation": "Actual proceeds can vary by policy type and policy values/adjustments.",
+      "optionFeedback": [
+        "Policy mechanics (e.g., loans, additions) can affect payout amount.",
+        "Death benefit can differ from face amount depending on product design/adjustments.",
+        null,
+        "Absolute statement is not always accurate."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Policy mechanics (e.g., loans, additions) can affect payout amount; Death benefit can differ from face amount depending on product design/adjustments.\nStep 4: Select the best answer. Option C: The amount will depend on the type of policy.",
       "difficulty": "medium",
-      "tags": ["death-benefit", "beneficiary"]
+      "tags": [
+        "death-benefit",
+        "beneficiary"
+      ]
     },
     {
       "id": 22,
@@ -334,10 +504,18 @@
         "D. Christina and Arlena"
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "Arlena is life-insured but not identified as owner here.", "Beneficiary is not policy owner by default.", "Facts state Christina bought/owns the policy."],
-      "explanation": "The owner is the person who applies for and controls the policy contract.",
+      "optionFeedback": [
+        null,
+        "Arlena is life-insured but not identified as owner here.",
+        "Beneficiary is not policy owner by default.",
+        "Facts state Christina bought/owns the policy."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Arlena is life-insured but not identified as owner here; Beneficiary is not policy owner by default.\nStep 4: Select the best answer. Option A: Christina.",
       "difficulty": "easy",
-      "tags": ["policy-owner", "joint-life"]
+      "tags": [
+        "policy-owner",
+        "joint-life"
+      ]
     },
     {
       "id": 23,
@@ -349,10 +527,18 @@
         "D. Combined insurance"
       ],
       "correctAnswer": 3,
-      "optionFeedback": ["Joint policies are a different structure from separate combined contracts.", "This is a type of joint coverage, not two separate policies under one contract.", "This is a type of joint coverage, not two separate policies under one contract.", null],
-      "explanation": "Combined insurance packages separate coverages under one administrative contract.",
+      "optionFeedback": [
+        "Joint policies are a different structure from separate combined contracts.",
+        "This is a type of joint coverage, not two separate policies under one contract.",
+        "This is a type of joint coverage, not two separate policies under one contract.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Joint policies are a different structure from separate combined contracts; This is a type of joint coverage, not two separate policies under one contract.\nStep 4: Select the best answer. Option D: Combined insurance.",
       "difficulty": "easy",
-      "tags": ["combined-insurance", "product-structure"]
+      "tags": [
+        "combined-insurance",
+        "product-structure"
+      ]
     },
     {
       "id": 24,
@@ -364,10 +550,18 @@
         "D. The insurance company cannot amend the policy but would have a right to deny a claim if Grey dies from a cancer-related death."
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Cancer history is generally material to underwriting.", null, "During early contestability, fraud proof is not always required for material misrepresentation.", "Within contestability window, insurer may rescind for material misrepresentation."],
-      "explanation": "Within the contestability period, material misrepresentation can justify rescission.",
+      "optionFeedback": [
+        "Cancer history is generally material to underwriting.",
+        null,
+        "During early contestability, fraud proof is not always required for material misrepresentation.",
+        "Within contestability window, insurer may rescind for material misrepresentation."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Cancer history is generally material to underwriting; During early contestability, fraud proof is not always required for material misrepresentation.\nStep 4: Select the best answer. Option B: It is within the contestability period, so the insurer can void the policy due to material misrepresentation.",
       "difficulty": "hard",
-      "tags": ["contestability", "material-misrepresentation"]
+      "tags": [
+        "contestability",
+        "material-misrepresentation"
+      ]
     },
     {
       "id": 25,
@@ -379,10 +573,19 @@
         "D. Joint first-to-die decreasing term insurance"
       ],
       "correctAnswer": 3,
-      "optionFeedback": ["Last-to-die does not address first-death mortgage risk.", "Last-to-die still mismatches trigger event.", "First-to-die helps, but level may cost more than needed for declining mortgage.", null],
-      "explanation": "For a declining mortgage payable at first death, joint first-to-die decreasing term is usually most cost-efficient.",
+      "optionFeedback": [
+        "Last-to-die does not address first-death mortgage risk.",
+        "Last-to-die still mismatches trigger event.",
+        "First-to-die helps, but level may cost more than needed for declining mortgage.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Last-to-die does not address first-death mortgage risk; Last-to-die still mismatches trigger event.\nStep 4: Select the best answer. Option D: Joint first-to-die decreasing term insurance.",
       "difficulty": "medium",
-      "tags": ["mortgage", "joint-first-to-die", "decreasing-term"]
+      "tags": [
+        "mortgage",
+        "joint-first-to-die",
+        "decreasing-term"
+      ]
     },
     {
       "id": 26,
@@ -394,10 +597,18 @@
         "D. The premium will decrease annually in conjunction with the declining coverage."
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Typical decreasing term premiums are usually level within term.", null, "It is often cost-effective for declining liabilities.", "Premium generally does not mechanically decrease each year within the term."],
-      "explanation": "Insurers price expected declining risk into a level premium schedule for the term.",
+      "optionFeedback": [
+        "Typical decreasing term premiums are usually level within term.",
+        null,
+        "It is often cost-effective for declining liabilities.",
+        "Premium generally does not mechanically decrease each year within the term."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Typical decreasing term premiums are usually level within term; It is often cost-effective for declining liabilities.\nStep 4: Select the best answer. Option B: Although the premium will remain level, the decreasing coverage would have been factored into the premium when it was established.",
       "difficulty": "easy",
-      "tags": ["decreasing-term", "premium-structure"]
+      "tags": [
+        "decreasing-term",
+        "premium-structure"
+      ]
     },
     {
       "id": 27,
@@ -409,10 +620,19 @@
         "D. The policy that offers attained-age conversion"
       ],
       "correctAnswer": 3,
-      "optionFeedback": ["All convertible policies generally allow no-evidence conversion; this does not distinguish best fit.", "Retroactive/original-age may require substantial catch-up cost.", "Original-age often implies costly back-premium approach.", null],
-      "explanation": "Given limited assets, attained-age conversion avoids large upfront catch-up costs while preserving conversion.",
+      "optionFeedback": [
+        "All convertible policies generally allow no-evidence conversion; this does not distinguish best fit.",
+        "Retroactive/original-age may require substantial catch-up cost.",
+        "Original-age often implies costly back-premium approach.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. All convertible policies generally allow no-evidence conversion; this does not distinguish best fit; Retroactive/original-age may require substantial catch-up cost.\nStep 4: Select the best answer. Option D: The policy that offers attained-age conversion.",
       "difficulty": "hard",
-      "tags": ["conversion", "attained-age", "affordability"]
+      "tags": [
+        "conversion",
+        "attained-age",
+        "affordability"
+      ]
     },
     {
       "id": 28,
@@ -424,10 +644,18 @@
         "D. Danny, who wants sufficient insurance to pay for his funeral so as to not burden his loved ones."
       ],
       "correctAnswer": 3,
-      "optionFeedback": ["Car loan is temporary debt.", "Education funding goal is typically temporary.", "Mortgage is usually temporary/declining.", null],
-      "explanation": "Funeral costs are a certain end-of-life expense and commonly treated as a permanent need.",
+      "optionFeedback": [
+        "Car loan is temporary debt.",
+        "Education funding goal is typically temporary.",
+        "Mortgage is usually temporary/declining.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Car loan is temporary debt; Education funding goal is typically temporary.\nStep 4: Select the best answer. Option D: Danny, who wants sufficient insurance to pay for his funeral so as to not burden his loved ones.",
       "difficulty": "easy",
-      "tags": ["permanent-need", "funeral"]
+      "tags": [
+        "permanent-need",
+        "funeral"
+      ]
     },
     {
       "id": 29,
@@ -439,10 +667,19 @@
         "D. Open a Registered Education Savings Plan (RESP) in lieu of purchasing any insurance."
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "Seg fund death guarantee may not fully replace planned future contributions immediately.", "Whole life is often not necessary for this temporary objective.", "RESP alone does not replace mortality protection for unfinished savings goal."],
-      "explanation": "A temporary education-funding risk is typically best addressed with term insurance.",
+      "optionFeedback": [
+        null,
+        "Seg fund death guarantee may not fully replace planned future contributions immediately.",
+        "Whole life is often not necessary for this temporary objective.",
+        "RESP alone does not replace mortality protection for unfinished savings goal."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Seg fund death guarantee may not fully replace planned future contributions immediately; Whole life is often not necessary for this temporary objective.\nStep 4: Select the best answer. Option A: Buy a term insurance policy with himself as the life-insured.",
       "difficulty": "medium",
-      "tags": ["term-insurance", "education", "temporary-need"]
+      "tags": [
+        "term-insurance",
+        "education",
+        "temporary-need"
+      ]
     },
     {
       "id": 30,
@@ -454,10 +691,19 @@
         "D. Canada Life"
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "Beneficiary is not the insured in this keyed answer set.", "Margaret is the life-insured, but this question key defines insured as policy owner.", "Insurer is the company, not insured party."],
-      "explanation": "Per the provided key terminology, insured refers to policy owner here, which is Charlie.",
+      "optionFeedback": [
+        null,
+        "Beneficiary is not the insured in this keyed answer set.",
+        "Margaret is the life-insured, but this question key defines insured as policy owner.",
+        "Insurer is the company, not insured party."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Beneficiary is not the insured in this keyed answer set; Margaret is the life-insured, but this question key defines insured as policy owner.\nStep 4: Select the best answer. Option A: Charlie.",
       "difficulty": "hard",
-      "tags": ["definitions", "policy-owner", "life-insured"]
+      "tags": [
+        "definitions",
+        "policy-owner",
+        "life-insured"
+      ]
     },
     {
       "id": 31,
@@ -469,10 +715,19 @@
         "D. 10-year renewable term insurance on a joint last-to-die basis"
       ],
       "correctAnswer": 2,
-      "optionFeedback": ["Whole life is typically too costly for temporary mortgage need.", "Last-to-die does not protect first-death mortgage risk.", null, "Last-to-die trigger is wrong for this objective."],
-      "explanation": "Joint first-to-die aligns with mortgage payoff need at first death; renewable term can bridge full amortization horizon.",
+      "optionFeedback": [
+        "Whole life is typically too costly for temporary mortgage need.",
+        "Last-to-die does not protect first-death mortgage risk.",
+        null,
+        "Last-to-die trigger is wrong for this objective."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life is typically too costly for temporary mortgage need; Last-to-die does not protect first-death mortgage risk.\nStep 4: Select the best answer. Option C: 10-year renewable term insurance on a joint first-to-die basis.",
       "difficulty": "medium",
-      "tags": ["mortgage", "joint-first-to-die", "renewable-term"]
+      "tags": [
+        "mortgage",
+        "joint-first-to-die",
+        "renewable-term"
+      ]
     },
     {
       "id": 32,
@@ -484,10 +739,19 @@
         "D. To pay capital gains taxes on a cottage that they jointly own."
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "Second-death liabilities usually align better with last-to-die.", "Mortgage is usually temporary and often term-based.", "Capital gains in spousal context often aligns to second death."],
-      "explanation": "Joint first-to-die permanent insurance can provide immediate liquidity to surviving spouse at first death.",
+      "optionFeedback": [
+        null,
+        "Second-death liabilities usually align better with last-to-die.",
+        "Mortgage is usually temporary and often term-based.",
+        "Capital gains in spousal context often aligns to second death."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Second-death liabilities usually align better with last-to-die; Mortgage is usually temporary and often term-based.\nStep 4: Select the best answer. Option A: To leave an inheritance to the surviving spouse upon death.",
       "difficulty": "medium",
-      "tags": ["joint-first-to-die", "t100", "inheritance"]
+      "tags": [
+        "joint-first-to-die",
+        "t100",
+        "inheritance"
+      ]
     },
     {
       "id": 33,
@@ -499,10 +763,19 @@
         "D. A $25,000 joint first-to-die temporary insurance policy"
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["First-to-die pays once and leaves second funeral unfunded.", null, "Overly complex and mismatched for simple dual funeral objective.", "Funeral funding is generally a permanent need."],
-      "explanation": "Two separate permanent coverages ensure each life has its own funeral benefit payout.",
+      "optionFeedback": [
+        "First-to-die pays once and leaves second funeral unfunded.",
+        null,
+        "Overly complex and mismatched for simple dual funeral objective.",
+        "Funeral funding is generally a permanent need."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. First-to-die pays once and leaves second funeral unfunded; Overly complex and mismatched for simple dual funeral objective.\nStep 4: Select the best answer. Option B: A combined insurance policy that includes separate $25,000 permanent life insurance policies on each of their lives.",
       "difficulty": "medium",
-      "tags": ["funeral", "combined-insurance", "permanent"]
+      "tags": [
+        "funeral",
+        "combined-insurance",
+        "permanent"
+      ]
     },
     {
       "id": 34,
@@ -514,10 +787,19 @@
         "D. Brad can renew the policy for an additional 10-year period without providing evidence of insurability. The premium will remain the same for the second term."
       ],
       "correctAnswer": 1,
-      "optionFeedback": ["Re-entry commonly lowers initial premium assumptions for healthy renewers.", null, "This may be true generally, but not the key feature solving his stated objective in this question.", "Renewal premium usually increases significantly."],
-      "explanation": "Convertibility is the core feature preserving access to permanent insurance without new medical evidence.",
+      "optionFeedback": [
+        "Re-entry commonly lowers initial premium assumptions for healthy renewers.",
+        null,
+        "This may be true generally, but not the key feature solving his stated objective in this question.",
+        "Renewal premium usually increases significantly."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Re-entry commonly lowers initial premium assumptions for healthy renewers; This may be true generally, but not the key feature solving his stated objective in this question.\nStep 4: Select the best answer. Option B: The convertible feature allows Brad the option of converting the policy to a permanent one during the policy term without providing evidence of insurability.",
       "difficulty": "medium",
-      "tags": ["convertibility", "renewability", "term-insurance"]
+      "tags": [
+        "convertibility",
+        "renewability",
+        "term-insurance"
+      ]
     },
     {
       "id": 35,
@@ -529,10 +811,19 @@
         "D. To pay capital gains taxes on the cottage at death"
       ],
       "correctAnswer": 0,
-      "optionFeedback": [null, "RRSP tax need may be single-life or second-death specific depending planning context.", "Charitable funding may be single-life specific depending donor intent.", "Capital gains on jointly owned cottage often aligns with second-death planning."],
-      "explanation": "Joint first-to-die term is a standard fit for paying joint debts like mortgages at first death.",
+      "optionFeedback": [
+        null,
+        "RRSP tax need may be single-life or second-death specific depending planning context.",
+        "Charitable funding may be single-life specific depending donor intent.",
+        "Capital gains on jointly owned cottage often aligns with second-death planning."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. RRSP tax need may be single-life or second-death specific depending planning context; Charitable funding may be single-life specific depending donor intent.\nStep 4: Select the best answer. Option A: To pay out a mortgage at death.",
       "difficulty": "medium",
-      "tags": ["joint-first-to-die", "mortgage", "term-insurance"]
+      "tags": [
+        "joint-first-to-die",
+        "mortgage",
+        "term-insurance"
+      ]
     },
     {
       "id": 36,
@@ -544,10 +835,19 @@
         "D. Retroactive conversion"
       ],
       "correctAnswer": 2,
-      "optionFeedback": ["This is not the standard term used here.", "Original-age would price from younger issue age with different cost implications.", null, "Retroactive/original-age concepts differ from attained-age pricing shown."],
-      "explanation": "Attained-age conversion prices the new permanent policy using the insured's current age at conversion.",
+      "optionFeedback": [
+        "This is not the standard term used here.",
+        "Original-age would price from younger issue age with different cost implications.",
+        null,
+        "Retroactive/original-age concepts differ from attained-age pricing shown."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is not the standard term used here; Original-age would price from younger issue age with different cost implications.\nStep 4: Select the best answer. Option C: Attained-age conversion.",
       "difficulty": "easy",
-      "tags": ["conversion", "attained-age", "whole-life"]
+      "tags": [
+        "conversion",
+        "attained-age",
+        "whole-life"
+      ]
     }
   ]
 }

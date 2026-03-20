@@ -20,7 +20,7 @@
         "Need declines as savings build, so increasing term mismatches.",
         null
       ],
-      "explanation": "A declining education-funding risk is typically matched by decreasing term at lower cost.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life is generally too expensive for this temporary declining need; RESP is savings/investment, not mortality protection.\nStep 4: Select the best answer. Option D: Decreasing term insurance.",
       "difficulty": "medium",
       "tags": [
         "education",
@@ -44,7 +44,7 @@
         "Beneficiary typically does not control owner decisions.",
         "Life-insured is not automatically policy owner."
       ],
-      "explanation": "The policy owner (Charlie) holds contractual control rights.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Agent does not own contract rights; Beneficiary typically does not control owner decisions.\nStep 4: Select the best answer. Option B: Charlie.",
       "difficulty": "easy",
       "tags": [
         "policy-owner",
@@ -68,7 +68,7 @@
         "Medical consultation history can be material to underwriting.",
         "Date of birth is materially linked to pricing and risk."
       ],
-      "explanation": "An applicant cannot misrepresent a condition they genuinely do not know exists.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Known health issues can be material; Medical consultation history can be material to underwriting.\nStep 4: Select the best answer. Option B: Unknown health issue.",
       "difficulty": "easy",
       "tags": [
         "material-fact",
@@ -91,7 +91,7 @@
         "Increasing term raises death benefit over time.",
         null
       ],
-      "explanation": "Decreasing term is designed for liabilities that decline over time, such as mortgages.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Level term keeps face amount level; Convertibility is a feature, not this specific coverage pattern.\nStep 4: Select the best answer. Option D: Decreasing term.",
       "difficulty": "easy",
       "tags": [
         "decreasing-term"
@@ -113,7 +113,7 @@
         "Original joint contract generally terminates on first death claim.",
         "No-premium continuation is not typical after full payout."
       ],
-      "explanation": "Many insurers include a survivor option allowing new single-life coverage without new evidence.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Joint first-to-die usually terminates at first payout; Original joint contract generally terminates on first death claim.\nStep 4: Select the best answer. Option B: Some plans will allow the surviving spouse the option to continue the same amount of coverage on his or her own life under a new policy without having to provide evidence of insurability.",
       "difficulty": "medium",
       "tags": [
         "joint-first-to-die",
@@ -136,7 +136,7 @@
         "Interest rates are separate metrics.",
         "Morbidity is illness incidence, unrelated to CPI definition."
       ],
-      "explanation": "CPI stands for Consumer Price Index, a common inflation measure.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Mortality is measured by actuarial mortality data, not CPI; Interest rates are separate metrics.\nStep 4: Select the best answer. Option A: It is used to measure the rate of inflation.",
       "difficulty": "easy",
       "tags": [
         "cpi",
@@ -159,7 +159,7 @@
         "This leaves him underinsured relative to identified need.",
         "Delaying can leave critical risk uninsured."
       ],
-      "explanation": "Convertible term can lock in insurability now and allow later conversion as affordability improves.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Renewable-only may not preserve guaranteed path to permanent without evidence; This leaves him underinsured relative to identified need.\nStep 4: Select the best answer. Option B: Purchase $1,000,000 in convertible term insurance.",
       "difficulty": "medium",
       "tags": [
         "convertible-term",
@@ -183,7 +183,7 @@
         "This is generally true for equivalent face amount.",
         "This is generally true for basic term products."
       ],
-      "explanation": "Not all term products are renewable in all forms or beyond certain ages.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This can be true when conversion feature exists; This is generally true for equivalent face amount.\nStep 4: Select the best answer. Option A: Term insurance is always renewable.",
       "difficulty": "easy",
       "tags": [
         "term-insurance",
@@ -206,7 +206,7 @@
         "T-100 is permanent and usually more expensive.",
         "5-year base term does not match full 10-year repayment period as directly."
       ],
-      "explanation": "A 10-year decreasing term aligns directly to the declining 10-year mortgage balance.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Level term may overinsure later years and cost more than decreasing term for this need; T-100 is permanent and usually more expensive.\nStep 4: Select the best answer. Option A: 10-year decreasing term insurance.",
       "difficulty": "medium",
       "tags": [
         "mortgage",
@@ -229,7 +229,7 @@
         "Single person cannot use joint policy.",
         null
       ],
-      "explanation": "Estate tax liabilities like cottage capital gains are often due at second death in spousal planning contexts.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This could still be solved by other structures; classic estate tax trigger is cleaner for last-to-die; Mortgage protection is usually first-to-die.\nStep 4: Select the best answer. Option D: Jane and Alex, who would like a policy that will pay the capital gains tax on a cottage upon death.",
       "difficulty": "medium",
       "tags": [
         "joint-last-to-die",

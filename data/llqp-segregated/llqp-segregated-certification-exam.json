@@ -20,7 +20,7 @@
         "Incorrect. Gifts are not considered income to the recipient.",
         "Incorrect. The donor (Max) is responsible for capital gains tax on the gift."
       ],
-      "explanation": "In Canada, when an individual gifts appreciated property, they are deemed to have sold it at fair market value. Max has a capital gain of $100,000 ($250,000 - $150,000) and must pay capital gains tax on this amount.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Gifts trigger capital gains on the donor; Gifts are not considered income to the recipient.\nStep 4: Select the best answer. Option B: Max will owe capital gains tax on the appreciated value of the assets.",
       "difficulty": "medium",
       "tags": [
         "capital gains",
@@ -37,14 +37,14 @@
         "C. Annie currently has 385 units of the segregated fund.",
         "D. Annie has a taxable capital gain of $750 in the current year."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "optionFeedback": [
-        "Incorrect. The tax is $300 × 35% = $105, but this is not the question.",
         null,
+        "Incorrect. Annie's ACB is not $6,500.",
         "Incorrect. Annie has 500 units ($5,000 ÷ $10).",
         "Incorrect. There is no capital gain yet; she still owns the fund."
       ],
-      "explanation": "Annie's original investment of $5,000 plus the allocation of $300 results in an ACB of $5,300. However, when the allocation is paid by purchasing additional units at $13 per unit, she gets $300 ÷ $13 = 23.08 units. Her new ACB becomes $5,000 + $300 = $5,300. Total units = 500 + 23.08 = 523.08. ACB per unit = $5,300 ÷ 523.08 ≈ $10.13, but total ACB is $5,300.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Annie's ACB is not $6,500; Annie has 500 units ($5,000 ÷ $10).\nStep 4: Select the best answer. Option A: Annie will have tax owing of $105 for the current year.",
       "difficulty": "hard",
       "tags": [
         "segregated funds",
@@ -69,7 +69,7 @@
         "Incorrect. Only segregated funds offer maturity and death benefit guarantees.",
         null
       ],
-      "explanation": "Segregated funds have named beneficiary provisions that allow them to bypass probate by passing directly to the named beneficiary upon death. This is a key advantage over mutual funds.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Segregated funds are protected by provincial regulators and insurance guarantees, not CIPF; Segregated funds typically have higher MERs due to the guarantees.\nStep 4: Select the best answer. Option D: Unlike mutual funds, segregated funds offer the opportunity to bypass probate.",
       "difficulty": "medium",
       "tags": [
         "segregated funds",
@@ -94,7 +94,7 @@
         null,
         "Incorrect. A straight life annuity with no guarantee provides no death benefit."
       ],
-      "explanation": "Only if the life annuity has a guarantee period (such as 10-year guaranteed annuity) can a beneficiary claim remaining guaranteed payments. A straight life annuity with no guarantee provides no death benefit to beneficiaries.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Prescribed status doesn't determine death benefits; A straight life annuity has no refund upon death unless guaranteed.\nStep 4: Select the best answer. Option C: If the life annuity offered a guarantee.",
       "difficulty": "medium",
       "tags": [
         "annuities",
@@ -111,14 +111,14 @@
         "C. $9,112.50",
         "D. $18,225.00"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "optionFeedback": [
         "Incorrect. This does not account for the 50% inclusion rate.",
-        "Incorrect. The calculation is incomplete.",
         null,
+        "Incorrect. This overstates the tax owing.",
         "Incorrect. This is too high; losses offset gains."
       ],
-      "explanation": "Total capital gains = $21,500 + $19,000 = $40,500. Capital losses = $5,800. Net capital gain = $40,500 - $5,800 = $34,700. Taxable capital gain (50% inclusion) = $34,700 × 50% = $17,350. Tax owing = $17,350 × 45% = $7,807.50. Wait, let me recalculate: The answer should be $7,807.50, but C says $9,112.50. Let me check: $34,700 × 50% = $17,350. But if we consider only the gains: ($21,500 + $19,000) × 50% = $40,500 × 50% = $20,250. Minus loss impact: $20,250 - ($5,800 × 50%) = $20,250 - $2,900 = $17,350. Tax = $17,350 × 45% = $7,807.50. The answer is B, not C. But the user provided C as the answer. Let me reconsider - perhaps the question expects: (40,500 - 5,800) × 0.5 × 0.45 = 34,700 × 0.5 × 0.45 = $7,807.50. But they marked C as correct. Perhaps there's an alternative calculation method used in their exam. I'll use C as provided.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This does not account for the 50% inclusion rate; This overstates the tax owing.\nStep 4: Select the best answer. Option B: $7,807.50.",
       "difficulty": "hard",
       "tags": [
         "capital gains",
@@ -142,7 +142,7 @@
         null,
         "Incorrect. This is too low for the calculation."
       ],
-      "explanation": "Real return = Nominal return - Inflation rate = 3% - 5% = -2%. The investor's purchasing power actually decreased by approximately 2% despite earning a positive nominal return.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Real return = Nominal return - Inflation rate; This is the inflation rate, not the real return.\nStep 4: Select the best answer. Option C: -2%.",
       "difficulty": "easy",
       "tags": [
         "real return",
@@ -166,7 +166,7 @@
         null,
         "Incorrect. Mutual funds cannot be sold with stop loss orders as they don't trade continuously."
       ],
-      "explanation": "Exchange-traded funds (ETFs) trade on stock exchanges like regular stocks, allowing for stop loss orders, while providing diversification and professional management through their underlying portfolios.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. GICs don't trade like stocks; Segregated funds don't trade like stocks.\nStep 4: Select the best answer. Option C: Exchange-traded fund.",
       "difficulty": "medium",
       "tags": [
         "ETF",
@@ -191,7 +191,7 @@
         "Incorrect. Coupon payments on bonds are taxed as interest income, same as GICs.",
         "Incorrect. Statement iii is incorrect; coupon payments are not taxed more favorably."
       ],
-      "explanation": "i. True - A Eurobond is a bond issued in a currency other than the currency of the country in which it is issued. A US bond issued in England qualifies. ii. False - Annual coupon = $25,000 × 3% = $750, not semi-annual $750. iii. False - Bond coupon payments are taxed as interest income, same as GICs. iv. True - Selling a bond for more than the purchase price creates a capital gain.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Annual coupon is $750, so semi-annual would be $375, not $750; Coupon payments on bonds are taxed as interest income, same as GICs.\nStep 4: Select the best answer. Option A: i and iv.",
       "difficulty": "hard",
       "tags": [
         "bonds",
@@ -217,7 +217,7 @@
         "Incorrect. Money market funds invest in short-term, highly liquid assets, typically more than 50%.",
         "Incorrect. Dividend funds do not guarantee dividends and may use active strategies."
       ],
-      "explanation": "Real estate equity funds invest in real estate properties, which are not easily bought and sold compared to stocks. This makes them subject to liquidity risk - the difficulty in quickly converting the investment to cash without loss.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A fund of funds invests in other funds, not an index mirror; Money market funds invest in short-term, highly liquid assets, typically more than 50%.\nStep 4: Select the best answer. Option B: One of the main concerns associated with real estate equity funds would be liquidity risk.",
       "difficulty": "medium",
       "tags": [
         "fund types",
@@ -241,7 +241,7 @@
         null,
         "Incorrect. The guarantee applies because the current value is below the reset guarantee."
       ],
-      "explanation": "When Ty reset the guarantee at the 5-year mark, the new guaranteed amount became $170,000 (the then-current value). At the 10-year maturity, even though the fund value dropped to $120,000, Ty receives the guaranteed amount of $170,000.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. When a guarantee is reset, the original guarantee is replaced; Averages are not calculated in guarantee resets.\nStep 4: Select the best answer. Option C: $170,000, the reset guaranteed amount.",
       "difficulty": "medium",
       "tags": [
         "segregated funds",
@@ -261,12 +261,12 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. While it avoids probate, it does not avoid capital gains tax.",
+        "Incorrect. Naming the estate does not avoid probate.",
         null,
         "Incorrect. Capital gains tax would still apply if the estate is the beneficiary.",
         "Incorrect. Death benefit guarantees are not affected by the beneficiary designation."
       ],
-      "explanation": "When the estate is named as beneficiary, the segregated fund loses its creditor protection. A named individual beneficiary provides creditor protection, but using the estate defeats this protection. Additionally, capital gains tax would still apply on the death.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Naming the estate does not avoid probate; Capital gains tax would still apply if the estate is the beneficiary.\nStep 4: Select the best answer. Option B: The segregated fund would not be creditor-proof.",
       "difficulty": "hard",
       "tags": [
         "segregated funds",
@@ -291,7 +291,7 @@
         "Incorrect. Probate fees can be minimized through proper beneficiary designation.",
         null
       ],
-      "explanation": "By naming a specific individual (like a family member) as beneficiary instead of his estate, the segregated fund will pass directly to that person outside of probate, thereby avoiding probate fees entirely.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Naming the estate increases probate fees; This would trigger unnecessary tax liability.\nStep 4: Select the best answer. Option D: Name a beneficiary other than his estate.",
       "difficulty": "medium",
       "tags": [
         "segregated funds",
@@ -316,7 +316,7 @@
         "Incorrect. The death benefit guarantee is $25,000, higher than current value.",
         "Incorrect. The death benefit guarantee does not reset unless explicitly done."
       ],
-      "explanation": "A 100% death benefit guarantee means the beneficiary receives at least the original deposit amount. Gertrude's initial deposit was $25,000, so the beneficiary receives $25,000 (the guarantee amount, since the current value of $21,000 is lower).",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is 75% of the initial deposit, not the correct guarantee amount; The death benefit guarantee is $25,000, higher than current value.\nStep 4: Select the best answer. Option A: $25,000.",
       "difficulty": "easy",
       "tags": [
         "segregated funds",
@@ -340,7 +340,7 @@
         null,
         "Incorrect. Switch fees apply regardless of load type."
       ],
-      "explanation": "In a non-registered account, switching from one segregated fund to another is treated as a deemed disposition of the old fund for tax purposes. This means Gilbert may have a capital gain or loss and therefore could incur a tax liability.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Frequent switching charges may be assessed; A switch within a non-registered account may trigger a deemed disposition and capital gain.\nStep 4: Select the best answer. Option C: Gilbert may incur a tax liability when he switches from one fund to another.",
       "difficulty": "medium",
       "tags": [
         "segregated funds",
@@ -365,7 +365,7 @@
         "Incorrect. This is 75% of the original investment.",
         null
       ],
-      "explanation": "The highest standard guarantee available is typically 100% on both maturity and death benefit. Paul's initial deposit was $150,000, so Jenna will receive $150,000 (the guaranteed amount, since the current value of $135,000 is less).",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is 67.5% of the original investment; The guarantee provides more than the current value.\nStep 4: Select the best answer. Option D: $150,000.",
       "difficulty": "medium",
       "tags": [
         "segregated funds",
@@ -383,14 +383,14 @@
         "C. A new guarantee will be determined based on the contract terms.",
         "D. The guaranteed amount would be 75% of the remaining contract value."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 1,
       "optionFeedback": [
+        "Incorrect. Partial withdrawals generally reduce guarantees.",
         null,
-        "Incorrect. The withdrawal does not automatically reduce the guarantee proportionally.",
         "Incorrect. The guarantee remains the same unless explicitly reset.",
         "Incorrect. The guarantee is applied to the original or reset amount, not remaining value."
       ],
-      "explanation": "In an Individual Variable Insurance Contract (IVIC), withdrawals typically do not automatically reduce the guarantee amount. The guarantee remains based on the original or last reset amount, unless the contract specifically provides otherwise.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Partial withdrawals generally reduce guarantees; The guarantee remains the same unless explicitly reset.\nStep 4: Select the best answer. Option B: She is withdrawing 25% of the current value, and therefore the guarantee will be reduced by that percentage.",
       "difficulty": "hard",
       "tags": [
         "IVIC",
@@ -414,7 +414,7 @@
         "Incorrect. Rates are based on mortality tables and vary by insurer.",
         "Incorrect. Term certain annuities have higher rates since they're for a fixed period."
       ],
-      "explanation": "A life annuity provides payments for the rest of Roland's life (guaranteed to be at least 24 years), while a 10-year term certain annuity only guarantees payments for 10 years. Therefore, the life annuity guarantees payments for longer.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Life annuities typically provide higher annual payments due to mortality risk; Rates are based on mortality tables and vary by insurer.\nStep 4: Select the best answer. Option B: The life annuity guarantees payments for longer than the term certain annuity.",
       "difficulty": "medium",
       "tags": [
         "annuities",
@@ -439,7 +439,7 @@
         "Incorrect. A target date fund could appreciate but doesn't control spending.",
         "Incorrect. A life annuity would be too long-term for this goal."
       ],
-      "explanation": "A 10-year term certain annuity would provide fixed, regular payments to Dirk over the 10 years until Keagan reaches adulthood. This removes the temptation to spend the lump sum and ensures disciplined, consistent funding of Keagan's expenses.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Life insurance doesn't help manage current funds; A target date fund could appreciate but doesn't control spending.\nStep 4: Select the best answer. Option B: Purchase a 10-year term certain annuity.",
       "difficulty": "medium",
       "tags": [
         "annuities",
@@ -464,7 +464,7 @@
         null,
         "Incorrect. Prescribed annuities have lower first-year tax than accrual annuities."
       ],
-      "explanation": "Accrual annuities have increasing taxable amounts each year. The higher the premium, the higher the first-year tax liability. An accrual annuity with a $120,000 premium will have the highest tax liability in the first year among the options.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Prescribed annuities spread tax evenly; accrual annuities have more tax in early years; An accrual annuity with a lower premium has less tax liability.\nStep 4: Select the best answer. Option C: An accrual annuity with a $120,000 premium.",
       "difficulty": "hard",
       "tags": [
         "annuities",
@@ -489,7 +489,7 @@
         "Incorrect. Annuity payments are income received, not premiums paid.",
         "Incorrect. The deposit is the premium; there's no additional commission in this context."
       ],
-      "explanation": "The annuity rate of $6,000 per $100,000 means Bianca will receive $6,000 × 3 = $18,000 annually. This is the income payment she receives from her $300,000 deposit (premium).",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The stated rate is the income payment, not before expenses; Annuity payments are income received, not premiums paid.\nStep 4: Select the best answer. Option B: She will receive annual income payments of $18,000.",
       "difficulty": "easy",
       "tags": [
         "annuities",
@@ -513,7 +513,7 @@
         "Incorrect. This is too low for annuity coverage.",
         "Incorrect. This does not match the Assuris limit."
       ],
-      "explanation": "Assuris (the Canadian insurance guarantee fund) covers up to $2,000 per month of annuity payments. Shauna's $6,000 monthly payment would be reduced to $2,000, but the question asks for $5,400, which suggests 90% of $6,000. This may reflect a different provincial protection or the question may have intended different coverage. Based on standard Assuris limits, only $2,000 per month would be covered.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is not the Assuris coverage limit; This is too low for annuity coverage.\nStep 4: Select the best answer. Option B: $5,400 per month.",
       "difficulty": "hard",
       "tags": [
         "annuities",
@@ -538,7 +538,7 @@
         null,
         "Incorrect. Employer contributions do impact Hugo's room through the Pension Adjustment."
       ],
-      "explanation": "To determine if Hugo's contributions are within limits, his earned income and any pension adjustments must be calculated. The RRSP contribution limit is 18% of prior-year earned income (up to a maximum), so his actual allowable contribution depends on his earned income determination.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The contributions may be within limits; earned income must be verified; A single contribution limit applies to all RRSPs combined.\nStep 4: Select the best answer. Option C: Hugo's earned income must be determined to calculate what percentage he can contribute.",
       "difficulty": "medium",
       "tags": [
         "RRSP",
@@ -563,7 +563,7 @@
         "Incorrect. This is 22% of the split amount, not the tax savings.",
         null
       ],
-      "explanation": "Tax savings = (Neil's rate - Mia's rate) × Split amount = (38% - 22%) × $20,000 = 16% × $20,000 = $3,200. By splitting the income, they save the difference in tax rates applied to the split portion.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The tax difference must be applied to the split amount; This is not the correct tax calculation.\nStep 4: Select the best answer. Option D: $3,200.",
       "difficulty": "medium",
       "tags": [
         "pension income splitting",
@@ -580,14 +580,14 @@
         "C. $11,700",
         "D. $7,500"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 0,
       "optionFeedback": [
-        "Incorrect. This is only 18% of last year's income without accounting for the raise.",
-        "Incorrect. This is too low; the raise increases contribution room.",
         null,
+        "Incorrect. This is too low; the raise increases contribution room.",
+        "Incorrect. Contribution room for this year is based on last year's earned income.",
         "Incorrect. This doesn't account for the increase in earned income."
       ],
-      "explanation": "Josh's RRSP room for this year is based on his prior-year earned income of $52,000. His deduction limit = ($52,000 × 18%) - $4,200 = $9,360 - $4,200 = $5,160. However, the question asks about this year where he earned $65,000, so next year's limit would be ($65,000 × 18%) = $11,700. Given the wording, $11,700 represents his total contribution room.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is too low; the raise increases contribution room; Contribution room for this year is based on last year's earned income.\nStep 4: Select the best answer. Option A: $5,160.",
       "difficulty": "hard",
       "tags": [
         "RRSP",
@@ -612,7 +612,7 @@
         "Incorrect. Statement ii has a grammatical error and is unclear.",
         "Incorrect. DCPP allows withdrawals in some cases."
       ],
-      "explanation": "i. True - In a DPSP, only the employer makes contributions (from profits). ii. False - The statement is confusing, but plan members do make investment decisions in DCPPs. iii. True - DPSP withdrawals are more flexible after vesting; DCPP withdrawals are restricted. iv. False - DCPP uses a formula; DPSP is based on employer profits, not a set formula.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. DPSP benefits are based on employer profit-sharing, not a formula; Statement ii has a grammatical error and is unclear.\nStep 4: Select the best answer. Option A: i and iii.",
       "difficulty": "hard",
       "tags": [
         "DCPP",
@@ -638,7 +638,7 @@
         "Incorrect. Employment income is not eligible for splitting.",
         "Incorrect. Dividend income from non-registered accounts is not eligible for splitting."
       ],
-      "explanation": "Eligible income for pension income splitting for retirees over 65 includes defined benefit pension income, CPP, and eligible RRIF withdrawals. Defined benefit pension income is specifically eligible for splitting with a spouse of any age.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Interest income from non-registered accounts is not eligible for splitting; Employment income is not eligible for splitting.\nStep 4: Select the best answer. Option B: Defined benefit pension income.",
       "difficulty": "medium",
       "tags": [
         "pension income splitting",
@@ -662,7 +662,7 @@
         null,
         "Incorrect. Cashing out is not usually permitted; the amount is locked in."
       ],
-      "explanation": "For a DCPP, when an employee leaves their employer, they typically have the option to transfer the vested balance to an RRSP or to a locked-in retirement account (LIRA). Transferring to an RRSP is a standard option available to Sanjay.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Once he leaves, the value typically must be transferred; Immediate annuity is one option, but not typical for DCPPs.\nStep 4: Select the best answer. Option C: Sanjay may transfer the pension amount to his RRSP.",
       "difficulty": "medium",
       "tags": [
         "DCPP",
@@ -680,14 +680,14 @@
         "C. Dominique's minimum withdrawal amount of $6,700 can be withdrawn tax-free.",
         "D. Dominique can withdraw $6,700 without paying any withholding tax."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "optionFeedback": [
-        null,
-        "Incorrect. All RRIF withdrawals are subject to withholding tax.",
+        "Incorrect. Minimum required RRIF withdrawals are not subject to withholding tax.",
+        "Incorrect. Minimum withdrawals are still taxable income, even though withholding tax does not apply at source.",
         "Incorrect. RRIF withdrawals are subject to both withholding tax and income tax.",
-        "Incorrect. Withholding tax applies to all RRIF withdrawals."
+        null
       ],
-      "explanation": "RRIF withdrawals are subject to withholding tax. For the first $6,700, the withholding tax rate is typically 10% on amounts up to $15,000, resulting in $670 withholding tax. Additional withdrawals may have higher withholding tax rates (20% or more depending on jurisdiction).",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Minimum required RRIF withdrawals are not subject to withholding tax; Minimum withdrawals are still taxable income, even though withholding tax does not apply at source.\nStep 4: Select the best answer. Option D: Dominique can withdraw $6,700 without paying any withholding tax.",
       "difficulty": "medium",
       "tags": [
         "RRIF",
@@ -712,7 +712,7 @@
         "Incorrect. In an RRSP, gains are not taxed annually until withdrawal.",
         "Incorrect. Segregated funds are not protected by CIPF."
       ],
-      "explanation": "When Abbas withdraws from his RRSP, the entire withdrawal amount ($38,500) is taxed as regular income, not as a capital gain. RRSP growth is tax-deferred, and withdrawals are fully included in income at the marginal rate.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. RRSP withdrawals are taxed as regular income, not capital gains; In an RRSP, gains are not taxed annually until withdrawal.\nStep 4: Select the best answer. Option A: If Abbas withdraws the entire $38,500 to buy a car, his capital gain will be taxed as regular income.",
       "difficulty": "medium",
       "tags": [
         "RRSP",
@@ -737,7 +737,7 @@
         null,
         "Incorrect. DCPPs don't guarantee future income; they depend on investment returns."
       ],
-      "explanation": "A Defined Benefit Pension Plan (DBPP) guarantees a specific retirement income amount calculated by a formula, which is known in advance and paid for life. It includes survivor provisions for the spouse, all of which match the description.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. PRPPs are more flexible; benefits aren't predetermined; DPSPs depend on employer profits and don't guarantee income.\nStep 4: Select the best answer. Option C: Defined Benefit Pension Plan (DBPP).",
       "difficulty": "medium",
       "tags": [
         "DBPP",
@@ -762,7 +762,7 @@
         null,
         "Incorrect. A RRIF requires minimum withdrawals; a LIRA is more appropriate for growth."
       ],
-      "explanation": "A Locked-In Retirement Account (LIRA) is specifically designed for DCPP proceeds. It allows tax-deferred growth until retirement, when Ryan can then purchase an annuity or make other arrangements. This provides growth potential over the next decade.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. An immediate annuity would lock in current rates; Ryan has time to grow funds; DCPP cash-outs are typically not permitted due to locking-in rules.\nStep 4: Select the best answer. Option C: Transfer the funds to a LIRA and use them to purchase an annuity upon retirement.",
       "difficulty": "medium",
       "tags": [
         "DCPP",
@@ -780,14 +780,14 @@
         "C. It will be reduced to $8,000.",
         "D. It will be reduced by $6,000."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 1,
       "optionFeedback": [
+        "Incorrect. An eligible transfer from DPSP to RRSP does not use regular RRSP contribution room.",
         null,
-        "Incorrect. The transfer uses some of his available room.",
         "Incorrect. The transfer reduces the available room.",
         "Incorrect. The full $12,000 uses contribution room."
       ],
-      "explanation": "When Sam transfers $12,000 from the DPSP to his RRSP, this uses $12,000 of his available contribution room. His unused room was $20,000, so after the transfer it becomes $20,000 - $12,000 = $8,000. However, DPSP transfers typically don't affect contribution room in some jurisdictions, making this answer context-dependent. The most common answer is that the room is reduced by $12,000.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. An eligible transfer from DPSP to RRSP does not use regular RRSP contribution room; The transfer reduces the available room.\nStep 4: Select the best answer. Option B: It will remain unchanged at $20,000.",
       "difficulty": "hard",
       "tags": [
         "DPSP",
@@ -812,7 +812,7 @@
         "Incorrect. This is the original guarantee, but a reset occurred.",
         null
       ],
-      "explanation": "When Diego reset the guarantee, the new guaranteed amount became $180,000 (the contract value at reset). Since he died shortly after, his beneficiaries receive the 100% death benefit guarantee of $180,000 (the reset guarantee amount, which is higher than the current value of $165,000).",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is not the reset guarantee amount; The guarantee is higher than the current value.\nStep 4: Select the best answer. Option D: $180,000.",
       "difficulty": "medium",
       "tags": [
         "segregated funds",
@@ -837,7 +837,7 @@
         "Incorrect. Each deposit has its own guarantee; they don't share.",
         "Incorrect. Periodic deposits do offer maturity guarantees."
       ],
-      "explanation": "In a segregated fund with periodic deposits, each deposit creates a separate guarantee with its own maturity date. If Chris makes monthly deposits over a year, there could be 12 separate guarantees, each maturing at different times (e.g., deposit 1 matures 10 years from month 1, deposit 2 matures 10 years from month 2, etc.).",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Guarantees apply to each periodic deposit as it's made; Each deposit has its own guarantee; they don't share.\nStep 4: Select the best answer. Option A: There could be 12 separate guarantees with different maturity dates.",
       "difficulty": "hard",
       "tags": [
         "segregated funds",
@@ -862,7 +862,7 @@
         null,
         "Incorrect. Sales charges are waived, not just lowered."
       ],
-      "explanation": "Group segregated funds typically offer: (1) No sales charges (front-end loads are waived), (2) Lower management expense ratios (due to bulk purchasing power), and (3) No switch fees (employees can switch between funds without penalty). These are the primary advantages of group plans versus individual segregated funds.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Switch fees are typically waived in group plans; Management fees still apply in group plans.\nStep 4: Select the best answer. Option C: No sales charges, lower management expense ratio, and no switch fees.",
       "difficulty": "medium",
       "tags": [
         "group segregated funds",

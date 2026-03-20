@@ -28,7 +28,8 @@ const MCQApp = {
     currentPdfObjectUrl: null,
     loadingCount: 0,
     autoAdvanceEnabled: localStorage.getItem('auto-advance') === 'true',
-    autoAdvanceDelay: 1500
+    autoAdvanceDelay: 1500,
+    homeInsightsExpanded: localStorage.getItem('home-insights-expanded') === 'true'
   },
 
   // Utility: Shuffle Array (Fisher-Yates)
@@ -44,8 +45,8 @@ const MCQApp = {
   // Log Wrong Answer
   logWrongAnswer(question) {
     if (!question) return;
-    const topicId = this.state.currentTopic?.id || 'unknown-topic';
-    const testId = this.state.currentPracticeTest?.id || 'unknown-test';
+    const topicId = question.__sourceTopicId || this.state.currentTopic?.id || 'unknown-topic';
+    const testId = question.__sourceTestId || this.state.currentPracticeTest?.id || 'unknown-test';
     const key = `${topicId}|${testId}|${question.id}`;
     if (!this.state.wrongQuestions.some(q => q.key === key)) {
       this.state.wrongQuestions.push({
@@ -61,7 +62,35 @@ const MCQApp = {
 
   loadWrongQuestions() {
     const data = this.readJSONFromStorage('wrong_questions', []);
-    this.state.wrongQuestions = data;
+    const list = Array.isArray(data) ? data : [];
+
+    const normalized = [];
+    const seen = new Set();
+
+    for (const item of list) {
+      if (!item || typeof item !== 'object') continue;
+
+      const topicId = item.topicId || 'unknown-topic';
+      const testId = item.testId || 'unknown-test';
+      const questionId = item.questionId;
+
+      if (typeof questionId === 'undefined' || questionId === null) continue;
+
+      const key = item.key || `${topicId}|${testId}|${questionId}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      normalized.push({
+        key,
+        topicId,
+        testId,
+        questionId,
+        timestamp: item.timestamp || new Date().toISOString()
+      });
+    }
+
+    this.state.wrongQuestions = normalized;
+    this.saveWrongQuestions();
   },
 
   saveWrongQuestions() {
@@ -148,8 +177,29 @@ const MCQApp = {
       || null;
   },
 
-  removeFromWrongQuestions(questionId) {
-    this.state.wrongQuestions = this.state.wrongQuestions.filter(q => q.questionId !== questionId);
+  getQuestionStateKey(question) {
+    if (!question) return null;
+    return question.__stateKey || String(question.id);
+  },
+
+  getWrongEntryKey(question) {
+    if (!question) return null;
+    if (question.__wrongKey) return question.__wrongKey;
+
+    const topicId = question.__sourceTopicId || this.state.currentTopic?.id;
+    const testId = question.__sourceTestId || this.state.currentPracticeTest?.id;
+    if (!topicId || !testId || typeof question.id === 'undefined') return null;
+
+    return `${topicId}|${testId}|${question.id}`;
+  },
+
+  removeFromWrongQuestions(questionOrKey) {
+    const key = typeof questionOrKey === 'string'
+      ? questionOrKey
+      : this.getWrongEntryKey(questionOrKey);
+
+    if (!key) return;
+    this.state.wrongQuestions = this.state.wrongQuestions.filter((q) => q.key !== key);
     this.saveWrongQuestions();
     this.updateWrongQuestionsCount();
   },
@@ -163,6 +213,7 @@ const MCQApp = {
 
     // Load all wrong questions from different topics/tests
     const wrongQuestionsToReview = [];
+    const retainedWrongEntries = [];
     
     this.beginLoading('Loading wrong-answer review...');
     try {
@@ -179,8 +230,13 @@ const MCQApp = {
           const question = data.questions.find(q => q.id === wrongQ.questionId);
 
           if (question) {
+            retainedWrongEntries.push(wrongQ);
             wrongQuestionsToReview.push({
               ...question,
+              __stateKey: wrongQ.key,
+              __wrongKey: wrongQ.key,
+              __sourceTopicId: wrongQ.topicId,
+              __sourceTestId: wrongQ.testId,
               topicName: topic.name,
               testName: test.name
             });
@@ -188,6 +244,12 @@ const MCQApp = {
         } catch (error) {
           console.error('Error loading question:', error);
         }
+      }
+
+      if (retainedWrongEntries.length !== this.state.wrongQuestions.length) {
+        this.state.wrongQuestions = retainedWrongEntries;
+        this.saveWrongQuestions();
+        this.updateWrongQuestionsCount();
       }
     } finally {
       this.endLoading();
@@ -223,6 +285,12 @@ const MCQApp = {
     this.state.wrongQuestions = [];
     this.saveWrongQuestions();
     this.updateWrongQuestionsCount();
+
+    if (this.state.isReviewMode) {
+      this.state.isReviewMode = false;
+      this.showView('home');
+    }
+
     this.showToast('Wrong answers history cleared.', 'success');
   },
 
@@ -427,6 +495,11 @@ const MCQApp = {
 
     // Back button from MCQ view
     document.getElementById('back-btn')?.addEventListener('click', () => {
+      if (this.state.isReviewMode) {
+        this.state.isReviewMode = false;
+        this.showView('home');
+        return;
+      }
       this.showView('practice-test');
     });
 
@@ -482,6 +555,11 @@ const MCQApp = {
       this.showView('home');
     });
     document.getElementById('finish-tests-btn')?.addEventListener('click', () => {
+      if (this.state.isReviewMode) {
+        this.state.isReviewMode = false;
+        this.showView('home');
+        return;
+      }
       this.showView('practice-test');
     });
     document.getElementById('finish-retry-btn')?.addEventListener('click', () => {
@@ -505,6 +583,111 @@ const MCQApp = {
         section.style.display = 'block';
       }
     }
+
+    this.renderHomeInsights();
+  },
+
+  getDateKey(date = new Date()) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  },
+
+  getDailyStudyStats() {
+    const defaultStats = {
+      date: this.getDateKey(),
+      todayAnswered: 0,
+      streak: 0,
+      lastActiveDate: null,
+      dailyHistory: {},
+      xpTotal: 0
+    };
+
+    const stats = this.readJSONFromStorage('study_daily_stats', defaultStats) || defaultStats;
+    const today = this.getDateKey();
+
+    if (stats.date !== today) {
+      stats.date = today;
+      stats.todayAnswered = 0;
+    }
+
+    stats.dailyHistory = stats.dailyHistory || {};
+    stats.xpTotal = Number(stats.xpTotal || 0);
+
+    return stats;
+  },
+
+  saveDailyStudyStats(stats) {
+    if (!stats) return;
+    localStorage.setItem('study_daily_stats', JSON.stringify(stats));
+  },
+
+  recordDailyPractice(isCorrect = false) {
+    const stats = this.getDailyStudyStats();
+    const today = this.getDateKey();
+
+    if (stats.date !== today) {
+      stats.date = today;
+      stats.todayAnswered = 0;
+    }
+
+    stats.todayAnswered += 1;
+    stats.dailyHistory[today] = Number(stats.dailyHistory[today] || 0) + 1;
+    stats.xpTotal += 10 + (isCorrect ? 5 : 0);
+
+    const minDate = new Date();
+    minDate.setDate(minDate.getDate() - 120);
+    const minDateKey = this.getDateKey(minDate);
+    Object.keys(stats.dailyHistory).forEach((key) => {
+      if (key < minDateKey) delete stats.dailyHistory[key];
+    });
+
+    if (stats.lastActiveDate !== today) {
+      if (stats.lastActiveDate) {
+        const last = new Date(`${stats.lastActiveDate}T00:00:00`);
+        const now = new Date(`${today}T00:00:00`);
+        const dayDiff = Math.round((now - last) / 86400000);
+        stats.streak = dayDiff === 1 ? (Number(stats.streak || 0) + 1) : 1;
+      } else {
+        stats.streak = 1;
+      }
+      stats.lastActiveDate = today;
+    }
+
+    this.saveDailyStudyStats(stats);
+  },
+
+  getHeatmapCells(days = 7) {
+    const stats = this.getDailyStudyStats();
+    const history = stats.dailyHistory || {};
+    const cells = [];
+
+    for (let i = days - 1; i >= 0; i -= 1) {
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      const key = this.getDateKey(date);
+      const count = Number(history[key] || 0);
+      const level = count === 0 ? 0 : count < 3 ? 1 : count < 6 ? 2 : count < 10 ? 3 : 4;
+
+      cells.push({
+        key,
+        count,
+        level,
+        shortDay: date.toLocaleDateString(undefined, { weekday: 'short' })
+      });
+    }
+
+    return cells;
+  },
+
+  getXpLevel(stats = this.getDailyStudyStats()) {
+    const xpTotal = Number(stats.xpTotal || 0);
+    const perLevel = 200;
+    const level = Math.floor(xpTotal / perLevel) + 1;
+    const currentXp = xpTotal % perLevel;
+    const pct = Math.round((currentXp / perLevel) * 100);
+    return { xpTotal, level, currentXp, perLevel, pct };
   },
 
   getHomeTopicRank(topicId) {
@@ -519,6 +702,221 @@ const MCQApp = {
 
   isCompactHomeTopic(topicId) {
     return ['llqp-life', 'llqp-accident', 'llqp-segregated', 'llqp-ethics'].includes(topicId);
+  },
+
+  getActivePracticeUnits() {
+    return this.state.topics.flatMap((topic) => {
+      const topicUnits = this.getTopicPracticeUnits(topic) || [];
+      return topicUnits
+        .filter((test) => test && test.status !== 'coming-soon' && Number(test.questionCount || 0) > 0)
+        .map((test) => ({ topic, test }));
+    });
+  },
+
+  getHomeStudyStats() {
+    const units = this.getActivePracticeUnits();
+    const totalCourses = units.length;
+    let completedCourses = 0;
+    let totalQuestions = 0;
+    let totalViewed = 0;
+
+    units.forEach(({ topic, test }) => {
+      const questions = Number(test.questionCount || 0);
+      const progressKey = `progress_${topic.id}_${test.id}`;
+      const saved = this.readJSONFromStorage(progressKey, null);
+      const viewed = Math.min((saved?.viewed || []).length, questions);
+
+      totalQuestions += questions;
+      totalViewed += viewed;
+      if (questions > 0 && viewed >= questions) {
+        completedCourses += 1;
+      }
+    });
+
+    const overallProgress = totalQuestions > 0 ? Math.round((totalViewed / totalQuestions) * 100) : 0;
+    return { totalCourses, completedCourses, totalQuestions, overallProgress };
+  },
+
+  getRecommendedPracticeUnit() {
+    const units = this.getActivePracticeUnits();
+    if (!units.length) return null;
+
+    const enriched = units
+      .map(({ topic, test }) => ({
+        topic,
+        test,
+        progress: this.getPracticeTestProgress(topic.id, test.id)
+      }))
+      .filter((item) => item.progress < 100);
+
+    if (!enriched.length) return null;
+
+    const inProgress = enriched
+      .filter((item) => item.progress > 0)
+      .sort((a, b) => b.progress - a.progress);
+
+    if (inProgress.length) return inProgress[0];
+
+    return enriched.sort((a, b) => {
+      const rankDiff = this.getHomeTopicRank(a.topic.id) - this.getHomeTopicRank(b.topic.id);
+      if (rankDiff !== 0) return rankDiff;
+      return (a.test.name || '').localeCompare(b.test.name || '');
+    })[0];
+  },
+
+  async startRecommendedPractice() {
+    const rec = this.getRecommendedPracticeUnit();
+    if (!rec) {
+      this.showToast('Great work — no recommended test right now.', 'success');
+      return;
+    }
+
+    this.saveLastSession(rec.topic.id, rec.test.id);
+    await this.resumeLastSession();
+  },
+
+  getLastSession() {
+    const session = this.readJSONFromStorage('last_session', null);
+    if (!session?.topicId || !session?.testId) return null;
+
+    const topic = this.state.topics.find((t) => t.id === session.topicId);
+    if (!topic) return null;
+
+    const directTest = topic.practiceTests?.find((t) => t.id === session.testId);
+    if (directTest) {
+      return { topic, test: directTest, parentTest: null };
+    }
+
+    const parentTest = topic.practiceTests?.find((t) =>
+      Array.isArray(t.subTests) && t.subTests.some((sub) => sub.id === session.testId)
+    );
+    const subTest = parentTest?.subTests?.find((sub) => sub.id === session.testId);
+    if (parentTest && subTest) {
+      return { topic, test: subTest, parentTest };
+    }
+
+    return null;
+  },
+
+  saveLastSession(topicId, testId) {
+    if (!topicId || !testId) return;
+    localStorage.setItem('last_session', JSON.stringify({
+      topicId,
+      testId,
+      updatedAt: new Date().toISOString()
+    }));
+  },
+
+  async resumeLastSession() {
+    const session = this.getLastSession();
+    if (!session) {
+      this.showToast('No saved session found yet. Start a test first.', 'info');
+      return;
+    }
+
+    const { topic, test, parentTest } = session;
+    this.state.currentTopic = topic;
+    this.state.lifeSection = null;
+    this.state.practiceTestParent = null;
+    this.state.currentPracticeTest = null;
+
+    if (parentTest) {
+      await this.selectSubPracticeTest(parentTest.id, test.id);
+      return;
+    }
+
+    await this.selectPracticeTest(test.id);
+  },
+
+  toggleHomeInsights() {
+    this.state.homeInsightsExpanded = !this.state.homeInsightsExpanded;
+    localStorage.setItem('home-insights-expanded', String(this.state.homeInsightsExpanded));
+    this.renderHomeInsights();
+  },
+
+  renderHomeInsights() {
+    const host = document.getElementById('home-insights');
+    if (!host) return;
+
+    const stats = this.getHomeStudyStats();
+    const session = this.getLastSession();
+    const daily = this.getDailyStudyStats();
+    const xp = this.getXpLevel(daily);
+    const heatmap = this.getHeatmapCells(7);
+    const recommended = this.getRecommendedPracticeUnit();
+    const dailyGoal = 20;
+    const dailyPct = Math.min(100, Math.round((daily.todayAnswered / dailyGoal) * 100));
+    const isExpanded = this.state.homeInsightsExpanded;
+
+    host.innerHTML = `
+      <div class="insight-compact-card">
+        <div class="insight-compact-row">
+          <div class="insight-mini">
+            <span class="insight-mini-label">Progress</span>
+            <strong>${stats.overallProgress}%</strong>
+          </div>
+          <div class="insight-mini">
+            <span class="insight-mini-label">Streak</span>
+            <strong>${daily.streak || 0}d</strong>
+          </div>
+          <div class="insight-mini">
+            <span class="insight-mini-label">XP</span>
+            <strong>L${xp.level}</strong>
+          </div>
+        </div>
+        <button class="btn-outline" onclick="MCQApp.toggleHomeInsights()">${isExpanded ? 'Hide details' : 'Show details'}</button>
+      </div>
+
+      ${isExpanded ? `
+        <div class="insight-card">
+          <div class="insight-label">Courses Completed</div>
+          <div class="insight-value">${stats.completedCourses}/${stats.totalCourses}</div>
+          <div class="insight-sub">Finish all active courses</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">Wrong Answers</div>
+          <div class="insight-value">${this.state.wrongQuestions.length}</div>
+          <div class="insight-sub">Review to improve score</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">Daily Goal</div>
+          <div class="insight-value">${daily.todayAnswered}/${dailyGoal}</div>
+          <div class="insight-sub">${dailyPct}% complete today</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">XP Level</div>
+          <div class="insight-value">Level ${xp.level}</div>
+          <div class="insight-sub">${xp.currentXp}/${xp.perLevel} XP • ${xp.xpTotal} total</div>
+        </div>
+        <div class="heatmap-card">
+          <div class="insight-label">Last 7 Days</div>
+          <div class="heatmap-grid">
+            ${heatmap.map((cell) => `
+              <div class="heatmap-cell lvl-${cell.level}" title="${cell.key}: ${cell.count} question${cell.count === 1 ? '' : 's'}">${cell.shortDay.slice(0, 1)}</div>
+            `).join('')}
+          </div>
+        </div>
+      ` : ''}
+
+      ${recommended && isExpanded ? `
+        <div class="resume-card">
+          <div>
+            <div class="resume-title">Recommended next</div>
+            <div class="resume-meta">${recommended.topic.name} • ${recommended.test.name} (${recommended.progress}%)</div>
+          </div>
+          <button class="btn-start" onclick="MCQApp.startRecommendedPractice()">Start Now →</button>
+        </div>
+      ` : ''}
+      ${session && isExpanded ? `
+        <div class="resume-card">
+          <div>
+            <div class="resume-title">Continue where you left off</div>
+            <div class="resume-meta">${session.topic.name} • ${session.test.name}</div>
+          </div>
+          <button class="btn-start" onclick="MCQApp.resumeLastSession()">Resume →</button>
+        </div>
+      ` : ''}
+    `;
   },
 
   // Render Topics Grid
@@ -656,6 +1054,7 @@ const MCQApp = {
     }
 
     this.state.currentPracticeTest = practiceTest;
+    this.saveLastSession(topic.id, practiceTest.id);
     this.state.currentQuestionIndex = 0;
     this.state.filterMode = 'all';
     this.state.isReviewMode = false;
@@ -924,6 +1323,7 @@ const MCQApp = {
     }
 
     this.state.currentPracticeTest = practiceTest;
+    this.saveLastSession(topic.id, practiceTest.id);
     this.state.currentQuestionIndex = 0;
     this.state.filterMode = 'all';
     this.state.isReviewMode = false;
@@ -1097,6 +1497,7 @@ const MCQApp = {
     this.stopSpeech();
     const question = this.getCurrentQuestion();
     if (!question) return;
+    const stateKey = this.getQuestionStateKey(question);
 
     const questionIndex = this.state.currentQuestionIndex;
     const totalQuestions = this.getFilteredQuestions().length;
@@ -1121,16 +1522,18 @@ const MCQApp = {
 
     // Render options
     const optionsContainer = document.getElementById('options-container');
-    const attemptedForQuestion = this.state.attemptedOptions[question.id] || [];
+    const attemptedForQuestion = this.state.attemptedOptions[stateKey] || [];
     
     const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
     optionsContainer.innerHTML = question.options.map((option, index) => {
       const wasAttempted = attemptedForQuestion.includes(index);
       const isCorrect = index === question.correctAnswer;
-      const isRevealed = this.state.answersRevealed.has(question.id);
+      const isRevealed = this.state.answersRevealed.has(stateKey);
       const isFocused = this.state.lastSelectedIndex === index && !isRevealed;
       const dimmedClass = isRevealed && !isCorrect && !wasAttempted ? 'is-dimmed' : '';
-      const feedbackText = wasAttempted && !isRevealed ? this.getWrongAnswerFeedback(question, index) : '';
+      const feedbackText = (this.state.isReviewMode)
+        ? ''
+        : (wasAttempted && !isRevealed ? this.getWrongAnswerFeedback(question, index) : '');
       const feedbackHtml = feedbackText ? `
             <div class="option-feedback">
               <p>${feedbackText}</p>
@@ -1153,7 +1556,7 @@ const MCQApp = {
 
     // Update bookmark button
     const bookmarkBtn = document.getElementById('bookmark-btn');
-    const isBookmarked = this.state.bookmarkedQuestions.has(question.id);
+    const isBookmarked = this.state.bookmarkedQuestions.has(stateKey);
     bookmarkBtn.textContent = isBookmarked ? '⭐' : '☆';
     bookmarkBtn.classList.toggle('bookmarked', isBookmarked);
 
@@ -1161,10 +1564,11 @@ const MCQApp = {
     document.getElementById('answer-section').classList.add('hidden');
 
     // If already answered, restore the answer display and disable options
-    if (this.state.answersRevealed.has(question.id)) {
+    if (this.state.answersRevealed.has(stateKey)) {
       const answerSection = document.getElementById('answer-section');
       document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
-      document.getElementById('explanation-text').innerHTML = this.formatExplanation(question.explanation);
+      const explanationText = this.buildStepByStepExplanation(question);
+      document.getElementById('explanation-text').innerHTML = this.formatExplanation(explanationText);
       answerSection.classList.remove('hidden');
       optionsContainer.querySelectorAll('.option').forEach(opt => {
         opt.style.pointerEvents = 'none';
@@ -1172,7 +1576,7 @@ const MCQApp = {
     }
 
     // Mark as viewed
-    this.state.viewedQuestions.add(question.id);
+    this.state.viewedQuestions.add(stateKey);
     this.saveProgress();
 
     // Update navigation buttons
@@ -1181,7 +1585,7 @@ const MCQApp = {
 
     // Hide Next until answered; always hide on last question (finish banner handles it)
     const nextBtn = document.getElementById('next-question-btn');
-    const hasAnswered = this.state.answersRevealed.has(question.id);
+    const hasAnswered = this.state.answersRevealed.has(stateKey);
     const isLastQ = this.state.currentQuestionIndex === this.getFilteredQuestions().length - 1;
     if (nextBtn) {
       nextBtn.classList.toggle('hidden', !hasAnswered || isLastQ);
@@ -1391,7 +1795,7 @@ const MCQApp = {
     if (key === 'arrowup' || key === 'arrowdown') {
       event.preventDefault();
       const question = this.getCurrentQuestion();
-      if (!question || this.state.answersRevealed.has(question.id)) return; // Don't navigate if already answered
+      if (!question || this.state.answersRevealed.has(this.getQuestionStateKey(question))) return; // Don't navigate if already answered
       
       const optionsContainer = document.getElementById('options-container');
       if (!optionsContainer) return;
@@ -1430,7 +1834,7 @@ const MCQApp = {
     if (key === ' ') {
       event.preventDefault();
       const question = this.getCurrentQuestion();
-      if (!question || !this.state.answersRevealed.has(question.id)) return;
+      if (!question || !this.state.answersRevealed.has(this.getQuestionStateKey(question))) return;
       
       const filtered = this.getFilteredQuestions();
       if (this.state.currentQuestionIndex < filtered.length - 1) {
@@ -1463,11 +1867,12 @@ const MCQApp = {
       event.preventDefault();
       const question = this.getCurrentQuestion();
       if (question) {
-        const isBookmarked = this.state.bookmarkedQuestions.has(question.id);
+        const questionKey = this.getQuestionStateKey(question);
+        const isBookmarked = this.state.bookmarkedQuestions.has(questionKey);
         if (isBookmarked) {
-          this.state.bookmarkedQuestions.delete(question.id);
+          this.state.bookmarkedQuestions.delete(questionKey);
         } else {
-          this.state.bookmarkedQuestions.add(question.id);
+          this.state.bookmarkedQuestions.add(questionKey);
         }
         this.saveProgress();
         this.renderQuestion();
@@ -1518,7 +1923,7 @@ const MCQApp = {
   // Get Filtered Questions
   getFilteredQuestions() {
     if (this.state.filterMode === 'bookmarked') {
-      return this.state.questions.filter(q => this.state.bookmarkedQuestions.has(q.id));
+      return this.state.questions.filter(q => this.state.bookmarkedQuestions.has(this.getQuestionStateKey(q)));
     }
     return this.state.questions;
   },
@@ -1539,6 +1944,8 @@ const MCQApp = {
     const filtered = this.getFilteredQuestions();
     const prevBtn = document.getElementById('prev-question-btn');
     const nextBtn = document.getElementById('next-question-btn');
+
+    if (!prevBtn || !nextBtn) return;
 
     prevBtn.disabled = this.state.currentQuestionIndex === 0;
     nextBtn.disabled = this.state.currentQuestionIndex === filtered.length - 1;
@@ -1578,10 +1985,11 @@ const MCQApp = {
     for (let i = windowStart; i < windowEnd; i++) {
       const q = filtered[i];
       const isActive = i === currentIndex;
-      const isBookmarked = this.state.bookmarkedQuestions.has(q.id);
-      const isViewed = this.state.viewedQuestions.has(q.id);
-      const isAnswered = this.state.answersRevealed.has(q.id);
-      const wasFirstCorrect = this.state.firstAttemptCorrect[q.id];
+      const questionKey = this.getQuestionStateKey(q);
+      const isBookmarked = this.state.bookmarkedQuestions.has(questionKey);
+      const isViewed = this.state.viewedQuestions.has(questionKey);
+      const isAnswered = this.state.answersRevealed.has(questionKey);
+      const wasFirstCorrect = this.state.firstAttemptCorrect[questionKey];
       const dotStateClass = isAnswered ? (wasFirstCorrect ? 'is-correct-dot' : 'is-wrong-dot') : '';
       const dotContent = isAnswered ? '' : (isBookmarked ? '⭐' : i + 1);
       
@@ -1613,6 +2021,113 @@ const MCQApp = {
   jumpToQuestion(index) {
     this.state.currentQuestionIndex = index;
     this.renderQuestion();
+  },
+
+  buildStepByStepExplanation(question) {
+    if (!question) return '';
+
+    const options = Array.isArray(question.options) ? question.options : [];
+    const feedback = Array.isArray(question.optionFeedback) ? question.optionFeedback : [];
+    const correctIndex = Number.isInteger(question.correctAnswer) ? question.correctAnswer : -1;
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const plainQuestion = String(question.question || '')
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const rawExplanation = String(question.explanation || '').trim();
+
+    const toSentence = (value) => {
+      const cleaned = String(value || '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .replace(/[\s.]+$/, '');
+      if (!cleaned) return '';
+      return cleaned.charAt(0).toUpperCase() + cleaned.slice(1) + '.';
+    };
+
+    const cleanOptionText = (value) => String(value || '')
+      .replace(/^[A-Fa-f]\.\s*/, '')
+      .trim()
+      .replace(/[\s.]+$/, '');
+
+    const cleanFeedback = (value) => String(value || '')
+      .replace(/^Incorrect\.\s*/i, '')
+      .trim()
+      .replace(/\.+$/, '');
+
+    const getQuestionFocus = () => {
+      const parts = plainQuestion.split(/(?<=[.?!])\s+/).filter(Boolean);
+      const target = [...parts].reverse().find((line) =>
+        /\?$/.test(line) || /(which|what|how much|who|best|correct|most likely|following)/i.test(line)
+      ) || parts[parts.length - 1] || 'Determine the best answer based on the scenario facts';
+      return toSentence(target);
+    };
+
+    const inferRule = () => {
+      const q = plainQuestion.toLowerCase();
+      if (/beneficiar|contingent|estate|life insured|policyholder/.test(q)) {
+        return 'Use beneficiary-order rules: proceeds go to the named beneficiary first, and the contingent beneficiary applies only if the primary beneficiary predeceases the life insured';
+      }
+      if (/capital gain|acb|gift|deemed disposition|non-registered/.test(q)) {
+        return 'Apply capital-gains tax rules, including deemed disposition and adjusted cost base treatment where relevant';
+      }
+      if (/rrsp|rrif|lira|spousal rrsp|pension adjustment/.test(q)) {
+        return 'Apply registered-plan contribution and withdrawal rules, including attribution and taxation at withdrawal where applicable';
+      }
+      if (/annuit|annuity|term certain|life annuity/.test(q)) {
+        return 'Apply annuity contract rules on payment guarantees, beneficiary rights, and taxation of annuity income';
+      }
+      if (/segregated fund|guarantee|reset|maturity|death benefit/.test(q)) {
+        return 'Apply segregated-fund guarantee rules, including resets, maturity/death guarantees, and beneficiary treatment';
+      }
+      if (/mortality|probability of death|life expectancy|life table/.test(q)) {
+        return 'Apply mortality and life-table concepts to distinguish probability of death from life expectancy';
+      }
+      return 'Apply the governing LLQP product, contract, and tax rule to the exact facts in the scenario';
+    };
+
+    const wrongReasons = [];
+    options.forEach((_, i) => {
+      if (i === correctIndex) return;
+      const reason = cleanFeedback(feedback[i]);
+      const optionLabel = letters[i] || String(i + 1);
+      const optionText = cleanOptionText(options[i]);
+      if (reason) {
+        wrongReasons.push(`Option ${optionLabel}: ${toSentence(reason).replace(/\.$/, '')}`);
+      } else {
+        wrongReasons.push(`Option ${optionLabel}: "${optionText}" does not match what the question is specifically asking`);
+      }
+    });
+
+    const correctLabel = correctIndex >= 0 ? (letters[correctIndex] || String(correctIndex + 1)) : '?';
+    const correctText = correctIndex >= 0 ? cleanOptionText(options[correctIndex]) : '';
+    const correctFeedback = cleanFeedback(feedback[correctIndex]);
+    const coreReason = toSentence(correctFeedback || 'This choice directly matches the governing rule and the key facts in the scenario');
+
+    const cleanedBaseExplanation = rawExplanation
+      .replace(/Step\s*1\s*:[^\n]*\n?/gi, '')
+      .replace(/Step\s*2\s*:[^\n]*\n?/gi, '')
+      .replace(/Step\s*3\s*:[^\n]*\n?/gi, '')
+      .replace(/Step\s*4\s*:[^\n]*\n?/gi, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    const baseIsGeneric = /identify what the question is asking|apply the llqp rule|governing concept/i.test(cleanedBaseExplanation);
+    const teachingCore = !baseIsGeneric && cleanedBaseExplanation.length > 30
+      ? toSentence(cleanedBaseExplanation)
+      : `${toSentence(getQuestionFocus())} ${toSentence(inferRule())}`;
+
+    const wrongLine = wrongReasons.length
+      ? `Why the other options are wrong:\n- ${wrongReasons.join('\n- ')}.`
+      : 'Why the other options are wrong:\n- They conflict with the contract rules or scenario facts.';
+
+    const correctLine = `Why this answer is correct: Option ${correctLabel}${correctText ? ` (${correctText})` : ''}. ${coreReason}`;
+
+    return [
+      `Core concept: ${teachingCore}`,
+      wrongLine,
+      correctLine
+    ].join('\n\n');
   },
 
   // Format explanation text into styled HTML
@@ -1757,13 +2272,13 @@ const MCQApp = {
   checkCompletion() {
     const filtered = this.getFilteredQuestions();
     const totalQ = filtered.length;
-    const answeredCount = filtered.filter(q => this.state.answersRevealed.has(q.id)).length;
+    const answeredCount = filtered.filter(q => this.state.answersRevealed.has(this.getQuestionStateKey(q))).length;
     const banner = document.getElementById('finish-banner');
 
     if (answeredCount === totalQ && totalQ > 0) {
       // Calculate score (first attempt correct)
-      const correctFirst = filtered.filter(q => this.state.firstAttemptCorrect[q.id] === true).length;
-      const wrongFirst = filtered.filter(q => this.state.firstAttemptCorrect[q.id] === false).length;
+      const correctFirst = filtered.filter(q => this.state.firstAttemptCorrect[this.getQuestionStateKey(q)] === true).length;
+      const wrongFirst = filtered.filter(q => this.state.firstAttemptCorrect[this.getQuestionStateKey(q)] === false).length;
       const pct = Math.round((correctFirst / totalQ) * 100);
 
       // Update banner with detailed stats
@@ -1802,6 +2317,8 @@ const MCQApp = {
     this.state.answersRevealed = new Set();
     this.state.attemptedOptions = {};
     this.state.firstAttemptCorrect = {};
+    this.state.attemptedOptions = {};
+    this.state.firstAttemptCorrect = {};
     this.state.currentQuestionIndex = 0;
     
     // Reload and reshuffle questions
@@ -1817,51 +2334,52 @@ const MCQApp = {
       return question.optionFeedback[optionIndex];
     }
 
-    // Fallback to explanation if specific feedback is not provided
-    if (question.explanation) {
-      return question.explanation;
-    }
-    
-    // No feedback provided
-    return '';
+    // Do NOT fall back to full explanation here (it can reveal the answer).
+    // Keep feedback generic until the learner chooses the correct option.
+    return 'Not quite. Re-check the key rule and compare each option to the scenario facts.';
   },
 
   // Select Option
   selectOption(selectedIndex) {
     const question = this.getCurrentQuestion();
     if (!question) return;
+    const stateKey = this.getQuestionStateKey(question);
 
     // Initialize tracking for this question if not exists
-    if (!this.state.attemptedOptions[question.id]) {
-      this.state.attemptedOptions[question.id] = [];
+    if (!this.state.attemptedOptions[stateKey]) {
+      this.state.attemptedOptions[stateKey] = [];
     }
     
     // Check if this option was already attempted
-    const alreadyAttempted = this.state.attemptedOptions[question.id].includes(selectedIndex);
+    const alreadyAttempted = this.state.attemptedOptions[stateKey].includes(selectedIndex);
     if (alreadyAttempted) {
       return; // Don't allow clicking the same wrong answer again
     }
 
     // Check if this is the first attempt for this question
-    const isFirstAttempt = this.state.attemptedOptions[question.id].length === 0;
+    const isFirstAttempt = this.state.attemptedOptions[stateKey].length === 0;
     
     // Store selected answer index for AI explanation
     this.state.lastSelectedIndex = selectedIndex;
 
     // Check if correct answer
     const isCorrect = selectedIndex === question.correctAnswer;
+
+    if (isFirstAttempt && !this.state.isReviewMode) {
+      this.recordDailyPractice(isCorrect);
+    }
     
     if (isCorrect) {
       // CORRECT ANSWER - Show full explanation and reveal
       
       // Track if first attempt was correct
       if (isFirstAttempt) {
-        this.state.firstAttemptCorrect[question.id] = true;
+        this.state.firstAttemptCorrect[stateKey] = true;
       }
       
       // If answered correctly in review mode, remove from wrong questions
       if (this.state.isReviewMode) {
-        this.removeFromWrongQuestions(question.id);
+        this.removeFromWrongQuestions(question);
       }
       
       // Highlight correct option green, dim others
@@ -1880,7 +2398,8 @@ const MCQApp = {
       // Show explanation
       const answerSection = document.getElementById('answer-section');
       document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
-      document.getElementById('explanation-text').innerHTML = this.formatExplanation(question.explanation);
+      const explanationText = this.buildStepByStepExplanation(question);
+      document.getElementById('explanation-text').innerHTML = this.formatExplanation(explanationText);
       
       // Show AI button and ensure AI container is hidden until used
       const aiExplanationEl = document.getElementById('ai-explanation-text');
@@ -1909,7 +2428,7 @@ const MCQApp = {
       }
 
       // Track answer reveal
-      this.state.answersRevealed.add(question.id);
+      this.state.answersRevealed.add(stateKey);
       this.saveProgress();
 
       // Update dots to show answered state & check completion
@@ -1921,13 +2440,32 @@ const MCQApp = {
       
     } else {
       // WRONG ANSWER - Show individual feedback, don't reveal correct answer
+
+      // In wrong-answer review mode, avoid visual elimination clues.
+      // Keep one attempt per pass and move on.
+      if (this.state.isReviewMode) {
+        if (isFirstAttempt) {
+          this.state.firstAttemptCorrect[stateKey] = false;
+          this.logWrongAnswer(question);
+        }
+
+        this.showToast('Incorrect. Keep practicing — this question will appear again.', 'warning');
+
+        const filtered = this.getFilteredQuestions();
+        if (filtered.length > 1) {
+          const nextIndex = (this.state.currentQuestionIndex + 1) % filtered.length;
+          this.state.currentQuestionIndex = nextIndex;
+        }
+        this.renderQuestion();
+        return;
+      }
       
       // Add to attempted options
-      this.state.attemptedOptions[question.id].push(selectedIndex);
+      this.state.attemptedOptions[stateKey].push(selectedIndex);
       
       // If this is the first attempt and it's wrong, log it as wrong
       if (isFirstAttempt) {
-        this.state.firstAttemptCorrect[question.id] = false;
+        this.state.firstAttemptCorrect[stateKey] = false;
         this.logWrongAnswer(question);
       }
       
@@ -2223,6 +2761,7 @@ const MCQApp = {
 
     // Reset view
     const optionsContainer = document.getElementById('options-container');
+    if (!optionsContainer) return;
     const options = optionsContainer.querySelectorAll('.option');
     options.forEach(option => {
       option.classList.remove('is-correct', 'is-incorrect', 'is-dimmed', 'was-attempted');
@@ -2242,11 +2781,12 @@ const MCQApp = {
   toggleBookmark() {
     const question = this.getCurrentQuestion();
     if (!question) return;
+    const questionKey = this.getQuestionStateKey(question);
 
-    if (this.state.bookmarkedQuestions.has(question.id)) {
-      this.state.bookmarkedQuestions.delete(question.id);
+    if (this.state.bookmarkedQuestions.has(questionKey)) {
+      this.state.bookmarkedQuestions.delete(questionKey);
     } else {
-      this.state.bookmarkedQuestions.add(question.id);
+      this.state.bookmarkedQuestions.add(questionKey);
     }
 
     this.saveProgress();
@@ -2278,8 +2818,9 @@ const MCQApp = {
     const filtered = this.getFilteredQuestions();
 
     listContainer.innerHTML = filtered.map((question, index) => {
-      const isBookmarked = this.state.bookmarkedQuestions.has(question.id);
-      const isRevealed = this.state.answersRevealed.has(question.id);
+      const questionKey = this.getQuestionStateKey(question);
+      const isBookmarked = this.state.bookmarkedQuestions.has(questionKey);
+      const isRevealed = this.state.answersRevealed.has(questionKey);
 
       return `
         <div class="list-question-card">
@@ -2354,6 +2895,7 @@ const MCQApp = {
   // Save Progress
   saveProgress() {
     if (!this.state.currentTopic || !this.state.currentPracticeTest) return;
+    if (!this.state.currentTopic.id || !this.state.currentPracticeTest.id) return;
 
     const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
     const data = {
@@ -2375,6 +2917,13 @@ const MCQApp = {
       return;
     }
 
+    if (!this.state.currentTopic.id || !this.state.currentPracticeTest.id) {
+      this.state.viewedQuestions = new Set();
+      this.state.bookmarkedQuestions = new Set();
+      this.state.answersRevealed = new Set();
+      return;
+    }
+
     const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
     const saved = this.readJSONFromStorage(key, null);
     if (saved) {
@@ -2390,6 +2939,22 @@ const MCQApp = {
 
   resetProgress() {
     if (!this.state.currentTopic || !this.state.currentPracticeTest) return;
+
+    if (this.state.isReviewMode) {
+      if (!confirm('Reset this review session?')) {
+        return;
+      }
+      this.state.viewedQuestions.clear();
+      this.state.bookmarkedQuestions.clear();
+      this.state.answersRevealed.clear();
+      this.state.attemptedOptions = {};
+      this.state.firstAttemptCorrect = {};
+      this.state.currentQuestionIndex = 0;
+      this.renderQuestion();
+      this.showToast('Review session reset.', 'success');
+      return;
+    }
+
     if (!confirm('Are you sure you want to reset all progress for this practice test? This cannot be undone.')) {
       return;
     }

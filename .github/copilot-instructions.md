@@ -28,7 +28,8 @@
 - Keep `data/topics-updated.json` aligned when editing topic metadata (it is part of cached assets).
 - If offline/PWA must reflect new assets immediately, bump `CACHE_VERSION` in `sw.js`.
 - When adding new JSON files intended for offline use, add them to `CORE_ASSETS` in `sw.js`.
-- Keep all `status: "active"` topics before `status: "coming-soon"` in `data/topics.json` (homepage order convention).- Latest additions: Life Insurance Certification Exam (35 questions) in LLQP Life section for comprehensive exam prep.
+- Keep all `status: "active"` topics before `status: "coming-soon"` in `data/topics.json` (homepage order convention).
+- Latest additions: Life Insurance Certification Exam (35 questions) and Segregated Funds & Annuities Certification Exam (35 questions).
 ## Agent editing guidance for this repo
 - Prefer data changes over JS changes when adding/changing question content.
 - Preserve localStorage key formats (`progress_*`, `shuffle_*`, `wrong_questions`) to avoid breaking existing user progress.

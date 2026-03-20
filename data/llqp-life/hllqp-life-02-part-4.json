@@ -20,7 +20,7 @@
         "Whole life is often not necessary for this temporary objective.",
         "RESP alone does not replace mortality protection for unfinished savings goal."
       ],
-      "explanation": "A temporary education-funding risk is typically best addressed with term insurance.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Seg fund death guarantee may not fully replace planned future contributions immediately; Whole life is often not necessary for this temporary objective.\nStep 4: Select the best answer. Option A: Buy a term insurance policy with himself as the life-insured.",
       "difficulty": "medium",
       "tags": [
         "term-insurance",
@@ -44,7 +44,7 @@
         "Margaret is the life-insured, but this question key defines insured as policy owner.",
         "Insurer is the company, not insured party."
       ],
-      "explanation": "Per the provided key terminology, insured refers to policy owner here, which is Charlie.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Beneficiary is not the insured in this keyed answer set; Margaret is the life-insured, but this question key defines insured as policy owner.\nStep 4: Select the best answer. Option A: Charlie.",
       "difficulty": "hard",
       "tags": [
         "definitions",
@@ -68,7 +68,7 @@
         null,
         "Last-to-die trigger is wrong for this objective."
       ],
-      "explanation": "Joint first-to-die aligns with mortgage payoff need at first death; renewable term can bridge full amortization horizon.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life is typically too costly for temporary mortgage need; Last-to-die does not protect first-death mortgage risk.\nStep 4: Select the best answer. Option C: 10-year renewable term insurance on a joint first-to-die basis.",
       "difficulty": "medium",
       "tags": [
         "mortgage",
@@ -92,7 +92,7 @@
         "Mortgage is usually temporary and often term-based.",
         "Capital gains in spousal context often aligns to second death."
       ],
-      "explanation": "Joint first-to-die permanent insurance can provide immediate liquidity to surviving spouse at first death.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Second-death liabilities usually align better with last-to-die; Mortgage is usually temporary and often term-based.\nStep 4: Select the best answer. Option A: To leave an inheritance to the surviving spouse upon death.",
       "difficulty": "medium",
       "tags": [
         "joint-first-to-die",
@@ -116,7 +116,7 @@
         "Overly complex and mismatched for simple dual funeral objective.",
         "Funeral funding is generally a permanent need."
       ],
-      "explanation": "Two separate permanent coverages ensure each life has its own funeral benefit payout.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. First-to-die pays once and leaves second funeral unfunded; Overly complex and mismatched for simple dual funeral objective.\nStep 4: Select the best answer. Option B: A combined insurance policy that includes separate $25,000 permanent life insurance policies on each of their lives.",
       "difficulty": "medium",
       "tags": [
         "funeral",
@@ -140,7 +140,7 @@
         "This may be true generally, but not the key feature solving his stated objective in this question.",
         "Renewal premium usually increases significantly."
       ],
-      "explanation": "Convertibility is the core feature preserving access to permanent insurance without new medical evidence.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Re-entry commonly lowers initial premium assumptions for healthy renewers; This may be true generally, but not the key feature solving his stated objective in this question.\nStep 4: Select the best answer. Option B: The convertible feature allows Brad the option of converting the policy to a permanent one during the policy term without providing evidence of insurability.",
       "difficulty": "medium",
       "tags": [
         "convertibility",
@@ -164,7 +164,7 @@
         "Charitable funding may be single-life specific depending donor intent.",
         "Capital gains on jointly owned cottage often aligns with second-death planning."
       ],
-      "explanation": "Joint first-to-die term is a standard fit for paying joint debts like mortgages at first death.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. RRSP tax need may be single-life or second-death specific depending planning context; Charitable funding may be single-life specific depending donor intent.\nStep 4: Select the best answer. Option A: To pay out a mortgage at death.",
       "difficulty": "medium",
       "tags": [
         "joint-first-to-die",
@@ -188,7 +188,7 @@
         null,
         "Retroactive/original-age concepts differ from attained-age pricing shown."
       ],
-      "explanation": "Attained-age conversion prices the new permanent policy using the insured's current age at conversion.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is not the standard term used here; Original-age would price from younger issue age with different cost implications.\nStep 4: Select the best answer. Option C: Attained-age conversion.",
       "difficulty": "easy",
       "tags": [
         "conversion",

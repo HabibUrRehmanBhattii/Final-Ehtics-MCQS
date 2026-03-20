@@ -13,7 +13,7 @@
         "Revocable beneficiary"
       ],
       "correctAnswer": 0,
-      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Irrevocable beneficiary."
     },
     {
       "id": 2,
@@ -25,7 +25,7 @@
         "Only if primary beneficiary dies"
       ],
       "correctAnswer": 0,
-      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Anytime."
     },
     {
       "id": 3,
@@ -37,7 +37,7 @@
         "Contingent"
       ],
       "correctAnswer": 2,
-      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Revocable."
     },
     {
       "id": 4,
@@ -49,7 +49,7 @@
         "If the insured died of natural causes"
       ],
       "correctAnswer": 1,
-      "explanation": "A contingent beneficiary will receive the policy proceeds if the primary beneficiary dies before the insured's death."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: If the primary beneficiary dies before the insured."
     },
     {
       "id": 5,
@@ -61,7 +61,7 @@
         "A beneficiary change is subject to underwriting procedures"
       ],
       "correctAnswer": 1,
-      "explanation": "A policyowner may change a beneficiary at any time. However, consent may be needed by the current beneficiary if designated as irrevocable."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The policyowner can change the beneficiary."
     },
     {
       "id": 6,
@@ -73,7 +73,7 @@
         "Primary"
       ],
       "correctAnswer": 2,
-      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Irrevocable."
     },
     {
       "id": 7,
@@ -85,7 +85,7 @@
         "The minor is entitled to receive the death proceeds immediately"
       ],
       "correctAnswer": 1,
-      "explanation": "In most cases, insurers require that a guardian be appointed in the Beneficiary clause of the policy or that a guardian be designated in the will."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Normally, a guardian is required to be appointed in the Beneficiary clause of the contract."
     },
     {
       "id": 8,
@@ -97,7 +97,7 @@
         "Level premiums can only be paid annually"
       ],
       "correctAnswer": 1,
-      "explanation": "The concept of level premiums charges more than needed in early years."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The early years are charged more than what is needed."
     },
     {
       "id": 9,
@@ -109,7 +109,7 @@
         "Assignment provision"
       ],
       "correctAnswer": 2,
-      "explanation": "Premium Mode is the feature that allows the policyowner to select the timing of premium payment, such as monthly, quarterly, annually etc."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Premium Mode."
     },
     {
       "id": 10,
@@ -121,7 +121,7 @@
         "Mode of Premium"
       ],
       "correctAnswer": 3,
-      "explanation": "The Mode of Premium provision permits an insured to pay premiums more than once every year."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Mode of Premium."
     },
     {
       "id": 11,
@@ -133,7 +133,7 @@
         "beneficiary"
       ],
       "correctAnswer": 3,
-      "explanation": "A beneficiary is not required to sign the application."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: beneficiary."
     },
     {
       "id": 12,
@@ -145,7 +145,7 @@
         "Beneficiary"
       ],
       "correctAnswer": 2,
-      "explanation": "When an applicant makes a mistake, the applicant must initial the correction."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Applicant."
     },
     {
       "id": 13,
@@ -157,7 +157,7 @@
         "Backdated receipt"
       ],
       "correctAnswer": 1,
-      "explanation": "A conditional receipt binds coverage as of the date of application or medical exam, provided the insured is acceptable."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Conditional receipt."
     },
     {
       "id": 14,
@@ -169,7 +169,7 @@
         "initial premium is collected"
       ],
       "correctAnswer": 1,
-      "explanation": "The policy will go into effect after delivery, issuance, and premium collection; the free-look period expiration is not required beforehand."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: free-look period has expired."
     },
     {
       "id": 15,
@@ -181,7 +181,7 @@
         "both employer and employee must provide evidence of insurability"
       ],
       "correctAnswer": 0,
-      "explanation": "When an employer provides noncontributory group term life insurance, the employer pays the entire cost of the plan."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: the entire cost of the plan is paid for by the employer."
     },
     {
       "id": 16,
@@ -193,7 +193,7 @@
         "Beneficiary"
       ],
       "correctAnswer": 3,
-      "explanation": "The beneficiary is not required to sign the application."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Beneficiary."
     },
     {
       "id": 17,
@@ -205,7 +205,7 @@
         "Forward the application to the insurer after giving the applicant a conditional receipt"
       ],
       "correctAnswer": 2,
-      "explanation": "The producer should submit the application to the insurer without the premium; the policy is not valid until initial premium is collected."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Forward the application to the insurer without the initial premium."
     },
     {
       "id": 18,
@@ -217,7 +217,7 @@
         "Collect initial premium and leave a binding receipt"
       ],
       "correctAnswer": 1,
-      "explanation": "Deliver the policy and obtain the premium payment along with a signed health statement."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Collect initial premium along with a signed health statement."
     },
     {
       "id": 19,
@@ -229,7 +229,7 @@
         "Contributory"
       ],
       "correctAnswer": 3,
-      "explanation": "Employees share in the premium costs with contributory plans."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Contributory."
     },
     {
       "id": 20,
@@ -241,7 +241,7 @@
         "Fixed Variable"
       ],
       "correctAnswer": 1,
-      "explanation": "A Fixed Deferred annuity pays out a fixed amount for life starting at a future date."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Fixed Deferred."
     },
     {
       "id": 21,
@@ -253,7 +253,7 @@
         "Straight Life annuity"
       ],
       "correctAnswer": 2,
-      "explanation": "Immediate annuities start providing income payments usually starting within 30 days from the purchase date; deferred annuities start later."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Immediate annuity."
     },
     {
       "id": 22,
@@ -265,7 +265,7 @@
         "6"
       ],
       "correctAnswer": 2,
-      "explanation": "You are eligible to file for Social Security Disability benefits after being totally disabled for 5 months."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: 5."
     },
     {
       "id": 23,
@@ -277,7 +277,7 @@
         "SIMPLE Plan"
       ],
       "correctAnswer": 1,
-      "explanation": "A Keogh Plan may be used by a sole proprietor only if the employees of the business are included."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Keogh Plan."
     },
     {
       "id": 24,
@@ -289,7 +289,7 @@
         "The employee's estate"
       ],
       "correctAnswer": 2,
-      "explanation": "With Key Person Insurance, the company purchases, owns, pays the premiums and is the beneficiary of the life insurance policy on the key person."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Company X."
     },
     {
       "id": 25,
@@ -301,7 +301,7 @@
         "The company purchases, owns, pays the premiums and is the beneficiary"
       ],
       "correctAnswer": 2,
-      "explanation": "The company names the beneficiary, not the employee."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: The beneficiary is named by the key employee."
     },
     {
       "id": 26,
@@ -313,7 +313,7 @@
         "When the insurer receives the MIB report"
       ],
       "correctAnswer": 1,
-      "explanation": "An applicant for life insurance must be informed of their rights upon completion of the application."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Upon completion of the application."
     },
     {
       "id": 27,
@@ -325,7 +325,7 @@
         "policyholders"
       ],
       "correctAnswer": 3,
-      "explanation": "The governing body of a mutual insurance company is elected by the policyholders."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: policyholders."
     },
     {
       "id": 28,
@@ -337,7 +337,7 @@
         "beneficiary's age"
       ],
       "correctAnswer": 3,
-      "explanation": "The age of the beneficiary is irrelevant in determining how much paid-up additions can be purchased."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: beneficiary's age."
     },
     {
       "id": 29,
@@ -349,7 +349,7 @@
         "exception"
       ],
       "correctAnswer": 1,
-      "explanation": "Exclusions are features of a life insurance policy stating that the policy will not cover certain risks."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: exclusion."
     },
     {
       "id": 30,
@@ -361,7 +361,7 @@
         "allows the insurer the option to pay a death benefit in the"
       ],
       "correctAnswer": 1,
-      "explanation": "The purpose of a Suicide provision is to protect the insurer against the purchase of a policy in contemplation of suicide."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: safeguard the insurer from an applicant who is contemplating suicide."
     },
     {
       "id": 31,
@@ -373,7 +373,7 @@
         "Assignment agreement"
       ],
       "correctAnswer": 2,
-      "explanation": "The insuring clause or provision sets forth the company's basic promise to pay benefits upon the insured's death."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Insuring agreement."
     },
     {
       "id": 32,
@@ -385,7 +385,7 @@
         "Automatic Premium Loan provision"
       ],
       "correctAnswer": 1,
-      "explanation": "A Payor clause ensures that premiums will be waived for a Juvenile Life policy if the policyowner becomes disabled."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Payor clause."
     },
     {
       "id": 33,
@@ -397,7 +397,7 @@
         "Change the beneficiary, if revocable"
       ],
       "correctAnswer": 1,
-      "explanation": "Changing contract provisions is not a policyowner right."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Modify a provision in the insurance contract."
     },
     {
       "id": 34,
@@ -409,7 +409,7 @@
         "Consideration clause"
       ],
       "correctAnswer": 2,
-      "explanation": "An AD&D clause provides benefits for death due to an accident or for the loss of one or more hands, feet, arms, legs, or loss of sight."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Accidental Death and Dismemberment provision."
     },
     {
       "id": 35,
@@ -421,7 +421,7 @@
         "additional Whole Life coverage at specified times"
       ],
       "correctAnswer": 3,
-      "explanation": "A guaranteed insurability option in a Whole Life Policy permits the policyowner to purchase, without evidence of insurability, stated amounts of Whole Life insurance at specified times."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: additional Whole Life coverage at specified times."
     },
     {
       "id": 36,
@@ -433,7 +433,7 @@
         "Spouse"
       ],
       "correctAnswer": 2,
-      "explanation": "A payor benefit clause is generally added to a life policy that insures the life of a juvenile. It provides continuance of insurance coverage in the event of the death or total disability of the individual responsible for the payment of premiums."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Child."
     },
     {
       "id": 37,
@@ -445,7 +445,7 @@
         "allow a policyowner to take out additional coverage without evidence of insurability"
       ],
       "correctAnswer": 1,
-      "explanation": "The purpose of the automatic premium loan is to keep the policy from lapsing."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: avoid a policy lapse."
     },
     {
       "id": 38,
@@ -457,7 +457,7 @@
         "Consideration clause"
       ],
       "correctAnswer": 0,
-      "explanation": "A policy loan will pay the policyowner an amount that, with interest, does NOT exceed the guaranteed cash value."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Policy Loan provision."
     },
     {
       "id": 39,
@@ -469,7 +469,7 @@
         "Interest-Sensitive Whole Life"
       ],
       "correctAnswer": 0,
-      "explanation": "Because of the transfer of investment risk from the insurer to the policyowner, variable insurance products are considered securities contracts as well as insurance contracts."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Variable Life."
     },
     {
       "id": 40,
@@ -481,7 +481,7 @@
         "Conversion privilege"
       ],
       "correctAnswer": 3,
-      "explanation": "The conversion privilege allows an individual to leave the group term plan and continue his or her insurance without providing evidence of insurability."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Conversion privilege."
     },
     {
       "id": 41,
@@ -493,7 +493,7 @@
         "premium payments that are paid to age 100"
       ],
       "correctAnswer": 2,
-      "explanation": "In a Limited-Pay Life policy, premium payments are limited to a specified number of years."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: premium payments limited to a specified number of years."
     },
     {
       "id": 42,
@@ -505,7 +505,7 @@
         "Endowment policy"
       ],
       "correctAnswer": 0,
-      "explanation": "Term insurance would provide the greatest amount of protection for a limited period of time."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Term life."
     },
     {
       "id": 43,
@@ -517,7 +517,7 @@
         "Last Survivor Policy"
       ],
       "correctAnswer": 1,
-      "explanation": "A policy that promises to pay the face amount on the death of first of 2 lives covered by the policy is called a Joint Life Policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Joint Life Policy."
     },
     {
       "id": 44,
@@ -529,7 +529,7 @@
         "Tied to Treasury Bills"
       ],
       "correctAnswer": 1,
-      "explanation": "A Variable Life Policy has investment values based instruments such as mutual funds, stocks, and bonds."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Through mutual funds, stocks, bonds."
     },
     {
       "id": 45,
@@ -541,7 +541,7 @@
         "Variable Annuity"
       ],
       "correctAnswer": 1,
-      "explanation": "An agent must have proper FINRA securities registration to sell all of these products EXCEPT Modified Whole Life."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Modified Whole Life."
     },
     {
       "id": 46,
@@ -553,7 +553,7 @@
         "Modified Whole Life"
       ],
       "correctAnswer": 3,
-      "explanation": "The type of policy in this situation is a Modified Whole Life."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Modified Whole Life."
     },
     {
       "id": 47,
@@ -565,7 +565,7 @@
         "Adjustable life"
       ],
       "correctAnswer": 2,
-      "explanation": "A 15-year mortgage is best protected by a 15-year decreasing term policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: 15-year decreasing term."
     },
     {
       "id": 48,
@@ -577,7 +577,7 @@
         "Waiver of Premium provision"
       ],
       "correctAnswer": 0,
-      "explanation": "A payor provision provides that in the event of death or disability of the adult premium payor, the premiums on a juvenile policy will be waived until the insured child reaches a specified age or the maturity date of the contract."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Payor provision."
     },
     {
       "id": 49,
@@ -589,7 +589,7 @@
         "Endowment"
       ],
       "correctAnswer": 2,
-      "explanation": "Life insurance written to cover a need for a specified period of time at the lowest premium is called level term insurance."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Level term."
     },
     {
       "id": 50,
@@ -601,7 +601,7 @@
         "when one of the insureds becomes disabled and no longer able to make premium payments"
       ],
       "correctAnswer": 2,
-      "explanation": "A Joint Life and Survivor policy pays benefits after the death of the last insured."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: upon death of the last insured."
     },
     {
       "id": 51,
@@ -613,7 +613,7 @@
         "Premiums are payable for as long as there is insurance coverage in force"
       ],
       "correctAnswer": 3,
-      "explanation": "Straight whole life provides permanent level protection with level premiums from the time the policy is issued until the insured's death (or age 100)."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Premiums are payable for as long as there is insurance coverage in force."
     },
     {
       "id": 52,
@@ -625,7 +625,7 @@
         "The death benefit can vary but the policyowner has no say in the premium amount paid"
       ],
       "correctAnswer": 0,
-      "explanation": "With Variable Universal Life, the policyowner controls the investment of cash values and selects the timing and amount of premium payments."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Policyowner controls where the investment will go and selects the amount of the premium payment."
     },
     {
       "id": 53,
@@ -637,7 +637,7 @@
         "Representation"
       ],
       "correctAnswer": 1,
-      "explanation": "A warranty is a statement that is considered guaranteed to be true."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Warranty."
     },
     {
       "id": 54,
@@ -649,7 +649,7 @@
         "Contracts of Adhesion"
       ],
       "correctAnswer": 3,
-      "explanation": "Because insurance policies are offered on a \"take it or leave it\" basis they are referred to as Contracts of Adhesion."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Contracts of Adhesion."
     },
     {
       "id": 55,
@@ -661,7 +661,7 @@
         "consideration"
       ],
       "correctAnswer": 2,
-      "explanation": "The elements of an insurance contract do not include negotiating."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: negotiating."
     },
     {
       "id": 56,
@@ -673,7 +673,7 @@
         "Applicant"
       ],
       "correctAnswer": 1,
-      "explanation": "Under a unilateral insurance policy, the insurance company makes the legally enforceable promises."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Insurer."
     },
     {
       "id": 57,
@@ -685,7 +685,7 @@
         "Meals and entertainment"
       ],
       "correctAnswer": 1,
-      "explanation": "A Business Overhead Expense policy is designed to cover certain overhead expenses (rent, taxes, utility bills, employee's salaries etc) that continue when the business owner is disabled."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Utilities and office rent."
     },
     {
       "id": 58,
@@ -697,7 +697,7 @@
         "Both the employer and employee are policyowners"
       ],
       "correctAnswer": 2,
-      "explanation": "With a group accident and health plan, a master policy is issued to the employer and each employee receives a certificate of insurance."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: The employer is the policyowner and each employee receives a certificate of coverage."
     },
     {
       "id": 59,
@@ -709,7 +709,7 @@
         "Contributory"
       ],
       "correctAnswer": 0,
-      "explanation": "A Business Overhead Expense policy's purpose is to cover certain overhead expenses that continue when the businessowner is disabled."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Business Overhead Expense."
     },
     {
       "id": 60,
@@ -721,7 +721,7 @@
         "$50,000"
       ],
       "correctAnswer": 2,
-      "explanation": "The maximum sum payable would be the capital sum, or $25,000."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: $25,000."
     },
     {
       "id": 61,
@@ -733,7 +733,7 @@
         "Benefits are taxable to the employee"
       ],
       "correctAnswer": 1,
-      "explanation": "Premiums paid by an employer for an employee's coverage are deductible by the employer as a business expense."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Employee's coverage paid for by the employer is tax-deductible to the employer as a business expenditure."
     },
     {
       "id": 62,
@@ -745,7 +745,7 @@
         "all business-related expenses and salaries"
       ],
       "correctAnswer": 1,
-      "explanation": "The reason for a business having a Business Overhead Expense Disability Plan is to cover the fixed business costs in the event the owner becomes disabled."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: fixed business expenses."
     },
     {
       "id": 63,
@@ -757,7 +757,7 @@
         "Co-op Arrangement"
       ],
       "correctAnswer": 2,
-      "explanation": "A Health Maintenance Organization (HMO) contracts with doctors and hospitals to provide medical benefits to subscribers at a predetermined price."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Health Maintenance Organization."
     },
     {
       "id": 64,
@@ -769,7 +769,7 @@
         "Determined by the terms of the policy"
       ],
       "correctAnswer": 3,
-      "explanation": "Under a basic hospital/surgical expense policy, the amount of the patient's claim payment will be based on the terms of the policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Determined by the terms of the policy."
     },
     {
       "id": 65,
@@ -781,7 +781,7 @@
         "Cosmetic procedures"
       ],
       "correctAnswer": 1,
-      "explanation": "Prescription drugs are an allowable expense when paid for by a medical flexible spending account."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Prescription drugs."
     },
     {
       "id": 66,
@@ -793,7 +793,7 @@
         "do not contain a deductible and coinsurance"
       ],
       "correctAnswer": 1,
-      "explanation": "Major Medical policies typically contain a deductible and coinsurance."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: contain a deductible and coinsurance."
     },
     {
       "id": 67,
@@ -805,7 +805,7 @@
         "coinsurance deductible"
       ],
       "correctAnswer": 1,
-      "explanation": "A provision that requires the insured to pay the first portion of covered expenses before Major Medical coverage applies is called an initial deductible."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: initial deductible."
     },
     {
       "id": 68,
@@ -817,7 +817,7 @@
         "Corridor provision"
       ],
       "correctAnswer": 1,
-      "explanation": "The Carryover provision permits expenses incurred during the last three months of the calendar year to be carried over into the new year if needed to satisfy the deductible for the next year."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Carryover provision."
     },
     {
       "id": 69,
@@ -829,7 +829,7 @@
         "physician fees"
       ],
       "correctAnswer": 0,
-      "explanation": "The hospitalization expense of a Basic Medical Expense policy pays for hospital room and board."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: hospital room and board."
     },
     {
       "id": 70,
@@ -841,7 +841,7 @@
         "Payment of Claims"
       ],
       "correctAnswer": 2,
-      "explanation": "The Time Limit on Certain Defenses provision limits the period during which an insurer can deny a claim on the basis of a preexisting condition."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Time Limit on Certain Defenses."
     },
     {
       "id": 71,
@@ -853,7 +853,7 @@
         "Resubmit the request for a claim form"
       ],
       "correctAnswer": 1,
-      "explanation": "If forms are not furnished, the insured should submit the claim in any form, which must be accepted by the company as adequate proof of loss."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Submit the claim in any form."
     },
     {
       "id": 72,
@@ -865,7 +865,7 @@
         "Legal Contract clause"
       ],
       "correctAnswer": 0,
-      "explanation": "The Entire Contract provision states that the application and policy contain all provisions and constitute the entire contract."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Entire Contract provision."
     },
     {
       "id": 73,
@@ -877,7 +877,7 @@
         "When foul play was a contributing factor"
       ],
       "correctAnswer": 1,
-      "explanation": "Applicable state laws that prevent an autopsy take precedence."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: When the state prohibits this by law."
     },
     {
       "id": 74,
@@ -889,7 +889,7 @@
         "An insured must settle a claim within 30 days after Proof of Loss is submitted"
       ],
       "correctAnswer": 2,
-      "explanation": "The Legal Actions provision of an Accident & Health policy requires that the insured must wait at least 60 days after Proof of Loss has been submitted before a lawsuit can be filed."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: An insured must wait at least 60 days after Proof of Loss has been submitted before a lawsuit can be filed."
     },
     {
       "id": 75,
@@ -901,7 +901,7 @@
         "Premiums are waived after the insured has been totally disabled for a specified time period"
       ],
       "correctAnswer": 3,
-      "explanation": "The Waiver of Premium provision waives the payment of premiums after the insured has been totally disabled for a specified period of time."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Premiums are waived after the insured has been totally disabled for a specified time period."
     },
     {
       "id": 76,
@@ -913,7 +913,7 @@
         "The Guaranty Association"
       ],
       "correctAnswer": 1,
-      "explanation": "In this situation, the insured is liable for the medical bills."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The insured."
     },
     {
       "id": 77,
@@ -925,7 +925,7 @@
         "determine if the applicant is an acceptable risk by completing standard underwriting procedures"
       ],
       "correctAnswer": 3,
-      "explanation": "With a conditional receipt, the insurance company will complete standard underwriting procedures before making a decision about whether to insure the applicant."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: determine if the applicant is an acceptable risk by completing standard underwriting procedures."
     },
     {
       "id": 78,
@@ -937,7 +937,7 @@
         "Occupational Disability"
       ],
       "correctAnswer": 0,
-      "explanation": "A residual disability benefit is usually a percentage of the total disability benefit for periods when the insured is unable to perform some of the duties of his/her occupation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Residual Disability."
     },
     {
       "id": 79,
@@ -949,7 +949,7 @@
         "Elimination Period"
       ],
       "correctAnswer": 2,
-      "explanation": "The Waiver of Premium provision in a health insurance contract suspends the insurer's right to receive premiums during a covered period of disability."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Waiver of Premium."
     },
     {
       "id": 80,
@@ -961,7 +961,7 @@
         "occupation at the time of purchase"
       ],
       "correctAnswer": 1,
-      "explanation": "The insured's earned income at the time of purchase limits the amount of the monthly benefit that an insured may purchase in a Disability Income Policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: gross income at the time of purchase."
     },
     {
       "id": 81,
@@ -973,7 +973,7 @@
         "Proceeds will go to the insured's estate"
       ],
       "correctAnswer": 2,
-      "explanation": "In this situation, the contingent beneficiary will receive the proceeds."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Proceeds will go to the contingent beneficiary."
     },
     {
       "id": 82,
@@ -985,7 +985,7 @@
         "Claim will be decided by an arbitrator"
       ],
       "correctAnswer": 0,
-      "explanation": "In this situation, the insurance company will deny the claim, as the policy would have lapsed due to nonpayment by September 15."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Claim will be denied."
     },
     {
       "id": 83,
@@ -997,7 +997,7 @@
         "Decreasing term policy"
       ],
       "correctAnswer": 3,
-      "explanation": "A life insurance policy written for a specified period of time with a death benefit that changes regularly according to a schedule is a decreasing term policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Decreasing term policy."
     },
     {
       "id": 84,
@@ -1009,7 +1009,7 @@
         "Whole life policy with a Guaranteed Insurability option"
       ],
       "correctAnswer": 2,
-      "explanation": "In this situation, a whole life policy with an other insured rider would be appropriate."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Whole life policy with other insured rider."
     },
     {
       "id": 85,
@@ -1021,7 +1021,7 @@
         "E's estate"
       ],
       "correctAnswer": 0,
-      "explanation": "In this situation, the proceeds from E's life insurance policy will go to F. Insurable interest only needs to exist at the time of application."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: F."
     },
     {
       "id": 86,
@@ -1033,7 +1033,7 @@
         "PLHSO"
       ],
       "correctAnswer": 1,
-      "explanation": "Under a Preferred Provider Organization (PPO), a group of doctors and hospitals in a designated area contract with an insurer to provide services at a prearranged cost to the insured."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: PPO."
     },
     {
       "id": 87,
@@ -1045,7 +1045,7 @@
         "PPO's are NOT a type of managed care systems"
       ],
       "correctAnswer": 3,
-      "explanation": "PPO's ARE considered to be a managed health care system."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: PPO's are NOT a type of managed care systems."
     },
     {
       "id": 88,
@@ -1057,7 +1057,7 @@
         "Claim will be denied"
       ],
       "correctAnswer": 3,
-      "explanation": "If a person is injured while committing an illegal act, health insurance will not cover the expense of the injury."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Claim will be denied."
     },
     {
       "id": 89,
@@ -1069,7 +1069,7 @@
         "Partial Disability provision"
       ],
       "correctAnswer": 2,
-      "explanation": "The insurer will provide the same benefits without a new elimination period under the Recurrent Disability provision."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Recurrent Disability provision."
     },
     {
       "id": 90,
@@ -1081,7 +1081,7 @@
         "Arrange for a copy of the Attending Physician Statement (APS) to be sent to the producer"
       ],
       "correctAnswer": 2,
-      "explanation": "One of the actions a producer should take when submitting an application is to advise the insurer of any other relevant information not contained in the application."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Inform insurer of relevant information not included on the application."
     },
     {
       "id": 91,
@@ -1093,7 +1093,7 @@
         "insured"
       ],
       "correctAnswer": 0,
-      "explanation": "To receive a percentage of the policy face value, an owner of a life policy may sell the policy to a viatical settlement provider."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: viatical settlement provider."
     },
     {
       "id": 92,
@@ -1105,7 +1105,7 @@
         "Universal Life"
       ],
       "correctAnswer": 2,
-      "explanation": "Variable Universal Life is comprised of monthly mortality charges and self directed investment choices."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Variable Universal Life."
     },
     {
       "id": 93,
@@ -1117,7 +1117,7 @@
         "C is the policyowner, the insured, and the beneficiary"
       ],
       "correctAnswer": 1,
-      "explanation": "ABC is the policyowner, C is the insured, and ABC is the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: ABC is the policyowner, C is the insured, and ABC is the beneficiary."
     },
     {
       "id": 94,
@@ -1129,7 +1129,7 @@
         "Beneficiary will be paid a partial Death Benefit"
       ],
       "correctAnswer": 2,
-      "explanation": "The incontestable clause prevents the insurer from canceling the contract even for a material misrepresentation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Beneficiary will be paid the Death Benefit."
     },
     {
       "id": 95,
@@ -1141,7 +1141,7 @@
         "Consideration clause"
       ],
       "correctAnswer": 1,
-      "explanation": "The Cash value provision makes a policy loan possible."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Cash value provision."
     },
     {
       "id": 96,
@@ -1153,7 +1153,7 @@
         "Marital status"
       ],
       "correctAnswer": 2,
-      "explanation": "To determine the premium rate on a Whole Life policy, an insurance company will consider the risk classification of the applicant."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Risk classification."
     },
     {
       "id": 97,
@@ -1165,7 +1165,7 @@
         "Insurance companies can charge an interest rate based on the policyowner's credit report"
       ],
       "correctAnswer": 1,
-      "explanation": "Interest on a loan which is not paid when due is added to the total debt."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Past-due interest on a policy loan is added to the total debt."
     },
     {
       "id": 98,
@@ -1177,7 +1177,7 @@
         "HRA's allow reimbursement for eligible medical expenses"
       ],
       "correctAnswer": 0,
-      "explanation": "HRA plans are employer-funded medical reimbursement plans"
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Employee funds the HRA entirely."
     },
     {
       "id": 99,
@@ -1189,7 +1189,7 @@
         "Benefits are normally taxable"
       ],
       "correctAnswer": 2,
-      "explanation": "Disability Income policies typically contain an Elimination period."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Normally includes an Elimination period."
     },
     {
       "id": 100,
@@ -1201,7 +1201,7 @@
         "annually"
       ],
       "correctAnswer": 0,
-      "explanation": "Under an individual health policy, periodic claim payments must be made at least monthly."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: monthly."
     },
     {
       "id": 101,
@@ -1213,7 +1213,7 @@
         "Nonoccupational coverage"
       ],
       "correctAnswer": 3,
-      "explanation": "The coverage provided by a Disability Income policy that does not provide benefits for losses occurring as the result of the insured's employment is called nonoccupational coverage."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Nonoccupational coverage."
     },
     {
       "id": 102,
@@ -1225,7 +1225,7 @@
         "nursing services"
       ],
       "correctAnswer": 2,
-      "explanation": "All of these services are typically covered under a comprehensive major medical health insurance policy EXCEPT for \"experimental and investigative services\"."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: experimental and investigative services."
     },
     {
       "id": 103,
@@ -1237,7 +1237,7 @@
         "Only heart-related diseases"
       ],
       "correctAnswer": 0,
-      "explanation": "Dread Disease policies cover only a single disease or illness."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: A specific disease or illness."
     },
     {
       "id": 104,
@@ -1249,7 +1249,7 @@
         "authorized"
       ],
       "correctAnswer": 0,
-      "explanation": "A domestic insurance company is domiciled and incorporated under the laws of the state in which its home office is located."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: domestic."
     },
     {
       "id": 105,
@@ -1261,7 +1261,7 @@
         "Misrepresentation"
       ],
       "correctAnswer": 1,
-      "explanation": "An agent who makes a statement that is maliciously critical of another person's financial condition is guilty of defamation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Defamation."
     },
     {
       "id": 106,
@@ -1273,7 +1273,7 @@
         "100%"
       ],
       "correctAnswer": 0,
-      "explanation": "Most noncontributory group health plans require 100% participation by eligible members. Under Florida law, there is no specific minimum percentage participation for employees covered by employee group health insurance."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: 0%."
     },
     {
       "id": 107,
@@ -1285,7 +1285,7 @@
         "All small group benefit plans have no lifetime benefit limits"
       ],
       "correctAnswer": 1,
-      "explanation": "The provisions of the Florida Employee Health Care Access Act require that all small group health benefit plans be issued on a \"guaranteed-issue\" basis."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Small group benefit plans are to be issued on a \"guarantee-issue\" basis."
     },
     {
       "id": 108,
@@ -1297,7 +1297,7 @@
         "The American College of Life Insurance"
       ],
       "correctAnswer": 2,
-      "explanation": "The professional organization whose code of ethics is incorporated into Florida law is the National Association of Insurance and Financial Advisors (NAIFA)."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: National Association of Insurance and Financial Advisors (NAIFA)."
     },
     {
       "id": 109,
@@ -1309,7 +1309,7 @@
         "18 years"
       ],
       "correctAnswer": 0,
-      "explanation": "A person 15 years or older may contract for life insurance on his/her own life."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: 15 years."
     },
     {
       "id": 110,
@@ -1321,7 +1321,7 @@
         "12 months"
       ],
       "correctAnswer": 2,
-      "explanation": "Under a Medicare Supplement policy, the waiting period for pre-existing conditions may not exceed 6 months."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: 6 months."
     },
     {
       "id": 111,
@@ -1333,7 +1333,7 @@
         "48 months"
       ],
       "correctAnswer": 3,
-      "explanation": "An agent's license will terminate if the agent allows 48 months to elapse without being appointed for the class or classes of insurance listed on the license."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: 48 months."
     },
     {
       "id": 112,
@@ -1345,7 +1345,7 @@
         "take a physical examination before the master policy is issued"
       ],
       "correctAnswer": 0,
-      "explanation": "The underwriting and issuance of a master group health policy in Florida requires that all employees or members must be eligible to participate, regardless of individual health history."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: are eligible to participate, regardless of their individual health history."
     },
     {
       "id": 113,
@@ -1357,7 +1357,7 @@
         "Pay a penalty of three times the client's loss"
       ],
       "correctAnswer": 1,
-      "explanation": "The Department of Financial Services may order the agent to pay monetary restitution to the client."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Pay monetary restitution to the client."
     },
     {
       "id": 114,
@@ -1369,7 +1369,7 @@
         "Group Life coverage can be converted to an individual policy at regular rates on an attained-age basis"
       ],
       "correctAnswer": 3,
-      "explanation": "Conversion at regular rates on an attained-age basis without a medical exam is a standard provision for conversion privileges in Group Life policies."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Group Life coverage can be converted to an individual policy at regular rates on an attained-age basis."
     },
     {
       "id": 115,
@@ -1381,7 +1381,7 @@
         "Naturopaths"
       ],
       "correctAnswer": 3,
-      "explanation": "Health insurance policies in Florida must cover payment to all of these practitioners EXCEPT naturopaths."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Naturopaths."
     },
     {
       "id": 116,
@@ -1393,7 +1393,7 @@
         "they require a certain level of member participation"
       ],
       "correctAnswer": 0,
-      "explanation": "Association Plans must be fully insured by an authorized insurer. The insurer is subject to state regulation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: they are insured by an authorized insurer."
     },
     {
       "id": 117,
@@ -1405,7 +1405,7 @@
         "100%"
       ],
       "correctAnswer": 3,
-      "explanation": "In a noncontributory group, the policy must cover 100% of eligible persons."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: 100%."
     },
     {
       "id": 118,
@@ -1417,7 +1417,7 @@
         "being convicted of a felony"
       ],
       "correctAnswer": 1,
-      "explanation": "Acting as a fiduciary would not result in suspension of an agent's license."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: acting with fiduciary responsibility."
     },
     {
       "id": 119,
@@ -1429,7 +1429,7 @@
         "Responsible for unpaid claims"
       ],
       "correctAnswer": 1,
-      "explanation": "All of these are possible consequences for placing business with an unauthorized insurer EXCEPT the conviction of a first degree misdemeanor."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: First degree misdemeanor."
     },
     {
       "id": 120,
@@ -1441,7 +1441,7 @@
         "viator agent"
       ],
       "correctAnswer": 0,
-      "explanation": "To receive a percentage of the policy face value, an owner of a life policy may sell the policy to a viatical settlement provider."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: viatical settlement provider."
     },
     {
       "id": 121,
@@ -1453,7 +1453,7 @@
         "Needing written documentation of claim details"
       ],
       "correctAnswer": 3,
-      "explanation": "All of these are unfair claim settlement practices except 'Needing written documentation of claim details'."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Needing written documentation of claim details."
     },
     {
       "id": 122,
@@ -1465,7 +1465,7 @@
         "Rebating occurs when someone intentionally deceives another with the intent to gain financially"
       ],
       "correctAnswer": 1,
-      "explanation": "Twisting is a misrepresentation made by an agent in order to induce a policyholder to lapse a policy and switch insurance companies. It's considered an unfair trade practice."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Twisting involves an agent using misrepresentation to convince a policyowner to cancel their current policy so that they can purchase a new life insurance policy with another company."
     },
     {
       "id": 123,
@@ -1477,7 +1477,7 @@
         "A copy of the agent's insurance license"
       ],
       "correctAnswer": 0,
-      "explanation": "When replacing an existing life insurance policy, an agent must submit notice to existing insurer and replacing insurer of intentions."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Notice to existing and replacing insurers of intention to replace."
     },
     {
       "id": 124,
@@ -1489,7 +1489,7 @@
         "69 or older"
       ],
       "correctAnswer": 2,
-      "explanation": "In Florida, insurers are required to issue an additional lapse notice after the applicable statutory grace period has expired for policyholders 64 years of age or older."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: 64 years or older."
     },
     {
       "id": 125,
@@ -1501,7 +1501,7 @@
         "a form of misrepresentation"
       ],
       "correctAnswer": 3,
-      "explanation": "According to Florida law, deceptive advertising is considered a form of misrepresentation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: a form of misrepresentation."
     },
     {
       "id": 126,
@@ -1513,7 +1513,7 @@
         "a Written Comparison and Policy Summary"
       ],
       "correctAnswer": 2,
-      "explanation": "Florida's rules on disclosure require an insurance company to provide a purchaser of life insurance with a Buyer's Guide and a Policy Summary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: a Buyer's Guide and Policy Summary."
     },
     {
       "id": 127,
@@ -1525,7 +1525,7 @@
         "cancel the policy at anytime"
       ],
       "correctAnswer": 0,
-      "explanation": "In long-term care insurance, the guarantee of insurability option provides the insured with the ability to purchase additional insurance at a later date without evidence of insurability."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: buy additional coverage at a later date."
     },
     {
       "id": 128,
@@ -1537,7 +1537,7 @@
         "1945 - The McCarran-Ferguson Act"
       ],
       "correctAnswer": 0,
-      "explanation": "Fair Credit Reporting Act requires the fair and accurate reporting of information about consumers. Insurers must inform applicants about any investigations being made. If the report is used to deny coverage or charge higher rates, the insurer must provide the applicant the name of the credit reporting agency conducting the investigation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: 1970 - Fair Credit Reporting Act."
     },
     {
       "id": 129,
@@ -1549,7 +1549,7 @@
         "At all times"
       ],
       "correctAnswer": 0,
-      "explanation": "Insurable interest must exist upon issuance of a life or health insurance contract (time of application)."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: At the time of application."
     },
     {
       "id": 130,
@@ -1561,7 +1561,7 @@
         "Age"
       ],
       "correctAnswer": 1,
-      "explanation": "The major factor in determining the benefit amount paid under a disability income policy is wages."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Wages."
     },
     {
       "id": 131,
@@ -1573,7 +1573,7 @@
         "probation period"
       ],
       "correctAnswer": 0,
-      "explanation": "The best way to describe a disability elimination period is a 'time deductible'."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: time deductible."
     },
     {
       "id": 132,
@@ -1585,7 +1585,7 @@
         "Extended insurability rider"
       ],
       "correctAnswer": 0,
-      "explanation": "A guaranteed insurability rider guarantees the insured the option of purchasing additional amounts of disability income coverage at predetermined times without requiring the insured to provide evidence of insurability."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Guaranteed insurability rider."
     },
     {
       "id": 133,
@@ -1597,7 +1597,7 @@
         "Certificate"
       ],
       "correctAnswer": 3,
-      "explanation": "Employees covered by an employer health plan are issued an insurance certificate."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Certificate."
     },
     {
       "id": 134,
@@ -1609,7 +1609,7 @@
         "After an insured has become totally disabled as defined in the policy"
       ],
       "correctAnswer": 3,
-      "explanation": "The waiver of premium provision keeps the coverage in force without premium payments if the insured has become totally disabled as defined in the policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: After an insured has become totally disabled as defined in the policy."
     },
     {
       "id": 135,
@@ -1621,7 +1621,7 @@
         "Securities"
       ],
       "correctAnswer": 1,
-      "explanation": "All of these areas of state regulation are protected by the savings clause in ERISA EXCEPT for commerce."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Commerce."
     },
     {
       "id": 136,
@@ -1633,7 +1633,7 @@
         "People of different races"
       ],
       "correctAnswer": 2,
-      "explanation": "A life insurance company may make policy rate discriminations against people that smoke."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: People that smoke."
     },
     {
       "id": 137,
@@ -1645,7 +1645,7 @@
         "date of physical examination"
       ],
       "correctAnswer": 0,
-      "explanation": "In Florida, the free-look period for life insurance contracts is 14 days from policy delivery."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: date of delivery."
     },
     {
       "id": 138,
@@ -1657,7 +1657,7 @@
         "copy of the application"
       ],
       "correctAnswer": 0,
-      "explanation": "The insurer must provide a prospective buyer with a Buyer's Guide and Policy Summary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Buyer's Guide and Policy Summary."
     },
     {
       "id": 139,
@@ -1669,7 +1669,7 @@
         "Misrepresenting any fact about an insurance policy"
       ],
       "correctAnswer": 2,
-      "explanation": "Working for a foreign insurance company does not result in the revocation or suspension of an agent's license."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Working for a foreign insurer."
     },
     {
       "id": 140,
@@ -1681,7 +1681,7 @@
         "Daily"
       ],
       "correctAnswer": 2,
-      "explanation": "Claims on an individual disability policies must be paid out at monthly intervals, at minimum."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Monthly."
     },
     {
       "id": 141,
@@ -1693,7 +1693,7 @@
         "Sliding"
       ],
       "correctAnswer": 2,
-      "explanation": "An agent who tells a client that dividends are guaranteed may be guilty of misrepresentation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Misrepresentation."
     },
     {
       "id": 142,
@@ -1705,7 +1705,7 @@
         "An insurer advertising in an insurance trade journal"
       ],
       "correctAnswer": 1,
-      "explanation": "An insurance company may be judged guilty of false advertising if it exaggerates its dividends in a magazine advertisement."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: An insurer exaggerating its dividends in a magazine advertisement."
     },
     {
       "id": 143,
@@ -1717,7 +1717,7 @@
         "Offering special dividends"
       ],
       "correctAnswer": 0,
-      "explanation": "Sharing commissions with other licensed agents is not considered rebating."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Sharing commissions with an agent licensed in the same line of business."
     },
     {
       "id": 144,
@@ -1729,7 +1729,7 @@
         "Sliding"
       ],
       "correctAnswer": 2,
-      "explanation": "If an agent tells an applicant that an insurance policy is like a share of stock, the agent may be guilty of misrepresentation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Misrepresentation."
     },
     {
       "id": 145,
@@ -1741,7 +1741,7 @@
         "using intimidation in order to restrain or monopolize the business of insurance."
       ],
       "correctAnswer": 2,
-      "explanation": "Rebating can be defined as offering a prospect something of value that is not specified in a contract in order to induce the purchase of that contract."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: offering a client something of value not stated in the contract in exchange for their business."
     },
     {
       "id": 146,
@@ -1753,7 +1753,7 @@
         "Reinstatement"
       ],
       "correctAnswer": 2,
-      "explanation": "The Entire Contract provision states that the agent does NOT have the authority to change the policy or waive any of its provisions."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Entire Contract."
     },
     {
       "id": 147,
@@ -1765,7 +1765,7 @@
         "limitations"
       ],
       "correctAnswer": 2,
-      "explanation": "An exclusion limits coverage in an insurance contract."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: exclusions."
     },
     {
       "id": 148,
@@ -1777,7 +1777,7 @@
         "prevents an insured to change insurers during a claim for a covered loss"
       ],
       "correctAnswer": 1,
-      "explanation": "The Coordination of Benefits prevents an insured covered by two health plans from making a profit on a covered loss."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: prevents an insured covered by two health plans from making a profit on a covered loss."
     },
     {
       "id": 149,
@@ -1789,7 +1789,7 @@
         "off-the-job accident"
       ],
       "correctAnswer": 3,
-      "explanation": "An accident policy would most likely pay a benefit for an off-the-job accident."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: off-the-job accident."
     },
     {
       "id": 150,
@@ -1801,7 +1801,7 @@
         "Waiver of Premium rider"
       ],
       "correctAnswer": 3,
-      "explanation": "A Waiver of Premium rider keeps the policy in force if the policyowner becomes totally disabled."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Waiver of Premium rider."
     }
   ]
 }

@@ -229,10 +229,40 @@
         {
           "id": "llqp-life-04",
           "name": "HLLQP - LIFE 04 QZ - Universal Life Insurance",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-04.json"
+          "description": "Chapter quiz covering UL structure, YRT vs LCOI, death benefit options, NAAR, premium tax, surrender values, and tax strategies",
+          "questionCount": 34,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-04.json?v=20260320a",
+          "subTests": [
+            {
+              "id": "llqp-life-04-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-04-part-1.json?v=20260320a"
+            },
+            {
+              "id": "llqp-life-04-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-04-part-2.json?v=20260320a"
+            },
+            {
+              "id": "llqp-life-04-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-27",
+              "questionCount": 7,
+              "dataFile": "data/llqp-life/hllqp-life-04-part-3.json?v=20260320a"
+            },
+            {
+              "id": "llqp-life-04-part-4",
+              "name": "Section 4",
+              "description": "Questions 28-34",
+              "questionCount": 7,
+              "dataFile": "data/llqp-life/hllqp-life-04-part-4.json?v=20260320a"
+            }
+          ]
         },
         {
           "id": "llqp-life-05",

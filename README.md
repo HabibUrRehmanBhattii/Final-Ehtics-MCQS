@@ -1,6 +1,6 @@
 # 📚 LLQP & WFG Exam Prep - MCQ Study Platform
 
-> **Comprehensive interactive study platform with 359 practice questions and flashcards for LLQP exam preparation**
+> **Comprehensive interactive study platform with 394 practice questions and flashcards for LLQP exam preparation**
 
 [![Deploy to Cloudflare Pages](https://img.shields.io/badge/Deploy-Cloudflare%20Pages-F38020?style=flat&logo=cloudflare)](https://pages.cloudflare.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -10,7 +10,7 @@
 ## 🎯 Core Features
 
 ### 📝 **Multiple Learning Formats**
-- **Practice Tests:** 154 MCQs across LLQP Ethics (incl. mock exam), LLQP Life Chapter Quiz 1, Accident & Sickness, and Segregated Funds & Annuities
+- **Practice Tests:** 224 MCQs across LLQP Ethics (incl. mock exam), LLQP Life chapter quizzes/certification, Accident & Sickness, and Segregated Funds & Annuities (incl. certification)
 - **Flashcards:** 170 quick-review flashcards across 9 sets
 - **Review Mode:** Dedicated wrong answers review system
 
@@ -452,7 +452,7 @@ Stored data: {
 | HLLQP - LIFE 12 QZ - Ongoing Service | 🔜 Coming Soon |
 | HLLQP - LIFE 13 QZ - Chapter 1 - 12 Review Test | 🔜 Coming Soon |
 
-### **Grand Total: 324 Questions** (154 MCQs + 170 Flashcards)
+### **Grand Total: 394 Questions** (224 MCQs + 170 Flashcards)
 
 ---
 
@@ -720,7 +720,7 @@ Object.keys(localStorage).forEach(key => {
 - [x] Persistent question order across sessions
 - [x] Progress tracking with localStorage
 - [x] Comprehensive question explanations with option feedback
-- [x] 324 total questions (154 MCQs + 170 flashcards)
+- [x] 394 total questions (224 MCQs + 170 flashcards)
 - [x] Wrong answer review system with cross-test support
 - [x] Dark/Light mode toggle
 - [x] Bookmark functionality with filter

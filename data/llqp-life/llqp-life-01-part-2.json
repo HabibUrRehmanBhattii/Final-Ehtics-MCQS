@@ -20,7 +20,7 @@
         "50.44 is the male remaining life expectancy at age 30.",
         null
       ],
-      "explanation": "Life expectancy of 64.17 additional years at age 20 implies an expected age of 84.17.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. 70.44 uses the male expectancy figure from age 20 plus age 20; it does not match the female data; 64.17 is the remaining years, not the total age at death.\nStep 4: Select the best answer. Option D: 84.17 years.",
       "difficulty": "medium",
       "tags": [
         "life-expectancy",
@@ -44,7 +44,7 @@
         "Morbidity tables track illness/disability rates, not death.",
         null
       ],
-      "explanation": "Life tables are also called mortality tables because they chart mortality rates and expected remaining life.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Annex chart is unrelated terminology; Premium factor tables relate to pricing inputs, not life expectancy data.\nStep 4: Select the best answer. Option D: Mortality table.",
       "difficulty": "easy",
       "tags": [
         "terminology",
@@ -67,7 +67,7 @@
         "Increase is not uniform; it accelerates later in life.",
         null
       ],
-      "explanation": "Mortality curves show a slow increase after infancy that accelerates around age 40.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Mortality increases more sharply after age 40, not more slowly; Accident risk is only one factor; overall mortality is age dependent.\nStep 4: Select the best answer. Option D: With the exception of the first few years of life, the probability of death starts low and then increases slowly until age 40. At age 40, it begins to increase more dramatically.",
       "difficulty": "medium",
       "tags": [
         "mortality",
@@ -90,7 +90,7 @@
         null,
         "Older females should not have lower probabilities than younger females or males."
       ],
-      "explanation": "Mortality is higher for males than females and higher for older ages: 30M 0.076%; 50M 0.305%; 30F 0.038%; 50F 0.199%.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This swaps the male probabilities between ages; The female probabilities are reversed.\nStep 4: Select the best answer. Option C: 30-year-old male: 0.076%; 50-year-old male: 0.305%; 30-year-old female: 0.038%; 50-year-old female: 0.199%.",
       "difficulty": "medium",
       "tags": [
         "mortality",
@@ -114,7 +114,7 @@
         "Education is a possible use, but the primary goal stated is creating funds broadly for support.",
         "No charitable intent is mentioned."
       ],
-      "explanation": "The policy immediately creates funds (an estate) to care for the child if the parents die.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Guardianship addresses caregiving, but the policy is about funding an estate for the child; Education is a possible use, but the primary goal stated is creating funds broadly for support.\nStep 4: Select the best answer. Option A: Estate creation.",
       "difficulty": "easy",
       "tags": [
         "estate-creation",
@@ -138,7 +138,7 @@
         "A deemed disposition could trigger taxes at death.",
         null
       ],
-      "explanation": "All listed impacts apply: the mortgage, loss of income, and potential taxes must all be planned for.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Mortgage repayment is one concern, but not the only one raised; His income would cease, affecting affordability of the home.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "medium",
       "tags": [
         "estate-planning",
@@ -162,7 +162,7 @@
         "Disability insurance addresses disability risk.",
         "Annuities mainly mitigate longevity risk."
       ],
-      "explanation": "Annuities provide lifetime income, protecting against outliving assets (longevity risk).",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Life insurance, not an annuity, covers dying too soon; Disability insurance addresses disability risk.\nStep 4: Select the best answer. Option B: Risk of living too long.",
       "difficulty": "easy",
       "tags": [
         "annuity",
@@ -185,7 +185,7 @@
         "Lower mortality than the 50-year-old male.",
         null
       ],
-      "explanation": "Blake’s mortality rate (0.301%) is highest, so his premium would be highest.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. She has the lowest mortality of the group; Higher than Anita, but not the highest overall.\nStep 4: Select the best answer. Option D: Blake, a 50-year-old male.",
       "difficulty": "easy",
       "tags": [
         "mortality",
@@ -208,7 +208,7 @@
         null,
         "Estate creation is a tool; his goal is to leave a legacy for his children."
       ],
-      "explanation": "Providing a significant gift to heirs is a classic legacy objective.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This goal is not about replacing Justin’s income; No charitable element is mentioned.\nStep 4: Select the best answer. Option C: Leaving a legacy.",
       "difficulty": "easy",
       "tags": [
         "estate-planning",

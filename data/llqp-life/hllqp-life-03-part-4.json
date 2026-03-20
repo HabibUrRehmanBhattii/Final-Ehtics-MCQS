@@ -20,7 +20,7 @@
         null,
         "Reduced paid-up insurance provides permanent coverage for a lesser face amount — not exactly $800,000 as required."
       ],
-      "explanation": "Extended term insurance uses the $100,000 cash value to purchase a paid-up term policy for the same face amount ($800,000). No more premium payments are required, and if Michael dies during the term period (which with $100,000 CSV would cover well beyond five years), the beneficiary receives exactly $800,000.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Surrendering the policy permanently terminates coverage — the beneficiary would receive nothing upon death; APL keeps the policy in force, but the death benefit would be $800,000 MINUS the accumulated APL loan balance — not exactly $800,000 as required.\nStep 4: Select the best answer. Option C: He could choose the extended term insurance non-forfeiture option.",
       "difficulty": "hard",
       "tags": [
         "non-forfeiture",
@@ -45,7 +45,7 @@
         "Monthly total ($1,080) is higher than semi-annual total ($510 × 2 = $1,020) — monthly results in the highest total annual premium.",
         "1/12 of $1,000 = $83.33, but the modal factor gives a monthly payment of $90 — these are not equal."
       ],
-      "explanation": "Using the modal factor, monthly premium = $1,000 × 0.09 = $90. Total annual cost = $90 × 12 = $1,080. This is $80 more than the $1,000 annual premium. Semi-annual = $1,020, quarterly = $1,040, monthly = $1,080 (highest). Monthly does not equal 1/12 of the annual premium.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Monthly total = $90 × 12 = $1,080. That is 8% more than $1,000, not 9%; Monthly total ($1,080) is higher than semi-annual total ($510 × 2 = $1,020) — monthly results in the highest total annual premium.\nStep 4: Select the best answer. Option B: If the policyholder opts for monthly payments, he or she will pay $80 more than the stated annual premium.",
       "difficulty": "medium",
       "tags": [
         "modal-factors",
@@ -69,7 +69,7 @@
         "A paid-up T-100 does not mature at the end of the payment period — coverage continues for life (to age 100).",
         "'Limited' refers to the premium payment period being limited to 30 years, not the duration of the coverage."
       ],
-      "explanation": "'Limited pay' means the policyholder only pays premiums for a set period (30 years in this case). After that, the policy is considered paid-up — no more premiums are required and the T-100 coverage continues in force until age 100 or death.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A limited pay T-100 does not need to be converted — it is already permanent (T-100). After the payment period, the policy is simply paid-up; A paid-up T-100 does not mature at the end of the payment period — coverage continues for life (to age 100).\nStep 4: Select the best answer. Option A: Marcy will only be required to pay premiums for 30 years, after which point the policy would be paid-up and she would retain the coverage.",
       "difficulty": "easy",
       "tags": [
         "term-100",
@@ -93,7 +93,7 @@
         "Mortality rates are one factor but not the only one.",
         null
       ],
-      "explanation": "Adjustable whole life premiums can be recalculated based on changes in any of the three core actuarial assumptions: mortality rates (who dies and when), interest rates (investment returns on reserves), and administrative/expense costs. All three variables can contribute to a premium adjustment.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Administrative costs are one factor but not the only one; Interest rates are one factor but not the only one.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "easy",
       "tags": [
         "adjustable-whole-life",
@@ -118,7 +118,7 @@
         "PUAs are 'paid-up' — no additional premiums are ever required for them.",
         null
       ],
-      "explanation": "Each PUA is a small piece of paid-up whole life insurance purchased with the policy dividend. Because it is whole life, it is permanent insurance — it remains in force for life without requiring any additional premiums, and it accumulates its own cash value.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Paid-up additions are whole life insurance and do accumulate their own cash value; PUAs are paid-up whole life additions — they do not carry a separate term insurance option.\nStep 4: Select the best answer. Option D: The PUA is permanent insurance.",
       "difficulty": "easy",
       "tags": [
         "pua",
@@ -143,7 +143,7 @@
         null,
         "PUAs are whole life insurance, not T-100. T-100 is a different permanent product."
       ],
-      "explanation": "Under the PUA (paid-up additions) dividend option, each dividend is used to purchase a small piece of paid-up whole life insurance. This permanently increases the total coverage amount without requiring any additional premiums.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. PUAs are not term riders — they are paid-up whole life additions that do not expire; One-year term insurance is a separate dividend option — not the PUA option.\nStep 4: Select the best answer. Option C: Whole life insurance.",
       "difficulty": "easy",
       "tags": [
         "pua",
@@ -168,7 +168,7 @@
         "Extended term insurance converts the policy to a paid-up term plan; while it suspends premium payments, it is harder to reverse if Larry wants to resume original coverage later.",
         "Reduced paid-up insurance permanently reduces the face amount — not ideal for a temporary situation."
       ],
-      "explanation": "The APL (automatic premium loan) is the best fit for Larry's temporary financial hardship. The insurer automatically loans him the premium amount from the policy's cash value, keeping the policy fully in force. When Larry returns to work, he can repay the loan and restore the policy to its original state.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Surrendering the policy permanently ends coverage — not appropriate for a temporary financial hardship; Extended term insurance converts the policy to a paid-up term plan; while it suspends premium payments, it is harder to reverse if Larry wants to resume original coverage later.\nStep 4: Select the best answer. Option B: APL.",
       "difficulty": "medium",
       "tags": [
         "non-forfeiture",
@@ -193,7 +193,7 @@
         "A participating whole life policy accumulates cash value, which can fund the APL non-forfeiture option to prevent lapsing.",
         "A non-participating whole life policy also accumulates cash value, which can fund the APL to prevent lapsing."
       ],
-      "explanation": "A T-100 (Term-to-100) policy accumulates no cash value. Without cash value, the APL non-forfeiture option cannot activate to cover missed premiums. Once the grace period (typically 30 days) expires with no payment, a T-100 policy would lapse. Whole life policies (participating and non-participating) have cash value that can keep the policy in force via APL.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A limited payment T-100 that has completed its payment period requires no further premiums and cannot lapse due to missed payments; A participating whole life policy accumulates cash value, which can fund the APL non-forfeiture option to prevent lapsing.\nStep 4: Select the best answer. Option A: T-100.",
       "difficulty": "medium",
       "tags": [
         "term-100",
@@ -218,7 +218,7 @@
         null,
         "T-100 has the lowest premium among permanent policies, but it typically has no cash surrender value — if Becky surrenders it, she receives nothing."
       ],
-      "explanation": "Becky needs permanent insurance (to gift to charities at death), the lowest possible premium, and the ability to surrender for value if her goals change. Universal life offers the flexibility of permanent coverage, lower premiums than whole life, and builds a cash value that she can access upon surrender — making it the best fit for all three requirements.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life insurance provides a CSV upon surrender but carries a higher premium than universal life for the same basic coverage; 10-year term insurance is not permanent — it would not allow her to gift money to charities upon death at an unknown future date.\nStep 4: Select the best answer. Option C: Universal life insurance.",
       "difficulty": "hard",
       "tags": [
         "universal-life",

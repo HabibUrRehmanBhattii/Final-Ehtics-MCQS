@@ -20,9 +20,13 @@
         null,
         "Confidentiality does not override the duty to disclose material information on an application."
       ],
-      "explanation": "Materiality is determined by the insurer, not the agent’s perception. Failure to disclose a known condition = misrepresentation.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Coverage decisions depend on full disclosure; an undisclosed condition can change underwriting outcomes; Protecting the client does not justify withholding material facts from the insurer.\nStep 4: Select the best answer. Option C: Material misrepresentation has occurred.",
       "difficulty": "hard",
-      "tags": ["misrepresentation","disclosure","materiality"]
+      "tags": [
+        "misrepresentation",
+        "disclosure",
+        "materiality"
+      ]
     },
     {
       "id": 2,
@@ -40,9 +44,13 @@
         "Material disadvantages matter even if no immediate loss is shown.",
         "An agent’s belief in suitability doesn’t remove the duty to disclose significant drawbacks."
       ],
-      "explanation": "Suicide clause reset = material disadvantage. Consent without disclosure = meaningless; agent must disclose.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Consent is not meaningful without disclosure of material changes like a reset suicide clause; Material disadvantages matter even if no immediate loss is shown.\nStep 4: Select the best answer. Option B: Agent violated the duty of disclosure.",
       "difficulty": "hard",
-      "tags": ["replacement","disclosure","materiality"]
+      "tags": [
+        "replacement",
+        "disclosure",
+        "materiality"
+      ]
     },
     {
       "id": 3,
@@ -60,9 +68,13 @@
         null,
         "No percentage threshold removes the disclosure requirement for conflicts."
       ],
-      "explanation": "Any personal benefit that could influence advice is a conflict of interest and must be disclosed, regardless of size.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Knowing general fees doesn’t address a specific referral incentive that could bias advice; Undisclosed conflicts are not minor; they undermine trust and decision-making.\nStep 4: Select the best answer. Option C: Conflict of interest that must be disclosed.",
       "difficulty": "medium",
-      "tags": ["conflict-of-interest","referrals","disclosure"]
+      "tags": [
+        "conflict-of-interest",
+        "referrals",
+        "disclosure"
+      ]
     },
     {
       "id": 4,
@@ -80,9 +92,13 @@
         "The agent shares responsibility to ensure the transaction is legally valid.",
         "Insurer approval doesn’t cure defects if the assignee lacks legal capacity."
       ],
-      "explanation": "Legal capacity is required to transfer contracts. Failure to confirm capacity exposes agent and insurer to legal risk.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Consent alone doesn’t solve a capacity problem for the assignee; The agent shares responsibility to ensure the transaction is legally valid.\nStep 4: Select the best answer. Option B: Legal risk because third party may lack capacity.",
       "difficulty": "medium",
-      "tags": ["assignment","capacity","legal-risk"]
+      "tags": [
+        "assignment",
+        "capacity",
+        "legal-risk"
+      ]
     },
     {
       "id": 5,
@@ -100,9 +116,12 @@
         "Family assistance doesn’t justify skipping an assessment of the client’s understanding.",
         "Ethical duties apply regardless of whether a client later complains."
       ],
-      "explanation": "Vulnerable client + pressure = undue influence; agent must protect client and pause the sale.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A signature isn’t enough when the client may be pressured or not fully informed; Family assistance doesn’t justify skipping an assessment of the client’s understanding.\nStep 4: Select the best answer. Option B: Undue influence ignored → unethical.",
       "difficulty": "hard",
-      "tags": ["undue-influence","vulnerable-clients"]
+      "tags": [
+        "undue-influence",
+        "vulnerable-clients"
+      ]
     },
     {
       "id": 6,
@@ -120,9 +139,12 @@
         "A signature does not replace the duty to avoid or disclose conflicts and ensure suitability.",
         "Conflict-of-interest rules apply even without proven financial loss."
       ],
-      "explanation": "Undisclosed personal benefit influencing recommendation = ethics breach; disclosure is required.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A small benefit doesn’t justify steering a client for personal gain; A signature does not replace the duty to avoid or disclose conflicts and ensure suitability.\nStep 4: Select the best answer. Option B: Unethical due to undisclosed conflict of interest.",
       "difficulty": "medium",
-      "tags": ["conflict-of-interest","commissions"]
+      "tags": [
+        "conflict-of-interest",
+        "commissions"
+      ]
     },
     {
       "id": 7,
@@ -140,9 +162,12 @@
         null,
         "Insurers rely on agent and client disclosures; verification doesn’t remove the agent’s duty."
       ],
-      "explanation": "Suspicion obligates the agent to investigate and clarify; unintentional error does not remove misrepresentation risk.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Unintentional errors can still be material, especially when the agent suspects inaccuracies; Proceeding without clarification breaches the agent’s duty to verify and correct information.\nStep 4: Select the best answer. Option C: Material misrepresentation may occur.",
       "difficulty": "hard",
-      "tags": ["misrepresentation","duty-to-investigate"]
+      "tags": [
+        "misrepresentation",
+        "duty-to-investigate"
+      ]
     },
     {
       "id": 8,
@@ -160,9 +185,13 @@
         "Beneficiary designations can be changed by the new owner; ownership rules govern the outcome here.",
         null
       ],
-      "explanation": "An absolute assignment transfers ownership; if the new owner dies without action, the benefit passes to their estate.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. After absolute assignment, the former owner no longer controls the policy or its proceeds; Ownership transfers, but if the new owner dies without action, the proceeds do not go to them personally.\nStep 4: Select the best answer. Option D: Policyholder’s estate.",
       "difficulty": "medium",
-      "tags": ["assignment","beneficiary","estate"]
+      "tags": [
+        "assignment",
+        "beneficiary",
+        "estate"
+      ]
     },
     {
       "id": 9,
@@ -180,9 +209,12 @@
         "Commission disclosure is required and is not a prohibited practice by itself.",
         "Suitability-based recommendations are expected, not prohibited."
       ],
-      "explanation": "Churning (unnecessary replacements for gain) is prohibited; the others are ethical or neutral when done properly.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A transparent, informed replacement is permitted when it benefits the client; Commission disclosure is required and is not a prohibited practice by itself.\nStep 4: Select the best answer. Option A: Churning.",
       "difficulty": "medium",
-      "tags": ["prohibited-practices","churning"]
+      "tags": [
+        "prohibited-practices",
+        "churning"
+      ]
     },
     {
       "id": 10,
@@ -200,9 +232,12 @@
         "A rebate doesn’t replace the duty to document and report the complaint.",
         "Closing the sale doesn’t eliminate reporting obligations."
       ],
-      "explanation": "Documenting and reporting the complaint is the correct first step per regulatory and ethical standards.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Immediate denial ignores required complaint-handling procedures; A rebate doesn’t replace the duty to document and report the complaint.\nStep 4: Select the best answer. Option B: Document complaint and report internally.",
       "difficulty": "medium",
-      "tags": ["complaints","regulatory"]
+      "tags": [
+        "complaints",
+        "regulatory"
+      ]
     },
     {
       "id": 11,
@@ -220,9 +255,12 @@
         "Agreements can define terms going forward but don’t typically create retroactive statutory rights.",
         "Common-law partners do not automatically receive all legal rights of married spouses."
       ],
-      "explanation": "Common-law status may create spousal support obligations; property division rules differ from marriage in many jurisdictions.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Property division rules for common-law partners often differ from marriage and are not automatic; Agreements can define terms going forward but don’t typically create retroactive statutory rights.\nStep 4: Select the best answer. Option B: Only spousal support is available.",
       "difficulty": "medium",
-      "tags": ["common-law","spousal-support"]
+      "tags": [
+        "common-law",
+        "spousal-support"
+      ]
     },
     {
       "id": 12,
@@ -240,9 +278,12 @@
         "Client trust doesn’t excuse giving unverified legal advice.",
         "Misrepresentation exists at the time of advice, regardless of whether litigation occurs."
       ],
-      "explanation": "Legal protections vary by province; the agent must verify and not assume protections.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Creditor protection varies by province and policy details; blanket assurances are risky; Client trust doesn’t excuse giving unverified legal advice.\nStep 4: Select the best answer. Option B: Misrepresentation; advice must be verified.",
       "difficulty": "medium",
-      "tags": ["legal-advice","misrepresentation"]
+      "tags": [
+        "legal-advice",
+        "misrepresentation"
+      ]
     },
     {
       "id": 13,
@@ -260,9 +301,12 @@
         "Potential client harm does not remove statutory reporting requirements.",
         "FINTRAC reporting is unrelated to client litigation threats."
       ],
-      "explanation": "FINTRAC rules require timely reporting (within 15 days) for suspicious transactions; good-faith protection applies.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Reporting obligations are set by law, not by peer perceptions; Potential client harm does not remove statutory reporting requirements.\nStep 4: Select the best answer. Option B: Required within 15 days for suspicious transactions.",
       "difficulty": "medium",
-      "tags": ["fintrac","reporting"]
+      "tags": [
+        "fintrac",
+        "reporting"
+      ]
     },
     {
       "id": 14,
@@ -280,9 +324,12 @@
         "There is no personal gain indicated, so conflict of interest isn’t the core breach.",
         "Autonomy is supported by disclosure, but the primary breach is the duty to explain material features."
       ],
-      "explanation": "Failing to explain material features breaches the duty of care owed to the client.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Suitability may still be fine; the issue is failure to explain a material benefit; There is no personal gain indicated, so conflict of interest isn’t the core breach.\nStep 4: Select the best answer. Option B: Duty of care.",
       "difficulty": "medium",
-      "tags": ["duty-of-care","disclosure"]
+      "tags": [
+        "duty-of-care",
+        "disclosure"
+      ]
     },
     {
       "id": 15,
@@ -300,9 +347,11 @@
         "Clear explanations support informed consent, not undue influence.",
         "Commission disclosure is a transparency requirement, not a pressure tactic."
       ],
-      "explanation": "High-pressure tactics on a vulnerable client are classic undue influence.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Presenting options is standard practice and not coercive by itself; Clear explanations support informed consent, not undue influence.\nStep 4: Select the best answer. Option B: High-pressure tactics on vulnerable client.",
       "difficulty": "easy",
-      "tags": ["undue-influence"]
+      "tags": [
+        "undue-influence"
+      ]
     },
     {
       "id": 16,
@@ -320,9 +369,12 @@
         "Insurer agreement doesn’t override legal capacity rules.",
         "A minor’s signature alone does not create legal capacity."
       ],
-      "explanation": "Minors generally lack capacity to hold contracts; parental consent alone does not make assignment valid.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Minors generally cannot enter binding contracts, so assignment is not automatically valid; Insurer agreement doesn’t override legal capacity rules.\nStep 4: Select the best answer. Option B: Invalid due to legal capacity.",
       "difficulty": "medium",
-      "tags": ["capacity","assignment"]
+      "tags": [
+        "capacity",
+        "assignment"
+      ]
     },
     {
       "id": 17,
@@ -340,9 +392,13 @@
         "Convenience cannot replace the required disclosure and documentation process.",
         "Replacement can be unethical if not in the client’s interest or if disadvantages are hidden."
       ],
-      "explanation": "Written disclosure with documentation provides a clear record and safeguards the client; verbal alone is insufficient.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Verbal-only disclosure lacks a reliable record and is insufficient for ethical replacement; Convenience cannot replace the required disclosure and documentation process.\nStep 4: Select the best answer. Option A: Written disclosure of new vs old features.",
       "difficulty": "medium",
-      "tags": ["replacement","documentation","disclosure"]
+      "tags": [
+        "replacement",
+        "documentation",
+        "disclosure"
+      ]
     },
     {
       "id": 18,
@@ -360,9 +416,12 @@
         "There is no dollar threshold that removes the duty to disclose referral incentives.",
         "Client trust does not eliminate disclosure obligations for conflicts."
       ],
-      "explanation": "Any financial incentive creating potential influence must be disclosed to the client.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Any rewarded referral creates a potential conflict and requires disclosure; There is no dollar threshold that removes the duty to disclose referral incentives.\nStep 4: Select the best answer. Option B: Referral arrangement must be disclosed to client.",
       "difficulty": "medium",
-      "tags": ["conflict-of-interest","referrals"]
+      "tags": [
+        "conflict-of-interest",
+        "referrals"
+      ]
     },
     {
       "id": 19,
@@ -380,9 +439,13 @@
         "Silence can mislead when it hides material information the client needs.",
         "Misrepresentation by omission doesn’t depend on proving a financial loss."
       ],
-      "explanation": "Withholding material information that the client should know constitutes misrepresentation.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Duty to disclose material facts exists even if the client doesn’t ask; Silence can mislead when it hides material information the client needs.\nStep 4: Select the best answer. Option B: When material information is withheld.",
       "difficulty": "medium",
-      "tags": ["misrepresentation","silence","disclosure"]
+      "tags": [
+        "misrepresentation",
+        "silence",
+        "disclosure"
+      ]
     },
     {
       "id": 20,
@@ -400,9 +463,12 @@
         "Family approval cannot substitute for the client’s own informed consent.",
         "Ethical duties apply at the time of sale, not only after a claim is denied."
       ],
-      "explanation": "Proceeding without ensuring informed consent is unethical; agent must confirm understanding before completing the transaction.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Paying premiums doesn’t prove the client understood the transaction; Family approval cannot substitute for the client’s own informed consent.\nStep 4: Select the best answer. Option B: Unethical due to lack of informed consent.",
       "difficulty": "hard",
-      "tags": ["informed-consent","vulnerable-clients"]
+      "tags": [
+        "informed-consent",
+        "vulnerable-clients"
+      ]
     }
   ]
 }

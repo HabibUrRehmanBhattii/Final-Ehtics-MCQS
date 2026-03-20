@@ -1,0 +1,179 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 04 QZ - Universal Life Insurance - Section 4",
+  "examTips": "Focus on UL unbundling, mortality costing (YRT vs LCOI), death benefit options, NAAR, exemption test risk, surrender values, premium tax, and tax-efficient retirement strategies.",
+  "questions": [
+    {
+      "id": 28,
+      "question": "All else being equal, which policy would have the lowest NAAR?",
+      "options": [
+        "A. Level death benefit plus account value",
+        "B. Level death benefit plus cumulative premiums",
+        "C. Level death benefit",
+        "D. Indexed death benefit"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Face-plus-account structures tend to keep NAAR higher than plain level death benefit structures.",
+        "Adding cumulative premiums to death benefit tends to increase NAAR pressure.",
+        null,
+        "Indexed/increasing death benefit designs generally increase NAAR versus plain level structures."
+      ],
+      "explanation": "For standard UL mechanics, a plain level death benefit typically yields the lowest NAAR relative to increasing death benefit designs.",
+      "difficulty": "medium",
+      "tags": [
+        "ul",
+        "naar",
+        "death-benefit-options"
+      ]
+    },
+    {
+      "id": 29,
+      "question": "Ted wants to purchase permanent insurance to cover the capital gains tax on an investment property at death. He has selected the level death benefit plus account value death benefit option. When discussing the various mortality costing methods, Ted confirmed that his number one concern is ensuring that the policy remains in force until death, and therefore he wants to take whatever steps are required to limit the risk of the policy lapsing. Which mortality costing method would you recommend?",
+      "options": [
+        "A. Adjustable whole life",
+        "B. YRT",
+        "C. Guaranteed whole life",
+        "D. LCOI"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This is a different product category, not the UL mortality costing choice requested.",
+        "YRT introduces increasing deductions later in life, which can increase lapse risk if underfunded.",
+        "This is outside the UL costing-method decision in the question.",
+        null
+      ],
+      "explanation": "Within UL costing options, LCOI generally offers more predictable long-term deductions than YRT, helping reduce lapse risk.",
+      "difficulty": "medium",
+      "tags": [
+        "ul",
+        "lapse-risk",
+        "lcoi",
+        "yrt"
+      ]
+    },
+    {
+      "id": 30,
+      "question": "Stan is in the process of applying for a whole life policy and has been provided with several premium options. The annual premium on the policy is $800, but he would like to pay more frequently than annually. Given the following information, what would the premium be if he wants to pay quarterly? (Quarterly modal factor = 0.280)",
+      "options": [
+        "A. $78 per quarter",
+        "B. $200",
+        "C. $224",
+        "D. $260"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This is too low and not based on the given modal factor.",
+        "This is simple annual/4 and ignores modal loading.",
+        null,
+        "This overstates the result from the stated factor."
+      ],
+      "explanation": "Quarterly premium = $800 × 0.280 = $224.",
+      "difficulty": "easy",
+      "tags": [
+        "modal-factor",
+        "whole-life",
+        "calculation"
+      ]
+    },
+    {
+      "id": 31,
+      "question": "What are the payments into a universal life policy called?",
+      "options": [
+        "A. Maximum funding",
+        "B. Contributions",
+        "C. Deposits",
+        "D. Premiums"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Maximum funding is a funding level concept, not the payment label.",
+        "Some contexts use contributions, but LLQP UL terminology typically uses deposits.",
+        null,
+        "Traditional fixed-premium language is less precise for flexible UL funding."
+      ],
+      "explanation": "UL exam terminology generally refers to policy payments as deposits due to funding flexibility.",
+      "difficulty": "easy",
+      "tags": [
+        "ul",
+        "terminology",
+        "deposits"
+      ]
+    },
+    {
+      "id": 32,
+      "question": "Blake bought a universal life (UL) insurance policy and selected the level death benefit option. The face value on the policy is $500,000. Blake selected the LCOI mortality costing option. Over the years, he has paid $90,000 in premiums, and $62,000 has accumulated in the investment component. The mortality cost is based upon the NAAR. In this situation, what would the NAAR be?",
+      "options": [
+        "A. $500,000",
+        "B. $438,000",
+        "C. $562,000",
+        "D. $410,000"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This ignores account value offset under level death benefit NAAR mechanics.",
+        null,
+        "This incorrectly adds account value instead of subtracting it.",
+        "This uses an unsupported subtraction base."
+      ],
+      "explanation": "For level death benefit UL, NAAR = face amount − account value = $500,000 − $62,000 = $438,000.",
+      "difficulty": "medium",
+      "tags": [
+        "ul",
+        "naar",
+        "lcoi",
+        "calculation"
+      ]
+    },
+    {
+      "id": 33,
+      "question": "Emily is in the process of applying for a universal life (UL) policy and has been provided with several deposit (premium) options. The annual minimum deposit on the policy will be $800, but she would like to pay monthly instead. Assuming a monthly modal factor of 0.088 and a quarterly modal factor 0.280 for a whole life policy, what would the deposit be if she wants to pay the UL deposits monthly?",
+      "options": [
+        "A. $66.67",
+        "B. $70.40",
+        "C. $800",
+        "D. $224"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This applies whole-life modal loading instead of UL deposit split logic in this context.",
+        "This is the annual amount, not monthly.",
+        "This is the quarterly whole-life result, not monthly UL deposit amount."
+      ],
+      "explanation": "In this UL framing, monthly deposit is annual minimum divided by 12: $800 ÷ 12 = $66.67.",
+      "difficulty": "easy",
+      "tags": [
+        "ul",
+        "deposits",
+        "calculation"
+      ]
+    },
+    {
+      "id": 34,
+      "question": "Adam needs permanent life insurance to cover capital gains tax on an investment property at death. When this occurs, he would like his brother to receive the property free and clear (nothing owing on it). Adam is an aggressive investor, so his agent recommended UL. Which mortality costing method would result in a quicker build-up of the cash value in the early years?",
+      "options": [
+        "A. YRT",
+        "B. Whole life",
+        "C. LCOI",
+        "D. T-100"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This is a separate product type, not a UL mortality costing method.",
+        "LCOI is often higher than YRT in early years, leaving less early surplus.",
+        "This is a separate product type, not a UL mortality costing method."
+      ],
+      "explanation": "YRT typically has lower early-year mortality deductions than LCOI, which can support faster early account-value buildup.",
+      "difficulty": "medium",
+      "tags": [
+        "ul",
+        "yrt",
+        "lcoi",
+        "cash-value-growth"
+      ]
+    }
+  ]
+}

@@ -13,7 +13,7 @@
         "Revocable beneficiary"
       ],
       "correctAnswer": 0,
-      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Irrevocable beneficiary."
     },
     {
       "id": 2,
@@ -25,7 +25,7 @@
         "Only if primary beneficiary dies"
       ],
       "correctAnswer": 0,
-      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Anytime."
     },
     {
       "id": 3,
@@ -37,7 +37,7 @@
         "Contingent"
       ],
       "correctAnswer": 2,
-      "explanation": "With a revocable beneficiary designation, the policyowner may change the beneficiary at any time without notifying or getting permission from the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Revocable."
     },
     {
       "id": 4,
@@ -49,7 +49,7 @@
         "If the insured died of natural causes"
       ],
       "correctAnswer": 1,
-      "explanation": "A contingent beneficiary will receive the policy proceeds if the primary beneficiary dies before the insured's death."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: If the primary beneficiary dies before the insured."
     },
     {
       "id": 5,
@@ -61,7 +61,7 @@
         "A beneficiary change is subject to underwriting procedures"
       ],
       "correctAnswer": 1,
-      "explanation": "A policyowner may change a beneficiary at any time. However, consent may be needed by the current beneficiary if designated as irrevocable."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The policyowner can change the beneficiary."
     },
     {
       "id": 6,
@@ -73,7 +73,7 @@
         "Primary"
       ],
       "correctAnswer": 2,
-      "explanation": "An irrevocable designation may not be changed without the written consent of the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Irrevocable."
     },
     {
       "id": 7,
@@ -85,7 +85,7 @@
         "The minor is entitled to receive the death proceeds immediately"
       ],
       "correctAnswer": 1,
-      "explanation": "In most cases, insurers require that a guardian be appointed in the Beneficiary clause of the policy or that a guardian be designated in the will."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Normally, a guardian is required to be appointed in the Beneficiary clause of the contract."
     },
     {
       "id": 8,
@@ -97,7 +97,7 @@
         "Level premiums can only be paid annually"
       ],
       "correctAnswer": 1,
-      "explanation": "The concept of level premiums charges more than needed in early years."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The early years are charged more than what is needed."
     },
     {
       "id": 9,
@@ -109,7 +109,7 @@
         "Assignment provision"
       ],
       "correctAnswer": 2,
-      "explanation": "Premium Mode is the feature that allows the policyowner to select the timing of premium payment, such as monthly, quarterly, annually etc."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Premium Mode."
     },
     {
       "id": 10,
@@ -121,7 +121,7 @@
         "Mode of Premium"
       ],
       "correctAnswer": 3,
-      "explanation": "The Mode of Premium provision permits an insured to pay premiums more than once every year."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Mode of Premium."
     },
     {
       "id": 11,
@@ -133,7 +133,7 @@
         "beneficiary"
       ],
       "correctAnswer": 3,
-      "explanation": "A beneficiary is not required to sign the application."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: beneficiary."
     },
     {
       "id": 12,
@@ -145,7 +145,7 @@
         "Beneficiary"
       ],
       "correctAnswer": 2,
-      "explanation": "When an applicant makes a mistake, the applicant must initial the correction."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Applicant."
     },
     {
       "id": 13,
@@ -157,7 +157,7 @@
         "Backdated receipt"
       ],
       "correctAnswer": 1,
-      "explanation": "A conditional receipt binds coverage as of the date of application or medical exam, provided the insured is acceptable."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Conditional receipt."
     },
     {
       "id": 14,
@@ -169,7 +169,7 @@
         "initial premium is collected"
       ],
       "correctAnswer": 1,
-      "explanation": "The policy will go into effect after delivery, issuance, and premium collection; the free-look period expiration is not required beforehand."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: free-look period has expired."
     },
     {
       "id": 15,
@@ -181,7 +181,7 @@
         "both employer and employee must provide evidence of insurability"
       ],
       "correctAnswer": 0,
-      "explanation": "When an employer provides noncontributory group term life insurance, the employer pays the entire cost of the plan."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: the entire cost of the plan is paid for by the employer."
     },
     {
       "id": 16,
@@ -193,7 +193,7 @@
         "Beneficiary"
       ],
       "correctAnswer": 3,
-      "explanation": "The beneficiary is not required to sign the application."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Beneficiary."
     },
     {
       "id": 17,
@@ -205,7 +205,7 @@
         "Forward the application to the insurer after giving the applicant a conditional receipt"
       ],
       "correctAnswer": 2,
-      "explanation": "The producer should submit the application to the insurer without the premium; the policy is not valid until initial premium is collected."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Forward the application to the insurer without the initial premium."
     },
     {
       "id": 18,
@@ -217,7 +217,7 @@
         "Collect initial premium and leave a binding receipt"
       ],
       "correctAnswer": 1,
-      "explanation": "Deliver the policy and obtain the premium payment along with a signed health statement."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Collect initial premium along with a signed health statement."
     },
     {
       "id": 19,
@@ -229,7 +229,7 @@
         "Contributory"
       ],
       "correctAnswer": 3,
-      "explanation": "Employees share in the premium costs with contributory plans."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Contributory."
     },
     {
       "id": 20,
@@ -241,7 +241,7 @@
         "Fixed Variable"
       ],
       "correctAnswer": 1,
-      "explanation": "A Fixed Deferred annuity pays out a fixed amount for life starting at a future date."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Fixed Deferred."
     }
   ]
 }

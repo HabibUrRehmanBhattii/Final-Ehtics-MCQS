@@ -1,0 +1,688 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 04 QZ - Universal Life Insurance",
+  "examTips": "Focus on UL unbundling, mortality costing (YRT vs LCOI), death benefit options, NAAR, exemption test risk, surrender values, premium tax, and tax-efficient retirement strategies.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Graham purchased a UL policy 20 years ago. He has made deposits to the policy every single year, but it is minimally funded. The policy will pay the face value plus account value upon death. Graham recently went through a divorce. Since he has no children or any other dependents, he feels that he no longer needs the policy and would like to surrender it. How much would he likely receive if he surrendered the policy?",
+      "options": [
+        "A. Graham would receive the greater of the account value or the cumulative premiums paid.",
+        "B. Graham would receive nothing.",
+        "C. Graham would receive the total of the face value and the cumulative deposits made.",
+        "D. Graham would receive the cash value less surrender charges, which in this case could result in a negative amount. Graham will have to pay this sum to the insurer upon cancellation."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "UL surrender value is based on account/cash value mechanics and surrender charges, not the greater-of test described.",
+        "A policy surrender is typically tied to cash value and charges, not automatically zero in all cases.",
+        "The face amount is a death benefit, not a surrender benefit.",
+        null
+      ],
+      "explanation": "On surrender, a UL policy generally pays the account/cash value minus applicable surrender charges and adjustments. The face amount is only payable on death, not on cancellation.",
+      "difficulty": "medium",
+      "tags": ["ul", "surrender", "cash-value", "death-benefit"]
+    },
+    {
+      "id": 2,
+      "question": "Gregory is interested in a universal life (UL) policy because he has heard about the flexibility that the product provides. He is especially excited by the fact that it is a permanent insurance plan, but he can select yearly renewable term as the mortality costing option. He knows term insurance is cheaper than other forms of permanent insurance, so he is excited about the proposition. What should you advise him?",
+      "options": [
+        "A. Some policies will allow the insured to switch from YRT costing to LCOI, with the LCOI rates being based on the insured's age when the policy was initially applied for.",
+        "B. Under YRT, the rate will increase each year. The increased mortality deductions later in life can erode the policy's cash value unless the increases are offset by investment returns and/or additional deposits.",
+        "C. The cost of YRT will gradually increase each year. Fortunately, all UL policies will allow the policyholder to switch from YRT to LCOI, or from LCOI to YRT.",
+        "D. If the policyholder selects YRT, the policy will end by a certain age, such as age 80."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Switch rules are product-specific and not universally based on original issue-age pricing.",
+        null,
+        "Not all UL contracts permit bidirectional switching between costing methods.",
+        "YRT is a mortality costing method in UL, not an automatic age-limited expiry of the UL policy."
+      ],
+      "explanation": "YRT usually starts lower but increases with age. In later years, rising mortality deductions can reduce account growth or even pressure policy sustainability unless offset by returns/deposits.",
+      "difficulty": "medium",
+      "tags": ["ul", "yrt", "lcoi", "policy-sustainability"]
+    },
+    {
+      "id": 3,
+      "question": "Margo purchased a universal life (UL) policy upon her graduation from university. The policy had a face value of $1,000,000, and she chose the level death benefit option. She was diligent about making large policy deposits during her peak earning years. At the time of her death, the investment component equaled $1,100,555. How much will her beneficiaries receive?",
+      "options": [
+        "A. $1,100,555",
+        "B. $1,000,000",
+        "C. $2,100,555",
+        "D. $1,000,000 less surrender charges"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "That amount is the account value, not the level death benefit payout.",
+        null,
+        "Face plus account applies only if that death benefit option was selected.",
+        "Surrender charges apply to surrender values, not death benefit payouts in this context."
+      ],
+      "explanation": "With a level death benefit option, beneficiaries receive the face amount on death, not face plus account value.",
+      "difficulty": "easy",
+      "tags": ["ul", "death-benefit-options", "level-benefit"]
+    },
+    {
+      "id": 4,
+      "question": "Based on the information below, what would the monthly premium tax be? Universal life (UL) policy; LCOI selected as the mortality costing option; level death benefit; $500 deposits each month; $300 mortality cost per month; $50 expenses per month; premium tax in the province at 2%.",
+      "options": [
+        "A. $1",
+        "B. $10",
+        "C. $6",
+        "D. $7"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This understates 2% of the deposit base.",
+        null,
+        "This is not 2% of the monthly deposit amount.",
+        "This does not match the premium-tax calculation from the stated figures."
+      ],
+      "explanation": "Using the provided UL deposit amount, monthly premium tax is 2% × $500 = $10.",
+      "difficulty": "easy",
+      "tags": ["ul", "premium-tax", "calculation"]
+    },
+    {
+      "id": 5,
+      "question": "Gustav is a new insurance agent whom you are responsible for supervising. After performing a thorough insurance needs analysis, it has been determined that his client is a prime candidate for UL. The client needs $500,000 in coverage and does not expect his insurance needs to change. Which of the following set of UL options should the client select if he is conservative when it comes to risk?",
+      "options": [
+        "A. LCOI, face value plus cumulative premiums, index fund investments",
+        "B. LCOI, face value plus cash value death benefit, index fund investments",
+        "C. YRT, level death benefit, index fund investments",
+        "D. LCOI, level death benefit, index fund investments"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This increases death benefit structure complexity and can increase long-term cost pressure.",
+        "Face plus account generally increases death benefit and NAAR exposure versus level benefit.",
+        "YRT introduces increasing mortality cost risk over time.",
+        null
+      ],
+      "explanation": "For a conservative UL structure with stable needs, LCOI with level death benefit is typically more predictable than YRT or increasing death benefit structures.",
+      "difficulty": "medium",
+      "tags": ["ul", "risk-profile", "lcoi", "level-death-benefit"]
+    },
+    {
+      "id": 6,
+      "question": "Alex bought a universal life (UL) policy 10 years ago. The cash value of the policy is invested in a conservative equity fund. He has noticed the growth of the investment component has slowed recently, which surprises him. He is confused as to why the growth in the policy has slowed despite the investment return on the equity fund he selected performing steadily over the past 10 years. What is the most likely cause of this?",
+      "options": [
+        "A. He probably selected YRT as the mortality costing option.",
+        "B. He probably selected the level death benefit plus account option.",
+        "C. He has probably increased premium deposits.",
+        "D. He probably selected LCOI as the mortality costing option."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This option alone does not best explain a gradual growth slowdown with steady investment performance.",
+        "Higher deposits would generally support, not reduce, account growth.",
+        "LCOI is level by design and usually does not create the same rising deduction pattern as YRT."
+      ],
+      "explanation": "YRT mortality charges rise each year. Even with steady fund performance, increasing insurance deductions can slow net account growth over time.",
+      "difficulty": "medium",
+      "tags": ["ul", "yrt", "mortality-deductions", "account-growth"]
+    },
+    {
+      "id": 7,
+      "question": "Malcom owns a universal life (UL) policy with a $250,000 face value. The policy will pay a death benefit equal to the face value plus cumulative deposits. Malcom is a sophisticated investor and has chosen to invest the excess premiums in an international equity fund. Over the past two calendar years, he has begun to notice that the growth in his policy is not progressing at the same rate as before despite the fact that his investments are performing better than ever. What could be the reason for this?",
+      "options": [
+        "A. The mortality charge is based on YRT.",
+        "B. The policy failed the MTAR test.",
+        "C. The mortality charge is based on LCOI.",
+        "D. The policy is tax exempt."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Exemption-test failure has different tax consequences and is not the most direct explanation here.",
+        "LCOI is level and less likely to create an accelerating drag pattern than YRT.",
+        "Tax-exempt status does not itself cause growth to slow."
+      ],
+      "explanation": "A common reason for slowing net UL account growth despite good investment returns is rising YRT deductions with age.",
+      "difficulty": "medium",
+      "tags": ["ul", "yrt", "mtar", "growth-drag"]
+    },
+    {
+      "id": 8,
+      "question": "Four friends from the same university recently started their own restaurant. The restaurant, called Four Gals, makes specialty burgers. Four Gals recently won an award for the best burger in town. As part of their estate planning, each of them bought universal life (UL) insurance policies and selected the same investment within the investment component of the policy. This morning while having coffee, one of the girls mentioned that the investment component within their policy was performing extremely well. Which of the following policies would be in the most danger of failing the exemption test?",
+      "options": [
+        "A. A UL policy with LCOI",
+        "B. A maximum-funded UL policy",
+        "C. A UL policy with YRT",
+        "D. A minimally funded UL policy"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Mortality costing choice alone is not the strongest indicator of exemption pressure.",
+        null,
+        "YRT may affect deductions, but maximum funding is the key exemption-test risk factor here.",
+        "Minimally funded policies are generally less likely to breach exemption limits."
+      ],
+      "explanation": "Exemption-test risk rises when funding is pushed near limits and growth is strong. Maximum-funded UL is therefore most exposed.",
+      "difficulty": "medium",
+      "tags": ["ul", "exemption-test", "maximum-funding"]
+    },
+    {
+      "id": 9,
+      "question": "Teddy is a 40-year-old executive who earns in excess of $1,000,000 per year. He has been sure to maximize his RRSP contributions throughout his career. Unfortunately, he does not have a pension through work and is concerned that his retirement savings will not allow him to maintain the standard of living that he has enjoyed while working. At a financial planning seminar, he learned that it is possible to leverage a UL policy to provide a tax-free source of retirement income. Which of the following strategies would help Teddy achieve this?",
+      "options": [
+        "A. After building up the investment component in an exempt UL policy, he could obtain a third-party loan in retirement using the cash component as collateral. Upon death, the loan could be paid in full by the death benefit.",
+        "B. He can purchase a UL policy and hold it within his RRSP. In retirement, he can make withdrawals from the investment component of the policy.",
+        "C. If the UL policy is exempt, he can withdraw the entire cash value tax-free providing the insurance coverage remains intact.",
+        "D. As long as the UL policy is exempt, he can obtain a policy loan from the insurer in retirement. The funds will be received tax-free. Upon death, the loan will be paid in full by the death benefit."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "UL is not simply held inside an RRSP structure as described.",
+        "Withdrawals can trigger taxable policy gain depending on ACB and policy values.",
+        "Policy loans are not automatically tax-free in the way this option implies."
+      ],
+      "explanation": "A common strategy is third-party collateral lending against an exempt policy’s value, reducing direct taxable withdrawals while preserving death-benefit settlement at death.",
+      "difficulty": "hard",
+      "tags": ["ul", "retirement-planning", "collateral-loan", "tax-strategy"]
+    },
+    {
+      "id": 10,
+      "question": "When discussing universal life (UL) insurance with your client Marcie, you discussed the different components, such as the various types of death benefits, mortality costing (YRT and LCOI), the various investment options, etc. When discussing the different types of death benefits, Marcie mentioned she would like a death benefit that is equal to the face amount plus account value. Which of the following policies would allow her to choose this type of death benefit?",
+      "options": [
+        "A. A traditional non-participating whole life policy only",
+        "B. A term-to-100 policy with level death benefit only",
+        "C. A universal life policy with a face-plus-account-value death benefit option",
+        "D. A yearly renewable term policy"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Whole life generally does not use UL-style selectable face-plus-account death benefit options.",
+        "T-100 is not typically structured with UL account-value death benefit options.",
+        null,
+        "YRT is a term costing structure and does not provide UL account-value death benefit mechanics."
+      ],
+      "explanation": "The face amount plus account value death benefit is a standard selectable option within UL design.",
+      "difficulty": "easy",
+      "tags": ["ul", "death-benefit-options", "face-plus-account"]
+    },
+    {
+      "id": 11,
+      "question": "Jodie owns her own business that employs ten people. One employee in particular is integral to the success of the business and would be considered a key employee. Jodie is considering purchasing key person life and disability insurance on that employee. In selecting a life insurance policy, she is concerned about the level of flexibility that such a policy may or may not provide. Which of the following statements correctly describes the flexibility of a UL policy?",
+      "options": [
+        "A. A UL policyholder has the flexibility to adjust the deposits going into the policy but cannot go below a certain amount per year.",
+        "B. A UL policyholder can switch the life insured subject to a medical underwriting.",
+        "C. \"Universal\" refers to the fact that UL policies are all similar and therefore do not provide as much flexibility as do whole life policies.",
+        "D. All UL policies provide increased coverage the longer the policy remains in force."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Changing the life insured is not a standard universal right and depends on contract terms.",
+        "UL is generally chosen for flexibility, not rigidity.",
+        "Coverage does not automatically increase in all UL contracts."
+      ],
+      "explanation": "UL is known for deposit flexibility within contractual limits (minimums and maximums), unlike fixed-premium structures.",
+      "difficulty": "medium",
+      "tags": ["ul", "flexibility", "deposits", "key-person"]
+    },
+    {
+      "id": 12,
+      "question": "Andrew has a UL policy with a level death benefit of $200,000 and a current cash value of $12,000. The policy is based on YRT with current mortality deductions of approximately $1,800 per year. He has heard about the concept of \"premium offset\" and would like to know how that can be accomplished. What should you tell him?",
+      "options": [
+        "A. Purchase a participating UL policy and select accumulation as the dividend option.",
+        "B. Purchase a participating UL policy with PUA as the dividend option.",
+        "C. Purchase a participating UL policy and select premium offset as the dividend option.",
+        "D. Purchase a UL policy and grow the cash value of the policy to a sufficient level that it can cover the mortality and expense deductions indefinitely."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Participating/dividend terminology applies to participating whole life, not standard UL mechanics.",
+        "PUA is also a participating whole life dividend concept.",
+        "Premium offset as a dividend election is not how standard UL offset is structured.",
+        null
+      ],
+      "explanation": "In UL, practical premium offset means accumulated account value is sufficient to fund ongoing mortality and policy charges.",
+      "difficulty": "medium",
+      "tags": ["ul", "premium-offset", "cash-value", "yrt"]
+    },
+    {
+      "id": 13,
+      "question": "Gracie is attracted to the premium flexibility associated with universal life policies and put one in place many years ago. Her policy offers a death benefit equal to the face value plus accumulated cash value. The face value is $500,000, and $20,000 has accumulated in the cash value portion of the policy. She selected YRT as the mortality costing method. Gracie plans to continue making quarterly premium payments of $1,000. A term life policy would have a modal factor of 0.26 for quarterly payments. If the mortality cost this year is $3.25 per $1,000 of net amount at risk, what would the quarterly mortality cost be on Gracie's UL policy?",
+      "options": [
+        "A. $390.00",
+        "B. $405.60",
+        "C. $406.25",
+        "D. $422.50"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This does not reflect the annual YRT cost converted using the given modal factor.",
+        "This value comes from an incorrect NAAR/modal application.",
+        "This reflects a monthly-style conversion, not the quarterly factor provided.",
+        null
+      ],
+      "explanation": "With face-plus-account benefit, NAAR is effectively the face amount ($500,000). Annual mortality cost = 500 × $3.25 = $1,625. Quarterly cost = $1,625 × 0.26 = $422.50.",
+      "difficulty": "hard",
+      "tags": ["ul", "yrt", "naar", "modal-factor", "calculation"]
+    },
+    {
+      "id": 14,
+      "question": "Sam and Alison Doe have been married for 15 years. They are both self-employed professionals and have no children. Sam is a prominent lawyer, and Alison owns a very successful cosmetic surgery clinic. Alison is the primary caregiver of her sister, who has some health issues that will prevent her from ever being self-sufficient. The Does would like to leave all of their assets to Alison's sister should they pre-decease her. Since they own a cottage that has appreciated greatly in value, the Does would like to purchase a policy to cover the impending capital gains tax at death. Sam and Alison are very busy with their careers, so they would like a low-maintenance policy. Which of the following policies would be the least appropriate?",
+      "options": [
+        "A. Term-to-100 life insurance",
+        "B. Participating whole life insurance with a PUA dividend option",
+        "C. Non-participating whole life insurance",
+        "D. Universal life"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "T-100 is generally straightforward and lower maintenance than actively managed UL.",
+        "Participating whole life still tends to be more turnkey than UL investment-management demands.",
+        "Non-participating whole life is typically low-maintenance after setup.",
+        null
+      ],
+      "explanation": "UL can require ongoing funding/investment monitoring, making it less suitable for clients explicitly seeking low-maintenance coverage.",
+      "difficulty": "medium",
+      "tags": ["ul", "policy-selection", "estate-planning", "maintenance"]
+    },
+    {
+      "id": 15,
+      "question": "Jack owns and operates his own cattle breeding farm, which he inherited from his grandfather. The farm has been in operation for the past 45 years. It employs two horse breeders, who are an integral part of the farm's success. The death of these employees would be detrimental to the business in the short run. As a result, Jack would like to purchase $100,000 in permanent key person life insurance on each of them. He also has disclosed that one of the employees appears a little disgruntled of late, and he is concerned that he may have to hire and train a replacement at some point. If that occurs, it will be the second employee he has lost in the past five years. Given Jack's concern about potentially hiring a new horse breeder, what policy would you recommend?",
+      "options": [
+        "A. Two separate participating whole life policies with no conversion features",
+        "B. Two term-10 policies with annual renewals only",
+        "C. A UL key-person policy design that offers high flexibility for policy adjustments over time",
+        "D. Mortgage life insurance"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This is permanent but less flexible for a changing key-person context.",
+        "This is not permanent and may not match the stated long-term need.",
+        null,
+        "Mortgage life is not designed for key-person business continuity risk."
+      ],
+      "explanation": "Given changing personnel risk, UL’s flexibility can be advantageous in structuring and adapting key-person coverage over time.",
+      "difficulty": "medium",
+      "tags": ["ul", "key-person", "business-insurance", "flexibility"]
+    },
+    {
+      "id": 16,
+      "question": "Trent purchased a universal life (UL) insurance policy when he graduated from university. The policy has a face value of $250,000 and YRT mortality costing option, and the account value is invested in index funds. Upon death, the policy will pay out a level death benefit plus account value. It is policy year 7, and Trent would like to surrender the policy. (Note: Year 7 Account Value = $8,300, Surrender Multiple = 3.) How much will he receive?",
+      "options": [
+        "A. $23,100",
+        "B. $6,500",
+        "C. $24,300",
+        "D. $243,500"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This is the account value multiplied, not a surrender-value result.",
+        null,
+        "This overstates surrender proceeds and does not align with the surrender multiple approach.",
+        "The face amount is not paid on surrender."
+      ],
+      "explanation": "Using the provided surrender factors, the surrender value corresponds to $6,500 in this scenario.",
+      "difficulty": "hard",
+      "tags": ["ul", "surrender", "calculation", "yrt"]
+    },
+    {
+      "id": 17,
+      "question": "Elaine has a UL policy on her own life. The policy is currently structured to be minimally funded. What does this mean?",
+      "options": [
+        "A. YRT has been selected as the mortality costing option.",
+        "B. The overall payment period has been reduced to an earlier age, at which time premium offset will occur.",
+        "C. The policy deposits are not sufficient to build up a cash value within the policy.",
+        "D. The policy will terminate prior to age 100, such as age 80."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Funding level and mortality costing method are separate choices.",
+        "This describes a different design objective, not minimal funding definition.",
+        null,
+        "Minimal funding does not automatically impose a fixed early termination age."
+      ],
+      "explanation": "Minimally funded UL means deposits are primarily covering internal policy costs with little or no meaningful cash-value buildup.",
+      "difficulty": "easy",
+      "tags": ["ul", "minimum-funding", "cash-value"]
+    },
+    {
+      "id": 18,
+      "question": "Universal life insurance is a policy that unbundles mortality deductions, expenses, and investment returns. Which of the following statements best describes the relationship between mortality deductions and the investment component in the policy?",
+      "options": [
+        "A. Higher mortality deductions generally result in a higher amount in the investment component of the policy.",
+        "B. The mortality deduction has no impact on the investment component.",
+        "C. Mortality deductions and investment returns operate in isolation.",
+        "D. Mortality deductions and the investment component are interrelated."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Higher deductions usually leave less available to accumulate.",
+        "Mortality deductions directly affect net funds available for accumulation.",
+        "They are financially connected through net policy cash flow.",
+        null
+      ],
+      "explanation": "In UL, deductions and investment accumulation are linked because deductions reduce what remains to grow in the account.",
+      "difficulty": "easy",
+      "tags": ["ul", "unbundled", "mortality-deductions", "investment-component"]
+    },
+    {
+      "id": 19,
+      "question": "Luke is in the process of applying for a whole life policy and has been provided with several premium options. The annual premium on the policy is $1,200, but he would like to pay monthly instead. Given the following information, what would the premium be if he wants to pay monthly? (Monthly modal factor = 0.088)",
+      "options": [
+        "A. $105.60",
+        "B. $100.00",
+        "C. $108.80",
+        "D. $103.51"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This ignores the modal factor load.",
+        "This applies an incorrect factor.",
+        "This value does not match annual premium × monthly modal factor."
+      ],
+      "explanation": "Monthly premium = $1,200 × 0.088 = $105.60.",
+      "difficulty": "easy",
+      "tags": ["modal-factor", "whole-life", "calculation"]
+    },
+    {
+      "id": 20,
+      "question": "Pierre owns a life insurance policy of which he is the policyholder and the life-insured. The policy has been in force for a number of years and has a sizeable cash value. Pierre's parents have pre-deceased him. He is looking for a strategy that will allow him to generate a tax-free source of income in retirement. What strategy would help Pierre achieve this?",
+      "options": [
+        "A. Upon retirement, Pierre could sell the policy in an arm's-length transaction in exchange for an absolute assignment of the policy.",
+        "B. Pierre could take out a series of policy loans with the insurer during retirement; the loan would be paid upon his death with the death benefit.",
+        "C. Pierre could ensure that the policy remains tax exempt while it is in force and then surrender the policy upon retirement.",
+        "D. Pierre could take out a series of bank-issued loans during retirement, pledging the policy as collateral; the loan would then be paid upon his death with the death benefit."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "A policy disposition is not the classic tax-efficient collateral strategy.",
+        "Insurer policy loans can still create taxable consequences.",
+        "Surrender can trigger taxable policy gain.",
+        null
+      ],
+      "explanation": "The common tax-efficient retirement strategy is third-party collateral borrowing against policy value rather than taxable surrender/withdrawal.",
+      "difficulty": "hard",
+      "tags": ["retirement-planning", "collateral-loan", "tax-strategy"]
+    },
+    {
+      "id": 21,
+      "question": "Carlos is 40 years old. He is self-employed with two dependent children. His wife passed away three years ago. Carlos is experiencing financial difficulties and is three months behind on his mortgage. He has over $20,000 built up within an exempt UL policy. Carlos would like to access the funds within the policy but does not want to trigger any immediate tax liability. Which of the following strategies would you suggest?",
+      "options": [
+        "A. Surrender the UL policy and withdraw all values immediately",
+        "B. Take taxable partial withdrawals from the UL account value",
+        "C. Arrange a third-party collateral loan using the policy value as security",
+        "D. Convert the UL policy to term and withdraw all funds tax-free"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Surrender can trigger immediate taxable policy gain.",
+        "Partial withdrawals may create immediate taxation depending on policy gain/ACB.",
+        null,
+        "This is not a standard tax-free mechanism to access full account value."
+      ],
+      "explanation": "If the objective is liquidity with minimal immediate tax impact, collateral borrowing against policy value is generally the preferred planning approach.",
+      "difficulty": "hard",
+      "tags": ["ul", "cash-access", "tax", "collateral-loan"]
+    },
+    {
+      "id": 22,
+      "question": "What is \"unbundled\" in a universal life policy?",
+      "options": [
+        "A. Policyholder, beneficiary, and life-insured",
+        "B. Mortality cost, investment returns, and NCPI",
+        "C. Investment account and mortality costs",
+        "D. Investment account, mortality costs, and expenses"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "These are policy roles, not UL cost/account components.",
+        "NCPI is not the standard unbundling trio in this exam framing.",
+        "This is incomplete because expenses are also separated in UL.",
+        null
+      ],
+      "explanation": "UL unbundles the policy into separate components: investment account, mortality deductions, and policy expenses.",
+      "difficulty": "easy",
+      "tags": ["ul", "unbundled", "foundations"]
+    },
+    {
+      "id": 23,
+      "question": "Terrence is a sophisticated investor. He was considering purchasing a whole life insurance policy but felt he could do a better job managing the investment component himself. Instead of a whole life insurance policy, he was considering buying Term-100, which would charge a lower premium, and investing the difference himself. His agent then recommended UL. Which of the following UL options would best match Terrence's needs?",
+      "options": [
+        "A. UL with YRT and restricted mortality costing adjustments",
+        "B. UL with YRT",
+        "C. UL with YRT and open-ended mortality costing adjustments",
+        "D. UL with LCOI"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Added restrictions may reduce flexibility for a self-directed investor profile.",
+        null,
+        "Open-ended adjustments add complexity/risk beyond what is needed for this objective.",
+        "LCOI is typically less aligned with maximizing early investable surplus than YRT."
+      ],
+      "explanation": "For a client prioritizing lower early insurance charges and personal investment control, UL with YRT is often the closest fit.",
+      "difficulty": "medium",
+      "tags": ["ul", "yrt", "investor-profile"]
+    },
+    {
+      "id": 24,
+      "question": "Colin is having difficulty recalling the difference between YRT and LCOI within a UL policy. Which of the following statements is true?",
+      "options": [
+        "A. YRT charges are level for life, while LCOI increases yearly.",
+        "B. YRT typically starts lower and increases over time, while LCOI is designed to remain level.",
+        "C. YRT and LCOI produce identical mortality deductions over all years.",
+        "D. LCOI is always lower than YRT at every age."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This reverses the core definitions.",
+        null,
+        "Their deduction patterns differ materially over time.",
+        "Relative cost depends on age/timing and policy duration, not a universal always-lower rule."
+      ],
+      "explanation": "YRT generally increases annually with age; LCOI is generally level and therefore more stable across time.",
+      "difficulty": "easy",
+      "tags": ["ul", "yrt", "lcoi", "mortality-costing"]
+    },
+    {
+      "id": 25,
+      "question": "Jackie is applying for a UL policy. She is a little overwhelmed by all of the decisions she is required to make when establishing the policy. She is confused about the different mortality costing options within a UL policy. Which of the following statements is correct?",
+      "options": [
+        "A. LCOI is more expensive in the later years as compared to YRT.",
+        "B. YRT is level, whereas LCOI will increase each year.",
+        "C. UL policies are never subject to mortality costing adjustments.",
+        "D. YRT allows for a quicker buildup of the cash value in the early years."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "YRT usually becomes more expensive in later years due to annual increases.",
+        "This reverses the definitions of YRT and LCOI.",
+        "UL policy performance is affected by mortality deductions and policy charges.",
+        null
+      ],
+      "explanation": "YRT usually has lower early-year deductions than LCOI, leaving more early cash flow available for account buildup.",
+      "difficulty": "easy",
+      "tags": ["ul", "yrt", "lcoi", "cash-value-growth"]
+    },
+    {
+      "id": 26,
+      "question": "Your client already owns a term and a whole life policy. He now needs a permanent insurance policy that offers maximum flexibility to address an insurance need associated with his business. You recommend UL. Which one of the following statements is true of universal life insurance?",
+      "options": [
+        "A. UL has fixed premiums and no investment choices once issued.",
+        "B. UL allows flexible deposits and multiple investment account choices, subject to policy limits.",
+        "C. UL cannot be used in business planning contexts.",
+        "D. UL always guarantees increasing death benefit each year."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This contradicts UL’s core flexibility design.",
+        null,
+        "UL is commonly used in business insurance planning when appropriate.",
+        "Death benefit growth depends on selected design/options, not an automatic guarantee."
+      ],
+      "explanation": "UL is characterized by flexibility in funding and investment allocation (within policy constraints), which supports many business planning needs.",
+      "difficulty": "easy",
+      "tags": ["ul", "business-insurance", "flexibility"]
+    },
+    {
+      "id": 27,
+      "question": "Darcy purchased a universal life (UL) insurance policy. When he purchased the policy, he selected the YRT mortality costing option but switched to LCOI a few years later. Upon death, the policy will pay a death benefit equal to the face value plus account value. Currently the investment component has approximately $80,000 accumulated within it. The policy is maximum funded and has managed to satisfy the exemption test throughout the life of the policy. Which of the following best describes the taxation associated with the policy?",
+      "options": [
+        "A. Any investment income earned within the policy will grow tax deferred. Upon death, the full amount paid out as the death benefit will be received tax free by the beneficiary.",
+        "B. Any investment income earned within the policy will grow tax deferred. Upon death, the death benefit will be received tax free up to the amount of the face value. Any amount excess will trigger a tax liability to the extent that it exceeds the ACB.",
+        "C. Any investment income earned within the policy will be subject to annual accrual taxation. Upon death, the full amount of the death benefit will be received tax free.",
+        "D. Any investment income earned within the policy will be taxed on an annual basis. The death benefit up to the amount of the face value will be received tax free. Any excess will be considered a policy gain and will attract tax."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This overstates taxation on death proceeds to the beneficiary in an exempt-compliant UL context.",
+        "Exempt UL investment growth is not generally taxed annually as stated.",
+        "This does not reflect standard exempt UL death-benefit tax treatment."
+      ],
+      "explanation": "When the UL policy remains exempt, investment growth is tax-deferred and death benefit proceeds are generally received tax-free by the beneficiary.",
+      "difficulty": "hard",
+      "tags": ["ul", "taxation", "exempt-policy", "death-benefit"]
+    },
+    {
+      "id": 28,
+      "question": "All else being equal, which policy would have the lowest NAAR?",
+      "options": [
+        "A. Level death benefit plus account value",
+        "B. Level death benefit plus cumulative premiums",
+        "C. Level death benefit",
+        "D. Indexed death benefit"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Face-plus-account structures tend to keep NAAR higher than plain level death benefit structures.",
+        "Adding cumulative premiums to death benefit tends to increase NAAR pressure.",
+        null,
+        "Indexed/increasing death benefit designs generally increase NAAR versus plain level structures."
+      ],
+      "explanation": "For standard UL mechanics, a plain level death benefit typically yields the lowest NAAR relative to increasing death benefit designs.",
+      "difficulty": "medium",
+      "tags": ["ul", "naar", "death-benefit-options"]
+    },
+    {
+      "id": 29,
+      "question": "Ted wants to purchase permanent insurance to cover the capital gains tax on an investment property at death. He has selected the level death benefit plus account value death benefit option. When discussing the various mortality costing methods, Ted confirmed that his number one concern is ensuring that the policy remains in force until death, and therefore he wants to take whatever steps are required to limit the risk of the policy lapsing. Which mortality costing method would you recommend?",
+      "options": [
+        "A. Adjustable whole life",
+        "B. YRT",
+        "C. Guaranteed whole life",
+        "D. LCOI"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This is a different product category, not the UL mortality costing choice requested.",
+        "YRT introduces increasing deductions later in life, which can increase lapse risk if underfunded.",
+        "This is outside the UL costing-method decision in the question.",
+        null
+      ],
+      "explanation": "Within UL costing options, LCOI generally offers more predictable long-term deductions than YRT, helping reduce lapse risk.",
+      "difficulty": "medium",
+      "tags": ["ul", "lapse-risk", "lcoi", "yrt"]
+    },
+    {
+      "id": 30,
+      "question": "Stan is in the process of applying for a whole life policy and has been provided with several premium options. The annual premium on the policy is $800, but he would like to pay more frequently than annually. Given the following information, what would the premium be if he wants to pay quarterly? (Quarterly modal factor = 0.280)",
+      "options": [
+        "A. $78 per quarter",
+        "B. $200",
+        "C. $224",
+        "D. $260"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This is too low and not based on the given modal factor.",
+        "This is simple annual/4 and ignores modal loading.",
+        null,
+        "This overstates the result from the stated factor."
+      ],
+      "explanation": "Quarterly premium = $800 × 0.280 = $224.",
+      "difficulty": "easy",
+      "tags": ["modal-factor", "whole-life", "calculation"]
+    },
+    {
+      "id": 31,
+      "question": "What are the payments into a universal life policy called?",
+      "options": [
+        "A. Maximum funding",
+        "B. Contributions",
+        "C. Deposits",
+        "D. Premiums"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Maximum funding is a funding level concept, not the payment label.",
+        "Some contexts use contributions, but LLQP UL terminology typically uses deposits.",
+        null,
+        "Traditional fixed-premium language is less precise for flexible UL funding."
+      ],
+      "explanation": "UL exam terminology generally refers to policy payments as deposits due to funding flexibility.",
+      "difficulty": "easy",
+      "tags": ["ul", "terminology", "deposits"]
+    },
+    {
+      "id": 32,
+      "question": "Blake bought a universal life (UL) insurance policy and selected the level death benefit option. The face value on the policy is $500,000. Blake selected the LCOI mortality costing option. Over the years, he has paid $90,000 in premiums, and $62,000 has accumulated in the investment component. The mortality cost is based upon the NAAR. In this situation, what would the NAAR be?",
+      "options": [
+        "A. $500,000",
+        "B. $438,000",
+        "C. $562,000",
+        "D. $410,000"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This ignores account value offset under level death benefit NAAR mechanics.",
+        null,
+        "This incorrectly adds account value instead of subtracting it.",
+        "This uses an unsupported subtraction base."
+      ],
+      "explanation": "For level death benefit UL, NAAR = face amount − account value = $500,000 − $62,000 = $438,000.",
+      "difficulty": "medium",
+      "tags": ["ul", "naar", "lcoi", "calculation"]
+    },
+    {
+      "id": 33,
+      "question": "Emily is in the process of applying for a universal life (UL) policy and has been provided with several deposit (premium) options. The annual minimum deposit on the policy will be $800, but she would like to pay monthly instead. Assuming a monthly modal factor of 0.088 and a quarterly modal factor 0.280 for a whole life policy, what would the deposit be if she wants to pay the UL deposits monthly?",
+      "options": [
+        "A. $66.67",
+        "B. $70.40",
+        "C. $800",
+        "D. $224"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This applies whole-life modal loading instead of UL deposit split logic in this context.",
+        "This is the annual amount, not monthly.",
+        "This is the quarterly whole-life result, not monthly UL deposit amount."
+      ],
+      "explanation": "In this UL framing, monthly deposit is annual minimum divided by 12: $800 ÷ 12 = $66.67.",
+      "difficulty": "easy",
+      "tags": ["ul", "deposits", "calculation"]
+    },
+    {
+      "id": 34,
+      "question": "Adam needs permanent life insurance to cover capital gains tax on an investment property at death. When this occurs, he would like his brother to receive the property free and clear (nothing owing on it). Adam is an aggressive investor, so his agent recommended UL. Which mortality costing method would result in a quicker build-up of the cash value in the early years?",
+      "options": [
+        "A. YRT",
+        "B. Whole life",
+        "C. LCOI",
+        "D. T-100"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This is a separate product type, not a UL mortality costing method.",
+        "LCOI is often higher than YRT in early years, leaving less early surplus.",
+        "This is a separate product type, not a UL mortality costing method."
+      ],
+      "explanation": "YRT typically has lower early-year mortality deductions than LCOI, which can support faster early account-value buildup.",
+      "difficulty": "medium",
+      "tags": ["ul", "yrt", "lcoi", "cash-value-growth"]
+    }
+  ]
+}

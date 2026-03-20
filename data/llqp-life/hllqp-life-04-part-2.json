@@ -1,0 +1,256 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 04 QZ - Universal Life Insurance - Section 2",
+  "examTips": "Focus on UL unbundling, mortality costing (YRT vs LCOI), death benefit options, NAAR, exemption test risk, surrender values, premium tax, and tax-efficient retirement strategies.",
+  "questions": [
+    {
+      "id": 11,
+      "question": "Jodie owns her own business that employs ten people. One employee in particular is integral to the success of the business and would be considered a key employee. Jodie is considering purchasing key person life and disability insurance on that employee. In selecting a life insurance policy, she is concerned about the level of flexibility that such a policy may or may not provide. Which of the following statements correctly describes the flexibility of a UL policy?",
+      "options": [
+        "A. A UL policyholder has the flexibility to adjust the deposits going into the policy but cannot go below a certain amount per year.",
+        "B. A UL policyholder can switch the life insured subject to a medical underwriting.",
+        "C. \"Universal\" refers to the fact that UL policies are all similar and therefore do not provide as much flexibility as do whole life policies.",
+        "D. All UL policies provide increased coverage the longer the policy remains in force."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Changing the life insured is not a standard universal right and depends on contract terms.",
+        "UL is generally chosen for flexibility, not rigidity.",
+        "Coverage does not automatically increase in all UL contracts."
+      ],
+      "explanation": "UL is known for deposit flexibility within contractual limits (minimums and maximums), unlike fixed-premium structures.",
+      "difficulty": "medium",
+      "tags": [
+        "ul",
+        "flexibility",
+        "deposits",
+        "key-person"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Andrew has a UL policy with a level death benefit of $200,000 and a current cash value of $12,000. The policy is based on YRT with current mortality deductions of approximately $1,800 per year. He has heard about the concept of \"premium offset\" and would like to know how that can be accomplished. What should you tell him?",
+      "options": [
+        "A. Purchase a participating UL policy and select accumulation as the dividend option.",
+        "B. Purchase a participating UL policy with PUA as the dividend option.",
+        "C. Purchase a participating UL policy and select premium offset as the dividend option.",
+        "D. Purchase a UL policy and grow the cash value of the policy to a sufficient level that it can cover the mortality and expense deductions indefinitely."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Participating/dividend terminology applies to participating whole life, not standard UL mechanics.",
+        "PUA is also a participating whole life dividend concept.",
+        "Premium offset as a dividend election is not how standard UL offset is structured.",
+        null
+      ],
+      "explanation": "In UL, practical premium offset means accumulated account value is sufficient to fund ongoing mortality and policy charges.",
+      "difficulty": "medium",
+      "tags": [
+        "ul",
+        "premium-offset",
+        "cash-value",
+        "yrt"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Gracie is attracted to the premium flexibility associated with universal life policies and put one in place many years ago. Her policy offers a death benefit equal to the face value plus accumulated cash value. The face value is $500,000, and $20,000 has accumulated in the cash value portion of the policy. She selected YRT as the mortality costing method. Gracie plans to continue making quarterly premium payments of $1,000. A term life policy would have a modal factor of 0.26 for quarterly payments. If the mortality cost this year is $3.25 per $1,000 of net amount at risk, what would the quarterly mortality cost be on Gracie's UL policy?",
+      "options": [
+        "A. $390.00",
+        "B. $405.60",
+        "C. $406.25",
+        "D. $422.50"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This does not reflect the annual YRT cost converted using the given modal factor.",
+        "This value comes from an incorrect NAAR/modal application.",
+        "This reflects a monthly-style conversion, not the quarterly factor provided.",
+        null
+      ],
+      "explanation": "With face-plus-account benefit, NAAR is effectively the face amount ($500,000). Annual mortality cost = 500 × $3.25 = $1,625. Quarterly cost = $1,625 × 0.26 = $422.50.",
+      "difficulty": "hard",
+      "tags": [
+        "ul",
+        "yrt",
+        "naar",
+        "modal-factor",
+        "calculation"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Sam and Alison Doe have been married for 15 years. They are both self-employed professionals and have no children. Sam is a prominent lawyer, and Alison owns a very successful cosmetic surgery clinic. Alison is the primary caregiver of her sister, who has some health issues that will prevent her from ever being self-sufficient. The Does would like to leave all of their assets to Alison's sister should they pre-decease her. Since they own a cottage that has appreciated greatly in value, the Does would like to purchase a policy to cover the impending capital gains tax at death. Sam and Alison are very busy with their careers, so they would like a low-maintenance policy. Which of the following policies would be the least appropriate?",
+      "options": [
+        "A. Term-to-100 life insurance",
+        "B. Participating whole life insurance with a PUA dividend option",
+        "C. Non-participating whole life insurance",
+        "D. Universal life"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "T-100 is generally straightforward and lower maintenance than actively managed UL.",
+        "Participating whole life still tends to be more turnkey than UL investment-management demands.",
+        "Non-participating whole life is typically low-maintenance after setup.",
+        null
+      ],
+      "explanation": "UL can require ongoing funding/investment monitoring, making it less suitable for clients explicitly seeking low-maintenance coverage.",
+      "difficulty": "medium",
+      "tags": [
+        "ul",
+        "policy-selection",
+        "estate-planning",
+        "maintenance"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Jack owns and operates his own cattle breeding farm, which he inherited from his grandfather. The farm has been in operation for the past 45 years. It employs two horse breeders, who are an integral part of the farm's success. The death of these employees would be detrimental to the business in the short run. As a result, Jack would like to purchase $100,000 in permanent key person life insurance on each of them. He also has disclosed that one of the employees appears a little disgruntled of late, and he is concerned that he may have to hire and train a replacement at some point. If that occurs, it will be the second employee he has lost in the past five years. Given Jack's concern about potentially hiring a new horse breeder, what policy would you recommend?",
+      "options": [
+        "A. Two separate participating whole life policies with no conversion features",
+        "B. Two term-10 policies with annual renewals only",
+        "C. A UL key-person policy design that offers high flexibility for policy adjustments over time",
+        "D. Mortgage life insurance"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This is permanent but less flexible for a changing key-person context.",
+        "This is not permanent and may not match the stated long-term need.",
+        null,
+        "Mortgage life is not designed for key-person business continuity risk."
+      ],
+      "explanation": "Given changing personnel risk, UL’s flexibility can be advantageous in structuring and adapting key-person coverage over time.",
+      "difficulty": "medium",
+      "tags": [
+        "ul",
+        "key-person",
+        "business-insurance",
+        "flexibility"
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Trent purchased a universal life (UL) insurance policy when he graduated from university. The policy has a face value of $250,000 and YRT mortality costing option, and the account value is invested in index funds. Upon death, the policy will pay out a level death benefit plus account value. It is policy year 7, and Trent would like to surrender the policy. (Note: Year 7 Account Value = $8,300, Surrender Multiple = 3.) How much will he receive?",
+      "options": [
+        "A. $23,100",
+        "B. $6,500",
+        "C. $24,300",
+        "D. $243,500"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This is the account value multiplied, not a surrender-value result.",
+        null,
+        "This overstates surrender proceeds and does not align with the surrender multiple approach.",
+        "The face amount is not paid on surrender."
+      ],
+      "explanation": "Using the provided surrender factors, the surrender value corresponds to $6,500 in this scenario.",
+      "difficulty": "hard",
+      "tags": [
+        "ul",
+        "surrender",
+        "calculation",
+        "yrt"
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Elaine has a UL policy on her own life. The policy is currently structured to be minimally funded. What does this mean?",
+      "options": [
+        "A. YRT has been selected as the mortality costing option.",
+        "B. The overall payment period has been reduced to an earlier age, at which time premium offset will occur.",
+        "C. The policy deposits are not sufficient to build up a cash value within the policy.",
+        "D. The policy will terminate prior to age 100, such as age 80."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Funding level and mortality costing method are separate choices.",
+        "This describes a different design objective, not minimal funding definition.",
+        null,
+        "Minimal funding does not automatically impose a fixed early termination age."
+      ],
+      "explanation": "Minimally funded UL means deposits are primarily covering internal policy costs with little or no meaningful cash-value buildup.",
+      "difficulty": "easy",
+      "tags": [
+        "ul",
+        "minimum-funding",
+        "cash-value"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Universal life insurance is a policy that unbundles mortality deductions, expenses, and investment returns. Which of the following statements best describes the relationship between mortality deductions and the investment component in the policy?",
+      "options": [
+        "A. Higher mortality deductions generally result in a higher amount in the investment component of the policy.",
+        "B. The mortality deduction has no impact on the investment component.",
+        "C. Mortality deductions and investment returns operate in isolation.",
+        "D. Mortality deductions and the investment component are interrelated."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Higher deductions usually leave less available to accumulate.",
+        "Mortality deductions directly affect net funds available for accumulation.",
+        "They are financially connected through net policy cash flow.",
+        null
+      ],
+      "explanation": "In UL, deductions and investment accumulation are linked because deductions reduce what remains to grow in the account.",
+      "difficulty": "easy",
+      "tags": [
+        "ul",
+        "unbundled",
+        "mortality-deductions",
+        "investment-component"
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Luke is in the process of applying for a whole life policy and has been provided with several premium options. The annual premium on the policy is $1,200, but he would like to pay monthly instead. Given the following information, what would the premium be if he wants to pay monthly? (Monthly modal factor = 0.088)",
+      "options": [
+        "A. $105.60",
+        "B. $100.00",
+        "C. $108.80",
+        "D. $103.51"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This ignores the modal factor load.",
+        "This applies an incorrect factor.",
+        "This value does not match annual premium × monthly modal factor."
+      ],
+      "explanation": "Monthly premium = $1,200 × 0.088 = $105.60.",
+      "difficulty": "easy",
+      "tags": [
+        "modal-factor",
+        "whole-life",
+        "calculation"
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Pierre owns a life insurance policy of which he is the policyholder and the life-insured. The policy has been in force for a number of years and has a sizeable cash value. Pierre's parents have pre-deceased him. He is looking for a strategy that will allow him to generate a tax-free source of income in retirement. What strategy would help Pierre achieve this?",
+      "options": [
+        "A. Upon retirement, Pierre could sell the policy in an arm's-length transaction in exchange for an absolute assignment of the policy.",
+        "B. Pierre could take out a series of policy loans with the insurer during retirement; the loan would be paid upon his death with the death benefit.",
+        "C. Pierre could ensure that the policy remains tax exempt while it is in force and then surrender the policy upon retirement.",
+        "D. Pierre could take out a series of bank-issued loans during retirement, pledging the policy as collateral; the loan would then be paid upon his death with the death benefit."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "A policy disposition is not the classic tax-efficient collateral strategy.",
+        "Insurer policy loans can still create taxable consequences.",
+        "Surrender can trigger taxable policy gain.",
+        null
+      ],
+      "explanation": "The common tax-efficient retirement strategy is third-party collateral borrowing against policy value rather than taxable surrender/withdrawal.",
+      "difficulty": "hard",
+      "tags": [
+        "retirement-planning",
+        "collateral-loan",
+        "tax-strategy"
+      ]
+    }
+  ]
+}

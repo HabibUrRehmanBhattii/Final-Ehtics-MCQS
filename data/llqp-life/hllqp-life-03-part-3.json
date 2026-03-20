@@ -20,7 +20,7 @@
         "Traditional whole life (guaranteed) premiums are locked in at issue and are not subject to interest rate changes.",
         null
       ],
-      "explanation": "Adjustable whole life is specifically designed to allow the insurer to adjust the premium after a guaranteed period based on actual investment returns, mortality experience, and expenses. A decline in interest rates reduces the insurer's investment income, which could lead to a premium increase on an adjustable whole life policy.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A guaranteed whole life policy has fixed, unchangeable premiums regardless of economic conditions; Non-participating whole life also has guaranteed, fixed premiums that the insurer cannot adjust.\nStep 4: Select the best answer. Option D: Adjustable whole life.",
       "difficulty": "medium",
       "tags": [
         "adjustable-whole-life",
@@ -44,7 +44,7 @@
         null,
         "Accumulation leaves dividends on deposit earning interest, but does not add permanent insurance coverage to match the growing capital gains tax liability."
       ],
-      "explanation": "The PUA (paid-up additions) dividend option uses each dividend to purchase an additional piece of paid-up whole life insurance, permanently increasing the total death benefit. As the cottage continues to appreciate and the capital gains tax liability grows, the growing PUA coverage helps offset the increasing tax burden — directly addressing Sandra's concern.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The term insurance dividend option adds only temporary coverage — it would not grow the permanent death benefit to keep pace with increasing capital gains taxes; Premium offset uses dividends to pay the base premium — it does not increase the death benefit to address a growing tax liability.\nStep 4: Select the best answer. Option C: Paid-up additions (PUAs).",
       "difficulty": "medium",
       "tags": [
         "pua",
@@ -70,7 +70,7 @@
         "Whole life policies endow at age 100, not age 90.",
         null
       ],
-      "explanation": "Whole life policies endow at age 100 — meaning the cash value equals the face amount and the policy matures. The policyholder must pay premiums until death, policy surrender, or reaching age 100, whichever comes first. At age 100, the insured receives the face value as an endowment payment.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is mostly correct but misleading — at age 100, the policy does not simply 'end with no coverage.' It endows, meaning the insured receives the face value as an endowment payment; This omits the important age-100 endowment provision — premiums stop and the policy matures at age 100.\nStep 4: Select the best answer. Option D: He is required to pay the premium until he dies, until the policy is surrendered, or until he reaches age 100, whichever comes first.",
       "difficulty": "medium",
       "tags": [
         "whole-life",
@@ -95,7 +95,7 @@
         "Participating WL is more expensive than non-participating WL, but adding a waiver of premium rider makes option A even more expensive.",
         "A convertible feature adds a small cost, but non-participating WL + convertible is still less expensive than participating WL + waiver of premium."
       ],
-      "explanation": "Participating whole life already carries a higher premium than non-participating (due to conservative pricing for potential dividend distribution). Adding a waiver of premium rider — which waives premiums if the policyholder becomes disabled — adds further cost, making it the most expensive of the four options.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Non-participating WL is less expensive than participating WL and has no additional rider; Participating WL is more expensive than non-participating WL, but adding a waiver of premium rider makes option A even more expensive.\nStep 4: Select the best answer. Option A: Participating whole life insurance with a waiver of premium.",
       "difficulty": "medium",
       "tags": [
         "participating",
@@ -120,7 +120,7 @@
         "T-100 is the lowest-cost permanent insurance option with no cash value.",
         null
       ],
-      "explanation": "Limited payment participating whole life insurance has the highest annual premium because: (1) it is participating (higher base premium than non-participating), and (2) the payment period is compressed into fewer years — meaning you pay more per year to achieve the same total coverage over a shorter payment period.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Non-participating WL is less expensive than participating WL annually; Participating WL has a higher annual premium than non-participating WL and T-100, but limited-pay compresses all premiums into fewer years.\nStep 4: Select the best answer. Option D: Limited payment participating whole life insurance.",
       "difficulty": "medium",
       "tags": [
         "limited-pay",
@@ -145,7 +145,7 @@
         "The death benefit is the face value only, not face value plus cash value. Adding them to get $700,000 is incorrect.",
         "While using APL is an option, the net death benefit would be the face value LESS the accumulated APL loan — not exactly $500,000."
       ],
-      "explanation": "Harvey can simply continue paying the $3,200 annual premium. Upon his death (expected within two years), the beneficiary receives the full $500,000 face value. The cash value is not paid in addition — it is already embedded in the death benefit calculation. Using APL would keep the policy in force but would reduce the net payout by the loan balance.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The death benefit on a whole life policy is the face value ($500,000) — not the face value plus the cash value. Cash value is not paid in addition to the death benefit; The death benefit is the face value only, not face value plus cash value. Adding them to get $700,000 is incorrect.\nStep 4: Select the best answer. Option A: He can continue to pay the premiums, keep the policy in force, and upon his death, the beneficiary will receive exactly $500,000.",
       "difficulty": "hard",
       "tags": [
         "whole-life",
@@ -171,7 +171,7 @@
         "$498,000 and $508,000 are far too large to be a life insurance surrender value — these are more consistent with a cottage listing price or home renovation quote.",
         "$508,000 is far too large to be a life insurance surrender value."
       ],
-      "explanation": "The cash surrender value (CSV) is typically slightly less than the gross cash value due to surrender charges. With a $10,000 cash value and no outstanding loans, the CSV of $9,700 is the most realistic surrender amount. The other numbers are far too large — they correspond more to the car lease buyout, home expansion quote, and cottage listing price.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. $10,500 exceeds the stated cash value of $10,000; the surrender value is typically slightly less than, not more than, the cash value due to surrender charges; $498,000 and $508,000 are far too large to be a life insurance surrender value — these are more consistent with a cottage listing price or home renovation quote.\nStep 4: Select the best answer. Option A: $9,700.",
       "difficulty": "easy",
       "tags": [
         "cash-surrender-value",
@@ -195,7 +195,7 @@
         null,
         "The insurer can adjust the premium both upward and downward based on actual experience — not only upward."
       ],
-      "explanation": "Adjustable whole life insurance guarantees the premium and coverage for an initial period. After that period, the insurer reserves the right to adjust (increase or decrease) the premium based on actual mortality experience, investment returns, and expenses. This is different from non-participating and participating whole life, which have fully guaranteed premiums.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The insurer can adjust the premium in either direction (up or down), not only decrease it; Adjustable whole life refers to premium adjustments by the insurer, not the insurer unilaterally increasing coverage without evidence.\nStep 4: Select the best answer. Option C: The premium and coverage are guaranteed only for a certain number of years. After the guaranteed period, the insurer reserves the right to adjust the premium.",
       "difficulty": "medium",
       "tags": [
         "adjustable-whole-life",
@@ -219,7 +219,7 @@
         "Higher administrative costs are not the main reason for the higher premium.",
         "Riders are optional and not the reason participating policies cost more."
       ],
-      "explanation": "Participating policies are more expensive because the insurer charges a higher premium using conservative assumptions. This helps cover the possibility of poorer-than-expected performance while also allowing for potential dividends if experience is favourable.",
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Participating policies do not inherently offer higher death benefits than non-participating policies; Higher administrative costs are not the main reason for the higher premium.\nStep 4: Select the best answer. Option B: The insurer charges a higher premium to cover the possibility of poor performance and potential dividends.",
       "difficulty": "medium",
       "tags": [
         "participating",

@@ -1,541 +1,541 @@
-﻿{
-    "topic":  "LLQP Segregated Funds \u0026 Annuities",
-    "topicId":  "llqp-segregated",
-    "description":  "Segregated Funds and Annuities - Tax Planning \u0026 RRSP Considerations",
-    "examTips":  "Focus on the difference between tax-deferred growth (no current tax) vs. withdrawal events (taxable). Know which registered plans shelter income and how withdrawals trigger tax liability.",
-    "questions":  [
-                      {
-                          "id":  1,
-                          "question":  "(PPE-048) SFA\nIt is April 30th, and Summer still has not filed her income taxes. She is wondering which of the following transactions that occurred last year would result in a tax liability. What should you tell her?",
-                          "options":  [
-                                          "A. The withdrawal from her RRSP.",
-                                          "B. An allocation of interest income from an investment held within her LIRA.",
-                                          "C. The withdrawal from her savings account.",
-                                          "D. Dividend income received from a segregated fund held within her RRSP."
-                                      ],
-                          "correctAnswer":  0,
-                          "optionFeedback":  [
-                                                 null,
-                                                 "A Locked-In Retirement Account (LIRA) provides tax-deferred growth; interest, dividends, and capital gains earned within the plan are not taxed until they are withdrawn, usually during retirement.",
-                                                 "Withdrawing your own money from a non-registered savings account is not a taxable event. While the interest earned on that account is taxable, the act of withdrawal itself is not.",
-                                                 "Any income earned, including dividends from a segregated fund, is exempt from tax as long as it remains within the RRSP."
-                                             ],
-                          "explanation":  "Funds withdrawn from an RRSP are considered taxable income in the year of the withdrawal and must be included in the individual\u0027s total income for tax purposes. This is the key distinguishing factor—RRSP withdrawals trigger immediate tax liability, unlike growth within registered plans or transfers of personal funds.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "tax-liability",
-                                       "rrsp",
-                                       "lira",
-                                       "registered-plans",
-                                       "withdrawal",
-                                       "tax-deferred",
-                                       "ppe-048"
-                                   ]
-                      },
-                      {
-                          "id":  2,
-                          "question":  "(PPE-058) SFA\nMarsha earns over $200,000 per year and is in the highest marginal tax bracket. Her husband, Leonard, earns $45,000 per year plus a small bonus of $2,000 to $5,000 per year. After meeting with a financial planner, Marsha has decided to contribute to Leonard\u0027s spousal RRSP. Which of the following statements is correct regarding the beneficiary designation?",
-                          "options":  [
-                                          "A. Leonard is entitled to name a beneficiary.",
-                                          "B. As contributor, Marsha automatically becomes an irrevocable beneficiary.",
-                                          "C. Marsha is entitled to name a beneficiary.",
-                                          "D. As contributor, Marsha automatically becomes a revocable beneficiary."
-                                      ],
-                          "correctAnswer":  0,
-                          "optionFeedback":  [
-                                                 null,
-                                                 "The contributor (Marsha) does not gain ownership rights or automatic beneficiary status; she only receives the tax deduction for the contribution.",
-                                                 "Although Marsha provides the funds, she is not the annuitant (owner) of the spousal RRSP and therefore cannot control the beneficiary designation.",
-                                                 "Beneficiary status must be explicitly named by the annuitant; it is not automatically granted to the contributor by law."
-                                             ],
-                          "explanation":  "In a spousal RRSP, the individual for whom the account is opened is the annuitant and the legal owner of the plan. As the owner, only Leonard has the right to designate or change the beneficiary. The contributor receives the tax deduction but has no ownership or beneficiary designation rights.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "spousal-rrsp",
-                                       "beneficiary",
-                                       "annuitant",
-                                       "ownership",
-                                       "tax-planning",
-                                       "ppe-058"
-                                   ]
-                      },
-                      {
-                          "id":  3,
-                          "question":  "(PPE-081) SFA\nStan lives in the basement apartment of a home that he owns free and clear. He rents the upper level of the home for $1,500 per month. He also receives $1,000 per month from a life annuity he purchased upon retirement in addition to his CPP and OAS benefits. His home was originally purchased for $50,000 and is now valued at over $500,000. What is Stan\u0027s biggest risk to his financial situation?",
-                          "options":  [
-                                          "A. Inflation risk",
-                                          "B. Liquidity risk",
-                                          "C. Market risk",
-                                          "D. Credit risk"
-                                      ],
-                          "correctAnswer":  0,
-                          "optionFeedback":  [
-                                                 null,
-                                                 "While Stan\u0027s net worth is largely tied up in his $500,000 home (an illiquid asset), he has a combined monthly income of at least $2,500 plus government benefits, which provides sufficient cash flow for daily needs.",
-                                                 "Market risk typically refers to the fluctuation of investment values like stocks or mutual funds. Since Stan relies on a guaranteed life annuity and real estate, he is not directly exposed to equity market volatility.",
-                                                 "Credit risk involves the possibility that a borrower or issuer will default on their debt obligations. This is not the primary concern for Stan\u0027s personal retirement income streams."
-                                             ],
-                          "explanation":  "Inflation risk (or purchasing power risk) is Stan\u0027s biggest threat because his $1,000/month life annuity is a fixed amount that does not adjust for the rising cost of living. While his CPP and OAS are indexed to inflation, his fixed annuity and relatively static rental income will lose significant value over a long retirement. Over 20-30 years, this erosion of purchasing power is the most significant risk.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "inflation-risk",
-                                       "life-annuity",
-                                       "fixed-income",
-                                       "retirement",
-                                       "purchasing-power",
-                                       "ppe-081"
-                                   ]
-                      },
-                      {
-                          "id":  4,
-                          "question":  "(PPE-016) SFA\nFour individuals own a GIC issued by the same Canadian chartered bank. Unfortunately, just prior to these investments maturing, the bank filed for bankruptcy. Which investor would most likely have his or her entire investment (principal and accrued interest) covered by CDIC?\n\ni. Alex, who invested $75,000 in a market-linked GIC denominated in Canadian dollars with a Canadian chartered bank with a term to maturity of four years.\nii. Patrick, who invested $100,000 in a five-year GIC denominated in Canadian dollars with a Canadian chartered bank.\niii. Scott, who invested $25,000 in cryptocurrency denominated in Canadian dollars through a Canadian cryptocurrency exchange for an intended five-year period.\niv. Mark, who invested $50,000 in a five-year GIC denominated in US dollars with a Canadian chartered bank.\nv. Martha, who invested $75,000 in a GIC in Canadian dollars with an initial term of seven years.",
-                          "options":  [
-                                          "A. ii, iv, v.",
-                                          "B. i, ii, v.",
-                                          "C. i, iv, v.",
-                                          "D. i, ii, iii, iv."
-                                      ],
-                          "correctAnswer":  2,
-                          "optionFeedback":  [
-                                                 "While Mark (iv) and Martha (v) are fully covered, Patrick (ii) invested $100,000 in principal alone. Since the CDIC limit is $100,000 total (principal + interest), any accrued interest would push him over the limit, meaning his \"entire\" investment is not covered.",
-                                                 "Patrick (ii) is not fully covered because his $100,000 principal already reaches the CDIC maximum, leaving no room for his accrued interest.",
-                                                 null,
-                                                 "This choice includes Scott (iii), but CDIC explicitly does not cover cryptocurrency or digital assets."
-                                             ],
-                          "explanation":  "Alex (i), Mark (iv), and Martha (v) are all below the $100,000 limit even with interest. Market-linked GICs (i) are eligible, foreign currency GICs (iv) have been covered since 2020, and the five-year term limit (v) was removed in 2020. Scott (iii) is excluded because CDIC does not cover cryptocurrency. Patrick\u0027s $100,000 principal plus interest exceeds the total limit.",
-                          "difficulty":  "hard",
-                          "tags":  [
-                                       "cdic",
-                                       "deposit-insurance",
-                                       "gic",
-                                       "market-linked",
-                                       "foreign-currency",
-                                       "cryptocurrency",
-                                       "ppe-016"
-                                   ]
-                      },
-                      {
-                          "id":  5,
-                          "question":  "(PPE-094) SFA\nSimon plans on retiring now at the age of 63. If he were to wait until age 65, he would receive $600 in monthly CPP benefits. How much would he receive each month if he opts to receive CPP early as planned?",
-                          "options":  [
-                                          "A. $528.00 today, which will increase when he reaches age 65.",
-                                          "B. $513.60 today, which will not increase when he reaches age 65.",
-                                          "C. $513.60 today, which will increase when he reaches age 65.",
-                                          "D. $528.00 today, which will not increase when he reaches age 65."
-                                      ],
-                          "correctAnswer":  1,
-                          "optionFeedback":  [
-                                                 "The reduction for early retirement is 0.6% per month, not 0.5%, and the reduced rate is permanent.",
-                                                 null,
-                                                 "While the math for the reduction is correct, the reduced CPP amount is permanent and will not automatically \"step up\" to the age 65 level when the recipient reaches that age.",
-                                                 "This reflects a 12% reduction (0.5% per month), but the current CPP rules mandate a 0.6% monthly reduction for early retirement."
-                                             ],
-                          "explanation":  "CPP benefits are reduced by 0.6% for every month taken before age 65. Retiring at 63 is 24 months early, resulting in a 14.4% reduction (24 x 0.6%). $600 multiplied by 14.4% is $86.40, making the monthly payment $513.60. This reduction is permanent and does not increase at age 65. Formula: $600 × (1 − 0.144) = $600 × 0.856 = $513.60.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "cpp",
-                                       "early-retirement",
-                                       "pension",
-                                       "reduction",
-                                       "permanent",
-                                       "calculation",
-                                       "ppe-094"
-                                   ]
-                      },
-                      {
-                          "id":  6,
-                          "question":  "(PPE-005) SFA\nJulius invested $100,000 into a segregated fund three years ago. The fund offered a 75% guarantee upon death or upon the 10-year maturity date. A 100% guarantee is also available subject to a 15-year maturity date. Julius opted for the 100% guarantee. A few years later, he reset the guarantee at a time when the contract was worth $125,000. Shortly after resetting the guarantee, Julius died. At the time of his death, the contract value was $118,000. How much would his beneficiaries receive?",
-                          "options":  [
-                                          "A. They would not be entitled to anything until the 15-year maturity date.",
-                                          "B. They would receive the market value at the time of the redemption.",
-                                          "C. Resets are designed to benefit the contract holder but not the beneficiary. Therefore, his beneficiaries would only receive $118,000.",
-                                          "D. They would receive the guaranteed amount of $125,000."
-                                      ],
-                          "correctAnswer":  3,
-                          "optionFeedback":  [
-                                                 "While maturity guarantees require waiting until the maturity date, a death benefit guarantee is triggered immediately upon the death of the annuitant.",
-                                                 "Because the market value ($118,000) is lower than the guaranteed amount, the insurance protection \"tops up\" the payment to the guaranteed level.",
-                                                 "Resets specifically \"crystallize\" or lock in gains for the benefit of the legacy (the death benefit), ensuring the beneficiary receives the higher reset value.",
-                                                 null
-                                             ],
-                          "explanation":  "Resetting the guarantee locks in the current market value ($125,000) as the new minimum death benefit. Upon death, the beneficiary receives the greater of the market value ($118,000) or the reset guarantee ($125,000). Death benefits apply regardless of maturity date, and resets benefit both the contract holder and beneficiaries.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "segregated-fund",
-                                       "death-benefit",
-                                       "guarantee-reset",
-                                       "beneficiary",
-                                       "maturity-guarantee",
-                                       "ppe-005"
-                                   ]
-                      },
-                      {
-                          "id":  7,
-                          "question":  "(PPE-047) SFA\nBrad works in the human resources department at Dewey, Sewem, and Howe, LLP, a law firm with 11 senior lawyers, 21 junior lawyers, and 14 support and other office staff, including himself. Brad is meeting with the senior partners to discuss the implementation of a defined contribution pension plan (DCPP) that will offer a variety of segregated funds to the group members. He is expecting that the partners will ask many questions and wants to be sure that he has all of the right answers. If the partners ask him about the advantages and disadvantages of offering group segregated funds in the pension plan, how should Brad answer?\n\ni. Segregated funds for group members have no sales charges.\nii. The MER on group-provided segregated funds is generally lower than the MER paid by individual investors.\niii. Group segregated funds do not offer a maturity or death benefit guarantee.\niv. Group segregated funds do not charge switch fees for group members.",
-                          "options":  [
-                                          "A. 3 only",
-                                          "B. 1 only",
-                                          "C. 1, 2, 3, and 4",
-                                          "D. 1, 2, and 4"
-                                      ],
-                          "correctAnswer":  2,
-                          "optionFeedback":  [
-                                                 "While it is true that group segregated funds typically do not offer maturity or death benefit guarantees, the other statements (1, 2, and 4) are also accurate descriptions of these funds in a group setting.",
-                                                 "Although group segregated funds generally have no sales charges, this is not the only correct statement; points 2, 3, and 4 are also correct.",
-                                                 null,
-                                                 "This option excludes statement 3. However, the lack of a maturity or death benefit guarantee is a defining characteristic (and a cost-saving \"disadvantage\" relative to retail funds) of group segregated funds."
-                                             ],
-                          "explanation":  "All four statements are correct. Group segregated funds in a pension plan are designed for lower costs, meaning they have lower MERs and no sales or switch charges. However, to achieve these lower costs, they typically forgo the 75%–100% maturity and death benefit guarantees found in retail products. This represents the trade-off between cost and insurance features.",
-                          "difficulty":  "hard",
-                          "tags":  [
-                                       "group-segregated-funds",
-                                       "dcpp",
-                                       "pension",
-                                       "mer",
-                                       "guarantees",
-                                       "fees",
-                                       "ppe-047"
-                                   ]
-                      },
-                      {
-                          "id":  8,
-                          "question":  "(PPE-080) SFA\nRobert always wanted to own his own home but had difficulty saving enough for the required down payment. Ten years ago, he borrowed $20,000 under the Home Buyers\u0027 Plan (HBP) and bought a small bungalow. Today, at age 53, he has fully repaid the HBP loan and has a remaining mortgage of $50,000 on his home, which is valued at $300,000. Robert\u0027s plan was to retire at age 60, which he thought would be possible given he is part of his employer\u0027s pension plan and because he has approximately $250,000 in RRSPs invested in balanced mutual funds. However, after doing a retirement planning analysis, it is clear that his current strategy will not provide the required retirement income. What course of action would you suggest?",
-                          "options":  [
-                                          "A. He should transfer his RRSPs into more aggressive investments to earn a higher return and make up the shortfall.",
-                                          "B. He should consider delaying his retirement age in order to earn more pension funding and decrease his longevity risk.",
-                                          "C. He should take an equity loan out against his home and invest those funds within his RRSP.",
-                                          "D. He should withdraw $60,000 from his RRSP and pay off his mortgage in order to increase his equity."
-                                      ],
-                          "correctAnswer":  1,
-                          "optionFeedback":  [
-                                                 "Shifting to aggressive investments only seven years before retirement significantly increases the risk of a market downturn depleting his capital when he has little time to recover.",
-                                                 null,
-                                                 "Using leverage (an equity loan) to invest in a retirement account increases financial risk and adds a new debt obligation just before retirement, which is generally not recommended for resolving a basic income shortfall.",
-                                                 "Withdrawing a large sum from an RRSP while still working would trigger a high tax bill and significantly reduce the tax-sheltered growth potential of his retirement savings."
-                                             ],
-                          "explanation":  "Delaying retirement allows Robert to continue contributing to his pension and RRSPs while reducing the number of years he needs to draw from his savings, effectively decreasing his longevity risk. Working longer provides more pension accrual, more savings time, and shorter retirement duration. This is the safest strategy for addressing a retirement income shortfall near age 50+.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "retirement-planning",
-                                       "longevity-risk",
-                                       "pension",
-                                       "rrsp",
-                                       "hbp",
-                                       "income-shortfall",
-                                       "ppe-080"
-                                   ]
-                      },
-                      {
-                          "id":  9,
-                          "question":  "(PPE-098) SFA\nKen invested $100,000 into a segregated fund that offered a 100% maturity and death benefit guarantee. He reset the guarantee when the fund reached a value of $154,000. Ten years after the reset date, the investment was worth $135,000, but Ken received $154,000. He wants to know how much tax he will pay on the maturity guarantee assuming a 35% marginal tax bracket. What should you tell him?",
-                          "options":  [
-                                          "A. One of the key advantages of segregated funds is that the maturity and death benefit guarantee is considered a form of insurance and is received tax free.",
-                                          "B. The $19,000 maturity guarantee will be taxed as a capital gain, which will result in his owing $3,325 in taxes.",
-                                          "C. There is a lack of consensus among tax experts regarding whether the guarantee is taxed as a capital gain or income.",
-                                          "D. The $19,000 maturity guarantee will be taxed as interest, which will result in his owing $6,650 in taxes."
-                                      ],
-                          "correctAnswer":  2,
-                          "optionFeedback":  [
-                                                 "While death benefits paid to a named beneficiary are typically received tax-free, top-up payments from a maturity guarantee received by the policy owner are subject to tax.",
-                                                 "While some treat it as a capital gain, the Canada Revenue Agency (CRA) has not provided a definitive ruling on this specific treatment.",
-                                                 null,
-                                                 "Treating it as interest is one possible interpretation, but because the CRA has not issued a formal definition, this is not a confirmed rule."
-                                             ],
-                          "explanation":  "The Income Tax Act and Canada Revenue Agency (CRA) have not defined how they view the tax treatment of maturity and death benefit guarantees, so there is a lack of consensus among tax experts. Some treat it as a capital gain (50% inclusion), others as fully taxable income. In practice, many insurers report the top-up as a capital gain on T3 slips, but the exam tests awareness that no definitive CRA position exists.",
-                          "difficulty":  "hard",
-                          "tags":  [
-                                       "segregated-fund",
-                                       "maturity-guarantee",
-                                       "taxation",
-                                       "cra",
-                                       "tax-treatment",
-                                       "consensus",
-                                       "ppe-098"
-                                   ]
-                      },
-                      {
-                          "id":  10,
-                          "question":  "(PPE-089) SFA\nBernard invested $400,000 into an equity segregated fund that offered a 100% guarantee upon death or upon the 10-year maturity date. Seven years later, Bernard withdrew $50,000 when the contract was worth $500,000. He plans on redeeming the remainder upon the maturity date. How will the early withdrawal impact the guaranteed amount upon the maturity date?",
-                          "options":  [
-                                          "A. The guaranteed amount will be adjusted downwards to $350,000.",
-                                          "B. Any withdrawals made prior to the maturity date nullify the entire guaranteed amount.",
-                                          "C. As long as a minimum of $400,000 remains invested after the withdrawal in year 7, the guaranteed amount will remain unchanged.",
-                                          "D. The guaranteed amount will remain unchanged provided the 250% anti-withdrawal rule is respected."
-                                      ],
-                          "correctAnswer":  0,
-                          "optionFeedback":  [
-                                                 null,
-                                                 "A withdrawal does not terminate the insurance protection; it simply adjusts the guaranteed base downward. The remaining investment continues to be protected by the maturity and death guarantees.",
-                                                 "Guarantees are always affected by withdrawals. Even if the market value remains higher than the original investment, any removal of capital reduces the insurer\u0027s liability and the corresponding guaranteed amount.",
-                                                 "There is no such thing as a \"250% anti-withdrawal rule\" in the context of Canadian segregated funds or individual variable insurance contracts (IVICs)."
-                                             ],
-                          "explanation":  "In many segregated fund contracts (especially those using a dollar-for-dollar reduction method), the guaranteed amount is reduced proportionally by the withdrawal. Here, the $400,000 guarantee is reduced by the $50,000 withdrawal (or proportionally based on market value at withdrawal), leaving a new guaranteed amount of $350,000. Withdrawals always reduce the guarantee pro-rata.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "segregated-fund",
-                                       "withdrawal",
-                                       "guarantee-adjustment",
-                                       "maturity-guarantee",
-                                       "pro-rata",
-                                       "ppe-089"
-                                   ]
-                      },
-                      {
-                          "id":  11,
-                          "question":  "(PPE-092) SFA\nKarl recently left his employer in order to open a new business with his son. Karl contributed to his former employer\u0027s defined contribution pension plan for 15 years. As he is only 55 years old, he does not see himself requiring pension income for another 5 to 10 years. He is asking you to advise him on the best way to invest the proceeds from his pension plan. Which of the following is a suitable option?",
-                          "options":  [
-                                          "A. The funds can be transferred to an LRIF and be used to purchase a life annuity upon retirement.",
-                                          "B. The funds can be transferred to a LIF and be used to purchase a life annuity upon retirement.",
-                                          "C. The funds can be transferred to a PRIF and be used to purchase a life annuity upon retirement.",
-                                          "D. The funds can be transferred to a LIRA and be used to purchase a life annuity upon retirement."
-                                      ],
-                          "correctAnswer":  3,
-                          "optionFeedback":  [
-                                                 "A Locked-in Retirement Income Fund (LRIF) is an income-generating vehicle that requires minimum annual withdrawals. Since Karl does not need income for at least five years, starting an LRIF now would trigger unnecessary taxable income.",
-                                                 "Similar to an LRIF, a Life Income Fund (LIF) is designed for the payout phase of retirement. It mandates minimum withdrawals starting the year after it is opened, which contradicts Karl\u0027s goal of deferring income.",
-                                                 "A Prescribed Registered Retirement Income Fund (PRIF) also requires minimum annual withdrawals. While it offers more flexibility than a LIF in some provinces, it is still an income vehicle and not ideal for a client seeking long-term deferral.",
-                                                 null
-                                             ],
-                          "explanation":  "A Locked-in Retirement Account (LIRA) is the standard \"holding tank\" for pension transfers. It allows Karl to keep the funds tax-sheltered without being forced to take withdrawals until he converts to an income vehicle (LIF/LRIF/PRIF) or purchases a life annuity at retirement. LIRA is the savings phase vehicle; LIF/LRIF/PRIF are income phase vehicles.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "lira",
-                                       "pension-transfer",
-                                       "dc-pension",
-                                       "locked-in",
-                                       "lif",
-                                       "lrif",
-                                       "prif",
-                                       "annuity",
-                                       "ppe-092"
-                                   ]
-                      },
-                      {
-                          "id":  12,
-                          "question":  "(PPE-093) SFA\nChad is your client. He purchased a life insurance policy and critical illness policy from you last year. He would now like to invest a lump sum into a segregated fund within his non-registered account. He has not opted for GMWBs. Which of the following needs to be obtained before the application is sent to the insurance company?",
-                          "options":  [
-                                          "A. A named beneficiary.",
-                                          "B. Government-issued identification with a unique identifier.",
-                                          "C. A rider election form.",
-                                          "D. A cheque for the first deposit."
-                                      ],
-                          "correctAnswer":  3,
-                          "optionFeedback":  [
-                                                 "While it is highly recommended that the contract holder name a beneficiary to ensure the death benefit bypasses probate, it is not a mandatory requirement to process the application.",
-                                                 "Normally, non-registered accounts require identity verification; however, because the agent has a prior relationship with Chad consisting of at least two previous transactions (life and CI policies), further identification is not required in this instance.",
-                                                 "A rider election form is specifically used when a client chooses optional features like Guaranteed Minimum Withdrawal Benefits (GMWBs). Since Chad did not opt for these, this form is not necessary.",
-                                                 null
-                                             ],
-                          "explanation":  "When investing in a segregated fund, a deposit must accompany the application. The contract typically does not take effect until the initial premium/deposit is received and honoured (cleared). Beneficiary designation is optional, ID verification is exempted due to prior relationship, and rider forms are only needed if electing GMWBs.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "segregated-fund",
-                                       "application",
-                                       "deposit",
-                                       "kyc",
-                                       "beneficiary",
-                                       "gmwb",
-                                       "non-registered",
-                                       "ppe-093"
-                                   ]
-                      },
-                      {
-                          "id":  13,
-                          "question":  "(PPE-007) SFA\nMartin invested $10,000 into an equity segregated fund which is held in his non-registered account. Based on a NAVPU of $8.97 he received 1,115.31 units. During the year, he received a $500 distribution that consisted of $150 interest and $350 in capital gains. In addition to this, by the end of the year the value of the NAVPU had increased by $2 per unit. Assuming a marginal tax rate (MTR) of 35%, how much will Martin owe in taxes at the end of the year?",
-                          "options":  [
-                                          "A. $113.75",
-                                          "B. $118.75",
-                                          "C. $175.00",
-                                          "D. $148.75"
-                                      ],
-                          "correctAnswer":  0,
-                          "optionFeedback":  [
-                                                 null,
-                                                 "This value does not correspond to the correct application of the 50% inclusion rate for capital gains and the 100% inclusion for interest at a 35% MTR.",
-                                                 "This result comes from taxing the entire $500 distribution at the 35% marginal rate ($500 × 0.35 = $175). It fails to account for the 50% tax preference given to capital gains.",
-                                                 "This value does not reflect the standard tax calculation for a split distribution of interest and capital gains."
-                                             ],
-                          "explanation":  "In a non-registered segregated fund, Martin is taxed on the income allocated to him during the year. Interest is 100% taxable, while capital gains have a 50% inclusion rate. The unrealized increase in NAVPU ($2 per unit) is not taxed until the units are redeemed. Tax on Interest: $150 × 0.35 = $52.50. Tax on Capital Gains: $350 × 0.5 × 0.35 = $61.25. Total Tax: $52.50 + $61.25 = $113.75.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "segregated-fund",
-                                       "taxation",
-                                       "non-registered",
-                                       "capital-gains",
-                                       "interest",
-                                       "navpu",
-                                       "unrealized-gains",
-                                       "ppe-007"
-                                   ]
-                      },
-                      {
-                          "id":  14,
-                          "question":  "(PPE-002) SFA\n\nJake is meeting with his financial advisor to discuss his grim financial situation. He owns his own business, which is structured as a sole proprietorship. As a result of his business dealings, Jake was the target of a successful lawsuit that resulted in a judgement of $2,500,000. Unfortunately, it appears that Jake\u0027s best option is to file for bankruptcy.\n\n\u003cdiv style=\"margin: 20px 0; font-family: Arial, sans-serif; color: var(--c-text);\"\u003e\n\u003cdiv style=\"margin-bottom: 30px;\"\u003e\n\u003ch3 style=\"font-size: 18px; font-weight: bold; margin-bottom: 15px;\"\u003eAssets\u003c/h3\u003e\n\u003ctable style=\"width: 100%; border-collapse: collapse; border: 2px solid var(--c-border); background: var(--c-surface2); color: var(--c-text);\"\u003e\n\u003ctr style=\"background-color: var(--c-surface3);\"\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); font-weight: bold; width: 70%;\"\u003eHouse (his portion)\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right; font-weight: bold;\"\u003e$850,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border);\"\u003e2014 Jeep Sahara\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\"\u003e$45,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"background-color: var(--c-surface3);\"\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border);\"\u003eRental property\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\"\u003e$212,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border);\"\u003eRRSPs\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\"\u003e$40,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"background-color: var(--c-surface3);\"\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border);\"\u003eNon-registered brokerage account\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\"\u003e$36,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border);\"\u003eShares in his own business\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\"\u003e$0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"background-color: var(--c-surface3);\"\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border);\"\u003eAnnuity in payment mode\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\"\u003e$200,000 (est. commuted value)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"background-color: var(--c-primary-a); font-weight: bold;\"\u003e\n\u003ctd style=\"padding: 12px 15px; border: 2px solid var(--c-border); font-weight: bold;\"\u003eTotal Assets\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 2px solid var(--c-border); text-align: right; font-weight: bold;\"\u003e$1,383,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/table\u003e\n\u003c/div\u003e\n\n\u003cdiv\u003e\n\u003ch3 style=\"font-size: 18px; font-weight: bold; margin-bottom: 15px;\"\u003eLiabilities\u003c/h3\u003e\n\u003ctable style=\"width: 100%; border-collapse: collapse; border: 2px solid var(--c-border); background: var(--c-surface2); color: var(--c-text);\"\u003e\n\u003ctr style=\"background-color: var(--c-surface3);\"\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); font-weight: bold; width: 70%;\"\u003eMortgage loan (his portion)\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right; font-weight: bold;\"\u003e$150,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border);\"\u003eCredit card debt\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\"\u003e$10,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"background-color: var(--c-surface3);\"\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border);\"\u003eCar loan\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\"\u003e$35,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border);\"\u003eJudgment\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\"\u003e$2,500,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"background-color: var(--c-err-a); font-weight: bold;\"\u003e\n\u003ctd style=\"padding: 12px 15px; border: 2px solid var(--c-border); font-weight: bold;\"\u003eTotal Liabilities\u003c/td\u003e\n\u003ctd style=\"padding: 12px 15px; border: 2px solid var(--c-border); text-align: right; font-weight: bold;\"\u003e$2,695,000\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/table\u003e\n\u003c/div\u003e\n\u003c/div\u003e\n\n\u003cp style=\"margin-top: 20px; font-style: italic;\"\u003e\u003cstrong\u003eJake\u0027s net worth is therefore -$1,312,000.\u003c/strong\u003e\u003c/p\u003e\n\nJake is wondering to what extent the annuity that he purchased five years ago would be protected from his creditors. Jake is the contract holder, but his wife is receiving the monthly annuity payments of $2,500 per month as the named beneficiary. What should you advise him?",
-                          "tags":  [
-                                       "annuity",
-                                       "creditor-protection",
-                                       "insurance-act",
-                                       "family-beneficiary",
-                                       "bankruptcy",
-                                       "segregated-fund",
-                                       "ppe-002"
-                                   ],
-                          "difficulty":  "hard",
-                          "optionFeedback":  [
-                                                 "Under provincial insurance legislation, if an insurance-based product (like an annuity or segregated fund) has a beneficiary in the \"family class\" (spouse, child, parent, or grandchild), the entire contract is typically exempt from seizure, not just the income stream.",
-                                                 "While Jake is the owner, the presence of a \"family class\" beneficiary (his wife) triggers specific protections under the Insurance Act that shield the asset from creditors, provided the contract wasn\u0027t purchased with the intent to defraud them.",
-                                                 "Creditor protection for insurance products is generally \"all or nothing\" based on the beneficiary designation. There is no standard provision that allows creditors to seize exactly half of a protected annuity\u0027s value.",
-                                                 null
-                                             ],
-                          "options":  [
-                                          "A. His creditors would have a valid claim on the principal portion but not the annuity payments, which are being paid to his spouse.",
-                                          "B. Given that Jake is the contract holder, his creditors would have a valid claim against both the principal and annuity payments.",
-                                          "C. His creditors would have a valid claim on 50% of the annuity\u0027s value.",
-                                          "D. His creditors would not have a valid claim against the annuity."
-                                      ],
-                          "explanation":  "Because the annuity is an insurance contract and Jake has named his wife (a member of the \"family class\" of beneficiaries) as the beneficiary, the asset is exempt from seizure by creditors under provincial insurance laws. Furthermore, since the annuity was purchased five years ago, it is unlikely to be viewed as a \"fraudulent conveyance\" designed specifically to hide assets from this recent judgment. Insurance products (including annuities) qualify as protected when a family class beneficiary (spouse, child, parent, or grandchild) is named. The protection extends to both the commuted value (principal) and ongoing payments. Even though Jake is the contract holder, the beneficiary designation of his wife triggers protection under family class beneficiary rules. This applies in both bankruptcy and non-bankruptcy creditor claims.",
-                          "correctAnswer":  3
-                      },
-                      {
-                          "id":  15,
-                          "question":  "(PPE-011) SFA\n\nFiona and Gerald are in their early 40s and have two children under the age of 10. Fiona is an executive for a waste management company in northern Ontario. She earns $125,000 per year plus bonuses and has a good pension through her employer. Her husband, Gerald, works from home to care for the children, which also allows him to manage his own home cleaning business called Daddy Dusters. While Daddy Dusters generated revenue of $145,000 last year, the net earnings after expenses was only $18,500, which is more than the company has profited in over 10 years. Fiona has $24,250 in total RRSP contribution room, and Gerald has $3,000. The couple have decided to contribute $8,000 to a spousal RRSP this year. When making their RRSP contributions, they first sought the advice of a qualified tax professional. What is the most likely situation for the RRSP and the contributions?",
-                          "options":  [
-                                          "A. Gerald is the account owner, and Fiona is the contributor. Fiona will receive the RRSP contribution (tax) receipt, and her contribution room will be reduced by $8,000.",
-                                          "B. Gerald is the account owner and the contributor. He will receive the RRSP contribution (tax) receipt, and his contribution room will be reduced by $8,000.",
-                                          "C. Fiona is the account owner, and Gerald is the contributor. Gerald will receive the RRSP contribution (tax) receipt, and his contribution room will be reduced by $3,000. The balance of the contribution ($5,000) will reduce Fiona\u0027s contribution room.",
-                                          "D. Fiona is the account owner and the contributor. She will receive the RRSP contribution (tax) receipt, and her contribution room will be reduced by $8,000."
-                                      ],
-                          "correctAnswer":  0,
-                          "optionFeedback":  [
-                                                 null,
-                                                 "If Gerald were both the owner and the contributor, it would simply be an individual RRSP, not a spousal RRSP. Furthermore, Gerald only has $3,000 in room, so he could not contribute $8,000 without incurring over-contribution penalties.",
-                                                 "RRSP contribution room is not \"shared\" or combined in this manner. A single contribution to a spousal RRSP must be attributed to one specific contributor\u0027s room. Additionally, it would be tax-inefficient for Gerald (the lower earner) to be the contributor.",
-                                                 "This describes a standard individual RRSP for Fiona. In a spousal RRSP, the spouse (Gerald) must be the owner of the account so that the income-splitting benefit can be realized in the future."
-                                             ],
-                          "explanation":  "In a spousal RRSP arrangement, the person with the higher income and more contribution room (Fiona) typically acts as the contributor. She uses her own contribution room and receives the tax deduction (the receipt) to lower her taxable income. The other spouse (Gerald) is the annuitant (account owner), meaning the assets belong to him and will eventually be taxed in his hands upon withdrawal. This is ideal for income splitting in retirement. Fiona (high earner) contributes $8,000 to spousal RRSP in Gerald\u0027s name, using her room and getting the receipt/deduction. Gerald is the owner (annuitant). Under CRA rules, contributions to a spousal RRSP reduce the contributor\u0027s RRSP deduction limit, not the annuitant\u0027s. The receipt is issued in the contributor\u0027s name. Key benefits: Fiona gets immediate tax savings (high bracket), and future withdrawals will be taxed to Gerald (likely lower bracket in retirement), especially since Fiona will have substantial pension income.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "spousal-rrsp",
-                                       "rrsp-contribution",
-                                       "income-splitting",
-                                       "tax-planning",
-                                       "annuitant",
-                                       "contributor",
-                                       "ppe-011"
-                                   ]
-                      },
-                      {
-                          "id":  16,
-                          "question":  "(PPE-018) SFA\n\nBrittany is considering investing in a segregated fund that offers a 100% guarantee upon death or the 10-year maturity date. While Brittany is only 40 years old, her life expectancy is much shorter than her peers\u0027 due to an irreversible health issue. She is considering investing $100,000. How would the insurer deal with her application to invest in the segregated fund?",
-                          "options":  [
-                                          "A. She would be declined and unable to make the investment because the death benefit guarantee relies on the health of the investor.",
-                                          "B. Segregated funds are not subject to a health underwriting; therefore, she can invest in the fund and take advantage of both guarantees.",
-                                          "C. She can make the investment, but the death benefit guarantee would not apply.",
-                                          "D. The medical underwriting will likely require the guarantee upon death to be reduced to 75%, which is the legal minimum for a segregated fund."
-                                      ],
-                          "correctAnswer":  1,
-                          "optionFeedback":  [
-                                                 "Unlike traditional life insurance, which requires medical underwriting to assess risk, segregated funds are investment products with an insurance \"wrapper.\" Insurers generally do not decline applications based on the annuitant\u0027s health.",
-                                                 null,
-                                                 "The death benefit guarantee is a core contractual feature of an Individual Variable Insurance Contract (IVIC). If the contract is issued, the guarantee applies regardless of the owner\u0027s health at the time of purchase.",
-                                                 "While 75% is the statutory minimum guarantee in Canada, the reduction from 100% to 75% is typically a choice made by the investor (often to reduce fees) or a restriction based on age (e.g., after age 80), not a result of medical underwriting."
-                                             ],
-                          "explanation":  "One of the unique features of segregated funds is the absence of medical underwriting. Even if an investor has a terminal illness or poor health, they can typically purchase the fund and receive the full 75% or 100% death benefit and maturity guarantees. Segregated funds are insurance-wrapped investment products where the maturity and death benefit guarantees (75% to 100% of premiums, less withdrawals/fees) are investment guarantees backed by the insurer\u0027s general funds and capital requirements, not life insurance-style mortality underwriting. No medical underwriting or health questions are required for segregated fund contracts. Investors with health issues (even severe/shortened life expectancy) can purchase and qualify for full guarantees including 100% death benefit. The death benefit guarantee pays the higher of market value or guaranteed amount to beneficiaries upon death, regardless of age or health. This is a product feature to attract investors seeking protection. Brittany, despite her shortened life expectancy, would be accepted normally and receive full 100/100 guarantees (maturity at 10 years plus death benefit anytime). Although some insurers may offer lower guarantees for older investors (but still subject to the 75% minimum), they do not underwrite segregated funds based on health. A young person with a shortened life expectancy gets the same guarantees as someone else at the same age who is healthy.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "segregated-fund",
-                                       "medical-underwriting",
-                                       "death-benefit",
-                                       "maturity-guarantee",
-                                       "health-issues",
-                                       "insurance-wrapper",
-                                       "ppe-018"
-                                   ]
-                      },
-                      {
-                          "id":  17,
-                          "question":  "(PPE-099) SFA\n\nBeth was at an investor education conference where she learned about the advantages of spousal RRSPs. She planned on contributing $10,000 into her husband\u0027s spousal RRSP, and based on her marginal tax rate, she would save roughly $4,000 in taxes. She was under the impression that her husband could then immediately withdraw $10,000 and pay much less tax due to his lower tax bracket. What prevents this from being possible?",
-                          "options":  [
-                                          "A. Probate fees",
-                                          "B. Tax rules on capital gains",
-                                          "C. Attribution rules",
-                                          "D. The 90-day rule"
-                                      ],
-                          "correctAnswer":  2,
-                          "optionFeedback":  [
-                                                 "Probate fees are a concern for estate planning after death. They do not impact the taxation of RRSP withdrawals made by a living annuitant.",
-                                                 "RRSP withdrawals are taxed as ordinary income, not capital gains. The preferential 50% inclusion rate for capital gains does not apply to funds coming out of any RRSP.",
-                                                 null,
-                                                 "While there is a \"90-day rule\" related to the Home Buyers\u0027 Plan (where funds must be in the RRSP for 90 days before withdrawal to be deductible), it does not govern general income splitting or spousal attribution."
-                                             ],
-                          "explanation":  "The Canada Revenue Agency (CRA) uses attribution rules specifically to prevent short-term income splitting. If a spouse withdraws funds from a spousal RRSP within three calendar years (the year of contribution plus the two previous years) of a contribution, that income is \"attributed\" back to the contributor (Beth) and taxed at her higher rate. This is designed to prevent the exact scenario Beth envisioned: contribute at a high tax rate, withdraw immediately at a low rate. Under Income Tax Act section 146(8.3), if the annuitant (husband) withdraws from any spousal RRSP in the year of contribution or the two preceding calendar years (a 3-year window from the last contribution), the withdrawn amount (up to the contributed amounts in those years) is attributed back to the contributor (Beth) and taxed in her hands at her higher rate. This blocks the \"contribute now, withdraw immediately\" loophole. The husband cannot pull $10,000 right away and pay low tax; it would be taxed to Beth instead. The rule applies to all withdrawals (not just the contributed amount) up to the recent contributions; any excess is taxed to the husband normally. Exceptions include death, relationship breakdown, or certain plans (HBP/LLP withdrawals have separate rules). Beth\u0027s plan to contribute $10,000 and have her husband withdraw $10,000 immediately would trigger full attribution: the $10,000 would be taxed to Beth at her higher rate, eliminating any tax savings. Attribution rules are designed to prevent abuse of certain tax opportunities. In this case, Beth would still be required to report and pay tax on the withdrawal.",
-                          "difficulty":  "medium",
-                          "tags":  [
-                                       "spousal-rrsp",
-                                       "attribution-rules",
-                                       "income-splitting",
-                                       "tax-planning",
-                                       "rrsp-withdrawal",
-                                       "cra-rules",
-                                       "ppe-099"
-                                   ]
-                      },
-                      {
-                          "id":  18,
-                          "question":  "(PPE-028) SFA\n\nKristoff invested $20,000 into a segregated fund. An $800 front-end load was charged, which meant that only $19,200 was actually invested into the fund. Kristoff was given the Information Folder at the time of the sale, and the transaction was completed at a NAVPU of $17.38 at the close of business. The very next day, stock markets around the world took a tumble, and the value of Kristoff\u0027s investment fell to $17,800. Kristoff became quite concerned, so he decided to closely scrutinize the Information Folder. After reading the Information Folder thoroughly, Kristoff contacted his insurance agent that same day asking to exercise the right of rescission. How much will Kristoff receive?",
-                          "options":  [
-                                          "A. $19,200",
-                                          "B. $18,600",
-                                          "C. $17,800",
-                                          "D. $20,000"
-                                      ],
-                          "correctAnswer":  1,
-                          "optionFeedback":  [
-                                                 "This is the net amount that was initially invested. This choice fails to account for the market drop and the specific rules regarding the refund of front-end loads.",
-                                                 null,
-                                                 "This is only the current market value. While the rescission calculation uses the market value if it is lower than the amount invested, it also mandates the return of the initial sales charges (the front-end load).",
-                                                 "This would imply that the right of rescission is a \"money-back guarantee\" regardless of market performance. However, the rule states the investor receives the lesser of the investment or market value, meaning the investor still bears the market loss during those two days."
-                                             ],
-                          "explanation":  "Under the right of rescission, the investor receives the lesser of the amount invested ($19,200) or the current market value of the units ($17,800). Crucially, the right of rescission also requires the insurer to refund any sales charges or fees paid (the $800 front-end load). Calculation: Market Value ($17,800) + Refunded Commission ($800) = $18,600. The right of rescission can be exercised within two business days of receiving the Information Folder. Kristoff received the folder at the time of sale and requested rescission the very next day, clearly within the permitted window. Under provincial insurance acts and CCIR/CLHIA Guideline G2 harmonized standards for segregated funds, rescission works as follows: the investor receives the lesser of the net amount invested (after upfront sales charges) or the current market value at the next valuation point, PLUS the full refund of any front-end load or commission paid. Here, the net invested was $19,200 (after $800 load), but the market dropped to $17,800. Lesser = $17,800. Additionally, the $800 front-end load is refunded separately because the transaction is unwound—the sale is rescinded, and the advisor/insurer does not keep the commission. Total refund: $17,800 (current market value) + $800 (refunded front-end load) = $18,600. This is the SFA exam-specific treatment: rescission refunds the lesser of net invested or market value, PLUS upfront fees separately refunded. This protects investors who realize within two days that the product is not suitable, while still exposing them to market risk during that brief period.",
-                          "difficulty":  "hard",
-                          "tags":  [
-                                       "right-of-rescission",
-                                       "segregated-funds",
-                                       "front-end-load",
-                                       "information-folder",
-                                       "investor-protection",
-                                       "navpu",
-                                       "market-value",
-                                       "ppe-028"
-                                   ]
-                      },
-                      {
-                          "id":  19,
-                          "question":  "(PPE-010) SFA\n\nMarsha owns her own engineering consulting firm. She has been wildly successful and has amassed a net worth of over $5,000,000. Last year, one of her projects collapsed, resulting in the death of three people. After a lengthy lawsuit, Marsha was ordered to pay a settlement of $10,000,000. Because her business was structured as a sole proprietorship and she had no liability insurance, Marsha knew her personal assets were at risk. She opted to purchase a term certain annuity and named her husband as the irrevocable beneficiary both in the contract itself and her last Will and testament. To what extent would her creditors have a claim on the annuity?",
-                          "options":  [
-                                          "A. The annuity was purchased in order to escape her financial obligations to her creditors and therefore would not be creditor-proof.",
-                                          "B. Her husband is part of the protected class; therefore Marsha\u0027s creditors would not have a valid claim against the annuity.",
-                                          "C. The annuity would only be creditor-proof if it is held within a registered plan.",
-                                          "D. Given her husband was named as irrevocable beneficiary, the annuity would be creditor-proof."
-                                      ],
-                          "correctAnswer":  0,
-                          "optionFeedback":  [
-                                                 null,
-                                                 "Under provincial Insurance Acts, a spouse is indeed a protected family class member. However, these statutes do not provide a \"get out of jail free\" card for someone already facing a legal judgment. Fraudulent conveyance laws take precedence when the intent is to hide existing assets from known liabilities.",
-                                                 "Both registered and non-registered insurance products (like annuities and segregated funds) can qualify for creditor protection. The issue here is not the tax status of the plan, but the timing and intent of the purchase relative to the lawsuit settlement.",
-                                                 "An irrevocable beneficiary designation is powerful in good-faith scenarios, but if the initial act of setting up that designation was done to move assets out of the reach of a current creditor, courts can still classify it as a fraudulent conveyance and overturn the protection."
-                                             ],
-                          "explanation":  "While naming a family class or irrevocable beneficiary usually protects an insurance product from creditors, that protection is void if the transfer is deemed a fraudulent conveyance. Marsha purchased the annuity after a $10,000,000 judgment was already rendered, which signals bad faith and an intent to hinder creditors. Courts can look through the contract and allow creditors to seize the funds. Insurance Act protections are conditional on good faith; they do not shield assets moved after known liabilities arise. This is a classic example of a post-judgment transfer to defeat creditors, so the annuity is not creditor-proof. In short: protected-class and irrevocable beneficiary rules apply only when the purchase is made in good faith, which is not the case here.",
-                          "difficulty":  "hard",
-                          "tags":  [
-                                       "creditor-protection",
-                                       "annuity",
-                                       "fraudulent-conveyance",
-                                       "irrevocable-beneficiary",
-                                       "protected-class",
-                                       "good-faith",
-                                       "ppe-010"
-                                   ]
-                      }
-                  ]
+{
+  "topic": "LLQP Segregated Funds & Annuities",
+  "topicId": "llqp-segregated",
+  "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
+  "examTips": "Focus on the difference between tax-deferred growth (no current tax) vs. withdrawal events (taxable). Know which registered plans shelter income and how withdrawals trigger tax liability.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "(PPE-048) SFA\nIt is April 30th, and Summer still has not filed her income taxes. She is wondering which of the following transactions that occurred last year would result in a tax liability. What should you tell her?",
+      "options": [
+        "A. The withdrawal from her RRSP.",
+        "B. An allocation of interest income from an investment held within her LIRA.",
+        "C. The withdrawal from her savings account.",
+        "D. Dividend income received from a segregated fund held within her RRSP."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "A Locked-In Retirement Account (LIRA) provides tax-deferred growth; interest, dividends, and capital gains earned within the plan are not taxed until they are withdrawn, usually during retirement.",
+        "Withdrawing your own money from a non-registered savings account is not a taxable event. While the interest earned on that account is taxable, the act of withdrawal itself is not.",
+        "Any income earned, including dividends from a segregated fund, is exempt from tax as long as it remains within the RRSP."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A Locked-In Retirement Account (LIRA) provides tax-deferred growth; interest, dividends, and capital gains earned within the plan are not taxed until they are withdrawn, usually during retirement; Withdrawing your own money from a non-registered savings account is not a taxable event. While the interest earned on that account is taxable, the act of withdrawal itself is not.\nStep 4: Select the best answer. Option A: The withdrawal from her RRSP.",
+      "difficulty": "medium",
+      "tags": [
+        "tax-liability",
+        "rrsp",
+        "lira",
+        "registered-plans",
+        "withdrawal",
+        "tax-deferred",
+        "ppe-048"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "(PPE-058) SFA\nMarsha earns over $200,000 per year and is in the highest marginal tax bracket. Her husband, Leonard, earns $45,000 per year plus a small bonus of $2,000 to $5,000 per year. After meeting with a financial planner, Marsha has decided to contribute to Leonard's spousal RRSP. Which of the following statements is correct regarding the beneficiary designation?",
+      "options": [
+        "A. Leonard is entitled to name a beneficiary.",
+        "B. As contributor, Marsha automatically becomes an irrevocable beneficiary.",
+        "C. Marsha is entitled to name a beneficiary.",
+        "D. As contributor, Marsha automatically becomes a revocable beneficiary."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "The contributor (Marsha) does not gain ownership rights or automatic beneficiary status; she only receives the tax deduction for the contribution.",
+        "Although Marsha provides the funds, she is not the annuitant (owner) of the spousal RRSP and therefore cannot control the beneficiary designation.",
+        "Beneficiary status must be explicitly named by the annuitant; it is not automatically granted to the contributor by law."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The contributor (Marsha) does not gain ownership rights or automatic beneficiary status; she only receives the tax deduction for the contribution; Although Marsha provides the funds, she is not the annuitant (owner) of the spousal RRSP and therefore cannot control the beneficiary designation.\nStep 4: Select the best answer. Option A: Leonard is entitled to name a beneficiary.",
+      "difficulty": "medium",
+      "tags": [
+        "spousal-rrsp",
+        "beneficiary",
+        "annuitant",
+        "ownership",
+        "tax-planning",
+        "ppe-058"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "(PPE-081) SFA\nStan lives in the basement apartment of a home that he owns free and clear. He rents the upper level of the home for $1,500 per month. He also receives $1,000 per month from a life annuity he purchased upon retirement in addition to his CPP and OAS benefits. His home was originally purchased for $50,000 and is now valued at over $500,000. What is Stan's biggest risk to his financial situation?",
+      "options": [
+        "A. Inflation risk",
+        "B. Liquidity risk",
+        "C. Market risk",
+        "D. Credit risk"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "While Stan's net worth is largely tied up in his $500,000 home (an illiquid asset), he has a combined monthly income of at least $2,500 plus government benefits, which provides sufficient cash flow for daily needs.",
+        "Market risk typically refers to the fluctuation of investment values like stocks or mutual funds. Since Stan relies on a guaranteed life annuity and real estate, he is not directly exposed to equity market volatility.",
+        "Credit risk involves the possibility that a borrower or issuer will default on their debt obligations. This is not the primary concern for Stan's personal retirement income streams."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While Stan's net worth is largely tied up in his $500,000 home (an illiquid asset), he has a combined monthly income of at least $2,500 plus government benefits, which provides sufficient cash flow for daily needs; Market risk typically refers to the fluctuation of investment values like stocks or mutual funds. Since Stan relies on a guaranteed life annuity and real estate, he is not directly exposed to equity market volatility.\nStep 4: Select the best answer. Option A: Inflation risk.",
+      "difficulty": "medium",
+      "tags": [
+        "inflation-risk",
+        "life-annuity",
+        "fixed-income",
+        "retirement",
+        "purchasing-power",
+        "ppe-081"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "(PPE-016) SFA\nFour individuals own a GIC issued by the same Canadian chartered bank. Unfortunately, just prior to these investments maturing, the bank filed for bankruptcy. Which investor would most likely have his or her entire investment (principal and accrued interest) covered by CDIC?\n\ni. Alex, who invested $75,000 in a market-linked GIC denominated in Canadian dollars with a Canadian chartered bank with a term to maturity of four years.\nii. Patrick, who invested $100,000 in a five-year GIC denominated in Canadian dollars with a Canadian chartered bank.\niii. Scott, who invested $25,000 in cryptocurrency denominated in Canadian dollars through a Canadian cryptocurrency exchange for an intended five-year period.\niv. Mark, who invested $50,000 in a five-year GIC denominated in US dollars with a Canadian chartered bank.\nv. Martha, who invested $75,000 in a GIC in Canadian dollars with an initial term of seven years.",
+      "options": [
+        "A. ii, iv, v.",
+        "B. i, ii, v.",
+        "C. i, iv, v.",
+        "D. i, ii, iii, iv."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "While Mark (iv) and Martha (v) are fully covered, Patrick (ii) invested $100,000 in principal alone. Since the CDIC limit is $100,000 total (principal + interest), any accrued interest would push him over the limit, meaning his \"entire\" investment is not covered.",
+        "Patrick (ii) is not fully covered because his $100,000 principal already reaches the CDIC maximum, leaving no room for his accrued interest.",
+        null,
+        "This choice includes Scott (iii), but CDIC explicitly does not cover cryptocurrency or digital assets."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While Mark (iv) and Martha (v) are fully covered, Patrick (ii) invested $100,000 in principal alone. Since the CDIC limit is $100,000 total (principal + interest), any accrued interest would push him over the limit, meaning his \"entire\" investment is not covered; Patrick (ii) is not fully covered because his $100,000 principal already reaches the CDIC maximum, leaving no room for his accrued interest.\nStep 4: Select the best answer. Option C: i, iv, v.",
+      "difficulty": "hard",
+      "tags": [
+        "cdic",
+        "deposit-insurance",
+        "gic",
+        "market-linked",
+        "foreign-currency",
+        "cryptocurrency",
+        "ppe-016"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "(PPE-094) SFA\nSimon plans on retiring now at the age of 63. If he were to wait until age 65, he would receive $600 in monthly CPP benefits. How much would he receive each month if he opts to receive CPP early as planned?",
+      "options": [
+        "A. $528.00 today, which will increase when he reaches age 65.",
+        "B. $513.60 today, which will not increase when he reaches age 65.",
+        "C. $513.60 today, which will increase when he reaches age 65.",
+        "D. $528.00 today, which will not increase when he reaches age 65."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The reduction for early retirement is 0.6% per month, not 0.5%, and the reduced rate is permanent.",
+        null,
+        "While the math for the reduction is correct, the reduced CPP amount is permanent and will not automatically \"step up\" to the age 65 level when the recipient reaches that age.",
+        "This reflects a 12% reduction (0.5% per month), but the current CPP rules mandate a 0.6% monthly reduction for early retirement."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The reduction for early retirement is 0.6% per month, not 0.5%, and the reduced rate is permanent; While the math for the reduction is correct, the reduced CPP amount is permanent and will not automatically \"step up\" to the age 65 level when the recipient reaches that age.\nStep 4: Select the best answer. Option B: $513.60 today, which will not increase when he reaches age 65.",
+      "difficulty": "medium",
+      "tags": [
+        "cpp",
+        "early-retirement",
+        "pension",
+        "reduction",
+        "permanent",
+        "calculation",
+        "ppe-094"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "(PPE-005) SFA\nJulius invested $100,000 into a segregated fund three years ago. The fund offered a 75% guarantee upon death or upon the 10-year maturity date. A 100% guarantee is also available subject to a 15-year maturity date. Julius opted for the 100% guarantee. A few years later, he reset the guarantee at a time when the contract was worth $125,000. Shortly after resetting the guarantee, Julius died. At the time of his death, the contract value was $118,000. How much would his beneficiaries receive?",
+      "options": [
+        "A. They would not be entitled to anything until the 15-year maturity date.",
+        "B. They would receive the market value at the time of the redemption.",
+        "C. Resets are designed to benefit the contract holder but not the beneficiary. Therefore, his beneficiaries would only receive $118,000.",
+        "D. They would receive the guaranteed amount of $125,000."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "While maturity guarantees require waiting until the maturity date, a death benefit guarantee is triggered immediately upon the death of the annuitant.",
+        "Because the market value ($118,000) is lower than the guaranteed amount, the insurance protection \"tops up\" the payment to the guaranteed level.",
+        "Resets specifically \"crystallize\" or lock in gains for the benefit of the legacy (the death benefit), ensuring the beneficiary receives the higher reset value.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While maturity guarantees require waiting until the maturity date, a death benefit guarantee is triggered immediately upon the death of the annuitant; Because the market value ($118,000) is lower than the guaranteed amount, the insurance protection \"tops up\" the payment to the guaranteed level.\nStep 4: Select the best answer. Option D: They would receive the guaranteed amount of $125,000.",
+      "difficulty": "medium",
+      "tags": [
+        "segregated-fund",
+        "death-benefit",
+        "guarantee-reset",
+        "beneficiary",
+        "maturity-guarantee",
+        "ppe-005"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "(PPE-047) SFA\nBrad works in the human resources department at Dewey, Sewem, and Howe, LLP, a law firm with 11 senior lawyers, 21 junior lawyers, and 14 support and other office staff, including himself. Brad is meeting with the senior partners to discuss the implementation of a defined contribution pension plan (DCPP) that will offer a variety of segregated funds to the group members. He is expecting that the partners will ask many questions and wants to be sure that he has all of the right answers. If the partners ask him about the advantages and disadvantages of offering group segregated funds in the pension plan, how should Brad answer?\n\ni. Segregated funds for group members have no sales charges.\nii. The MER on group-provided segregated funds is generally lower than the MER paid by individual investors.\niii. Group segregated funds do not offer a maturity or death benefit guarantee.\niv. Group segregated funds do not charge switch fees for group members.",
+      "options": [
+        "A. 3 only",
+        "B. 1 only",
+        "C. 1, 2, 3, and 4",
+        "D. 1, 2, and 4"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "While it is true that group segregated funds typically do not offer maturity or death benefit guarantees, the other statements (1, 2, and 4) are also accurate descriptions of these funds in a group setting.",
+        "Although group segregated funds generally have no sales charges, this is not the only correct statement; points 2, 3, and 4 are also correct.",
+        null,
+        "This option excludes statement 3. However, the lack of a maturity or death benefit guarantee is a defining characteristic (and a cost-saving \"disadvantage\" relative to retail funds) of group segregated funds."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While it is true that group segregated funds typically do not offer maturity or death benefit guarantees, the other statements (1, 2, and 4) are also accurate descriptions of these funds in a group setting; Although group segregated funds generally have no sales charges, this is not the only correct statement; points 2, 3, and 4 are also correct.\nStep 4: Select the best answer. Option C: 1, 2, 3, and 4.",
+      "difficulty": "hard",
+      "tags": [
+        "group-segregated-funds",
+        "dcpp",
+        "pension",
+        "mer",
+        "guarantees",
+        "fees",
+        "ppe-047"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "(PPE-080) SFA\nRobert always wanted to own his own home but had difficulty saving enough for the required down payment. Ten years ago, he borrowed $20,000 under the Home Buyers' Plan (HBP) and bought a small bungalow. Today, at age 53, he has fully repaid the HBP loan and has a remaining mortgage of $50,000 on his home, which is valued at $300,000. Robert's plan was to retire at age 60, which he thought would be possible given he is part of his employer's pension plan and because he has approximately $250,000 in RRSPs invested in balanced mutual funds. However, after doing a retirement planning analysis, it is clear that his current strategy will not provide the required retirement income. What course of action would you suggest?",
+      "options": [
+        "A. He should transfer his RRSPs into more aggressive investments to earn a higher return and make up the shortfall.",
+        "B. He should consider delaying his retirement age in order to earn more pension funding and decrease his longevity risk.",
+        "C. He should take an equity loan out against his home and invest those funds within his RRSP.",
+        "D. He should withdraw $60,000 from his RRSP and pay off his mortgage in order to increase his equity."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Shifting to aggressive investments only seven years before retirement significantly increases the risk of a market downturn depleting his capital when he has little time to recover.",
+        null,
+        "Using leverage (an equity loan) to invest in a retirement account increases financial risk and adds a new debt obligation just before retirement, which is generally not recommended for resolving a basic income shortfall.",
+        "Withdrawing a large sum from an RRSP while still working would trigger a high tax bill and significantly reduce the tax-sheltered growth potential of his retirement savings."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Shifting to aggressive investments only seven years before retirement significantly increases the risk of a market downturn depleting his capital when he has little time to recover; Using leverage (an equity loan) to invest in a retirement account increases financial risk and adds a new debt obligation just before retirement, which is generally not recommended for resolving a basic income shortfall.\nStep 4: Select the best answer. Option B: He should consider delaying his retirement age in order to earn more pension funding and decrease his longevity risk.",
+      "difficulty": "medium",
+      "tags": [
+        "retirement-planning",
+        "longevity-risk",
+        "pension",
+        "rrsp",
+        "hbp",
+        "income-shortfall",
+        "ppe-080"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "(PPE-098) SFA\nKen invested $100,000 into a segregated fund that offered a 100% maturity and death benefit guarantee. He reset the guarantee when the fund reached a value of $154,000. Ten years after the reset date, the investment was worth $135,000, but Ken received $154,000. He wants to know how much tax he will pay on the maturity guarantee assuming a 35% marginal tax bracket. What should you tell him?",
+      "options": [
+        "A. One of the key advantages of segregated funds is that the maturity and death benefit guarantee is considered a form of insurance and is received tax free.",
+        "B. The $19,000 maturity guarantee will be taxed as a capital gain, which will result in his owing $3,325 in taxes.",
+        "C. There is a lack of consensus among tax experts regarding whether the guarantee is taxed as a capital gain or income.",
+        "D. The $19,000 maturity guarantee will be taxed as interest, which will result in his owing $6,650 in taxes."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "While death benefits paid to a named beneficiary are typically received tax-free, top-up payments from a maturity guarantee received by the policy owner are subject to tax.",
+        "While some treat it as a capital gain, the Canada Revenue Agency (CRA) has not provided a definitive ruling on this specific treatment.",
+        null,
+        "Treating it as interest is one possible interpretation, but because the CRA has not issued a formal definition, this is not a confirmed rule."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While death benefits paid to a named beneficiary are typically received tax-free, top-up payments from a maturity guarantee received by the policy owner are subject to tax; While some treat it as a capital gain, the Canada Revenue Agency (CRA) has not provided a definitive ruling on this specific treatment.\nStep 4: Select the best answer. Option C: There is a lack of consensus among tax experts regarding whether the guarantee is taxed as a capital gain or income.",
+      "difficulty": "hard",
+      "tags": [
+        "segregated-fund",
+        "maturity-guarantee",
+        "taxation",
+        "cra",
+        "tax-treatment",
+        "consensus",
+        "ppe-098"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "(PPE-089) SFA\nBernard invested $400,000 into an equity segregated fund that offered a 100% guarantee upon death or upon the 10-year maturity date. Seven years later, Bernard withdrew $50,000 when the contract was worth $500,000. He plans on redeeming the remainder upon the maturity date. How will the early withdrawal impact the guaranteed amount upon the maturity date?",
+      "options": [
+        "A. The guaranteed amount will be adjusted downwards to $350,000.",
+        "B. Any withdrawals made prior to the maturity date nullify the entire guaranteed amount.",
+        "C. As long as a minimum of $400,000 remains invested after the withdrawal in year 7, the guaranteed amount will remain unchanged.",
+        "D. The guaranteed amount will remain unchanged provided the 250% anti-withdrawal rule is respected."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "A withdrawal does not terminate the insurance protection; it simply adjusts the guaranteed base downward. The remaining investment continues to be protected by the maturity and death guarantees.",
+        "Guarantees are always affected by withdrawals. Even if the market value remains higher than the original investment, any removal of capital reduces the insurer's liability and the corresponding guaranteed amount.",
+        "There is no such thing as a \"250% anti-withdrawal rule\" in the context of Canadian segregated funds or individual variable insurance contracts (IVICs)."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A withdrawal does not terminate the insurance protection; it simply adjusts the guaranteed base downward. The remaining investment continues to be protected by the maturity and death guarantees; Guarantees are always affected by withdrawals. Even if the market value remains higher than the original investment, any removal of capital reduces the insurer's liability and the corresponding guaranteed amount.\nStep 4: Select the best answer. Option A: The guaranteed amount will be adjusted downwards to $350,000.",
+      "difficulty": "medium",
+      "tags": [
+        "segregated-fund",
+        "withdrawal",
+        "guarantee-adjustment",
+        "maturity-guarantee",
+        "pro-rata",
+        "ppe-089"
+      ]
+    },
+    {
+      "id": 11,
+      "question": "(PPE-092) SFA\nKarl recently left his employer in order to open a new business with his son. Karl contributed to his former employer's defined contribution pension plan for 15 years. As he is only 55 years old, he does not see himself requiring pension income for another 5 to 10 years. He is asking you to advise him on the best way to invest the proceeds from his pension plan. Which of the following is a suitable option?",
+      "options": [
+        "A. The funds can be transferred to an LRIF and be used to purchase a life annuity upon retirement.",
+        "B. The funds can be transferred to a LIF and be used to purchase a life annuity upon retirement.",
+        "C. The funds can be transferred to a PRIF and be used to purchase a life annuity upon retirement.",
+        "D. The funds can be transferred to a LIRA and be used to purchase a life annuity upon retirement."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "A Locked-in Retirement Income Fund (LRIF) is an income-generating vehicle that requires minimum annual withdrawals. Since Karl does not need income for at least five years, starting an LRIF now would trigger unnecessary taxable income.",
+        "Similar to an LRIF, a Life Income Fund (LIF) is designed for the payout phase of retirement. It mandates minimum withdrawals starting the year after it is opened, which contradicts Karl's goal of deferring income.",
+        "A Prescribed Registered Retirement Income Fund (PRIF) also requires minimum annual withdrawals. While it offers more flexibility than a LIF in some provinces, it is still an income vehicle and not ideal for a client seeking long-term deferral.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A Locked-in Retirement Income Fund (LRIF) is an income-generating vehicle that requires minimum annual withdrawals. Since Karl does not need income for at least five years, starting an LRIF now would trigger unnecessary taxable income; Similar to an LRIF, a Life Income Fund (LIF) is designed for the payout phase of retirement. It mandates minimum withdrawals starting the year after it is opened, which contradicts Karl's goal of deferring income.\nStep 4: Select the best answer. Option D: The funds can be transferred to a LIRA and be used to purchase a life annuity upon retirement.",
+      "difficulty": "medium",
+      "tags": [
+        "lira",
+        "pension-transfer",
+        "dc-pension",
+        "locked-in",
+        "lif",
+        "lrif",
+        "prif",
+        "annuity",
+        "ppe-092"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "(PPE-093) SFA\nChad is your client. He purchased a life insurance policy and critical illness policy from you last year. He would now like to invest a lump sum into a segregated fund within his non-registered account. He has not opted for GMWBs. Which of the following needs to be obtained before the application is sent to the insurance company?",
+      "options": [
+        "A. A named beneficiary.",
+        "B. Government-issued identification with a unique identifier.",
+        "C. A rider election form.",
+        "D. A cheque for the first deposit."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "While it is highly recommended that the contract holder name a beneficiary to ensure the death benefit bypasses probate, it is not a mandatory requirement to process the application.",
+        "Normally, non-registered accounts require identity verification; however, because the agent has a prior relationship with Chad consisting of at least two previous transactions (life and CI policies), further identification is not required in this instance.",
+        "A rider election form is specifically used when a client chooses optional features like Guaranteed Minimum Withdrawal Benefits (GMWBs). Since Chad did not opt for these, this form is not necessary.",
+        null
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While it is highly recommended that the contract holder name a beneficiary to ensure the death benefit bypasses probate, it is not a mandatory requirement to process the application; Normally, non-registered accounts require identity verification; however, because the agent has a prior relationship with Chad consisting of at least two previous transactions (life and CI policies), further identification is not required in this instance.\nStep 4: Select the best answer. Option D: A cheque for the first deposit.",
+      "difficulty": "medium",
+      "tags": [
+        "segregated-fund",
+        "application",
+        "deposit",
+        "kyc",
+        "beneficiary",
+        "gmwb",
+        "non-registered",
+        "ppe-093"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "(PPE-007) SFA\nMartin invested $10,000 into an equity segregated fund which is held in his non-registered account. Based on a NAVPU of $8.97 he received 1,115.31 units. During the year, he received a $500 distribution that consisted of $150 interest and $350 in capital gains. In addition to this, by the end of the year the value of the NAVPU had increased by $2 per unit. Assuming a marginal tax rate (MTR) of 35%, how much will Martin owe in taxes at the end of the year?",
+      "options": [
+        "A. $113.75",
+        "B. $118.75",
+        "C. $175.00",
+        "D. $148.75"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This value does not correspond to the correct application of the 50% inclusion rate for capital gains and the 100% inclusion for interest at a 35% MTR.",
+        "This result comes from taxing the entire $500 distribution at the 35% marginal rate ($500 × 0.35 = $175). It fails to account for the 50% tax preference given to capital gains.",
+        "This value does not reflect the standard tax calculation for a split distribution of interest and capital gains."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This value does not correspond to the correct application of the 50% inclusion rate for capital gains and the 100% inclusion for interest at a 35% MTR; This result comes from taxing the entire $500 distribution at the 35% marginal rate ($500 × 0.35 = $175). It fails to account for the 50% tax preference given to capital gains.\nStep 4: Select the best answer. Option A: $113.75.",
+      "difficulty": "medium",
+      "tags": [
+        "segregated-fund",
+        "taxation",
+        "non-registered",
+        "capital-gains",
+        "interest",
+        "navpu",
+        "unrealized-gains",
+        "ppe-007"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "(PPE-002) SFA\n\nJake is meeting with his financial advisor to discuss his grim financial situation. He owns his own business, which is structured as a sole proprietorship. As a result of his business dealings, Jake was the target of a successful lawsuit that resulted in a judgement of $2,500,000. Unfortunately, it appears that Jake's best option is to file for bankruptcy.\n\n<div style=\"margin: 20px 0; font-family: Arial, sans-serif; color: var(--c-text);\">\n<div style=\"margin-bottom: 30px;\">\n<h3 style=\"font-size: 18px; font-weight: bold; margin-bottom: 15px;\">Assets</h3>\n<table style=\"width: 100%; border-collapse: collapse; border: 2px solid var(--c-border); background: var(--c-surface2); color: var(--c-text);\">\n<tr style=\"background-color: var(--c-surface3);\">\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); font-weight: bold; width: 70%;\">House (his portion)</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right; font-weight: bold;\">$850,000</td>\n</tr>\n<tr>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border);\">2014 Jeep Sahara</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\">$45,000</td>\n</tr>\n<tr style=\"background-color: var(--c-surface3);\">\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border);\">Rental property</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\">$212,000</td>\n</tr>\n<tr>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border);\">RRSPs</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\">$40,000</td>\n</tr>\n<tr style=\"background-color: var(--c-surface3);\">\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border);\">Non-registered brokerage account</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\">$36,000</td>\n</tr>\n<tr>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border);\">Shares in his own business</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\">$0</td>\n</tr>\n<tr style=\"background-color: var(--c-surface3);\">\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border);\">Annuity in payment mode</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\">$200,000 (est. commuted value)</td>\n</tr>\n<tr style=\"background-color: var(--c-primary-a); font-weight: bold;\">\n<td style=\"padding: 12px 15px; border: 2px solid var(--c-border); font-weight: bold;\">Total Assets</td>\n<td style=\"padding: 12px 15px; border: 2px solid var(--c-border); text-align: right; font-weight: bold;\">$1,383,000</td>\n</tr>\n</table>\n</div>\n\n<div>\n<h3 style=\"font-size: 18px; font-weight: bold; margin-bottom: 15px;\">Liabilities</h3>\n<table style=\"width: 100%; border-collapse: collapse; border: 2px solid var(--c-border); background: var(--c-surface2); color: var(--c-text);\">\n<tr style=\"background-color: var(--c-surface3);\">\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); font-weight: bold; width: 70%;\">Mortgage loan (his portion)</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right; font-weight: bold;\">$150,000</td>\n</tr>\n<tr>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border);\">Credit card debt</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\">$10,000</td>\n</tr>\n<tr style=\"background-color: var(--c-surface3);\">\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border);\">Car loan</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\">$35,000</td>\n</tr>\n<tr>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border);\">Judgment</td>\n<td style=\"padding: 12px 15px; border: 1px solid var(--c-border); text-align: right;\">$2,500,000</td>\n</tr>\n<tr style=\"background-color: var(--c-err-a); font-weight: bold;\">\n<td style=\"padding: 12px 15px; border: 2px solid var(--c-border); font-weight: bold;\">Total Liabilities</td>\n<td style=\"padding: 12px 15px; border: 2px solid var(--c-border); text-align: right; font-weight: bold;\">$2,695,000</td>\n</tr>\n</table>\n</div>\n</div>\n\n<p style=\"margin-top: 20px; font-style: italic;\"><strong>Jake's net worth is therefore -$1,312,000.</strong></p>\n\nJake is wondering to what extent the annuity that he purchased five years ago would be protected from his creditors. Jake is the contract holder, but his wife is receiving the monthly annuity payments of $2,500 per month as the named beneficiary. What should you advise him?",
+      "tags": [
+        "annuity",
+        "creditor-protection",
+        "insurance-act",
+        "family-beneficiary",
+        "bankruptcy",
+        "segregated-fund",
+        "ppe-002"
+      ],
+      "difficulty": "hard",
+      "optionFeedback": [
+        "Under provincial insurance legislation, if an insurance-based product (like an annuity or segregated fund) has a beneficiary in the \"family class\" (spouse, child, parent, or grandchild), the entire contract is typically exempt from seizure, not just the income stream.",
+        "While Jake is the owner, the presence of a \"family class\" beneficiary (his wife) triggers specific protections under the Insurance Act that shield the asset from creditors, provided the contract wasn't purchased with the intent to defraud them.",
+        "Creditor protection for insurance products is generally \"all or nothing\" based on the beneficiary designation. There is no standard provision that allows creditors to seize exactly half of a protected annuity's value.",
+        null
+      ],
+      "options": [
+        "A. His creditors would have a valid claim on the principal portion but not the annuity payments, which are being paid to his spouse.",
+        "B. Given that Jake is the contract holder, his creditors would have a valid claim against both the principal and annuity payments.",
+        "C. His creditors would have a valid claim on 50% of the annuity's value.",
+        "D. His creditors would not have a valid claim against the annuity."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Under provincial insurance legislation, if an insurance-based product (like an annuity or segregated fund) has a beneficiary in the \"family class\" (spouse, child, parent, or grandchild), the entire contract is typically exempt from seizure, not just the income stream; While Jake is the owner, the presence of a \"family class\" beneficiary (his wife) triggers specific protections under the Insurance Act that shield the asset from creditors, provided the contract wasn't purchased with the intent to defraud them.\nStep 4: Select the best answer. Option D: His creditors would not have a valid claim against the annuity.",
+      "correctAnswer": 3
+    },
+    {
+      "id": 15,
+      "question": "(PPE-011) SFA\n\nFiona and Gerald are in their early 40s and have two children under the age of 10. Fiona is an executive for a waste management company in northern Ontario. She earns $125,000 per year plus bonuses and has a good pension through her employer. Her husband, Gerald, works from home to care for the children, which also allows him to manage his own home cleaning business called Daddy Dusters. While Daddy Dusters generated revenue of $145,000 last year, the net earnings after expenses was only $18,500, which is more than the company has profited in over 10 years. Fiona has $24,250 in total RRSP contribution room, and Gerald has $3,000. The couple have decided to contribute $8,000 to a spousal RRSP this year. When making their RRSP contributions, they first sought the advice of a qualified tax professional. What is the most likely situation for the RRSP and the contributions?",
+      "options": [
+        "A. Gerald is the account owner, and Fiona is the contributor. Fiona will receive the RRSP contribution (tax) receipt, and her contribution room will be reduced by $8,000.",
+        "B. Gerald is the account owner and the contributor. He will receive the RRSP contribution (tax) receipt, and his contribution room will be reduced by $8,000.",
+        "C. Fiona is the account owner, and Gerald is the contributor. Gerald will receive the RRSP contribution (tax) receipt, and his contribution room will be reduced by $3,000. The balance of the contribution ($5,000) will reduce Fiona's contribution room.",
+        "D. Fiona is the account owner and the contributor. She will receive the RRSP contribution (tax) receipt, and her contribution room will be reduced by $8,000."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "If Gerald were both the owner and the contributor, it would simply be an individual RRSP, not a spousal RRSP. Furthermore, Gerald only has $3,000 in room, so he could not contribute $8,000 without incurring over-contribution penalties.",
+        "RRSP contribution room is not \"shared\" or combined in this manner. A single contribution to a spousal RRSP must be attributed to one specific contributor's room. Additionally, it would be tax-inefficient for Gerald (the lower earner) to be the contributor.",
+        "This describes a standard individual RRSP for Fiona. In a spousal RRSP, the spouse (Gerald) must be the owner of the account so that the income-splitting benefit can be realized in the future."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. If Gerald were both the owner and the contributor, it would simply be an individual RRSP, not a spousal RRSP. Furthermore, Gerald only has $3,000 in room, so he could not contribute $8,000 without incurring over-contribution penalties; RRSP contribution room is not \"shared\" or combined in this manner. A single contribution to a spousal RRSP must be attributed to one specific contributor's room. Additionally, it would be tax-inefficient for Gerald (the lower earner) to be the contributor.\nStep 4: Select the best answer. Option A: Gerald is the account owner, and Fiona is the contributor. Fiona will receive the RRSP contribution (tax) receipt, and her contribution room will be reduced by $8,000.",
+      "difficulty": "medium",
+      "tags": [
+        "spousal-rrsp",
+        "rrsp-contribution",
+        "income-splitting",
+        "tax-planning",
+        "annuitant",
+        "contributor",
+        "ppe-011"
+      ]
+    },
+    {
+      "id": 16,
+      "question": "(PPE-018) SFA\n\nBrittany is considering investing in a segregated fund that offers a 100% guarantee upon death or the 10-year maturity date. While Brittany is only 40 years old, her life expectancy is much shorter than her peers' due to an irreversible health issue. She is considering investing $100,000. How would the insurer deal with her application to invest in the segregated fund?",
+      "options": [
+        "A. She would be declined and unable to make the investment because the death benefit guarantee relies on the health of the investor.",
+        "B. Segregated funds are not subject to a health underwriting; therefore, she can invest in the fund and take advantage of both guarantees.",
+        "C. She can make the investment, but the death benefit guarantee would not apply.",
+        "D. The medical underwriting will likely require the guarantee upon death to be reduced to 75%, which is the legal minimum for a segregated fund."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Unlike traditional life insurance, which requires medical underwriting to assess risk, segregated funds are investment products with an insurance \"wrapper.\" Insurers generally do not decline applications based on the annuitant's health.",
+        null,
+        "The death benefit guarantee is a core contractual feature of an Individual Variable Insurance Contract (IVIC). If the contract is issued, the guarantee applies regardless of the owner's health at the time of purchase.",
+        "While 75% is the statutory minimum guarantee in Canada, the reduction from 100% to 75% is typically a choice made by the investor (often to reduce fees) or a restriction based on age (e.g., after age 80), not a result of medical underwriting."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Unlike traditional life insurance, which requires medical underwriting to assess risk, segregated funds are investment products with an insurance \"wrapper.\" Insurers generally do not decline applications based on the annuitant's health; The death benefit guarantee is a core contractual feature of an Individual Variable Insurance Contract (IVIC). If the contract is issued, the guarantee applies regardless of the owner's health at the time of purchase.\nStep 4: Select the best answer. Option B: Segregated funds are not subject to a health underwriting; therefore, she can invest in the fund and take advantage of both guarantees.",
+      "difficulty": "medium",
+      "tags": [
+        "segregated-fund",
+        "medical-underwriting",
+        "death-benefit",
+        "maturity-guarantee",
+        "health-issues",
+        "insurance-wrapper",
+        "ppe-018"
+      ]
+    },
+    {
+      "id": 17,
+      "question": "(PPE-099) SFA\n\nBeth was at an investor education conference where she learned about the advantages of spousal RRSPs. She planned on contributing $10,000 into her husband's spousal RRSP, and based on her marginal tax rate, she would save roughly $4,000 in taxes. She was under the impression that her husband could then immediately withdraw $10,000 and pay much less tax due to his lower tax bracket. What prevents this from being possible?",
+      "options": [
+        "A. Probate fees",
+        "B. Tax rules on capital gains",
+        "C. Attribution rules",
+        "D. The 90-day rule"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Probate fees are a concern for estate planning after death. They do not impact the taxation of RRSP withdrawals made by a living annuitant.",
+        "RRSP withdrawals are taxed as ordinary income, not capital gains. The preferential 50% inclusion rate for capital gains does not apply to funds coming out of any RRSP.",
+        null,
+        "While there is a \"90-day rule\" related to the Home Buyers' Plan (where funds must be in the RRSP for 90 days before withdrawal to be deductible), it does not govern general income splitting or spousal attribution."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Probate fees are a concern for estate planning after death. They do not impact the taxation of RRSP withdrawals made by a living annuitant; RRSP withdrawals are taxed as ordinary income, not capital gains. The preferential 50% inclusion rate for capital gains does not apply to funds coming out of any RRSP.\nStep 4: Select the best answer. Option C: Attribution rules.",
+      "difficulty": "medium",
+      "tags": [
+        "spousal-rrsp",
+        "attribution-rules",
+        "income-splitting",
+        "tax-planning",
+        "rrsp-withdrawal",
+        "cra-rules",
+        "ppe-099"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "(PPE-028) SFA\n\nKristoff invested $20,000 into a segregated fund. An $800 front-end load was charged, which meant that only $19,200 was actually invested into the fund. Kristoff was given the Information Folder at the time of the sale, and the transaction was completed at a NAVPU of $17.38 at the close of business. The very next day, stock markets around the world took a tumble, and the value of Kristoff's investment fell to $17,800. Kristoff became quite concerned, so he decided to closely scrutinize the Information Folder. After reading the Information Folder thoroughly, Kristoff contacted his insurance agent that same day asking to exercise the right of rescission. How much will Kristoff receive?",
+      "options": [
+        "A. $19,200",
+        "B. $18,600",
+        "C. $17,800",
+        "D. $20,000"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This is the net amount that was initially invested. This choice fails to account for the market drop and the specific rules regarding the refund of front-end loads.",
+        null,
+        "This is only the current market value. While the rescission calculation uses the market value if it is lower than the amount invested, it also mandates the return of the initial sales charges (the front-end load).",
+        "This would imply that the right of rescission is a \"money-back guarantee\" regardless of market performance. However, the rule states the investor receives the lesser of the investment or market value, meaning the investor still bears the market loss during those two days."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is the net amount that was initially invested. This choice fails to account for the market drop and the specific rules regarding the refund of front-end loads; This is only the current market value. While the rescission calculation uses the market value if it is lower than the amount invested, it also mandates the return of the initial sales charges (the front-end load).\nStep 4: Select the best answer. Option B: $18,600.",
+      "difficulty": "hard",
+      "tags": [
+        "right-of-rescission",
+        "segregated-funds",
+        "front-end-load",
+        "information-folder",
+        "investor-protection",
+        "navpu",
+        "market-value",
+        "ppe-028"
+      ]
+    },
+    {
+      "id": 19,
+      "question": "(PPE-010) SFA\n\nMarsha owns her own engineering consulting firm. She has been wildly successful and has amassed a net worth of over $5,000,000. Last year, one of her projects collapsed, resulting in the death of three people. After a lengthy lawsuit, Marsha was ordered to pay a settlement of $10,000,000. Because her business was structured as a sole proprietorship and she had no liability insurance, Marsha knew her personal assets were at risk. She opted to purchase a term certain annuity and named her husband as the irrevocable beneficiary both in the contract itself and her last Will and testament. To what extent would her creditors have a claim on the annuity?",
+      "options": [
+        "A. The annuity was purchased in order to escape her financial obligations to her creditors and therefore would not be creditor-proof.",
+        "B. Her husband is part of the protected class; therefore Marsha's creditors would not have a valid claim against the annuity.",
+        "C. The annuity would only be creditor-proof if it is held within a registered plan.",
+        "D. Given her husband was named as irrevocable beneficiary, the annuity would be creditor-proof."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Under provincial Insurance Acts, a spouse is indeed a protected family class member. However, these statutes do not provide a \"get out of jail free\" card for someone already facing a legal judgment. Fraudulent conveyance laws take precedence when the intent is to hide existing assets from known liabilities.",
+        "Both registered and non-registered insurance products (like annuities and segregated funds) can qualify for creditor protection. The issue here is not the tax status of the plan, but the timing and intent of the purchase relative to the lawsuit settlement.",
+        "An irrevocable beneficiary designation is powerful in good-faith scenarios, but if the initial act of setting up that designation was done to move assets out of the reach of a current creditor, courts can still classify it as a fraudulent conveyance and overturn the protection."
+      ],
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Under provincial Insurance Acts, a spouse is indeed a protected family class member. However, these statutes do not provide a \"get out of jail free\" card for someone already facing a legal judgment. Fraudulent conveyance laws take precedence when the intent is to hide existing assets from known liabilities; Both registered and non-registered insurance products (like annuities and segregated funds) can qualify for creditor protection. The issue here is not the tax status of the plan, but the timing and intent of the purchase relative to the lawsuit settlement.\nStep 4: Select the best answer. Option A: The annuity was purchased in order to escape her financial obligations to her creditors and therefore would not be creditor-proof.",
+      "difficulty": "hard",
+      "tags": [
+        "creditor-protection",
+        "annuity",
+        "fraudulent-conveyance",
+        "irrevocable-beneficiary",
+        "protected-class",
+        "good-faith",
+        "ppe-010"
+      ]
+    }
+  ]
 }

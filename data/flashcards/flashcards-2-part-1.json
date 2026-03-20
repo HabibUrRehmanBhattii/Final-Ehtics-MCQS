@@ -13,7 +13,7 @@
         "A period to change the beneficiary"
       ],
       "correctAnswer": 0,
-      "explanation": "A grace period allows the policyowner to pay an overdue premium within a specified time without losing coverage."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: A period during which premiums can be paid late without forfeiting the policy."
     },
     {
       "id": 2,
@@ -25,7 +25,7 @@
         "Incontestable clause"
       ],
       "correctAnswer": 0,
-      "explanation": "The reinstatement provision allows a policyowner to restore a lapsed policy by paying back premiums and interest."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Reinstatement provision."
     },
     {
       "id": 3,
@@ -37,7 +37,7 @@
         "A clause that prevents claims from being paid"
       ],
       "correctAnswer": 1,
-      "explanation": "The incontestable clause prevents the insurer from denying claims after the policy has been in force for a specified period (typically 2 years)."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A clause that prevents the insurer from contesting the validity of the policy after a specified period."
     },
     {
       "id": 4,
@@ -49,7 +49,7 @@
         "Allow the insurer to investigate beneficiary motives"
       ],
       "correctAnswer": 1,
-      "explanation": "The suicide clause limits the insurer's liability for suicide deaths during the first 2 years of the policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Limit the insurer's liability for death by suicide during the first few years of the policy."
     },
     {
       "id": 5,
@@ -61,7 +61,7 @@
         "Profit-sharing clause"
       ],
       "correctAnswer": 0,
-      "explanation": "The dividend provision allows policyowners to receive a portion of the insurer's surplus profits."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Dividend provision."
     },
     {
       "id": 6,
@@ -73,7 +73,7 @@
         "A loan from the insurance company to the beneficiary"
       ],
       "correctAnswer": 1,
-      "explanation": "A policy loan allows the policyowner to borrow against the accumulated cash value of the policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A loan that the policyowner can take against the policy's cash value."
     },
     {
       "id": 7,
@@ -85,7 +85,7 @@
         "An option to increase coverage"
       ],
       "correctAnswer": 0,
-      "explanation": "Non-forfeiture provisions provide values such as cash surrender, paid-up insurance, or extended term if premiums lapse."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Protection against loss of benefits due to non-payment."
     },
     {
       "id": 8,
@@ -97,7 +97,7 @@
         "Death benefit increase"
       ],
       "correctAnswer": 3,
-      "explanation": "The three non-forfeiture options are cash surrender, paid-up insurance, and extended term insurance."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Death benefit increase."
     },
     {
       "id": 9,
@@ -109,7 +109,7 @@
         "To extend the contestable period"
       ],
       "correctAnswer": 1,
-      "explanation": "The free-look period (typically 10-30 days) allows the policyowner to cancel the policy and receive a full refund if unsatisfied."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: To allow the policyowner to review the policy and return it if unsatisfied for a full refund."
     },
     {
       "id": 10,
@@ -121,7 +121,7 @@
         "Split-funded plan"
       ],
       "correctAnswer": 1,
-      "explanation": "In a noncontributory group plan, the employer pays 100% of the insurance cost."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Noncontributory plan."
     },
     {
       "id": 11,
@@ -133,7 +133,7 @@
         "The period to cancel the policy"
       ],
       "correctAnswer": 1,
-      "explanation": "A waiting period is the time an employee must be employed before becoming eligible for group health insurance coverage."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The period an employee must work before becoming eligible for coverage."
     },
     {
       "id": 12,
@@ -145,7 +145,7 @@
         "A government health insurance program"
       ],
       "correctAnswer": 1,
-      "explanation": "COBRA (Consolidated Omnibus Budget Reconciliation Act) requires group health plans to offer continuation coverage after employment ends."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A law requiring employers to offer continued health coverage to employees after separation."
     },
     {
       "id": 13,
@@ -157,7 +157,7 @@
         "All of the above"
       ],
       "correctAnswer": 3,
-      "explanation": "Coordination of benefits ensures that when an employee has multiple policies, payments don't exceed actual expenses."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: All of the above."
     },
     {
       "id": 14,
@@ -169,7 +169,7 @@
         "A condition that can never be covered"
       ],
       "correctAnswer": 0,
-      "explanation": "A pre-existing condition exclusion limits or delays coverage for conditions that existed before the policy effective date."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: A period during which conditions existing before coverage began are not covered."
     },
     {
       "id": 15,
@@ -181,7 +181,7 @@
         "A government health program"
       ],
       "correctAnswer": 1,
-      "explanation": "An HMO is a managed health care plan where members must use network providers and obtain referrals for specialists."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A managed care health plan emphasizing preventive care and using network providers."
     },
     {
       "id": 16,
@@ -193,7 +193,7 @@
         "A short-term insurance product"
       ],
       "correctAnswer": 1,
-      "explanation": "A PPO is a health plan offering flexibility to use both in-network providers (at lower cost) and out-of-network providers."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A health plan that offers incentives to use network providers but allows out-of-network care."
     },
     {
       "id": 17,
@@ -205,7 +205,7 @@
         "A co-payment amount"
       ],
       "correctAnswer": 1,
-      "explanation": "A deductible is the amount of covered expenses the insured must pay before the insurance coverage begins."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The amount the insured must pay out-of-pocket before coverage begins."
     },
     {
       "id": 18,
@@ -217,7 +217,7 @@
         "A percentage of total medical costs"
       ],
       "correctAnswer": 1,
-      "explanation": "A copay is a fixed dollar amount the insured pays for specific services (e.g., $20 per doctor visit)."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A fixed amount paid by the insured at the time of service."
     },
     {
       "id": 19,
@@ -229,7 +229,7 @@
         "An optional rider on policies"
       ],
       "correctAnswer": 1,
-      "explanation": "Coinsurance is a cost-sharing arrangement where the insured pays a percentage (e.g., 20%) and the insurer pays the rest (e.g., 80%)."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A percentage of costs shared between the insured and insurer after the deductible."
     },
     {
       "id": 20,
@@ -241,7 +241,7 @@
         "A limit on emergency room visits"
       ],
       "correctAnswer": 1,
-      "explanation": "An out-of-pocket maximum is the maximum amount the insured must pay in deductibles, copays, and coinsurance before the plan covers 100% of covered services."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The total amount the insured must pay before the insurer covers 100% of costs."
     }
   ]
 }
