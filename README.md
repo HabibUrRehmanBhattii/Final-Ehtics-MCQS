@@ -1,6 +1,6 @@
 # 📚 LLQP & WFG Exam Prep - MCQ Study Platform
 
-> **Comprehensive interactive study platform with 324 practice questions and flashcards for LLQP exam preparation**
+> **Comprehensive interactive study platform with 359 practice questions and flashcards for LLQP exam preparation**
 
 [![Deploy to Cloudflare Pages](https://img.shields.io/badge/Deploy-Cloudflare%20Pages-F38020?style=flat&logo=cloudflare)](https://pages.cloudflare.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -23,6 +23,7 @@
 ### 🏥 **LLQP Life Chapter Quizzes**
 - **Chapter Quiz 1:** 19 questions - Introduction to Life Insurance (active)
 - **Chapter Quizzes 2–13:** Coming soon (Term life, whole life & term-100, universal life, riders, group life, taxation, business life, underwriting, needs analysis, recommendations, ongoing service, and full review)
+- **Certification Exam:** 35 questions - Comprehensive exam covering life insurance needs analysis, policy types, riders, underwriting, claims, and tax implications (active)
 
 ### 🧠 **Flashcard System**
 - **Set 1:** 20 cards - Beneficiaries & policy basics

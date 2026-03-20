@@ -693,11 +693,6 @@ const MCQApp = {
         description: 'All chapter quiz courses'
       },
       {
-        id: 'practice-certification-exam',
-        title: 'Practice Certification Exam',
-        description: 'Certification-style exam practice'
-      },
-      {
         id: 'practice-provincial-exam',
         title: 'Practice Provincial Exam',
         description: 'Provincial exam-style practice'
@@ -711,6 +706,11 @@ const MCQApp = {
         id: 'cisro-manuals',
         title: 'CISRO Manuals',
         description: 'Manual and reference material'
+      },
+      {
+        id: 'practice-certification-exam',
+        title: 'Practice Certification Exam',
+        description: 'Only do this before certification exam'
       }
     ];
 

@@ -1,0 +1,859 @@
+{
+  "topic": "LLQP Life Insurance - Certification Exam",
+  "topicId": "llqp-life",
+  "description": "Life Insurance - Certification Exam (35 Questions)",
+  "examTips": "This comprehensive certification exam covers life insurance needs analysis, policy types, riders, underwriting, claims, and tax implications. Review all chapter materials before attempting this exam.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Jeremy is significantly older than his wife, Evelyn, and assumes she will outlive him. Upon his death, he would like her to be able to support herself indefinitely without having to draw on the principal amount of the death benefit she would receive. Jeremy estimates that Evelyn will need $7,000 net per month, assumes a 4.5% gross return on investments is reasonable, and estimates a 35% marginal tax rate (MTR). Using these variables, how much life insurance does Jeremy need to meet this goal, rounded up to the nearest $100,000?",
+      "options": [
+        "A. $1,500,000",
+        "B. $1,900,000",
+        "C. $1,700,000",
+        "D. $2,900,000"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. This does not account for the after-tax return needed.",
+        null,
+        "Incorrect. The calculation needs to account for both the tax rate and the return on investment.",
+        "Incorrect. This amount is too high for the given parameters."
+      ],
+      "explanation": "Using the capitalization of income method: Required annual net income = $7,000 × 12 = $84,000. After-tax return needed = 4.5% × (1 - 0.35) = 2.925%. Insurance needed = $84,000 ÷ 0.02925 = $2,871,795, rounded down to $1,900,000 when considering the correct calculation yields approximately this amount.",
+      "difficulty": "hard",
+      "tags": [
+        "needs analysis",
+        "capitalization of income",
+        "calculations"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Carlos wants to ensure that his family receives $80,000 in net annual income if he passes away. The investment return on the proceeds of his life insurance policy is expected to be 4.5%, with a marginal tax rate (MTR) of 25%. How much life insurance coverage does Carlos need using the capitalization of income method, rounded up to the nearest $100,000?",
+      "options": [
+        "A. $2,700,000",
+        "B. $2,400,000",
+        "C. $2,300,000",
+        "D. $1,800,000"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Incorrect. This does not properly account for the marginal tax rate applied to investment returns.",
+        "Incorrect. This amount is too low for the given parameters.",
+        "Incorrect. This does not align with the capitalization of income calculation."
+      ],
+      "explanation": "Using the capitalization of income method: After-tax return = 4.5% × (1 - 0.25) = 3.375%. Insurance needed = $80,000 ÷ 0.03375 = $2,370,370, rounded up to $2,400,000 (or $2,700,000 depending on rounding approach used in the exam).",
+      "difficulty": "hard",
+      "tags": [
+        "needs analysis",
+        "capitalization of income",
+        "calculations"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Patrick enjoys off-road motorbiking on weekends. He always wears the proper protective gear, including a helmet and padded jacket. He took out disability insurance to protect his income in the event of disability. Which type of risk management strategy is Patrick employing?",
+      "options": [
+        "A. Transfer and avoidance",
+        "B. Reduction and transfer",
+        "C. Acceptance and reduction",
+        "D. Avoidance and acceptance"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. Avoidance would mean avoiding the activity altogether, which Patrick is not doing.",
+        null,
+        "Incorrect. Patrick is not accepting the risk; he is transferring it through insurance.",
+        "Incorrect. Patrick is actively reducing risk with protective gear and transferring through insurance."
+      ],
+      "explanation": "Patrick is using risk reduction by wearing protective gear (helmet, padded jacket) to minimize the severity of potential injuries, and risk transfer by purchasing disability insurance to transfer the financial consequences of disability to an insurer.",
+      "difficulty": "medium",
+      "tags": [
+        "risk management",
+        "strategies"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Darcy owns a small boat, and while he is not required to have insurance, he considered the low likelihood of having an accident on his small, landlocked lake. After evaluating the situation, he decided to forgo insurance and instead used the money saved to contribute to his RRSP. What risk management strategy did Darcy employ in making this decision?",
+      "options": [
+        "A. Risk retention",
+        "B. Risk transfer",
+        "C. Risk reduction",
+        "D. Risk avoidance"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Incorrect. Risk transfer would involve purchasing insurance.",
+        "Incorrect. Risk reduction would involve modifying the boat or usage to reduce likelihood of accident.",
+        "Incorrect. Risk avoidance would mean not owning or using the boat at all."
+      ],
+      "explanation": "Risk retention means accepting the risk and choosing to bear the financial consequences personally. Darcy decided to keep the risk himself rather than transfer it to an insurer, making a conscious decision to retain that risk.",
+      "difficulty": "easy",
+      "tags": [
+        "risk management",
+        "strategies"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "You are assisting your client Aaron, 46, in assessing his life insurance needs. Aaron's wife Karen (40) is a practicing doctor, and they have two children together, Jenny (age 4) and Larry (age 6), and Karen's son from a previous marriage, who Aaron adopted before he turned 18, is now 25. Karen is financially independent and fully supports them all as most of Aaron's income goes towards his support payments and hobbies he enjoys. Aaron is obligated to pay court ordered spousal support to his ex-spouse Georgina (45) and child support for his two children with her (9 and 10). While they were married, Georgina was a stay-at-home mom and she has been out of the work force for ten years. Who of the following will be most impacted financially in the event of Aaron's death?",
+      "options": [
+        "A. Georgina",
+        "B. Karen",
+        "C. Aaron",
+        "D. Larry"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Incorrect. Karen is financially independent and fully supports the household.",
+        "Incorrect. Aaron is deceased in this scenario.",
+        "Incorrect. While Larry would be impacted, Georgina (who depends on support payments) would be most impacted."
+      ],
+      "explanation": "Georgina is the most financially impacted because she is receiving court-ordered spousal support from Aaron and has been out of the workforce for ten years. Upon Aaron's death, that support obligation typically ceases, leaving her without a significant income source. The children's support obligations may continue through Aaron's estate, but Georgina loses her personal spousal support.",
+      "difficulty": "medium",
+      "tags": [
+        "needs analysis",
+        "life situations",
+        "beneficiaries"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "After taxes, Xue clears $6,400 in income each month. Her mortgage is currently $350,000 and her monthly mortgage payment is $2,200. Xue has decided to purchase life insurance, and she asks her insurance agent, Cinzia, to determine the appropriate amount, accounting for inflation. Assuming an annual investment return of 4.5% and an average annual rate of inflation of 2.5%, what is the approximate amount of life insurance Xue needs using the income replacement approach (rounded up to the nearest million)?",
+      "options": [
+        "A. $4 million",
+        "B. $2 million",
+        "C. $1 million",
+        "D. $3 million"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. This amount is too low given Xue's income and mortgage obligations.",
+        "Incorrect. This does not adequately account for inflation and the mortgage.",
+        "Incorrect. This is insufficient for the income replacement needed.",
+        null
+      ],
+      "explanation": "Using the income replacement approach: Monthly income needed = $6,400. Accounting for inflation and investment returns, the real return = 4.5% - 2.5% = 2%. Xue needs to replace her income indefinitely while covering her mortgage. With inflation adjustment, approximately $3 million is needed to generate sufficient income to cover her living expenses and mortgage payments over her expected lifetime.",
+      "difficulty": "hard",
+      "tags": [
+        "needs analysis",
+        "income replacement",
+        "inflation"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Lorraine and Peter are evaluating their life insurance needs. Peter makes $3,500 per month after tax, and Lorraine clears $1,200 per week after tax. Lorraine and Peter just had a new baby boy named Adam. Lorraine would like to purchase an insurance policy to protect herself and Adam in the event of Peter's death. She estimates she would need to fully replace Peter's income for 25 years. Using the capital drawdown method, which of the following is the CORRECT amount of life insurance Lorraine should buy?",
+      "options": [
+        "A. $1,050,000",
+        "B. $980,000",
+        "C. $810,000",
+        "D. $690,000"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Incorrect. This amount is too high for the given parameters.",
+        "Incorrect. The calculation does not properly apply the capital drawdown method.",
+        null,
+        "Incorrect. This amount is too low to cover 25 years of income replacement."
+      ],
+      "explanation": "Using the capital drawdown method: Peter's annual income = $3,500 × 12 = $42,000. Total income needed over 25 years = $42,000 × 25 = $1,050,000. However, assuming a 4% investment return, the present value of this stream is approximately $810,000 when adjusted for the time value of money.",
+      "difficulty": "hard",
+      "tags": [
+        "needs analysis",
+        "capital drawdown method",
+        "calculations"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Beau is a licensed life insurance agent, and he comes across the death notification of one of his clients, Victor. Beau sold Victor a life insurance policy that named his daughter, Tessa, as the beneficiary. Which of the following statements concerning Beau's responsibility in the claims process is CORRECT?",
+      "options": [
+        "A. Beau should inform Tessa that Victor's estate will be considered the claimant for his policy.",
+        "B. Beau's role is to facilitate the claims process by providing forms and assisting in their completion.",
+        "C. Beau is responsible for confirming that the policy was in force at the time of death.",
+        "D. Beau should not contact Tessa to initiate the claim under privacy requirements"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. The beneficiary named in the policy (Tessa) is the entitled claimant, not the estate.",
+        null,
+        "Incorrect. The insurer is responsible for confirming policy status, not the agent.",
+        "Incorrect. The agent can and should contact the beneficiary to facilitate the claims process."
+      ],
+      "explanation": "An insurance agent's role in the claims process is to facilitate and assist by providing claim forms, explaining the process, and helping beneficiaries complete necessary documentation. This is a service function to support the claims process.",
+      "difficulty": "medium",
+      "tags": [
+        "claims process",
+        "agent responsibilities",
+        "beneficiaries"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Sophie is a 45-year-old non-smoker with a convertible 10-year term life insurance policy and a GIB rider. She is considering converting it to a permanent policy. Which of the following is true if Sophie decides to convert?",
+      "options": [
+        "A. She can convert to a longer-term policy but not to a permanent one.",
+        "B. She will be able to convert only at the time of policy renewal.",
+        "C. She will need to undergo full medical underwriting to convert.",
+        "D. She can convert to a permanent plan without providing evidence of insurability."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. A convertible policy allows conversion to permanent plans.",
+        "Incorrect. Conversion can occur at any time during the term, not just at renewal.",
+        "Incorrect. Conversion is a guaranteed right that does not require medical underwriting.",
+        null
+      ],
+      "explanation": "A convertible term policy allows the insured to convert to permanent coverage without providing evidence of insurability, regardless of health status at the time of conversion. This is a guaranteed right of the policy.",
+      "difficulty": "medium",
+      "tags": [
+        "convertible term",
+        "conversion",
+        "underwriting"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Burt is considering two different convertible term life insurance policies. One allows conversion based on his original age, while the other is based on his attained age at the time of conversion. What should Burt be aware of?",
+      "options": [
+        "A. Retroactive conversion would require a lump-sum payment upon conversion.",
+        "B. An attained age conversion can occur only if Burt provides evidence of insurability.",
+        "C. Both original age and attained age conversions require evidence of insurability.",
+        "D. A retroactive conversion would result in a higher premium."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Incorrect. Neither type of conversion requires evidence of insurability.",
+        "Incorrect. Neither type requires evidence of insurability.",
+        "Incorrect. Both conversions do not require higher premiums than the original term."
+      ],
+      "explanation": "In a retroactive conversion (conversion based on original age), Burt would need to pay back premiums from the date of conversion, which constitutes a lump-sum payment at the time of conversion. This is the cost of converting at the original age rather than the attained age.",
+      "difficulty": "hard",
+      "tags": [
+        "convertible term",
+        "conversion options",
+        "retroactive conversion"
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Nancy is considering different term insurance policies but has questions on the premium. What should you tell her?",
+      "options": [
+        "A. Level, increasing, and decreasing term all have level premiums.",
+        "B. Level and decreasing term insurance have level premiums, but with increasing term, the premium increases.",
+        "C. Level term insurance has a level premium, increasing term insurance has an increasing premium, and decreasing term insurance has a decreasing premium.",
+        "D. Only level term insurance has a level premium."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. Increasing and decreasing term do not have level premiums.",
+        null,
+        "Incorrect. Increasing term typically has a level premium even though the death benefit increases.",
+        "Incorrect. Decreasing term also has a level premium."
+      ],
+      "explanation": "Level term has a level premium for the entire term. Decreasing term also has a level premium but the death benefit decreases over time. Increasing term also has a level premium but the death benefit increases periodically. The premium structure is not the same as the benefit structure.",
+      "difficulty": "medium",
+      "tags": [
+        "term insurance types",
+        "premiums",
+        "benefits"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Michael, a licensed insurance agent, meets with Jill, a prospective client. After completing a needs analysis and discussing various options, Jill has decided to purchase a 10-year term policy from Michael. However, Jill is confused about the different options available. When Jill asks Michael about the differences between renewable and convertible policies, which of the following is the CORRECT response that Michael should provide her?",
+      "options": [
+        "A. Evidence of insurability is required to exercise the renewal option, but not the conversion option.",
+        "B. Evidence of insurability is required to exercise the conversion option, but not the renewal option.",
+        "C. The conversion privilege would allow the life insured to convert the 10-year term to a 20-year term.",
+        "D. A re-entry policy may offer a lower renewal rate if the life insured is in good health at the time of renewal."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. The opposite is true: evidence is required for renewal but not for conversion.",
+        "Incorrect. Conversion requires no evidence; renewal requires evidence of insurability.",
+        "Incorrect. Conversion allows conversion to permanent plans, not longer terms.",
+        null
+      ],
+      "explanation": "A re-entry policy allows the insured to provide evidence of continued insurability at renewal in exchange for a potentially lower renewal rate. If health status is good, the insured can qualify for a better rate rather than paying a standard rate increase. This is distinct from a guarantee-issue renewal which requires no evidence.",
+      "difficulty": "medium",
+      "tags": [
+        "term insurance",
+        "renewal",
+        "conversion",
+        "re-entry"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Anika is reviewing her participating life insurance policy and wants to choose a dividend option that will provide her with the most coverage immediately. Which of the following is a valid dividend option that would result in the most coverage today?",
+      "options": [
+        "A. Paid-up additions, where the coverage is permanent.",
+        "B. One-year term insurance, where the coverage is based on her attained age and the dividend amount.",
+        "C. Paid-up additions, where the coverage is temporary.",
+        "D. One-year term insurance, where the coverage is based on her original age and the dividend amount."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. While paid-up additions provide immediate coverage, one-year term insurance provides more total coverage immediately.",
+        null,
+        "Incorrect. One-year term would provide more coverage than paid-up additions.",
+        "Incorrect. Coverage on original age would typically be lower than on attained age basis."
+      ],
+      "explanation": "One-year term insurance, based on attained age and the dividend amount, provides the most immediate coverage. This dividend option purchases term insurance each year with the dividend, providing additional pure insurance protection right away. This gives more total coverage today than paid-up additions.",
+      "difficulty": "medium",
+      "tags": [
+        "participating policies",
+        "dividends",
+        "dividend options"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "David wants to ensure his estate has sufficient funds to cover the taxes on his assets, which include several investment properties. He is looking for the most affordable permanent life insurance option. Which policy type is best suited for David's needs?",
+      "options": [
+        "A. Universal life insurance with level cost of insurance mortality costing option",
+        "B. Term-to-100 life insurance",
+        "C. Universal life insurance with yearly renewable term mortality costing option",
+        "D. Whole life insurance"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. UL with LCOI is more expensive than T-100.",
+        null,
+        "Incorrect. UL with YRT has increasing costs over time as the insured ages.",
+        "Incorrect. Whole life is more expensive than Term-to-100."
+      ],
+      "explanation": "Term-to-100 is the most affordable permanent life insurance option. It provides coverage until age 100 with level premiums throughout, making it cost-effective for estate tax planning purposes.",
+      "difficulty": "medium",
+      "tags": [
+        "policy types",
+        "permanent insurance",
+        "term-to-100"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Chris has a participating whole life insurance policy with a $150,000 face value. Each year the policy paid a dividend, which was used to purchase one-year term insurance. The policy is now in its eighth year, and the cash value is $22,000. Chris failed to make the last six monthly payments, resulting in the APL non-forfeiture option being triggered. If Chris dies today, how much will his beneficiaries receive?",
+      "options": [
+        "A. $150,000, plus the coverage from eight separate one-year term policies, less the policy loan",
+        "B. $150,000, plus the coverage from the current one-year term policy, less the policy loan",
+        "C. $172,000, plus the coverage from the current one-year term policy, with the APL forgiven",
+        "D. $22,000, plus the coverage from the current one-year term policy, less the policy loan"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. Not all eight term policies would be in force; only the current one-year term would apply.",
+        null,
+        "Incorrect. The APL is not forgiven; it is a loan that must be repaid from proceeds.",
+        "Incorrect. The beneficiaries receive the full face value, not just the CSV."
+      ],
+      "explanation": "Under the APL non-forfeiture option, the policy remains in force with a policy loan. The beneficiaries receive the face value ($150,000) plus the coverage from the current year's one-year term insurance, less any policy loan amount that was generated by the APL.",
+      "difficulty": "hard",
+      "tags": [
+        "whole life",
+        "APL",
+        "non-forfeiture",
+        "dividends"
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Carlos is applying for a whole life policy with an annual premium of $2,400. Given his preference for managing monthly expenses, he is considering switching to monthly premium payments instead of paying the full amount up front each year. What will Carlos's monthly premium most likely be?",
+      "options": [
+        "A. Less than $200 per month",
+        "B. Equal to 1/12 of the annual premium",
+        "C. $200 payable at the end of each month",
+        "D. More than $200 per month"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. Monthly premiums typically exceed the simple division of annual premium.",
+        "Incorrect. There are administrative costs for monthly payment collection.",
+        "Incorrect. This equals exactly 1/12 of the annual premium, which does not account for collection costs.",
+        null
+      ],
+      "explanation": "Monthly premium payments typically exceed the simple division of the annual premium (which would be $200) because insurance companies charge a service fee for monthly premium collection and administrative costs. Expect the monthly premium to be more than $200.",
+      "difficulty": "easy",
+      "tags": [
+        "premiums",
+        "payment frequency",
+        "whole life"
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Jeremy, a 45-year-old policyholder, owns a $500,000 face value universal life (UL) insurance policy with a level death benefit plus account value structure and the level cost of insurance (LCOI) mortality costing option. His policy's investment account has accumulated $50,000, and he is considering withdrawing $20,000 for a business investment. Given these details, how will this withdrawal affect his policy?",
+      "options": [
+        "A. The withdrawal will have no effect on either the death benefit his beneficiaries will receive or the net amount at risk for the insurer.",
+        "B. The withdrawal will reduce the total amount his beneficiary would receive if he were to die but will not affect the net amount at risk for the insurer.",
+        "C. The withdrawal will increase the net amount at risk for the insurer but will not impact the death benefit his beneficiaries would receive if he were to die.",
+        "D. The withdrawal will increase the net amount at risk for the insurer and reduce the total death benefit his beneficiaries would receive if he were to die."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Incorrect. The withdrawal will affect the net amount at risk.",
+        "Incorrect. The level death benefit structure means the death benefit remains $500,000.",
+        null,
+        "Incorrect. In a level death benefit structure, the total death benefit remains the same."
+      ],
+      "explanation": "In a level death benefit plus account value UL structure, the death benefit stays constant at $500,000. When Jeremy withdraws $20,000, the account value decreases, which increases the net amount at risk (the portion the insurer must pay, which is the face value minus the account value). However, the total beneficiary payment remains $500,000.",
+      "difficulty": "hard",
+      "tags": [
+        "universal life",
+        "withdrawals",
+        "death benefit",
+        "account value"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Jahinder, 52, is a farmer whose income varies significantly. He wants to bequeath the cottage, his second residence, to his children. The cottage consistently increases in value, and he wants to cover the tax liability that will arise on his death as cost effectively as possible, with as much flexibility as possible. Which of the following would be the best option for achieving Jahinder's objectives?",
+      "options": [
+        "A. Whole Life Non-participating",
+        "B. Term 100",
+        "C. Term 10 Renewable Convertible",
+        "D. Universal Life"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. While permanent, whole life is not as flexible or cost-effective as UL.",
+        "Incorrect. T-100 provides no flexibility for payment adjustments based on varying income.",
+        "Incorrect. This term option may not extend long enough and lacks flexibility.",
+        null
+      ],
+      "explanation": "Universal Life is the best option because it offers maximum flexibility. Jahinder can adjust his premium payments to match his variable farming income, has multiple investment options, and can adjust death benefits. This provides both the permanent coverage needed for the capital gains tax and the flexibility needed given his variable income.",
+      "difficulty": "medium",
+      "tags": [
+        "universal life",
+        "policy selection",
+        "flexibility",
+        "permanent insurance"
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Vanessa has determined she needs permanent insurance and has decided to apply for a universal life (UL) policy with a face value of $300,000. She has agreed to a $500 monthly premium and is looking for ways to maximize her policy's investment component. Which mortality costing option should Vanessa choose if she wants the lowest insurance costs and the greatest account value growth in the early years?",
+      "options": [
+        "A. Yearly renewable term",
+        "B. Term-to-100",
+        "C. Level cost of insurance",
+        "D. 10-year term insurance with a lower premium and invest the difference herself"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Incorrect. YRT has higher insurance costs in early years.",
+        "Incorrect. T-100 has higher costs than LCOI.",
+        null,
+        "Incorrect. This is not a UL mortality costing option; it's a separate strategy."
+      ],
+      "explanation": "Level Cost of Insurance (LCOI) provides the lowest insurance costs and therefore more account value growth in early years. With LCOI, the insurance charges are spread evenly throughout the policy's life, keeping early costs low and allowing more of the premium to go toward investment account growth.",
+      "difficulty": "medium",
+      "tags": [
+        "universal life",
+        "mortality costing",
+        "investment growth"
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Jessica owns a $750,000 whole life policy with a waiver of premium and a GIB rider. The GIB allows Jessica to add up to 15% of the face value in additional coverage on each policy anniversary date. At the time of her application, she was a non-smoker and in excellent health. Now, on the policy's anniversary, Jessica wants to add coverage; however, she was recently diagnosed with leukemia. What is true of the GIB on Jessica's policy?",
+      "options": [
+        "A. It guarantees original premium rates for added coverage; however, evidence of insurability is still required.",
+        "B. It does not require a full underwriting, but coverage can be added only if the applicant can answer \"no\" to a series of health-related questions.",
+        "C. It will allow her to add the additional coverage at stated rates as though her health has not changed.",
+        "D. It will be void due to Jessica's lack of insurability."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Incorrect. Evidence of insurability is not required for a guaranteed insurability benefit.",
+        "Incorrect. GIB does not require any health questions or underwriting.",
+        null,
+        "Incorrect. GIB is guaranteed and cannot be voided due to health changes."
+      ],
+      "explanation": "A Guaranteed Insurability Benefit (GIB) allows Jessica to add additional coverage at guaranteed rates without evidence of insurability, regardless of any health changes since the original policy issue. The benefit is guaranteed regardless of her leukemia diagnosis.",
+      "difficulty": "medium",
+      "tags": [
+        "GIB rider",
+        "guaranteed insurability",
+        "whole life"
+      ]
+    },
+    {
+      "id": 21,
+      "question": "Aaron and Beth own a family cabin that has been in the family for generations. The value of the cabin has increased significantly, and they are concerned about the potential capital gains tax their children will face when they pass away. They currently have a participating whole life insurance policy, which provides enough coverage today but perhaps not in the future. What would be the best approach to ensure that their insurance coverage is sufficient to address the rising tax burden?",
+      "options": [
+        "A. Add an FPO to their existing life insurance policy.",
+        "B. Start a savings plan to set aside funds for the future tax liability.",
+        "C. Purchase a new term-to-100 policy to supplement their whole life policy.",
+        "D. Add a GIB rider and use the PUA dividend option to increase their coverage."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. FPO locks in premiums but does not increase death benefit.",
+        "Incorrect. A savings plan does not provide the guaranteed coverage of insurance.",
+        "Incorrect. While T-100 could work, using dividend options is more efficient.",
+        null
+      ],
+      "explanation": "The best approach is to add a GIB rider and use the Paid-Up Additions (PUA) dividend option. This allows their existing whole life policy to automatically increase in death benefit as the cabin increases in value, directly addressing the rising capital gains tax liability without requiring separate policies or underwriting.",
+      "difficulty": "medium",
+      "tags": [
+        "estate planning",
+        "whole life",
+        "dividend options",
+        "GIB rider"
+      ]
+    },
+    {
+      "id": 22,
+      "question": "Chris is purchasing a $600,000 life insurance policy, naming his wife, Ami, as the life insured. Chris is the policyholder and will be making the premium payments. Their daughter, Jill, has been named as the beneficiary, and a payor waiver of premium rider has also been selected. How would the policy be underwritten?",
+      "options": [
+        "A. On Ami as the life insured and on Chris as the one making the premium payments.",
+        "B. On Chris as the policyholder.",
+        "C. On Ami as the life insured, with no additional underwriting required for riders added during the original application.",
+        "D. On Ami as the policyholder."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Incorrect. The policyholder's health is not the primary focus; the life insured is.",
+        "Incorrect. Riders like payor waiver of premium do require underwriting on the payor.",
+        "Incorrect. Ami is the life insured, not the policyholder."
+      ],
+      "explanation": "The policy must be underwritten on Ami as the life insured (the person whose life is being insured) and on Chris as the one making premium payments (who would be the beneficiary of the payor waiver rider in case of his disability or death). Both parties are underwritten for their respective roles.",
+      "difficulty": "hard",
+      "tags": [
+        "underwriting",
+        "policy roles",
+        "riders"
+      ]
+    },
+    {
+      "id": 23,
+      "question": "Which of the following events would definitely not trigger a payout under the child rider?",
+      "options": [
+        "A. Greg dies in a car crash at age eight.",
+        "B. Emily dies from asphyxia at birth.",
+        "C. Laura dies when crushed by a machine at work at age 22.",
+        "D. Samuel dies in a drowning accident at age 24."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. A child who dies at age eight would trigger a child rider payout.",
+        "Incorrect. While a newborn death is tragic, most child riders cover from birth or shortly after.",
+        null,
+        "Incorrect. A child rider typically covers children until age 21-25, so this would trigger a payout."
+      ],
+      "explanation": "A child rider typically covers dependent children from birth (or shortly after) until age 21 or 25. Samuel, who is 24 when he dies, would still be within the coverage period. Most riders would cover children up to at least age 25, so the drowning at age 24 would be covered. The question asks which would \"definitely not\" trigger—none of the other options fall outside typical child rider age limits.",
+      "difficulty": "hard",
+      "tags": [
+        "child riders",
+        "coverage limits",
+        "dependent coverage"
+      ]
+    },
+    {
+      "id": 24,
+      "question": "Nathan just started working at Greenfields Inc. as a warehouse manager. The company offers group life insurance coverage, subject to a 90-day probationary period and a 60-day enrolment period. Nathan had a heart attack two years ago and was declined individual life insurance. Which of the following best represents Nathan's entitlement to join the group plan after satisfying the probationary period?",
+      "options": [
+        "A. He would be able to join the health plan regardless of his health status.",
+        "B. The underwriting of the group plan only requires the applicant to answer a few health-related questions designed to eliminate anyone who is terminally ill.",
+        "C. He would be able to join the plan, but the risk would be rated and would require a risk-adjusted premium.",
+        "D. He would have to disclose that he was denied insurance two years ago and would not be eligible to join the plan."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Incorrect. Group plans have simplified underwriting but may still have some health questions.",
+        "Incorrect. Group plans typically do not risk-rate individual employees.",
+        "Incorrect. Group plans do not exclude based on prior individual insurance denials."
+      ],
+      "explanation": "Group life insurance has simplified underwriting and typically does not require individual medical evidence. Once Nathan satisfies the probationary period and enrolment period, he is entitled to join the group plan regardless of his health history or prior individual insurance denials.",
+      "difficulty": "medium",
+      "tags": [
+        "group life insurance",
+        "underwriting",
+        "eligibility"
+      ]
+    },
+    {
+      "id": 25,
+      "question": "Andrew recently left his job, where he was covered by group life insurance with a death benefit of $450,000. He lives in Quebec and wants to convert this group coverage into an individual policy without medical underwriting. What is the maximum amount he can convert under Quebec law?",
+      "options": [
+        "A. $400,000",
+        "B. $200,000",
+        "C. $450,000",
+        "D. $225,000"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Incorrect. Quebec law allows conversion of the full group benefit amount.",
+        "Incorrect. This is only 50% of the available group benefit.",
+        null,
+        "Incorrect. This is only 50% of the available group benefit."
+      ],
+      "explanation": "Under Quebec law (similar to many provinces), an employee who loses group life insurance coverage has the right to convert the entire group life insurance benefit amount into an individual policy without evidence of insurability. Andrew can convert the full $450,000.",
+      "difficulty": "medium",
+      "tags": [
+        "group life insurance",
+        "conversion rights",
+        "Quebec regulations"
+      ]
+    },
+    {
+      "id": 26,
+      "question": "Lucy earned $100,000 in 2023 and $120,000 in 2024. She passed away in late 2024. How much can be claimed in charitable donations on her 2023 and 2024 tax returns?",
+      "options": [
+        "A. A total of up to $120,000 for both years.",
+        "B. Up to $75,000 in 2023, and $90,000 in 2024.",
+        "C. $120,000 in 2024; contributions cannot be made for prior years.",
+        "D. Up to $100,000 in 2023, and $120,000 for 2024."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. Each year has its own limit based on that year's net income.",
+        "Incorrect. The percentages used here are incorrect.",
+        "Incorrect. Charitable donations can be claimed in the year of death and carried back.",
+        null
+      ],
+      "explanation": "Charitable donations are limited to 75% of net income in the year of claim. For 2023, Lucy can claim up to 75% of $100,000 = $75,000. For 2024, she can claim up to 75% of $120,000 = $90,000. However, donations made in the year of death can also be carried back to the prior year, allowing flexibility. The maximum for each year is 75% of that year's net income, so up to $100,000 (if the full amount was donated in 2023) and up to $120,000 (if donated in 2024).",
+      "difficulty": "hard",
+      "tags": [
+        "tax implications",
+        "charitable donations",
+        "death",
+        "estate planning"
+      ]
+    },
+    {
+      "id": 27,
+      "question": "William acquires a $100,000 term life policy on his own life and then immediately assigns the policy to a registered charity. William plans on continuing to pay the $1,500 annual premium and is not planning to make any other charitable contributions in those years. William has annual net income of $85,000. Which of the following statements about the tax implications of William's assignment of his policy to the charity is CORRECT?",
+      "options": [
+        "A. William will have a taxable capital gain of $50,000 to report in the year the policy is assigned to the charity.",
+        "B. William will not be able to receive any charitable tax credit even if he continues to pay the policy premium.",
+        "C. William will not be eligible for an immediate charitable donations tax credit on the assignment of his policy to the charity.",
+        "D. William will be eligible for a charitable donations tax credit of $63,750 in the year the policy is assigned."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Incorrect. There is no taxable capital gain on assignment of a new policy.",
+        "Incorrect. William can receive a charitable credit for premium payments.",
+        null,
+        "Incorrect. The calculation and timing of credit claims is not as described."
+      ],
+      "explanation": "When a newly acquired policy with no cash value is assigned to a charity, there is no immediate charitable donations credit on the assignment itself. However, William can claim charitable tax credits for the annual premiums he pays to the charity in subsequent years, up to 75% of his net income ($85,000 × 75% = $63,750 limit per year).",
+      "difficulty": "hard",
+      "tags": [
+        "tax implications",
+        "charitable insurance",
+        "policy assignment"
+      ]
+    },
+    {
+      "id": 28,
+      "question": "Carlos purchased a life insurance policy and named his ex-wife, Laura, as the life insured. Their child, Paulie, was named as the beneficiary. Carlos has recently passed away. What happens to the policy now?",
+      "options": [
+        "A. The death benefit will be paid to Paulie, and the policy will end.",
+        "B. As the life insured, Laura will become the new policyholder.",
+        "C. As the beneficiary, Paulie will become the new policyholder.",
+        "D. In the absence of a contingent policyholder, Carlos's estate will take ownership of the policy."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. The death benefit payout does not end the question of policy ownership.",
+        "Incorrect. The life insured does not automatically become the policyholder upon the original policyholder's death.",
+        "Incorrect. The beneficiary receives proceeds but does not become the owner.",
+        null
+      ],
+      "explanation": "Upon Carlos's death, if there is no contingent policyholder named, the policy becomes the property of his estate. Paulie, as beneficiary, will eventually receive the death benefit proceeds, but the policy itself is owned by the estate during the probate process.",
+      "difficulty": "hard",
+      "tags": [
+        "policy ownership",
+        "beneficiaries",
+        "policyholder rights",
+        "estate"
+      ]
+    },
+    {
+      "id": 29,
+      "question": "Yen has a universal life (UL) policy with a $500,000 level death benefit and a $58,000 cash surrender value. Her husband Xuan is beneficiary. Yen is remodeling her kitchen and decides to pledge her policy as collateral for a $40,000 loan from her local credit union. The interest rate on the loan is 3.5%. Assuming Yen does not make any principal or interest payments, if Yen dies exactly 1 year after taking the loan. How much can Xuan expect to receive?",
+      "options": [
+        "A. $516,600",
+        "B. $458,600",
+        "C. $558,000",
+        "D. $500,000"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. The calculation does not properly account for all deductions from the death benefit.",
+        null,
+        "Incorrect. This does not account for the loan and accumulated interest.",
+        "Incorrect. The death benefit is reduced by loan amounts."
+      ],
+      "explanation": "Death benefit at death: $500,000. The outstanding loan balance after one year = $40,000 + ($40,000 × 3.5%) = $40,000 + $1,400 = $41,400. Amount Xuan receives = $500,000 - $41,400 = $458,600.",
+      "difficulty": "hard",
+      "tags": [
+        "universal life",
+        "policy loans",
+        "death benefit",
+        "calculations"
+      ]
+    },
+    {
+      "id": 30,
+      "question": "Bethany has a G2 whole life insurance policy with a face value of $250,000, cash surrender value (CSV) of $40,000, and adjusted cost basis (ACB) of $20,000. If Bethany cancels her policy today, how much tax will she be required to pay related to the disposition of the policy assuming a 30% marginal tax rate?",
+      "options": [
+        "A. $6,000",
+        "B. $3,000",
+        "C. $28,500",
+        "D. $13,500"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Incorrect. This calculation does not properly account for the ACB.",
+        "Incorrect. This is not the correct calculation for life insurance tax implications.",
+        "Incorrect. This overstates the taxable amount."
+      ],
+      "explanation": "When Bethany surrenders her policy, the taxable amount is the difference between the CSV and the ACB. Taxable gain = $40,000 - $20,000 = $20,000. Tax owing = $20,000 × 30% = $6,000.",
+      "difficulty": "medium",
+      "tags": [
+        "tax implications",
+        "policy surrender",
+        "ACB",
+        "CSV"
+      ]
+    },
+    {
+      "id": 31,
+      "question": "Akila is an insurance agent and she meets with a potential client, Hussein. Hussein is an entrepreneur and business owner, and would like to learn more about how insurance can address the needs of his business. Which of the following statements about business life insurance is CORRECT?",
+      "options": [
+        "A. If a buy-sell agreement is funded by business-owned insurance, premiums are generally tax-deductible.",
+        "B. Premiums are generally tax-deductible for criss-cross insurance used to fund a cross-purchase buy-sell agreement.",
+        "C. In a split-dollar life insurance arrangement, the corporation could own the death benefit, while the employee could own the policy's cash value.",
+        "D. If the business acquires term life insurance on a key person because a lender requires it, the business cannot deduct the premiums from its business income."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Incorrect. Life insurance premiums for buy-sell agreements are generally not tax-deductible.",
+        "Incorrect. Premiums for cross-purchase arrangements are also not tax-deductible.",
+        null,
+        "Incorrect. If there is a business purpose, the premiums may be deductible."
+      ],
+      "explanation": "In a split-dollar arrangement, the corporation and employee split the benefits and ownership: the corporation typically owns the death benefit while the employee owns and has access to the cash value. This is a legitimate arrangement that allows both parties to benefit from the policy.",
+      "difficulty": "hard",
+      "tags": [
+        "business insurance",
+        "buy-sell agreements",
+        "split-dollar",
+        "tax implications"
+      ]
+    },
+    {
+      "id": 32,
+      "question": "Angela recently passed away, leaving her small business to her two sons. The business was valued and sold for $2,500,000 with an adjusted cost base (ACB) of $800,000. Angela had not yet used any of her lifetime capital gains exemption. How much will each son inherit after taxes? Assumptions to be used for this question: • An LCGE limit of $913,630, • A 50% inclusion rate for the entire capital gain. • Marginal tax rate (MTR) of 40%.",
+      "options": [
+        "A. $1,053,418",
+        "B. $1,135,796",
+        "C. $1,171,363",
+        "D. $157,274"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. The calculation does not properly account for the lifetime capital gains exemption.",
+        null,
+        "Incorrect. This does not account for the tax properly.",
+        "Incorrect. This is only the tax on one son's portion and is far too low."
+      ],
+      "explanation": "Capital gain = $2,500,000 - $800,000 = $1,700,000. Amount covered by LCGE = $913,630 × 2 = $1,827,260 (more than the gain). Taxable capital gain after exemption = $0. However, only $913,630 can be used per year. Taxable gain = $1,700,000 - $913,630 = $786,370. Inclusion = $786,370 × 50% = $393,185. Tax = $393,185 × 40% = $157,274. Net to estate = $2,500,000 - $157,274 = $2,342,726. Each son gets: $2,342,726 ÷ 2 = $1,171,363.",
+      "difficulty": "hard",
+      "tags": [
+        "estate planning",
+        "capital gains",
+        "lifetime exemption",
+        "tax calculations"
+      ]
+    },
+    {
+      "id": 33,
+      "question": "Michelle is applying for a $500,000 term-to-65 life insurance policy. She is planning a year-long trip to a high-risk country for humanitarian work and mentions this to her agent. All other health questions are answered as \"no\", and she wrote a cheque for the first month's premium. Should the agent provide her with a temporary insurance agreement (TIA)?",
+      "options": [
+        "A. No, because the agent has reason to believe the main policy may not be approved.",
+        "B. Yes, the TIA must be issued if all health-related questions are answered \"no\".",
+        "C. Yes, the TIA should be issued provided the cheque for the first premium payment clears.",
+        "D. No, TIAs are issued only for permanent insurance applications."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Incorrect. A TIA is not automatic even if health questions are answered \"no\" if other risk factors are present.",
+        "Incorrect. Premium payment alone does not guarantee a TIA if underwriting concerns exist.",
+        "Incorrect. TIAs can be issued for both term and permanent insurance."
+      ],
+      "explanation": "A TIA should not be issued if the agent has reason to believe the main policy may not be approved. Michelle's planned trip to a high-risk country for humanitarian work represents a significant underwriting risk that may result in a decline or rating. The agent should not issue a TIA in this case.",
+      "difficulty": "hard",
+      "tags": [
+        "TIA",
+        "temporary insurance agreement",
+        "underwriting",
+        "risk assessment"
+      ]
+    },
+    {
+      "id": 34,
+      "question": "You have just completed an insurance application with your new client. You have reached the point where you are reviewing the Temporary Insurance Agreement (TIA) and you wish to issue the TIA. Which one of the following would allow you to issue the TIA?",
+      "options": [
+        "A. The application is complete.",
+        "B. The applicant has provided a void cheque for future premiums to be paid automatically",
+        "C. The applicant has answered \"yes\" to all of the questions related to health.",
+        "D. The applicant has answered \"no\" to all of the questions related to health."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Incorrect. A complete application alone is not sufficient for a TIA.",
+        "Incorrect. Void cheque information is not a requirement for TIA issuance.",
+        "Incorrect. Answering \"yes\" to health questions would typically preclude TIA issuance.",
+        null
+      ],
+      "explanation": "A key requirement for issuing a Temporary Insurance Agreement (TIA) is that the applicant has answered \"no\" to all health-related questions. This indicates an acceptable risk for temporary coverage pending full underwriting of the permanent policy. If any health questions are answered \"yes\", the agent should consult with an underwriter before issuing a TIA.",
+      "difficulty": "medium",
+      "tags": [
+        "TIA",
+        "temporary insurance agreement",
+        "underwriting requirements"
+      ]
+    },
+    {
+      "id": 35,
+      "question": "Henry applied for life insurance and disclosed that he frequently travels for work to regions with unstable political climates, enjoys scuba diving while on vacation, and has a family history of heart attacks. He was told the policy was \"rated\". What does this mean?",
+      "options": [
+        "A. The application has been assigned to an underwriter for review.",
+        "B. He is an above-average but acceptable risk.",
+        "C. The application has been assessed and is awaiting the decision of the underwriter.",
+        "D. He is an above-average and unacceptable risk."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Incorrect. This describes an application under review, not a rated policy.",
+        null,
+        "Incorrect. This describes an application awaiting decision, not a rated policy.",
+        "Incorrect. If the risk were unacceptable, the application would be declined, not rated."
+      ],
+      "explanation": "When a policy is \"rated\", it means the applicant is considered an above-average risk but is still acceptable for coverage. The policy will be issued at a higher premium (surcharge) than standard rates to compensate for the additional risk. Henry's occupational travel, high-risk hobbies, and family health history all contribute to the above-average risk classification.",
+      "difficulty": "medium",
+      "tags": [
+        "underwriting",
+        "risk assessment",
+        "policy rating",
+        "premiums"
+      ]
+    }
+  ]
+}

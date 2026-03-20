@@ -305,6 +305,13 @@
           "questionCount": 0,
           "status": "coming-soon",
           "dataFile": "data/llqp-life/hllqp-life-13.json"
+        },
+        {
+          "id": "llqp-life-certification",
+          "name": "Life Insurance - Certification Exam",
+          "description": "Comprehensive 35-question certification exam covering life insurance needs analysis, policy types, riders, underwriting, claims, and tax implications",
+          "questionCount": 35,
+          "dataFile": "data/llqp-life/llqp-life-certification-exam.json?v=20260319a"
         }
       ]
     },
@@ -369,6 +376,13 @@
           "description": "Segregated Funds and Annuities - Tax Planning & RRSP Considerations",
           "questionCount": 19,
           "dataFile": "data/llqp-segregated/llqp-segregated-1.json?v=20260209e"
+        },
+        {
+          "id": "llqp-segregated-certification",
+          "name": "Segregated Funds & Annuities - Certification Exam",
+          "description": "Only do this before certification exam",
+          "questionCount": 35,
+          "dataFile": "data/llqp-segregated/llqp-segregated-certification-exam.json?v=20260319a"
         }
       ]
     }
