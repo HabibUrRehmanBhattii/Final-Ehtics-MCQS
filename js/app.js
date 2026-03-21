@@ -2943,7 +2943,6 @@ const MCQApp = {
         if (index === correctIndex) return null;
         return {
           letter: letters[index] || String(index + 1),
-          option: this.getOptionDisplayText(option),
           reason: this.buildWrongAnswerReviewReason(question, index)
         };
       })
@@ -2962,7 +2961,8 @@ const MCQApp = {
         },
         {
           variant: 'review',
-          title: `Review other choices (${wrongChoices.length})`,
+          title: 'Why the other choices miss',
+          summaryMeta: `${wrongChoices.length} quick notes`,
           collapsible: true,
           items: wrongChoices
         }
@@ -2982,17 +2982,20 @@ const MCQApp = {
           const itemsHtml = section.items.map((item) => `
               <li class="exp-choice-item">
                 <span class="exp-choice-pill">${this.escapeHtml(item.letter || '')}</span>
-                <div class="exp-choice-copy">
-                  <div class="exp-choice-name">${this.escapeHtml(item.option || '')}</div>
-                  <p class="exp-choice-reason">${this.escapeHtml(item.reason || '')}</p>
-                </div>
+                <p class="exp-choice-reason">${this.escapeHtml(item.reason || '')}</p>
               </li>
             `).join('');
 
           if (section.collapsible) {
+            const summaryMetaHtml = section.summaryMeta
+              ? `<span class="exp-disclosure-meta">${this.escapeHtml(section.summaryMeta)}</span>`
+              : '';
             return `
               <details class="exp-disclosure">
-                <summary class="exp-disclosure-summary">${this.escapeHtml(section.title || '')}</summary>
+                <summary class="exp-disclosure-summary">
+                  <span class="exp-disclosure-summary-text">${this.escapeHtml(section.title || '')}</span>
+                  ${summaryMetaHtml}
+                </summary>
                 <div class="exp-disclosure-body">
                   <ul class="exp-choice-list">
                     ${itemsHtml}

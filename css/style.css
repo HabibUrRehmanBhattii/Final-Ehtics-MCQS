@@ -1181,8 +1181,8 @@ button { font-family: inherit; }
   display: grid;
   grid-template-columns: auto 1fr;
   gap: .7rem;
-  align-items: start;
-  padding: .8rem .85rem;
+  align-items: center;
+  padding: .72rem .8rem;
   border-radius: var(--radius-xs);
   background: var(--c-surface);
   border: 1px solid var(--c-border);
@@ -1201,21 +1201,10 @@ button { font-family: inherit; }
   border: 1px solid var(--c-warn);
 }
 
-.exp-choice-copy {
-  min-width: 0;
-}
-
-.exp-choice-name {
-  font-size: .92rem;
-  font-weight: 700;
-  color: var(--c-text);
-  margin-bottom: .18rem;
-}
-
 .exp-choice-reason {
   margin: 0;
   font-size: .9rem;
-  line-height: 1.7;
+  line-height: 1.55;
   color: var(--c-text2);
 }
 
@@ -1244,6 +1233,24 @@ button { font-family: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: .75rem;
+}
+
+.exp-disclosure-summary-text {
+  min-width: 0;
+}
+
+.exp-disclosure-meta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  color: var(--c-text2);
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .exp-disclosure-summary::-webkit-details-marker {
@@ -1975,6 +1982,40 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   .exp-list li {
     font-size: .88rem;
     line-height: 1.55;
+  }
+  .exp-disclosure {
+    border-radius: 14px;
+  }
+  .exp-disclosure-summary {
+    padding: .75rem .8rem;
+    font-size: .83rem;
+    gap: .55rem;
+    align-items: center;
+  }
+  .exp-disclosure-meta {
+    padding: .2rem .45rem;
+    font-size: .66rem;
+  }
+  .exp-disclosure-body {
+    padding: 0 .7rem .75rem;
+  }
+  .exp-choice-list {
+    gap: .45rem;
+  }
+  .exp-choice-item {
+    gap: .55rem;
+    padding: .62rem .68rem;
+    border-radius: 12px;
+    align-items: start;
+  }
+  .exp-choice-pill {
+    min-width: 1.7rem;
+    height: 1.7rem;
+    font-size: .7rem;
+  }
+  .exp-choice-reason {
+    font-size: .84rem;
+    line-height: 1.48;
   }
 
   .actions    { flex-direction: column; }
