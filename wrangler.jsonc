@@ -2,6 +2,16 @@
   "name": "final-ehtics-mcqs",
   "main": "src/worker.js",
   "compatibility_date": "2026-02-04",
+  "vars": {
+    "TURNSTILE_SITE_KEY": "1x00000000000000000000AA"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "final-ehtics-mcqs",
+      "database_id": "c75fd5a0-fdb4-4d56-a143-a26e43a94c87"
+    }
+  ],
   "assets": {
     "directory": "./"
   },

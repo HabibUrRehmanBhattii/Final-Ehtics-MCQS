@@ -30,6 +30,22 @@ const MCQApp = {
     loadingCount: 0,
     autoAdvanceTimer: null,
     aiAvailable: false,
+    auth: {
+      available: false,
+      authenticated: false,
+      loading: false,
+      error: '',
+      user: null,
+      passwordResetEmailEnabled: false,
+      pendingResetToken: '',
+      turnstileReady: false,
+      turnstileSiteKey: '',
+      authMode: 'signin',
+      widgetId: null,
+      lastSyncedAt: null,
+      syncTimer: null,
+      migrating: false
+    },
     autoAdvanceEnabled: localStorage.getItem('auto-advance') === 'true',
     autoAdvanceDelay: 1500,
     homeInsightsExpanded: localStorage.getItem('home-insights-expanded') === 'true'
@@ -98,6 +114,9 @@ const MCQApp = {
 
   saveWrongQuestions() {
     localStorage.setItem('wrong_questions', JSON.stringify(this.state.wrongQuestions));
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
   },
 
   readJSONFromStorage(key, fallback) {
@@ -294,6 +313,10 @@ const MCQApp = {
       this.showView('home');
     }
 
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
+
     this.showToast('Wrong answers history cleared.', 'success');
   },
 
@@ -303,11 +326,14 @@ const MCQApp = {
     this.initDarkMode();
     this.initSpeech();
     this.registerServiceWorker();
-    this.loadWrongQuestions();
     this.beginLoading('Loading topics...');
     try {
       await this.loadTopics();
       await this.checkAIAvailability();
+      if (typeof this.initAuth === 'function') {
+        await this.initAuth();
+      }
+      this.loadWrongQuestions();
     } finally {
       this.endLoading();
     }
@@ -358,7 +384,7 @@ const MCQApp = {
       });
 
       navigator.serviceWorker
-        .register('/sw.js?v=20260317b')
+        .register('/sw.js?v=20260321b')
         .then((registration) => {
           // Proactively check for updates each load/session
           registration.update();
@@ -391,25 +417,25 @@ const MCQApp = {
 
   // Initialize Dark Mode
   initDarkMode() {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    this.updateDarkModeIcon(savedTheme);
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    this.updateDarkModeIcon('dark');
   },
 
   // Toggle Dark Mode
   toggleDarkMode() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    this.updateDarkModeIcon(newTheme);
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    this.updateDarkModeIcon('dark');
+    this.showToast('Dark mode is locked for now so the study screens stay readable.', 'info');
   },
 
   // Update Dark Mode Icon
   updateDarkModeIcon(theme) {
     const toggleBtn = document.getElementById('dark-mode-toggle');
+    theme = 'dark';
     if (toggleBtn) {
+      toggleBtn.setAttribute('aria-disabled', 'true');
       toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
       toggleBtn.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     }
@@ -486,7 +512,7 @@ const MCQApp = {
     });
 
     document.getElementById('pdf-open-new-tab-btn')?.addEventListener('click', () => {
-      const file = this.state.currentPdfObjectUrl || this.state.currentPdfResource?.dataFile;
+      const file = this.state.currentPdfResource?.dataFile || this.state.currentPdfObjectUrl;
       if (!file) return;
       window.open(file, '_blank');
     });
@@ -577,6 +603,19 @@ const MCQApp = {
     document.getElementById('finish-retry-btn')?.addEventListener('click', () => {
       this.retryCurrentTest();
     });
+
+    if (typeof this.setupAuthEventListeners === 'function') {
+      this.setupAuthEventListeners();
+    }
+    if (typeof this.consumePendingPasswordResetLink === 'function') {
+      this.consumePendingPasswordResetLink();
+    }
+
+    window.addEventListener('online', () => {
+      if (typeof this.syncProgressToCloud === 'function') {
+        this.syncProgressToCloud({ silent: true, force: false });
+      }
+    });
   },
 
   // Update Wrong Questions Count
@@ -596,6 +635,7 @@ const MCQApp = {
       }
     }
 
+    this.renderHomeFocus();
     this.renderHomeInsights();
   },
 
@@ -633,6 +673,9 @@ const MCQApp = {
   saveDailyStudyStats(stats) {
     if (!stats) return;
     localStorage.setItem('study_daily_stats', JSON.stringify(stats));
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
   },
 
   recordDailyPractice(isCorrect = false) {
@@ -817,6 +860,9 @@ const MCQApp = {
       testId,
       updatedAt: new Date().toISOString()
     }));
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
   },
 
   async resumeLastSession() {
@@ -846,94 +892,77 @@ const MCQApp = {
     this.renderHomeInsights();
   },
 
-  renderHomeInsights() {
-    const host = document.getElementById('home-insights');
+  renderHomeFocus() {
+    const host = document.getElementById('home-focus');
     if (!host) return;
 
     const stats = this.getHomeStudyStats();
     const session = this.getLastSession();
     const daily = this.getDailyStudyStats();
-    const xp = this.getXpLevel(daily);
-    const heatmap = this.getHeatmapCells(7);
     const recommended = this.getRecommendedPracticeUnit();
-    const dailyGoal = 20;
-    const dailyPct = Math.min(100, Math.round((daily.todayAnswered / dailyGoal) * 100));
-    const isExpanded = this.state.homeInsightsExpanded;
+    const wrongCount = this.state.wrongQuestions.length;
+
+    let title = 'Pick a topic and start.';
+    let meta = `${stats.totalCourses} topics ready`;
+    let primaryLabel = 'Browse topics';
+    let primaryAction = "document.getElementById('topics-grid').scrollIntoView({ behavior: 'smooth', block: 'start' })";
+
+    if (session) {
+      title = `${session.topic.name}: ${session.test.name}`;
+      meta = 'Continue where you left off';
+      primaryLabel = 'Continue';
+      primaryAction = 'MCQApp.resumeLastSession()';
+    } else if (recommended) {
+      title = `${recommended.topic.name}: ${recommended.test.name}`;
+      meta = `${recommended.progress}% complete`;
+      primaryLabel = 'Continue';
+      primaryAction = 'MCQApp.startRecommendedPractice()';
+    }
 
     host.innerHTML = `
-      <div class="insight-compact-card">
-        <div class="insight-compact-row">
-          <div class="insight-mini">
-            <span class="insight-mini-label">Progress</span>
-            <strong>${stats.overallProgress}%</strong>
+      <div class="focus-card">
+        <div class="focus-copy">
+          <div class="focus-label">${session ? 'Continue' : 'Daily study'}</div>
+          <h2 class="focus-title">${this.escapeHtml(title)}</h2>
+          <p class="focus-meta">${this.escapeHtml(meta)}</p>
+          <div class="focus-actions">
+            <button class="btn-primary focus-btn" type="button" onclick="${primaryAction}">${this.escapeHtml(primaryLabel)}</button>
+            ${wrongCount > 0 ? `
+              <button class="btn-outline focus-btn-secondary" type="button" onclick="MCQApp.startWrongQuestionsReview()">Review wrong (${wrongCount})</button>
+            ` : ''}
           </div>
-          <div class="insight-mini">
-            <span class="insight-mini-label">Streak</span>
+        </div>
+        <div class="focus-stats">
+          <div class="focus-stat">
+            <span>Today</span>
+            <strong>${daily.todayAnswered}</strong>
+          </div>
+          <div class="focus-stat">
+            <span>Streak</span>
             <strong>${daily.streak || 0}d</strong>
           </div>
-          <div class="insight-mini">
-            <span class="insight-mini-label">XP</span>
-            <strong>L${xp.level}</strong>
+          <div class="focus-stat">
+            <span>Progress</span>
+            <strong>${stats.overallProgress}%</strong>
           </div>
         </div>
-        <button class="btn-outline" onclick="MCQApp.toggleHomeInsights()">${isExpanded ? 'Hide details' : 'Show details'}</button>
       </div>
-
-      ${isExpanded ? `
-        <div class="insight-card">
-          <div class="insight-label">Courses Completed</div>
-          <div class="insight-value">${stats.completedCourses}/${stats.totalCourses}</div>
-          <div class="insight-sub">Finish all active courses</div>
-        </div>
-        <div class="insight-card">
-          <div class="insight-label">Wrong Answers</div>
-          <div class="insight-value">${this.state.wrongQuestions.length}</div>
-          <div class="insight-sub">Review to improve score</div>
-        </div>
-        <div class="insight-card">
-          <div class="insight-label">Daily Goal</div>
-          <div class="insight-value">${daily.todayAnswered}/${dailyGoal}</div>
-          <div class="insight-sub">${dailyPct}% complete today</div>
-        </div>
-        <div class="insight-card">
-          <div class="insight-label">XP Level</div>
-          <div class="insight-value">Level ${xp.level}</div>
-          <div class="insight-sub">${xp.currentXp}/${xp.perLevel} XP • ${xp.xpTotal} total</div>
-        </div>
-        <div class="heatmap-card">
-          <div class="insight-label">Last 7 Days</div>
-          <div class="heatmap-grid">
-            ${heatmap.map((cell) => `
-              <div class="heatmap-cell lvl-${cell.level}" title="${cell.key}: ${cell.count} question${cell.count === 1 ? '' : 's'}">${cell.shortDay.slice(0, 1)}</div>
-            `).join('')}
-          </div>
-        </div>
-      ` : ''}
-
-      ${recommended && isExpanded ? `
-        <div class="resume-card">
-          <div>
-            <div class="resume-title">Recommended next</div>
-            <div class="resume-meta">${recommended.topic.name} • ${recommended.test.name} (${recommended.progress}%)</div>
-          </div>
-          <button class="btn-start" onclick="MCQApp.startRecommendedPractice()">Start Now →</button>
-        </div>
-      ` : ''}
-      ${session && isExpanded ? `
-        <div class="resume-card">
-          <div>
-            <div class="resume-title">Continue where you left off</div>
-            <div class="resume-meta">${session.topic.name} • ${session.test.name}</div>
-          </div>
-          <button class="btn-start" onclick="MCQApp.resumeLastSession()">Resume →</button>
-        </div>
-      ` : ''}
     `;
+  },
+
+  renderHomeInsights() {
+    const host = document.getElementById('home-insights');
+    if (!host) return;
+    host.innerHTML = '';
   },
 
   // Render Topics Grid
   renderTopicsGrid() {
     this.updateWrongQuestionsCount();
+    if (typeof this.renderAuthPanel === 'function') {
+      this.renderAuthPanel();
+    }
+    this.renderHomeFocus();
     const grid = document.getElementById('topics-grid');
     if (!grid) return;
 
@@ -953,26 +982,34 @@ const MCQApp = {
       const totalQuestions = topic.practiceTests?.reduce((sum, test) => sum + test.questionCount, 0) || 0;
       
       return `
-        <div class="topic-card ${isCompact ? 'compact-topic' : ''} ${!isActive ? 'coming-soon' : ''}" 
+        <div class="topic-card topic-list-item ${isCompact ? 'compact-topic' : ''} ${!isActive ? 'coming-soon' : ''}" 
              ${isActive ? `onclick="MCQApp.selectTopic('${topic.id}')"` : ''}
              style="--topic-color: ${topic.color}">
-          <div class="topic-icon">${topic.icon}</div>
-          <h3 class="topic-name">${topic.name}</h3>
-          <p class="topic-description">${topic.description}</p>
-          <div class="topic-meta">
-            <span class="question-count">
-              ${totalQuestions} Question${totalQuestions !== 1 ? 's' : ''}
-            </span>
-            ${isActive && progress > 0 ? `
-              <span class="progress-badge">${progress}% Complete</span>
-            ` : ''}
-            ${!isActive ? `
-              <span class="coming-soon-badge">Coming Soon</span>
-            ` : ''}
+          <div class="topic-card-top">
+            <div class="topic-icon">${topic.icon}</div>
           </div>
-          ${isActive ? `
-            <button class="btn-start">Start Practice →</button>
-          ` : ''}
+          <div class="topic-list-copy">
+            <h3 class="topic-name">${topic.name}</h3>
+            <p class="topic-description">${topic.description}</p>
+            <div class="topic-meta">
+              <span class="question-count">
+                ${totalQuestions} Question${totalQuestions !== 1 ? 's' : ''}
+              </span>
+              ${isActive && progress > 0 ? `
+                <span class="progress-badge">${progress}% Complete</span>
+              ` : ''}
+              ${!isActive ? `
+                <span class="coming-soon-badge">Coming Soon</span>
+              ` : ''}
+            </div>
+          </div>
+          <div class="topic-list-action">
+            ${isActive ? `
+              <span class="topic-chevron" aria-hidden="true">&#8250;</span>
+            ` : `
+              <span class="topic-status-muted">Soon</span>
+            `}
+          </div>
         </div>
       `;
     }).join('');
@@ -1379,20 +1416,8 @@ const MCQApp = {
     this.beginLoading('Loading manual...');
 
     try {
-      const response = await fetch(test.dataFile, { cache: 'no-store' });
-      if (!response.ok) {
-        throw new Error(`Failed to load PDF (${response.status})`);
-      }
-
-      const sourceBlob = await response.blob();
-      const pdfBlob = sourceBlob.type === 'application/pdf'
-        ? sourceBlob
-        : new Blob([await sourceBlob.arrayBuffer()], { type: 'application/pdf' });
-
-      const objectUrl = URL.createObjectURL(pdfBlob);
-      this.state.currentPdfObjectUrl = objectUrl;
-
-      if (frame) frame.src = `${objectUrl}#toolbar=1&navpanes=1&view=FitH`;
+      const pdfUrl = new URL(test.dataFile, window.location.href).toString();
+      if (frame) frame.src = `${pdfUrl}#toolbar=1&navpanes=1&view=FitH`;
       if (helperText) helperText.textContent = 'Use browser PDF search with Ctrl+F (or Find in page).';
     } catch (error) {
       console.error('PDF load failed:', error);
@@ -2450,6 +2475,9 @@ const MCQApp = {
     // Reload and reshuffle questions
     await this.loadQuestions(this.state.currentPracticeTest.dataFile || 
       this.state.currentTopic.practiceTests.find(t => t.id === testId)?.dataFile);
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
     this.renderQuestion();
   },
 
@@ -3119,6 +3147,9 @@ const MCQApp = {
     };
 
     localStorage.setItem(key, JSON.stringify(data));
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
   },
 
   // Load Progress
@@ -3165,6 +3196,9 @@ const MCQApp = {
       this.state.lastSelectedIndex = undefined;
       this.state.lastSelectedQuestionKey = null;
       this.state.currentQuestionIndex = 0;
+      if (typeof this.scheduleProgressSync === 'function') {
+        this.scheduleProgressSync();
+      }
       this.renderQuestion();
       this.showToast('Review session reset.', 'success');
       return;
@@ -3188,6 +3222,9 @@ const MCQApp = {
     this.state.firstAttemptCorrect = {};
     this.state.lastSelectedIndex = undefined;
     this.state.lastSelectedQuestionKey = null;
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
 
     // Hide finish banner
     const banner = document.getElementById('finish-banner');

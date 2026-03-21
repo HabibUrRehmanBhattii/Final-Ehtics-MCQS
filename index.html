@@ -10,27 +10,35 @@
     <meta name="apple-mobile-web-app-title" content="LLQP Prep">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="LLQP & WFG Exam Prep">
-    <link rel="manifest" href="manifest.webmanifest?v=20260320a">
+    <link rel="manifest" href="manifest.webmanifest?v=20260321m">
     <link rel="icon" href="assets/icons/icon-192.svg" type="image/svg+xml" sizes="192x192">
     <link rel="apple-touch-icon" href="assets/icons/icon-180.svg" sizes="180x180">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260320h">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=20260321m">
 </head>
 <body>
     <div id="app">
 
         <!-- HOME VIEW -->
         <div id="home-view" class="view active">
-            <header class="hero">
-                <div class="hero-inner">
-                    <button id="dark-mode-toggle" class="dm-toggle" aria-label="Toggle dark mode">&#x1F319;</button>
-                    <h1 class="hero-title">&#x1F4DA; LLQP & WFG Exam Prep</h1>
-                    <p class="hero-sub">Interactive MCQ Practice Platform</p>
+            <header class="home-header">
+                <div class="home-header-inner">
+                    <div class="home-brand">
+                        <div class="home-brand-kicker">LLQP Prep</div>
+                        <h1 class="home-brand-title">Study</h1>
+                    </div>
+                    <details class="home-menu" aria-label="Study tools and account">
+                        <summary class="home-menu-summary" aria-label="Open menu">&#9776;</summary>
+                        <div class="home-menu-body">
+                            <section id="auth-panel" class="auth-panel" aria-label="Account access"></section>
+                        </div>
+                    </details>
                 </div>
             </header>
             <main class="wrap">
-                <div class="section-label">Select a Topic to Begin</div>
-                <div id="wrong-questions-section" class="wrong-wrap">
+                <div id="wrong-questions-section" class="wrong-wrap top-priority">
                     <div class="wrong-card" onclick="MCQApp.startWrongQuestionsReview()">
                         <span class="wrong-icon">&#x274C;</span>
                         <div class="wrong-info">
@@ -40,7 +48,8 @@
                         <span class="wrong-arrow">&#x2192;</span>
                     </div>
                 </div>
-                <section id="home-insights" class="home-insights" aria-label="Study dashboard"></section>
+                <section id="home-focus" class="home-focus" aria-label="Quick study actions"></section>
+                <div class="section-label">Choose Topic</div>
                 <div id="topics-grid" class="grid"></div>
             </main>
             <footer class="foot">&copy; 2026 LLQP & WFG Exam Prep</footer>
@@ -175,6 +184,53 @@
         </div>
 
     </div>
+    <div id="auth-modal" class="auth-modal hidden" aria-hidden="true">
+        <div class="auth-modal-backdrop" data-auth-close="true"></div>
+        <div class="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+            <button id="auth-close-btn" class="auth-close-btn" type="button" aria-label="Close sign in dialog">&times;</button>
+            <div class="auth-dialog-head">
+                <div class="auth-eyebrow">Cloud Sync</div>
+                <h2 id="auth-title" class="auth-title">Sign in</h2>
+                <p id="auth-subtitle" class="auth-subtitle">Save your study progress across devices.</p>
+            </div>
+            <form id="auth-form" class="auth-form">
+                <label class="auth-field">
+                    <span>Email</span>
+                    <input id="auth-email" name="email" type="email" autocomplete="email" required>
+                </label>
+                <label class="auth-field">
+                    <span>Password</span>
+                    <input id="auth-password" name="password" type="password" autocomplete="current-password" required minlength="8">
+                </label>
+                <label id="auth-current-password-field" class="auth-field hidden">
+                    <span>Current Password</span>
+                    <input id="auth-current-password" name="currentPassword" type="password" autocomplete="current-password" minlength="8">
+                </label>
+                <label id="auth-new-password-field" class="auth-field hidden">
+                    <span>New Password</span>
+                    <input id="auth-new-password" name="newPassword" type="password" autocomplete="new-password" minlength="8">
+                </label>
+                <label id="auth-confirm-password-field" class="auth-field hidden">
+                    <span>Confirm Password</span>
+                    <input id="auth-confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="8">
+                </label>
+                <label id="auth-reset-token-field" class="auth-field hidden">
+                    <span>Reset Token</span>
+                    <input id="auth-reset-token" name="resetToken" type="text" autocomplete="one-time-code">
+                </label>
+                <div id="auth-turnstile" class="auth-turnstile"></div>
+                <div id="auth-error" class="auth-error hidden" aria-live="polite"></div>
+                <button id="auth-submit-btn" class="btn-primary auth-submit" type="submit">Sign in</button>
+            </form>
+            <div id="auth-secondary-actions" class="auth-secondary-actions">
+                <button id="auth-forgot-btn" class="btn-link auth-forgot-btn" type="button">Forgot password?</button>
+            </div>
+            <div class="auth-switcher">
+                <span id="auth-switch-copy">Need an account?</span>
+                <button id="auth-switch-btn" class="btn-link auth-switch-btn" type="button">Sign up</button>
+            </div>
+        </div>
+    </div>
     <div id="app-loading" class="app-loading" aria-hidden="true">
         <div class="app-loading-card" role="status" aria-live="polite">
             <div class="app-loading-spinner"></div>
@@ -182,6 +238,8 @@
         </div>
     </div>
     <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
-    <script src="js/app.js?v=20260320p"></script>
+    <script src="js/app.js?v=20260321q"></script>
+    <script src="js/auth.js?v=20260321q"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </body>
 </html>

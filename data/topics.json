@@ -36,6 +36,13 @@
           "description": "Full 25-question exam covering insurance legislation, licensing, contract law, and ethics scenarios",
           "questionCount": 25,
           "dataFile": "data/insurance-legislation-ethics/insurance-legislation-ethics-1.json?v=20260315a"
+        },
+        {
+          "id": "llqp-ethics-manual-1",
+          "name": "CISRO Manual - Ethics",
+          "description": "Reference PDF manual for Ethics and professional conduct",
+          "questionCount": 0,
+          "dataFile": "data/llqp-ethics/Manual/EthicsCanada-E112-2025-12ED.pdf?v=20260321a"
         }
       ]
     },
@@ -342,6 +349,13 @@
           "description": "Comprehensive 35-question certification exam covering life insurance needs analysis, policy types, riders, underwriting, claims, and tax implications",
           "questionCount": 35,
           "dataFile": "data/llqp-life/llqp-life-certification-exam.json?v=20260319a"
+        },
+        {
+          "id": "llqp-life-manual-1",
+          "name": "CISRO Manual - Life Insurance",
+          "description": "Reference PDF manual for Life Insurance",
+          "questionCount": 0,
+          "dataFile": "data/llqp-life/Manual/LifeInsur-E311-2025-11ED_R.pdf?v=20260321a"
         }
       ]
     },
@@ -387,7 +401,7 @@
           "name": "CISRO Manuals - Accident and Sickness",
           "description": "Reference PDF manual for Accident and Sickness Insurance",
           "questionCount": 0,
-          "dataFile": "data/llqp-accident/Manual/Accident-and-Sickness.pdf?v=20260316b"
+          "dataFile": "data/llqp-accident/Manual/Sickness-E312-2025-11ED.pdf?v=20260321a"
         }
       ]
     },
@@ -413,6 +427,13 @@
           "description": "Only do this before certification exam",
           "questionCount": 35,
           "dataFile": "data/llqp-segregated/llqp-segregated-certification-exam.json?v=20260319a"
+        },
+        {
+          "id": "llqp-segregated-manual-1",
+          "name": "CISRO Manual - Segregated Funds",
+          "description": "Reference PDF manual for Segregated Funds and Annuities",
+          "questionCount": 0,
+          "dataFile": "data/llqp-segregated/Manual/Segfunds-E313-2025-11ED.pdf?v=20260321a"
         }
       ]
     }

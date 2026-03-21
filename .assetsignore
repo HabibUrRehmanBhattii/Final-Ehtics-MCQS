@@ -1,0 +1,16 @@
+.git/
+.wrangler/
+.dev.vars
+.dev.vars.example
+wrangler-dev.out.log
+wrangler-dev.err.log
+node_modules/
+src/
+migrations/
+tools/
+README.md
+CODEBASE_REFERENCE.md
+AI_IMPROVEMENTS.md
+AI_TECHNICAL_DETAILS.md
+*.code-workspace
+*.tmp
