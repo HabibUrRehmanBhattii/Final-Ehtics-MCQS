@@ -1144,7 +1144,25 @@ export default {
         enabled: Boolean(env.DB && env.SESSION_SECRET && env.TURNSTILE_SECRET_KEY && env.TURNSTILE_SITE_KEY),
         turnstileSiteKey: env.TURNSTILE_SITE_KEY || '',
         authMode: 'email-password',
-        passwordResetEmailEnabled: isResetEmailConfigured(resetEmailConfig)
+        passwordResetEmailEnabled: isResetEmailConfigured(resetEmailConfig),
+        passwordResetEmailDebug: {
+          provider: resetEmailConfig.provider || '',
+          hasFrom: Boolean(resetEmailConfig.from),
+          hasBaseUrl: Boolean(resetEmailConfig.baseUrl),
+          hasResendKey: Boolean(resetEmailConfig.resendApiKey),
+          hasPostmarkKey: Boolean(resetEmailConfig.postmarkServerToken)
+        }
+      });
+    }
+
+    if (path === '/api/debug/reset-email' && request.method === 'GET') {
+      const resetEmailConfig = getResetEmailConfig(env, request);
+      return jsonResponse(request, {
+        provider: resetEmailConfig.provider || '',
+        hasFrom: Boolean(resetEmailConfig.from),
+        hasBaseUrl: Boolean(resetEmailConfig.baseUrl),
+        hasResendKey: Boolean(resetEmailConfig.resendApiKey),
+        hasPostmarkKey: Boolean(resetEmailConfig.postmarkServerToken)
       });
     }
 
