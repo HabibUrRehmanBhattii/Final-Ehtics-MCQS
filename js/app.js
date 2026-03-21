@@ -177,6 +177,17 @@ const MCQApp = {
     return this.toSentence(target);
   },
 
+  isExceptionQuestion(question) {
+    const focusText = this.getQuestionFocusText(question).toLowerCase();
+    return /\bexcept\b/.test(focusText) ||
+      /\bnot required\b/.test(focusText) ||
+      /\bnot true\b/.test(focusText) ||
+      /\bnot correct\b/.test(focusText) ||
+      /\bnot considered\b/.test(focusText) ||
+      /\bwhich of the following is not\b/.test(focusText) ||
+      /\ball of these .* except\b/.test(focusText);
+  },
+
   inferQuestionRule(question) {
     const q = this.getQuestionPlainText(question).toLowerCase();
 
@@ -370,7 +381,7 @@ const MCQApp = {
     const selected = String(optionText || '').toLowerCase();
     const correct = String(correctText || '').toLowerCase();
 
-    if ((/\bexcept\b|\bnot\b/.test(q)) && optionText) {
+    if (this.isExceptionQuestion(question) && optionText) {
       return `"${optionText}" is not the exception here. It is one of the items that is normally true or required.`;
     }
 
@@ -380,7 +391,7 @@ const MCQApp = {
       }
 
       if (/revocable/.test(selected) && /irrevocable/.test(correct)) {
-        return `"${optionText}" is the opposite of what the facts show. A beneficiary who must consent to a change is irrevocable.`;
+        return `"${optionText}" is the changeable type, so it does not fit a question asking for consent before a change.`;
       }
 
       if (/irrevocable/.test(selected) && /revocable/.test(correct)) {
@@ -473,6 +484,9 @@ const MCQApp = {
     }
 
     if (this.isContrastiveFeedback(cleaned)) {
+      if (/not the exception here|normally true or required/i.test(cleaned) && !this.isExceptionQuestion(question)) {
+        return false;
+      }
       return true;
     }
 
@@ -549,7 +563,7 @@ const MCQApp = {
         : 'This choice is too absolute for the facts given. Re-check whether the rule really applies that broadly.';
     }
 
-    if ((/\bexcept\b|\bnot\b/.test(this.getQuestionPlainText(question).toLowerCase())) && correctReason) {
+    if (this.isExceptionQuestion(question) && correctReason) {
       return `${correctReason} This question is asking for the exception.`;
     }
 
@@ -2104,6 +2118,7 @@ const MCQApp = {
         : '';
       const feedbackHtml = feedbackText ? `
             <div class="option-feedback">
+              <div class="option-feedback-label">Why this choice misses</div>
               <p>${this.escapeHtml(feedbackText)}</p>
             </div>
           ` : '';
@@ -2721,114 +2736,272 @@ const MCQApp = {
     this.renderQuestion();
   },
 
-  buildStepByStepExplanation(question) {
-    if (!question) return '';
+  stripCorrectAnswerReveal(feedbackText) {
+    const text = this.cleanFeedbackText(feedbackText);
+    if (!text) return '';
 
-    const options = Array.isArray(question.options) ? question.options : [];
-    const feedback = Array.isArray(question.optionFeedback) ? question.optionFeedback : [];
-    const correctIndex = Number.isInteger(question.correctAnswer) ? question.correctAnswer : -1;
-    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
-    const plainQuestion = String(question.question || '')
-      .replace(/<[^>]*>/g, ' ')
+    const sanitized = text
+      .replace(/\s*The correct answer is "[^"]+" because[\s\S]*$/i, '')
+      .replace(/\s*The correct idea here is "[^"]+":[\s\S]*$/i, '')
+      .replace(/\s*The better answer here is "[^"]+"\.[\s\S]*$/i, '')
       .replace(/\s+/g, ' ')
-      .trim();
-    const rawExplanation = String(question.explanation || '').trim();
-
-    const toSentence = (value) => {
-      const cleaned = String(value || '')
-        .replace(/\s+/g, ' ')
-        .trim()
-        .replace(/[\s.]+$/, '');
-      if (!cleaned) return '';
-      return cleaned.charAt(0).toUpperCase() + cleaned.slice(1) + '.';
-    };
-
-    const cleanOptionText = (value) => this.getOptionDisplayText(value)
+      .trim()
       .replace(/[\s.]+$/, '');
 
-    const cleanFeedback = (value) => String(value || '')
-      .replace(/^Incorrect\.\s*/i, '')
-      .trim()
-      .replace(/\.+$/, '');
+    return sanitized ? this.toSentence(sanitized) : '';
+  },
 
-    const getQuestionFocus = () => {
-      const parts = plainQuestion.split(/(?<=[.?!])\s+/).filter(Boolean);
-      const target = [...parts].reverse().find((line) =>
-        /\?$/.test(line) || /(which|what|how much|who|best|correct|most likely|following)/i.test(line)
-      ) || parts[parts.length - 1] || 'Determine the best answer based on the scenario facts';
-      return toSentence(target);
-    };
+  summarizeExplanationReason(feedbackText) {
+    const text = this.cleanFeedbackText(feedbackText);
+    if (!text) return '';
 
-    const inferRule = () => {
-      const q = plainQuestion.toLowerCase();
-      if (/beneficiar|contingent|estate|life insured|policyholder/.test(q)) {
-        return 'Use beneficiary-order rules: proceeds go to the named beneficiary first, and the contingent beneficiary applies only if the primary beneficiary predeceases the life insured';
-      }
-      if (/capital gain|acb|gift|deemed disposition|non-registered/.test(q)) {
-        return 'Apply capital-gains tax rules, including deemed disposition and adjusted cost base treatment where relevant';
-      }
-      if (/rrsp|rrif|lira|spousal rrsp|pension adjustment/.test(q)) {
-        return 'Apply registered-plan contribution and withdrawal rules, including attribution and taxation at withdrawal where applicable';
-      }
-      if (/annuit|annuity|term certain|life annuity/.test(q)) {
-        return 'Apply annuity contract rules on payment guarantees, beneficiary rights, and taxation of annuity income';
-      }
-      if (/segregated fund|guarantee|reset|maturity|death benefit/.test(q)) {
-        return 'Apply segregated-fund guarantee rules, including resets, maturity/death guarantees, and beneficiary treatment';
-      }
-      if (/mortality|probability of death|life expectancy|life table/.test(q)) {
-        return 'Apply mortality and life-table concepts to distinguish probability of death from life expectancy';
-      }
-      return 'Apply the governing LLQP product, contract, and tax rule to the exact facts in the scenario';
-    };
-
-    const wrongReasons = [];
-    options.forEach((_, i) => {
-      if (i === correctIndex) return;
-      const reason = cleanFeedback(feedback[i]);
-      const optionLabel = letters[i] || String(i + 1);
-      const optionText = cleanOptionText(options[i]);
-      if (reason) {
-        wrongReasons.push(`Option ${optionLabel}: ${toSentence(reason).replace(/\.$/, '')}`);
-      } else {
-        wrongReasons.push(`Option ${optionLabel}: "${optionText}" does not match what the question is specifically asking`);
-      }
-    });
-
-    const correctLabel = correctIndex >= 0 ? (letters[correctIndex] || String(correctIndex + 1)) : '?';
-    const correctText = correctIndex >= 0 ? cleanOptionText(options[correctIndex]) : '';
-    const correctFeedback = cleanFeedback(feedback[correctIndex]);
-    const coreReason = toSentence(correctFeedback || 'This choice directly matches the governing rule and the key facts in the scenario');
-
-    const cleanedBaseExplanation = rawExplanation
-      .replace(/Step\s*1\s*:[^\n]*\n?/gi, '')
-      .replace(/Step\s*2\s*:[^\n]*\n?/gi, '')
-      .replace(/Step\s*3\s*:[^\n]*\n?/gi, '')
-      .replace(/Step\s*4\s*:[^\n]*\n?/gi, '')
+    const sanitized = text
+      .replace(/^The correct answer is "[^"]+" because\s*/i, '')
+      .replace(/^The correct idea here is "[^"]+":\s*/i, '')
+      .replace(/^The better answer here is "[^"]+"\.\s*/i, '')
+      .replace(/\s*The correct answer is "[^"]+" because[\s\S]*$/i, '')
+      .replace(/\s*The correct idea here is "[^"]+":[\s\S]*$/i, '')
+      .replace(/\s*The better answer here is "[^"]+"\.[\s\S]*$/i, '')
+      .replace(/^"[^"]+"\s+is\b/i, 'It is')
+      .replace(/^"[^"]+"\s+describes\b/i, 'It describes')
+      .replace(/^"[^"]+"\s+would\b/i, 'It would')
+      .replace(/^"[^"]+"\s+does\b/i, 'It does')
+      .replace(/^"[^"]+"\s+adds\b/i, 'It adds')
+      .replace(/^"[^"]+"\s+mixes\b/i, 'It mixes')
       .replace(/\s+/g, ' ')
-      .trim();
+      .trim()
+      .replace(/[\s.]+$/, '');
 
-    const baseIsGeneric = /identify what the question is asking|apply the llqp rule|governing concept/i.test(cleanedBaseExplanation);
-    const teachingCore = !baseIsGeneric && cleanedBaseExplanation.length > 30
-      ? toSentence(cleanedBaseExplanation)
-      : `${toSentence(getQuestionFocus())} ${toSentence(inferRule())}`;
+    return sanitized ? this.toSentence(sanitized) : '';
+  },
 
-    const wrongLine = wrongReasons.length
-      ? `Why the other options are wrong:\n- ${wrongReasons.join('\n- ')}.`
-      : 'Why the other options are wrong:\n- They conflict with the contract rules or scenario facts.';
+  buildCorrectAnswerReason(question) {
+    const options = Array.isArray(question?.options) ? question.options : [];
+    const correctIndex = Number.isInteger(question?.correctAnswer) ? question.correctAnswer : -1;
+    const correctText = correctIndex >= 0 ? this.getOptionDisplayText(options[correctIndex] || '') : '';
+    const storedFeedback = this.cleanFeedbackText(question?.optionFeedback?.[correctIndex]);
 
-    const correctLine = `Why this answer is correct: Option ${correctLabel}${correctText ? ` (${correctText})` : ''}. ${coreReason}`;
+    const conceptReason = this.summarizeExplanationReason(
+      this.getCorrectConceptReason(question, correctText)
+    );
+    if (conceptReason) {
+      return conceptReason;
+    }
 
-    return [
-      `Core concept: ${teachingCore}`,
-      wrongLine,
-      correctLine
-    ].join('\n\n');
+    const storedFeedbackLooksUseful = Boolean(
+      storedFeedback &&
+      this.normalizeStudyText(storedFeedback) !== this.normalizeStudyText(correctText) &&
+      !/^this option best matches/i.test(storedFeedback)
+    );
+    if (storedFeedbackLooksUseful) {
+      const summarizedStoredFeedback = this.summarizeExplanationReason(storedFeedback);
+      if (summarizedStoredFeedback) {
+        return summarizedStoredFeedback;
+      }
+    }
+
+    return 'It fits the key fact pattern and matches the rule this question is testing.';
+  },
+
+  buildWrongAnswerHint(question, optionIndex) {
+    const optionText = this.getOptionDisplayText(question?.options?.[optionIndex] || '');
+    const correctText = this.getOptionDisplayText(question?.options?.[question?.correctAnswer] || '');
+    const mismatchReason = this.getSelectedMismatchReason(question, optionText, correctText);
+    if (mismatchReason) {
+      return this.toSentence(mismatchReason);
+    }
+
+    const rawFeedback = this.cleanFeedbackText(question?.optionFeedback?.[optionIndex]);
+    if (this.isWrongAnswerFeedbackReliable(question, optionIndex, rawFeedback)) {
+      const nonSpoilerFeedback = this.stripCorrectAnswerReveal(rawFeedback);
+      if (nonSpoilerFeedback) {
+        return nonSpoilerFeedback;
+      }
+    }
+
+    const matchedExplanation = this.stripCorrectAnswerReveal(
+      this.getExplanationReasonForOption(question, optionIndex)
+    );
+    if (matchedExplanation) {
+      return matchedExplanation;
+    }
+
+    if (/\bneither\b/i.test(optionText)) {
+      return 'This choice is too absolute. At least one part of the scenario still points to a different result.';
+    }
+
+    if (/\bboth\b|\ball of the above\b/i.test(optionText)) {
+      return 'This choice is too broad. The facts support a narrower answer than this.';
+    }
+
+    if (/\bnone of the above\b/i.test(optionText)) {
+      return 'This choice is too broad because one of the listed answers fits the rule better.';
+    }
+
+    if (/\b(always|never|only|must|cannot|can\'t|all)\b/i.test(optionText)) {
+      return 'This choice states the rule too absolutely for the facts given.';
+    }
+
+    const numberPattern = /\$?\d[\d,]*(?:\.\d+)?%?|\b\d+\s*(?:days?|months?|years?)\b/gi;
+    const selectedNumbers = optionText.match(numberPattern) || [];
+    const correctNumbers = correctText.match(numberPattern) || [];
+    if (selectedNumbers.length > 0 && correctNumbers.length > 0 && selectedNumbers.join('|') !== correctNumbers.join('|')) {
+      return 'The amount, percentage, or time period in this choice is off.';
+    }
+
+    const fallbackHint = this.stripCorrectAnswerReveal(
+      this.buildWrongAnswerFallback(question, optionIndex)
+    );
+    if (fallbackHint) {
+      return fallbackHint;
+    }
+
+    const conceptLabel = this.getConceptLabel(question, optionText, correctText);
+    return `This choice does not match the ${conceptLabel} the question is testing.`;
+  },
+
+  buildWrongAnswerReviewReason(question, optionIndex) {
+    const optionText = this.getOptionDisplayText(question?.options?.[optionIndex] || '');
+    const correctText = this.getOptionDisplayText(question?.options?.[question?.correctAnswer] || '');
+    const mismatchReason = this.getSelectedMismatchReason(question, optionText, correctText);
+    if (mismatchReason) {
+      return this.summarizeExplanationReason(mismatchReason);
+    }
+
+    const rawFeedback = this.cleanFeedbackText(question?.optionFeedback?.[optionIndex]);
+    if (this.isWrongAnswerFeedbackReliable(question, optionIndex, rawFeedback)) {
+      const summarizedFeedback = this.summarizeExplanationReason(rawFeedback);
+      if (summarizedFeedback) {
+        return summarizedFeedback;
+      }
+    }
+
+    const matchedExplanation = this.summarizeExplanationReason(
+      this.getExplanationReasonForOption(question, optionIndex)
+    );
+    if (matchedExplanation) {
+      return matchedExplanation;
+    }
+
+    const fallbackReason = this.summarizeExplanationReason(
+      this.buildWrongAnswerFallback(question, optionIndex)
+    );
+    if (fallbackReason) {
+      return fallbackReason;
+    }
+
+    return 'It does not fit the rule the question is testing.';
+  },
+
+  buildStepByStepExplanation(question) {
+    if (!question) return null;
+
+    const options = Array.isArray(question.options) ? question.options : [];
+    const correctIndex = Number.isInteger(question.correctAnswer) ? question.correctAnswer : -1;
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const correctText = correctIndex >= 0 ? this.getOptionDisplayText(options[correctIndex] || '') : '';
+    const wrongChoices = options
+      .map((option, index) => {
+        if (index === correctIndex) return null;
+        return {
+          letter: letters[index] || String(index + 1),
+          option: this.getOptionDisplayText(option),
+          reason: this.buildWrongAnswerReviewReason(question, index)
+        };
+      })
+      .filter(Boolean);
+
+    return {
+      subtitle: 'Quick breakdown of the rule, the right choice, and why the other options miss.',
+      sections: [
+        {
+          variant: 'focus',
+          title: 'What the question is testing',
+          body: this.getQuestionFocusText(question)
+        },
+        {
+          variant: 'correct',
+          title: 'Why this answer is correct',
+          badge: correctIndex >= 0 ? (letters[correctIndex] || String(correctIndex + 1)) : '',
+          badgeTone: 'correct',
+          choice: correctText,
+          body: this.buildCorrectAnswerReason(question)
+        },
+        {
+          variant: 'review',
+          title: 'Why the other choices miss',
+          items: wrongChoices
+        },
+        {
+          variant: 'rule',
+          title: 'Rule to remember',
+          body: this.inferQuestionRule(question)
+        }
+      ]
+    };
   },
 
   // Format explanation text into styled HTML
   formatExplanation(text) {
     if (!text) return '';
+
+    if (typeof text === 'object' && Array.isArray(text.sections)) {
+      const subtitleHtml = text.subtitle
+        ? `<p class="explain-subtext">${this.escapeHtml(text.subtitle)}</p>`
+        : '';
+
+      const sectionsHtml = text.sections.map((section) => {
+        if (!section) return '';
+
+        if (Array.isArray(section.items)) {
+          const itemsHtml = section.items.map((item) => `
+              <li class="exp-choice-item">
+                <span class="exp-choice-pill">${this.escapeHtml(item.letter || '')}</span>
+                <div class="exp-choice-copy">
+                  <div class="exp-choice-name">${this.escapeHtml(item.option || '')}</div>
+                  <p class="exp-choice-reason">${this.escapeHtml(item.reason || '')}</p>
+                </div>
+              </li>
+            `).join('');
+
+          return `
+            <section class="exp-panel is-${this.escapeHtml(section.variant || 'default')}">
+              <div class="exp-panel-head">
+                <h4 class="exp-panel-title">${this.escapeHtml(section.title || '')}</h4>
+              </div>
+              <ul class="exp-choice-list">
+                ${itemsHtml}
+              </ul>
+            </section>
+          `;
+        }
+
+        const badgeHtml = section.badge
+          ? `<span class="exp-badge is-${this.escapeHtml(section.badgeTone || 'default')}">${this.escapeHtml(section.badge)}</span>`
+          : '';
+        const choiceHtml = section.choice
+          ? `<div class="exp-choice-highlight">${this.escapeHtml(section.choice)}</div>`
+          : '';
+
+        return `
+          <section class="exp-panel is-${this.escapeHtml(section.variant || 'default')}">
+            <div class="exp-panel-head">
+              <h4 class="exp-panel-title">${this.escapeHtml(section.title || '')}</h4>
+              ${badgeHtml}
+            </div>
+            ${choiceHtml}
+            <p class="exp-panel-text">${this.escapeHtml(section.body || '')}</p>
+          </section>
+        `;
+      }).join('');
+
+      return `
+        ${subtitleHtml}
+        <div class="exp-panels">
+          ${sectionsHtml}
+        </div>
+      `;
+    }
     
     // First, convert markdown tables to HTML tables
     let processedText = this.convertMarkdownTablesToHTML(text);
@@ -3030,14 +3203,7 @@ const MCQApp = {
 
   // Get wrong answer feedback from question explanation
   getWrongAnswerFeedback(question, optionIndex) {
-    const rawFeedback = question?.optionFeedback?.[optionIndex];
-    const cleanedFeedback = this.cleanFeedbackText(rawFeedback);
-
-    if (this.isWrongAnswerFeedbackReliable(question, optionIndex, cleanedFeedback)) {
-      return cleanedFeedback;
-    }
-
-    return this.buildWrongAnswerFallback(question, optionIndex);
+    return this.buildWrongAnswerHint(question, optionIndex);
   },
 
   // Select Option
