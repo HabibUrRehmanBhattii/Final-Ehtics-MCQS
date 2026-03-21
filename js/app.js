@@ -30,6 +30,20 @@ const MCQApp = {
     loadingCount: 0,
     autoAdvanceTimer: null,
     aiAvailable: false,
+    auth: {
+      available: false,
+      authenticated: false,
+      loading: false,
+      error: '',
+      user: null,
+      turnstileReady: false,
+      turnstileSiteKey: '',
+      authMode: 'signin',
+      widgetId: null,
+      lastSyncedAt: null,
+      syncTimer: null,
+      migrating: false
+    },
     autoAdvanceEnabled: localStorage.getItem('auto-advance') === 'true',
     autoAdvanceDelay: 1500,
     homeInsightsExpanded: localStorage.getItem('home-insights-expanded') === 'true'
@@ -98,6 +112,9 @@ const MCQApp = {
 
   saveWrongQuestions() {
     localStorage.setItem('wrong_questions', JSON.stringify(this.state.wrongQuestions));
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
   },
 
   readJSONFromStorage(key, fallback) {
@@ -294,6 +311,10 @@ const MCQApp = {
       this.showView('home');
     }
 
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
+
     this.showToast('Wrong answers history cleared.', 'success');
   },
 
@@ -303,11 +324,14 @@ const MCQApp = {
     this.initDarkMode();
     this.initSpeech();
     this.registerServiceWorker();
-    this.loadWrongQuestions();
     this.beginLoading('Loading topics...');
     try {
       await this.loadTopics();
       await this.checkAIAvailability();
+      if (typeof this.initAuth === 'function') {
+        await this.initAuth();
+      }
+      this.loadWrongQuestions();
     } finally {
       this.endLoading();
     }
@@ -577,6 +601,16 @@ const MCQApp = {
     document.getElementById('finish-retry-btn')?.addEventListener('click', () => {
       this.retryCurrentTest();
     });
+
+    if (typeof this.setupAuthEventListeners === 'function') {
+      this.setupAuthEventListeners();
+    }
+
+    window.addEventListener('online', () => {
+      if (typeof this.syncProgressToCloud === 'function') {
+        this.syncProgressToCloud({ silent: true, force: false });
+      }
+    });
   },
 
   // Update Wrong Questions Count
@@ -633,6 +667,9 @@ const MCQApp = {
   saveDailyStudyStats(stats) {
     if (!stats) return;
     localStorage.setItem('study_daily_stats', JSON.stringify(stats));
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
   },
 
   recordDailyPractice(isCorrect = false) {
@@ -817,6 +854,9 @@ const MCQApp = {
       testId,
       updatedAt: new Date().toISOString()
     }));
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
   },
 
   async resumeLastSession() {
@@ -934,6 +974,9 @@ const MCQApp = {
   // Render Topics Grid
   renderTopicsGrid() {
     this.updateWrongQuestionsCount();
+    if (typeof this.renderAuthPanel === 'function') {
+      this.renderAuthPanel();
+    }
     const grid = document.getElementById('topics-grid');
     if (!grid) return;
 
@@ -2450,6 +2493,9 @@ const MCQApp = {
     // Reload and reshuffle questions
     await this.loadQuestions(this.state.currentPracticeTest.dataFile || 
       this.state.currentTopic.practiceTests.find(t => t.id === testId)?.dataFile);
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
     this.renderQuestion();
   },
 
@@ -3119,6 +3165,9 @@ const MCQApp = {
     };
 
     localStorage.setItem(key, JSON.stringify(data));
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
   },
 
   // Load Progress
@@ -3165,6 +3214,9 @@ const MCQApp = {
       this.state.lastSelectedIndex = undefined;
       this.state.lastSelectedQuestionKey = null;
       this.state.currentQuestionIndex = 0;
+      if (typeof this.scheduleProgressSync === 'function') {
+        this.scheduleProgressSync();
+      }
       this.renderQuestion();
       this.showToast('Review session reset.', 'success');
       return;
@@ -3188,6 +3240,9 @@ const MCQApp = {
     this.state.firstAttemptCorrect = {};
     this.state.lastSelectedIndex = undefined;
     this.state.lastSelectedQuestionKey = null;
+    if (typeof this.scheduleProgressSync === 'function') {
+      this.scheduleProgressSync();
+    }
 
     // Hide finish banner
     const banner = document.getElementById('finish-banner');

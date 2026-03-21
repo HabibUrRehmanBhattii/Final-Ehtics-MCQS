@@ -30,6 +30,7 @@
             </header>
             <main class="wrap">
                 <div class="section-label">Select a Topic to Begin</div>
+                <section id="auth-panel" class="auth-panel" aria-label="Account access"></section>
                 <div id="wrong-questions-section" class="wrong-wrap">
                     <div class="wrong-card" onclick="MCQApp.startWrongQuestionsReview()">
                         <span class="wrong-icon">&#x274C;</span>
@@ -175,6 +176,34 @@
         </div>
 
     </div>
+    <div id="auth-modal" class="auth-modal hidden" aria-hidden="true">
+        <div class="auth-modal-backdrop" data-auth-close="true"></div>
+        <div class="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+            <button id="auth-close-btn" class="auth-close-btn" type="button" aria-label="Close sign in dialog">&times;</button>
+            <div class="auth-dialog-head">
+                <div class="auth-eyebrow">Cloud Sync</div>
+                <h2 id="auth-title" class="auth-title">Sign in</h2>
+                <p id="auth-subtitle" class="auth-subtitle">Save your study progress across devices.</p>
+            </div>
+            <form id="auth-form" class="auth-form">
+                <label class="auth-field">
+                    <span>Email</span>
+                    <input id="auth-email" name="email" type="email" autocomplete="email" required>
+                </label>
+                <label class="auth-field">
+                    <span>Password</span>
+                    <input id="auth-password" name="password" type="password" autocomplete="current-password" required minlength="8">
+                </label>
+                <div id="auth-turnstile" class="auth-turnstile"></div>
+                <div id="auth-error" class="auth-error hidden" aria-live="polite"></div>
+                <button id="auth-submit-btn" class="btn-primary auth-submit" type="submit">Sign in</button>
+            </form>
+            <div class="auth-switcher">
+                <span id="auth-switch-copy">Need an account?</span>
+                <button id="auth-switch-btn" class="btn-link auth-switch-btn" type="button">Sign up</button>
+            </div>
+        </div>
+    </div>
     <div id="app-loading" class="app-loading" aria-hidden="true">
         <div class="app-loading-card" role="status" aria-live="polite">
             <div class="app-loading-spinner"></div>
@@ -183,5 +212,7 @@
     </div>
     <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
     <script src="js/app.js?v=20260320p"></script>
+    <script src="js/auth.js?v=20260321a"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </body>
 </html>
