@@ -2159,6 +2159,9 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 .focus-btn-secondary {
   min-height: 42px;
   border-radius: 12px;
+  min-width: 140px;
+  justify-content: center;
+  text-align: center;
 }
 
 .focus-stats {
@@ -2486,6 +2489,37 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   border: 1px solid rgba(87, 151, 212, .16);
   background: linear-gradient(180deg, rgba(13, 24, 39, .98), rgba(8, 16, 27, .99));
   box-shadow: 0 18px 36px rgba(0, 0, 0, .22);
+}
+
+.home-menu-body .auth-panel {
+  margin: 0;
+}
+
+.home-menu-body .auth-card,
+.home-menu-body .auth-card-active,
+.home-menu-body .auth-card-muted {
+  flex-direction: column;
+  align-items: stretch;
+  gap: .85rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, .025);
+  box-shadow: none;
+}
+
+.home-menu-body .auth-panel-actions {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .55rem;
+}
+
+.home-menu-body .auth-panel-actions > * {
+  width: 100%;
+  min-width: 0;
+}
+
+.home-menu-body .auth-panel-copy {
+  max-width: 28ch;
 }
 
 .menu-toggle-theme {
