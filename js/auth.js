@@ -55,6 +55,13 @@ Object.assign(MCQApp, {
     };
   },
 
+  clearPendingSyncTimer() {
+    if (this.state.auth.syncTimer) {
+      window.clearTimeout(this.state.auth.syncTimer);
+      this.state.auth.syncTimer = null;
+    }
+  },
+
   applyProgressSnapshot(snapshot) {
     if (!snapshot || typeof snapshot !== 'object' || typeof snapshot.items !== 'object') {
       return;
@@ -488,6 +495,7 @@ Object.assign(MCQApp, {
     const submitBtn = document.getElementById('auth-submit-btn');
     const mode = this.state.auth.authMode;
     const localSnapshotBeforeAuth = this.collectProgressSnapshot();
+    this.clearPendingSyncTimer();
 
     if (mode === 'change-password' || mode === 'reset-confirm') {
       if (mode === 'change-password' && (!currentPassword || !newPassword || !confirmPassword)) {
@@ -622,6 +630,7 @@ Object.assign(MCQApp, {
   },
 
   async signOut() {
+    this.clearPendingSyncTimer();
     try {
       await this.fetchAuthJson('/api/auth/signout', { method: 'POST', body: JSON.stringify({}) });
     } catch (error) {
@@ -631,6 +640,15 @@ Object.assign(MCQApp, {
     this.state.auth.authenticated = false;
     this.state.auth.user = null;
     this.state.auth.lastSyncedAt = null;
+    this.state.currentTopic = null;
+    this.state.currentPracticeTest = null;
+    this.state.practiceTestParent = null;
+    this.state.lifeSection = null;
+    this.state.questions = [];
+    this.state.currentQuestionIndex = 0;
+    this.state.isReviewMode = false;
+    this.applyProgressSnapshot(this.getEmptyProgressSnapshot());
+    this.showView('home');
     this.renderAuthPanel();
     this.showToast('Signed out.', 'success');
   },
@@ -692,6 +710,10 @@ Object.assign(MCQApp, {
       return true;
     } catch (error) {
       console.warn('Progress restore failed', error);
+      if (resetToEmpty) {
+        this.applyProgressSnapshot(this.getEmptyProgressSnapshot());
+        this.renderAuthPanel();
+      }
       if (!silent) {
         this.showToast('Unable to restore cloud progress right now.', 'warning');
       }
