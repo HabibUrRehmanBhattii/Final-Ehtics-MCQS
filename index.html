@@ -10,72 +10,49 @@
     <meta name="apple-mobile-web-app-title" content="LLQP Prep">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="LLQP & WFG Exam Prep">
-    <link rel="manifest" href="manifest.webmanifest?v=20260321g">
+    <link rel="manifest" href="manifest.webmanifest?v=20260321h">
     <link rel="icon" href="assets/icons/icon-192.svg" type="image/svg+xml" sizes="192x192">
     <link rel="apple-touch-icon" href="assets/icons/icon-180.svg" sizes="180x180">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260321g">
+    <link rel="stylesheet" href="css/style.css?v=20260321h">
 </head>
 <body>
     <div id="app">
 
         <!-- HOME VIEW -->
         <div id="home-view" class="view active">
-            <header class="hero">
-                <div class="hero-inner">
-                    <button id="dark-mode-toggle" class="dm-toggle" aria-label="Toggle dark mode">&#x1F319;</button>
-                    <div class="hero-copy">
-                        <div class="hero-kicker">Study Mode</div>
-                        <h1 class="hero-title">LLQP &amp; WFG exam prep designed for fast daily practice.</h1>
-                        <p class="hero-sub">Choose a topic, continue where you left off, and keep weak areas visible without extra clutter.</p>
-                        <div class="hero-actions">
-                            <button class="btn-primary hero-btn" type="button" onclick="document.getElementById('topics-grid').scrollIntoView({ behavior: 'smooth', block: 'start' })">Choose Topic</button>
-                            <button class="btn-outline hero-btn ghost" type="button" onclick="MCQApp.openAuthModal('signup')">Cloud Sync</button>
-                        </div>
+            <header class="home-header">
+                <div class="home-header-inner">
+                    <div class="home-brand">
+                        <div class="home-brand-kicker">LLQP Prep</div>
+                        <h1 class="home-brand-title">Study</h1>
                     </div>
-                    <aside class="hero-panel" aria-label="Platform highlights">
-                        <div class="hero-panel-card">
-                            <div class="hero-panel-label">Student-first</div>
-                            <div class="hero-panel-grid">
-                                <div class="hero-stat">
-                                    <strong>Start fast</strong>
-                                    <span>Get into questions quickly instead of navigating a dashboard.</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <strong>Stay on track</strong>
-                                    <span>Resume sessions and review mistakes when you are ready.</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <strong>Keep it simple</strong>
-                                    <span>Account and sync tools stay in the background.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
+                    <button id="dark-mode-toggle" class="dm-toggle" aria-label="Toggle dark mode">&#x1F319;</button>
                 </div>
             </header>
             <main class="wrap">
-                <div class="section-label">Study Tracks</div>
                 <section id="home-focus" class="home-focus" aria-label="Quick study actions"></section>
+                <div class="section-label">Choose Topic</div>
                 <div id="topics-grid" class="grid"></div>
-                <section class="home-dashboard-shell" aria-label="Optional study tools">
-                    <div class="section-label optional-label">Optional Tools</div>
-                    <p class="section-note">Start with a study track above. Sync, progress, and review tools live here when you need them.</p>
-                    <section id="auth-panel" class="auth-panel" aria-label="Account access"></section>
-                    <div id="wrong-questions-section" class="wrong-wrap">
-                        <div class="wrong-card" onclick="MCQApp.startWrongQuestionsReview()">
-                            <span class="wrong-icon">&#x274C;</span>
-                            <div class="wrong-info">
-                                <strong>Review Wrong Answers</strong>
-                                <span class="wrong-count"><span id="wrong-count-badge">0</span> to review</span>
+                <details class="home-menu" aria-label="Study tools and account">
+                    <summary class="home-menu-summary">Menu</summary>
+                    <div class="home-menu-body">
+                        <section id="auth-panel" class="auth-panel" aria-label="Account access"></section>
+                        <div id="wrong-questions-section" class="wrong-wrap">
+                            <div class="wrong-card" onclick="MCQApp.startWrongQuestionsReview()">
+                                <span class="wrong-icon">&#x274C;</span>
+                                <div class="wrong-info">
+                                    <strong>Review Wrong Answers</strong>
+                                    <span class="wrong-count"><span id="wrong-count-badge">0</span> to review</span>
+                                </div>
+                                <span class="wrong-arrow">&#x2192;</span>
                             </div>
-                            <span class="wrong-arrow">&#x2192;</span>
                         </div>
+                        <section id="home-insights" class="home-insights" aria-label="Study dashboard"></section>
                     </div>
-                    <section id="home-insights" class="home-insights" aria-label="Study dashboard"></section>
-                </section>
+                </details>
             </main>
             <footer class="foot">&copy; 2026 LLQP & WFG Exam Prep</footer>
         </div>
@@ -244,7 +221,7 @@
         </div>
     </div>
     <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
-    <script src="js/app.js?v=20260321g"></script>
+    <script src="js/app.js?v=20260321h"></script>
     <script src="js/auth.js?v=20260321g"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </body>

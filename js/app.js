@@ -897,33 +897,33 @@ const MCQApp = {
     const recommended = this.getRecommendedPracticeUnit();
     const wrongCount = this.state.wrongQuestions.length;
 
-    let title = 'Pick a topic and start a focused study session.';
-    let meta = `${stats.totalCourses} tracks available`;
+    let title = 'Pick a topic and start.';
+    let meta = `${stats.totalCourses} topics ready`;
     let primaryLabel = 'Browse topics';
     let primaryAction = "document.getElementById('topics-grid').scrollIntoView({ behavior: 'smooth', block: 'start' })";
 
     if (session) {
       title = `${session.topic.name}: ${session.test.name}`;
-      meta = 'Continue right where you left off';
-      primaryLabel = 'Resume session';
+      meta = 'Continue where you left off';
+      primaryLabel = 'Continue';
       primaryAction = 'MCQApp.resumeLastSession()';
     } else if (recommended) {
       title = `${recommended.topic.name}: ${recommended.test.name}`;
-      meta = `${recommended.progress}% complete in your next best track`;
-      primaryLabel = 'Continue progress';
+      meta = `${recommended.progress}% complete`;
+      primaryLabel = 'Continue';
       primaryAction = 'MCQApp.startRecommendedPractice()';
     }
 
     host.innerHTML = `
       <div class="focus-card">
         <div class="focus-copy">
-          <div class="focus-label">${session ? 'Continue studying' : 'Ready to study'}</div>
+          <div class="focus-label">${session ? 'Continue' : 'Daily study'}</div>
           <h2 class="focus-title">${this.escapeHtml(title)}</h2>
           <p class="focus-meta">${this.escapeHtml(meta)}</p>
           <div class="focus-actions">
             <button class="btn-primary focus-btn" type="button" onclick="${primaryAction}">${this.escapeHtml(primaryLabel)}</button>
             ${wrongCount > 0 ? `
-              <button class="btn-outline focus-btn-secondary" type="button" onclick="MCQApp.startWrongQuestionsReview()">Review ${wrongCount} wrong</button>
+              <button class="btn-outline focus-btn-secondary" type="button" onclick="MCQApp.startWrongQuestionsReview()">Review wrong (${wrongCount})</button>
             ` : ''}
           </div>
         </div>
@@ -1072,29 +1072,33 @@ const MCQApp = {
       const totalQuestions = topic.practiceTests?.reduce((sum, test) => sum + test.questionCount, 0) || 0;
       
       return `
-        <div class="topic-card ${isCompact ? 'compact-topic' : ''} ${!isActive ? 'coming-soon' : ''}" 
+        <div class="topic-card topic-list-item ${isCompact ? 'compact-topic' : ''} ${!isActive ? 'coming-soon' : ''}" 
              ${isActive ? `onclick="MCQApp.selectTopic('${topic.id}')"` : ''}
              style="--topic-color: ${topic.color}">
           <div class="topic-card-top">
             <div class="topic-icon">${topic.icon}</div>
             <div class="topic-chip">${isActive ? 'Ready now' : 'Coming soon'}</div>
           </div>
-          <h3 class="topic-name">${topic.name}</h3>
-          <p class="topic-description">${topic.description}</p>
-          <div class="topic-meta">
-            <span class="question-count">
-              ${totalQuestions} Question${totalQuestions !== 1 ? 's' : ''}
-            </span>
-            ${isActive && progress > 0 ? `
-              <span class="progress-badge">${progress}% Complete</span>
-            ` : ''}
-            ${!isActive ? `
-              <span class="coming-soon-badge">Coming Soon</span>
+          <div class="topic-list-copy">
+            <h3 class="topic-name">${topic.name}</h3>
+            <p class="topic-description">${topic.description}</p>
+            <div class="topic-meta">
+              <span class="question-count">
+                ${totalQuestions} Question${totalQuestions !== 1 ? 's' : ''}
+              </span>
+              ${isActive && progress > 0 ? `
+                <span class="progress-badge">${progress}% Complete</span>
+              ` : ''}
+              ${!isActive ? `
+                <span class="coming-soon-badge">Coming Soon</span>
+              ` : ''}
+            </div>
+          </div>
+          <div class="topic-list-action">
+            ${isActive ? `
+              <button class="btn-start">Open</button>
             ` : ''}
           </div>
-          ${isActive ? `
-            <button class="btn-start">Start Practice →</button>
-          ` : ''}
         </div>
       `;
     }).join('');
