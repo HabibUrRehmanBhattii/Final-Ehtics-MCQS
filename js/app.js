@@ -3,6 +3,7 @@
 // ===================================
 
 const MCQApp = {
+  shuffleSchemaVersion: '20260321-option-cleanup-v2',
   // State Management
   state: {
     topics: [],
@@ -59,6 +60,33 @@ const MCQApp = {
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
+  },
+
+  stripOptionPrefix(optionText) {
+    if (typeof optionText !== 'string') return '';
+    return optionText.replace(/^\s*(?:\(?\s*[A-Fa-f1-6]\s*\)?\s*[.):\-]?)\s+/, '').trim();
+  },
+
+  getOptionDisplayText(optionText) {
+    return this.stripOptionPrefix(optionText);
+  },
+
+  normalizeQuestionOptionLabels(question) {
+    if (!question || !Array.isArray(question.options)) return question;
+    return {
+      ...question,
+      options: question.options.map((option) => this.getOptionDisplayText(option))
+    };
+  },
+
+  hasPrefixedOptionLabels(questions = []) {
+    return questions.some((question) =>
+      Array.isArray(question?.options) &&
+      question.options.some((option) =>
+        typeof option === 'string' &&
+        /^\s*(?:\(?\s*[A-Fa-f1-6]\s*\)?\s*[.).:\-]?)\s+/.test(option)
+      )
+    );
   },
 
   // Log Wrong Answer
@@ -1442,17 +1470,20 @@ const MCQApp = {
       const sourceSignature = this.getQuestionContentSignature(data.questions);
       const savedShuffleData = this.getSavedShuffleData(shuffleKey);
       const savedShuffle = savedShuffleData?.questions || null;
+      const savedShuffleNeedsCleanup = this.hasPrefixedOptionLabels(savedShuffle || []);
       const canReuseSavedShuffle = Boolean(
         savedShuffle &&
         savedShuffle.length === data.questions.length &&
+        savedShuffleData?.version === this.shuffleSchemaVersion &&
         savedShuffleData?.signature &&
-        savedShuffleData.signature === sourceSignature
+        savedShuffleData.signature === sourceSignature &&
+        !savedShuffleNeedsCleanup
       );
       
       // If we have saved shuffle data, use it; otherwise create new shuffle
       if (canReuseSavedShuffle) {
         console.log('Using saved question order');
-        this.state.questions = savedShuffle;
+        this.state.questions = savedShuffle.map((question) => this.normalizeQuestionOptionLabels(question));
       } else {
         console.log('Creating new randomized order');
         // Randomize questions order
@@ -1460,9 +1491,9 @@ const MCQApp = {
         
         // Randomize answer options for each question
         this.state.questions = shuffledQuestions.map(question => {
-          // Strip A. B. C. D. prefixes from options
+          // Normalize option labels so the UI can render its own A/B/C/D badge cleanly.
           const optionsWithoutPrefix = question.options.map(opt => 
-            opt.replace(/^[A-D]\.\s*/, '').trim()
+            this.getOptionDisplayText(opt)
           );
           
           const originalCorrectAnswer = question.correctAnswer;
@@ -1471,20 +1502,19 @@ const MCQApp = {
           const indices = optionsWithoutPrefix.map((_, index) => index);
           const shuffledIndices = this.shuffleArray(indices);
           
-          // Shuffle options and re-add A, B, C, D prefixes
+          // Shuffle options without embedding letter prefixes in the text itself.
           const shuffledOptions = shuffledIndices.map((originalIndex, newIndex) => {
-            const letter = ['A', 'B', 'C', 'D'][newIndex];
-            return `${letter}. ${optionsWithoutPrefix[originalIndex]}`;
+            return optionsWithoutPrefix[originalIndex];
           });
           
           // Find new position of correct answer
           const newCorrectAnswer = shuffledIndices.indexOf(originalCorrectAnswer);
           
-          return {
+          return this.normalizeQuestionOptionLabels({
             ...question,
             options: shuffledOptions,
             correctAnswer: newCorrectAnswer
-          };
+          });
         });
         
         // Save the shuffled order
@@ -1587,7 +1617,7 @@ const MCQApp = {
              onclick="MCQApp.selectOption(${index})">
           <div class="option-main">
             <span class="option-letter">${letters[index] || index + 1}</span>
-            <span class="option-text">${this.escapeHtml(option)}</span>
+            <span class="option-text">${this.escapeHtml(this.getOptionDisplayText(option))}</span>
           </div>
           ${feedbackHtml}
         </div>
@@ -1606,7 +1636,7 @@ const MCQApp = {
     // If already answered, restore the answer display and disable options
     if (this.state.answersRevealed.has(stateKey)) {
       const answerSection = document.getElementById('answer-section');
-      document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
+      document.getElementById('correct-answer-text').textContent = this.getOptionDisplayText(question.options[question.correctAnswer]);
       const explanationText = this.buildStepByStepExplanation(question);
       document.getElementById('explanation-text').innerHTML = this.formatExplanation(explanationText);
       answerSection.classList.remove('hidden');
@@ -1655,7 +1685,7 @@ const MCQApp = {
   // Build speech text for current question
   buildSpeechText(question) {
     const optionsText = question.options
-      .map((opt, idx) => `Option ${idx + 1}: ${opt}`)
+      .map((opt, idx) => `Option ${idx + 1}: ${this.getOptionDisplayText(opt)}`)
       .join('. ');
     return `Question. ${question.question}. ${optionsText}`;
   },
@@ -1816,7 +1846,9 @@ const MCQApp = {
       questions.map((question) => ({
         id: question?.id,
         question: question?.question,
-        options: question?.options,
+        options: Array.isArray(question?.options)
+          ? question.options.map((option) => this.getOptionDisplayText(option))
+          : question?.options,
         correctAnswer: question?.correctAnswer,
         explanation: question?.explanation,
         optionFeedback: question?.optionFeedback
@@ -1833,14 +1865,16 @@ const MCQApp = {
       if (Array.isArray(parsed)) {
         return {
           questions: parsed,
-          signature: null
+          signature: null,
+          version: null
         };
       }
 
       if (parsed && Array.isArray(parsed.questions)) {
         return {
           questions: parsed.questions,
-          signature: typeof parsed.signature === 'string' ? parsed.signature : null
+          signature: typeof parsed.signature === 'string' ? parsed.signature : null,
+          version: typeof parsed.version === 'string' ? parsed.version : null
         };
       }
     } catch (error) {
@@ -1852,6 +1886,7 @@ const MCQApp = {
 
   saveShuffleData(shuffleKey, questions, signature) {
     localStorage.setItem(shuffleKey, JSON.stringify({
+      version: this.shuffleSchemaVersion,
       signature,
       questions
     }));
@@ -2194,9 +2229,7 @@ const MCQApp = {
       return cleaned.charAt(0).toUpperCase() + cleaned.slice(1) + '.';
     };
 
-    const cleanOptionText = (value) => String(value || '')
-      .replace(/^[A-Fa-f]\.\s*/, '')
-      .trim()
+    const cleanOptionText = (value) => this.getOptionDisplayText(value)
       .replace(/[\s.]+$/, '');
 
     const cleanFeedback = (value) => String(value || '')
@@ -2552,7 +2585,7 @@ const MCQApp = {
       
       // Show explanation
       const answerSection = document.getElementById('answer-section');
-      document.getElementById('correct-answer-text').textContent = question.options[question.correctAnswer];
+      document.getElementById('correct-answer-text').textContent = this.getOptionDisplayText(question.options[question.correctAnswer]);
       const explanationText = this.buildStepByStepExplanation(question);
       document.getElementById('explanation-text').innerHTML = this.formatExplanation(explanationText);
       
@@ -2606,11 +2639,7 @@ const MCQApp = {
 
         this.showToast('Incorrect. Keep practicing — this question will appear again.', 'warning');
 
-        const filtered = this.getFilteredQuestions();
-        if (filtered.length > 1) {
-          const nextIndex = (this.state.currentQuestionIndex + 1) % filtered.length;
-          this.state.currentQuestionIndex = nextIndex;
-        }
+        this.state.attemptedOptions[stateKey].push(selectedIndex);
         this.renderQuestion();
         return;
       }
@@ -2744,7 +2773,7 @@ const MCQApp = {
 
     try {
       const userAnswer = question.options[selectedIndex];
-      const correctAnswer = question.options[question.correctAnswer];
+      const correctAnswer = this.getOptionDisplayText(question.options[question.correctAnswer]);
       const isCorrect = selectedIndex === question.correctAnswer;
       
       // Build rich context for better explanations
@@ -3073,7 +3102,7 @@ const MCQApp = {
           <div class="list-options">
             ${question.options.map((opt, i) => `
               <div class="list-option ${i === question.correctAnswer && isRevealed ? 'correct-preview' : ''}">
-                ${this.escapeHtml(opt)}
+                ${this.escapeHtml(this.getOptionDisplayText(opt))}
               </div>
             `).join('')}
           </div>
