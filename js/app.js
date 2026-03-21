@@ -2780,6 +2780,32 @@ const MCQApp = {
     const correctIndex = Number.isInteger(question?.correctAnswer) ? question.correctAnswer : -1;
     const correctText = correctIndex >= 0 ? this.getOptionDisplayText(options[correctIndex] || '') : '';
     const storedFeedback = this.cleanFeedbackText(question?.optionFeedback?.[correctIndex]);
+    const explanationCandidates = this.getExplanationReasonCandidates(question);
+
+    if (explanationCandidates.length > 0) {
+      const combinedReference = `${correctText} ${this.getQuestionPlainText(question)}`.trim();
+      let bestCandidate = '';
+      let bestScore = 0;
+
+      explanationCandidates.forEach((candidate) => {
+        const score = Math.max(
+          this.getKeywordOverlapScore(candidate, combinedReference),
+          this.getKeywordOverlapScore(candidate, correctText)
+        );
+
+        if (score > bestScore) {
+          bestCandidate = candidate;
+          bestScore = score;
+        }
+      });
+
+      const fallbackCandidate = explanationCandidates[0] || '';
+      const teachingPoint = bestScore >= 0.16 ? bestCandidate : fallbackCandidate;
+      const summarizedTeachingPoint = this.summarizeExplanationReason(teachingPoint);
+      if (summarizedTeachingPoint) {
+        return summarizedTeachingPoint;
+      }
+    }
 
     const conceptReason = this.summarizeExplanationReason(
       this.getCorrectConceptReason(question, correctText)
@@ -2801,6 +2827,17 @@ const MCQApp = {
     }
 
     return 'It fits the key fact pattern and matches the rule this question is testing.';
+  },
+
+  getRuleReminder(question) {
+    const ruleText = this.toSentence(this.inferQuestionRule(question));
+    if (!ruleText) return '';
+
+    if (/Apply the governing LLQP product, contract, and tax rule to the exact facts in the scenario\./i.test(ruleText)) {
+      return '';
+    }
+
+    return ruleText;
   },
 
   buildWrongAnswerHint(question, optionIndex) {
@@ -2900,6 +2937,7 @@ const MCQApp = {
     const correctIndex = Number.isInteger(question.correctAnswer) ? question.correctAnswer : -1;
     const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
     const correctText = correctIndex >= 0 ? this.getOptionDisplayText(options[correctIndex] || '') : '';
+    const ruleReminder = this.getRuleReminder(question);
     const wrongChoices = options
       .map((option, index) => {
         if (index === correctIndex) return null;
@@ -2912,30 +2950,21 @@ const MCQApp = {
       .filter(Boolean);
 
     return {
-      subtitle: 'Quick breakdown of the rule, the right choice, and why the other options miss.',
       sections: [
-        {
-          variant: 'focus',
-          title: 'What the question is testing',
-          body: this.getQuestionFocusText(question)
-        },
         {
           variant: 'correct',
           title: 'Why this answer is correct',
           badge: correctIndex >= 0 ? (letters[correctIndex] || String(correctIndex + 1)) : '',
           badgeTone: 'correct',
           choice: correctText,
-          body: this.buildCorrectAnswerReason(question)
+          body: this.buildCorrectAnswerReason(question),
+          note: ruleReminder
         },
         {
           variant: 'review',
-          title: 'Why the other choices miss',
+          title: `Review other choices (${wrongChoices.length})`,
+          collapsible: true,
           items: wrongChoices
-        },
-        {
-          variant: 'rule',
-          title: 'Rule to remember',
-          body: this.inferQuestionRule(question)
         }
       ]
     };
@@ -2946,10 +2975,6 @@ const MCQApp = {
     if (!text) return '';
 
     if (typeof text === 'object' && Array.isArray(text.sections)) {
-      const subtitleHtml = text.subtitle
-        ? `<p class="explain-subtext">${this.escapeHtml(text.subtitle)}</p>`
-        : '';
-
       const sectionsHtml = text.sections.map((section) => {
         if (!section) return '';
 
@@ -2963,6 +2988,19 @@ const MCQApp = {
                 </div>
               </li>
             `).join('');
+
+          if (section.collapsible) {
+            return `
+              <details class="exp-disclosure">
+                <summary class="exp-disclosure-summary">${this.escapeHtml(section.title || '')}</summary>
+                <div class="exp-disclosure-body">
+                  <ul class="exp-choice-list">
+                    ${itemsHtml}
+                  </ul>
+                </div>
+              </details>
+            `;
+          }
 
           return `
             <section class="exp-panel is-${this.escapeHtml(section.variant || 'default')}">
@@ -2982,6 +3020,9 @@ const MCQApp = {
         const choiceHtml = section.choice
           ? `<div class="exp-choice-highlight">${this.escapeHtml(section.choice)}</div>`
           : '';
+        const noteHtml = section.note
+          ? `<p class="exp-panel-note"><strong>Remember:</strong> ${this.escapeHtml(section.note)}</p>`
+          : '';
 
         return `
           <section class="exp-panel is-${this.escapeHtml(section.variant || 'default')}">
@@ -2991,12 +3032,12 @@ const MCQApp = {
             </div>
             ${choiceHtml}
             <p class="exp-panel-text">${this.escapeHtml(section.body || '')}</p>
+            ${noteHtml}
           </section>
         `;
       }).join('');
 
       return `
-        ${subtitleHtml}
         <div class="exp-panels">
           ${sectionsHtml}
         </div>
