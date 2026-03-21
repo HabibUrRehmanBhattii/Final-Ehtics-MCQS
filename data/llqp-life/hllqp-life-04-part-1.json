@@ -18,7 +18,7 @@
         "UL surrender value is based on account/cash value mechanics and surrender charges, not the greater-of test described.",
         "A policy surrender is typically tied to cash value and charges, not automatically zero in all cases.",
         "The face amount is a death benefit, not a surrender benefit.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. How much would he likely receive if he surrendered the policy?."
       ],
       "explanation": "On surrender, a UL policy generally pays the account/cash value minus applicable surrender charges and adjustments. The face amount is only payable on death, not on cancellation.",
       "difficulty": "medium",
@@ -41,7 +41,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Switch rules are product-specific and not universally based on original issue-age pricing.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What should you advise him?.",
         "Not all UL contracts permit bidirectional switching between costing methods.",
         "YRT is a mortality costing method in UL, not an automatic age-limited expiry of the UL policy."
       ],
@@ -66,7 +66,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "That amount is the account value, not the level death benefit payout.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. How much will her beneficiaries receive?.",
         "Face plus account applies only if that death benefit option was selected.",
         "Surrender charges apply to surrender values, not death benefit payouts in this context."
       ],
@@ -90,7 +90,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This understates 2% of the deposit base.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Based on the information below, what would the monthly premium tax be?.",
         "This is not 2% of the monthly deposit amount.",
         "This does not match the premium-tax calculation from the stated figures."
       ],
@@ -116,7 +116,7 @@
         "This increases death benefit structure complexity and can increase long-term cost pressure.",
         "Face plus account generally increases death benefit and NAAR exposure versus level benefit.",
         "YRT introduces increasing mortality cost risk over time.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following set of UL options should the client select if he is conservative when it comes to risk?."
       ],
       "explanation": "For a conservative UL structure with stable needs, LCOI with level death benefit is typically more predictable than YRT or increasing death benefit structures.",
       "difficulty": "medium",
@@ -138,7 +138,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What is the most likely cause of this?.",
         "This option alone does not best explain a gradual growth slowdown with steady investment performance.",
         "Higher deposits would generally support, not reduce, account growth.",
         "LCOI is level by design and usually does not create the same rising deduction pattern as YRT."
@@ -163,7 +163,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What could be the reason for this?.",
         "Exemption-test failure has different tax consequences and is not the most direct explanation here.",
         "LCOI is level and less likely to create an accelerating drag pattern than YRT.",
         "Tax-exempt status does not itself cause growth to slow."
@@ -189,7 +189,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Mortality costing choice alone is not the strongest indicator of exemption pressure.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following policies would be in the most danger of failing the exemption test?.",
         "YRT may affect deductions, but maximum funding is the key exemption-test risk factor here.",
         "Minimally funded policies are generally less likely to breach exemption limits."
       ],
@@ -212,7 +212,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following strategies would help Teddy achieve this?.",
         "UL is not simply held inside an RRSP structure as described.",
         "Withdrawals can trigger taxable policy gain depending on ACB and policy values.",
         "Policy loans are not automatically tax-free in the way this option implies."
@@ -239,7 +239,7 @@
       "optionFeedback": [
         "Whole life generally does not use UL-style selectable face-plus-account death benefit options.",
         "T-100 is not typically structured with UL account-value death benefit options.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following policies would allow her to choose this type of death benefit?.",
         "YRT is a term costing structure and does not provide UL account-value death benefit mechanics."
       ],
       "explanation": "The face amount plus account value death benefit is a standard selectable option within UL design.",

@@ -13,7 +13,13 @@
         "A period to change the beneficiary"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: A period during which premiums can be paid late without forfeiting the policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: A period during which premiums can be paid late without forfeiting the policy.",
+      "optionFeedback": [
+        "A period during which premiums can be paid late without forfeiting the policy.",
+        "\"period of free coverage after death\" describes a different event, not the overdue-premium window called the grace period. The correct answer is \"period during which premiums can be paid late without forfeiting the policy\" because the grace period is the extra time to pay an overdue premium while coverage stays in force.",
+        "\"period before the policy becomes effective\" describes a different event, not the overdue-premium window called the grace period. The correct answer is \"period during which premiums can be paid late without forfeiting the policy\" because the grace period is the extra time to pay an overdue premium while coverage stays in force.",
+        "\"period to change the beneficiary\" describes a different event, not the overdue-premium window called the grace period. The correct answer is \"period during which premiums can be paid late without forfeiting the policy\" because the grace period is the extra time to pay an overdue premium while coverage stays in force."
+      ]
     },
     {
       "id": 2,
@@ -25,7 +31,13 @@
         "Incontestable clause"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Reinstatement provision."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Reinstatement provision.",
+      "optionFeedback": [
+        "Reinstatement provision.",
+        "\"Grace period provision\" is a different provision. It does not restore a lapsed policy. The correct answer is \"Reinstatement provision\" because reinstatement is the provision that can restore a lapsed policy once the insurer's conditions are met.",
+        "\"Non-forfeiture provision\" is a different provision. It does not restore a lapsed policy. The correct answer is \"Reinstatement provision\" because reinstatement is the provision that can restore a lapsed policy once the insurer's conditions are met.",
+        "\"Incontestable clause\" is a different policy provision than the one this question is testing. The correct answer is \"Reinstatement provision\" because reinstatement is the provision that can restore a lapsed policy once the insurer's conditions are met."
+      ]
     },
     {
       "id": 3,
@@ -37,7 +49,13 @@
         "A clause that prevents claims from being paid"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A clause that prevents the insurer from contesting the validity of the policy after a specified period."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A clause that prevents the insurer from contesting the validity of the policy after a specified period.",
+      "optionFeedback": [
+        "\"clause that prevents the insurer from testing policy values\" is a different policy provision than the one this question is testing. The better answer here is \"clause that prevents the insurer from contesting the validity of the policy after a specified period\".",
+        "A clause that prevents the insurer from contesting the validity of the policy after a specified period.",
+        "\"clause that prevents the policyowner from changing beneficiaries\" is a different beneficiary designation than the one this question is testing. The better answer here is \"clause that prevents the insurer from contesting the validity of the policy after a specified period\".",
+        "\"clause that prevents claims from being paid\" is a different policy provision than the one this question is testing. The better answer here is \"clause that prevents the insurer from contesting the validity of the policy after a specified period\"."
+      ]
     },
     {
       "id": 4,
@@ -49,7 +67,13 @@
         "Allow the insurer to investigate beneficiary motives"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Limit the insurer's liability for death by suicide during the first few years of the policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Limit the insurer's liability for death by suicide during the first few years of the policy.",
+      "optionFeedback": [
+        "This choice is too absolute for the facts given. The better answer here is \"Limit the insurer's liability for death by suicide during the first few years of the policy\".",
+        "Limit the insurer's liability for death by suicide during the first few years of the policy.",
+        "\"Require the beneficiary to prove cause of death\" is a different beneficiary designation than the one this question is testing. The better answer here is \"Limit the insurer's liability for death by suicide during the first few years of the policy\".",
+        "\"Allow the insurer to investigate beneficiary motives\" is a different beneficiary designation than the one this question is testing. The better answer here is \"Limit the insurer's liability for death by suicide during the first few years of the policy\"."
+      ]
     },
     {
       "id": 5,
@@ -61,7 +85,13 @@
         "Profit-sharing clause"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Dividend provision."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Dividend provision.",
+      "optionFeedback": [
+        "Dividend provision.",
+        "\"Non-participating provision\" is a different policy provision than the one this question is testing. The better answer here is \"Dividend provision\".",
+        "\"Participation provision\" is a different policy provision than the one this question is testing. The better answer here is \"Dividend provision\".",
+        "\"Profit-sharing clause\" is a different policy provision than the one this question is testing. The better answer here is \"Dividend provision\"."
+      ]
     },
     {
       "id": 6,
@@ -73,7 +103,13 @@
         "A loan from the insurance company to the beneficiary"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A loan that the policyowner can take against the policy's cash value."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A loan that the policyowner can take against the policy's cash value.",
+      "optionFeedback": [
+        "\"loan taken by the insurer against the policy\" is a different answer than the one this question is testing. The better answer here is \"loan that the policyowner can take against the policy's cash value\".",
+        "A loan that the policyowner can take against the policy's cash value.",
+        "\"loan to pay premiums\" is a different premium-payment feature than the one this question is testing. The better answer here is \"loan that the policyowner can take against the policy's cash value\".",
+        "\"loan from the insurance company to the beneficiary\" is a different beneficiary designation than the one this question is testing. The better answer here is \"loan that the policyowner can take against the policy's cash value\"."
+      ]
     },
     {
       "id": 7,
@@ -85,7 +121,13 @@
         "An option to increase coverage"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Protection against loss of benefits due to non-payment."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Protection against loss of benefits due to non-payment.",
+      "optionFeedback": [
+        "Protection against loss of benefits due to non-payment.",
+        "This choice is too absolute for the facts given. The better answer here is \"Protection against loss of benefits due to non-payment\".",
+        "\"guarantee of policy renewal\" is a different policy provision than the one this question is testing. The better answer here is \"Protection against loss of benefits due to non-payment\".",
+        "\"An option to increase coverage\" is a different statement than the one this question is testing. The better answer here is \"Protection against loss of benefits due to non-payment\"."
+      ]
     },
     {
       "id": 8,
@@ -97,7 +139,13 @@
         "Death benefit increase"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Death benefit increase."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Death benefit increase.",
+      "optionFeedback": [
+        "\"Cash surrender value\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Death benefit increase\" because that statement is the one that matches the rule being tested.",
+        "\"Paid-up insurance\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Death benefit increase\" because that statement is the one that matches the rule being tested.",
+        "\"Extended term insurance\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Death benefit increase\" because that statement is the one that matches the rule being tested.",
+        "Death benefit increase."
+      ]
     },
     {
       "id": 9,
@@ -109,7 +157,13 @@
         "To extend the contestable period"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: To allow the policyowner to review the policy and return it if unsatisfied for a full refund."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: To allow the policyowner to review the policy and return it if unsatisfied for a full refund.",
+      "optionFeedback": [
+        "\"To allow the insurer to review the application\" is a different policy provision than the one this question is testing. The correct answer is \"To allow the policyowner to review the policy and return it if unsatisfied for a full refund\" because the free-look period begins when the policy is delivered.",
+        "To allow the policyowner to review the policy and return it if unsatisfied for a full refund.",
+        "\"To delay premium payments\" is a different policy provision than the one this question is testing. The correct answer is \"To allow the policyowner to review the policy and return it if unsatisfied for a full refund\" because the free-look period begins when the policy is delivered.",
+        "\"To extend the contestable period\" is a different policy provision than the one this question is testing. The correct answer is \"To allow the policyowner to review the policy and return it if unsatisfied for a full refund\" because the free-look period begins when the policy is delivered."
+      ]
     },
     {
       "id": 10,
@@ -121,7 +175,13 @@
         "Split-funded plan"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Noncontributory plan."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Noncontributory plan.",
+      "optionFeedback": [
+        "\"Contributory plan\" is a different group plan feature than the one this question is testing. The correct answer is \"Noncontributory plan\" because a noncontributory plan is paid entirely by the employer.",
+        "Noncontributory plan.",
+        "\"Voluntary plan\" is a different group plan feature than the one this question is testing. The correct answer is \"Noncontributory plan\" because a noncontributory plan is paid entirely by the employer.",
+        "\"Split-funded plan\" is a different group plan feature than the one this question is testing. The correct answer is \"Noncontributory plan\" because a noncontributory plan is paid entirely by the employer."
+      ]
     },
     {
       "id": 11,
@@ -133,7 +193,13 @@
         "The period to cancel the policy"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The period an employee must work before becoming eligible for coverage."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The period an employee must work before becoming eligible for coverage.",
+      "optionFeedback": [
+        "\"The period before any benefits are paid\" is a different statement than the one this question is testing. The better answer here is \"The period an employee must work before becoming eligible for coverage\".",
+        "The period an employee must work before becoming eligible for coverage.",
+        "\"The period between claims\" is a different statement than the one this question is testing. The better answer here is \"The period an employee must work before becoming eligible for coverage\".",
+        "\"The period to cancel the policy\" is a different statement than the one this question is testing. The better answer here is \"The period an employee must work before becoming eligible for coverage\"."
+      ]
     },
     {
       "id": 12,
@@ -145,7 +211,13 @@
         "A government health insurance program"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A law requiring employers to offer continued health coverage to employees after separation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A law requiring employers to offer continued health coverage to employees after separation.",
+      "optionFeedback": [
+        "\"type of health insurance plan\" is a different coverage condition than the one this question is testing. The better answer here is \"law requiring employers to offer continued health coverage to employees after separation\".",
+        "A law requiring employers to offer continued health coverage to employees after separation.",
+        "This choice is too absolute for the facts given. The better answer here is \"law requiring employers to offer continued health coverage to employees after separation\".",
+        "\"government health insurance program\" is a different coverage condition than the one this question is testing. The better answer here is \"law requiring employers to offer continued health coverage to employees after separation\"."
+      ]
     },
     {
       "id": 13,
@@ -157,7 +229,13 @@
         "All of the above"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: All of the above."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: All of the above.",
+      "optionFeedback": [
+        "\"Paying benefits from multiple policies to avoid overpayment\" is a different coverage condition than the one this question is testing. The better answer here is \"All of the above\".",
+        "\"Combining benefits from different insurers\" is a different coverage condition than the one this question is testing. The better answer here is \"All of the above\".",
+        "\"method to determine which policy pays first\" is a different coverage condition than the one this question is testing. The better answer here is \"All of the above\".",
+        "All of the above."
+      ]
     },
     {
       "id": 14,
@@ -169,7 +247,13 @@
         "A condition that can never be covered"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: A period during which conditions existing before coverage began are not covered."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: A period during which conditions existing before coverage began are not covered.",
+      "optionFeedback": [
+        "A period during which conditions existing before coverage began are not covered.",
+        "This choice is too absolute for the facts given. The better answer here is \"period during which conditions existing before coverage began are not covered\".",
+        "This choice is too absolute for the facts given. The better answer here is \"period during which conditions existing before coverage began are not covered\".",
+        "This choice is too absolute for the facts given. The better answer here is \"period during which conditions existing before coverage began are not covered\"."
+      ]
     },
     {
       "id": 15,
@@ -181,7 +265,13 @@
         "A government health program"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A managed care health plan emphasizing preventive care and using network providers."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A managed care health plan emphasizing preventive care and using network providers.",
+      "optionFeedback": [
+        "\"type of life insurance\" is a different answer than the one this question is testing. The better answer here is \"managed care health plan emphasizing preventive care and using network providers\".",
+        "A managed care health plan emphasizing preventive care and using network providers.",
+        "\"dental insurance plan\" is a different answer than the one this question is testing. The better answer here is \"managed care health plan emphasizing preventive care and using network providers\".",
+        "\"government health program\" is a different answer than the one this question is testing. The better answer here is \"managed care health plan emphasizing preventive care and using network providers\"."
+      ]
     },
     {
       "id": 16,
@@ -193,7 +283,13 @@
         "A short-term insurance product"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A health plan that offers incentives to use network providers but allows out-of-network care."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A health plan that offers incentives to use network providers but allows out-of-network care.",
+      "optionFeedback": [
+        "\"type of life insurance\" is a different answer than the one this question is testing. The better answer here is \"health plan that offers incentives to use network providers but allows out-of-network care\".",
+        "A health plan that offers incentives to use network providers but allows out-of-network care.",
+        "This choice is too absolute for the facts given. The better answer here is \"health plan that offers incentives to use network providers but allows out-of-network care\".",
+        "\"short-term insurance product\" is a different answer than the one this question is testing. The better answer here is \"health plan that offers incentives to use network providers but allows out-of-network care\"."
+      ]
     },
     {
       "id": 17,
@@ -205,7 +301,13 @@
         "A co-payment amount"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The amount the insured must pay out-of-pocket before coverage begins."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The amount the insured must pay out-of-pocket before coverage begins.",
+      "optionFeedback": [
+        "\"monthly premium payment\" is a different statement than the one this question is testing. The better answer here is \"The amount the insured must pay out-of-pocket before coverage begins\".",
+        "The amount the insured must pay out-of-pocket before coverage begins.",
+        "\"The maximum the insurer will pay\" is a different statement than the one this question is testing. The better answer here is \"The amount the insured must pay out-of-pocket before coverage begins\".",
+        "\"co-payment amount\" is a different statement than the one this question is testing. The better answer here is \"The amount the insured must pay out-of-pocket before coverage begins\"."
+      ]
     },
     {
       "id": 18,
@@ -217,7 +319,13 @@
         "A percentage of total medical costs"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A fixed amount paid by the insured at the time of service."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A fixed amount paid by the insured at the time of service.",
+      "optionFeedback": [
+        "\"shared cost between employer and employee\" is a different answer than the one this question is testing. The better answer here is \"fixed amount paid by the insured at the time of service\".",
+        "A fixed amount paid by the insured at the time of service.",
+        "\"An annual premium\" is a different statement than the one this question is testing. The better answer here is \"fixed amount paid by the insured at the time of service\".",
+        "\"percentage of total medical costs\" is a different answer than the one this question is testing. The better answer here is \"fixed amount paid by the insured at the time of service\"."
+      ]
     },
     {
       "id": 19,
@@ -229,7 +337,13 @@
         "An optional rider on policies"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A percentage of costs shared between the insured and insurer after the deductible."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: A percentage of costs shared between the insured and insurer after the deductible.",
+      "optionFeedback": [
+        "\"Coverage shared between two insurers\" is a different coverage condition than the one this question is testing. The better answer here is \"percentage of costs shared between the insured and insurer after the deductible\".",
+        "A percentage of costs shared between the insured and insurer after the deductible.",
+        "\"type of group coverage\" is a different coverage condition than the one this question is testing. The better answer here is \"percentage of costs shared between the insured and insurer after the deductible\".",
+        "\"An optional rider on policies\" is a different statement than the one this question is testing. The better answer here is \"percentage of costs shared between the insured and insurer after the deductible\"."
+      ]
     },
     {
       "id": 20,
@@ -241,7 +355,13 @@
         "A limit on emergency room visits"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The total amount the insured must pay before the insurer covers 100% of costs."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The total amount the insured must pay before the insurer covers 100% of costs.",
+      "optionFeedback": [
+        "\"The maximum monthly premium\" is a different statement than the one this question is testing. The better answer here is \"The total amount the insured must pay before the insurer covers 100% of costs\".",
+        "The total amount the insured must pay before the insurer covers 100% of costs.",
+        "\"The annual deductible amount\" is a different statement than the one this question is testing. The better answer here is \"The total amount the insured must pay before the insurer covers 100% of costs\".",
+        "\"limit on emergency room visits\" is a different statement than the one this question is testing. The better answer here is \"The total amount the insured must pay before the insurer covers 100% of costs\"."
+      ]
     }
   ]
 }

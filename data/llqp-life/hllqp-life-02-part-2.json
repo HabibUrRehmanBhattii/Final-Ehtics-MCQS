@@ -18,7 +18,7 @@
         "Whole life is generally too expensive for this temporary declining need.",
         "RESP is savings/investment, not mortality protection.",
         "Need declines as savings build, so increasing term mismatches.",
-        null
+        "Decreasing term insurance."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life is generally too expensive for this temporary declining need; RESP is savings/investment, not mortality protection.\nStep 4: Select the best answer. Option D: Decreasing term insurance.",
       "difficulty": "medium",
@@ -40,7 +40,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Agent does not own contract rights.",
-        null,
+        "Charlie.",
         "Beneficiary typically does not control owner decisions.",
         "Life-insured is not automatically policy owner."
       ],
@@ -64,7 +64,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Known health issues can be material.",
-        null,
+        "Unknown health issue.",
         "Medical consultation history can be material to underwriting.",
         "Date of birth is materially linked to pricing and risk."
       ],
@@ -89,7 +89,7 @@
         "Level term keeps face amount level.",
         "Convertibility is a feature, not this specific coverage pattern.",
         "Increasing term raises death benefit over time.",
-        null
+        "Decreasing term."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Level term keeps face amount level; Convertibility is a feature, not this specific coverage pattern.\nStep 4: Select the best answer. Option D: Decreasing term.",
       "difficulty": "easy",
@@ -109,7 +109,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Joint first-to-die usually terminates at first payout.",
-        null,
+        "Some plans will allow the surviving spouse the option to continue the same amount of coverage on his or her own life under a new policy without having to provide evidence of insurability.",
         "Original joint contract generally terminates on first death claim.",
         "No-premium continuation is not typical after full payout."
       ],
@@ -131,7 +131,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "It is used to measure the rate of inflation.",
         "Mortality is measured by actuarial mortality data, not CPI.",
         "Interest rates are separate metrics.",
         "Morbidity is illness incidence, unrelated to CPI definition."
@@ -155,7 +155,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Renewable-only may not preserve guaranteed path to permanent without evidence.",
-        null,
+        "Purchase $1,000,000 in convertible term insurance.",
         "This leaves him underinsured relative to identified need.",
         "Delaying can leave critical risk uninsured."
       ],
@@ -178,7 +178,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "Term insurance is always renewable.",
         "This can be true when conversion feature exists.",
         "This is generally true for equivalent face amount.",
         "This is generally true for basic term products."
@@ -201,7 +201,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "10-year decreasing term insurance.",
         "Level term may overinsure later years and cost more than decreasing term for this need.",
         "T-100 is permanent and usually more expensive.",
         "5-year base term does not match full 10-year repayment period as directly."
@@ -227,7 +227,7 @@
         "This could still be solved by other structures; classic estate tax trigger is cleaner for last-to-die.",
         "Mortgage protection is usually first-to-die.",
         "Single person cannot use joint policy.",
-        null
+        "Jane and Alex, who would like a policy that will pay the capital gains tax on a cottage upon death."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This could still be solved by other structures; classic estate tax trigger is cleaner for last-to-die; Mortgage protection is usually first-to-die.\nStep 4: Select the best answer. Option D: Jane and Alex, who would like a policy that will pay the capital gains tax on a cottage upon death.",
       "difficulty": "medium",

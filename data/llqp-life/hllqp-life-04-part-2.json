@@ -15,7 +15,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following statements correctly describes the flexibility of a UL policy?.",
         "Changing the life insured is not a standard universal right and depends on contract terms.",
         "UL is generally chosen for flexibility, not rigidity.",
         "Coverage does not automatically increase in all UL contracts."
@@ -43,7 +43,7 @@
         "Participating/dividend terminology applies to participating whole life, not standard UL mechanics.",
         "PUA is also a participating whole life dividend concept.",
         "Premium offset as a dividend election is not how standard UL offset is structured.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. What should you tell him?."
       ],
       "explanation": "In UL, practical premium offset means accumulated account value is sufficient to fund ongoing mortality and policy charges.",
       "difficulty": "medium",
@@ -68,7 +68,7 @@
         "This does not reflect the annual YRT cost converted using the given modal factor.",
         "This value comes from an incorrect NAAR/modal application.",
         "This reflects a monthly-style conversion, not the quarterly factor provided.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. If the mortality cost this year is $3.25 per $1,000 of net amount at risk, what would the quarterly mortality cost be on Gracie's UL policy?."
       ],
       "explanation": "With face-plus-account benefit, NAAR is effectively the face amount ($500,000). Annual mortality cost = 500 × $3.25 = $1,625. Quarterly cost = $1,625 × 0.26 = $422.50.",
       "difficulty": "hard",
@@ -94,7 +94,7 @@
         "T-100 is generally straightforward and lower maintenance than actively managed UL.",
         "Participating whole life still tends to be more turnkey than UL investment-management demands.",
         "Non-participating whole life is typically low-maintenance after setup.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following policies would be the least appropriate?."
       ],
       "explanation": "UL can require ongoing funding/investment monitoring, making it less suitable for clients explicitly seeking low-maintenance coverage.",
       "difficulty": "medium",
@@ -118,7 +118,7 @@
       "optionFeedback": [
         "This is permanent but less flexible for a changing key-person context.",
         "This is not permanent and may not match the stated long-term need.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Given Jack's concern about potentially hiring a new horse breeder, what policy would you recommend?.",
         "Mortgage life is not designed for key-person business continuity risk."
       ],
       "explanation": "Given changing personnel risk, UL’s flexibility can be advantageous in structuring and adapting key-person coverage over time.",
@@ -142,7 +142,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This is the account value multiplied, not a surrender-value result.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. (Note: Year 7 Account Value = $8,300, Surrender Multiple = 3.) How much will he receive?.",
         "This overstates surrender proceeds and does not align with the surrender multiple approach.",
         "The face amount is not paid on surrender."
       ],
@@ -168,7 +168,7 @@
       "optionFeedback": [
         "Funding level and mortality costing method are separate choices.",
         "This describes a different design objective, not minimal funding definition.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What does this mean?.",
         "Minimal funding does not automatically impose a fixed early termination age."
       ],
       "explanation": "Minimally funded UL means deposits are primarily covering internal policy costs with little or no meaningful cash-value buildup.",
@@ -193,7 +193,7 @@
         "Higher deductions usually leave less available to accumulate.",
         "Mortality deductions directly affect net funds available for accumulation.",
         "They are financially connected through net policy cash flow.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following statements best describes the relationship between mortality deductions and the investment component in the policy?."
       ],
       "explanation": "In UL, deductions and investment accumulation are linked because deductions reduce what remains to grow in the account.",
       "difficulty": "easy",
@@ -215,7 +215,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Given the following information, what would the premium be if he wants to pay monthly?.",
         "This ignores the modal factor load.",
         "This applies an incorrect factor.",
         "This value does not match annual premium × monthly modal factor."
@@ -242,7 +242,7 @@
         "A policy disposition is not the classic tax-efficient collateral strategy.",
         "Insurer policy loans can still create taxable consequences.",
         "Surrender can trigger taxable policy gain.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. What strategy would help Pierre achieve this?."
       ],
       "explanation": "The common tax-efficient retirement strategy is third-party collateral borrowing against policy value rather than taxable surrender/withdrawal.",
       "difficulty": "hard",

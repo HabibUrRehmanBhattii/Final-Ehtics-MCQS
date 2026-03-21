@@ -18,11 +18,16 @@
         "UL surrender value is based on account/cash value mechanics and surrender charges, not the greater-of test described.",
         "A policy surrender is typically tied to cash value and charges, not automatically zero in all cases.",
         "The face amount is a death benefit, not a surrender benefit.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. How much would he likely receive if he surrendered the policy?."
       ],
       "explanation": "On surrender, a UL policy generally pays the account/cash value minus applicable surrender charges and adjustments. The face amount is only payable on death, not on cancellation.",
       "difficulty": "medium",
-      "tags": ["ul", "surrender", "cash-value", "death-benefit"]
+      "tags": [
+        "ul",
+        "surrender",
+        "cash-value",
+        "death-benefit"
+      ]
     },
     {
       "id": 2,
@@ -36,13 +41,18 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Switch rules are product-specific and not universally based on original issue-age pricing.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What should you advise him?.",
         "Not all UL contracts permit bidirectional switching between costing methods.",
         "YRT is a mortality costing method in UL, not an automatic age-limited expiry of the UL policy."
       ],
       "explanation": "YRT usually starts lower but increases with age. In later years, rising mortality deductions can reduce account growth or even pressure policy sustainability unless offset by returns/deposits.",
       "difficulty": "medium",
-      "tags": ["ul", "yrt", "lcoi", "policy-sustainability"]
+      "tags": [
+        "ul",
+        "yrt",
+        "lcoi",
+        "policy-sustainability"
+      ]
     },
     {
       "id": 3,
@@ -56,13 +66,17 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "That amount is the account value, not the level death benefit payout.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. How much will her beneficiaries receive?.",
         "Face plus account applies only if that death benefit option was selected.",
         "Surrender charges apply to surrender values, not death benefit payouts in this context."
       ],
       "explanation": "With a level death benefit option, beneficiaries receive the face amount on death, not face plus account value.",
       "difficulty": "easy",
-      "tags": ["ul", "death-benefit-options", "level-benefit"]
+      "tags": [
+        "ul",
+        "death-benefit-options",
+        "level-benefit"
+      ]
     },
     {
       "id": 4,
@@ -76,13 +90,17 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This understates 2% of the deposit base.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Based on the information below, what would the monthly premium tax be?.",
         "This is not 2% of the monthly deposit amount.",
         "This does not match the premium-tax calculation from the stated figures."
       ],
       "explanation": "Using the provided UL deposit amount, monthly premium tax is 2% × $500 = $10.",
       "difficulty": "easy",
-      "tags": ["ul", "premium-tax", "calculation"]
+      "tags": [
+        "ul",
+        "premium-tax",
+        "calculation"
+      ]
     },
     {
       "id": 5,
@@ -98,11 +116,16 @@
         "This increases death benefit structure complexity and can increase long-term cost pressure.",
         "Face plus account generally increases death benefit and NAAR exposure versus level benefit.",
         "YRT introduces increasing mortality cost risk over time.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following set of UL options should the client select if he is conservative when it comes to risk?."
       ],
       "explanation": "For a conservative UL structure with stable needs, LCOI with level death benefit is typically more predictable than YRT or increasing death benefit structures.",
       "difficulty": "medium",
-      "tags": ["ul", "risk-profile", "lcoi", "level-death-benefit"]
+      "tags": [
+        "ul",
+        "risk-profile",
+        "lcoi",
+        "level-death-benefit"
+      ]
     },
     {
       "id": 6,
@@ -115,14 +138,19 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What is the most likely cause of this?.",
         "This option alone does not best explain a gradual growth slowdown with steady investment performance.",
         "Higher deposits would generally support, not reduce, account growth.",
         "LCOI is level by design and usually does not create the same rising deduction pattern as YRT."
       ],
       "explanation": "YRT mortality charges rise each year. Even with steady fund performance, increasing insurance deductions can slow net account growth over time.",
       "difficulty": "medium",
-      "tags": ["ul", "yrt", "mortality-deductions", "account-growth"]
+      "tags": [
+        "ul",
+        "yrt",
+        "mortality-deductions",
+        "account-growth"
+      ]
     },
     {
       "id": 7,
@@ -135,14 +163,19 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What could be the reason for this?.",
         "Exemption-test failure has different tax consequences and is not the most direct explanation here.",
         "LCOI is level and less likely to create an accelerating drag pattern than YRT.",
         "Tax-exempt status does not itself cause growth to slow."
       ],
       "explanation": "A common reason for slowing net UL account growth despite good investment returns is rising YRT deductions with age.",
       "difficulty": "medium",
-      "tags": ["ul", "yrt", "mtar", "growth-drag"]
+      "tags": [
+        "ul",
+        "yrt",
+        "mtar",
+        "growth-drag"
+      ]
     },
     {
       "id": 8,
@@ -156,13 +189,17 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Mortality costing choice alone is not the strongest indicator of exemption pressure.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following policies would be in the most danger of failing the exemption test?.",
         "YRT may affect deductions, but maximum funding is the key exemption-test risk factor here.",
         "Minimally funded policies are generally less likely to breach exemption limits."
       ],
       "explanation": "Exemption-test risk rises when funding is pushed near limits and growth is strong. Maximum-funded UL is therefore most exposed.",
       "difficulty": "medium",
-      "tags": ["ul", "exemption-test", "maximum-funding"]
+      "tags": [
+        "ul",
+        "exemption-test",
+        "maximum-funding"
+      ]
     },
     {
       "id": 9,
@@ -175,14 +212,19 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following strategies would help Teddy achieve this?.",
         "UL is not simply held inside an RRSP structure as described.",
         "Withdrawals can trigger taxable policy gain depending on ACB and policy values.",
         "Policy loans are not automatically tax-free in the way this option implies."
       ],
       "explanation": "A common strategy is third-party collateral lending against an exempt policy’s value, reducing direct taxable withdrawals while preserving death-benefit settlement at death.",
       "difficulty": "hard",
-      "tags": ["ul", "retirement-planning", "collateral-loan", "tax-strategy"]
+      "tags": [
+        "ul",
+        "retirement-planning",
+        "collateral-loan",
+        "tax-strategy"
+      ]
     },
     {
       "id": 10,
@@ -197,12 +239,16 @@
       "optionFeedback": [
         "Whole life generally does not use UL-style selectable face-plus-account death benefit options.",
         "T-100 is not typically structured with UL account-value death benefit options.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following policies would allow her to choose this type of death benefit?.",
         "YRT is a term costing structure and does not provide UL account-value death benefit mechanics."
       ],
       "explanation": "The face amount plus account value death benefit is a standard selectable option within UL design.",
       "difficulty": "easy",
-      "tags": ["ul", "death-benefit-options", "face-plus-account"]
+      "tags": [
+        "ul",
+        "death-benefit-options",
+        "face-plus-account"
+      ]
     },
     {
       "id": 11,
@@ -215,14 +261,19 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following statements correctly describes the flexibility of a UL policy?.",
         "Changing the life insured is not a standard universal right and depends on contract terms.",
         "UL is generally chosen for flexibility, not rigidity.",
         "Coverage does not automatically increase in all UL contracts."
       ],
       "explanation": "UL is known for deposit flexibility within contractual limits (minimums and maximums), unlike fixed-premium structures.",
       "difficulty": "medium",
-      "tags": ["ul", "flexibility", "deposits", "key-person"]
+      "tags": [
+        "ul",
+        "flexibility",
+        "deposits",
+        "key-person"
+      ]
     },
     {
       "id": 12,
@@ -238,11 +289,16 @@
         "Participating/dividend terminology applies to participating whole life, not standard UL mechanics.",
         "PUA is also a participating whole life dividend concept.",
         "Premium offset as a dividend election is not how standard UL offset is structured.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. What should you tell him?."
       ],
       "explanation": "In UL, practical premium offset means accumulated account value is sufficient to fund ongoing mortality and policy charges.",
       "difficulty": "medium",
-      "tags": ["ul", "premium-offset", "cash-value", "yrt"]
+      "tags": [
+        "ul",
+        "premium-offset",
+        "cash-value",
+        "yrt"
+      ]
     },
     {
       "id": 13,
@@ -258,11 +314,17 @@
         "This does not reflect the annual YRT cost converted using the given modal factor.",
         "This value comes from an incorrect NAAR/modal application.",
         "This reflects a monthly-style conversion, not the quarterly factor provided.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. If the mortality cost this year is $3.25 per $1,000 of net amount at risk, what would the quarterly mortality cost be on Gracie's UL policy?."
       ],
       "explanation": "With face-plus-account benefit, NAAR is effectively the face amount ($500,000). Annual mortality cost = 500 × $3.25 = $1,625. Quarterly cost = $1,625 × 0.26 = $422.50.",
       "difficulty": "hard",
-      "tags": ["ul", "yrt", "naar", "modal-factor", "calculation"]
+      "tags": [
+        "ul",
+        "yrt",
+        "naar",
+        "modal-factor",
+        "calculation"
+      ]
     },
     {
       "id": 14,
@@ -278,11 +340,16 @@
         "T-100 is generally straightforward and lower maintenance than actively managed UL.",
         "Participating whole life still tends to be more turnkey than UL investment-management demands.",
         "Non-participating whole life is typically low-maintenance after setup.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following policies would be the least appropriate?."
       ],
       "explanation": "UL can require ongoing funding/investment monitoring, making it less suitable for clients explicitly seeking low-maintenance coverage.",
       "difficulty": "medium",
-      "tags": ["ul", "policy-selection", "estate-planning", "maintenance"]
+      "tags": [
+        "ul",
+        "policy-selection",
+        "estate-planning",
+        "maintenance"
+      ]
     },
     {
       "id": 15,
@@ -297,12 +364,17 @@
       "optionFeedback": [
         "This is permanent but less flexible for a changing key-person context.",
         "This is not permanent and may not match the stated long-term need.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Given Jack's concern about potentially hiring a new horse breeder, what policy would you recommend?.",
         "Mortgage life is not designed for key-person business continuity risk."
       ],
       "explanation": "Given changing personnel risk, UL’s flexibility can be advantageous in structuring and adapting key-person coverage over time.",
       "difficulty": "medium",
-      "tags": ["ul", "key-person", "business-insurance", "flexibility"]
+      "tags": [
+        "ul",
+        "key-person",
+        "business-insurance",
+        "flexibility"
+      ]
     },
     {
       "id": 16,
@@ -316,13 +388,18 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This is the account value multiplied, not a surrender-value result.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. (Note: Year 7 Account Value = $8,300, Surrender Multiple = 3.) How much will he receive?.",
         "This overstates surrender proceeds and does not align with the surrender multiple approach.",
         "The face amount is not paid on surrender."
       ],
       "explanation": "Using the provided surrender factors, the surrender value corresponds to $6,500 in this scenario.",
       "difficulty": "hard",
-      "tags": ["ul", "surrender", "calculation", "yrt"]
+      "tags": [
+        "ul",
+        "surrender",
+        "calculation",
+        "yrt"
+      ]
     },
     {
       "id": 17,
@@ -337,12 +414,16 @@
       "optionFeedback": [
         "Funding level and mortality costing method are separate choices.",
         "This describes a different design objective, not minimal funding definition.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What does this mean?.",
         "Minimal funding does not automatically impose a fixed early termination age."
       ],
       "explanation": "Minimally funded UL means deposits are primarily covering internal policy costs with little or no meaningful cash-value buildup.",
       "difficulty": "easy",
-      "tags": ["ul", "minimum-funding", "cash-value"]
+      "tags": [
+        "ul",
+        "minimum-funding",
+        "cash-value"
+      ]
     },
     {
       "id": 18,
@@ -358,11 +439,16 @@
         "Higher deductions usually leave less available to accumulate.",
         "Mortality deductions directly affect net funds available for accumulation.",
         "They are financially connected through net policy cash flow.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following statements best describes the relationship between mortality deductions and the investment component in the policy?."
       ],
       "explanation": "In UL, deductions and investment accumulation are linked because deductions reduce what remains to grow in the account.",
       "difficulty": "easy",
-      "tags": ["ul", "unbundled", "mortality-deductions", "investment-component"]
+      "tags": [
+        "ul",
+        "unbundled",
+        "mortality-deductions",
+        "investment-component"
+      ]
     },
     {
       "id": 19,
@@ -375,14 +461,18 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Given the following information, what would the premium be if he wants to pay monthly?.",
         "This ignores the modal factor load.",
         "This applies an incorrect factor.",
         "This value does not match annual premium × monthly modal factor."
       ],
       "explanation": "Monthly premium = $1,200 × 0.088 = $105.60.",
       "difficulty": "easy",
-      "tags": ["modal-factor", "whole-life", "calculation"]
+      "tags": [
+        "modal-factor",
+        "whole-life",
+        "calculation"
+      ]
     },
     {
       "id": 20,
@@ -398,11 +488,15 @@
         "A policy disposition is not the classic tax-efficient collateral strategy.",
         "Insurer policy loans can still create taxable consequences.",
         "Surrender can trigger taxable policy gain.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. What strategy would help Pierre achieve this?."
       ],
       "explanation": "The common tax-efficient retirement strategy is third-party collateral borrowing against policy value rather than taxable surrender/withdrawal.",
       "difficulty": "hard",
-      "tags": ["retirement-planning", "collateral-loan", "tax-strategy"]
+      "tags": [
+        "retirement-planning",
+        "collateral-loan",
+        "tax-strategy"
+      ]
     },
     {
       "id": 21,
@@ -417,12 +511,17 @@
       "optionFeedback": [
         "Surrender can trigger immediate taxable policy gain.",
         "Partial withdrawals may create immediate taxation depending on policy gain/ACB.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following strategies would you suggest?.",
         "This is not a standard tax-free mechanism to access full account value."
       ],
       "explanation": "If the objective is liquidity with minimal immediate tax impact, collateral borrowing against policy value is generally the preferred planning approach.",
       "difficulty": "hard",
-      "tags": ["ul", "cash-access", "tax", "collateral-loan"]
+      "tags": [
+        "ul",
+        "cash-access",
+        "tax",
+        "collateral-loan"
+      ]
     },
     {
       "id": 22,
@@ -438,11 +537,15 @@
         "These are policy roles, not UL cost/account components.",
         "NCPI is not the standard unbundling trio in this exam framing.",
         "This is incomplete because expenses are also separated in UL.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. What is \"unbundled\" in a universal life policy?."
       ],
       "explanation": "UL unbundles the policy into separate components: investment account, mortality deductions, and policy expenses.",
       "difficulty": "easy",
-      "tags": ["ul", "unbundled", "foundations"]
+      "tags": [
+        "ul",
+        "unbundled",
+        "foundations"
+      ]
     },
     {
       "id": 23,
@@ -456,13 +559,17 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Added restrictions may reduce flexibility for a self-directed investor profile.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following UL options would best match Terrence's needs?.",
         "Open-ended adjustments add complexity/risk beyond what is needed for this objective.",
         "LCOI is typically less aligned with maximizing early investable surplus than YRT."
       ],
       "explanation": "For a client prioritizing lower early insurance charges and personal investment control, UL with YRT is often the closest fit.",
       "difficulty": "medium",
-      "tags": ["ul", "yrt", "investor-profile"]
+      "tags": [
+        "ul",
+        "yrt",
+        "investor-profile"
+      ]
     },
     {
       "id": 24,
@@ -476,13 +583,18 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This reverses the core definitions.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following statements is true?.",
         "Their deduction patterns differ materially over time.",
         "Relative cost depends on age/timing and policy duration, not a universal always-lower rule."
       ],
       "explanation": "YRT generally increases annually with age; LCOI is generally level and therefore more stable across time.",
       "difficulty": "easy",
-      "tags": ["ul", "yrt", "lcoi", "mortality-costing"]
+      "tags": [
+        "ul",
+        "yrt",
+        "lcoi",
+        "mortality-costing"
+      ]
     },
     {
       "id": 25,
@@ -498,11 +610,16 @@
         "YRT usually becomes more expensive in later years due to annual increases.",
         "This reverses the definitions of YRT and LCOI.",
         "UL policy performance is affected by mortality deductions and policy charges.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following statements is correct?."
       ],
       "explanation": "YRT usually has lower early-year deductions than LCOI, leaving more early cash flow available for account buildup.",
       "difficulty": "easy",
-      "tags": ["ul", "yrt", "lcoi", "cash-value-growth"]
+      "tags": [
+        "ul",
+        "yrt",
+        "lcoi",
+        "cash-value-growth"
+      ]
     },
     {
       "id": 26,
@@ -516,13 +633,17 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This contradicts UL’s core flexibility design.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which one of the following statements is true of universal life insurance?.",
         "UL is commonly used in business insurance planning when appropriate.",
         "Death benefit growth depends on selected design/options, not an automatic guarantee."
       ],
       "explanation": "UL is characterized by flexibility in funding and investment allocation (within policy constraints), which supports many business planning needs.",
       "difficulty": "easy",
-      "tags": ["ul", "business-insurance", "flexibility"]
+      "tags": [
+        "ul",
+        "business-insurance",
+        "flexibility"
+      ]
     },
     {
       "id": 27,
@@ -535,14 +656,19 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which of the following best describes the taxation associated with the policy?.",
         "This overstates taxation on death proceeds to the beneficiary in an exempt-compliant UL context.",
         "Exempt UL investment growth is not generally taxed annually as stated.",
         "This does not reflect standard exempt UL death-benefit tax treatment."
       ],
       "explanation": "When the UL policy remains exempt, investment growth is tax-deferred and death benefit proceeds are generally received tax-free by the beneficiary.",
       "difficulty": "hard",
-      "tags": ["ul", "taxation", "exempt-policy", "death-benefit"]
+      "tags": [
+        "ul",
+        "taxation",
+        "exempt-policy",
+        "death-benefit"
+      ]
     },
     {
       "id": 28,
@@ -557,12 +683,16 @@
       "optionFeedback": [
         "Face-plus-account structures tend to keep NAAR higher than plain level death benefit structures.",
         "Adding cumulative premiums to death benefit tends to increase NAAR pressure.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. All else being equal, which policy would have the lowest NAAR?.",
         "Indexed/increasing death benefit designs generally increase NAAR versus plain level structures."
       ],
       "explanation": "For standard UL mechanics, a plain level death benefit typically yields the lowest NAAR relative to increasing death benefit designs.",
       "difficulty": "medium",
-      "tags": ["ul", "naar", "death-benefit-options"]
+      "tags": [
+        "ul",
+        "naar",
+        "death-benefit-options"
+      ]
     },
     {
       "id": 29,
@@ -578,11 +708,16 @@
         "This is a different product category, not the UL mortality costing choice requested.",
         "YRT introduces increasing deductions later in life, which can increase lapse risk if underfunded.",
         "This is outside the UL costing-method decision in the question.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. Which mortality costing method would you recommend?."
       ],
       "explanation": "Within UL costing options, LCOI generally offers more predictable long-term deductions than YRT, helping reduce lapse risk.",
       "difficulty": "medium",
-      "tags": ["ul", "lapse-risk", "lcoi", "yrt"]
+      "tags": [
+        "ul",
+        "lapse-risk",
+        "lcoi",
+        "yrt"
+      ]
     },
     {
       "id": 30,
@@ -597,12 +732,16 @@
       "optionFeedback": [
         "This is too low and not based on the given modal factor.",
         "This is simple annual/4 and ignores modal loading.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Given the following information, what would the premium be if he wants to pay quarterly?.",
         "This overstates the result from the stated factor."
       ],
       "explanation": "Quarterly premium = $800 × 0.280 = $224.",
       "difficulty": "easy",
-      "tags": ["modal-factor", "whole-life", "calculation"]
+      "tags": [
+        "modal-factor",
+        "whole-life",
+        "calculation"
+      ]
     },
     {
       "id": 31,
@@ -617,12 +756,16 @@
       "optionFeedback": [
         "Maximum funding is a funding level concept, not the payment label.",
         "Some contexts use contributions, but LLQP UL terminology typically uses deposits.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What are the payments into a universal life policy called?.",
         "Traditional fixed-premium language is less precise for flexible UL funding."
       ],
       "explanation": "UL exam terminology generally refers to policy payments as deposits due to funding flexibility.",
       "difficulty": "easy",
-      "tags": ["ul", "terminology", "deposits"]
+      "tags": [
+        "ul",
+        "terminology",
+        "deposits"
+      ]
     },
     {
       "id": 32,
@@ -636,13 +779,18 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This ignores account value offset under level death benefit NAAR mechanics.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. In this situation, what would the NAAR be?.",
         "This incorrectly adds account value instead of subtracting it.",
         "This uses an unsupported subtraction base."
       ],
       "explanation": "For level death benefit UL, NAAR = face amount − account value = $500,000 − $62,000 = $438,000.",
       "difficulty": "medium",
-      "tags": ["ul", "naar", "lcoi", "calculation"]
+      "tags": [
+        "ul",
+        "naar",
+        "lcoi",
+        "calculation"
+      ]
     },
     {
       "id": 33,
@@ -655,14 +803,18 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Assuming a monthly modal factor of 0.088 and a quarterly modal factor 0.280 for a whole life policy, what would the deposit be if she wants to pay the UL deposits monthly?.",
         "This applies whole-life modal loading instead of UL deposit split logic in this context.",
         "This is the annual amount, not monthly.",
         "This is the quarterly whole-life result, not monthly UL deposit amount."
       ],
       "explanation": "In this UL framing, monthly deposit is annual minimum divided by 12: $800 ÷ 12 = $66.67.",
       "difficulty": "easy",
-      "tags": ["ul", "deposits", "calculation"]
+      "tags": [
+        "ul",
+        "deposits",
+        "calculation"
+      ]
     },
     {
       "id": 34,
@@ -675,14 +827,19 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which mortality costing method would result in a quicker build-up of the cash value in the early years?.",
         "This is a separate product type, not a UL mortality costing method.",
         "LCOI is often higher than YRT in early years, leaving less early surplus.",
         "This is a separate product type, not a UL mortality costing method."
       ],
       "explanation": "YRT typically has lower early-year mortality deductions than LCOI, which can support faster early account-value buildup.",
       "difficulty": "medium",
-      "tags": ["ul", "yrt", "lcoi", "cash-value-growth"]
+      "tags": [
+        "ul",
+        "yrt",
+        "lcoi",
+        "cash-value-growth"
+      ]
     }
   ]
 }

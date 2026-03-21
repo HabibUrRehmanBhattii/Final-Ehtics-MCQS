@@ -13,7 +13,13 @@
         "Sliding"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Misrepresentation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Misrepresentation.",
+      "optionFeedback": [
+        "\"Coercion\" is a different answer than the one this question is testing. The better answer here is \"Misrepresentation\".",
+        "\"Fraud\" is a different answer than the one this question is testing. The better answer here is \"Misrepresentation\".",
+        "Misrepresentation.",
+        "\"Sliding\" is a different answer than the one this question is testing. The better answer here is \"Misrepresentation\"."
+      ]
     },
     {
       "id": 142,
@@ -25,7 +31,13 @@
         "An insurer advertising in an insurance trade journal"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: An insurer exaggerating its dividends in a magazine advertisement."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: An insurer exaggerating its dividends in a magazine advertisement.",
+      "optionFeedback": [
+        "\"Paid testimonials from celebrity endorsements\" is a different statement than the one this question is testing. The better answer here is \"An insurer exaggerating its dividends in a magazine advertisement\".",
+        "An insurer exaggerating its dividends in a magazine advertisement.",
+        "\"An agent spending more than $25 on marketing gifts for a client\" is a different statement than the one this question is testing. The better answer here is \"An insurer exaggerating its dividends in a magazine advertisement\".",
+        "\"An insurer advertising in an insurance trade journal\" is a different statement than the one this question is testing. The better answer here is \"An insurer exaggerating its dividends in a magazine advertisement\"."
+      ]
     },
     {
       "id": 143,
@@ -37,7 +49,13 @@
         "Offering special dividends"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Sharing commissions with an agent licensed in the same line of business."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Sharing commissions with an agent licensed in the same line of business.",
+      "optionFeedback": [
+        "Sharing commissions with an agent licensed in the same line of business.",
+        "\"Returning premium to a client as an inducement for purchasing a policy\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Sharing commissions with an agent licensed in the same line of business\" because that statement is the one that matches the rule being tested.",
+        "\"Giving something of value to an insured in exchange for their business\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Sharing commissions with an agent licensed in the same line of business\" because that statement is the one that matches the rule being tested.",
+        "\"Offering special dividends\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Sharing commissions with an agent licensed in the same line of business\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 144,
@@ -49,7 +67,13 @@
         "Sliding"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Misrepresentation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Misrepresentation.",
+      "optionFeedback": [
+        "\"Twisting\" is a different answer than the one this question is testing. The better answer here is \"Misrepresentation\".",
+        "\"Intimidation\" is a different answer than the one this question is testing. The better answer here is \"Misrepresentation\".",
+        "Misrepresentation.",
+        "\"Sliding\" is a different answer than the one this question is testing. The better answer here is \"Misrepresentation\"."
+      ]
     },
     {
       "id": 145,
@@ -61,7 +85,13 @@
         "using intimidation in order to restrain or monopolize the business of insurance."
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: offering a client something of value not stated in the contract in exchange for their business."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: offering a client something of value not stated in the contract in exchange for their business.",
+      "optionFeedback": [
+        "\"mutual insurance company paying dividends to its policyowners\" is a different answer than the one this question is testing. The better answer here is \"offering a client something of value not stated in the contract in exchange for their business\".",
+        "\"reducing the premiums across the board for a specific risk class\" is a different answer than the one this question is testing. The better answer here is \"offering a client something of value not stated in the contract in exchange for their business\".",
+        "Offering a client something of value not stated in the contract in exchange for their business.",
+        "\"using intimidation in order to restrain or monopolize the business of insurance.\" is a different answer than the one this question is testing. The better answer here is \"offering a client something of value not stated in the contract in exchange for their business\"."
+      ]
     },
     {
       "id": 146,
@@ -73,7 +103,13 @@
         "Reinstatement"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Entire Contract."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Entire Contract.",
+      "optionFeedback": [
+        "\"Legal Actions\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Entire Contract\".",
+        "\"Insurance with other insurers\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Entire Contract\".",
+        "Entire Contract.",
+        "\"Reinstatement\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Entire Contract\"."
+      ]
     },
     {
       "id": 147,
@@ -85,7 +121,13 @@
         "limitations"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: exclusions."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: exclusions.",
+      "optionFeedback": [
+        "\"waivers\" is a different coverage condition than the one this question is testing. The better answer here is \"exclusions\".",
+        "\"riders\" is a different rider than the one this question is testing. The better answer here is \"exclusions\".",
+        "Exclusions.",
+        "\"limitations\" is a different coverage condition than the one this question is testing. The better answer here is \"exclusions\"."
+      ]
     },
     {
       "id": 148,
@@ -97,7 +139,13 @@
         "prevents an insured to change insurers during a claim for a covered loss"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: prevents an insured covered by two health plans from making a profit on a covered loss."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: prevents an insured covered by two health plans from making a profit on a covered loss.",
+      "optionFeedback": [
+        "\"allows an insured covered by two health plans to make a profit on a covered loss\" is a different policy provision than the one this question is testing. The better answer here is \"prevents an insured covered by two health plans from making a profit on a covered loss\".",
+        "Prevents an insured covered by two health plans from making a profit on a covered loss.",
+        "\"allows an insurer to defer paying a claim for a work-related injury until Workers' Compensati...\" is a different policy provision than the one this question is testing. The better answer here is \"prevents an insured covered by two health plans from making a profit on a covered loss\".",
+        "\"prevents an insured to change insurers during a claim for a covered loss\" is a different policy provision than the one this question is testing. The better answer here is \"prevents an insured covered by two health plans from making a profit on a covered loss\"."
+      ]
     },
     {
       "id": 149,
@@ -109,7 +157,13 @@
         "off-the-job accident"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: off-the-job accident."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: off-the-job accident.",
+      "optionFeedback": [
+        "\"self-inflicted injury\" is a different coverage condition than the one this question is testing. The better answer here is \"off-the-job accident\".",
+        "\"critical illness\" is a different coverage condition than the one this question is testing. The better answer here is \"off-the-job accident\".",
+        "\"on-the-job accident\" is a different coverage condition than the one this question is testing. The better answer here is \"off-the-job accident\".",
+        "Off-the-job accident."
+      ]
     },
     {
       "id": 150,
@@ -121,7 +175,13 @@
         "Waiver of Premium rider"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Waiver of Premium rider."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Waiver of Premium rider.",
+      "optionFeedback": [
+        "\"Accidental Death and Dismemberment rider\" is a different rider than the one this question is testing. The correct answer is \"Waiver of Premium rider\" because this feature keeps the policy in force when the insured qualifies for a disability waiver.",
+        "\"Disability Income rider\" is a different rider than the one this question is testing. The correct answer is \"Waiver of Premium rider\" because this feature keeps the policy in force when the insured qualifies for a disability waiver.",
+        "\"Guaranteed Insurability rider\" is a different rider than the one this question is testing. The correct answer is \"Waiver of Premium rider\" because this feature keeps the policy in force when the insured qualifies for a disability waiver.",
+        "Waiver of Premium rider."
+      ]
     }
   ]
 }

@@ -18,7 +18,7 @@
         "T-100 does not grow, so it cannot keep pace with the increasing capital gains tax liability as the cottage continues to appreciate.",
         "A single $500,000 T-100 overfunds the permanent need (capital gains) and inefficiently insures the temporary mortgage need as permanent coverage.",
         "Universal life is more expensive than whole life participating for this purpose, and the 10-year decreasing term does not cover the full 15-year mortgage amortization.",
-        null
+        "$300,000 whole life participating policy with a PUA dividend option, and a $200,000 Term 10 removable rider."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. T-100 does not grow, so it cannot keep pace with the increasing capital gains tax liability as the cottage continues to appreciate; A single $500,000 T-100 overfunds the permanent need (capital gains) and inefficiently insures the temporary mortgage need as permanent coverage.\nStep 4: Select the best answer. Option D: $300,000 whole life participating policy with a PUA dividend option, and a $200,000 Term 10 removable rider.",
       "difficulty": "hard",
@@ -42,7 +42,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Investing the dividend in a segregated fund is not a standard participating policy dividend option.",
-        null,
+        "One-year term addition dividend option.",
         "Accumulation leaves the dividend on deposit with the insurer earning interest — it does not purchase additional life insurance coverage.",
         "PUAs purchase paid-up whole life insurance, which provides less face amount per dividend dollar than one-year term."
       ],
@@ -68,7 +68,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Surrendering the policy permanently terminates coverage — it cannot be undone.",
-        null,
+        "APL.",
         "Extended term insurance converts the policy to a paid-up term plan — while it can sometimes be reinstated, it is not easily reversible.",
         "Reduced paid-up insurance permanently reduces the face amount — it is not easily reversible."
       ],
@@ -95,7 +95,7 @@
         "Reduced paid-up insurance is a standard non-forfeiture option.",
         "Extended term insurance is a standard non-forfeiture option.",
         "Cash surrender value is a standard non-forfeiture option.",
-        null
+        "Policy loan."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Reduced paid-up insurance is a standard non-forfeiture option; Extended term insurance is a standard non-forfeiture option.\nStep 4: Select the best answer. Option D: Policy loan.",
       "difficulty": "medium",
@@ -116,7 +116,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "Whole life can be renewable and convertible.",
         "Whole life policies do offer non-forfeiture options (APL, extended term, reduced paid-up, and surrender for CSV).",
         "Whole life coverage continues for the life of the insured (to age 100 when it endows).",
         "Whole life can indeed be structured as either participating or non-participating."
@@ -140,7 +140,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "Single premium.",
         "20-pay whole life requires 20 years of higher annual premiums, which totals more than a single premium in nominal terms.",
         "10-pay whole life compresses payments into 10 years at an even higher annual amount, totalling more than a single premium.",
         "Paying annually until age 100 results in many decades of payments that in nominal total exceed the single lump-sum premium."
@@ -167,7 +167,7 @@
       "optionFeedback": [
         "A critical illness policy on Robert addresses Robert's health events, not the loss of parental income to fund his care.",
         "Insuring Robert's life would pay upon Robert's death — it does not address the income gap created by a parent's death.",
-        null,
+        "Purchase joint first-to-die with Caleb and Mona as the lives-insured.",
         "Joint last-to-die pays only after both parents have died — but the concern is that the care cannot be funded after the FIRST death."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A critical illness policy on Robert addresses Robert's health events, not the loss of parental income to fund his care; Insuring Robert's life would pay upon Robert's death — it does not address the income gap created by a parent's death.\nStep 4: Select the best answer. Option C: Purchase joint first-to-die with Caleb and Mona as the lives-insured.",
@@ -192,7 +192,7 @@
         "$1,000 is far too low for a 99-year-old because the probability of death is extremely high.",
         "$5,000 still significantly underestimates the near-certain probability of death at age 99.",
         "$10,000 remains far too low given the near-certainty of death within one year at age 99.",
-        null
+        "$90,000."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. $1,000 is far too low for a 99-year-old because the probability of death is extremely high; $5,000 still significantly underestimates the near-certain probability of death at age 99.\nStep 4: Select the best answer. Option D: $90,000.",
       "difficulty": "easy",
@@ -215,7 +215,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The YRT premium does not plateau at the level of the permanent plan premium — it continues to increase and will eventually exceed it.",
-        null,
+        "The premium on a yearly renewable term insurance policy would be lower than the premium on a permanent plan in the first year. The premium on the yearly renewable term policy would increase at each renewal period and would eventually be more than the premium on the permanent plan.",
         "The premiums are not similar in all years; YRT starts much lower and increases each year.",
         "Permanent insurance is more expensive in the early years, but the YRT premium will eventually surpass it — permanent insurance is NOT more expensive in all policy years."
       ],
@@ -240,7 +240,7 @@
       "optionFeedback": [
         "Whole life insurance is permanent but more expensive than T-100 due to its cash value component.",
         "Renewable term insurance is not permanent — the coverage may lapse or become too expensive later in life, and the capital gains tax liability is a permanent need.",
-        null,
+        "Term-to-100.",
         "Universal life is permanent with investment flexibility but carries higher premiums than T-100 for basic coverage."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life insurance is permanent but more expensive than T-100 due to its cash value component; Renewable term insurance is not permanent — the coverage may lapse or become too expensive later in life, and the capital gains tax liability is a permanent need.\nStep 4: Select the best answer. Option C: Term-to-100.",

@@ -15,10 +15,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. This does not account for the after-tax return needed.",
-        "Incorrect. This is below the amount required by the given assumptions.",
-        "Incorrect. The calculation needs to account for both the tax rate and the return on investment.",
-        null
+        "This does not account for the after-tax return needed.",
+        "This is below the amount required by the given assumptions.",
+        "The calculation needs to account for both the tax rate and the return on investment.",
+        "$2,900,000."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This does not account for the after-tax return needed; This is below the amount required by the given assumptions.\nStep 4: Select the best answer. Option D: $2,900,000.",
       "difficulty": "hard",
@@ -39,10 +39,10 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. This is higher than the amount calculated from the given assumptions.",
-        null,
-        "Incorrect. This amount is too low for the given parameters.",
-        "Incorrect. This does not align with the capitalization of income calculation."
+        "This is higher than the amount calculated from the given assumptions.",
+        "$2,400,000.",
+        "This amount is too low for the given parameters.",
+        "This does not align with the capitalization of income calculation."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is higher than the amount calculated from the given assumptions; This amount is too low for the given parameters.\nStep 4: Select the best answer. Option B: $2,400,000.",
       "difficulty": "hard",
@@ -63,10 +63,10 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. Avoidance would mean avoiding the activity altogether, which Patrick is not doing.",
-        null,
-        "Incorrect. Patrick is not accepting the risk; he is transferring it through insurance.",
-        "Incorrect. Patrick is actively reducing risk with protective gear and transferring through insurance."
+        "Avoidance would mean avoiding the activity altogether, which Patrick is not doing.",
+        "Reduction and transfer.",
+        "Patrick is not accepting the risk; he is transferring it through insurance.",
+        "Patrick is actively reducing risk with protective gear and transferring through insurance."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Avoidance would mean avoiding the activity altogether, which Patrick is not doing; Patrick is not accepting the risk; he is transferring it through insurance.\nStep 4: Select the best answer. Option B: Reduction and transfer.",
       "difficulty": "medium",
@@ -86,10 +86,10 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
-        "Incorrect. Risk transfer would involve purchasing insurance.",
-        "Incorrect. Risk reduction would involve modifying the boat or usage to reduce likelihood of accident.",
-        "Incorrect. Risk avoidance would mean not owning or using the boat at all."
+        "Risk retention.",
+        "Risk transfer would involve purchasing insurance.",
+        "Risk reduction would involve modifying the boat or usage to reduce likelihood of accident.",
+        "Risk avoidance would mean not owning or using the boat at all."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Risk transfer would involve purchasing insurance; Risk reduction would involve modifying the boat or usage to reduce likelihood of accident.\nStep 4: Select the best answer. Option A: Risk retention.",
       "difficulty": "easy",
@@ -109,10 +109,10 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
-        "Incorrect. Karen is financially independent and fully supports the household.",
-        "Incorrect. Aaron is deceased in this scenario.",
-        "Incorrect. While Larry would be impacted, Georgina (who depends on support payments) would be most impacted."
+        "Georgina.",
+        "Karen is financially independent and fully supports the household.",
+        "Aaron is deceased in this scenario.",
+        "While Larry would be impacted, Georgina (who depends on support payments) would be most impacted."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Karen is financially independent and fully supports the household; Aaron is deceased in this scenario.\nStep 4: Select the best answer. Option A: Georgina.",
       "difficulty": "medium",
@@ -133,10 +133,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. This amount is too low given Xue's income and mortgage obligations.",
-        "Incorrect. This does not adequately account for inflation and the mortgage.",
-        "Incorrect. This is insufficient for the income replacement needed.",
-        null
+        "This amount is too low given Xue's income and mortgage obligations.",
+        "This does not adequately account for inflation and the mortgage.",
+        "This is insufficient for the income replacement needed.",
+        "$3 million."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This amount is too low given Xue's income and mortgage obligations; This does not adequately account for inflation and the mortgage.\nStep 4: Select the best answer. Option D: $3 million.",
       "difficulty": "hard",
@@ -157,10 +157,10 @@
       ],
       "correctAnswer": 2,
       "optionFeedback": [
-        "Incorrect. This amount is too high for the given parameters.",
-        "Incorrect. The calculation does not properly apply the capital drawdown method.",
-        null,
-        "Incorrect. This amount is too low to cover 25 years of income replacement."
+        "This amount is too high for the given parameters.",
+        "The calculation does not properly apply the capital drawdown method.",
+        "$810,000.",
+        "This amount is too low to cover 25 years of income replacement."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This amount is too high for the given parameters; The calculation does not properly apply the capital drawdown method.\nStep 4: Select the best answer. Option C: $810,000.",
       "difficulty": "hard",
@@ -181,10 +181,10 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. The beneficiary named in the policy (Tessa) is the entitled claimant, not the estate.",
-        null,
-        "Incorrect. The insurer is responsible for confirming policy status, not the agent.",
-        "Incorrect. The agent can and should contact the beneficiary to facilitate the claims process."
+        "The beneficiary named in the policy (Tessa) is the entitled claimant, not the estate.",
+        "Beau's role is to facilitate the claims process by providing forms and assisting in their completion.",
+        "The insurer is responsible for confirming policy status, not the agent.",
+        "The agent can and should contact the beneficiary to facilitate the claims process."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The beneficiary named in the policy (Tessa) is the entitled claimant, not the estate; The insurer is responsible for confirming policy status, not the agent.\nStep 4: Select the best answer. Option B: Beau's role is to facilitate the claims process by providing forms and assisting in their completion.",
       "difficulty": "medium",
@@ -205,10 +205,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. A convertible policy allows conversion to permanent plans.",
-        "Incorrect. Conversion can occur at any time during the term, not just at renewal.",
-        "Incorrect. Conversion is a guaranteed right that does not require medical underwriting.",
-        null
+        "A convertible policy allows conversion to permanent plans.",
+        "Conversion can occur at any time during the term, not just at renewal.",
+        "Conversion is a guaranteed right that does not require medical underwriting.",
+        "She can convert to a permanent plan without providing evidence of insurability."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A convertible policy allows conversion to permanent plans; Conversion can occur at any time during the term, not just at renewal.\nStep 4: Select the best answer. Option D: She can convert to a permanent plan without providing evidence of insurability.",
       "difficulty": "medium",
@@ -229,10 +229,10 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
-        "Incorrect. Neither type of conversion requires evidence of insurability.",
-        "Incorrect. Neither type requires evidence of insurability.",
-        "Incorrect. Both conversions do not require higher premiums than the original term."
+        "Retroactive conversion would require a lump-sum payment upon conversion.",
+        "Neither type of conversion requires evidence of insurability.",
+        "Neither type requires evidence of insurability.",
+        "Both conversions do not require higher premiums than the original term."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Neither type of conversion requires evidence of insurability; Neither type requires evidence of insurability.\nStep 4: Select the best answer. Option A: Retroactive conversion would require a lump-sum payment upon conversion.",
       "difficulty": "hard",
@@ -253,10 +253,10 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. Increasing and decreasing term do not have level premiums.",
-        null,
-        "Incorrect. Increasing term typically has a level premium even though the death benefit increases.",
-        "Incorrect. Decreasing term also has a level premium."
+        "Increasing and decreasing term do not have level premiums.",
+        "Level and decreasing term insurance have level premiums, but with increasing term, the premium increases.",
+        "Increasing term typically has a level premium even though the death benefit increases.",
+        "Decreasing term also has a level premium."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Increasing and decreasing term do not have level premiums; Increasing term typically has a level premium even though the death benefit increases.\nStep 4: Select the best answer. Option B: Level and decreasing term insurance have level premiums, but with increasing term, the premium increases.",
       "difficulty": "medium",
@@ -277,10 +277,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. The opposite is true: evidence is required for renewal but not for conversion.",
-        "Incorrect. Conversion requires no evidence; renewal requires evidence of insurability.",
-        "Incorrect. Conversion allows conversion to permanent plans, not longer terms.",
-        null
+        "The opposite is true: evidence is required for renewal but not for conversion.",
+        "Conversion requires no evidence; renewal requires evidence of insurability.",
+        "Conversion allows conversion to permanent plans, not longer terms.",
+        "A re-entry policy may offer a lower renewal rate if the life insured is in good health at the time of renewal."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The opposite is true: evidence is required for renewal but not for conversion; Conversion requires no evidence; renewal requires evidence of insurability.\nStep 4: Select the best answer. Option D: A re-entry policy may offer a lower renewal rate if the life insured is in good health at the time of renewal.",
       "difficulty": "medium",
@@ -302,10 +302,10 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. While paid-up additions provide immediate coverage, one-year term insurance provides more total coverage immediately.",
-        null,
-        "Incorrect. One-year term would provide more coverage than paid-up additions.",
-        "Incorrect. Coverage on original age would typically be lower than on attained age basis."
+        "While paid-up additions provide immediate coverage, one-year term insurance provides more total coverage immediately.",
+        "One-year term insurance, where the coverage is based on her attained age and the dividend amount.",
+        "One-year term would provide more coverage than paid-up additions.",
+        "Coverage on original age would typically be lower than on attained age basis."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While paid-up additions provide immediate coverage, one-year term insurance provides more total coverage immediately; One-year term would provide more coverage than paid-up additions.\nStep 4: Select the best answer. Option B: One-year term insurance, where the coverage is based on her attained age and the dividend amount.",
       "difficulty": "medium",
@@ -326,10 +326,10 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. UL with LCOI is more expensive than T-100.",
-        null,
-        "Incorrect. UL with YRT has increasing costs over time as the insured ages.",
-        "Incorrect. Whole life is more expensive than Term-to-100."
+        "UL with LCOI is more expensive than T-100.",
+        "Term-to-100 life insurance.",
+        "UL with YRT has increasing costs over time as the insured ages.",
+        "Whole life is more expensive than Term-to-100."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. UL with LCOI is more expensive than T-100; UL with YRT has increasing costs over time as the insured ages.\nStep 4: Select the best answer. Option B: Term-to-100 life insurance.",
       "difficulty": "medium",
@@ -350,10 +350,10 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. Not all eight term policies would be in force; only the current one-year term would apply.",
-        null,
-        "Incorrect. The APL is not forgiven; it is a loan that must be repaid from proceeds.",
-        "Incorrect. The beneficiaries receive the full face value, not just the CSV."
+        "Not all eight term policies would be in force; only the current one-year term would apply.",
+        "$150,000, plus the coverage from the current one-year term policy, less the policy loan.",
+        "The APL is not forgiven; it is a loan that must be repaid from proceeds.",
+        "The beneficiaries receive the full face value, not just the CSV."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Not all eight term policies would be in force; only the current one-year term would apply; The APL is not forgiven; it is a loan that must be repaid from proceeds.\nStep 4: Select the best answer. Option B: $150,000, plus the coverage from the current one-year term policy, less the policy loan.",
       "difficulty": "hard",
@@ -375,10 +375,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. Monthly premiums typically exceed the simple division of annual premium.",
-        "Incorrect. There are administrative costs for monthly payment collection.",
-        "Incorrect. This equals exactly 1/12 of the annual premium, which does not account for collection costs.",
-        null
+        "Monthly premiums typically exceed the simple division of annual premium.",
+        "There are administrative costs for monthly payment collection.",
+        "This equals exactly 1/12 of the annual premium, which does not account for collection costs.",
+        "More than $200 per month."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Monthly premiums typically exceed the simple division of annual premium; There are administrative costs for monthly payment collection.\nStep 4: Select the best answer. Option D: More than $200 per month.",
       "difficulty": "easy",
@@ -399,10 +399,10 @@
       ],
       "correctAnswer": 2,
       "optionFeedback": [
-        "Incorrect. The withdrawal will affect the net amount at risk.",
-        "Incorrect. The level death benefit structure means the death benefit remains $500,000.",
-        null,
-        "Incorrect. In a level death benefit structure, the total death benefit remains the same."
+        "The withdrawal will affect the net amount at risk.",
+        "The level death benefit structure means the death benefit remains $500,000.",
+        "The withdrawal will increase the net amount at risk for the insurer but will not impact the death benefit his beneficiaries would receive if he were to die.",
+        "In a level death benefit structure, the total death benefit remains the same."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The withdrawal will affect the net amount at risk; The level death benefit structure means the death benefit remains $500,000.\nStep 4: Select the best answer. Option C: The withdrawal will increase the net amount at risk for the insurer but will not impact the death benefit his beneficiaries would receive if he were to die.",
       "difficulty": "hard",
@@ -424,10 +424,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. While permanent, whole life is not as flexible or cost-effective as UL.",
-        "Incorrect. T-100 provides no flexibility for payment adjustments based on varying income.",
-        "Incorrect. This term option may not extend long enough and lacks flexibility.",
-        null
+        "While permanent, whole life is not as flexible or cost-effective as UL.",
+        "T-100 provides no flexibility for payment adjustments based on varying income.",
+        "This term option may not extend long enough and lacks flexibility.",
+        "Universal Life."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While permanent, whole life is not as flexible or cost-effective as UL; T-100 provides no flexibility for payment adjustments based on varying income.\nStep 4: Select the best answer. Option D: Universal Life.",
       "difficulty": "medium",
@@ -449,10 +449,10 @@
       ],
       "correctAnswer": 2,
       "optionFeedback": [
-        "Incorrect. YRT has higher insurance costs in early years.",
-        "Incorrect. T-100 has higher costs than LCOI.",
-        null,
-        "Incorrect. This is not a UL mortality costing option; it's a separate strategy."
+        "YRT has higher insurance costs in early years.",
+        "T-100 has higher costs than LCOI.",
+        "Level cost of insurance.",
+        "This is not a UL mortality costing option; it's a separate strategy."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. YRT has higher insurance costs in early years; T-100 has higher costs than LCOI.\nStep 4: Select the best answer. Option C: Level cost of insurance.",
       "difficulty": "medium",
@@ -473,10 +473,10 @@
       ],
       "correctAnswer": 2,
       "optionFeedback": [
-        "Incorrect. Evidence of insurability is not required for a guaranteed insurability benefit.",
-        "Incorrect. GIB does not require any health questions or underwriting.",
-        null,
-        "Incorrect. GIB is guaranteed and cannot be voided due to health changes."
+        "Evidence of insurability is not required for a guaranteed insurability benefit.",
+        "GIB does not require any health questions or underwriting.",
+        "It will allow her to add the additional coverage at stated rates as though her health has not changed.",
+        "GIB is guaranteed and cannot be voided due to health changes."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Evidence of insurability is not required for a guaranteed insurability benefit; GIB does not require any health questions or underwriting.\nStep 4: Select the best answer. Option C: It will allow her to add the additional coverage at stated rates as though her health has not changed.",
       "difficulty": "medium",
@@ -497,10 +497,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. FPO locks in premiums but does not increase death benefit.",
-        "Incorrect. A savings plan does not provide the guaranteed coverage of insurance.",
-        "Incorrect. While T-100 could work, using dividend options is more efficient.",
-        null
+        "FPO locks in premiums but does not increase death benefit.",
+        "A savings plan does not provide the guaranteed coverage of insurance.",
+        "While T-100 could work, using dividend options is more efficient.",
+        "Add a GIB rider and use the PUA dividend option to increase their coverage."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. FPO locks in premiums but does not increase death benefit; A savings plan does not provide the guaranteed coverage of insurance.\nStep 4: Select the best answer. Option D: Add a GIB rider and use the PUA dividend option to increase their coverage.",
       "difficulty": "medium",
@@ -522,10 +522,10 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
-        "Incorrect. The policyholder's health is not the primary focus; the life insured is.",
-        "Incorrect. Riders like payor waiver of premium do require underwriting on the payor.",
-        "Incorrect. Ami is the life insured, not the policyholder."
+        "On Ami as the life insured and on Chris as the one making the premium payments.",
+        "The policyholder's health is not the primary focus; the life insured is.",
+        "Riders like payor waiver of premium do require underwriting on the payor.",
+        "Ami is the life insured, not the policyholder."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The policyholder's health is not the primary focus; the life insured is; Riders like payor waiver of premium do require underwriting on the payor.\nStep 4: Select the best answer. Option A: On Ami as the life insured and on Chris as the one making the premium payments.",
       "difficulty": "hard",
@@ -546,10 +546,10 @@
       ],
       "correctAnswer": 2,
       "optionFeedback": [
-        "Incorrect. A child who dies at age eight would trigger a child rider payout.",
-        "Incorrect. While a newborn death is tragic, most child riders cover from birth or shortly after.",
-        null,
-        "Incorrect. Many child riders can extend coverage up to age 25."
+        "A child who dies at age eight would trigger a child rider payout.",
+        "While a newborn death is tragic, most child riders cover from birth or shortly after.",
+        "Laura dies when crushed by a machine at work at age 22.",
+        "Many child riders can extend coverage up to age 25."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A child who dies at age eight would trigger a child rider payout; While a newborn death is tragic, most child riders cover from birth or shortly after.\nStep 4: Select the best answer. Option C: Laura dies when crushed by a machine at work at age 22.",
       "difficulty": "hard",
@@ -570,10 +570,10 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
-        "Incorrect. Group plans have simplified underwriting but may still have some health questions.",
-        "Incorrect. Group plans typically do not risk-rate individual employees.",
-        "Incorrect. Group plans do not exclude based on prior individual insurance denials."
+        "He would be able to join the health plan regardless of his health status.",
+        "Group plans have simplified underwriting but may still have some health questions.",
+        "Group plans typically do not risk-rate individual employees.",
+        "Group plans do not exclude based on prior individual insurance denials."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Group plans have simplified underwriting but may still have some health questions; Group plans typically do not risk-rate individual employees.\nStep 4: Select the best answer. Option A: He would be able to join the health plan regardless of his health status.",
       "difficulty": "medium",
@@ -594,10 +594,10 @@
       ],
       "correctAnswer": 2,
       "optionFeedback": [
-        "Incorrect. Quebec law allows conversion of the full group benefit amount.",
-        "Incorrect. This is only 50% of the available group benefit.",
-        null,
-        "Incorrect. This is only 50% of the available group benefit."
+        "Quebec law allows conversion of the full group benefit amount.",
+        "This is only 50% of the available group benefit.",
+        "$450,000.",
+        "This is only 50% of the available group benefit."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Quebec law allows conversion of the full group benefit amount; This is only 50% of the available group benefit.\nStep 4: Select the best answer. Option C: $450,000.",
       "difficulty": "medium",
@@ -618,10 +618,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. Each year has its own limit based on that year's net income.",
-        "Incorrect. The percentages used here are incorrect.",
-        "Incorrect. Charitable donations can be claimed in the year of death and carried back.",
-        null
+        "Each year has its own limit based on that year's net income.",
+        "The percentages used here are incorrect.",
+        "Charitable donations can be claimed in the year of death and carried back.",
+        "Up to $100,000 in 2023, and $120,000 for 2024."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Each year has its own limit based on that year's net income; The percentages used here are incorrect.\nStep 4: Select the best answer. Option D: Up to $100,000 in 2023, and $120,000 for 2024.",
       "difficulty": "hard",
@@ -643,10 +643,10 @@
       ],
       "correctAnswer": 2,
       "optionFeedback": [
-        "Incorrect. There is no taxable capital gain on assignment of a new policy.",
-        "Incorrect. William can receive a charitable credit for premium payments.",
-        null,
-        "Incorrect. The calculation and timing of credit claims is not as described."
+        "There is no taxable capital gain on assignment of a new policy.",
+        "William can receive a charitable credit for premium payments.",
+        "William will not be eligible for an immediate charitable donations tax credit on the assignment of his policy to the charity.",
+        "The calculation and timing of credit claims is not as described."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. There is no taxable capital gain on assignment of a new policy; William can receive a charitable credit for premium payments.\nStep 4: Select the best answer. Option C: William will not be eligible for an immediate charitable donations tax credit on the assignment of his policy to the charity.",
       "difficulty": "hard",
@@ -667,10 +667,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. The death benefit payout does not end the question of policy ownership.",
-        "Incorrect. The life insured does not automatically become the policyholder upon the original policyholder's death.",
-        "Incorrect. The beneficiary receives proceeds but does not become the owner.",
-        null
+        "The death benefit payout does not end the question of policy ownership.",
+        "The life insured does not automatically become the policyholder upon the original policyholder's death.",
+        "The beneficiary receives proceeds but does not become the owner.",
+        "In the absence of a contingent policyholder, Carlos's estate will take ownership of the policy."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The death benefit payout does not end the question of policy ownership; The life insured does not automatically become the policyholder upon the original policyholder's death.\nStep 4: Select the best answer. Option D: In the absence of a contingent policyholder, Carlos's estate will take ownership of the policy.",
       "difficulty": "hard",
@@ -692,10 +692,10 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. The calculation does not properly account for all deductions from the death benefit.",
-        null,
-        "Incorrect. This does not account for the loan and accumulated interest.",
-        "Incorrect. The death benefit is reduced by loan amounts."
+        "The calculation does not properly account for all deductions from the death benefit.",
+        "$458,600.",
+        "This does not account for the loan and accumulated interest.",
+        "The death benefit is reduced by loan amounts."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The calculation does not properly account for all deductions from the death benefit; This does not account for the loan and accumulated interest.\nStep 4: Select the best answer. Option B: $458,600.",
       "difficulty": "hard",
@@ -717,10 +717,10 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
-        "Incorrect. This calculation does not properly account for the ACB.",
-        "Incorrect. This is not the correct calculation for life insurance tax implications.",
-        "Incorrect. This overstates the taxable amount."
+        "$6,000.",
+        "This calculation does not properly account for the ACB.",
+        "This is not the correct calculation for life insurance tax implications.",
+        "This overstates the taxable amount."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This calculation does not properly account for the ACB; This is not the correct calculation for life insurance tax implications.\nStep 4: Select the best answer. Option A: $6,000.",
       "difficulty": "medium",
@@ -742,10 +742,10 @@
       ],
       "correctAnswer": 2,
       "optionFeedback": [
-        "Incorrect. Life insurance premiums for buy-sell agreements are generally not tax-deductible.",
-        "Incorrect. Premiums for cross-purchase arrangements are also not tax-deductible.",
-        null,
-        "Incorrect. If there is a business purpose, the premiums may be deductible."
+        "Life insurance premiums for buy-sell agreements are generally not tax-deductible.",
+        "Premiums for cross-purchase arrangements are also not tax-deductible.",
+        "In a split-dollar life insurance arrangement, the corporation could own the death benefit, while the employee could own the policy's cash value.",
+        "If there is a business purpose, the premiums may be deductible."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Life insurance premiums for buy-sell agreements are generally not tax-deductible; Premiums for cross-purchase arrangements are also not tax-deductible.\nStep 4: Select the best answer. Option C: In a split-dollar life insurance arrangement, the corporation could own the death benefit, while the employee could own the policy's cash value.",
       "difficulty": "hard",
@@ -767,10 +767,10 @@
       ],
       "correctAnswer": 2,
       "optionFeedback": [
-        "Incorrect. The calculation does not properly account for the lifetime capital gains exemption.",
-        "Incorrect. This does not align with the net-after-tax split shown by the calculation.",
-        null,
-        "Incorrect. This is only the tax on one son's portion and is far too low."
+        "The calculation does not properly account for the lifetime capital gains exemption.",
+        "This does not align with the net-after-tax split shown by the calculation.",
+        "$1,171,363.",
+        "This is only the tax on one son's portion and is far too low."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The calculation does not properly account for the lifetime capital gains exemption; This does not align with the net-after-tax split shown by the calculation.\nStep 4: Select the best answer. Option C: $1,171,363.",
       "difficulty": "hard",
@@ -792,10 +792,10 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
-        "Incorrect. A TIA is not automatic even if health questions are answered \"no\" if other risk factors are present.",
-        "Incorrect. Premium payment alone does not guarantee a TIA if underwriting concerns exist.",
-        "Incorrect. TIAs can be issued for both term and permanent insurance."
+        "No, because the agent has reason to believe the main policy may not be approved.",
+        "A TIA is not automatic even if health questions are answered \"no\" if other risk factors are present.",
+        "Premium payment alone does not guarantee a TIA if underwriting concerns exist.",
+        "TIAs can be issued for both term and permanent insurance."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A TIA is not automatic even if health questions are answered \"no\" if other risk factors are present; Premium payment alone does not guarantee a TIA if underwriting concerns exist.\nStep 4: Select the best answer. Option A: No, because the agent has reason to believe the main policy may not be approved.",
       "difficulty": "hard",
@@ -817,10 +817,10 @@
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Incorrect. A complete application alone is not sufficient for a TIA.",
-        "Incorrect. Void cheque information is not a requirement for TIA issuance.",
-        "Incorrect. Answering \"yes\" to health questions would typically preclude TIA issuance.",
-        null
+        "A complete application alone is not sufficient for a TIA.",
+        "Void cheque information is not a requirement for TIA issuance.",
+        "Answering \"yes\" to health questions would typically preclude TIA issuance.",
+        "The applicant has answered \"no\" to all of the questions related to health."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A complete application alone is not sufficient for a TIA; Void cheque information is not a requirement for TIA issuance.\nStep 4: Select the best answer. Option D: The applicant has answered \"no\" to all of the questions related to health.",
       "difficulty": "medium",
@@ -841,10 +841,10 @@
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Incorrect. This describes an application under review, not a rated policy.",
-        null,
-        "Incorrect. This describes an application awaiting decision, not a rated policy.",
-        "Incorrect. If the risk were unacceptable, the application would be declined, not rated."
+        "This describes an application under review, not a rated policy.",
+        "He is an above-average but acceptable risk.",
+        "This describes an application awaiting decision, not a rated policy.",
+        "If the risk were unacceptable, the application would be declined, not rated."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This describes an application under review, not a rated policy; This describes an application awaiting decision, not a rated policy.\nStep 4: Select the best answer. Option B: He is an above-average but acceptable risk.",
       "difficulty": "medium",

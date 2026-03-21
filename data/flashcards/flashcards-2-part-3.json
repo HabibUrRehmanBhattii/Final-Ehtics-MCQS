@@ -13,7 +13,13 @@
         "premium payments that are paid to age 100"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: premium payments limited to a specified number of years."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: premium payments limited to a specified number of years.",
+      "optionFeedback": [
+        "\"graded death benefits\" is a different premium-payment feature than the one this question is testing. The better answer here is \"premium payments limited to a specified number of years\".",
+        "\"no cash value\" is a different premium-payment feature than the one this question is testing. The better answer here is \"premium payments limited to a specified number of years\".",
+        "Premium payments limited to a specified number of years.",
+        "\"premium payments that are paid to age 100\" is a different premium-payment feature than the one this question is testing. The better answer here is \"premium payments limited to a specified number of years\"."
+      ]
     },
     {
       "id": 42,
@@ -25,7 +31,13 @@
         "Endowment policy"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Term life."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Term life.",
+      "optionFeedback": [
+        "Term life.",
+        "\"Graded Premium Whole life\" is a different coverage condition than the one this question is testing. The correct answer is \"Term life\" because that is the contract feature that matches the fact pattern.",
+        "\"Whole life\" is a different coverage condition than the one this question is testing. The correct answer is \"Term life\" because that is the contract feature that matches the fact pattern.",
+        "\"Endowment policy\" is a different coverage condition than the one this question is testing. The correct answer is \"Term life\" because that is the contract feature that matches the fact pattern."
+      ]
     },
     {
       "id": 43,
@@ -37,7 +49,13 @@
         "Last Survivor Policy"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Joint Life Policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Joint Life Policy.",
+      "optionFeedback": [
+        "\"Group Life\" is a different answer than the one this question is testing. The correct answer is \"Joint Life Policy\" because that is the contract feature that matches the fact pattern.",
+        "Joint Life Policy.",
+        "\"Family Income Policy\" is a different answer than the one this question is testing. The correct answer is \"Joint Life Policy\" because that is the contract feature that matches the fact pattern.",
+        "\"Last Survivor Policy\" is a different answer than the one this question is testing. The correct answer is \"Joint Life Policy\" because that is the contract feature that matches the fact pattern."
+      ]
     },
     {
       "id": 44,
@@ -49,7 +67,13 @@
         "Tied to Treasury Bills"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Through mutual funds, stocks, bonds."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Through mutual funds, stocks, bonds.",
+      "optionFeedback": [
+        "\"Tied to price of gold\" is a different answer than the one this question is testing. The better answer here is \"Through mutual funds, stocks, bonds\".",
+        "Through mutual funds, stocks, bonds.",
+        "\"Based on returns from insurer's general account\" is a different answer than the one this question is testing. The better answer here is \"Through mutual funds, stocks, bonds\".",
+        "\"Tied to Treasury Bills\" is a different answer than the one this question is testing. The better answer here is \"Through mutual funds, stocks, bonds\"."
+      ]
     },
     {
       "id": 45,
@@ -61,7 +85,13 @@
         "Variable Annuity"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Modified Whole Life."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Modified Whole Life.",
+      "optionFeedback": [
+        "\"Variable Life\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Modified Whole Life\".",
+        "Modified Whole Life.",
+        "\"Universal Variable life\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Modified Whole Life\".",
+        "\"Variable Annuity\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Modified Whole Life\"."
+      ]
     },
     {
       "id": 46,
@@ -73,7 +103,13 @@
         "Modified Whole Life"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Modified Whole Life."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Modified Whole Life.",
+      "optionFeedback": [
+        "\"Variable Life\" is a different coverage condition than the one this question is testing. The correct answer is \"Modified Whole Life\" because that is the contract feature that matches the fact pattern.",
+        "\"Adjustable Life\" is a different coverage condition than the one this question is testing. The correct answer is \"Modified Whole Life\" because that is the contract feature that matches the fact pattern.",
+        "\"Graded Premium Whole Life\" is a different coverage condition than the one this question is testing. The correct answer is \"Modified Whole Life\" because that is the contract feature that matches the fact pattern.",
+        "Modified Whole Life."
+      ]
     },
     {
       "id": 47,
@@ -85,7 +121,13 @@
         "Adjustable life"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: 15-year decreasing term."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: 15-year decreasing term.",
+      "optionFeedback": [
+        "\"Modified whole life\" is a different answer than the one this question is testing. The correct answer is \"15-year decreasing term\" because that is the contract feature that matches the fact pattern.",
+        "\"15-year level term\" is a different answer than the one this question is testing. The correct answer is \"15-year decreasing term\" because that is the contract feature that matches the fact pattern.",
+        "15-year decreasing term.",
+        "\"Adjustable life\" is a different answer than the one this question is testing. The correct answer is \"15-year decreasing term\" because that is the contract feature that matches the fact pattern."
+      ]
     },
     {
       "id": 48,
@@ -97,7 +139,13 @@
         "Waiver of Premium provision"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Payor provision."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Payor provision.",
+      "optionFeedback": [
+        "Payor provision.",
+        "\"Accelerated Benefits provision\" is a different policy provision than the one this question is testing. The correct answer is \"Payor provision\" because that is the contract feature that matches the fact pattern.",
+        "\"Assignment provision\" is a different policy provision than the one this question is testing. The correct answer is \"Payor provision\" because that is the contract feature that matches the fact pattern.",
+        "\"Waiver of Premium provision\" is a different policy provision than the one this question is testing. The correct answer is \"Payor provision\" because that is the contract feature that matches the fact pattern."
+      ]
     },
     {
       "id": 49,
@@ -109,7 +157,13 @@
         "Endowment"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Level term."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Level term.",
+      "optionFeedback": [
+        "\"Limited-pay life\" is a different premium-payment feature than the one this question is testing. The correct answer is \"Level term\" because that is the contract feature that matches the fact pattern.",
+        "\"Graded Premium\" is a different premium-payment feature than the one this question is testing. The correct answer is \"Level term\" because that is the contract feature that matches the fact pattern.",
+        "Level term.",
+        "\"Endowment\" is a different premium-payment feature than the one this question is testing. The correct answer is \"Level term\" because that is the contract feature that matches the fact pattern."
+      ]
     },
     {
       "id": 50,
@@ -121,7 +175,13 @@
         "when one of the insureds becomes disabled and no longer able to make premium payments"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: upon death of the last insured."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: upon death of the last insured.",
+      "optionFeedback": [
+        "\"when policy reaches maturation\" is a different statement than the one this question is testing. The better answer here is \"upon death of the last insured\".",
+        "\"upon death of the first insured\" is a different answer than the one this question is testing. The better answer here is \"upon death of the last insured\".",
+        "Upon death of the last insured.",
+        "\"when one of the insureds becomes disabled and no longer able to make premium payments\" is a different statement than the one this question is testing. The better answer here is \"upon death of the last insured\"."
+      ]
     },
     {
       "id": 51,
@@ -133,7 +193,13 @@
         "Premiums are payable for as long as there is insurance coverage in force"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Premiums are payable for as long as there is insurance coverage in force."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Premiums are payable for as long as there is insurance coverage in force.",
+      "optionFeedback": [
+        "This choice is too broad. The better answer here is \"Premiums are payable for as long as there is insurance coverage in force\".",
+        "\"Premiums are lower for the first five years, increase the sixth year, then levels off for the...\" is a different premium-payment feature than the one this question is testing. The better answer here is \"Premiums are payable for as long as there is insurance coverage in force\".",
+        "\"Owner has the option of converting to term insurance\" is a different premium-payment feature than the one this question is testing. The better answer here is \"Premiums are payable for as long as there is insurance coverage in force\".",
+        "Premiums are payable for as long as there is insurance coverage in force."
+      ]
     },
     {
       "id": 52,
@@ -145,7 +211,13 @@
         "The death benefit can vary but the policyowner has no say in the premium amount paid"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Policyowner controls where the investment will go and selects the amount of the premium payment."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Policyowner controls where the investment will go and selects the amount of the premium payment.",
+      "optionFeedback": [
+        "Policyowner controls where the investment will go and selects the amount of the premium payment.",
+        "\"Policyowner has no say where the investment will go but can choose the premium mode\" is a different statement than the one this question is testing. The correct answer is \"Policyowner controls where the investment will go and selects the amount of the premium payment\" because that statement is the one that matches the rule being tested.",
+        "\"The investment vehicle for this type of policy is held in the insurer's general portfolio\" is a different statement than the one this question is testing. The correct answer is \"Policyowner controls where the investment will go and selects the amount of the premium payment\" because that statement is the one that matches the rule being tested.",
+        "\"The death benefit can vary but the policyowner has no say in the premium amount paid\" is a different statement than the one this question is testing. The correct answer is \"Policyowner controls where the investment will go and selects the amount of the premium payment\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 53,
@@ -157,7 +229,13 @@
         "Representation"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Warranty."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Warranty.",
+      "optionFeedback": [
+        "\"Estoppel\" is a different answer than the one this question is testing. The better answer here is \"Warranty\".",
+        "Warranty.",
+        "\"Guarantee\" is a different answer than the one this question is testing. The better answer here is \"Warranty\".",
+        "\"Representation\" is a different answer than the one this question is testing. The better answer here is \"Warranty\"."
+      ]
     },
     {
       "id": 54,
@@ -169,7 +247,13 @@
         "Contracts of Adhesion"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Contracts of Adhesion."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Contracts of Adhesion.",
+      "optionFeedback": [
+        "\"Conditional Contracts\" is a different answer than the one this question is testing. The better answer here is \"Contracts of Adhesion\".",
+        "\"Aleatory Contracts\" is a different answer than the one this question is testing. The better answer here is \"Contracts of Adhesion\".",
+        "\"Unilateral Contracts\" is a different answer than the one this question is testing. The better answer here is \"Contracts of Adhesion\".",
+        "Contracts of Adhesion."
+      ]
     },
     {
       "id": 55,
@@ -181,7 +265,13 @@
         "consideration"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: negotiating."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: negotiating.",
+      "optionFeedback": [
+        "\"the offer\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"negotiating\".",
+        "\"acceptance\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"negotiating\".",
+        "Negotiating.",
+        "\"consideration\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"negotiating\"."
+      ]
     },
     {
       "id": 56,
@@ -193,7 +283,13 @@
         "Applicant"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Insurer."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Insurer.",
+      "optionFeedback": [
+        "\"Beneficiary\" is a different beneficiary designation than the one this question is testing. The better answer here is \"Insurer\".",
+        "Insurer.",
+        "\"Insured\" is a different answer than the one this question is testing. The better answer here is \"Insurer\".",
+        "\"Applicant\" is a different answer than the one this question is testing. The better answer here is \"Insurer\"."
+      ]
     },
     {
       "id": 57,
@@ -205,7 +301,13 @@
         "Meals and entertainment"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Utilities and office rent."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Utilities and office rent.",
+      "optionFeedback": [
+        "\"Contributions to employee retirement plans\" is a different statement than the one this question is testing. The correct answer is \"Utilities and office rent\" because that statement is the one that matches the rule being tested.",
+        "Utilities and office rent.",
+        "\"Owner's salary\" is a different statement than the one this question is testing. The correct answer is \"Utilities and office rent\" because that statement is the one that matches the rule being tested.",
+        "\"Meals and entertainment\" is a different statement than the one this question is testing. The correct answer is \"Utilities and office rent\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 58,
@@ -217,7 +319,13 @@
         "Both the employer and employee are policyowners"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: The employer is the policyowner and each employee receives a certificate of coverage."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: The employer is the policyowner and each employee receives a certificate of coverage.",
+      "optionFeedback": [
+        "This choice is too absolute. The correct answer is \"The employer is the policyowner and each employee receives a certificate of coverage\" because that statement is the one that matches the rule being tested.",
+        "\"The employer is issued a certificate of coverage and each employee receives a policy\" is a different statement than the one this question is testing. The correct answer is \"The employer is the policyowner and each employee receives a certificate of coverage\" because that statement is the one that matches the rule being tested.",
+        "The employer is the policyowner and each employee receives a certificate of coverage.",
+        "This choice is too broad. The correct answer is \"The employer is the policyowner and each employee receives a certificate of coverage\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 59,
@@ -229,7 +337,13 @@
         "Contributory"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Business Overhead Expense."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Business Overhead Expense.",
+      "optionFeedback": [
+        "Business Overhead Expense.",
+        "\"Disability Income\" is a different answer than the one this question is testing. The better answer here is \"Business Overhead Expense\".",
+        "\"Key Employee Life\" is a different answer than the one this question is testing. The better answer here is \"Business Overhead Expense\".",
+        "\"Contributory\" is a different answer than the one this question is testing. The better answer here is \"Business Overhead Expense\"."
+      ]
     },
     {
       "id": 60,
@@ -241,7 +355,13 @@
         "$50,000"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: $25,000."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: $25,000.",
+      "optionFeedback": [
+        "The number in this choice is off. The correct answer is \"$25,000\".",
+        "The number in this choice is off. The correct answer is \"$25,000\".",
+        "$25,000.",
+        "The number in this choice is off. The correct answer is \"$25,000\"."
+      ]
     }
   ]
 }

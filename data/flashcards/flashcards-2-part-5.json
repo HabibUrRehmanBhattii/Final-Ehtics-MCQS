@@ -13,7 +13,13 @@
         "Proceeds will go to the insured's estate"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Proceeds will go to the contingent beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Proceeds will go to the contingent beneficiary.",
+      "optionFeedback": [
+        "\"Proceeds will go to the primary beneficiary's estate\" is a different beneficiary designation than the one this question is testing. The correct answer is \"Proceeds will go to the contingent beneficiary\" because a contingent beneficiary is paid only if the primary beneficiary dies before the insured.",
+        "\"Probate will decide who receives proceeds\" is a different beneficiary designation than the one this question is testing. The correct answer is \"Proceeds will go to the contingent beneficiary\" because a contingent beneficiary is paid only if the primary beneficiary dies before the insured.",
+        "Proceeds will go to the contingent beneficiary.",
+        "\"Proceeds will go to the insured's estate\" is a different beneficiary designation than the one this question is testing. The correct answer is \"Proceeds will go to the contingent beneficiary\" because a contingent beneficiary is paid only if the primary beneficiary dies before the insured."
+      ]
     },
     {
       "id": 82,
@@ -25,7 +31,13 @@
         "Claim will be decided by an arbitrator"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Claim will be denied."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Claim will be denied.",
+      "optionFeedback": [
+        "Claim will be denied.",
+        "\"Claim will be paid in full\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Claim will be denied\".",
+        "\"Claim will be partially paid\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Claim will be denied\".",
+        "\"Claim will be decided by an arbitrator\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Claim will be denied\"."
+      ]
     },
     {
       "id": 83,
@@ -37,7 +49,13 @@
         "Decreasing term policy"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Decreasing term policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Decreasing term policy.",
+      "optionFeedback": [
+        "\"Level term policy\" is a different coverage condition than the one this question is testing. The correct answer is \"Decreasing term policy\" because that is the contract feature that matches the fact pattern.",
+        "\"Whole life policy\" is a different coverage condition than the one this question is testing. The correct answer is \"Decreasing term policy\" because that is the contract feature that matches the fact pattern.",
+        "\"Limited-pay policy\" is a different coverage condition than the one this question is testing. The correct answer is \"Decreasing term policy\" because that is the contract feature that matches the fact pattern.",
+        "Decreasing term policy."
+      ]
     },
     {
       "id": 84,
@@ -49,7 +67,13 @@
         "Whole life policy with a Guaranteed Insurability option"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Whole life policy with other insured rider."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Whole life policy with other insured rider.",
+      "optionFeedback": [
+        "\"Joint policy\" is a different rider than the one this question is testing. The correct answer is \"Whole life policy with other insured rider\" because that is the contract feature that matches the fact pattern.",
+        "\"Joint survivor policy\" is a different rider than the one this question is testing. The correct answer is \"Whole life policy with other insured rider\" because that is the contract feature that matches the fact pattern.",
+        "Whole life policy with other insured rider.",
+        "\"Whole life policy with a Guaranteed Insurability option\" is a different rider than the one this question is testing. The correct answer is \"Whole life policy with other insured rider\" because that is the contract feature that matches the fact pattern."
+      ]
     },
     {
       "id": 85,
@@ -61,7 +85,13 @@
         "E's estate"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: F."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: F.",
+      "optionFeedback": [
+        "This option best matches the definition, rule, or outcome the question is testing. Where will the proceeds from E's life insurance policy be directed to?.",
+        "\"The dissolved partnership\" is a different statement than the one this question is testing. The better answer here is \"F\".",
+        "\"E's family\" is a different beneficiary designation than the one this question is testing. The better answer here is \"F\".",
+        "\"E's estate\" is a different beneficiary designation than the one this question is testing. The better answer here is \"F\"."
+      ]
     },
     {
       "id": 86,
@@ -73,7 +103,13 @@
         "PLHSO"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: PPO."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: PPO.",
+      "optionFeedback": [
+        "\"HMO\" is a different application requirement than the one this question is testing. The better answer here is \"PPO\".",
+        "PPO.",
+        "\"EPO\" is a different application requirement than the one this question is testing. The better answer here is \"PPO\".",
+        "\"PLHSO\" is a different application requirement than the one this question is testing. The better answer here is \"PPO\"."
+      ]
     },
     {
       "id": 87,
@@ -85,7 +121,13 @@
         "PPO's are NOT a type of managed care systems"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: PPO's are NOT a type of managed care systems."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: PPO's are NOT a type of managed care systems.",
+      "optionFeedback": [
+        "\"PPO's normally have more providers to chose from as compared to an HMO\" is a different answer than the one this question is testing. The better answer here is \"PPO's are NOT a type of managed care systems\".",
+        "\"Prices are negotiated in advance for PPO providers\" is a different answer than the one this question is testing. The better answer here is \"PPO's are NOT a type of managed care systems\".",
+        "\"In-network PPO providers offer members better coverage of incurred expenses\" is a different coverage condition than the one this question is testing. The better answer here is \"PPO's are NOT a type of managed care systems\".",
+        "PPO's are NOT a type of managed care systems."
+      ]
     },
     {
       "id": 88,
@@ -97,7 +139,13 @@
         "Claim will be denied"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Claim will be denied."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Claim will be denied.",
+      "optionFeedback": [
+        "\"Claim will be denied and policy terminated\" is a different coverage condition than the one this question is testing. The better answer here is \"Claim will be denied\".",
+        "\"Claim will be partially paid\" is a different coverage condition than the one this question is testing. The better answer here is \"Claim will be denied\".",
+        "\"Claim will be paid\" is a different coverage condition than the one this question is testing. The better answer here is \"Claim will be denied\".",
+        "Claim will be denied."
+      ]
     },
     {
       "id": 89,
@@ -109,7 +157,13 @@
         "Partial Disability provision"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Recurrent Disability provision."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Recurrent Disability provision.",
+      "optionFeedback": [
+        "\"Residual Disability provision\" is a different policy provision than the one this question is testing. The better answer here is \"Recurrent Disability provision\".",
+        "\"Presumptive Disability provision\" is a different policy provision than the one this question is testing. The better answer here is \"Recurrent Disability provision\".",
+        "Recurrent Disability provision.",
+        "\"Partial Disability provision\" is a different policy provision than the one this question is testing. The better answer here is \"Recurrent Disability provision\"."
+      ]
     },
     {
       "id": 90,
@@ -121,7 +175,13 @@
         "Arrange for a copy of the Attending Physician Statement (APS) to be sent to the producer"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Inform insurer of relevant information not included on the application."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Inform insurer of relevant information not included on the application.",
+      "optionFeedback": [
+        "\"Issue a binding receipt to applicant if no initial premium is submitted\" is a different document than the one this question is testing. The correct answer is \"Inform insurer of relevant information not included on the application\" because that action follows the underwriting or delivery rule being tested in this scenario.",
+        "\"Disclose to the applicant the amount of commissions to be earned on this transaction\" is a different application requirement than the one this question is testing. The correct answer is \"Inform insurer of relevant information not included on the application\" because that action follows the underwriting or delivery rule being tested in this scenario.",
+        "Inform insurer of relevant information not included on the application.",
+        "\"Arrange for a copy of the Attending Physician Statement (APS) to be sent to the producer\" is a different application requirement than the one this question is testing. The correct answer is \"Inform insurer of relevant information not included on the application\" because that action follows the underwriting or delivery rule being tested in this scenario."
+      ]
     },
     {
       "id": 91,
@@ -133,7 +193,13 @@
         "insured"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: viatical settlement provider."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: viatical settlement provider.",
+      "optionFeedback": [
+        "Viatical settlement provider.",
+        "\"insurance company\" is a different answer than the one this question is testing. The better answer here is \"viatical settlement provider\".",
+        "\"viator\" is a different answer than the one this question is testing. The better answer here is \"viatical settlement provider\".",
+        "\"insured\" is a different answer than the one this question is testing. The better answer here is \"viatical settlement provider\"."
+      ]
     },
     {
       "id": 92,
@@ -145,7 +211,13 @@
         "Universal Life"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Variable Universal Life."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Variable Universal Life.",
+      "optionFeedback": [
+        "\"Joint Life\" is a different answer than the one this question is testing. The correct answer is \"Variable Universal Life\" because that is the contract feature that matches the fact pattern.",
+        "\"Adjustable Life\" is a different answer than the one this question is testing. The correct answer is \"Variable Universal Life\" because that is the contract feature that matches the fact pattern.",
+        "Variable Universal Life.",
+        "\"Universal Life\" is a different answer than the one this question is testing. The correct answer is \"Variable Universal Life\" because that is the contract feature that matches the fact pattern."
+      ]
     },
     {
       "id": 93,
@@ -157,7 +229,13 @@
         "C is the policyowner, the insured, and the beneficiary"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: ABC is the policyowner, C is the insured, and ABC is the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: ABC is the policyowner, C is the insured, and ABC is the beneficiary.",
+      "optionFeedback": [
+        "\"ABC is the policyowner, C is the insured, and her husband is the beneficiary\" is a different beneficiary designation than the one this question is testing. The better answer here is \"ABC is the policyowner, C is the insured, and ABC is the beneficiary\".",
+        "ABC is the policyowner, C is the insured, and ABC is the beneficiary.",
+        "\"is the policyowner and the insured, and ABC is the beneficiary\" is a different beneficiary designation than the one this question is testing. The better answer here is \"ABC is the policyowner, C is the insured, and ABC is the beneficiary\".",
+        "\"is the policyowner, the insured, and the beneficiary\" is a different beneficiary designation than the one this question is testing. The better answer here is \"ABC is the policyowner, C is the insured, and ABC is the beneficiary\"."
+      ]
     },
     {
       "id": 94,
@@ -169,7 +247,13 @@
         "Beneficiary will be paid a partial Death Benefit"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Beneficiary will be paid the Death Benefit."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Beneficiary will be paid the Death Benefit.",
+      "optionFeedback": [
+        "\"Beneficiary will be denied the claim\" is a different beneficiary designation than the one this question is testing. The better answer here is \"Beneficiary will be paid the Death Benefit\".",
+        "This choice is too absolute for the facts given. The better answer here is \"Beneficiary will be paid the Death Benefit\".",
+        "Beneficiary will be paid the Death Benefit.",
+        "\"Beneficiary will be paid a partial Death Benefit\" is a different beneficiary designation than the one this question is testing. The better answer here is \"Beneficiary will be paid the Death Benefit\"."
+      ]
     },
     {
       "id": 95,
@@ -181,7 +265,13 @@
         "Consideration clause"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Cash value provision."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Cash value provision.",
+      "optionFeedback": [
+        "\"Policy loan clause\" is a different policy provision than the one this question is testing. The better answer here is \"Cash value provision\".",
+        "Cash value provision.",
+        "\"Owner's rights provision\" is a different policy provision than the one this question is testing. The better answer here is \"Cash value provision\".",
+        "\"Consideration clause\" is a different policy provision than the one this question is testing. The better answer here is \"Cash value provision\"."
+      ]
     },
     {
       "id": 96,
@@ -193,7 +283,13 @@
         "Marital status"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Risk classification."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Risk classification.",
+      "optionFeedback": [
+        "\"Geographical location\" is a different answer than the one this question is testing. The better answer here is \"Risk classification\".",
+        "\"Source of income\" is a different answer than the one this question is testing. The better answer here is \"Risk classification\".",
+        "Risk classification.",
+        "\"Marital status\" is a different answer than the one this question is testing. The better answer here is \"Risk classification\"."
+      ]
     },
     {
       "id": 97,
@@ -205,7 +301,13 @@
         "Insurance companies can charge an interest rate based on the policyowner's credit report"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Past-due interest on a policy loan is added to the total debt."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Past-due interest on a policy loan is added to the total debt.",
+      "optionFeedback": [
+        "\"Past-due interest payments not paid after 3 months will void the policy\" is a different statement than the one this question is testing. The correct answer is \"Past-due interest on a policy loan is added to the total debt\" because that statement is the one that matches the rule being tested.",
+        "Past-due interest on a policy loan is added to the total debt.",
+        "\"Insurance companies can send delinquent interest accounts to a collection agency\" is a different statement than the one this question is testing. The correct answer is \"Past-due interest on a policy loan is added to the total debt\" because that statement is the one that matches the rule being tested.",
+        "\"Insurance companies can charge an interest rate based on the policyowner's credit report\" is a different statement than the one this question is testing. The correct answer is \"Past-due interest on a policy loan is added to the total debt\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 98,
@@ -217,7 +319,13 @@
         "HRA's allow reimbursement for eligible medical expenses"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Employee funds the HRA entirely."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Employee funds the HRA entirely.",
+      "optionFeedback": [
+        "Employee funds the HRA entirely.",
+        "\"Employer funds the HRA entirely\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Employee funds the HRA entirely\".",
+        "\"HRA's can be offered with other health plans\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Employee funds the HRA entirely\".",
+        "\"HRA's allow reimbursement for eligible medical expenses\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"Employee funds the HRA entirely\"."
+      ]
     },
     {
       "id": 99,
@@ -229,7 +337,13 @@
         "Benefits are normally taxable"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Normally includes an Elimination period."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Normally includes an Elimination period.",
+      "optionFeedback": [
+        "\"Premiums are normally tax-deductible\" is a different statement than the one this question is testing. The better answer here is \"Normally includes an Elimination period\".",
+        "\"Age of the insured determines the amount of the benefits\" is a different statement than the one this question is testing. The better answer here is \"Normally includes an Elimination period\".",
+        "Normally includes an Elimination period.",
+        "\"Benefits are normally taxable\" is a different statement than the one this question is testing. The better answer here is \"Normally includes an Elimination period\"."
+      ]
     },
     {
       "id": 100,
@@ -241,7 +355,13 @@
         "annually"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: monthly."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: monthly.",
+      "optionFeedback": [
+        "Monthly.",
+        "\"weekly\" is a different coverage condition than the one this question is testing. The better answer here is \"monthly\".",
+        "\"daily\" is a different coverage condition than the one this question is testing. The better answer here is \"monthly\".",
+        "\"annually\" is a different coverage condition than the one this question is testing. The better answer here is \"monthly\"."
+      ]
     }
   ]
 }

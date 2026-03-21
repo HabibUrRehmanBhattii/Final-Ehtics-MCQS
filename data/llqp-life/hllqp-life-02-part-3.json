@@ -17,7 +17,7 @@
       "optionFeedback": [
         "Policy mechanics (e.g., loans, additions) can affect payout amount.",
         "Death benefit can differ from face amount depending on product design/adjustments.",
-        null,
+        "The amount will depend on the type of policy.",
         "Absolute statement is not always accurate."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Policy mechanics (e.g., loans, additions) can affect payout amount; Death benefit can differ from face amount depending on product design/adjustments.\nStep 4: Select the best answer. Option C: The amount will depend on the type of policy.",
@@ -38,7 +38,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "Christina.",
         "Arlena is life-insured but not identified as owner here.",
         "Beneficiary is not policy owner by default.",
         "Facts state Christina bought/owns the policy."
@@ -64,7 +64,7 @@
         "Joint policies are a different structure from separate combined contracts.",
         "This is a type of joint coverage, not two separate policies under one contract.",
         "This is a type of joint coverage, not two separate policies under one contract.",
-        null
+        "Combined insurance."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Joint policies are a different structure from separate combined contracts; This is a type of joint coverage, not two separate policies under one contract.\nStep 4: Select the best answer. Option D: Combined insurance.",
       "difficulty": "easy",
@@ -85,7 +85,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Cancer history is generally material to underwriting.",
-        null,
+        "It is within the contestability period, so the insurer can void the policy due to material misrepresentation.",
         "During early contestability, fraud proof is not always required for material misrepresentation.",
         "Within contestability window, insurer may rescind for material misrepresentation."
       ],
@@ -110,7 +110,7 @@
         "Last-to-die does not address first-death mortgage risk.",
         "Last-to-die still mismatches trigger event.",
         "First-to-die helps, but level may cost more than needed for declining mortgage.",
-        null
+        "Joint first-to-die decreasing term insurance."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Last-to-die does not address first-death mortgage risk; Last-to-die still mismatches trigger event.\nStep 4: Select the best answer. Option D: Joint first-to-die decreasing term insurance.",
       "difficulty": "medium",
@@ -132,7 +132,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Typical decreasing term premiums are usually level within term.",
-        null,
+        "Although the premium will remain level, the decreasing coverage would have been factored into the premium when it was established.",
         "It is often cost-effective for declining liabilities.",
         "Premium generally does not mechanically decrease each year within the term."
       ],
@@ -157,7 +157,7 @@
         "All convertible policies generally allow no-evidence conversion; this does not distinguish best fit.",
         "Retroactive/original-age may require substantial catch-up cost.",
         "Original-age often implies costly back-premium approach.",
-        null
+        "The policy that offers attained-age conversion."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. All convertible policies generally allow no-evidence conversion; this does not distinguish best fit; Retroactive/original-age may require substantial catch-up cost.\nStep 4: Select the best answer. Option D: The policy that offers attained-age conversion.",
       "difficulty": "hard",
@@ -181,7 +181,7 @@
         "Car loan is temporary debt.",
         "Education funding goal is typically temporary.",
         "Mortgage is usually temporary/declining.",
-        null
+        "Danny, who wants sufficient insurance to pay for his funeral so as to not burden his loved ones."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Car loan is temporary debt; Education funding goal is typically temporary.\nStep 4: Select the best answer. Option D: Danny, who wants sufficient insurance to pay for his funeral so as to not burden his loved ones.",
       "difficulty": "easy",

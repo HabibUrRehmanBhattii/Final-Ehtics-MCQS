@@ -17,7 +17,7 @@
       "optionFeedback": [
         "Coverage decisions depend on full disclosure; an undisclosed condition can change underwriting outcomes.",
         "Protecting the client does not justify withholding material facts from the insurer.",
-        null,
+        "Material misrepresentation has occurred.",
         "Confidentiality does not override the duty to disclose material information on an application."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Coverage decisions depend on full disclosure; an undisclosed condition can change underwriting outcomes; Protecting the client does not justify withholding material facts from the insurer.\nStep 4: Select the best answer. Option C: Material misrepresentation has occurred.",
@@ -40,7 +40,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Consent is not meaningful without disclosure of material changes like a reset suicide clause.",
-        null,
+        "Agent violated the duty of disclosure.",
         "Material disadvantages matter even if no immediate loss is shown.",
         "An agent’s belief in suitability doesn’t remove the duty to disclose significant drawbacks."
       ],
@@ -65,7 +65,7 @@
       "optionFeedback": [
         "Knowing general fees doesn’t address a specific referral incentive that could bias advice.",
         "Undisclosed conflicts are not minor; they undermine trust and decision-making.",
-        null,
+        "Conflict of interest that must be disclosed.",
         "No percentage threshold removes the disclosure requirement for conflicts."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Knowing general fees doesn’t address a specific referral incentive that could bias advice; Undisclosed conflicts are not minor; they undermine trust and decision-making.\nStep 4: Select the best answer. Option C: Conflict of interest that must be disclosed.",
@@ -88,7 +88,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Consent alone doesn’t solve a capacity problem for the assignee.",
-        null,
+        "Legal risk because third party may lack capacity.",
         "The agent shares responsibility to ensure the transaction is legally valid.",
         "Insurer approval doesn’t cure defects if the assignee lacks legal capacity."
       ],
@@ -112,7 +112,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "A signature isn’t enough when the client may be pressured or not fully informed.",
-        null,
+        "Undue influence ignored → unethical.",
         "Family assistance doesn’t justify skipping an assessment of the client’s understanding.",
         "Ethical duties apply regardless of whether a client later complains."
       ],
@@ -135,7 +135,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "A small benefit doesn’t justify steering a client for personal gain.",
-        null,
+        "Unethical due to undisclosed conflict of interest.",
         "A signature does not replace the duty to avoid or disclose conflicts and ensure suitability.",
         "Conflict-of-interest rules apply even without proven financial loss."
       ],
@@ -159,7 +159,7 @@
       "optionFeedback": [
         "Unintentional errors can still be material, especially when the agent suspects inaccuracies.",
         "Proceeding without clarification breaches the agent’s duty to verify and correct information.",
-        null,
+        "Material misrepresentation may occur.",
         "Insurers rely on agent and client disclosures; verification doesn’t remove the agent’s duty."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Unintentional errors can still be material, especially when the agent suspects inaccuracies; Proceeding without clarification breaches the agent’s duty to verify and correct information.\nStep 4: Select the best answer. Option C: Material misrepresentation may occur.",
@@ -183,7 +183,7 @@
         "After absolute assignment, the former owner no longer controls the policy or its proceeds.",
         "Ownership transfers, but if the new owner dies without action, the proceeds do not go to them personally.",
         "Beneficiary designations can be changed by the new owner; ownership rules govern the outcome here.",
-        null
+        "Policyholder’s estate."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. After absolute assignment, the former owner no longer controls the policy or its proceeds; Ownership transfers, but if the new owner dies without action, the proceeds do not go to them personally.\nStep 4: Select the best answer. Option D: Policyholder’s estate.",
       "difficulty": "medium",
@@ -204,7 +204,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "Churning.",
         "A transparent, informed replacement is permitted when it benefits the client.",
         "Commission disclosure is required and is not a prohibited practice by itself.",
         "Suitability-based recommendations are expected, not prohibited."
@@ -228,7 +228,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Immediate denial ignores required complaint-handling procedures.",
-        null,
+        "Document complaint and report internally.",
         "A rebate doesn’t replace the duty to document and report the complaint.",
         "Closing the sale doesn’t eliminate reporting obligations."
       ],
@@ -251,7 +251,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Property division rules for common-law partners often differ from marriage and are not automatic.",
-        null,
+        "Only spousal support is available.",
         "Agreements can define terms going forward but don’t typically create retroactive statutory rights.",
         "Common-law partners do not automatically receive all legal rights of married spouses."
       ],
@@ -274,7 +274,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Creditor protection varies by province and policy details; blanket assurances are risky.",
-        null,
+        "Misrepresentation; advice must be verified.",
         "Client trust doesn’t excuse giving unverified legal advice.",
         "Misrepresentation exists at the time of advice, regardless of whether litigation occurs."
       ],
@@ -297,7 +297,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Reporting obligations are set by law, not by peer perceptions.",
-        null,
+        "Required within 15 days for suspicious transactions.",
         "Potential client harm does not remove statutory reporting requirements.",
         "FINTRAC reporting is unrelated to client litigation threats."
       ],
@@ -320,7 +320,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Suitability may still be fine; the issue is failure to explain a material benefit.",
-        null,
+        "Duty of care.",
         "There is no personal gain indicated, so conflict of interest isn’t the core breach.",
         "Autonomy is supported by disclosure, but the primary breach is the duty to explain material features."
       ],
@@ -343,7 +343,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Presenting options is standard practice and not coercive by itself.",
-        null,
+        "High-pressure tactics on vulnerable client.",
         "Clear explanations support informed consent, not undue influence.",
         "Commission disclosure is a transparency requirement, not a pressure tactic."
       ],
@@ -365,7 +365,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Minors generally cannot enter binding contracts, so assignment is not automatically valid.",
-        null,
+        "Invalid due to legal capacity.",
         "Insurer agreement doesn’t override legal capacity rules.",
         "A minor’s signature alone does not create legal capacity."
       ],
@@ -387,7 +387,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "Written disclosure of new vs old features.",
         "Verbal-only disclosure lacks a reliable record and is insufficient for ethical replacement.",
         "Convenience cannot replace the required disclosure and documentation process.",
         "Replacement can be unethical if not in the client’s interest or if disadvantages are hidden."
@@ -412,7 +412,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Any rewarded referral creates a potential conflict and requires disclosure.",
-        null,
+        "Referral arrangement must be disclosed to client.",
         "There is no dollar threshold that removes the duty to disclose referral incentives.",
         "Client trust does not eliminate disclosure obligations for conflicts."
       ],
@@ -435,7 +435,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Duty to disclose material facts exists even if the client doesn’t ask.",
-        null,
+        "When material information is withheld.",
         "Silence can mislead when it hides material information the client needs.",
         "Misrepresentation by omission doesn’t depend on proving a financial loss."
       ],
@@ -459,7 +459,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Paying premiums doesn’t prove the client understood the transaction.",
-        null,
+        "Unethical due to lack of informed consent.",
         "Family approval cannot substitute for the client’s own informed consent.",
         "Ethical duties apply at the time of sale, not only after a claim is denied."
       ],

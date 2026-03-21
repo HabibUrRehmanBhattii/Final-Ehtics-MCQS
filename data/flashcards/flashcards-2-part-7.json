@@ -13,7 +13,13 @@
         "Needing written documentation of claim details"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Needing written documentation of claim details."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Needing written documentation of claim details.",
+      "optionFeedback": [
+        "\"Failing to acknowledge and act promptly with respect to an insurance claim\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Needing written documentation of claim details\" because that statement is the one that matches the rule being tested.",
+        "\"Compelling an insured to initiate a lawsuit by offering less on an insurance claim\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Needing written documentation of claim details\" because that statement is the one that matches the rule being tested.",
+        "\"Failing to accept or deny a claim within reasonable time after proof of loss is submitted\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Needing written documentation of claim details\" because that statement is the one that matches the rule being tested.",
+        "Needing written documentation of claim details."
+      ]
     },
     {
       "id": 122,
@@ -25,7 +31,13 @@
         "Rebating occurs when someone intentionally deceives another with the intent to gain financially"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Twisting involves an agent using misrepresentation to convince a policyowner to cancel their current policy so that they can purchase a new life insurance policy with another company."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Twisting involves an agent using misrepresentation to convince a policyowner to cancel their current policy so that they can purchase a new life insurance policy with another company.",
+      "optionFeedback": [
+        "\"Coercion involves making a malicious statement about the financial condition of an insurance...\" is a different statement than the one this question is testing. The correct answer is \"Twisting involves an agent using misrepresentation to convince a policyowner to cancel their current policy so that they can purchase a new life insurance policy with another company\" because that statement is the one that matches the rule being tested.",
+        "Twisting involves an agent using misrepresentation to convince a policyowner to cancel their current policy so that they can purchase a new life insurance policy with another company.",
+        "\"No more than 25% of an agent's insurance sales are allowed to come from controlled business\" is a different statement than the one this question is testing. The correct answer is \"Twisting involves an agent using misrepresentation to convince a policyowner to cancel their current policy so that they can purchase a new life insurance policy with another company\" because that statement is the one that matches the rule being tested.",
+        "\"Rebating occurs when someone intentionally deceives another with the intent to gain financially\" is a different statement than the one this question is testing. The correct answer is \"Twisting involves an agent using misrepresentation to convince a policyowner to cancel their current policy so that they can purchase a new life insurance policy with another company\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 123,
@@ -37,7 +49,13 @@
         "A copy of the agent's insurance license"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Notice to existing and replacing insurers of intention to replace."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Notice to existing and replacing insurers of intention to replace.",
+      "optionFeedback": [
+        "Notice to existing and replacing insurers of intention to replace.",
+        "This choice is too absolute for the facts given. The correct answer is \"Notice to existing and replacing insurers of intention to replace\" because that statement is the one that matches the rule being tested.",
+        "\"statement made by the agent that NAIC guidelines have been met during the replacement process\" is a different statement than the one this question is testing. The correct answer is \"Notice to existing and replacing insurers of intention to replace\" because that statement is the one that matches the rule being tested.",
+        "\"copy of the agent's insurance license\" is a different statement than the one this question is testing. The correct answer is \"Notice to existing and replacing insurers of intention to replace\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 124,
@@ -49,7 +67,13 @@
         "69 or older"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: 64 years or older."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: 64 years or older.",
+      "optionFeedback": [
+        "The number in this choice is off. The correct answer is \"64 years or older\".",
+        "The number in this choice is off. The correct answer is \"64 years or older\".",
+        "64 years or older.",
+        "The number in this choice is off. The correct answer is \"64 years or older\"."
+      ]
     },
     {
       "id": 125,
@@ -61,7 +85,13 @@
         "a form of misrepresentation"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: a form of misrepresentation."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: a form of misrepresentation.",
+      "optionFeedback": [
+        "\"form of coercion\" is a different answer than the one this question is testing. The better answer here is \"form of misrepresentation\".",
+        "\"form of sliding\" is a different answer than the one this question is testing. The better answer here is \"form of misrepresentation\".",
+        "\"form of rebating\" is a different answer than the one this question is testing. The better answer here is \"form of misrepresentation\".",
+        "A form of misrepresentation."
+      ]
     },
     {
       "id": 126,
@@ -73,7 +103,13 @@
         "a Written Comparison and Policy Summary"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: a Buyer's Guide and Policy Summary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: a Buyer's Guide and Policy Summary.",
+      "optionFeedback": [
+        "\"Certificate of Coverage and Buyer's Guide\" is a different document than the one this question is testing. The better answer here is \"Buyer's Guide and Policy Summary\".",
+        "\"Summary Statement and Buyer's Guide\" is a different document than the one this question is testing. The better answer here is \"Buyer's Guide and Policy Summary\".",
+        "A Buyer's Guide and Policy Summary.",
+        "\"Written Comparison and Policy Summary\" is a different document than the one this question is testing. The better answer here is \"Buyer's Guide and Policy Summary\"."
+      ]
     },
     {
       "id": 127,
@@ -85,7 +121,13 @@
         "cancel the policy at anytime"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: buy additional coverage at a later date."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: buy additional coverage at a later date.",
+      "optionFeedback": [
+        "Buy additional coverage at a later date.",
+        "\"add the insured's spouse at a later date\" is a different coverage condition than the one this question is testing. The better answer here is \"buy additional coverage at a later date\".",
+        "\"pay the same premium for life\" is a different premium-payment feature than the one this question is testing. The better answer here is \"buy additional coverage at a later date\".",
+        "\"cancel the policy at anytime\" is a different coverage condition than the one this question is testing. The better answer here is \"buy additional coverage at a later date\"."
+      ]
     },
     {
       "id": 128,
@@ -97,7 +139,13 @@
         "1945 - The McCarran-Ferguson Act"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: 1970 - Fair Credit Reporting Act."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: 1970 - Fair Credit Reporting Act.",
+      "optionFeedback": [
+        "1970 - Fair Credit Reporting Act.",
+        "The number in this choice is off. The correct answer is \"1970 - Fair Credit Reporting Act\".",
+        "The number in this choice is off. The correct answer is \"1970 - Fair Credit Reporting Act\".",
+        "The number in this choice is off. The correct answer is \"1970 - Fair Credit Reporting Act\"."
+      ]
     },
     {
       "id": 129,
@@ -109,7 +157,13 @@
         "At all times"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: At the time of application."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: At the time of application.",
+      "optionFeedback": [
+        "At the time of application.",
+        "\"At the time of delivery\" is a different application requirement than the one this question is testing. The better answer here is \"At the time of application\".",
+        "\"At the time of death\" is a different application requirement than the one this question is testing. The better answer here is \"At the time of application\".",
+        "This choice is too absolute for the facts given. The better answer here is \"At the time of application\"."
+      ]
     },
     {
       "id": 130,
@@ -121,7 +175,13 @@
         "Age"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Wages."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Wages.",
+      "optionFeedback": [
+        "\"Education level\" is a different coverage condition than the one this question is testing. The better answer here is \"Wages\".",
+        "Wages.",
+        "\"Type of occupation\" is a different coverage condition than the one this question is testing. The better answer here is \"Wages\".",
+        "\"Age\" is a different coverage condition than the one this question is testing. The better answer here is \"Wages\"."
+      ]
     },
     {
       "id": 131,
@@ -133,7 +193,13 @@
         "probation period"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: time deductible."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: time deductible.",
+      "optionFeedback": [
+        "Time deductible.",
+        "\"dollar deductible\" is a different coverage condition than the one this question is testing. The better answer here is \"time deductible\".",
+        "\"eligibility period\" is a different coverage condition than the one this question is testing. The better answer here is \"time deductible\".",
+        "\"probation period\" is a different coverage condition than the one this question is testing. The better answer here is \"time deductible\"."
+      ]
     },
     {
       "id": 132,
@@ -145,7 +211,13 @@
         "Extended insurability rider"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Guaranteed insurability rider."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Guaranteed insurability rider.",
+      "optionFeedback": [
+        "Guaranteed insurability rider.",
+        "\"Additional coverage rider\" is a different rider than the one this question is testing. The correct answer is \"Guaranteed insurability rider\" because that is the contract feature that matches the fact pattern.",
+        "\"Paid-up option rider\" is a different rider than the one this question is testing. The correct answer is \"Guaranteed insurability rider\" because that is the contract feature that matches the fact pattern.",
+        "\"Extended insurability rider\" is a different rider than the one this question is testing. The correct answer is \"Guaranteed insurability rider\" because that is the contract feature that matches the fact pattern."
+      ]
     },
     {
       "id": 133,
@@ -157,7 +229,13 @@
         "Certificate"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Certificate."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Certificate.",
+      "optionFeedback": [
+        "\"Provision\" is a different policy provision than the one this question is testing. The correct answer is \"Certificate\" because that is the document the applicant or employee receives in this situation.",
+        "\"Receipt\" is a different document than the one this question is testing. The correct answer is \"Certificate\" because that is the document the applicant or employee receives in this situation.",
+        "\"Policy\" is a different document than the one this question is testing. The correct answer is \"Certificate\" because that is the document the applicant or employee receives in this situation.",
+        "Certificate."
+      ]
     },
     {
       "id": 134,
@@ -169,7 +247,13 @@
         "After an insured has become totally disabled as defined in the policy"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: After an insured has become totally disabled as defined in the policy."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: After an insured has become totally disabled as defined in the policy.",
+      "optionFeedback": [
+        "\"Whenever an insured is unable to work\" is a different policy provision than the one this question is testing. The better answer here is \"After an insured has become totally disabled as defined in the policy\".",
+        "\"During the time an insured is confined in a hospital\" is a different policy provision than the one this question is testing. The better answer here is \"After an insured has become totally disabled as defined in the policy\".",
+        "\"Following an accidental injury, but not during sickness\" is a different policy provision than the one this question is testing. The better answer here is \"After an insured has become totally disabled as defined in the policy\".",
+        "After an insured has become totally disabled as defined in the policy."
+      ]
     },
     {
       "id": 135,
@@ -181,7 +265,13 @@
         "Securities"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Commerce."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Commerce.",
+      "optionFeedback": [
+        "\"Insurance\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Commerce\" because that statement is the one that matches the rule being tested.",
+        "Commerce.",
+        "\"Banking\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Commerce\" because that statement is the one that matches the rule being tested.",
+        "\"Securities\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Commerce\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 136,
@@ -193,7 +283,13 @@
         "People of different races"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: People that smoke."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: People that smoke.",
+      "optionFeedback": [
+        "\"People of different religions\" is a different statement than the one this question is testing. The correct answer is \"People that smoke\" because that statement is the one that matches the rule being tested.",
+        "\"People that are married\" is a different statement than the one this question is testing. The correct answer is \"People that smoke\" because that statement is the one that matches the rule being tested.",
+        "People that smoke.",
+        "\"People of different races\" is a different statement than the one this question is testing. The correct answer is \"People that smoke\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 137,
@@ -205,7 +301,13 @@
         "date of physical examination"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: date of delivery."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: date of delivery.",
+      "optionFeedback": [
+        "Date of delivery.",
+        "\"date of approval\" is a different policy provision than the one this question is testing. The correct answer is \"date of delivery\" because the free-look period begins when the policy is delivered.",
+        "\"date of application\" is a different policy provision than the one this question is testing. The correct answer is \"date of delivery\" because the free-look period begins when the policy is delivered.",
+        "\"date of physical examination\" is a different policy provision than the one this question is testing. The correct answer is \"date of delivery\" because the free-look period begins when the policy is delivered."
+      ]
     },
     {
       "id": 138,
@@ -217,7 +319,13 @@
         "copy of the application"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Buyer's Guide and Policy Summary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Buyer's Guide and Policy Summary.",
+      "optionFeedback": [
+        "Buyer's Guide and Policy Summary.",
+        "\"A.M. Best report\" is a different statement than the one this question is testing. The better answer here is \"Buyer's Guide and Policy Summary\".",
+        "\"actuarial table\" is a different document than the one this question is testing. The better answer here is \"Buyer's Guide and Policy Summary\".",
+        "\"copy of the application\" is a different document than the one this question is testing. The better answer here is \"Buyer's Guide and Policy Summary\"."
+      ]
     },
     {
       "id": 139,
@@ -229,7 +337,13 @@
         "Misrepresenting any fact about an insurance policy"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Working for a foreign insurer."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Working for a foreign insurer.",
+      "optionFeedback": [
+        "\"Making malicious and false statements about an insurer\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Working for a foreign insurer\" because that statement is the one that matches the rule being tested.",
+        "\"Replacing an insurance policy from one insurer to another based on misrepresentation\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Working for a foreign insurer\" because that statement is the one that matches the rule being tested.",
+        "Working for a foreign insurer.",
+        "\"Misrepresenting any fact about an insurance policy\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Working for a foreign insurer\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 140,
@@ -241,7 +355,13 @@
         "Daily"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Monthly."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Monthly.",
+      "optionFeedback": [
+        "\"Annually\" is a different coverage condition than the one this question is testing. The better answer here is \"Monthly\".",
+        "\"Weekly\" is a different coverage condition than the one this question is testing. The better answer here is \"Monthly\".",
+        "Monthly.",
+        "\"Daily\" is a different coverage condition than the one this question is testing. The better answer here is \"Monthly\"."
+      ]
     }
   ]
 }

@@ -13,7 +13,13 @@
         "Revocable beneficiary"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Irrevocable beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Irrevocable beneficiary.",
+      "optionFeedback": [
+        "Irrevocable beneficiary.",
+        "\"Tertiary beneficiary\" describes beneficiary order, not whether the designation can be changed. The correct idea here is \"Irrevocable beneficiary\": only an irrevocable beneficiary must consent to a change.",
+        "\"Primary beneficiary\" describes beneficiary order, not whether the designation can be changed. The correct idea here is \"Irrevocable beneficiary\": only an irrevocable beneficiary must consent to a change.",
+        "\"Revocable beneficiary\" is the opposite of what the facts show. A beneficiary who must consent to a change is irrevocable. The correct idea here is \"Irrevocable beneficiary\": only an irrevocable beneficiary must consent to a change."
+      ]
     },
     {
       "id": 2,
@@ -25,7 +31,13 @@
         "Only if primary beneficiary dies"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Anytime."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: Anytime.",
+      "optionFeedback": [
+        "Anytime.",
+        "This option incorrectly adds a consent requirement. The correct answer is \"Anytime\" because a revocable beneficiary can be changed by the policyowner at any time.",
+        "This option is too restrictive for the rule being tested. The correct answer is \"Anytime\" because a revocable beneficiary can be changed by the policyowner at any time.",
+        "This option adds a condition that the rule does not require. The correct answer is \"Anytime\" because a revocable beneficiary can be changed by the policyowner at any time."
+      ]
     },
     {
       "id": 3,
@@ -37,7 +49,13 @@
         "Contingent"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Revocable."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Revocable.",
+      "optionFeedback": [
+        "\"Tertiary\" describes beneficiary order, not whether the designation can be changed. The correct idea here is \"Revocable\": a revocable beneficiary can be changed by the policyowner without the beneficiary's consent.",
+        "\"Irrevocable\" would require the beneficiary's consent, but the facts say the policyowner can change the designation freely. The correct idea here is \"Revocable\": a revocable beneficiary can be changed by the policyowner without the beneficiary's consent.",
+        "Revocable.",
+        "\"Contingent\" describes beneficiary order, not whether the designation can be changed. The correct idea here is \"Revocable\": a revocable beneficiary can be changed by the policyowner without the beneficiary's consent."
+      ]
     },
     {
       "id": 4,
@@ -49,7 +67,13 @@
         "If the insured died of natural causes"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: If the primary beneficiary dies before the insured."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: If the primary beneficiary dies before the insured.",
+      "optionFeedback": [
+        "\"If the primary beneficiary is a minor at the time of the insured's death\" is a different statement than the one this question is testing. The correct answer is \"If the primary beneficiary dies before the insured\" because a contingent beneficiary is paid only if the primary beneficiary dies before the insured.",
+        "If the primary beneficiary dies before the insured.",
+        "\"If the insured died of accidental causes\" is a different statement than the one this question is testing. The correct answer is \"If the primary beneficiary dies before the insured\" because a contingent beneficiary is paid only if the primary beneficiary dies before the insured.",
+        "\"If the insured died of natural causes\" is a different statement than the one this question is testing. The correct answer is \"If the primary beneficiary dies before the insured\" because a contingent beneficiary is paid only if the primary beneficiary dies before the insured."
+      ]
     },
     {
       "id": 5,
@@ -61,7 +85,13 @@
         "A beneficiary change is subject to underwriting procedures"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The policyowner can change the beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The policyowner can change the beneficiary.",
+      "optionFeedback": [
+        "This option incorrectly adds a consent requirement. The correct answer is \"The policyowner can change the beneficiary\" because the policyowner controls beneficiary changes unless the designation is irrevocable.",
+        "The policyowner can change the beneficiary.",
+        "\"The insured can change the beneficiary\" is a different statement than the one this question is testing. The correct answer is \"The policyowner can change the beneficiary\" because the policyowner controls beneficiary changes unless the designation is irrevocable.",
+        "\"beneficiary change is subject to underwriting procedures\" is a different statement than the one this question is testing. The correct answer is \"The policyowner can change the beneficiary\" because the policyowner controls beneficiary changes unless the designation is irrevocable."
+      ]
     },
     {
       "id": 6,
@@ -73,7 +103,13 @@
         "Primary"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Irrevocable."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Irrevocable.",
+      "optionFeedback": [
+        "\"Revocable\" is the opposite of what the facts show. A beneficiary who must consent to a change is irrevocable. The correct idea here is \"Irrevocable\": only an irrevocable beneficiary must consent to a change.",
+        "\"Contingent\" describes beneficiary order, not whether the designation can be changed. The correct idea here is \"Irrevocable\": only an irrevocable beneficiary must consent to a change.",
+        "Irrevocable.",
+        "\"Primary\" describes beneficiary order, not whether the designation can be changed. The correct idea here is \"Irrevocable\": only an irrevocable beneficiary must consent to a change."
+      ]
     },
     {
       "id": 7,
@@ -85,7 +121,13 @@
         "The minor is entitled to receive the death proceeds immediately"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Normally, a guardian is required to be appointed in the Beneficiary clause of the contract."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Normally, a guardian is required to be appointed in the Beneficiary clause of the contract.",
+      "optionFeedback": [
+        "\"Normally, the death proceeds are required to be held in trust until the beneficiary reaches t...\" is a different statement than the one this question is testing. The correct answer is \"Normally, a guardian is required to be appointed in the Beneficiary clause of the contract\" because a minor usually cannot give a valid discharge, so payment is commonly made to a trustee or guardian until the child reaches majority.",
+        "Normally, a guardian is required to be appointed in the Beneficiary clause of the contract.",
+        "This choice is too absolute for the facts given. The correct answer is \"Normally, a guardian is required to be appointed in the Beneficiary clause of the contract\" because a minor usually cannot give a valid discharge, so payment is commonly made to a trustee or guardian until the child reaches majority.",
+        "\"The minor is entitled to receive the death proceeds immediately\" is a different statement than the one this question is testing. The correct answer is \"Normally, a guardian is required to be appointed in the Beneficiary clause of the contract\" because a minor usually cannot give a valid discharge, so payment is commonly made to a trustee or guardian until the child reaches majority."
+      ]
     },
     {
       "id": 8,
@@ -97,7 +139,13 @@
         "Level premiums can only be paid annually"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The early years are charged more than what is needed."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: The early years are charged more than what is needed.",
+      "optionFeedback": [
+        "\"Level premiums build cash value quicker in the early years\" is a different statement than the one this question is testing. The correct answer is \"The early years are charged more than what is needed\" because that statement is the one that matches the rule being tested.",
+        "The early years are charged more than what is needed.",
+        "\"The early years are charged less than what is needed\" is a different statement than the one this question is testing. The correct answer is \"The early years are charged more than what is needed\" because that statement is the one that matches the rule being tested.",
+        "This choice is too absolute for the facts given. The correct answer is \"The early years are charged more than what is needed\" because that statement is the one that matches the rule being tested."
+      ]
     },
     {
       "id": 9,
@@ -109,7 +157,13 @@
         "Assignment provision"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Premium Mode."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Premium Mode.",
+      "optionFeedback": [
+        "\"Consideration\" is a different premium-payment feature than the one this question is testing. The correct answer is \"Premium Mode\" because that is the contract feature that matches the fact pattern.",
+        "\"Payor benefit\" is a different premium-payment feature than the one this question is testing. The correct answer is \"Premium Mode\" because that is the contract feature that matches the fact pattern.",
+        "Premium Mode.",
+        "\"Assignment provision\" is a different policy provision than the one this question is testing. The correct answer is \"Premium Mode\" because that is the contract feature that matches the fact pattern."
+      ]
     },
     {
       "id": 10,
@@ -121,7 +175,13 @@
         "Mode of Premium"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Mode of Premium."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Mode of Premium.",
+      "optionFeedback": [
+        "\"Insuring\" is a different policy provision than the one this question is testing. The correct answer is \"Mode of Premium\" because that is the contract feature that matches the fact pattern.",
+        "\"Consideration\" is a different policy provision than the one this question is testing. The correct answer is \"Mode of Premium\" because that is the contract feature that matches the fact pattern.",
+        "\"Payor\" is a different policy provision than the one this question is testing. The correct answer is \"Mode of Premium\" because that is the contract feature that matches the fact pattern.",
+        "Mode of Premium."
+      ]
     },
     {
       "id": 11,
@@ -133,7 +193,13 @@
         "beneficiary"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: beneficiary.",
+      "optionFeedback": [
+        "\"the policyowner\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"beneficiary\" because this question is testing whose signature is or is not required on the application.",
+        "\"the agent\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"beneficiary\" because this question is testing whose signature is or is not required on the application.",
+        "\"the insured (if an adult)\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"beneficiary\" because this question is testing whose signature is or is not required on the application.",
+        "Beneficiary."
+      ]
     },
     {
       "id": 12,
@@ -145,7 +211,13 @@
         "Beneficiary"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Applicant."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Applicant.",
+      "optionFeedback": [
+        "\"Insured\" is a different application requirement than the one this question is testing. The correct answer is \"Applicant\" because this question is testing whose initials are required for application changes.",
+        "\"Agent\" is a different application requirement than the one this question is testing. The correct answer is \"Applicant\" because this question is testing whose initials are required for application changes.",
+        "Applicant.",
+        "\"Beneficiary\" is a different beneficiary designation than the one this question is testing. The correct answer is \"Applicant\" because this question is testing whose initials are required for application changes."
+      ]
     },
     {
       "id": 13,
@@ -157,7 +229,13 @@
         "Backdated receipt"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Conditional receipt."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Conditional receipt.",
+      "optionFeedback": [
+        "\"Binding receipt\" is a different document than the one this question is testing. The correct answer is \"Conditional receipt\" because that is the document the applicant or employee receives in this situation.",
+        "Conditional receipt.",
+        "\"Warranty receipt\" is a different document than the one this question is testing. The correct answer is \"Conditional receipt\" because that is the document the applicant or employee receives in this situation.",
+        "\"Backdated receipt\" is a different document than the one this question is testing. The correct answer is \"Conditional receipt\" because that is the document the applicant or employee receives in this situation."
+      ]
     },
     {
       "id": 14,
@@ -169,7 +247,13 @@
         "initial premium is collected"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: free-look period has expired."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: free-look period has expired.",
+      "optionFeedback": [
+        "\"policy is delivered\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"free-look period has expired\" because that item is not required before the policy takes effect.",
+        "Free-look period has expired.",
+        "\"insurance company issues policy\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"free-look period has expired\" because that item is not required before the policy takes effect.",
+        "\"initial premium is collected\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"free-look period has expired\" because that item is not required before the policy takes effect."
+      ]
     },
     {
       "id": 15,
@@ -181,7 +265,13 @@
         "both employer and employee must provide evidence of insurability"
       ],
       "correctAnswer": 0,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: the entire cost of the plan is paid for by the employer."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: the entire cost of the plan is paid for by the employer.",
+      "optionFeedback": [
+        "The entire cost of the plan is paid for by the employer.",
+        "This mixes in employee contributions, which is the opposite of a noncontributory plan. The correct answer is \"the entire cost of the plan is paid for by the employer\" because a noncontributory plan is paid entirely by the employer.",
+        "This mixes in employee contributions, which is the opposite of a noncontributory plan. The correct answer is \"the entire cost of the plan is paid for by the employer\" because a noncontributory plan is paid entirely by the employer.",
+        "This mixes in employee contributions, which is the opposite of a noncontributory plan. The correct answer is \"the entire cost of the plan is paid for by the employer\" because a noncontributory plan is paid entirely by the employer."
+      ]
     },
     {
       "id": 16,
@@ -193,7 +283,13 @@
         "Beneficiary"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Beneficiary."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Beneficiary.",
+      "optionFeedback": [
+        "\"Adult insured\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Beneficiary\" because this question is testing whose signature is or is not required on the application.",
+        "\"Policyowner\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Beneficiary\" because this question is testing whose signature is or is not required on the application.",
+        "\"Agent\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Beneficiary\" because this question is testing whose signature is or is not required on the application.",
+        "Beneficiary."
+      ]
     },
     {
       "id": 17,
@@ -205,7 +301,13 @@
         "Forward the application to the insurer after giving the applicant a conditional receipt"
       ],
       "correctAnswer": 2,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Forward the application to the insurer without the initial premium."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option C: Forward the application to the insurer without the initial premium.",
+      "optionFeedback": [
+        "\"Keep the application until premium is paid\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Forward the application to the insurer without the initial premium\" because that action follows the underwriting or delivery rule being tested in this scenario.",
+        "\"Forward the application to the insurer after giving the applicant a binding receipt\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Forward the application to the insurer without the initial premium\" because that action follows the underwriting or delivery rule being tested in this scenario.",
+        "Forward the application to the insurer without the initial premium.",
+        "\"Forward the application to the insurer after giving the applicant a conditional receipt\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Forward the application to the insurer without the initial premium\" because that action follows the underwriting or delivery rule being tested in this scenario."
+      ]
     },
     {
       "id": 18,
@@ -217,7 +319,13 @@
         "Collect initial premium and leave a binding receipt"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Collect initial premium along with a signed health statement."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Collect initial premium along with a signed health statement.",
+      "optionFeedback": [
+        "\"Collect initial premium\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Collect initial premium along with a signed health statement\" because that action follows the underwriting or delivery rule being tested in this scenario.",
+        "Collect initial premium along with a signed health statement.",
+        "\"Explain to the applicant the policy is no longer in effect due to change in health condition\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Collect initial premium along with a signed health statement\" because that action follows the underwriting or delivery rule being tested in this scenario.",
+        "\"Collect initial premium and leave a binding receipt\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Collect initial premium along with a signed health statement\" because that action follows the underwriting or delivery rule being tested in this scenario."
+      ]
     },
     {
       "id": 19,
@@ -229,7 +337,13 @@
         "Contributory"
       ],
       "correctAnswer": 3,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Contributory."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option D: Contributory.",
+      "optionFeedback": [
+        "\"Noneligible\" is a different group plan feature than the one this question is testing. The correct answer is \"Contributory\" because a contributory plan requires employees to share in the premium cost.",
+        "\"Noncontributory\" is a different group plan feature than the one this question is testing. The correct answer is \"Contributory\" because a contributory plan requires employees to share in the premium cost.",
+        "\"Eligible\" is a different group plan feature than the one this question is testing. The correct answer is \"Contributory\" because a contributory plan requires employees to share in the premium cost.",
+        "Contributory."
+      ]
     },
     {
       "id": 20,
@@ -241,7 +355,13 @@
         "Fixed Variable"
       ],
       "correctAnswer": 1,
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Fixed Deferred."
+      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Fixed Deferred.",
+      "optionFeedback": [
+        "\"Fixed Period\" is a different annuity type than the one this question is testing. The correct answer is \"Fixed Deferred\" because that is the contract feature that matches the fact pattern.",
+        "Fixed Deferred.",
+        "\"Fixed Immediate\" is a different annuity type than the one this question is testing. The correct answer is \"Fixed Deferred\" because that is the contract feature that matches the fact pattern.",
+        "\"Fixed Variable\" is a different annuity type than the one this question is testing. The correct answer is \"Fixed Deferred\" because that is the contract feature that matches the fact pattern."
+      ]
     }
   ]
 }

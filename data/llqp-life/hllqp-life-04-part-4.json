@@ -17,7 +17,7 @@
       "optionFeedback": [
         "Face-plus-account structures tend to keep NAAR higher than plain level death benefit structures.",
         "Adding cumulative premiums to death benefit tends to increase NAAR pressure.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. All else being equal, which policy would have the lowest NAAR?.",
         "Indexed/increasing death benefit designs generally increase NAAR versus plain level structures."
       ],
       "explanation": "For standard UL mechanics, a plain level death benefit typically yields the lowest NAAR relative to increasing death benefit designs.",
@@ -42,7 +42,7 @@
         "This is a different product category, not the UL mortality costing choice requested.",
         "YRT introduces increasing deductions later in life, which can increase lapse risk if underfunded.",
         "This is outside the UL costing-method decision in the question.",
-        null
+        "This option best matches the definition, rule, or outcome the question is testing. Which mortality costing method would you recommend?."
       ],
       "explanation": "Within UL costing options, LCOI generally offers more predictable long-term deductions than YRT, helping reduce lapse risk.",
       "difficulty": "medium",
@@ -66,7 +66,7 @@
       "optionFeedback": [
         "This is too low and not based on the given modal factor.",
         "This is simple annual/4 and ignores modal loading.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Given the following information, what would the premium be if he wants to pay quarterly?.",
         "This overstates the result from the stated factor."
       ],
       "explanation": "Quarterly premium = $800 × 0.280 = $224.",
@@ -90,7 +90,7 @@
       "optionFeedback": [
         "Maximum funding is a funding level concept, not the payment label.",
         "Some contexts use contributions, but LLQP UL terminology typically uses deposits.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. What are the payments into a universal life policy called?.",
         "Traditional fixed-premium language is less precise for flexible UL funding."
       ],
       "explanation": "UL exam terminology generally refers to policy payments as deposits due to funding flexibility.",
@@ -113,7 +113,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This ignores account value offset under level death benefit NAAR mechanics.",
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. In this situation, what would the NAAR be?.",
         "This incorrectly adds account value instead of subtracting it.",
         "This uses an unsupported subtraction base."
       ],
@@ -137,7 +137,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Assuming a monthly modal factor of 0.088 and a quarterly modal factor 0.280 for a whole life policy, what would the deposit be if she wants to pay the UL deposits monthly?.",
         "This applies whole-life modal loading instead of UL deposit split logic in this context.",
         "This is the annual amount, not monthly.",
         "This is the quarterly whole-life result, not monthly UL deposit amount."
@@ -161,7 +161,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        null,
+        "This option best matches the definition, rule, or outcome the question is testing. Which mortality costing method would result in a quicker build-up of the cash value in the early years?.",
         "This is a separate product type, not a UL mortality costing method.",
         "LCOI is often higher than YRT in early years, leaving less early surplus.",
         "This is a separate product type, not a UL mortality costing method."
