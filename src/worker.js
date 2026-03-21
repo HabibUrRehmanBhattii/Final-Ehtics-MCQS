@@ -59,7 +59,7 @@ function buildCookie(value, expiresAt) {
     `${COOKIE_NAME}=${encodeURIComponent(value)}`,
     'HttpOnly',
     'Path=/',
-    'SameSite=None',
+    'SameSite=Lax',
     'Secure'
   ];
 
@@ -71,7 +71,7 @@ function buildCookie(value, expiresAt) {
 }
 
 function buildExpiredCookie() {
-  return `${COOKIE_NAME}=; HttpOnly; Path=/; SameSite=None; Secure; Expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+  return `${COOKIE_NAME}=; HttpOnly; Path=/; SameSite=Lax; Secure; Expires=Thu, 01 Jan 1970 00:00:00 GMT`;
 }
 
 function validateEmail(email) {
