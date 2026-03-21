@@ -322,6 +322,10 @@ const MCQApp = {
     this.state.viewedQuestions = new Set();
     this.state.bookmarkedQuestions = new Set();
     this.state.answersRevealed = new Set();
+    this.state.attemptedOptions = {};
+    this.state.firstAttemptCorrect = {};
+    this.state.lastSelectedIndex = undefined;
+    this.state.lastSelectedQuestionKey = null;
     
     this.showView('mcq');
     this.renderQuestion();
@@ -1135,6 +1139,10 @@ const MCQApp = {
     this.state.currentQuestionIndex = 0;
     this.state.filterMode = 'all';
     this.state.isReviewMode = false;
+    this.state.attemptedOptions = {};
+    this.state.firstAttemptCorrect = {};
+    this.state.lastSelectedIndex = undefined;
+    this.state.lastSelectedQuestionKey = null;
     this.loadProgress();
     this.showView('mcq');
     this.renderQuestion();
@@ -1404,6 +1412,10 @@ const MCQApp = {
     this.state.currentQuestionIndex = 0;
     this.state.filterMode = 'all';
     this.state.isReviewMode = false;
+    this.state.attemptedOptions = {};
+    this.state.firstAttemptCorrect = {};
+    this.state.lastSelectedIndex = undefined;
+    this.state.lastSelectedQuestionKey = null;
     this.loadProgress();
     this.showView('mcq');
     this.renderQuestion();
@@ -1601,9 +1613,9 @@ const MCQApp = {
       const isRevealed = this.state.answersRevealed.has(stateKey);
       const isFocused = this.state.lastSelectedQuestionKey === stateKey && this.state.lastSelectedIndex === index && !isRevealed;
       const dimmedClass = isRevealed && !isCorrect && !wasAttempted ? 'is-dimmed' : '';
-      const feedbackText = (this.state.isReviewMode)
-        ? ''
-        : (wasAttempted && !isRevealed ? this.getWrongAnswerFeedback(question, index) : '');
+      const feedbackText = wasAttempted && !isRevealed
+        ? this.getWrongAnswerFeedback(question, index)
+        : '';
       const feedbackHtml = feedbackText ? `
             <div class="option-feedback">
               <p>${this.escapeHtml(feedbackText)}</p>
