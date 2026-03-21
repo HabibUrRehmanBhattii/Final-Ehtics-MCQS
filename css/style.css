@@ -2068,12 +2068,12 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 }
 
 .auth-card {
-  padding: 1.15rem 1.2rem;
-  border-radius: 24px;
+  padding: .9rem 1rem;
+  border-radius: 16px;
   border: 1px solid rgba(87, 151, 212, .18);
   background:
     linear-gradient(140deg, rgba(8, 20, 34, .92), rgba(12, 30, 49, .92));
-  box-shadow: 0 18px 40px rgba(0, 0, 0, .2);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .14);
 }
 
 .auth-card-active {
@@ -2087,7 +2087,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 }
 
 .auth-panel-title {
-  font-size: 1.04rem;
+  font-size: .92rem;
   font-weight: 800;
 }
 
@@ -2101,7 +2101,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 }
 
 .auth-panel-copy {
-  font-size: .9rem;
+  font-size: .82rem;
 }
 
 .home-focus {
@@ -2187,9 +2187,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 }
 
 .home-insights {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.1rem;
+  display: none;
 }
 
 .insight-compact-card,
