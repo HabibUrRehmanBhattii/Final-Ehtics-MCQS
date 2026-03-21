@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-p = Path(r"c:\Users\C6475\Desktop\Ehtics MCQS\data\flashcards\flashcards-2.json")
+p = Path(__file__).resolve().parents[1] / "data" / "flashcards" / "flashcards-2.json"
 s = p.read_text(encoding='utf-8')
 try:
     json.loads(s)

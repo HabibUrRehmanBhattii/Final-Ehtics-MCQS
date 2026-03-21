@@ -226,6 +226,9 @@ const MCQApp = {
 
         try {
           const response = await fetch(test.dataFile);
+          if (!response.ok) {
+            throw new Error(`Failed to load questions (${response.status})`);
+          }
           const data = await response.json();
           const question = data.questions.find(q => q.id === wrongQ.questionId);
 
@@ -1511,7 +1514,7 @@ const MCQApp = {
     const totalQuestions = this.getFilteredQuestions().length;
 
     // Update header
-    document.getElementById('topic-title').textContent = this.state.currentTopic.name;
+    document.getElementById('topic-title').textContent = this.state.currentTopic?.name ?? '';
     document.getElementById('current-question-num').textContent = questionIndex + 1;
     document.getElementById('total-questions').textContent = totalQuestions;
 
@@ -1564,9 +1567,11 @@ const MCQApp = {
 
     // Update bookmark button
     const bookmarkBtn = document.getElementById('bookmark-btn');
-    const isBookmarked = this.state.bookmarkedQuestions.has(stateKey);
-    bookmarkBtn.textContent = isBookmarked ? '⭐' : '☆';
-    bookmarkBtn.classList.toggle('bookmarked', isBookmarked);
+    if (bookmarkBtn) {
+      const isBookmarked = this.state.bookmarkedQuestions.has(stateKey);
+      bookmarkBtn.textContent = isBookmarked ? '⭐' : '☆';
+      bookmarkBtn.classList.toggle('bookmarked', isBookmarked);
+    }
 
     // Hide answer section initially
     document.getElementById('answer-section').classList.add('hidden');
@@ -2329,8 +2334,6 @@ const MCQApp = {
     this.state.viewedQuestions = new Set();
     this.state.bookmarkedQuestions = new Set();
     this.state.answersRevealed = new Set();
-    this.state.attemptedOptions = {};
-    this.state.firstAttemptCorrect = {};
     this.state.attemptedOptions = {};
     this.state.firstAttemptCorrect = {};
     this.state.currentQuestionIndex = 0;

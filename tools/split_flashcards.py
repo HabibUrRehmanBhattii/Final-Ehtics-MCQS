@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-ROOT = Path(r"c:\Users\C6475\Desktop\Ehtics MCQS")
+ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "data" / "flashcards" / "flashcards-2.json"
 BACKUP = ROOT / "data" / "flashcards" / "flashcards-2-full.json"
 OUT_DIR = ROOT / "data" / "flashcards"
