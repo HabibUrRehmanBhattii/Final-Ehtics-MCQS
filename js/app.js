@@ -17,6 +17,7 @@ const MCQApp = {
     filterMode: 'all', // 'all' or 'bookmarked'
     wrongQuestions: [],
     lastSelectedIndex: undefined,
+    lastSelectedQuestionKey: null,
     isReviewMode: false,
     attemptedOptions: {}, // Track which options were attempted for each question
     firstAttemptCorrect: {}, // Track if first attempt was correct for each question
@@ -27,6 +28,8 @@ const MCQApp = {
     currentPdfResource: null,
     currentPdfObjectUrl: null,
     loadingCount: 0,
+    autoAdvanceTimer: null,
+    aiAvailable: false,
     autoAdvanceEnabled: localStorage.getItem('auto-advance') === 'true',
     autoAdvanceDelay: 1500,
     homeInsightsExpanded: localStorage.getItem('home-insights-expanded') === 'true'
@@ -304,6 +307,7 @@ const MCQApp = {
     this.beginLoading('Loading topics...');
     try {
       await this.loadTopics();
+      await this.checkAIAvailability();
     } finally {
       this.endLoading();
     }
@@ -1410,16 +1414,18 @@ const MCQApp = {
       
       // Check if we have a saved shuffled order for this test
       const shuffleKey = `shuffle_${this.state.currentTopic?.id}_${testId}`;
-      let savedShuffle = null;
-      try {
-        const saved = localStorage.getItem(shuffleKey);
-        if (saved) savedShuffle = JSON.parse(saved);
-      } catch (e) {
-        console.log('No saved shuffle found');
-      }
+      const sourceSignature = this.getQuestionContentSignature(data.questions);
+      const savedShuffleData = this.getSavedShuffleData(shuffleKey);
+      const savedShuffle = savedShuffleData?.questions || null;
+      const canReuseSavedShuffle = Boolean(
+        savedShuffle &&
+        savedShuffle.length === data.questions.length &&
+        savedShuffleData?.signature &&
+        savedShuffleData.signature === sourceSignature
+      );
       
       // If we have saved shuffle data, use it; otherwise create new shuffle
-      if (savedShuffle && savedShuffle.length === data.questions.length) {
+      if (canReuseSavedShuffle) {
         console.log('Using saved question order');
         this.state.questions = savedShuffle;
       } else {
@@ -1457,7 +1463,7 @@ const MCQApp = {
         });
         
         // Save the shuffled order
-        localStorage.setItem(shuffleKey, JSON.stringify(this.state.questions));
+        this.saveShuffleData(shuffleKey, this.state.questions, sourceSignature);
       }
       
       console.log(`Loaded ${this.state.questions.length} questions`);
@@ -1470,6 +1476,7 @@ const MCQApp = {
 
   // Show View
   showView(viewName) {
+    this.clearAutoAdvanceTimer();
     if (viewName !== 'mcq') {
       this.stopSpeech();
       // Clean up keyboard listeners when leaving quiz
@@ -1502,6 +1509,7 @@ const MCQApp = {
 
   // Render Current Question
   renderQuestion() {
+    this.clearAutoAdvanceTimer();
     this.stopSpeech();
     const question = this.getCurrentQuestion();
     if (!question) return;
@@ -1525,8 +1533,7 @@ const MCQApp = {
     // Update question card
     document.getElementById('q-num').textContent = questionIndex + 1;
     // Convert markdown tables to HTML and render question
-    const processedQuestion = this.convertMarkdownTablesToHTML(question.question);
-    document.getElementById('question-text').innerHTML = processedQuestion;
+    document.getElementById('question-text').innerHTML = this.renderSafeTextWithTables(question.question);
 
     // Render options
     const optionsContainer = document.getElementById('options-container');
@@ -1537,14 +1544,14 @@ const MCQApp = {
       const wasAttempted = attemptedForQuestion.includes(index);
       const isCorrect = index === question.correctAnswer;
       const isRevealed = this.state.answersRevealed.has(stateKey);
-      const isFocused = this.state.lastSelectedIndex === index && !isRevealed;
+      const isFocused = this.state.lastSelectedQuestionKey === stateKey && this.state.lastSelectedIndex === index && !isRevealed;
       const dimmedClass = isRevealed && !isCorrect && !wasAttempted ? 'is-dimmed' : '';
       const feedbackText = (this.state.isReviewMode)
         ? ''
         : (wasAttempted && !isRevealed ? this.getWrongAnswerFeedback(question, index) : '');
       const feedbackHtml = feedbackText ? `
             <div class="option-feedback">
-              <p>${feedbackText}</p>
+              <p>${this.escapeHtml(feedbackText)}</p>
             </div>
           ` : '';
       
@@ -1555,7 +1562,7 @@ const MCQApp = {
              onclick="MCQApp.selectOption(${index})">
           <div class="option-main">
             <span class="option-letter">${letters[index] || index + 1}</span>
-            <span class="option-text">${option}</span>
+            <span class="option-text">${this.escapeHtml(option)}</span>
           </div>
           ${feedbackHtml}
         </div>
@@ -1765,6 +1772,101 @@ const MCQApp = {
     return String(text).replace(/[&<>"']/g, m => map[m]);
   },
 
+  renderSafeTextWithTables(text) {
+    if (!text) return '';
+
+    const processedText = this.convertMarkdownTablesToHTML(String(text));
+    const parts = processedText.split(/(<table[\s\S]*?<\/table>)/);
+
+    return parts.map((part) => {
+      if (part.startsWith('<table')) {
+        return part;
+      }
+      return this.escapeHtml(part).replace(/\n/g, '<br>');
+    }).join('');
+  },
+
+  getQuestionContentSignature(questions = []) {
+    return JSON.stringify(
+      questions.map((question) => ({
+        id: question?.id,
+        question: question?.question,
+        options: question?.options,
+        correctAnswer: question?.correctAnswer,
+        explanation: question?.explanation,
+        optionFeedback: question?.optionFeedback
+      }))
+    );
+  },
+
+  getSavedShuffleData(shuffleKey) {
+    try {
+      const raw = localStorage.getItem(shuffleKey);
+      if (!raw) return null;
+
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) {
+        return {
+          questions: parsed,
+          signature: null
+        };
+      }
+
+      if (parsed && Array.isArray(parsed.questions)) {
+        return {
+          questions: parsed.questions,
+          signature: typeof parsed.signature === 'string' ? parsed.signature : null
+        };
+      }
+    } catch (error) {
+      console.warn('Invalid saved shuffle data; ignoring cached order.', error);
+    }
+
+    return null;
+  },
+
+  saveShuffleData(shuffleKey, questions, signature) {
+    localStorage.setItem(shuffleKey, JSON.stringify({
+      signature,
+      questions
+    }));
+  },
+
+  clearAutoAdvanceTimer() {
+    if (this.state.autoAdvanceTimer) {
+      window.clearTimeout(this.state.autoAdvanceTimer);
+      this.state.autoAdvanceTimer = null;
+    }
+  },
+
+  getAIApiUrl() {
+    const host = window.location.hostname;
+    const isLocalhost = host === 'localhost' || host === '127.0.0.1' || host === '::1';
+    return isLocalhost
+      ? 'http://localhost:8000/api/explain'
+      : `${window.location.origin}/api/explain`;
+  },
+
+  getAIHealthUrl() {
+    const host = window.location.hostname;
+    const isLocalhost = host === 'localhost' || host === '127.0.0.1' || host === '::1';
+    return isLocalhost
+      ? 'http://localhost:8000/health'
+      : `${window.location.origin}/health`;
+  },
+
+  async checkAIAvailability() {
+    try {
+      const response = await fetch(this.getAIHealthUrl(), {
+        method: 'GET',
+        cache: 'no-store'
+      });
+      this.state.aiAvailable = response.ok;
+    } catch (error) {
+      this.state.aiAvailable = false;
+    }
+  },
+
   // Toggle auto-advance feature
   toggleAutoAdvance() {
     this.state.autoAdvanceEnabled = !this.state.autoAdvanceEnabled;
@@ -1784,11 +1886,13 @@ const MCQApp = {
 
   // Auto-advance to next question after delay
   autoAdvanceNext() {
+    this.clearAutoAdvanceTimer();
     if (!this.state.autoAdvanceEnabled) return;
     const filtered = this.getFilteredQuestions();
     const isLastQuestion = this.state.currentQuestionIndex === filtered.length - 1;
     if (!isLastQuestion) {
-      window.setTimeout(() => {
+      this.state.autoAdvanceTimer = window.setTimeout(() => {
+        this.state.autoAdvanceTimer = null;
         this.navigateQuestion(1);
       }, this.state.autoAdvanceDelay);
     }
@@ -1824,6 +1928,7 @@ const MCQApp = {
       }
       
       this.state.lastSelectedIndex = newIndex;
+      this.state.lastSelectedQuestionKey = this.getQuestionStateKey(question);
       options.forEach((opt, idx) => {
         opt.classList.toggle('is-focused', idx === newIndex);
         if (idx === newIndex) opt.focus();
@@ -1838,7 +1943,12 @@ const MCQApp = {
       if (!question) return;
       
       const selectedIndex = this.state.lastSelectedIndex;
-      if (selectedIndex !== undefined && selectedIndex >= 0) {
+      const stateKey = this.getQuestionStateKey(question);
+      if (
+        selectedIndex !== undefined &&
+        selectedIndex >= 0 &&
+        this.state.lastSelectedQuestionKey === stateKey
+      ) {
         this.selectOption(selectedIndex);
       }
       return;
@@ -2325,14 +2435,16 @@ const MCQApp = {
     if (this.state.currentTopic && this.state.currentPracticeTest) {
       const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
       localStorage.removeItem(key);
+      const shuffleKey = `shuffle_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
+      localStorage.removeItem(shuffleKey);
     }
     this.state.viewedQuestions = new Set();
     this.state.bookmarkedQuestions = new Set();
     this.state.answersRevealed = new Set();
     this.state.attemptedOptions = {};
     this.state.firstAttemptCorrect = {};
-    this.state.attemptedOptions = {};
-    this.state.firstAttemptCorrect = {};
+    this.state.lastSelectedIndex = undefined;
+    this.state.lastSelectedQuestionKey = null;
     this.state.currentQuestionIndex = 0;
     
     // Reload and reshuffle questions
@@ -2375,6 +2487,7 @@ const MCQApp = {
     
     // Store selected answer index for AI explanation
     this.state.lastSelectedIndex = selectedIndex;
+    this.state.lastSelectedQuestionKey = stateKey;
 
     // Check if correct answer
     const isCorrect = selectedIndex === question.correctAnswer;
@@ -2423,7 +2536,7 @@ const MCQApp = {
         aiExplanationEl.style.display = 'none';
       }
       if (aiButton) {
-        aiButton.style.display = 'inline-flex';
+        aiButton.style.display = this.state.aiAvailable ? 'inline-flex' : 'none';
         aiButton.disabled = false;
       }
       
@@ -2588,7 +2701,8 @@ const MCQApp = {
     if (!question) return;
 
     const selectedIndex = this.state.lastSelectedIndex;
-    if (selectedIndex === undefined) return;
+    const stateKey = this.getQuestionStateKey(question);
+    if (selectedIndex === undefined || this.state.lastSelectedQuestionKey !== stateKey) return;
 
     const aiButton = document.getElementById('get-ai-explanation-btn');
     const element = document.getElementById('ai-explanation-text');
@@ -2613,9 +2727,7 @@ const MCQApp = {
       const examTips = this.state.currentTopic?.examTips || '';
       
       // Construct the API URL based on current location
-      const apiUrl = window.location.hostname === 'localhost' 
-        ? 'http://localhost:8000/api/explain'
-        : `${window.location.origin}/api/explain`;
+      const apiUrl = this.getAIApiUrl();
 
       // Build comprehensive prompt with rich context
       const contextInfo = {
@@ -2639,6 +2751,10 @@ const MCQApp = {
         },
         body: JSON.stringify(contextInfo),
       });
+
+      if (!response.ok) {
+        throw new Error(`AI request failed (${response.status})`);
+      }
 
       const data = await response.json();
       
@@ -2736,6 +2852,7 @@ const MCQApp = {
       }
     } catch (error) {
       console.error('Error generating AI explanation:', error);
+      this.state.aiAvailable = false;
       element.innerHTML = '<div class="ai-error">⚠️ Could not connect to AI service. Check your connection.</div>';
       if (aiButton) aiButton.disabled = false;
     }
@@ -2766,9 +2883,7 @@ const MCQApp = {
     element.appendChild(loadingDiv);
     
     try {
-      const apiUrl = window.location.hostname === 'localhost' 
-        ? 'http://localhost:8000/api/explain'
-        : `${window.location.origin}/api/explain`;
+      const apiUrl = this.getAIApiUrl();
       
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -2780,6 +2895,10 @@ const MCQApp = {
           requestType: 'deeper_insight',
         }),
       });
+
+      if (!response.ok) {
+        throw new Error(`AI follow-up failed (${response.status})`);
+      }
       
       const data = await response.json();
       if (data.success && data.followUpInsight) {
@@ -2804,6 +2923,7 @@ const MCQApp = {
       }
     } catch (error) {
       console.error('Follow-up error:', error);
+      this.state.aiAvailable = false;
       loadingDiv.remove();
       if (followUpBtn) followUpBtn.disabled = false;
       if (followUpInput) followUpInput.disabled = false;
@@ -2866,6 +2986,23 @@ const MCQApp = {
     }
 
     this.saveProgress();
+
+    if (this.state.filterMode === 'bookmarked') {
+      const filteredCount = this.getFilteredQuestions().length;
+
+      if (filteredCount === 0) {
+        this.state.filterMode = 'all';
+        this.state.currentQuestionIndex = 0;
+        const bookmarkedBtn = document.getElementById('bookmarked-only-btn');
+        if (bookmarkedBtn) {
+          bookmarkedBtn.textContent = '📌 Bookmarked Only';
+        }
+        this.showToast('No bookmarked questions left. Showing all questions again.', 'info');
+      } else if (this.state.currentQuestionIndex >= filteredCount) {
+        this.state.currentQuestionIndex = filteredCount - 1;
+      }
+    }
+
     this.renderQuestion();
   },
 
@@ -2904,11 +3041,11 @@ const MCQApp = {
             <span class="list-question-num">Question ${index + 1}</span>
             ${isBookmarked ? '<span class="bookmark-indicator">⭐</span>' : ''}
           </div>
-          <div class="list-question-text" style="overflow: auto;">${question.question}</div>
+          <div class="list-question-text" style="overflow: auto;">${this.renderSafeTextWithTables(question.question)}</div>
           <div class="list-options">
             ${question.options.map((opt, i) => `
               <div class="list-option ${i === question.correctAnswer && isRevealed ? 'correct-preview' : ''}">
-                ${opt}
+                ${this.escapeHtml(opt)}
               </div>
             `).join('')}
           </div>
@@ -3025,6 +3162,8 @@ const MCQApp = {
       this.state.answersRevealed.clear();
       this.state.attemptedOptions = {};
       this.state.firstAttemptCorrect = {};
+      this.state.lastSelectedIndex = undefined;
+      this.state.lastSelectedQuestionKey = null;
       this.state.currentQuestionIndex = 0;
       this.renderQuestion();
       this.showToast('Review session reset.', 'success');
@@ -3047,6 +3186,8 @@ const MCQApp = {
     this.state.answersRevealed.clear();
     this.state.attemptedOptions = {};
     this.state.firstAttemptCorrect = {};
+    this.state.lastSelectedIndex = undefined;
+    this.state.lastSelectedQuestionKey = null;
 
     // Hide finish banner
     const banner = document.getElementById('finish-banner');
