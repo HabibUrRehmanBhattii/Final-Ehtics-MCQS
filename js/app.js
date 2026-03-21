@@ -417,25 +417,25 @@ const MCQApp = {
 
   // Initialize Dark Mode
   initDarkMode() {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    this.updateDarkModeIcon(savedTheme);
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    this.updateDarkModeIcon('dark');
   },
 
   // Toggle Dark Mode
   toggleDarkMode() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    this.updateDarkModeIcon(newTheme);
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    this.updateDarkModeIcon('dark');
+    this.showToast('Dark mode is locked for now so the study screens stay readable.', 'info');
   },
 
   // Update Dark Mode Icon
   updateDarkModeIcon(theme) {
     const toggleBtn = document.getElementById('dark-mode-toggle');
+    theme = 'dark';
     if (toggleBtn) {
+      toggleBtn.setAttribute('aria-disabled', 'true');
       toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
       toggleBtn.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     }
@@ -512,7 +512,7 @@ const MCQApp = {
     });
 
     document.getElementById('pdf-open-new-tab-btn')?.addEventListener('click', () => {
-      const file = this.state.currentPdfObjectUrl || this.state.currentPdfResource?.dataFile;
+      const file = this.state.currentPdfResource?.dataFile || this.state.currentPdfObjectUrl;
       if (!file) return;
       window.open(file, '_blank');
     });
@@ -1416,20 +1416,8 @@ const MCQApp = {
     this.beginLoading('Loading manual...');
 
     try {
-      const response = await fetch(test.dataFile, { cache: 'no-store' });
-      if (!response.ok) {
-        throw new Error(`Failed to load PDF (${response.status})`);
-      }
-
-      const sourceBlob = await response.blob();
-      const pdfBlob = sourceBlob.type === 'application/pdf'
-        ? sourceBlob
-        : new Blob([await sourceBlob.arrayBuffer()], { type: 'application/pdf' });
-
-      const objectUrl = URL.createObjectURL(pdfBlob);
-      this.state.currentPdfObjectUrl = objectUrl;
-
-      if (frame) frame.src = `${objectUrl}#toolbar=1&navpanes=1&view=FitH`;
+      const pdfUrl = new URL(test.dataFile, window.location.href).toString();
+      if (frame) frame.src = `${pdfUrl}#toolbar=1&navpanes=1&view=FitH`;
       if (helperText) helperText.textContent = 'Use browser PDF search with Ctrl+F (or Find in page).';
     } catch (error) {
       console.error('PDF load failed:', error);
