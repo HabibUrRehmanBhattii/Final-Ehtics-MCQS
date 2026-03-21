@@ -1096,7 +1096,7 @@ const MCQApp = {
           </div>
           <div class="topic-list-action">
             ${isActive ? `
-              <button class="btn-start">Open</button>
+              <span class="topic-chevron" aria-hidden="true">&#8250;</span>
             ` : ''}
           </div>
         </div>

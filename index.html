@@ -10,13 +10,13 @@
     <meta name="apple-mobile-web-app-title" content="LLQP Prep">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="LLQP & WFG Exam Prep">
-    <link rel="manifest" href="manifest.webmanifest?v=20260321i">
+    <link rel="manifest" href="manifest.webmanifest?v=20260321j">
     <link rel="icon" href="assets/icons/icon-192.svg" type="image/svg+xml" sizes="192x192">
     <link rel="apple-touch-icon" href="assets/icons/icon-180.svg" sizes="180x180">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260321i">
+    <link rel="stylesheet" href="css/style.css?v=20260321j">
 </head>
 <body>
     <div id="app">
@@ -29,30 +29,30 @@
                         <div class="home-brand-kicker">LLQP Prep</div>
                         <h1 class="home-brand-title">Study</h1>
                     </div>
+                    <details class="home-menu" aria-label="Study tools and account">
+                        <summary class="home-menu-summary" aria-label="Open menu">&#9776;</summary>
+                        <div class="home-menu-body">
+                            <button id="dark-mode-toggle" class="menu-toggle-theme" type="button" aria-label="Toggle dark mode">Theme</button>
+                            <section id="auth-panel" class="auth-panel" aria-label="Account access"></section>
+                            <section id="home-insights" class="home-insights" aria-label="Study dashboard"></section>
+                        </div>
+                    </details>
                 </div>
             </header>
             <main class="wrap">
+                <div id="wrong-questions-section" class="wrong-wrap top-priority">
+                    <div class="wrong-card" onclick="MCQApp.startWrongQuestionsReview()">
+                        <span class="wrong-icon">&#x274C;</span>
+                        <div class="wrong-info">
+                            <strong>Review Wrong Answers</strong>
+                            <span class="wrong-count"><span id="wrong-count-badge">0</span> to review</span>
+                        </div>
+                        <span class="wrong-arrow">&#x2192;</span>
+                    </div>
+                </div>
                 <section id="home-focus" class="home-focus" aria-label="Quick study actions"></section>
                 <div class="section-label">Choose Topic</div>
                 <div id="topics-grid" class="grid"></div>
-                <details class="home-menu" aria-label="Study tools and account">
-                    <summary class="home-menu-summary">Menu</summary>
-                    <div class="home-menu-body">
-                        <button id="dark-mode-toggle" class="menu-toggle-theme" type="button" aria-label="Toggle dark mode">Theme</button>
-                        <section id="auth-panel" class="auth-panel" aria-label="Account access"></section>
-                        <div id="wrong-questions-section" class="wrong-wrap">
-                            <div class="wrong-card" onclick="MCQApp.startWrongQuestionsReview()">
-                                <span class="wrong-icon">&#x274C;</span>
-                                <div class="wrong-info">
-                                    <strong>Review Wrong Answers</strong>
-                                    <span class="wrong-count"><span id="wrong-count-badge">0</span> to review</span>
-                                </div>
-                                <span class="wrong-arrow">&#x2192;</span>
-                            </div>
-                        </div>
-                        <section id="home-insights" class="home-insights" aria-label="Study dashboard"></section>
-                    </div>
-                </details>
             </main>
             <footer class="foot">&copy; 2026 LLQP & WFG Exam Prep</footer>
         </div>
@@ -221,7 +221,7 @@
         </div>
     </div>
     <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
-    <script src="js/app.js?v=20260321i"></script>
+    <script src="js/app.js?v=20260321j"></script>
     <script src="js/auth.js?v=20260321g"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </body>
