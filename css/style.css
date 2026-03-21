@@ -2036,7 +2036,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
 }
 
@@ -2452,6 +2452,22 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   margin-top: .85rem;
 }
 
+.menu-toggle-theme {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid rgba(87, 151, 212, .16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .03);
+  color: var(--c-text2);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.menu-toggle-theme:hover {
+  color: var(--c-text);
+  background: rgba(56, 189, 248, .08);
+}
+
 .btn-start:hover,
 .btn-start-test:hover {
   background: linear-gradient(90deg, #67d0fb, #38bdf8);
@@ -2465,15 +2481,15 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 /* Quiz/Test Refresh */
 .topbar {
-  padding: .95rem 1.25rem;
-  background: rgba(8, 18, 30, .84);
-  border-bottom: 1px solid rgba(144, 191, 255, .12);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, .16);
+  padding: .8rem 1rem;
+  background: rgba(8, 18, 30, .72);
+  border-bottom: 1px solid rgba(144, 191, 255, .08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
 }
 
 .topbar-title {
   font-family: var(--font-display);
-  font-size: 1.02rem;
+  font-size: .95rem;
   letter-spacing: -.03em;
 }
 
@@ -2497,11 +2513,11 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 }
 
 .q-nav {
-  padding: 1rem 1.1rem;
-  border-radius: 22px;
+  padding: .75rem .85rem;
+  border-radius: 16px;
   border: 1px solid rgba(87, 151, 212, .16);
   background: linear-gradient(180deg, rgba(13, 24, 39, .94), rgba(8, 16, 27, .98));
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .18);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .12);
 }
 
 .question-dot {
@@ -2524,12 +2540,12 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 22px;
   border: 1px solid rgba(87, 151, 212, .16);
   background:
     radial-gradient(circle at top right, rgba(56, 189, 248, .11), transparent 22%),
     linear-gradient(180deg, rgba(13, 24, 39, .97), rgba(8, 16, 27, .99));
-  box-shadow: 0 30px 60px rgba(0, 0, 0, .18);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, .14);
 }
 
 .card::before {
@@ -2575,8 +2591,8 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 .q-text {
   font-family: var(--font-display);
-  font-size: clamp(1.08rem, 1.3vw, 1.28rem);
-  line-height: 1.72;
+  font-size: clamp(1rem, 1.1vw, 1.18rem);
+  line-height: 1.62;
   letter-spacing: -.02em;
 }
 
@@ -2585,13 +2601,13 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 }
 
 .option {
-  border-radius: 20px;
+  border-radius: 16px;
   border: 1px solid rgba(144, 191, 255, .14);
   background: rgba(255, 255, 255, .03);
 }
 
 .option-main {
-  padding: 1rem 1.05rem;
+  padding: .88rem .95rem;
 }
 
 .option-letter {
@@ -2613,8 +2629,8 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 }
 
 .answer-box {
-  padding: 1.5rem;
-  border-radius: 24px;
+  padding: 1.15rem;
+  border-radius: 18px;
   background: linear-gradient(180deg, rgba(16, 185, 129, .10), rgba(12, 32, 25, .6));
 }
 
@@ -2639,17 +2655,14 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 .actions {
   justify-content: flex-start;
-  padding: 1rem 1.1rem;
-  border-radius: 22px;
+  padding: .8rem .9rem;
+  border-radius: 16px;
   border: 1px solid rgba(87, 151, 212, .16);
   background: linear-gradient(180deg, rgba(13, 24, 39, .94), rgba(8, 16, 27, .98));
 }
 
 .keyboard-shortcuts-hint {
-  border-radius: 22px;
-  border-style: solid;
-  border-color: rgba(144, 191, 255, .14);
-  background: linear-gradient(180deg, rgba(13, 24, 39, .88), rgba(9, 17, 29, .96));
+  display: none;
 }
 
 .list-question-card {
@@ -2724,7 +2737,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   .home-header { padding: .75rem .8rem .15rem; }
 
   .topbar {
-    padding: .85rem .85rem;
+    padding: .72rem .8rem;
   }
 
   .home-header-inner,
@@ -2738,10 +2751,6 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
   .home-brand-title {
     font-size: 1.22rem;
-  }
-
-  .dm-toggle {
-    position: static;
   }
 
   .focus-card {
@@ -2829,7 +2838,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   }
 
   .card {
-    border-radius: 24px;
+    border-radius: 18px;
   }
 
   .actions {
