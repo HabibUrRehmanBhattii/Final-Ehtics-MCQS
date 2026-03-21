@@ -2315,11 +2315,11 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 .topic-card,
 .practice-test-card {
   min-height: auto;
-  padding: 1rem;
-  border-radius: 18px;
-  border: 1px solid rgba(87, 151, 212, .14);
-  background: linear-gradient(180deg, rgba(13, 24, 39, .94), rgba(8, 16, 27, .98));
-  box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+  padding: .88rem .95rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, .06);
+  background: rgba(255, 255, 255, .025);
+  box-shadow: none;
 }
 
 .topic-card::before,
@@ -2331,33 +2331,26 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: .7rem;
+  gap: .55rem;
   position: relative;
 }
 
 .topic-icon {
-  font-size: 1.35rem;
-}
-
-.topic-chip {
+  font-size: 1.2rem;
+  width: 2rem;
+  height: 2rem;
   display: inline-flex;
   align-items: center;
-  padding: .38rem .7rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .03);
-  border: 1px solid rgba(255, 255, 255, .06);
-  color: var(--c-text2);
-  font-size: .72rem;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  font-weight: 800;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .04);
 }
 
 .topic-list-item {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: .85rem;
+  gap: .7rem;
 }
 
 .topic-list-copy {
@@ -2373,33 +2366,40 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 1.6rem;
+  height: 1.6rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, .04);
-  border: 1px solid rgba(255, 255, 255, .06);
-  color: #9bdcff;
-  font-size: 1.35rem;
+  color: var(--c-text3);
+  font-size: 1.15rem;
   font-weight: 700;
+}
+
+.topic-status-muted {
+  font-size: .76rem;
+  color: var(--c-text3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
 }
 
 .topic-name {
   margin-top: 0;
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: .96rem;
   line-height: 1.12;
   letter-spacing: -.04em;
 }
 
 .topic-description {
   margin-top: .18rem;
-  font-size: .82rem;
-  line-height: 1.45;
+  font-size: .76rem;
+  line-height: 1.38;
+  color: var(--c-text2);
 }
 
 .topic-meta {
-  gap: .45rem;
-  padding-top: .45rem;
+  gap: .35rem;
+  padding-top: .35rem;
 }
 
 .question-count,
@@ -2407,11 +2407,12 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 .coming-soon-badge {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
-  padding: .28rem .7rem;
+  min-height: 24px;
+  padding: .12rem .5rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, .05);
-  border: 1px solid rgba(255, 255, 255, .07);
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .05);
+  font-size: .68rem;
 }
 
 .progress-badge {
@@ -2876,8 +2877,8 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
   .topic-card,
   .practice-test-card {
-    padding: .9rem;
-    border-radius: 16px;
+    padding: .82rem .86rem;
+    border-radius: 12px;
     gap: .5rem;
   }
 
@@ -2892,12 +2893,12 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
   .topic-name,
   .test-name {
-    font-size: .96rem;
+    font-size: .9rem;
   }
 
   .topic-description,
   .test-description {
-    font-size: .78rem;
+    font-size: .74rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

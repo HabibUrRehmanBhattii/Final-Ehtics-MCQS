@@ -982,7 +982,6 @@ const MCQApp = {
              style="--topic-color: ${topic.color}">
           <div class="topic-card-top">
             <div class="topic-icon">${topic.icon}</div>
-            <div class="topic-chip">${isActive ? 'Ready now' : 'Coming soon'}</div>
           </div>
           <div class="topic-list-copy">
             <h3 class="topic-name">${topic.name}</h3>
@@ -1002,7 +1001,9 @@ const MCQApp = {
           <div class="topic-list-action">
             ${isActive ? `
               <span class="topic-chevron" aria-hidden="true">&#8250;</span>
-            ` : ''}
+            ` : `
+              <span class="topic-status-muted">Soon</span>
+            `}
           </div>
         </div>
       `;
