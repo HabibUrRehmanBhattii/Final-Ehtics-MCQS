@@ -902,21 +902,37 @@ const MCQApp = {
 
     host.innerHTML = `
       <div class="insight-compact-card">
+        <div class="insight-head">
+          <div>
+            <div class="insight-label">Performance Snapshot</div>
+            <div class="insight-headline">Stay consistent and make weak spots obvious.</div>
+          </div>
+          <button class="btn-outline" onclick="MCQApp.toggleHomeInsights()">${isExpanded ? 'Hide details' : 'Show details'}</button>
+        </div>
         <div class="insight-compact-row">
           <div class="insight-mini">
             <span class="insight-mini-label">Progress</span>
             <strong>${stats.overallProgress}%</strong>
+            <em>Across all active topics</em>
           </div>
           <div class="insight-mini">
             <span class="insight-mini-label">Streak</span>
             <strong>${daily.streak || 0}d</strong>
+            <em>Daily momentum</em>
           </div>
           <div class="insight-mini">
             <span class="insight-mini-label">XP</span>
             <strong>L${xp.level}</strong>
+            <em>${xp.currentXp}/${xp.perLevel} to next level</em>
+          </div>
+          <div class="insight-mini insight-progress-band">
+            <span class="insight-mini-label">Today</span>
+            <strong>${daily.todayAnswered}/${dailyGoal}</strong>
+            <div class="insight-meter" aria-hidden="true">
+              <span style="width:${dailyPct}%"></span>
+            </div>
           </div>
         </div>
-        <button class="btn-outline" onclick="MCQApp.toggleHomeInsights()">${isExpanded ? 'Hide details' : 'Show details'}</button>
       </div>
 
       ${isExpanded ? `
@@ -999,7 +1015,10 @@ const MCQApp = {
         <div class="topic-card ${isCompact ? 'compact-topic' : ''} ${!isActive ? 'coming-soon' : ''}" 
              ${isActive ? `onclick="MCQApp.selectTopic('${topic.id}')"` : ''}
              style="--topic-color: ${topic.color}">
-          <div class="topic-icon">${topic.icon}</div>
+          <div class="topic-card-top">
+            <div class="topic-icon">${topic.icon}</div>
+            <div class="topic-chip">${isActive ? 'Ready now' : 'Coming soon'}</div>
+          </div>
           <h3 class="topic-name">${topic.name}</h3>
           <p class="topic-description">${topic.description}</p>
           <div class="topic-meta">

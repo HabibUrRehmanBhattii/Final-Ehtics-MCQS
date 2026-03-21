@@ -10,11 +10,13 @@
     <meta name="apple-mobile-web-app-title" content="LLQP Prep">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="LLQP & WFG Exam Prep">
-    <link rel="manifest" href="manifest.webmanifest?v=20260321b">
+    <link rel="manifest" href="manifest.webmanifest?v=20260321e">
     <link rel="icon" href="assets/icons/icon-192.svg" type="image/svg+xml" sizes="192x192">
     <link rel="apple-touch-icon" href="assets/icons/icon-180.svg" sizes="180x180">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260321b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=20260321e">
 </head>
 <body>
     <div id="app">
@@ -24,12 +26,38 @@
             <header class="hero">
                 <div class="hero-inner">
                     <button id="dark-mode-toggle" class="dm-toggle" aria-label="Toggle dark mode">&#x1F319;</button>
-                    <h1 class="hero-title">&#x1F4DA; LLQP & WFG Exam Prep</h1>
-                    <p class="hero-sub">Interactive MCQ Practice Platform</p>
+                    <div class="hero-copy">
+                        <div class="hero-kicker">Exam Prep System</div>
+                        <h1 class="hero-title">LLQP &amp; WFG Exam Prep built to feel sharp, focused, and hard to quit.</h1>
+                        <p class="hero-sub">Train with exam-style MCQs, keep your streak alive, and move from weak areas to confident recall with a cleaner study flow.</p>
+                        <div class="hero-actions">
+                            <button class="btn-primary hero-btn" type="button" onclick="document.getElementById('topics-grid').scrollIntoView({ behavior: 'smooth', block: 'start' })">Explore Study Tracks</button>
+                            <button class="btn-outline hero-btn ghost" type="button" onclick="MCQApp.openAuthModal('signup')">Enable Cloud Sync</button>
+                        </div>
+                    </div>
+                    <aside class="hero-panel" aria-label="Platform highlights">
+                        <div class="hero-panel-card">
+                            <div class="hero-panel-label">What feels better now</div>
+                            <div class="hero-panel-grid">
+                                <div class="hero-stat">
+                                    <strong>Focused</strong>
+                                    <span>One clear path from topic to test to review.</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <strong>Persistent</strong>
+                                    <span>Wrong answers, streaks, and sync stay attached to your progress.</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <strong>Exam-minded</strong>
+                                    <span>Built for repetition, coverage, and faster confidence.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </header>
             <main class="wrap">
-                <div class="section-label">Select a Topic to Begin</div>
+                <div class="section-label">Study Tracks</div>
                 <section id="auth-panel" class="auth-panel" aria-label="Account access"></section>
                 <div id="wrong-questions-section" class="wrong-wrap">
                     <div class="wrong-card" onclick="MCQApp.startWrongQuestionsReview()">
@@ -211,8 +239,8 @@
         </div>
     </div>
     <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
-    <script src="js/app.js?v=20260321c"></script>
-    <script src="js/auth.js?v=20260321b"></script>
+    <script src="js/app.js?v=20260321e"></script>
+    <script src="js/auth.js?v=20260321e"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </body>
 </html>

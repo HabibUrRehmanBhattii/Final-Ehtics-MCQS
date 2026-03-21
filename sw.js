@@ -1,5 +1,5 @@
 /* PWA Service Worker for LLQP & WFG Exam Prep */
-const CACHE_VERSION = 'v1.5.6';
+const CACHE_VERSION = 'v1.5.7';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const DATA_CACHE = `data-${CACHE_VERSION}`;
 
@@ -8,6 +8,7 @@ const CORE_ASSETS = [
   '/index.html',
   '/css/style.css',
   '/js/app.js',
+  '/js/auth.js',
   '/manifest.webmanifest',
   '/assets/icons/icon-192.svg',
   '/assets/icons/icon-512.svg',
