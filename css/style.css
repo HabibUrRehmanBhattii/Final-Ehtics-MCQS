@@ -2208,8 +2208,33 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   font-weight: 800;
 }
 
+.auth-panel-kicker {
+  margin-top: .16rem;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #7dd3fc;
+  font-weight: 700;
+}
+
 .auth-panel-copy {
   font-size: .9rem;
+}
+
+.home-dashboard-shell {
+  margin-top: 1.6rem;
+  padding-top: .4rem;
+}
+
+.optional-label {
+  color: var(--c-text2);
+}
+
+.section-note {
+  margin: -.25rem 0 1rem;
+  color: var(--c-text3);
+  font-size: .92rem;
+  line-height: 1.55;
 }
 
 .home-insights {
@@ -2695,7 +2720,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 @media (max-width: 640px) {
   .hero {
-    padding: 1rem .9rem .6rem;
+    padding: .75rem .8rem .35rem;
   }
 
   .topbar {
@@ -2709,38 +2734,71 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
   .hero-copy,
   .hero-panel-card {
-    padding: 1.2rem;
-    border-radius: 22px;
+    padding: 1rem;
+    border-radius: 20px;
   }
 
   .hero-title {
     max-width: none;
-    font-size: 2.35rem;
+    margin-top: .7rem;
+    font-size: 1.95rem;
+  }
+
+  .hero-sub {
+    margin-top: .75rem;
+    font-size: .94rem;
+    line-height: 1.55;
+  }
+
+  .hero-kicker {
+    font-size: .7rem;
+    letter-spacing: .1em;
   }
 
   .hero-actions {
     flex-direction: column;
+    margin-top: 1rem;
   }
 
   .hero-btn {
     width: 100%;
+    min-height: 46px;
+  }
+
+  .hero-btn.ghost,
+  .hero-panel {
+    display: none;
   }
 
   .section-label {
-    margin-top: .7rem;
+    margin-top: .5rem;
+    margin-bottom: .7rem;
+    font-size: .74rem;
+    letter-spacing: .14em;
   }
 
   .auth-card {
     flex-direction: column;
     align-items: stretch;
+    padding: .95rem 1rem;
   }
 
   .auth-panel-actions {
     width: 100%;
+    gap: .5rem;
   }
 
   .auth-panel-actions > * {
     flex: 1;
+  }
+
+  .auth-panel-title {
+    font-size: .95rem;
+  }
+
+  .auth-panel-copy,
+  .section-note {
+    font-size: .84rem;
   }
 
   .home-insights,
@@ -2770,5 +2828,9 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
   .actions {
     padding: .9rem;
+  }
+
+  .home-dashboard-shell {
+    margin-top: 1.1rem;
   }
 }

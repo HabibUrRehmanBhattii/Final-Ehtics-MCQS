@@ -171,8 +171,8 @@ Object.assign(MCQApp, {
       host.innerHTML = `
         <div class="auth-card auth-card-muted">
           <div>
-            <div class="auth-panel-title">Cloud Sync Unavailable</div>
-            <div class="auth-panel-copy">Sign in works when the app is served through the Cloudflare Worker with auth configured.</div>
+            <div class="auth-panel-title">Cloud Sync</div>
+            <div class="auth-panel-copy">Available when the app is served through the Cloudflare Worker.</div>
           </div>
         </div>
       `;
@@ -187,12 +187,13 @@ Object.assign(MCQApp, {
       host.innerHTML = `
         <div class="auth-card auth-card-active">
           <div>
-            <div class="auth-panel-title">${this.escapeHtml(auth.user.email)}</div>
+            <div class="auth-panel-title">Cloud sync is on</div>
+            <div class="auth-panel-kicker">${this.escapeHtml(auth.user.email)}</div>
             <div class="auth-panel-copy">${this.escapeHtml(syncedCopy)}</div>
           </div>
           <div class="auth-panel-actions">
-            <button class="btn-outline" type="button" data-auth-action="sync">Sync Now</button>
-            <button class="btn-outline" type="button" data-auth-action="signout">Sign Out</button>
+            <button class="btn-outline" type="button" data-auth-action="sync">Sync</button>
+            <button class="btn-outline" type="button" data-auth-action="signout">Sign out</button>
           </div>
         </div>
       `;
@@ -202,12 +203,12 @@ Object.assign(MCQApp, {
     host.innerHTML = `
       <div class="auth-card">
         <div>
-          <div class="auth-panel-title">Create an account</div>
-          <div class="auth-panel-copy">Save progress, wrong answers, and study streaks across devices.</div>
+          <div class="auth-panel-title">Cloud sync is optional</div>
+          <div class="auth-panel-copy">Save progress and wrong-answer review across devices when you want it.</div>
         </div>
         <div class="auth-panel-actions">
-          <button class="btn-outline" type="button" data-auth-action="signin">Sign In</button>
-          <button class="btn-primary" type="button" data-auth-action="signup">Sign Up</button>
+          <button class="btn-outline" type="button" data-auth-action="signin">Sign in</button>
+          <button class="btn-primary" type="button" data-auth-action="signup">Sign up</button>
         </div>
       </div>
     `;
