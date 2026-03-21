@@ -48,6 +48,13 @@ Object.assign(MCQApp, {
     );
   },
 
+  getEmptyProgressSnapshot() {
+    return {
+      version: 1,
+      items: {}
+    };
+  },
+
   applyProgressSnapshot(snapshot) {
     if (!snapshot || typeof snapshot !== 'object' || typeof snapshot.items !== 'object') {
       return;
@@ -480,6 +487,7 @@ Object.assign(MCQApp, {
     const resetToken = String(document.getElementById('auth-reset-token')?.value || this.state.auth.pendingResetToken || '').trim();
     const submitBtn = document.getElementById('auth-submit-btn');
     const mode = this.state.auth.authMode;
+    const localSnapshotBeforeAuth = this.collectProgressSnapshot();
 
     if (mode === 'change-password' || mode === 'reset-confirm') {
       if (mode === 'change-password' && (!currentPassword || !newPassword || !confirmPassword)) {
@@ -586,11 +594,12 @@ Object.assign(MCQApp, {
 
       if (this.state.auth.user) {
         const migrationKey = this.getAuthMigrationKey(this.state.auth.user.id);
-        if (!localStorage.getItem(migrationKey) && this.hasMeaningfulProgressSnapshot()) {
+        if (mode === 'signup' && !localStorage.getItem(migrationKey) && this.hasMeaningfulProgressSnapshot(localSnapshotBeforeAuth)) {
+          this.applyProgressSnapshot(localSnapshotBeforeAuth);
           await this.syncProgressToCloud({ silent: true, force: true });
           localStorage.setItem(migrationKey, new Date().toISOString());
         } else {
-          await this.loadCloudProgress({ silent: true });
+          await this.loadCloudProgress({ silent: true, resetToEmpty: true });
         }
       }
 
@@ -666,7 +675,7 @@ Object.assign(MCQApp, {
     }
   },
 
-  async loadCloudProgress({ silent = false } = {}) {
+  async loadCloudProgress({ silent = false, resetToEmpty = false } = {}) {
     if (!this.state.auth.available || !this.state.auth.authenticated) {
       return false;
     }
@@ -675,6 +684,8 @@ Object.assign(MCQApp, {
       const data = await this.fetchAuthJson('/api/auth/progress', { method: 'GET' });
       if (data.progress && typeof data.progress === 'object') {
         this.applyProgressSnapshot(data.progress);
+      } else if (resetToEmpty) {
+        this.applyProgressSnapshot(this.getEmptyProgressSnapshot());
       }
       this.state.auth.lastSyncedAt = data.syncedAt || null;
       this.renderAuthPanel();
