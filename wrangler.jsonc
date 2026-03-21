@@ -3,7 +3,13 @@
   "main": "src/worker.js",
   "compatibility_date": "2026-02-04",
   "vars": {
-    "TURNSTILE_SITE_KEY": "0x4AAAAAACuHZWrNKbCXmlEJ"
+    "TURNSTILE_SITE_KEY": "0x4AAAAAACuHZWrNKbCXmlEJ",
+    "RESET_EMAIL_PROVIDER": "resend",
+    "RESET_EMAIL_FROM": "LLQP Prep <no-reply@hllqpmcqs.com>",
+    "RESET_EMAIL_REPLY_TO": "no-reply@hllqpmcqs.com",
+    "RESET_BASE_URL": "https://hllqpmcqs.com",
+    "RESET_EMAIL_SUBJECT": "Reset your LLQP & WFG Exam Prep password",
+    "APP_NAME": "LLQP & WFG Exam Prep"
   },
   "d1_databases": [
     {
