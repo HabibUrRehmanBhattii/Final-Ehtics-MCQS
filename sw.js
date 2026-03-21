@@ -1,5 +1,5 @@
 /* PWA Service Worker for LLQP & WFG Exam Prep */
-const CACHE_VERSION = 'v1.6.7';
+const CACHE_VERSION = 'v1.6.8';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const DATA_CACHE = `data-${CACHE_VERSION}`;
 
@@ -133,6 +133,7 @@ self.addEventListener('fetch', (event) => {
   // Core UI assets: network-first so users get latest JS/CSS quickly after deploy
   if (
     url.pathname === '/js/app.js' ||
+    url.pathname === '/js/auth.js' ||
     url.pathname === '/css/style.css' ||
     url.pathname === '/index.html' ||
     url.pathname === '/manifest.webmanifest'
