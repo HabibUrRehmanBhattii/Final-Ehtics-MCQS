@@ -3,7 +3,7 @@
   "main": "src/worker.js",
   "compatibility_date": "2026-02-04",
   "vars": {
-    "TURNSTILE_SITE_KEY": "1x00000000000000000000AA"
+    "TURNSTILE_SITE_KEY": "0x4AAAAAACuHZWrNKbCXmlEJ"
   },
   "d1_databases": [
     {
