@@ -319,6 +319,17 @@ Object.assign(MCQApp, {
     const secondaryActions = document.getElementById('auth-secondary-actions');
     const turnstileContainer = document.getElementById('auth-turnstile');
     const form = document.getElementById('auth-form');
+    const emailInput = document.getElementById('auth-email');
+    const currentPasswordInput = document.getElementById('auth-current-password');
+    const newPasswordInput = document.getElementById('auth-new-password');
+    const confirmPasswordInput = document.getElementById('auth-confirm-password');
+    const resetTokenInput = document.getElementById('auth-reset-token');
+
+    const configureField = (input, visible, required = false) => {
+      if (!input) return;
+      input.disabled = !visible;
+      input.required = required;
+    };
 
     const isSignup = mode === 'signup';
     const isSignin = mode === 'signin';
@@ -378,7 +389,12 @@ Object.assign(MCQApp, {
       passwordInput.setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
     }
     if (form) form.reset();
-    const resetTokenInput = document.getElementById('auth-reset-token');
+    configureField(emailInput, !isChangePassword && !isResetConfirm, !isChangePassword && !isResetConfirm);
+    configureField(passwordInput, !(isResetRequest || isResetConfirm || isChangePassword), isSignup || isSignin);
+    configureField(currentPasswordInput, isChangePassword, isChangePassword);
+    configureField(newPasswordInput, isChangePassword || isResetConfirm, isChangePassword || isResetConfirm);
+    configureField(confirmPasswordInput, isChangePassword || isResetConfirm, isChangePassword || isResetConfirm);
+    configureField(resetTokenInput, isResetConfirm && !hasPrefilledResetToken, isResetConfirm && !hasPrefilledResetToken);
     if (resetTokenInput) {
       resetTokenInput.value = hasPrefilledResetToken ? this.state.auth.pendingResetToken : '';
     }
