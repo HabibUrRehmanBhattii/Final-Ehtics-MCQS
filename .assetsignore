@@ -13,3 +13,4 @@ CODEBASE_REFERENCE.md
 AI_IMPROVEMENTS.md
 AI_TECHNICAL_DETAILS.md
 *.code-workspace
+*.tmp

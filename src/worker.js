@@ -470,6 +470,47 @@ async function requireSession(env, request) {
   return session;
 }
 
+function getAdminSecret(request) {
+  const authHeader = request.headers.get('Authorization') || '';
+  if (authHeader.startsWith('Bearer ')) {
+    return authHeader.slice('Bearer '.length).trim();
+  }
+  return String(request.headers.get('x-admin-reset-secret') || '').trim();
+}
+
+function requireAdminResetAccess(env, request) {
+  const expected = String(env.ADMIN_RESET_SECRET || '').trim();
+  const provided = getAdminSecret(request);
+  if (!expected) {
+    throw new Error('ADMIN_RESET_SECRET secret is missing');
+  }
+  if (!provided || provided !== expected) {
+    throw new Error('Admin access denied');
+  }
+}
+
+async function issuePasswordResetToken(db, request, userId) {
+  const rawToken = base64url(crypto.getRandomValues(new Uint8Array(24)));
+  const tokenHash = await sha256(rawToken);
+  const now = new Date().toISOString();
+  const expiresAt = new Date(Date.now() + PASSWORD_RESET_TTL_MS).toISOString();
+
+  await db.prepare(
+    `INSERT INTO password_reset_tokens (id, user_id, token_hash, created_at, expires_at, used_at, ip_address, user_agent)
+     VALUES (?, ?, ?, ?, ?, NULL, ?, ?)`
+  ).bind(
+    crypto.randomUUID(),
+    userId,
+    tokenHash,
+    now,
+    expiresAt,
+    getClientIp(request),
+    request.headers.get('User-Agent') || ''
+  ).run();
+
+  return { rawToken, expiresAt };
+}
+
 async function handleSignup(request, env) {
   const body = await request.json();
   const email = normalizeEmail(body.email);
@@ -909,23 +950,7 @@ async function handlePasswordResetRequest(request, env) {
     if (user?.id && user.status === 'active') {
       await recordAuthAttempt(env.DB, 'password_reset_ip', ip, true);
       await recordAuthAttempt(env.DB, 'password_reset_email', email, true);
-      const rawToken = base64url(crypto.getRandomValues(new Uint8Array(24)));
-      const tokenHash = await sha256(rawToken);
-      const now = new Date().toISOString();
-      const expiresAt = new Date(Date.now() + PASSWORD_RESET_TTL_MS).toISOString();
-
-      await env.DB.prepare(
-        `INSERT INTO password_reset_tokens (id, user_id, token_hash, created_at, expires_at, used_at, ip_address, user_agent)
-         VALUES (?, ?, ?, ?, ?, NULL, ?, ?)`
-      ).bind(
-        crypto.randomUUID(),
-        user.id,
-        tokenHash,
-        now,
-        expiresAt,
-        ip,
-        request.headers.get('User-Agent') || ''
-      ).run();
+      const { rawToken, expiresAt } = await issuePasswordResetToken(env.DB, request, user.id);
 
       const delivery = await sendPasswordResetEmail(env, request, email, rawToken);
 
@@ -950,6 +975,50 @@ async function handlePasswordResetRequest(request, env) {
   } catch (error) {
     await logAuditEvent(env.DB, request, 'auth.password_reset_request', 'failed', null, { reason: error.message, email });
     return jsonResponse(request, { error: error.message || 'Reset request failed.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminPasswordResetLink(request, env) {
+  if (!env.DB) {
+    return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  try {
+    requireAdminResetAccess(env, request);
+    const body = await request.json();
+    const email = normalizeEmail(body.email);
+
+    if (!validateEmail(email)) {
+      return jsonResponse(request, { error: 'A valid email is required.' }, { status: 400 });
+    }
+
+    const user = await env.DB.prepare(
+      'SELECT id, email, status FROM users WHERE email = ? LIMIT 1'
+    ).bind(email).first();
+
+    if (!user || user.status !== 'active') {
+      await logAuditEvent(env.DB, request, 'auth.password_reset_admin', 'failed', user?.id || null, { reason: 'user_not_found', email });
+      return jsonResponse(request, { error: 'Active account not found for that email.' }, { status: 404 });
+    }
+
+    const { rawToken, expiresAt } = await issuePasswordResetToken(env.DB, request, user.id);
+    const resetUrl = `${getResetEmailConfig(env, request).baseUrl}/?reset=${encodeURIComponent(rawToken)}`;
+
+    await logAuditEvent(env.DB, request, 'auth.password_reset_admin', 'success', user.id, { email, expiresAt });
+
+    return jsonResponse(request, {
+      success: true,
+      email: user.email,
+      token: rawToken,
+      resetUrl,
+      expiresAt
+    });
+  } catch (error) {
+    const status = /access denied/i.test(String(error?.message || '')) ? 403 : getErrorStatus(error);
+    try {
+      await logAuditEvent(env.DB, request, 'auth.password_reset_admin', 'failed', null, { reason: error.message });
+    } catch {}
+    return jsonResponse(request, { error: error.message || 'Admin reset link generation failed.' }, { status });
   }
 }
 
@@ -1119,6 +1188,10 @@ export default {
 
     if (path === '/api/auth/password-change' && request.method === 'POST') {
       return handlePasswordChange(request, env);
+    }
+
+    if (path === '/api/admin/password-reset-link' && request.method === 'POST') {
+      return handleAdminPasswordResetLink(request, env);
     }
 
     if (path === '/api/explain' && request.method === 'POST') {
