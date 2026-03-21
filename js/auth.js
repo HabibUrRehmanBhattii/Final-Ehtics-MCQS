@@ -1,4 +1,8 @@
 Object.assign(MCQApp, {
+  getAuthApiBaseUrl() {
+    return 'https://final-ehtics-mcqs.habib-ur-rehmann-bhatti.workers.dev';
+  },
+
   getManagedProgressKeys() {
     const explicitKeys = new Set([
       'wrong_questions',
@@ -85,7 +89,8 @@ Object.assign(MCQApp, {
   },
 
   async fetchAuthJson(path, options = {}) {
-    const response = await fetch(path, {
+    const apiUrl = new URL(path, this.getAuthApiBaseUrl()).toString();
+    const response = await fetch(apiUrl, {
       credentials: 'include',
       cache: 'no-store',
       ...options,
