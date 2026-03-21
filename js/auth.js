@@ -1,6 +1,6 @@
 Object.assign(MCQApp, {
   getAuthApiBaseUrl() {
-    return 'https://final-ehtics-mcqs.habib-ur-rehmann-bhatti.workers.dev';
+    return window.location.origin;
   },
 
   getManagedProgressKeys() {
