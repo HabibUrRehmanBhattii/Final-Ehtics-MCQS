@@ -19,6 +19,8 @@ const MCQApp = {
     wrongQuestions: [],
     lastSelectedIndex: undefined,
     lastSelectedQuestionKey: null,
+    lastRenderedQuestionKey: null,
+    lastRenderedQuestionIndex: -1,
     isReviewMode: false,
     attemptedOptions: {}, // Track which options were attempted for each question
     firstAttemptCorrect: {}, // Track if first attempt was correct for each question
@@ -2083,6 +2085,9 @@ const MCQApp = {
 
     const questionIndex = this.state.currentQuestionIndex;
     const totalQuestions = this.getFilteredQuestions().length;
+    const shouldScrollToTop =
+      this.state.lastRenderedQuestionKey !== stateKey ||
+      this.state.lastRenderedQuestionIndex !== questionIndex;
 
     // Update header
     document.getElementById('topic-title').textContent = this.state.currentTopic.name;
@@ -2172,7 +2177,7 @@ const MCQApp = {
     const hasAnswered = this.state.answersRevealed.has(stateKey);
     const isLastQ = this.state.currentQuestionIndex === this.getFilteredQuestions().length - 1;
     if (nextBtn) {
-      nextBtn.classList.toggle('hidden', !hasAnswered || isLastQ);
+      nextBtn.classList.remove('hidden');
     }
     const nextBtnTop = document.getElementById('next-question-btn-top');
     if (nextBtnTop) {
@@ -2189,8 +2194,12 @@ const MCQApp = {
       autoAdvanceBtn.setAttribute('aria-pressed', this.state.autoAdvanceEnabled ? 'true' : 'false');
     }
 
-    // Scroll to top on question change
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (shouldScrollToTop) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    this.state.lastRenderedQuestionKey = stateKey;
+    this.state.lastRenderedQuestionIndex = questionIndex;
 
     // Check if all questions have been answered — show/hide finish banner
     this.checkCompletion();
@@ -2641,15 +2650,41 @@ const MCQApp = {
     return this.state.questions;
   },
 
+  canAdvanceFromCurrentQuestion() {
+    const question = this.getCurrentQuestion();
+    if (!question) return true;
+    return this.state.answersRevealed.has(this.getQuestionStateKey(question));
+  },
+
+  setCurrentQuestionIndex(index, options = {}) {
+    const { force = false, showBlockedToast = true } = options;
+    const filtered = this.getFilteredQuestions();
+    if (!filtered.length) return false;
+
+    const targetIndex = Math.max(0, Math.min(index, filtered.length - 1));
+    if (targetIndex === this.state.currentQuestionIndex) {
+      return false;
+    }
+
+    const movingForward = targetIndex > this.state.currentQuestionIndex;
+    if (movingForward && !force && !this.canAdvanceFromCurrentQuestion()) {
+      if (showBlockedToast) {
+        this.showToast('Answer this question before moving ahead.', 'info');
+      }
+      return false;
+    }
+
+    this.state.currentQuestionIndex = targetIndex;
+    this.renderQuestion();
+    return true;
+  },
+
   // Navigate Question
   navigateQuestion(direction) {
-    const filtered = this.getFilteredQuestions();
-    const newIndex = this.state.currentQuestionIndex + direction;
-    
-    if (newIndex >= 0 && newIndex < filtered.length) {
-      this.state.currentQuestionIndex = newIndex;
-      this.renderQuestion();
-    }
+    return this.setCurrentQuestionIndex(
+      this.state.currentQuestionIndex + direction,
+      { showBlockedToast: direction > 0 }
+    );
   },
 
   // Update Navigation Buttons
@@ -2660,12 +2695,79 @@ const MCQApp = {
 
     if (!prevBtn || !nextBtn) return;
 
-    prevBtn.disabled = this.state.currentQuestionIndex === 0;
-    nextBtn.disabled = this.state.currentQuestionIndex === filtered.length - 1;
+    const hasAnswered = this.canAdvanceFromCurrentQuestion();
+    prevBtn.disabled = filtered.length === 0 || this.state.currentQuestionIndex === 0;
+    nextBtn.disabled = (
+      filtered.length === 0 ||
+      this.state.currentQuestionIndex === filtered.length - 1 ||
+      !hasAnswered
+    );
   },
 
-  // Render Question Dots with Pagination
+  scrollActiveQuestionDotIntoView() {
+    const activeDot = document.querySelector('#question-dots .question-dot.is-active');
+    if (!activeDot || typeof activeDot.scrollIntoView !== 'function') return;
+
+    const runScroll = () => {
+      activeDot.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    };
+
+    if (typeof window.requestAnimationFrame === 'function') {
+      window.requestAnimationFrame(runScroll);
+      return;
+    }
+
+    runScroll();
+  },
+
+  // Render Question Dots
   renderQuestionDots() {
+    {
+      const dotsContainer = document.getElementById('question-dots');
+      if (!dotsContainer) return;
+
+      const filtered = this.getFilteredQuestions();
+      const totalQuestions = filtered.length;
+      const currentIndex = this.state.currentQuestionIndex;
+      const canAdvance = this.canAdvanceFromCurrentQuestion();
+      let html = '';
+
+      for (let i = 0; i < totalQuestions; i++) {
+        const q = filtered[i];
+        const isActive = i === currentIndex;
+        const isLocked = i > currentIndex && !canAdvance;
+        const questionKey = this.getQuestionStateKey(q);
+        const isBookmarked = this.state.bookmarkedQuestions.has(questionKey);
+        const isViewed = this.state.viewedQuestions.has(questionKey);
+        const isAnswered = this.state.answersRevealed.has(questionKey);
+        const wasFirstCorrect = this.state.firstAttemptCorrect[questionKey];
+        const dotStateClass = isAnswered ? (wasFirstCorrect ? 'is-correct-dot' : 'is-wrong-dot') : '';
+        const dotContent = isAnswered ? '' : (isBookmarked ? '&#9733;' : i + 1);
+        const dotTitle = isLocked
+          ? `Question ${i + 1} - Answer the current question first`
+          : `Question ${i + 1}${isAnswered ? (wasFirstCorrect ? ' - Correct' : ' - Wrong') : ''}`;
+
+        html += `
+          <button class="question-dot ${isActive ? 'is-active' : ''} ${isViewed ? 'is-viewed' : ''} ${isBookmarked ? 'is-bookmarked' : ''} ${dotStateClass} ${isLocked ? 'is-locked' : ''}"
+                  onclick="MCQApp.jumpToQuestion(${i})"
+                  title="${dotTitle}"
+                  aria-label="${dotTitle}"
+                  aria-current="${isActive ? 'page' : 'false'}"
+                  ${isLocked ? 'disabled' : ''}>
+            ${dotContent}
+          </button>
+        `;
+      }
+
+      dotsContainer.innerHTML = html;
+      this.scrollActiveQuestionDotIntoView();
+      return;
+    }
+
     const dotsContainer = document.getElementById('question-dots');
     const filtered = this.getFilteredQuestions();
     const totalQuestions = filtered.length;
@@ -2731,9 +2833,8 @@ const MCQApp = {
   },
 
   // Jump to Question
-  jumpToQuestion(index) {
-    this.state.currentQuestionIndex = index;
-    this.renderQuestion();
+  jumpToQuestion(index, options = {}) {
+    return this.setCurrentQuestionIndex(index, options);
   },
 
   stripCorrectAnswerReveal(feedbackText) {
@@ -3335,6 +3436,7 @@ const MCQApp = {
       this.saveProgress();
 
       // Update dots to show answered state & check completion
+      this.updateNavigationButtons();
       this.renderQuestionDots();
       this.checkCompletion();
 

@@ -776,14 +776,18 @@ button { font-family: inherit; }
    QUESTION NAV
    ════════════════════════════════════ */
 .q-nav {
-  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .65rem;
   margin-bottom: 1.25rem; padding: .85rem;
   background: var(--c-surface); border: 1px solid var(--c-border);
   border-radius: var(--radius); box-shadow: var(--shadow-xs);
-  flex-wrap: wrap;
 }
 .q-dots {
-  display: flex; gap: .4rem; flex-wrap: wrap; justify-content: center;
+  min-width: 0;
+  display: flex; gap: .4rem; justify-content: flex-start;
+  overflow-x: auto;
+  padding: .12rem 0;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 
 .question-dot {
@@ -792,19 +796,27 @@ button { font-family: inherit; }
   font-size: .72rem; font-weight: 700;
   border: 2px solid var(--c-border); border-radius: var(--radius-xs);
   background: var(--c-surface); color: var(--c-text3);
+  flex: 0 0 auto;
   cursor: pointer;
   transition: all .2s var(--ease);
 }
-.question-dot:hover:not(.is-active) {
+.question-dot:hover:not(.is-active):not(:disabled) {
   border-color: var(--c-primary); color: var(--c-primary);
   transform: translateY(-2px); box-shadow: 0 3px 8px var(--c-primary-a);
 }
+.question-dot.is-viewed   { background: var(--c-surface2); color: var(--c-text2); }
+.question-dot.is-bookmarked { border-color: var(--c-warn); border-width: 2.5px; }
 .question-dot.is-active {
   background: var(--c-primary); color: #fff; border-color: var(--c-primary);
   box-shadow: 0 2px 8px var(--c-primary-a);
 }
-.question-dot.is-viewed   { background: var(--c-surface2); color: var(--c-text2); }
-.question-dot.is-bookmarked { border-color: var(--c-warn); border-width: 2.5px; }
+.question-dot.is-locked,
+.question-dot:disabled {
+  opacity: .48;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
 
 /* Answered questions - clear visual feedback */
 .question-dot.is-correct-dot {
@@ -1931,15 +1943,13 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   }
 
   .q-nav {
+    grid-template-columns: 2.7rem minmax(0, 1fr) 2.7rem;
     padding: .65rem;
-    gap: .4rem;
+    gap: .45rem;
   }
   .q-dots {
-    width: 100%;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: .2rem;
+    width: auto;
+    padding: .08rem 0 .2rem;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
   }
