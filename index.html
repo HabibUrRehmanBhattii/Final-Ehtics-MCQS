@@ -10,13 +10,13 @@
     <meta name="apple-mobile-web-app-title" content="LLQP Prep">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="LLQP & WFG Exam Prep">
-    <link rel="manifest" href="manifest.webmanifest?v=20260321f">
+    <link rel="manifest" href="manifest.webmanifest?v=20260321g">
     <link rel="icon" href="assets/icons/icon-192.svg" type="image/svg+xml" sizes="192x192">
     <link rel="apple-touch-icon" href="assets/icons/icon-180.svg" sizes="180x180">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260321f">
+    <link rel="stylesheet" href="css/style.css?v=20260321g">
 </head>
 <body>
     <div id="app">
@@ -27,29 +27,29 @@
                 <div class="hero-inner">
                     <button id="dark-mode-toggle" class="dm-toggle" aria-label="Toggle dark mode">&#x1F319;</button>
                     <div class="hero-copy">
-                        <div class="hero-kicker">Exam Prep System</div>
-                        <h1 class="hero-title">LLQP &amp; WFG Exam Prep built to feel sharp, focused, and hard to quit.</h1>
-                        <p class="hero-sub">Train with exam-style MCQs, keep your streak alive, and move from weak areas to confident recall with a cleaner study flow.</p>
+                        <div class="hero-kicker">Study Mode</div>
+                        <h1 class="hero-title">LLQP &amp; WFG exam prep designed for fast daily practice.</h1>
+                        <p class="hero-sub">Choose a topic, continue where you left off, and keep weak areas visible without extra clutter.</p>
                         <div class="hero-actions">
-                            <button class="btn-primary hero-btn" type="button" onclick="document.getElementById('topics-grid').scrollIntoView({ behavior: 'smooth', block: 'start' })">Explore Study Tracks</button>
-                            <button class="btn-outline hero-btn ghost" type="button" onclick="MCQApp.openAuthModal('signup')">Enable Cloud Sync</button>
+                            <button class="btn-primary hero-btn" type="button" onclick="document.getElementById('topics-grid').scrollIntoView({ behavior: 'smooth', block: 'start' })">Choose Topic</button>
+                            <button class="btn-outline hero-btn ghost" type="button" onclick="MCQApp.openAuthModal('signup')">Cloud Sync</button>
                         </div>
                     </div>
                     <aside class="hero-panel" aria-label="Platform highlights">
                         <div class="hero-panel-card">
-                            <div class="hero-panel-label">What feels better now</div>
+                            <div class="hero-panel-label">Student-first</div>
                             <div class="hero-panel-grid">
                                 <div class="hero-stat">
-                                    <strong>Focused</strong>
-                                    <span>One clear path from topic to test to review.</span>
+                                    <strong>Start fast</strong>
+                                    <span>Get into questions quickly instead of navigating a dashboard.</span>
                                 </div>
                                 <div class="hero-stat">
-                                    <strong>Persistent</strong>
-                                    <span>Wrong answers, streaks, and sync stay attached to your progress.</span>
+                                    <strong>Stay on track</strong>
+                                    <span>Resume sessions and review mistakes when you are ready.</span>
                                 </div>
                                 <div class="hero-stat">
-                                    <strong>Exam-minded</strong>
-                                    <span>Built for repetition, coverage, and faster confidence.</span>
+                                    <strong>Keep it simple</strong>
+                                    <span>Account and sync tools stay in the background.</span>
                                 </div>
                             </div>
                         </div>
@@ -58,6 +58,7 @@
             </header>
             <main class="wrap">
                 <div class="section-label">Study Tracks</div>
+                <section id="home-focus" class="home-focus" aria-label="Quick study actions"></section>
                 <div id="topics-grid" class="grid"></div>
                 <section class="home-dashboard-shell" aria-label="Optional study tools">
                     <div class="section-label optional-label">Optional Tools</div>
@@ -243,8 +244,8 @@
         </div>
     </div>
     <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
-    <script src="js/app.js?v=20260321e"></script>
-    <script src="js/auth.js?v=20260321f"></script>
+    <script src="js/app.js?v=20260321g"></script>
+    <script src="js/auth.js?v=20260321g"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </body>
 </html>

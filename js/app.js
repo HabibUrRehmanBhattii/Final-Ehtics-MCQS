@@ -630,6 +630,7 @@ const MCQApp = {
       }
     }
 
+    this.renderHomeFocus();
     this.renderHomeInsights();
   },
 
@@ -886,6 +887,64 @@ const MCQApp = {
     this.renderHomeInsights();
   },
 
+  renderHomeFocus() {
+    const host = document.getElementById('home-focus');
+    if (!host) return;
+
+    const stats = this.getHomeStudyStats();
+    const session = this.getLastSession();
+    const daily = this.getDailyStudyStats();
+    const recommended = this.getRecommendedPracticeUnit();
+    const wrongCount = this.state.wrongQuestions.length;
+
+    let title = 'Pick a topic and start a focused study session.';
+    let meta = `${stats.totalCourses} tracks available`;
+    let primaryLabel = 'Browse topics';
+    let primaryAction = "document.getElementById('topics-grid').scrollIntoView({ behavior: 'smooth', block: 'start' })";
+
+    if (session) {
+      title = `${session.topic.name}: ${session.test.name}`;
+      meta = 'Continue right where you left off';
+      primaryLabel = 'Resume session';
+      primaryAction = 'MCQApp.resumeLastSession()';
+    } else if (recommended) {
+      title = `${recommended.topic.name}: ${recommended.test.name}`;
+      meta = `${recommended.progress}% complete in your next best track`;
+      primaryLabel = 'Continue progress';
+      primaryAction = 'MCQApp.startRecommendedPractice()';
+    }
+
+    host.innerHTML = `
+      <div class="focus-card">
+        <div class="focus-copy">
+          <div class="focus-label">${session ? 'Continue studying' : 'Ready to study'}</div>
+          <h2 class="focus-title">${this.escapeHtml(title)}</h2>
+          <p class="focus-meta">${this.escapeHtml(meta)}</p>
+          <div class="focus-actions">
+            <button class="btn-primary focus-btn" type="button" onclick="${primaryAction}">${this.escapeHtml(primaryLabel)}</button>
+            ${wrongCount > 0 ? `
+              <button class="btn-outline focus-btn-secondary" type="button" onclick="MCQApp.startWrongQuestionsReview()">Review ${wrongCount} wrong</button>
+            ` : ''}
+          </div>
+        </div>
+        <div class="focus-stats">
+          <div class="focus-stat">
+            <span>Today</span>
+            <strong>${daily.todayAnswered}</strong>
+          </div>
+          <div class="focus-stat">
+            <span>Streak</span>
+            <strong>${daily.streak || 0}d</strong>
+          </div>
+          <div class="focus-stat">
+            <span>Progress</span>
+            <strong>${stats.overallProgress}%</strong>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
   renderHomeInsights() {
     const host = document.getElementById('home-insights');
     if (!host) return;
@@ -993,6 +1052,7 @@ const MCQApp = {
     if (typeof this.renderAuthPanel === 'function') {
       this.renderAuthPanel();
     }
+    this.renderHomeFocus();
     const grid = document.getElementById('topics-grid');
     if (!grid) return;
 
