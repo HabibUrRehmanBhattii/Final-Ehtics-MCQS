@@ -2637,7 +2637,7 @@ const MCQApp = {
           this.logWrongAnswer(question);
         }
 
-        this.showToast('Incorrect. Keep practicing — this question will appear again.', 'warning');
+        this.showToast('Incorrect. Stay on this question to review the feedback or ask AI before moving on.', 'warning');
 
         this.state.attemptedOptions[stateKey].push(selectedIndex);
         this.renderQuestion();
