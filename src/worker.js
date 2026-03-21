@@ -5,6 +5,11 @@ const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/sit
 const RATE_LIMIT_WINDOW_MINUTES = 15;
 const RATE_LIMIT_IP_MAX = 15;
 const RATE_LIMIT_EMAIL_MAX = 8;
+const AI_RATE_LIMIT_WINDOW_MINUTES = 10;
+const AI_RATE_LIMIT_IP_MAX = 20;
+const RESET_RATE_LIMIT_WINDOW_MINUTES = 30;
+const RESET_RATE_LIMIT_EMAIL_MAX = 5;
+const PASSWORD_RESET_TTL_MS = 1000 * 60 * 30;
 
 const jsonResponse = (request, payload, init = {}) => {
   const headers = new Headers(init.headers || {});
@@ -159,21 +164,60 @@ async function recordAuthAttempt(db, scope, scopeKey, success) {
   ).run();
 }
 
-async function enforceRateLimit(db, email, ip) {
-  const cutoff = new Date(Date.now() - RATE_LIMIT_WINDOW_MINUTES * 60 * 1000).toISOString();
+async function logAuditEvent(db, request, eventType, eventStatus, userId = null, details = null) {
+  if (!db) return;
+  await db.prepare(
+    `INSERT INTO audit_logs (id, user_id, event_type, event_status, ip_address, user_agent, details_json, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+  ).bind(
+    crypto.randomUUID(),
+    userId,
+    eventType,
+    eventStatus,
+    getClientIp(request),
+    request.headers.get('User-Agent') || '',
+    details ? JSON.stringify(details) : null,
+    new Date().toISOString()
+  ).run();
+}
+
+async function enforceRateLimit(db, email, ip, options = {}) {
+  const ipScope = options.ipScope || 'ip';
+  const emailScope = options.emailScope || 'email';
+  const windowMinutes = options.windowMinutes || RATE_LIMIT_WINDOW_MINUTES;
+  const ipMax = options.ipMax ?? RATE_LIMIT_IP_MAX;
+  const emailMax = options.emailMax ?? RATE_LIMIT_EMAIL_MAX;
+  const failedOnly = options.failedOnly !== false;
+  const cutoff = new Date(Date.now() - windowMinutes * 60 * 1000).toISOString();
+  const countSql = failedOnly
+    ? 'SELECT COUNT(*) AS count FROM auth_attempts WHERE scope = ? AND scope_key = ? AND created_at >= ? AND success = 0'
+    : 'SELECT COUNT(*) AS count FROM auth_attempts WHERE scope = ? AND scope_key = ? AND created_at >= ?';
 
   const ipCount = await db.prepare(
-    'SELECT COUNT(*) AS count FROM auth_attempts WHERE scope = ? AND scope_key = ? AND created_at >= ? AND success = 0'
-  ).bind('ip', ip, cutoff).first();
-  if (Number(ipCount?.count || 0) >= RATE_LIMIT_IP_MAX) {
+    countSql
+  ).bind(ipScope, ip, cutoff).first();
+  if (Number(ipCount?.count || 0) >= ipMax) {
     throw new Error('Too many attempts from this network. Please try again later.');
   }
 
   const emailCount = await db.prepare(
-    'SELECT COUNT(*) AS count FROM auth_attempts WHERE scope = ? AND scope_key = ? AND created_at >= ? AND success = 0'
-  ).bind('email', email, cutoff).first();
-  if (Number(emailCount?.count || 0) >= RATE_LIMIT_EMAIL_MAX) {
+    countSql
+  ).bind(emailScope, email, cutoff).first();
+  if (Number(emailCount?.count || 0) >= emailMax) {
     throw new Error('Too many attempts for this email. Please try again later.');
+  }
+}
+
+async function enforceIpOnlyRateLimit(db, ip, scope, maxAttempts, windowMinutes, failedOnly = true) {
+  const cutoff = new Date(Date.now() - windowMinutes * 60 * 1000).toISOString();
+  const sql = failedOnly
+    ? 'SELECT COUNT(*) AS count FROM auth_attempts WHERE scope = ? AND scope_key = ? AND created_at >= ? AND success = 0'
+    : 'SELECT COUNT(*) AS count FROM auth_attempts WHERE scope = ? AND scope_key = ? AND created_at >= ?';
+  const row = await db.prepare(
+    sql
+  ).bind(scope, ip, cutoff).first();
+  if (Number(row?.count || 0) >= maxAttempts) {
+    throw new Error('Too many attempts from this network. Please try again later.');
   }
 }
 
@@ -284,6 +328,7 @@ async function handleSignup(request, env) {
     if (!turnstileOk) {
       await recordAuthAttempt(env.DB, 'ip', ip, false);
       await recordAuthAttempt(env.DB, 'email', email, false);
+      await logAuditEvent(env.DB, request, 'auth.signup', 'failed', null, { reason: 'turnstile', email });
       return jsonResponse(request, { error: 'Security check failed. Please try again.' }, { status: 400 });
     }
 
@@ -291,6 +336,7 @@ async function handleSignup(request, env) {
     if (existing) {
       await recordAuthAttempt(env.DB, 'ip', ip, false);
       await recordAuthAttempt(env.DB, 'email', email, false);
+      await logAuditEvent(env.DB, request, 'auth.signup', 'failed', existing.id, { reason: 'duplicate_email', email });
       return jsonResponse(request, { error: 'An account with this email already exists.' }, { status: 409 });
     }
 
@@ -305,6 +351,7 @@ async function handleSignup(request, env) {
     const session = await createSession(env, request, userId);
     await recordAuthAttempt(env.DB, 'ip', ip, true);
     await recordAuthAttempt(env.DB, 'email', email, true);
+    await logAuditEvent(env.DB, request, 'auth.signup', 'success', userId, { email });
 
     return jsonResponse(request, {
       authenticated: true,
@@ -315,6 +362,7 @@ async function handleSignup(request, env) {
       }
     });
   } catch (error) {
+    await logAuditEvent(env.DB, request, 'auth.signup', 'failed', null, { reason: error.message, email });
     return jsonResponse(request, { error: error.message || 'Sign up failed.' }, { status: getErrorStatus(error) });
   }
 }
@@ -340,6 +388,7 @@ async function handleSignin(request, env) {
     if (!turnstileOk) {
       await recordAuthAttempt(env.DB, 'ip', ip, false);
       await recordAuthAttempt(env.DB, 'email', email, false);
+      await logAuditEvent(env.DB, request, 'auth.signin', 'failed', null, { reason: 'turnstile', email });
       return jsonResponse(request, { error: 'Security check failed. Please try again.' }, { status: 400 });
     }
 
@@ -350,6 +399,7 @@ async function handleSignin(request, env) {
     if (!user || user.status !== 'active' || !(await verifyPassword(password, user.password_hash))) {
       await recordAuthAttempt(env.DB, 'ip', ip, false);
       await recordAuthAttempt(env.DB, 'email', email, false);
+      await logAuditEvent(env.DB, request, 'auth.signin', 'failed', user?.id || null, { reason: 'invalid_credentials', email });
       return jsonResponse(request, { error: 'Invalid email or password.' }, { status: 401 });
     }
 
@@ -360,6 +410,7 @@ async function handleSignin(request, env) {
 
     await recordAuthAttempt(env.DB, 'ip', ip, true);
     await recordAuthAttempt(env.DB, 'email', email, true);
+    await logAuditEvent(env.DB, request, 'auth.signin', 'success', user.id, { email });
 
     return jsonResponse(request, {
       authenticated: true,
@@ -370,6 +421,7 @@ async function handleSignin(request, env) {
       }
     });
   } catch (error) {
+    await logAuditEvent(env.DB, request, 'auth.signin', 'failed', null, { reason: error.message, email });
     return jsonResponse(request, { error: error.message || 'Sign in failed.' }, { status: getErrorStatus(error) });
   }
 }
@@ -381,6 +433,7 @@ async function handleSignout(request, env) {
       await env.DB.prepare('UPDATE sessions SET revoked_at = ? WHERE id = ?')
         .bind(new Date().toISOString(), session.sessionId)
         .run();
+      await logAuditEvent(env.DB, request, 'auth.signout', 'success', session.user.id, null);
     }
   }
 
@@ -424,9 +477,14 @@ async function handleSyncProgress(request, env) {
        VALUES (?, ?, ?)
        ON CONFLICT(user_id) DO UPDATE SET payload = excluded.payload, updated_at = excluded.updated_at`
     ).bind(session.user.id, serialized, now).run();
+    await logAuditEvent(env.DB, request, 'progress.sync', 'success', session.user.id, { bytes: serialized.length });
 
     return jsonResponse(request, { success: true, syncedAt: now });
   } catch (error) {
+    try {
+      const session = await getSessionContext(env, request);
+      await logAuditEvent(env.DB, request, 'progress.sync', 'failed', session?.user?.id || null, { reason: error.message });
+    } catch {}
     const status = getErrorStatus(error);
     return jsonResponse(request, { error: error.message || 'Sync failed.' }, { status });
   }
@@ -455,6 +513,11 @@ async function handleGetProgress(request, env) {
 
 async function handleAIExplain(request, env) {
   try {
+    if (env.DB) {
+      const ip = getClientIp(request);
+      await enforceIpOnlyRateLimit(env.DB, ip, 'ai_ip', AI_RATE_LIMIT_IP_MAX, AI_RATE_LIMIT_WINDOW_MINUTES, false);
+      await recordAuthAttempt(env.DB, 'ai_ip', ip, true);
+    }
     const {
       question,
       correctAnswer,
@@ -626,7 +689,197 @@ No markdown. No extra keys. No text before/after JSON.`;
 
     return jsonResponse(request, result);
   } catch (error) {
+    if (env.DB) {
+      await recordAuthAttempt(env.DB, 'ai_ip', getClientIp(request), false);
+      await logAuditEvent(env.DB, request, 'ai.explain', 'failed', null, { reason: error.message });
+    }
     return jsonResponse(request, { success: false, error: error.message }, { status: 500 });
+  }
+}
+
+async function handlePasswordResetRequest(request, env) {
+  const body = await request.json();
+  const email = normalizeEmail(body.email);
+  const turnstileToken = String(body.turnstileToken || '');
+  const ip = getClientIp(request);
+
+  if (!env.DB) {
+    return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  if (!validateEmail(email) || !turnstileToken) {
+    return jsonResponse(request, { error: 'Email and security check are required.' }, { status: 400 });
+  }
+
+  try {
+    await enforceRateLimit(env.DB, email, ip, {
+      ipScope: 'password_reset_ip',
+      emailScope: 'password_reset_email',
+      ipMax: RESET_RATE_LIMIT_EMAIL_MAX,
+      emailMax: RESET_RATE_LIMIT_EMAIL_MAX,
+      windowMinutes: RESET_RATE_LIMIT_WINDOW_MINUTES,
+      failedOnly: false
+    });
+
+    const turnstileOk = await validateTurnstile(env, request, turnstileToken);
+    if (!turnstileOk) {
+      await recordAuthAttempt(env.DB, 'password_reset_ip', ip, false);
+      await recordAuthAttempt(env.DB, 'password_reset_email', email, false);
+      await logAuditEvent(env.DB, request, 'auth.password_reset_request', 'failed', null, { reason: 'turnstile', email });
+      return jsonResponse(request, { error: 'Security check failed. Please try again.' }, { status: 400 });
+    }
+
+    const user = await env.DB.prepare(
+      'SELECT id, email, status FROM users WHERE email = ? LIMIT 1'
+    ).bind(email).first();
+
+    if (user?.id && user.status === 'active') {
+      await recordAuthAttempt(env.DB, 'password_reset_ip', ip, true);
+      await recordAuthAttempt(env.DB, 'password_reset_email', email, true);
+      const rawToken = base64url(crypto.getRandomValues(new Uint8Array(24)));
+      const tokenHash = await sha256(rawToken);
+      const now = new Date().toISOString();
+      const expiresAt = new Date(Date.now() + PASSWORD_RESET_TTL_MS).toISOString();
+
+      await env.DB.prepare(
+        `INSERT INTO password_reset_tokens (id, user_id, token_hash, created_at, expires_at, used_at, ip_address, user_agent)
+         VALUES (?, ?, ?, ?, ?, NULL, ?, ?)`
+      ).bind(
+        crypto.randomUUID(),
+        user.id,
+        tokenHash,
+        now,
+        expiresAt,
+        ip,
+        request.headers.get('User-Agent') || ''
+      ).run();
+
+      await logAuditEvent(env.DB, request, 'auth.password_reset_request', 'success', user.id, {
+        email,
+        expiresAt,
+        delivery: env.RESET_EMAIL_ENABLED ? 'email' : 'not_configured'
+      });
+    } else {
+      await recordAuthAttempt(env.DB, 'password_reset_ip', ip, true);
+      await recordAuthAttempt(env.DB, 'password_reset_email', email, true);
+      await logAuditEvent(env.DB, request, 'auth.password_reset_request', 'ignored', null, { email });
+    }
+
+    return jsonResponse(request, {
+      success: true,
+      message: env.RESET_EMAIL_ENABLED
+        ? 'If the account exists, reset instructions will be sent.'
+        : 'If the account exists, a reset request has been recorded. Email delivery is not configured yet.'
+    });
+  } catch (error) {
+    await logAuditEvent(env.DB, request, 'auth.password_reset_request', 'failed', null, { reason: error.message, email });
+    return jsonResponse(request, { error: error.message || 'Reset request failed.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handlePasswordResetConfirm(request, env) {
+  const body = await request.json();
+  const token = String(body.token || '');
+  const newPassword = String(body.newPassword || '');
+  const turnstileToken = String(body.turnstileToken || '');
+  const ip = getClientIp(request);
+
+  if (!env.DB) {
+    return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  if (!token || newPassword.length < 8 || !turnstileToken) {
+    return jsonResponse(request, { error: 'Reset token, new password, and security check are required.' }, { status: 400 });
+  }
+
+  try {
+    await enforceIpOnlyRateLimit(env.DB, ip, 'password_reset_confirm_ip', RESET_RATE_LIMIT_EMAIL_MAX, RESET_RATE_LIMIT_WINDOW_MINUTES, false);
+    await recordAuthAttempt(env.DB, 'password_reset_confirm_ip', ip, true);
+    const turnstileOk = await validateTurnstile(env, request, turnstileToken);
+    if (!turnstileOk) {
+      await recordAuthAttempt(env.DB, 'password_reset_confirm_ip', ip, false);
+      return jsonResponse(request, { error: 'Security check failed. Please try again.' }, { status: 400 });
+    }
+
+    const tokenHash = await sha256(token);
+    const row = await env.DB.prepare(
+      `SELECT id, user_id, expires_at, used_at
+       FROM password_reset_tokens
+       WHERE token_hash = ?
+       LIMIT 1`
+    ).bind(tokenHash).first();
+
+    if (!row || row.used_at || Date.parse(row.expires_at) <= Date.now()) {
+      await recordAuthAttempt(env.DB, 'password_reset_confirm_ip', ip, false);
+      await logAuditEvent(env.DB, request, 'auth.password_reset_confirm', 'failed', row?.user_id || null, { reason: 'invalid_or_expired' });
+      return jsonResponse(request, { error: 'Reset token is invalid or expired.' }, { status: 400 });
+    }
+
+    const passwordHash = await hashPassword(newPassword);
+    const now = new Date().toISOString();
+    await env.DB.prepare('UPDATE users SET password_hash = ?, updated_at = ? WHERE id = ?')
+      .bind(passwordHash, now, row.user_id)
+      .run();
+    await env.DB.prepare('UPDATE password_reset_tokens SET used_at = ? WHERE id = ?')
+      .bind(now, row.id)
+      .run();
+    await env.DB.prepare('UPDATE sessions SET revoked_at = ? WHERE user_id = ? AND revoked_at IS NULL')
+      .bind(now, row.user_id)
+      .run();
+    await logAuditEvent(env.DB, request, 'auth.password_reset_confirm', 'success', row.user_id, null);
+
+    return jsonResponse(request, { success: true, message: 'Password reset successfully.' });
+  } catch (error) {
+    await logAuditEvent(env.DB, request, 'auth.password_reset_confirm', 'failed', null, { reason: error.message });
+    return jsonResponse(request, { error: error.message || 'Password reset failed.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handlePasswordChange(request, env) {
+  if (!env.DB) {
+    return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  try {
+    const session = await requireSession(env, request);
+    const body = await request.json();
+    const currentPassword = String(body.currentPassword || '');
+    const newPassword = String(body.newPassword || '');
+    const turnstileToken = String(body.turnstileToken || '');
+
+    if (!currentPassword || newPassword.length < 8 || !turnstileToken) {
+      return jsonResponse(request, { error: 'Current password, new password, and security check are required.' }, { status: 400 });
+    }
+
+    const turnstileOk = await validateTurnstile(env, request, turnstileToken);
+    if (!turnstileOk) {
+      await logAuditEvent(env.DB, request, 'auth.password_change', 'failed', session.user.id, { reason: 'turnstile' });
+      return jsonResponse(request, { error: 'Security check failed. Please try again.' }, { status: 400 });
+    }
+
+    const user = await env.DB.prepare(
+      'SELECT id, password_hash, status FROM users WHERE id = ? LIMIT 1'
+    ).bind(session.user.id).first();
+    if (!user || user.status !== 'active' || !(await verifyPassword(currentPassword, user.password_hash))) {
+      await logAuditEvent(env.DB, request, 'auth.password_change', 'failed', session.user.id, { reason: 'invalid_current_password' });
+      return jsonResponse(request, { error: 'Current password is incorrect.' }, { status: 401 });
+    }
+
+    const passwordHash = await hashPassword(newPassword);
+    const now = new Date().toISOString();
+    await env.DB.prepare('UPDATE users SET password_hash = ?, updated_at = ? WHERE id = ?')
+      .bind(passwordHash, now, user.id)
+      .run();
+    await env.DB.prepare('UPDATE sessions SET revoked_at = ? WHERE user_id = ? AND id != ? AND revoked_at IS NULL')
+      .bind(now, user.id, session.sessionId)
+      .run();
+    await logAuditEvent(env.DB, request, 'auth.password_change', 'success', user.id, null);
+
+    return jsonResponse(request, { success: true, message: 'Password updated successfully.' });
+  } catch (error) {
+    const session = await getSessionContext(env, request).catch(() => null);
+    await logAuditEvent(env.DB, request, 'auth.password_change', 'failed', session?.user?.id || null, { reason: error.message });
+    return jsonResponse(request, { error: error.message || 'Password change failed.' }, { status: getErrorStatus(error) });
   }
 }
 
@@ -676,6 +929,18 @@ export default {
 
     if (path === '/api/auth/progress' && request.method === 'GET') {
       return handleGetProgress(request, env);
+    }
+
+    if (path === '/api/auth/password-reset/request' && request.method === 'POST') {
+      return handlePasswordResetRequest(request, env);
+    }
+
+    if (path === '/api/auth/password-reset/confirm' && request.method === 'POST') {
+      return handlePasswordResetConfirm(request, env);
+    }
+
+    if (path === '/api/auth/password-change' && request.method === 'POST') {
+      return handlePasswordChange(request, env);
     }
 
     if (path === '/api/explain' && request.method === 'POST') {

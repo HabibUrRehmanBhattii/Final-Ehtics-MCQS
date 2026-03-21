@@ -193,6 +193,7 @@ Object.assign(MCQApp, {
           </div>
           <div class="auth-panel-actions">
             <button class="btn-outline" type="button" data-auth-action="sync">Sync</button>
+            <button class="btn-outline" type="button" data-auth-action="password">Password</button>
             <button class="btn-outline" type="button" data-auth-action="signout">Sign out</button>
           </div>
         </div>
@@ -224,6 +225,11 @@ Object.assign(MCQApp, {
         return;
       }
 
+      if (action === 'password') {
+        this.openAuthModal('change-password');
+        return;
+      }
+
       if (action === 'signout') {
         this.signOut();
         return;
@@ -242,8 +248,12 @@ Object.assign(MCQApp, {
     });
 
     document.getElementById('auth-switch-btn')?.addEventListener('click', () => {
-      const nextMode = this.state.auth.authMode === 'signin' ? 'signup' : 'signin';
+      const nextMode = this.state.auth.authMode === 'signup' ? 'signin' : 'signup';
       this.openAuthModal(nextMode);
+    });
+
+    document.getElementById('auth-forgot-btn')?.addEventListener('click', () => {
+      this.openAuthModal('reset-request');
     });
 
     document.getElementById('auth-form')?.addEventListener('submit', (event) => {
@@ -277,19 +287,60 @@ Object.assign(MCQApp, {
     const switchCopy = document.getElementById('auth-switch-copy');
     const switchBtn = document.getElementById('auth-switch-btn');
     const passwordInput = document.getElementById('auth-password');
+    const currentPasswordField = document.getElementById('auth-current-password-field');
+    const newPasswordField = document.getElementById('auth-new-password-field');
+    const confirmPasswordField = document.getElementById('auth-confirm-password-field');
+    const resetTokenField = document.getElementById('auth-reset-token-field');
+    const emailField = document.getElementById('auth-email')?.closest('.auth-field');
+    const forgotBtn = document.getElementById('auth-forgot-btn');
+    const secondaryActions = document.getElementById('auth-secondary-actions');
     const form = document.getElementById('auth-form');
 
-    if (title) title.textContent = mode === 'signup' ? 'Create account' : 'Sign in';
-    if (subtitle) {
-      subtitle.textContent = mode === 'signup'
-        ? 'Save your study progress and wrong-answer review to the cloud.'
-        : 'Continue your study progress from any device.';
+    const isSignup = mode === 'signup';
+    const isSignin = mode === 'signin';
+    const isResetRequest = mode === 'reset-request';
+    const isChangePassword = mode === 'change-password';
+
+    if (title) {
+      title.textContent = isSignup
+        ? 'Create account'
+        : isResetRequest
+          ? 'Reset password'
+          : isChangePassword
+            ? 'Change password'
+            : 'Sign in';
     }
-    if (submitBtn) submitBtn.textContent = mode === 'signup' ? 'Create Account' : 'Sign In';
-    if (switchCopy) switchCopy.textContent = mode === 'signup' ? 'Already have an account?' : 'Need an account?';
-    if (switchBtn) switchBtn.textContent = mode === 'signup' ? 'Sign in' : 'Sign up';
+    if (subtitle) {
+      subtitle.textContent = isSignup
+        ? 'Save your study progress and wrong-answer review to the cloud.'
+        : isResetRequest
+          ? 'Request a password reset token. Email delivery can be added later without changing accounts.'
+          : isChangePassword
+            ? 'Update your password for this account.'
+            : 'Continue your study progress from any device.';
+    }
+    if (submitBtn) {
+      submitBtn.textContent = isSignup
+        ? 'Create Account'
+        : isResetRequest
+          ? 'Request Reset'
+          : isChangePassword
+            ? 'Update Password'
+            : 'Sign In';
+    }
+    if (switchCopy) switchCopy.textContent = isSignup ? 'Already have an account?' : 'Need an account?';
+    if (switchBtn) switchBtn.textContent = isSignup ? 'Sign in' : 'Sign up';
+    if (secondaryActions) secondaryActions.classList.toggle('hidden', !isSignin);
+    if (forgotBtn) forgotBtn.classList.toggle('hidden', !isSignin);
+    if (emailField) emailField.classList.toggle('hidden', isChangePassword);
+    if (currentPasswordField) currentPasswordField.classList.toggle('hidden', !isChangePassword);
+    if (newPasswordField) newPasswordField.classList.toggle('hidden', !(isChangePassword));
+    if (confirmPasswordField) confirmPasswordField.classList.toggle('hidden', !(isChangePassword));
+    if (resetTokenField) resetTokenField.classList.add('hidden');
+    if (switchCopy) switchCopy.parentElement?.classList.toggle('hidden', isResetRequest || isChangePassword);
     if (passwordInput) {
-      passwordInput.setAttribute('autocomplete', mode === 'signup' ? 'new-password' : 'current-password');
+      passwordInput.closest('.auth-field')?.classList.toggle('hidden', isResetRequest || isChangePassword);
+      passwordInput.setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
     }
     if (form) form.reset();
 
@@ -357,16 +408,39 @@ Object.assign(MCQApp, {
   async handleAuthSubmit() {
     const email = String(document.getElementById('auth-email')?.value || '').trim();
     const password = String(document.getElementById('auth-password')?.value || '');
+    const currentPassword = String(document.getElementById('auth-current-password')?.value || '');
+    const newPassword = String(document.getElementById('auth-new-password')?.value || '');
+    const confirmPassword = String(document.getElementById('auth-confirm-password')?.value || '');
     const submitBtn = document.getElementById('auth-submit-btn');
+    const mode = this.state.auth.authMode;
 
-    if (!email || !password) {
-      this.setAuthError('Please enter both email and password.');
-      return;
-    }
-
-    if (password.length < 8) {
-      this.setAuthError('Password must be at least 8 characters.');
-      return;
+    if (mode === 'change-password') {
+      if (!currentPassword || !newPassword || !confirmPassword) {
+        this.setAuthError('Please complete all password fields.');
+        return;
+      }
+      if (newPassword.length < 8) {
+        this.setAuthError('New password must be at least 8 characters.');
+        return;
+      }
+      if (newPassword !== confirmPassword) {
+        this.setAuthError('New passwords do not match.');
+        return;
+      }
+    } else if (mode === 'reset-request') {
+      if (!email) {
+        this.setAuthError('Please enter your email address.');
+        return;
+      }
+    } else {
+      if (!email || !password) {
+        this.setAuthError('Please enter both email and password.');
+        return;
+      }
+      if (password.length < 8) {
+        this.setAuthError('Password must be at least 8 characters.');
+        return;
+      }
     }
 
     if (!window.turnstile || this.state.auth.widgetId === null) {
@@ -380,13 +454,34 @@ Object.assign(MCQApp, {
       return;
     }
 
-    const mode = this.state.auth.authMode === 'signup' ? 'signup' : 'signin';
     this.state.auth.loading = true;
     if (submitBtn) submitBtn.disabled = true;
     this.setAuthError('');
 
     try {
-      const data = await this.fetchAuthJson(`/api/auth/${mode}`, {
+      let data;
+      if (mode === 'reset-request') {
+        data = await this.fetchAuthJson('/api/auth/password-reset/request', {
+          method: 'POST',
+          body: JSON.stringify({ email, turnstileToken })
+        });
+        this.closeAuthModal();
+        this.showToast(data.message || 'If the account exists, reset instructions will be issued.', 'success');
+        return;
+      }
+
+      if (mode === 'change-password') {
+        data = await this.fetchAuthJson('/api/auth/password-change', {
+          method: 'POST',
+          body: JSON.stringify({ currentPassword, newPassword, turnstileToken })
+        });
+        this.closeAuthModal();
+        this.showToast(data.message || 'Password updated successfully.', 'success');
+        return;
+      }
+
+      const endpoint = mode === 'signup' ? 'signup' : 'signin';
+      data = await this.fetchAuthJson(`/api/auth/${endpoint}`, {
         method: 'POST',
         body: JSON.stringify({ email, password, turnstileToken })
       });

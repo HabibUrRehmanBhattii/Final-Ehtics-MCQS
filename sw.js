@@ -1,5 +1,5 @@
 /* PWA Service Worker for LLQP & WFG Exam Prep */
-const CACHE_VERSION = 'v1.6.4';
+const CACHE_VERSION = 'v1.6.5';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const DATA_CACHE = `data-${CACHE_VERSION}`;
 

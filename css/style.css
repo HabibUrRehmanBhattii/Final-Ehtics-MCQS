@@ -1992,6 +1992,12 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   width: 100%;
 }
 
+.auth-secondary-actions {
+  margin-top: .75rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .auth-switcher {
   display: flex;
   align-items: center;
