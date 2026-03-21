@@ -3,7 +3,7 @@
 // ===================================
 
 const MCQApp = {
-  shuffleSchemaVersion: '20260321-option-cleanup-v2',
+  shuffleSchemaVersion: '20260321-option-cleanup-v3',
   // State Management
   state: {
     topics: [],
@@ -71,11 +71,35 @@ const MCQApp = {
     return this.stripOptionPrefix(optionText);
   },
 
+  getNormalizedOptionFeedback(question, optionOrder = null) {
+    if (!question || !Array.isArray(question.options)) return [];
+
+    const rawFeedback = Array.isArray(question.optionFeedback) ? question.optionFeedback : [];
+    const orderedFeedback = Array.isArray(optionOrder)
+      ? optionOrder.map((sourceIndex) => rawFeedback[sourceIndex])
+      : rawFeedback.slice();
+
+    const normalizedFeedback = question.options.map((_, index) => {
+      const value = orderedFeedback[index];
+      if (typeof value === 'string') return value.trim();
+      if (typeof value === 'undefined' || value === null) return '';
+      return String(value).trim();
+    });
+
+    const correctIndex = Number.isInteger(question.correctAnswer) ? question.correctAnswer : -1;
+    if (correctIndex >= 0 && correctIndex < normalizedFeedback.length && !normalizedFeedback[correctIndex]) {
+      normalizedFeedback[correctIndex] = String(question.explanation || '').trim();
+    }
+
+    return normalizedFeedback;
+  },
+
   normalizeQuestionOptionLabels(question) {
     if (!question || !Array.isArray(question.options)) return question;
     return {
       ...question,
-      options: question.options.map((option) => this.getOptionDisplayText(option))
+      options: question.options.map((option) => this.getOptionDisplayText(option)),
+      optionFeedback: this.getNormalizedOptionFeedback(question)
     };
   },
 
@@ -1518,6 +1542,7 @@ const MCQApp = {
           const shuffledOptions = shuffledIndices.map((originalIndex, newIndex) => {
             return optionsWithoutPrefix[originalIndex];
           });
+          const shuffledFeedback = this.getNormalizedOptionFeedback(question, shuffledIndices);
           
           // Find new position of correct answer
           const newCorrectAnswer = shuffledIndices.indexOf(originalCorrectAnswer);
@@ -1525,7 +1550,8 @@ const MCQApp = {
           return this.normalizeQuestionOptionLabels({
             ...question,
             options: shuffledOptions,
-            correctAnswer: newCorrectAnswer
+            correctAnswer: newCorrectAnswer,
+            optionFeedback: shuffledFeedback
           });
         });
         
@@ -1601,6 +1627,7 @@ const MCQApp = {
     document.getElementById('q-num').textContent = questionIndex + 1;
     // Convert markdown tables to HTML and render question
     document.getElementById('question-text').innerHTML = this.renderSafeTextWithTables(question.question);
+    this.resetAIExplanationUi(false);
 
     // Render options
     const optionsContainer = document.getElementById('options-container');
@@ -1651,6 +1678,7 @@ const MCQApp = {
       document.getElementById('correct-answer-text').textContent = this.getOptionDisplayText(question.options[question.correctAnswer]);
       const explanationText = this.buildStepByStepExplanation(question);
       document.getElementById('explanation-text').innerHTML = this.formatExplanation(explanationText);
+      this.resetAIExplanationUi(true);
       answerSection.classList.remove('hidden');
       optionsContainer.querySelectorAll('.option').forEach(opt => {
         opt.style.pointerEvents = 'none';
@@ -1902,6 +1930,21 @@ const MCQApp = {
       signature,
       questions
     }));
+  },
+
+  resetAIExplanationUi(showButton = false) {
+    const aiExplanationEl = document.getElementById('ai-explanation-text');
+    const aiButton = document.getElementById('get-ai-explanation-btn');
+
+    if (aiExplanationEl) {
+      aiExplanationEl.innerHTML = '';
+      aiExplanationEl.style.display = 'none';
+    }
+
+    if (aiButton) {
+      aiButton.style.display = showButton && this.state.aiAvailable ? 'inline-flex' : 'none';
+      aiButton.disabled = false;
+    }
   },
 
   clearAutoAdvanceTimer() {
@@ -2602,16 +2645,7 @@ const MCQApp = {
       document.getElementById('explanation-text').innerHTML = this.formatExplanation(explanationText);
       
       // Show AI button and ensure AI container is hidden until used
-      const aiExplanationEl = document.getElementById('ai-explanation-text');
-      const aiButton = document.getElementById('get-ai-explanation-btn');
-      if (aiExplanationEl) {
-        aiExplanationEl.innerHTML = '';
-        aiExplanationEl.style.display = 'none';
-      }
-      if (aiButton) {
-        aiButton.style.display = this.state.aiAvailable ? 'inline-flex' : 'none';
-        aiButton.disabled = false;
-      }
+      this.resetAIExplanationUi(true);
       
       answerSection.classList.remove('hidden');
 
@@ -3148,7 +3182,7 @@ const MCQApp = {
         const key = `progress_${topicId}_${test.id}`;
         const saved = this.readJSONFromStorage(key, null);
         if (saved) {
-          totalAnswered += (saved.revealed || []).length;
+          totalAnswered += Math.min((saved.revealed || []).length, test.questionCount);
         }
         totalQuestions += test.questionCount;
       }
@@ -3170,7 +3204,8 @@ const MCQApp = {
     const test = this.findPracticeTestById(topic, testId);
     if (!test || test.questionCount === 0) return 0;
 
-    return Math.round(((saved.revealed || []).length / test.questionCount) * 100);
+    const answered = Math.min((saved.revealed || []).length, test.questionCount);
+    return Math.round((answered / test.questionCount) * 100);
   },
 
   // Save Progress
@@ -3221,7 +3256,7 @@ const MCQApp = {
     }
   },
 
-  resetProgress() {
+  async resetProgress() {
     if (!this.state.currentTopic || !this.state.currentPracticeTest) return;
 
     if (this.state.isReviewMode) {
@@ -3271,6 +3306,19 @@ const MCQApp = {
     if (banner) banner.classList.add('hidden');
 
     this.state.currentQuestionIndex = 0;
+    const previousQuestions = this.state.questions.slice();
+
+    this.beginLoading('Resetting progress...');
+    try {
+      await this.loadQuestions(this.state.currentPracticeTest.dataFile, this.state.currentPracticeTest.id);
+      if (this.state.questions.length === 0 && previousQuestions.length > 0) {
+        this.state.questions = previousQuestions;
+        this.showToast('Progress was reset, but a fresh question order could not be loaded right now.', 'warning');
+      }
+    } finally {
+      this.endLoading();
+    }
+
     this.renderQuestion();
     this.showToast('Progress reset successfully.', 'success');
   }
