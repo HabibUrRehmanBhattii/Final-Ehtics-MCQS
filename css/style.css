@@ -1124,6 +1124,11 @@ button { font-family: inherit; }
   background: linear-gradient(180deg, var(--c-primary-a), var(--c-surface));
 }
 
+.exp-panel.is-lesson {
+  border-color: rgba(56, 189, 248, .26);
+  background: linear-gradient(180deg, rgba(56, 189, 248, .08), var(--c-surface));
+}
+
 .exp-panel.is-rule {
   border-style: dashed;
 }

@@ -2941,6 +2941,49 @@ const MCQApp = {
     return ruleText;
   },
 
+  buildTopicLesson(question) {
+    const sourceText = [
+      this.getQuestionPlainText(question),
+      Array.isArray(question?.options) ? question.options.map((option) => this.getOptionDisplayText(option)).join(' ') : '',
+      String(question?.explanation || '')
+    ].join(' ').toLowerCase();
+
+    if (/mortality|probability of death|life expectancy|life table/.test(sourceText)) {
+      return 'Separate annual mortality from life expectancy: males usually have higher yearly mortality, while females usually have longer life expectancy.';
+    }
+
+    if (/beneficiar|contingent|estate|life insured|policyholder/.test(sourceText)) {
+      return 'Read beneficiary questions in order: pay the primary beneficiary first, and use the contingent beneficiary only if the primary cannot receive the proceeds.';
+    }
+
+    if (/capital gain|acb|gift|deemed disposition|non-registered/.test(sourceText)) {
+      return 'Tax questions usually turn on ownership, adjusted cost base, and whether the transfer creates an immediate taxable disposition.';
+    }
+
+    if (/rrsp|rrif|lira|spousal rrsp|pension adjustment/.test(sourceText)) {
+      return 'Registered-plan questions usually hinge on when deductions apply, who reports the income, and when withdrawals become taxable.';
+    }
+
+    if (/annuit|annuity|term certain|life annuity/.test(sourceText)) {
+      return 'For annuities, separate who receives payments, how long payments last, and what happens to any guarantee period on death.';
+    }
+
+    if (/segregated fund|guarantee|reset|maturity|death benefit/.test(sourceText)) {
+      return 'Segregated-fund questions usually turn on which guarantee applies now: maturity, death benefit, or a reset-adjusted value.';
+    }
+
+    if (/disabil|critical illness|long-term care|accident|sickness|elimination period|benefit period|offset/.test(sourceText)) {
+      return 'Coverage questions usually come down to the trigger, the waiting period, and whether the policy conditions for payment are actually met.';
+    }
+
+    const ruleReminder = this.getRuleReminder(question);
+    if (ruleReminder) {
+      return ruleReminder;
+    }
+
+    return 'Focus on the exact fact the rule turns on, then eliminate choices that change that fact.';
+  },
+
   buildWrongAnswerHint(question, optionIndex) {
     const optionText = this.getOptionDisplayText(question?.options?.[optionIndex] || '');
     const correctText = this.getOptionDisplayText(question?.options?.[question?.correctAnswer] || '');
@@ -3037,8 +3080,12 @@ const MCQApp = {
     const options = Array.isArray(question.options) ? question.options : [];
     const correctIndex = Number.isInteger(question.correctAnswer) ? question.correctAnswer : -1;
     const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
-    const correctText = correctIndex >= 0 ? this.getOptionDisplayText(options[correctIndex] || '') : '';
-    const ruleReminder = this.getRuleReminder(question);
+    const correctReason = this.buildCorrectAnswerReason(question);
+    const topicLesson = this.buildTopicLesson(question);
+    const includeLesson = Boolean(
+      topicLesson &&
+      this.normalizeStudyText(topicLesson) !== this.normalizeStudyText(correctReason)
+    );
     const wrongChoices = options
       .map((option, index) => {
         if (index === correctIndex) return null;
@@ -3056,10 +3103,13 @@ const MCQApp = {
           title: 'Why this answer is correct',
           badge: correctIndex >= 0 ? (letters[correctIndex] || String(correctIndex + 1)) : '',
           badgeTone: 'correct',
-          choice: correctText,
-          body: this.buildCorrectAnswerReason(question),
-          note: ruleReminder
+          body: correctReason
         },
+        ...(includeLesson ? [{
+          variant: 'lesson',
+          title: 'What to learn from this',
+          body: topicLesson
+        }] : []),
         {
           variant: 'review',
           title: 'Why the other choices miss',
@@ -3121,9 +3171,6 @@ const MCQApp = {
         const badgeHtml = section.badge
           ? `<span class="exp-badge is-${this.escapeHtml(section.badgeTone || 'default')}">${this.escapeHtml(section.badge)}</span>`
           : '';
-        const choiceHtml = section.choice
-          ? `<div class="exp-choice-highlight">${this.escapeHtml(section.choice)}</div>`
-          : '';
         const noteHtml = section.note
           ? `<p class="exp-panel-note"><strong>Remember:</strong> ${this.escapeHtml(section.note)}</p>`
           : '';
@@ -3134,7 +3181,6 @@ const MCQApp = {
               <h4 class="exp-panel-title">${this.escapeHtml(section.title || '')}</h4>
               ${badgeHtml}
             </div>
-            ${choiceHtml}
             <p class="exp-panel-text">${this.escapeHtml(section.body || '')}</p>
             ${noteHtml}
           </section>
@@ -3998,12 +4044,37 @@ const MCQApp = {
     }
   },
 
+  getResumeQuestionIndex(questions = this.state.questions) {
+    if (!Array.isArray(questions) || questions.length === 0) {
+      return 0;
+    }
+
+    const firstUntouchedIndex = questions.findIndex((question) => {
+      const questionKey = this.getQuestionStateKey(question);
+      return !this.state.viewedQuestions.has(questionKey) && !this.state.answersRevealed.has(questionKey);
+    });
+    if (firstUntouchedIndex >= 0) {
+      return firstUntouchedIndex;
+    }
+
+    const firstUnansweredIndex = questions.findIndex((question) => {
+      const questionKey = this.getQuestionStateKey(question);
+      return !this.state.answersRevealed.has(questionKey);
+    });
+    if (firstUnansweredIndex >= 0) {
+      return firstUnansweredIndex;
+    }
+
+    return 0;
+  },
+
   // Load Progress
   loadProgress() {
     if (!this.state.currentTopic || !this.state.currentPracticeTest) {
       this.state.viewedQuestions = new Set();
       this.state.bookmarkedQuestions = new Set();
       this.state.answersRevealed = new Set();
+      this.state.currentQuestionIndex = 0;
       return;
     }
 
@@ -4011,6 +4082,7 @@ const MCQApp = {
       this.state.viewedQuestions = new Set();
       this.state.bookmarkedQuestions = new Set();
       this.state.answersRevealed = new Set();
+      this.state.currentQuestionIndex = 0;
       return;
     }
 
@@ -4025,6 +4097,8 @@ const MCQApp = {
       this.state.bookmarkedQuestions = new Set();
       this.state.answersRevealed = new Set();
     }
+
+    this.state.currentQuestionIndex = this.getResumeQuestionIndex();
   },
 
   async resetProgress() {
