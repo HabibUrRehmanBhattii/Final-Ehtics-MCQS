@@ -2207,10 +2207,47 @@ const MCQApp = {
 
   // Build speech text for current question
   buildSpeechText(question) {
-    const optionsText = question.options
-      .map((opt, idx) => `Option ${idx + 1}: ${this.getOptionDisplayText(opt)}`)
-      .join('. ');
-    return `Question. ${question.question}. ${optionsText}`;
+    const questionText = this.getVisibleSpeechText(
+      document.getElementById('question-text'),
+      this.getQuestionPlainText(question)
+    );
+    const optionNodes = Array.from(document.querySelectorAll('#options-container .option-text'));
+    const optionsText = optionNodes.length > 0
+      ? optionNodes
+        .map((node, idx) => `Option ${idx + 1}: ${this.getVisibleSpeechText(node)}`)
+        .filter((text) => !/^Option \d+:\s*$/.test(text))
+        .join('. ')
+      : (Array.isArray(question?.options) ? question.options : [])
+        .map((opt, idx) => `Option ${idx + 1}: ${this.getOptionDisplayText(opt)}`)
+        .join('. ');
+
+    return [
+      questionText ? `Question. ${questionText}` : '',
+      optionsText
+    ].filter(Boolean).join('. ');
+  },
+
+  getVisibleSpeechText(element, fallback = '') {
+    const fallbackText = String(fallback || '').replace(/\s+/g, ' ').trim();
+    if (!element) {
+      return fallbackText;
+    }
+
+    if (typeof element.innerText === 'string') {
+      const innerText = element.innerText.replace(/\s+/g, ' ').trim();
+      if (innerText) {
+        return innerText;
+      }
+    }
+
+    if (typeof element.textContent === 'string') {
+      const textContent = element.textContent.replace(/\s+/g, ' ').trim();
+      if (textContent) {
+        return textContent;
+      }
+    }
+
+    return fallbackText;
   },
 
   // Speak current question and options
