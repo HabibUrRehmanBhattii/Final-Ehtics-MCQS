@@ -120,10 +120,12 @@ Object.assign(MCQApp, {
       const data = await this.fetchAuthJson('/api/auth/config', { method: 'GET' });
       this.state.auth.available = Boolean(data.enabled);
       this.state.auth.turnstileSiteKey = String(data.turnstileSiteKey || '');
+      this.state.auth.passwordResetEmailEnabled = Boolean(data.passwordResetEmailEnabled);
       return data;
     } catch (error) {
       this.state.auth.available = false;
       this.state.auth.turnstileSiteKey = '';
+      this.state.auth.passwordResetEmailEnabled = false;
       return null;
     }
   },
@@ -270,6 +272,27 @@ Object.assign(MCQApp, {
     errorEl.classList.toggle('hidden', !message);
   },
 
+  clearPendingPasswordResetLink() {
+    this.state.auth.pendingResetToken = '';
+    const url = new URL(window.location.href);
+    if (!url.searchParams.has('reset')) return;
+    url.searchParams.delete('reset');
+    const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+    window.history.replaceState({}, '', nextUrl);
+  },
+
+  consumePendingPasswordResetLink() {
+    const url = new URL(window.location.href);
+    const token = String(url.searchParams.get('reset') || '').trim();
+    if (!token || !this.state.auth.available) {
+      return;
+    }
+
+    this.state.auth.pendingResetToken = token;
+    this.openAuthModal('reset-confirm');
+    this.showToast('Choose a new password to finish resetting your account.', 'info');
+  },
+
   openAuthModal(mode = 'signin') {
     if (!this.state.auth.available) {
       this.showToast('Account sign-in is not configured in this environment yet.', 'info');
@@ -299,13 +322,17 @@ Object.assign(MCQApp, {
     const isSignup = mode === 'signup';
     const isSignin = mode === 'signin';
     const isResetRequest = mode === 'reset-request';
+    const isResetConfirm = mode === 'reset-confirm';
     const isChangePassword = mode === 'change-password';
+    const hasPrefilledResetToken = Boolean(this.state.auth.pendingResetToken);
 
     if (title) {
       title.textContent = isSignup
         ? 'Create account'
         : isResetRequest
           ? 'Reset password'
+          : isResetConfirm
+            ? 'Set new password'
           : isChangePassword
             ? 'Change password'
             : 'Sign in';
@@ -314,7 +341,11 @@ Object.assign(MCQApp, {
       subtitle.textContent = isSignup
         ? 'Save your study progress and wrong-answer review to the cloud.'
         : isResetRequest
-          ? 'Request a password reset token. Email delivery can be added later without changing accounts.'
+          ? this.state.auth.passwordResetEmailEnabled
+            ? 'Enter your email and we will send you a secure reset link.'
+            : 'Request a password reset token. Email delivery is not configured yet.'
+          : isResetConfirm
+            ? 'Create a new password for your account.'
           : isChangePassword
             ? 'Update your password for this account.'
             : 'Continue your study progress from any device.';
@@ -324,6 +355,8 @@ Object.assign(MCQApp, {
         ? 'Create Account'
         : isResetRequest
           ? 'Request Reset'
+          : isResetConfirm
+            ? 'Set New Password'
           : isChangePassword
             ? 'Update Password'
             : 'Sign In';
@@ -332,23 +365,33 @@ Object.assign(MCQApp, {
     if (switchBtn) switchBtn.textContent = isSignup ? 'Sign in' : 'Sign up';
     if (secondaryActions) secondaryActions.classList.toggle('hidden', !isSignin);
     if (forgotBtn) forgotBtn.classList.toggle('hidden', !isSignin);
-    if (emailField) emailField.classList.toggle('hidden', isChangePassword);
+    if (emailField) emailField.classList.toggle('hidden', isChangePassword || isResetConfirm);
     if (currentPasswordField) currentPasswordField.classList.toggle('hidden', !isChangePassword);
-    if (newPasswordField) newPasswordField.classList.toggle('hidden', !(isChangePassword));
-    if (confirmPasswordField) confirmPasswordField.classList.toggle('hidden', !(isChangePassword));
-    if (resetTokenField) resetTokenField.classList.add('hidden');
-    if (switchCopy) switchCopy.parentElement?.classList.toggle('hidden', isResetRequest || isChangePassword);
+    if (newPasswordField) newPasswordField.classList.toggle('hidden', !(isChangePassword || isResetConfirm));
+    if (confirmPasswordField) confirmPasswordField.classList.toggle('hidden', !(isChangePassword || isResetConfirm));
+    if (resetTokenField) resetTokenField.classList.toggle('hidden', !isResetConfirm || hasPrefilledResetToken);
+    if (switchCopy) switchCopy.parentElement?.classList.toggle('hidden', isResetRequest || isResetConfirm || isChangePassword);
     if (passwordInput) {
-      passwordInput.closest('.auth-field')?.classList.toggle('hidden', isResetRequest || isChangePassword);
+      passwordInput.closest('.auth-field')?.classList.toggle('hidden', isResetRequest || isResetConfirm || isChangePassword);
       passwordInput.setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
     }
     if (form) form.reset();
+    const resetTokenInput = document.getElementById('auth-reset-token');
+    if (resetTokenInput) {
+      resetTokenInput.value = hasPrefilledResetToken ? this.state.auth.pendingResetToken : '';
+    }
 
     modal?.classList.remove('hidden');
     modal?.setAttribute('aria-hidden', 'false');
 
     window.setTimeout(() => {
-      document.getElementById('auth-email')?.focus();
+      if (isResetConfirm) {
+        document.getElementById('auth-new-password')?.focus();
+      } else if (isChangePassword) {
+        document.getElementById('auth-current-password')?.focus();
+      } else {
+        document.getElementById('auth-email')?.focus();
+      }
       this.ensureTurnstileWidget(true);
     }, 20);
   },
@@ -359,6 +402,9 @@ Object.assign(MCQApp, {
     modal?.setAttribute('aria-hidden', 'true');
     this.setAuthError('');
     this.resetTurnstileWidget();
+    if (this.state.auth.authMode === 'reset-confirm') {
+      this.clearPendingPasswordResetLink();
+    }
   },
 
   resetTurnstileWidget() {
@@ -411,12 +457,17 @@ Object.assign(MCQApp, {
     const currentPassword = String(document.getElementById('auth-current-password')?.value || '');
     const newPassword = String(document.getElementById('auth-new-password')?.value || '');
     const confirmPassword = String(document.getElementById('auth-confirm-password')?.value || '');
+    const resetToken = String(document.getElementById('auth-reset-token')?.value || this.state.auth.pendingResetToken || '').trim();
     const submitBtn = document.getElementById('auth-submit-btn');
     const mode = this.state.auth.authMode;
 
-    if (mode === 'change-password') {
-      if (!currentPassword || !newPassword || !confirmPassword) {
+    if (mode === 'change-password' || mode === 'reset-confirm') {
+      if (mode === 'change-password' && (!currentPassword || !newPassword || !confirmPassword)) {
         this.setAuthError('Please complete all password fields.');
+        return;
+      }
+      if (mode === 'reset-confirm' && (!newPassword || !confirmPassword)) {
+        this.setAuthError('Please enter and confirm your new password.');
         return;
       }
       if (newPassword.length < 8) {
@@ -425,6 +476,10 @@ Object.assign(MCQApp, {
       }
       if (newPassword !== confirmPassword) {
         this.setAuthError('New passwords do not match.');
+        return;
+      }
+      if (mode === 'reset-confirm' && !resetToken) {
+        this.setAuthError('Reset token is missing or invalid.');
         return;
       }
     } else if (mode === 'reset-request') {
@@ -477,6 +532,18 @@ Object.assign(MCQApp, {
         });
         this.closeAuthModal();
         this.showToast(data.message || 'Password updated successfully.', 'success');
+        return;
+      }
+
+      if (mode === 'reset-confirm') {
+        data = await this.fetchAuthJson('/api/auth/password-reset/confirm', {
+          method: 'POST',
+          body: JSON.stringify({ token: resetToken, newPassword, turnstileToken })
+        });
+        this.clearPendingPasswordResetLink();
+        this.closeAuthModal();
+        this.showToast(data.message || 'Password reset successfully. You can sign in now.', 'success');
+        this.openAuthModal('signin');
         return;
       }
 

@@ -1,2 +1,11 @@
 SESSION_SECRET=replace-with-a-long-random-secret
 TURNSTILE_SECRET_KEY=replace-with-your-turnstile-secret-key
+RESEND_API_KEY=replace-with-your-resend-api-key
+POSTMARK_SERVER_TOKEN=replace-with-your-postmark-server-token
+RESET_EMAIL_PROVIDER=resend
+RESET_EMAIL_FROM=LLQP Prep <no-reply@example.com>
+RESET_EMAIL_REPLY_TO=support@example.com
+RESET_BASE_URL=http://127.0.0.1:8787
+RESET_EMAIL_SUBJECT=Reset your LLQP & WFG Exam Prep password
+POSTMARK_MESSAGE_STREAM=outbound
+APP_NAME=LLQP & WFG Exam Prep

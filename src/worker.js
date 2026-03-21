@@ -10,6 +10,8 @@ const AI_RATE_LIMIT_IP_MAX = 20;
 const RESET_RATE_LIMIT_WINDOW_MINUTES = 30;
 const RESET_RATE_LIMIT_EMAIL_MAX = 5;
 const PASSWORD_RESET_TTL_MS = 1000 * 60 * 30;
+const RESEND_API_URL = 'https://api.resend.com/emails';
+const POSTMARK_API_URL = 'https://api.postmarkapp.com/email';
 
 const jsonResponse = (request, payload, init = {}) => {
   const headers = new Headers(init.headers || {});
@@ -78,6 +80,15 @@ function validateEmail(email) {
 
 function normalizeEmail(email) {
   return String(email || '').trim().toLowerCase();
+}
+
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function getClientIp(request) {
@@ -150,6 +161,166 @@ async function validateTurnstile(env, request, token) {
   });
   const result = await response.json();
   return Boolean(result.success);
+}
+
+function getResetEmailConfig(env, request) {
+  const provider = String(
+    env.RESET_EMAIL_PROVIDER
+    || (env.RESEND_API_KEY ? 'resend' : '')
+    || (env.POSTMARK_SERVER_TOKEN ? 'postmark' : '')
+  ).trim().toLowerCase();
+  const from = String(env.RESET_EMAIL_FROM || '').trim();
+  const replyTo = String(env.RESET_EMAIL_REPLY_TO || '').trim();
+  const appName = String(env.APP_NAME || 'LLQP & WFG Exam Prep').trim();
+  const baseUrl = String(env.RESET_BASE_URL || new URL(request.url).origin).trim().replace(/\/+$/, '');
+
+  return {
+    provider,
+    from,
+    replyTo,
+    appName,
+    baseUrl,
+    subject: String(env.RESET_EMAIL_SUBJECT || `Reset your ${appName} password`).trim(),
+    postmarkMessageStream: String(env.POSTMARK_MESSAGE_STREAM || 'outbound').trim(),
+    resendApiKey: String(env.RESEND_API_KEY || '').trim(),
+    postmarkServerToken: String(env.POSTMARK_SERVER_TOKEN || '').trim()
+  };
+}
+
+function isResetEmailConfigured(config) {
+  if (!config?.provider || !config.from || !config.baseUrl) {
+    return false;
+  }
+
+  if (config.provider === 'resend') {
+    return Boolean(config.resendApiKey);
+  }
+
+  if (config.provider === 'postmark') {
+    return Boolean(config.postmarkServerToken);
+  }
+
+  return false;
+}
+
+function buildPasswordResetEmail(config, rawToken) {
+  const resetUrl = `${config.baseUrl}/?reset=${encodeURIComponent(rawToken)}`;
+  const escapedAppName = escapeHtml(config.appName);
+  const escapedResetUrl = escapeHtml(resetUrl);
+
+  return {
+    resetUrl,
+    subject: config.subject,
+    html: `
+      <div style="font-family:Arial,sans-serif;line-height:1.6;color:#0f172a;">
+        <h2 style="margin:0 0 16px;">Reset your password</h2>
+        <p style="margin:0 0 16px;">We received a request to reset your password for ${escapedAppName}.</p>
+        <p style="margin:0 0 20px;">
+          <a href="${escapedResetUrl}" style="display:inline-block;padding:12px 18px;background:#2563eb;color:#ffffff;text-decoration:none;border-radius:10px;font-weight:600;">
+            Reset password
+          </a>
+        </p>
+        <p style="margin:0 0 12px;">This link expires in 30 minutes.</p>
+        <p style="margin:0 0 12px;">If the button does not open, copy this link into your browser:</p>
+        <p style="margin:0 0 16px;word-break:break-all;"><a href="${escapedResetUrl}">${escapedResetUrl}</a></p>
+        <p style="margin:0;color:#475569;">If you did not request this, you can ignore this email.</p>
+      </div>
+    `.trim(),
+    text: [
+      `Reset your ${config.appName} password`,
+      '',
+      `Open this link to reset your password: ${resetUrl}`,
+      '',
+      'This link expires in 30 minutes.',
+      'If you did not request this, you can ignore this email.'
+    ].join('\n')
+  };
+}
+
+async function sendPasswordResetEmail(env, request, email, rawToken) {
+  const config = getResetEmailConfig(env, request);
+  if (!isResetEmailConfigured(config)) {
+    return { sent: false, provider: config.provider || 'not_configured', reason: 'not_configured' };
+  }
+
+  const emailPayload = buildPasswordResetEmail(config, rawToken);
+
+  if (config.provider === 'resend') {
+    const resendResponse = await fetch(RESEND_API_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${config.resendApiKey}`,
+        'Content-Type': 'application/json',
+        'User-Agent': 'final-ehtics-mcqs/1.0'
+      },
+      body: JSON.stringify({
+        from: config.from,
+        to: [email],
+        subject: emailPayload.subject,
+        html: emailPayload.html,
+        text: emailPayload.text,
+        ...(config.replyTo ? { reply_to: config.replyTo } : {})
+      })
+    });
+
+    const rawBody = await resendResponse.text();
+    let parsedBody = null;
+    try {
+      parsedBody = rawBody ? JSON.parse(rawBody) : null;
+    } catch {
+      parsedBody = rawBody || null;
+    }
+
+    if (!resendResponse.ok) {
+      throw new Error(`Resend email delivery failed (${resendResponse.status}).`);
+    }
+
+    return {
+      sent: true,
+      provider: 'resend',
+      messageId: parsedBody?.id || null
+    };
+  }
+
+  if (config.provider === 'postmark') {
+    const postmarkResponse = await fetch(POSTMARK_API_URL, {
+      method: 'POST',
+      headers: {
+        'X-Postmark-Server-Token': config.postmarkServerToken,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        From: config.from,
+        To: email,
+        Subject: emailPayload.subject,
+        HtmlBody: emailPayload.html,
+        TextBody: emailPayload.text,
+        ...(config.replyTo ? { ReplyTo: config.replyTo } : {}),
+        ...(config.postmarkMessageStream ? { MessageStream: config.postmarkMessageStream } : {})
+      })
+    });
+
+    const rawBody = await postmarkResponse.text();
+    let parsedBody = null;
+    try {
+      parsedBody = rawBody ? JSON.parse(rawBody) : null;
+    } catch {
+      parsedBody = rawBody || null;
+    }
+
+    if (!postmarkResponse.ok || parsedBody?.ErrorCode) {
+      throw new Error(`Postmark email delivery failed (${postmarkResponse.status}).`);
+    }
+
+    return {
+      sent: true,
+      provider: 'postmark',
+      messageId: parsedBody?.MessageID || null
+    };
+  }
+
+  throw new Error(`Unsupported reset email provider: ${config.provider}`);
 }
 
 async function recordAuthAttempt(db, scope, scopeKey, success) {
@@ -712,6 +883,8 @@ async function handlePasswordResetRequest(request, env) {
   }
 
   try {
+    const emailConfig = getResetEmailConfig(env, request);
+
     await enforceRateLimit(env.DB, email, ip, {
       ipScope: 'password_reset_ip',
       emailScope: 'password_reset_email',
@@ -754,10 +927,13 @@ async function handlePasswordResetRequest(request, env) {
         request.headers.get('User-Agent') || ''
       ).run();
 
+      const delivery = await sendPasswordResetEmail(env, request, email, rawToken);
+
       await logAuditEvent(env.DB, request, 'auth.password_reset_request', 'success', user.id, {
         email,
         expiresAt,
-        delivery: env.RESET_EMAIL_ENABLED ? 'email' : 'not_configured'
+        delivery: delivery.provider,
+        messageId: delivery.messageId || null
       });
     } else {
       await recordAuthAttempt(env.DB, 'password_reset_ip', ip, true);
@@ -767,7 +943,7 @@ async function handlePasswordResetRequest(request, env) {
 
     return jsonResponse(request, {
       success: true,
-      message: env.RESET_EMAIL_ENABLED
+      message: isResetEmailConfigured(emailConfig)
         ? 'If the account exists, reset instructions will be sent.'
         : 'If the account exists, a reset request has been recorded. Email delivery is not configured yet.'
     });
@@ -900,10 +1076,12 @@ export default {
     }
 
     if (path === '/api/auth/config' && request.method === 'GET') {
+      const resetEmailConfig = getResetEmailConfig(env, request);
       return jsonResponse(request, {
         enabled: Boolean(env.DB && env.SESSION_SECRET && env.TURNSTILE_SECRET_KEY && env.TURNSTILE_SITE_KEY),
         turnstileSiteKey: env.TURNSTILE_SITE_KEY || '',
-        authMode: 'email-password'
+        authMode: 'email-password',
+        passwordResetEmailEnabled: isResetEmailConfigured(resetEmailConfig)
       });
     }
 

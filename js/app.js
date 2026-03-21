@@ -36,6 +36,8 @@ const MCQApp = {
       loading: false,
       error: '',
       user: null,
+      passwordResetEmailEnabled: false,
+      pendingResetToken: '',
       turnstileReady: false,
       turnstileSiteKey: '',
       authMode: 'signin',
@@ -604,6 +606,9 @@ const MCQApp = {
 
     if (typeof this.setupAuthEventListeners === 'function') {
       this.setupAuthEventListeners();
+    }
+    if (typeof this.consumePendingPasswordResetLink === 'function') {
+      this.consumePendingPasswordResetLink();
     }
 
     window.addEventListener('online', () => {
