@@ -801,22 +801,22 @@ const MCQApp = {
     const totalCourses = units.length;
     let completedCourses = 0;
     let totalQuestions = 0;
-    let totalViewed = 0;
+    let totalAnswered = 0;
 
     units.forEach(({ topic, test }) => {
       const questions = Number(test.questionCount || 0);
       const progressKey = `progress_${topic.id}_${test.id}`;
       const saved = this.readJSONFromStorage(progressKey, null);
-      const viewed = Math.min((saved?.viewed || []).length, questions);
+      const answered = Math.min((saved?.revealed || []).length, questions);
 
       totalQuestions += questions;
-      totalViewed += viewed;
-      if (questions > 0 && viewed >= questions) {
+      totalAnswered += answered;
+      if (questions > 0 && answered >= questions) {
         completedCourses += 1;
       }
     });
 
-    const overallProgress = totalQuestions > 0 ? Math.round((totalViewed / totalQuestions) * 100) : 0;
+    const overallProgress = totalQuestions > 0 ? Math.round((totalAnswered / totalQuestions) * 100) : 0;
     return { totalCourses, completedCourses, totalQuestions, overallProgress };
   },
 
@@ -3129,21 +3129,21 @@ const MCQApp = {
     if (!topic || !topic.practiceTests) return 0;
 
     let totalQuestions = 0;
-    let totalViewed = 0;
+    let totalAnswered = 0;
 
     this.getTopicPracticeUnits(topic).forEach(test => {
       if (test.questionCount > 0) {
         const key = `progress_${topicId}_${test.id}`;
         const saved = this.readJSONFromStorage(key, null);
         if (saved) {
-          totalViewed += (saved.viewed || []).length;
+          totalAnswered += (saved.revealed || []).length;
         }
         totalQuestions += test.questionCount;
       }
     });
 
     if (totalQuestions === 0) return 0;
-    return Math.round((totalViewed / totalQuestions) * 100);
+    return Math.round((totalAnswered / totalQuestions) * 100);
   },
 
   // Get Practice Test Progress
@@ -3158,7 +3158,7 @@ const MCQApp = {
     const test = this.findPracticeTestById(topic, testId);
     if (!test || test.questionCount === 0) return 0;
 
-    return Math.round(((saved.viewed || []).length / test.questionCount) * 100);
+    return Math.round(((saved.revealed || []).length / test.questionCount) * 100);
   },
 
   // Save Progress
