@@ -317,6 +317,7 @@ Object.assign(MCQApp, {
     const emailField = document.getElementById('auth-email')?.closest('.auth-field');
     const forgotBtn = document.getElementById('auth-forgot-btn');
     const secondaryActions = document.getElementById('auth-secondary-actions');
+    const turnstileContainer = document.getElementById('auth-turnstile');
     const form = document.getElementById('auth-form');
 
     const isSignup = mode === 'signup';
@@ -365,6 +366,7 @@ Object.assign(MCQApp, {
     if (switchBtn) switchBtn.textContent = isSignup ? 'Sign in' : 'Sign up';
     if (secondaryActions) secondaryActions.classList.toggle('hidden', !isSignin);
     if (forgotBtn) forgotBtn.classList.toggle('hidden', !isSignin);
+    if (turnstileContainer) turnstileContainer.classList.toggle('hidden', isResetConfirm);
     if (emailField) emailField.classList.toggle('hidden', isChangePassword || isResetConfirm);
     if (currentPasswordField) currentPasswordField.classList.toggle('hidden', !isChangePassword);
     if (newPasswordField) newPasswordField.classList.toggle('hidden', !(isChangePassword || isResetConfirm));
@@ -392,7 +394,9 @@ Object.assign(MCQApp, {
       } else {
         document.getElementById('auth-email')?.focus();
       }
-      this.ensureTurnstileWidget(true);
+      if (!isResetConfirm) {
+        this.ensureTurnstileWidget(true);
+      }
     }, 20);
   },
 
@@ -498,19 +502,27 @@ Object.assign(MCQApp, {
       }
     }
 
-    if (!window.turnstile || this.state.auth.widgetId === null) {
-      this.setAuthError('Security check is still loading. Please wait a moment.');
-      return;
-    }
+    const requiresTurnstile = mode !== 'reset-confirm';
+    let turnstileToken = '';
+    if (requiresTurnstile) {
+      if (!window.turnstile || this.state.auth.widgetId === null) {
+        this.setAuthError('Security check is still loading. Please wait a moment.');
+        return;
+      }
 
-    const turnstileToken = window.turnstile.getResponse(this.state.auth.widgetId);
-    if (!turnstileToken) {
-      this.setAuthError('Please complete the security check.');
-      return;
+      turnstileToken = window.turnstile.getResponse(this.state.auth.widgetId);
+      if (!turnstileToken) {
+        this.setAuthError('Please complete the security check.');
+        return;
+      }
     }
 
     this.state.auth.loading = true;
-    if (submitBtn) submitBtn.disabled = true;
+    const defaultSubmitLabel = submitBtn?.textContent || '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = mode === 'reset-confirm' ? 'Saving...' : 'Please wait...';
+    }
     this.setAuthError('');
 
     try {
@@ -538,7 +550,7 @@ Object.assign(MCQApp, {
       if (mode === 'reset-confirm') {
         data = await this.fetchAuthJson('/api/auth/password-reset/confirm', {
           method: 'POST',
-          body: JSON.stringify({ token: resetToken, newPassword, turnstileToken })
+          body: JSON.stringify({ token: resetToken, newPassword })
         });
         this.clearPendingPasswordResetLink();
         this.closeAuthModal();
@@ -572,10 +584,15 @@ Object.assign(MCQApp, {
       this.showToast(mode === 'signup' ? 'Account created successfully.' : 'Signed in successfully.', 'success');
     } catch (error) {
       this.setAuthError(error.message || 'Authentication failed. Please try again.');
-      this.resetTurnstileWidget();
+      if (requiresTurnstile) {
+        this.resetTurnstileWidget();
+      }
     } finally {
       this.state.auth.loading = false;
-      if (submitBtn) submitBtn.disabled = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = defaultSubmitLabel;
+      }
     }
   },
 

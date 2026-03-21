@@ -1026,25 +1026,19 @@ async function handlePasswordResetConfirm(request, env) {
   const body = await request.json();
   const token = String(body.token || '');
   const newPassword = String(body.newPassword || '');
-  const turnstileToken = String(body.turnstileToken || '');
   const ip = getClientIp(request);
 
   if (!env.DB) {
     return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
   }
 
-  if (!token || newPassword.length < 8 || !turnstileToken) {
-    return jsonResponse(request, { error: 'Reset token, new password, and security check are required.' }, { status: 400 });
+  if (!token || newPassword.length < 8) {
+    return jsonResponse(request, { error: 'Reset token and new password are required.' }, { status: 400 });
   }
 
   try {
     await enforceIpOnlyRateLimit(env.DB, ip, 'password_reset_confirm_ip', RESET_RATE_LIMIT_EMAIL_MAX, RESET_RATE_LIMIT_WINDOW_MINUTES, false);
     await recordAuthAttempt(env.DB, 'password_reset_confirm_ip', ip, true);
-    const turnstileOk = await validateTurnstile(env, request, turnstileToken);
-    if (!turnstileOk) {
-      await recordAuthAttempt(env.DB, 'password_reset_confirm_ip', ip, false);
-      return jsonResponse(request, { error: 'Security check failed. Please try again.' }, { status: 400 });
-    }
 
     const tokenHash = await sha256(token);
     const row = await env.DB.prepare(
