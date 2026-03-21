@@ -1,6 +1,6 @@
 const COOKIE_NAME = 'mcq_session';
 const SESSION_TTL_MS = 1000 * 60 * 60 * 24 * 30;
-const PBKDF2_ITERATIONS = 120000;
+const PBKDF2_ITERATIONS = 100000;
 const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 const RATE_LIMIT_WINDOW_MINUTES = 15;
 const RATE_LIMIT_IP_MAX = 15;
