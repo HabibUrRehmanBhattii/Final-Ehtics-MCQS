@@ -2635,9 +2635,8 @@ const MCQApp = {
         if (isFirstAttempt) {
           this.state.firstAttemptCorrect[stateKey] = false;
           this.logWrongAnswer(question);
+          this.showToast('Incorrect. Stay on this question to review the feedback or ask AI before moving on.', 'warning');
         }
-
-        this.showToast('Incorrect. Stay on this question to review the feedback or ask AI before moving on.', 'warning');
 
         this.state.attemptedOptions[stateKey].push(selectedIndex);
         this.renderQuestion();
