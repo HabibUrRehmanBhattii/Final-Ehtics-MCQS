@@ -193,12 +193,20 @@ const MCQApp = {
   inferQuestionRule(question) {
     const q = this.getQuestionPlainText(question).toLowerCase();
 
-    if (/beneficiar|contingent|estate|life insured|policyholder/.test(q)) {
+    if (/beneficiar|estate as beneficiary/.test(q)) {
       return 'Use beneficiary-order rules: proceeds go to the named beneficiary first, and a contingent beneficiary applies only if the primary beneficiary predeceases the life insured.';
+    }
+
+    if (/underwrit|insurab|temporary insurance agreement|tia|medical evidence|application/.test(q)) {
+      return 'Apply underwriting eligibility rules: identify whose health must be underwritten and whether any rider adds extra underwriting requirements.';
     }
 
     if (/capital gain|acb|gift|deemed disposition|non-registered/.test(q)) {
       return 'Apply capital-gains tax rules, including deemed disposition and adjusted cost base treatment where relevant.';
+    }
+
+    if (/charitable donation|charity|tax return|final return|terminal return|net income/.test(q)) {
+      return 'Apply tax-return rules for the specific year: each year has its own claim limit, and available claims depend on the taxpayer and return being tested.';
     }
 
     if (/rrsp|rrif|lira|spousal rrsp|pension adjustment/.test(q)) {
@@ -209,7 +217,10 @@ const MCQApp = {
       return 'Apply annuity contract rules on payment guarantees, beneficiary rights, and taxation of annuity income.';
     }
 
-    if (/segregated fund|guarantee|reset|maturity|death benefit/.test(q)) {
+    if (
+      /segregated fund|seg fund|segregated contract|segregated policy|maturity guarantee|guaranteed maturity value|reset/.test(q) ||
+      (/death benefit/.test(q) && /segregated|guarantee|maturity|reset/.test(q))
+    ) {
       return 'Apply segregated-fund guarantee rules, including resets, maturity and death guarantees, and beneficiary treatment.';
     }
 
@@ -2989,8 +3000,12 @@ const MCQApp = {
       return 'Separate annual mortality from life expectancy: males usually have higher yearly mortality, while females usually have longer life expectancy.';
     }
 
-    if (/beneficiar|contingent|estate|life insured|policyholder/.test(sourceText)) {
+    if (/beneficiar|estate as beneficiary/.test(sourceText)) {
       return 'Read beneficiary questions in order: pay the primary beneficiary first, and use the contingent beneficiary only if the primary cannot receive the proceeds.';
+    }
+
+    if (/underwrit|insurab|temporary insurance agreement|tia|medical evidence|application/.test(sourceText)) {
+      return 'For underwriting questions, identify who is being underwritten, then check whether riders or temporary coverage conditions add extra requirements.';
     }
 
     if (/capital gain|acb|gift|deemed disposition|non-registered/.test(sourceText)) {
@@ -3005,8 +3020,19 @@ const MCQApp = {
       return 'For annuities, separate who receives payments, how long payments last, and what happens to any guarantee period on death.';
     }
 
-    if (/segregated fund|guarantee|reset|maturity|death benefit/.test(sourceText)) {
+    if (
+      /segregated fund|seg fund|segregated contract|segregated policy|maturity guarantee|guaranteed maturity value|reset/.test(sourceText) ||
+      (/death benefit/.test(sourceText) && /segregated|guarantee|maturity|reset/.test(sourceText))
+    ) {
       return 'Segregated-fund questions usually turn on which guarantee applies now: maturity, death benefit, or a reset-adjusted value.';
+    }
+
+    if (/charitable donation|charity|tax return|final return|terminal return/.test(sourceText)) {
+      return 'For donation questions, calculate each tax year separately and apply that year’s claim limit instead of combining years into one total.';
+    }
+
+    if (/net per month|gross return|marginal tax|after-tax|support herself|principal amount of the death benefit/.test(sourceText)) {
+      return 'For income-replacement calculations, convert the needed net income to a gross pre-tax return requirement, then solve for the principal amount and round as asked.';
     }
 
     if (/disabil|critical illness|long-term care|accident|sickness|elimination period|benefit period|offset/.test(sourceText)) {
@@ -3019,6 +3045,50 @@ const MCQApp = {
     }
 
     return 'Focus on the exact fact the rule turns on, then eliminate choices that change that fact.';
+  },
+
+  buildBeginnerLesson(question, correctReason = '') {
+    const normalizeSentence = (value) => String(value || '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/[.?!]+$/, '');
+
+    const focusText = normalizeSentence(this.getQuestionFocusText(question));
+    const genericRuleText = 'Apply the governing LLQP product, contract, and tax rule to the exact facts in the scenario';
+    const explicitRule = normalizeSentence(this.getRuleReminder(question));
+    const inferredRuleRaw = normalizeSentence(this.inferQuestionRule(question));
+    const inferredRule = this.normalizeStudyText(inferredRuleRaw) === this.normalizeStudyText(genericRuleText)
+      ? 'Use the exact policy, tax, or contract rule that applies to these facts'
+      : inferredRuleRaw;
+    const ruleText = explicitRule || inferredRule;
+    const topicLesson = normalizeSentence(this.buildTopicLesson(question));
+    const reasonText = normalizeSentence(this.toSentence(correctReason));
+    const parts = [];
+
+    if (focusText) {
+      parts.push(`First, identify what the question is asking: ${focusText}.`);
+    }
+
+    if (ruleText) {
+      parts.push(`Then apply this rule: ${ruleText}.`);
+    }
+
+    if (
+      topicLesson &&
+      this.normalizeStudyText(topicLesson) !== this.normalizeStudyText(ruleText)
+    ) {
+      parts.push(`Quick takeaway: ${topicLesson}.`);
+    }
+
+    if (!parts.length && reasonText) {
+      parts.push(`Quick takeaway: ${reasonText}.`);
+    }
+
+    if (!parts.length) {
+      parts.push('First, identify the key fact pattern, then pick the choice that matches the rule without adding extra assumptions.');
+    }
+
+    return parts.join(' ');
   },
 
   buildWrongAnswerHint(question, optionIndex) {
@@ -3118,11 +3188,8 @@ const MCQApp = {
     const correctIndex = Number.isInteger(question.correctAnswer) ? question.correctAnswer : -1;
     const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
     const correctReason = this.buildCorrectAnswerReason(question);
-    const topicLesson = this.buildTopicLesson(question);
-    const includeLesson = Boolean(
-      topicLesson &&
-      this.normalizeStudyText(topicLesson) !== this.normalizeStudyText(correctReason)
-    );
+    const topicLesson = this.buildBeginnerLesson(question, correctReason);
+    const includeLesson = Boolean(topicLesson);
     const wrongChoices = options
       .map((option, index) => {
         if (index === correctIndex) return null;
