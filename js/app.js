@@ -1696,6 +1696,23 @@ const MCQApp = {
     this.renderHomeInsights();
   },
 
+  getHomeFocusStats(stats = this.getHomeStudyStats(), daily = this.getDailyStudyStats()) {
+    return [
+      {
+        label: 'Questions Today',
+        value: String(Number(daily?.todayAnswered || 0))
+      },
+      {
+        label: 'Study Streak',
+        value: `${Number(daily?.streak || 0)}d`
+      },
+      {
+        label: 'Overall Progress',
+        value: `${Number(stats?.overallProgress || 0)}%`
+      }
+    ];
+  },
+
   renderHomeFocus() {
     const host = document.getElementById('home-focus');
     if (!host) return;
@@ -1708,6 +1725,7 @@ const MCQApp = {
     const wrongCount = this.state.wrongQuestions.length;
     const promotedSession = session && storedSession &&
       (session.topic.id !== storedSession.topic.id || session.test.id !== storedSession.test.id);
+    const focusStats = this.getHomeFocusStats(stats, daily);
 
     let title = 'Pick a topic and start.';
     let meta = `${stats.totalCourses} topics ready`;
@@ -1740,18 +1758,12 @@ const MCQApp = {
           </div>
         </div>
         <div class="focus-stats">
-          <div class="focus-stat">
-            <span>Today</span>
-            <strong>${daily.todayAnswered}</strong>
-          </div>
-          <div class="focus-stat">
-            <span>Streak</span>
-            <strong>${daily.streak || 0}d</strong>
-          </div>
-          <div class="focus-stat">
-            <span>Progress</span>
-            <strong>${stats.overallProgress}%</strong>
-          </div>
+          ${focusStats.map((item) => `
+            <div class="focus-stat">
+              <span>${this.escapeHtml(item.label)}</span>
+              <strong>${this.escapeHtml(item.value)}</strong>
+            </div>
+          `).join('')}
         </div>
       </div>
     `;
