@@ -1984,7 +1984,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   .explain-label {
     font-size: .8rem;
     margin-bottom: .75rem;
-    padding-bottom: .42rem;
+    padding-bottom: .4rem;
   }
   .explain-body {
     font-size: .94rem;
@@ -1993,16 +1993,16 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
     overflow-wrap: anywhere;
   }
   .exp-panels {
-    gap: .62rem;
+    gap: .6rem;
   }
   .exp-panel {
-    padding: .82rem .85rem;
+    padding: .8rem;
   }
   .exp-panel-head {
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: .45rem;
-    margin-bottom: .45rem;
+    gap: .5rem;
+    margin-bottom: .5rem;
   }
   .exp-panel-title {
     font-size: .88rem;
@@ -2035,10 +2035,10 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
     border-radius: 14px;
   }
   .exp-disclosure-summary {
-    padding: .78rem .82rem;
-    min-height: 44px;
+    padding: .8rem;
+    min-height: 3rem;
     font-size: .86rem;
-    gap: .55rem;
+    gap: .5rem;
     align-items: center;
     line-height: 1.35;
   }
@@ -2050,11 +2050,11 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
     padding: 0 .7rem .75rem;
   }
   .exp-choice-list {
-    gap: .45rem;
+    gap: .5rem;
   }
   .exp-choice-item {
     gap: .55rem;
-    padding: .62rem .68rem;
+    padding: .65rem .7rem;
     border-radius: 12px;
     align-items: start;
   }
@@ -2108,12 +2108,11 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
   .follow-up-actions .btn-follow-up {
     width: 100%;
-    min-height: 42px;
+    min-height: 3rem;
   }
 
   [data-theme="dark"] .explain-box {
     border-left: 4px solid #6366f1;
-    border-radius: 16px;
     background: linear-gradient(180deg, rgba(10, 35, 54, .9), rgba(8, 29, 47, .9));
     border-top-color: rgba(56, 189, 248, .22);
     border-right-color: rgba(56, 189, 248, .14);
