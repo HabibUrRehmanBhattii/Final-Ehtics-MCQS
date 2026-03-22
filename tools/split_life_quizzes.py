@@ -23,6 +23,12 @@ SPECS = [
         "output_base": "hllqp-life-03",
         "description": "HLLQP - LIFE 03 QZ - Whole Life and Term-100 Insurance",
     },
+    {
+        "source": "hllqp-life-05.json",
+        "groups": [range(1, 11), range(11, 21), range(21, 31)],
+        "output_base": "hllqp-life-05",
+        "description": "HLLQP - LIFE 05 QZ - Riders and Supplementary Benefits",
+    },
 ]
 
 for spec in SPECS:

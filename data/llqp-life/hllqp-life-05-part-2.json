@@ -1,0 +1,257 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 05 QZ - Riders and Supplementary Benefits - Section 2",
+  "examTips": "Focus on how GIB, PUA, waiver of premium, AD&D, accelerated death benefits, child/family riders, and term riders work. Pay close attention to who can be insured under a rider, when evidence of insurability is waived, tax treatment of accelerated benefits, and when family or child coverage begins.",
+  "questions": [
+    {
+      "id": 11,
+      "question": "Jake and Amanda are married and they both require varying amounts of life insurance to address various insurance needs.\nWhich one of the following combinations of term policies and term riders would be permissible?",
+      "options": [
+        "A. A $500,000 10-year term policy on Jake and a $550,000 15-year term rider also on Jake.",
+        "B. An $800,000 20-year term policy on Jake, and a $250,000 10-year term rider on Amanda.",
+        "C. A $500,000 10-year term policy on Jake, and a $500,000 15-year term rider on Amanda.",
+        "D. A $400,000 20-year term policy on Jake and a $300,000 whole life policy on Amanda."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This changes the insured life from Jake on the base policy to Amanda on the rider.",
+        "This also changes the insured life from Jake on the base policy to Amanda on the rider.",
+        "This is not a term-policy-plus-term-rider combination."
+      ],
+      "explanation": "The key rule being tested is that the term rider remains on the same life insured as the base policy. Option A keeps both the base term policy and the rider on Jake's life, so it is the permissible combination in this set.",
+      "difficulty": "hard",
+      "tags": [
+        "term-rider",
+        "policy-structure",
+        "life-insured",
+        "riders"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Martin just found out from his doctor that he has only 1 year to live. Martin's policy will allow him to access 40% of the death benefit now, but then that amount along with accrued interest will be deducted from the death benefit when he dies.\nWhich of the following makes this possible?",
+      "options": [
+        "A. Accelerated death benefits, terminal illness",
+        "B. Long-term care insurance",
+        "C. Accelerated death benefits, accidental dismemberment",
+        "D. Accelerated death benefits, dread disease"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This question is describing an accelerated death benefit rider, not long-term care insurance.",
+        "Accidental dismemberment does not match the terminal-illness fact pattern.",
+        "The scenario specifically points to terminal illness rather than a dread-disease trigger."
+      ],
+      "explanation": "The rider described is an accelerated death benefit triggered by terminal illness. It lets Martin access part of the death benefit early, with that advance plus accrued interest deducted later from the policy proceeds.",
+      "difficulty": "easy",
+      "tags": [
+        "accelerated-death-benefit",
+        "terminal-illness",
+        "riders"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Brooke owns a whole life insurance policy with accelerated death benefits. Benefits will be accelerated if the life-insured is diagnosed with a terminal illness (TI) or dread disease (DD). The policy has face-value coverage of $500,000. The monthly premium is $350. There is $50,000 in cash value built up within the policy.\nTo assist with creditor proofing, Brooke named her niece as irrevocable beneficiary. Last month, her doctor advised Brooke that she has lung cancer, and it is terminal. The doctor's opinion is that she has four to six months to live. After confirming the diagnosis, she applied for accelerated death benefits.\nWhat issue could Brooke face with her claim?",
+      "options": [
+        "A. If she applies for TI benefits, the payment is not considered a death benefit and is taxable.",
+        "B. She can apply for TI benefits providing she can prove to the insurer that the beneficiary is her niece and therefore not considered part of the protected class.",
+        "C. Four to six months to live is not considered a terminal prognosis.",
+        "D. Brooke would need her niece's permission before applying for TI benefits."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "The tax issue described is not the key problem in this scenario.",
+        "The relationship to the beneficiary is not the issue being tested here.",
+        "A prognosis of four to six months is clearly terminal.",
+        null
+      ],
+      "explanation": "Because Brooke named an irrevocable beneficiary, that beneficiary has a vested interest in the death benefit. Accessing an accelerated death benefit reduces that death benefit, so Brooke would need her niece's consent before the advance could be paid.",
+      "difficulty": "medium",
+      "tags": [
+        "accelerated-death-benefit",
+        "irrevocable-beneficiary",
+        "consent",
+        "riders"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Norman had a $500,000 whole life policy with an AD&D rider that will pay twice the death benefit in the event of accidental death. The policy was purchased three years ago. Norman used to be a respected stand-up comedian, but due to some 'off-color' remarks he made on a TV special, people stopped coming to his shows. Unfortunately, Norman started using illegal narcotics.\nLast week, he accidently overdosed. He was immediately taken to the emergency room but was pronounced dead on arrival. His only daughter is named as the beneficiary on his life insurance policy.\nHow much can she expect to receive?",
+      "options": [
+        "A. The death will not be ruled an accidental death, and therefore a death benefit will not be payable.",
+        "B. She will receive the face value of coverage of $500,000.",
+        "C. The death will be ruled a suicide, and therefore a death benefit will not be payable.",
+        "D. The death will be ruled an accidental death, and therefore she will receive $1,000,000."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The base life policy still pays unless a base-policy exclusion applies, and none is indicated here after three years.",
+        null,
+        "There is no evidence of suicide here.",
+        "The AD&D portion is the part most likely excluded in a drug-overdose situation."
+      ],
+      "explanation": "The daughter should still receive the $500,000 base death benefit. The likely problem is with the AD&D rider, because accidental-death riders often exclude losses tied to drug use or intoxication.",
+      "difficulty": "medium",
+      "tags": [
+        "ad-and-d",
+        "accidental-death",
+        "exclusions",
+        "riders"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Gary owns a life insurance policy in which he is the life insured and his son Bill is the beneficiary. When he applied for the policy, Gary added a \"waiver of premium for total disability benefit\".\nGary recently experienced a nervous breakdown and will be unable to work for a minimum of 90 days. This has been confirmed via an attending physician's statement.\nWhich one of the following statements best describes the total disability benefit?",
+      "options": [
+        "A. Gary's premium will only be waived if he suffers a disability that is deemed to be severe and prolonged.",
+        "B. The benefit will payout (and the premium will be waived) if Gary becomes totally disabled after the applicable waiting period.",
+        "C. The benefit will payout (and the premium will be waived) only if Bill becomes totally disabled.",
+        "D. Premiums will be waived immediately upon confirmation that Gary is totally disabled."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The key trigger is total disability under the contract, not the wording used in this distractor.",
+        null,
+        "The rider is on Gary, not on the beneficiary Bill.",
+        "Waiver of premium riders normally have a waiting period rather than starting immediately."
+      ],
+      "explanation": "A waiver of premium rider generally starts after the contractual waiting period once the insured meets the policy definition of total disability. It does not start instantly on the day the disability is confirmed.",
+      "difficulty": "easy",
+      "tags": [
+        "waiver-of-premium",
+        "total-disability",
+        "waiting-period",
+        "riders"
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Jamie and Magda are in their early thirties. Prior to meeting Magda, Jamie applied for life insurance but learned he was uninsurable. They are now having children, and Jamie has decided to purchase life insurance on Magda's life. Jamie is an executive of a large company and earns over $200,000 per year. They have decided that he will continue to work while Magda stays home to care for the children.\nWhich of the following statements is correct?",
+      "options": [
+        "A. The waiver of premium payor is waived only if the individual paying the premium dies.",
+        "B. The waiver of premium payor rider will be underwritten on Jamie's life, and therefore it may not be possible to add it to the policy.",
+        "C. Waiver of premium in the event of disability is a standard feature on all life insurance policies.",
+        "D. Providing Magda qualifies for the life insurance, the waiver of premium payor can be added."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "That does not describe the payor waiver issue correctly.",
+        null,
+        "Waiver of premium is not a standard feature on all policies.",
+        "Jamie is the payor whose disability risk would be underwritten, so Magda qualifying alone is not enough."
+      ],
+      "explanation": "A payor waiver rider is underwritten on the payor, because it protects against the payor becoming disabled and unable to keep paying premiums. Since Jamie is already described as uninsurable, it may not be possible to add that rider.",
+      "difficulty": "hard",
+      "tags": [
+        "payor-waiver",
+        "underwriting",
+        "family-planning",
+        "riders"
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Lionel is the policyholder on a $500,000 joint first-to-die whole life policy. Lionel and his wife are the lives-insured, with the survivor being the beneficiary. Lionel was considering purchasing a separate critical illness (CI) insurance policy, but his friend recommended that he add an accelerated death benefits rider to his existing policy.\nWhat is the potential problem with this suggestion?",
+      "options": [
+        "A. Accelerated death benefits do not result in any extra amounts being paid; instead, they are merely a partial advance of the death benefit.",
+        "B. Accelerated death benefits will result in additional funds being paid out in addition to the full death benefit being payable upon death. As a result, the addition of the rider will significantly increase the premium.",
+        "C. An accelerated death benefits rider cannot be added to a policy that has already been issued.",
+        "D. Accelerated death benefits are paid only if the life-insured is terminal and expected to die within one year."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "An accelerated death benefit is not an extra pool of money on top of the full death benefit.",
+        "That is not the core problem being tested here.",
+        "This is too narrow and does not capture the main issue with using ADB as a substitute for CI coverage."
+      ],
+      "explanation": "The main drawback is that an accelerated death benefit is an advance of the existing death benefit, not extra money on top of it. That makes it different from a standalone critical illness policy, which pays a separate benefit.",
+      "difficulty": "medium",
+      "tags": [
+        "accelerated-death-benefit",
+        "critical-illness",
+        "joint-first-to-die",
+        "riders"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Kendra owns a whole life insurance policy with $100,000 face value coverage. The policy also has an AD&D rider. She was involved in an accident two years ago that caused minor brain damage. She was charged at the scene for failing to stop at a stop sign. Two years after the accident, Kendra lost the use of her hands.\nWhile she had some movement in her fingers, she remained unable to grasp anything. After checking her policy, she realized that the policy provides a benefit equal to 100% of the death benefit as a result of accidental loss of both hands. When she filed a claim with the insurer, it was denied.\nWhich of the following is the most likely reason for the claim being denied?",
+      "options": [
+        "A. The loss was more than one year from the accident.",
+        "B. Kendra did not die.",
+        "C. Her failing to stop at a stop sign contributed to the accident.",
+        "D. Her hands were not actually severed."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "AD&D riders can also cover certain dismemberment losses, not just death.",
+        "That is not the most likely reason for denial here.",
+        "The stronger issue in the fact pattern is the timing of the loss after the accident."
+      ],
+      "explanation": "AD&D riders usually require the death or dismemberment loss to occur within a stated period after the accident, often one year. Kendra's loss happened two years later, which is the most likely reason the claim was denied.",
+      "difficulty": "hard",
+      "tags": [
+        "ad-and-d",
+        "dismemberment",
+        "time-limit",
+        "riders"
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Derrick has a whole life insurance policy that has face-value coverage of $100,000. The policy offers accelerated death benefits if the life-insured is diagnosed with a dread disease (DD) or is terminally ill (TI). The policy has $20,000 in cash value and requires a monthly premium of $250. Derrick is terminally ill and has applied for accelerated death benefits. The policy will advance up to 50% of the original face value structured as a loan.\nWhat would the tax implications of the accelerated death benefit be?",
+      "options": [
+        "A. Derrick could receive up to $50,000 today tax-free. Upon his death, his beneficiary will receive $70,000 less the accrued interest on the advanced amount.",
+        "B. Receiving accelerated death benefits is a taxable event. From a tax perspective, Derrick would be better off borrowing up to $100,000 from a bank using the life insurance policy as collateral.",
+        "C. Derrick could receive up to $50,000 today tax-free. Upon his death, his beneficiary will receive the remaining $50,000 less the accrued interest on the advanced amount.",
+        "D. The difference between the amount that is advanced under the accelerated death benefit rider and the coverage amount is subject to tax."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "If $50,000 is advanced on a $100,000 policy, the remaining death benefit is not $70,000.",
+        "That overstates the tax problem; accelerated death benefits are generally received tax-free.",
+        null,
+        "That is not how the tax treatment works here."
+      ],
+      "explanation": "Derrick can receive up to $50,000 tax-free today. Because the accelerated benefit is an advance against the policy, the beneficiary later receives the remaining death benefit, reduced by the advanced amount and accrued interest.",
+      "difficulty": "medium",
+      "tags": [
+        "accelerated-death-benefit",
+        "taxation",
+        "terminal-illness",
+        "riders"
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Mike requires $600,000 in 15-year term insurance. His wife Leanne requires $500,000 in 20-year term insurance for a different insurance need.\nWhich one of the following recommendations would you make?",
+      "options": [
+        "A. A term rider cannot be added to a main policy unless the life insured will be the same on both policies. For this reason, they will need to consider separate term policies.",
+        "B. A term rider cannot be added to a main policy unless the life insured will be the same on both policies. For this reason, they will need to consider a $600,000 joint first-to-die term policy.",
+        "C. They should consider a $500,000 20-year term insurance policy on Leanne and a $600,000 15-year term rider on Mike.",
+        "D. They should consider a $600,000 15-year term policy on Mike and a $600,000 20-year term rider on Leanne."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "A joint first-to-die policy is not the right fix for two separate needs on two separate lives.",
+        "This changes the insured life from Leanne on the base policy to Mike on the rider.",
+        "This changes the insured life from Mike on the base policy to Leanne on the rider."
+      ],
+      "explanation": "The rule this set is testing is that the term rider must stay on the same insured life as the base policy. Since Mike and Leanne each need separate coverage on separate lives, separate term policies are the appropriate recommendation.",
+      "difficulty": "medium",
+      "tags": [
+        "term-rider",
+        "life-insured",
+        "term-insurance",
+        "riders"
+      ]
+    }
+  ]
+}

@@ -2,6 +2,607 @@
   "topic": "LLQP Life Insurance - Chapter Quizzes",
   "topicId": "llqp-life",
   "description": "HLLQP - LIFE 05 QZ - Riders and Supplementary Benefits",
-  "examTips": "Coming soon",
-  "questions": []
+  "examTips": "Focus on how GIB, PUA, waiver of premium, AD&D, accelerated death benefits, child/family riders, and term riders work. Pay close attention to who can be insured under a rider, when evidence of insurability is waived, tax treatment of accelerated benefits, and when family or child coverage begins.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Patrick is buying a renewable 10-year term insurance policy. He would like to add a rider that will allow him to increase coverage in the future without having to provide evidence of insurability.\nWhat rider would you recommend?",
+      "options": [
+        "A. GIB and PUA",
+        "B. Guaranteed Insurability Benefit (GIB)",
+        "C. Double Indemnity",
+        "D. Paid Up Additions (PUA)"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Only one of these riders directly gives the future right to buy more coverage without new evidence of insurability.",
+        null,
+        "Double indemnity is an accidental death rider, not a future-insurability rider.",
+        "PUA relates to participating whole life additions, not future increases on a renewable term policy."
+      ],
+      "explanation": "A Guaranteed Insurability Benefit rider lets the insured buy additional coverage at stated dates or events without giving new medical evidence. That is the rider Patrick is looking for.",
+      "difficulty": "easy",
+      "tags": ["gib", "term-insurance", "future-insurability", "riders"]
+    },
+    {
+      "id": 2,
+      "question": "All else being equal, which of the following combinations of policies would be the most expensive?",
+      "options": [
+        "A. Separate whole life policy and separate term policy",
+        "B. Combined insurance including a whole life policy and a term rider",
+        "C. Whole life policy and term rider",
+        "D. The cost of all three options would be identical."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Combining coverage under one policy generally avoids the duplicate policy fee and administration of two separate policies.",
+        "A single policy with a rider is generally cheaper than maintaining two separate contracts.",
+        "The structures are not priced identically because policy fees and administration differ."
+      ],
+      "explanation": "Two separate policies are usually the most expensive structure because each contract has its own policy fee and administration. A rider is often cheaper than buying a second standalone policy.",
+      "difficulty": "medium",
+      "tags": ["term-rider", "whole-life", "policy-cost", "riders"]
+    },
+    {
+      "id": 3,
+      "question": "When Victoria was 2 years old, her mother Grace bought a participating whole life insurance policy on which Victoria was the life insured. The policy provided benefits that would be sufficient to cover Victoria's final expenses, such as funeral costs, and income replacement for Grace allowing her to take the necessary time to grieve the loss of her daughter. At the time of purchase, Grace was advised to add a PUA option.\nWhich of the following benefits could be facilitated by the policy's PUA?",
+      "options": [
+        "A. Once Victoria reaches age 18, the whole life policy will be paid in full.",
+        "B. Additional riders can be added to the policy today without having to provide evidence of insurability because the underwriting risk was pre-paid for with the PUA.",
+        "C. Dividends received will be used to add term insurance coverage to the policy without requiring Victoria to provide evidence of insurability.",
+        "D. When Victoria reaches the age of 18, she could maintain the base policy and opt to surrender the PUA and use the funds for whatever purpose she chooses, such as post-secondary education."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "PUAs add paid-up coverage and cash value, but they do not guarantee the base policy will be fully paid by age 18.",
+        "PUAs do not pre-pay future underwriting for unrelated riders.",
+        "Paid-up additions increase paid-up life coverage, not term insurance coverage.",
+        null
+      ],
+      "explanation": "Paid-up additions build extra paid-up life insurance and cash value inside the policy. That extra value can later be surrendered if funds are needed, while the base policy can remain in force.",
+      "difficulty": "medium",
+      "tags": ["pua", "participating-whole-life", "cash-value", "riders"]
+    },
+    {
+      "id": 4,
+      "question": "Bryce already owns a term policy in which he is the life insured. He now would like to purchase term coverage on his spouse's life and is inquiring about a term rider.\nWhich one of the following statements regarding term riders is correct?",
+      "options": [
+        "A. The life insured under the term rider must be the same as the life insured under the main policy.",
+        "B. The premium on a term rider would be lower than the premium on a stand-alone policy.",
+        "C. The term rider must be longer than the term of the base policy.",
+        "D. The amount of coverage under the term rider must be less than the amount of coverage under the main policy."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "A rider may save cost in some situations, but that does not change the core rule being tested here about who can be insured under the rider.",
+        "A term rider is not required to be longer than the base policy.",
+        "That is not the rule this question is testing."
+      ],
+      "explanation": "In this quiz set, the key rule is that a term rider stays on the same life insured as the base policy. If Bryce wants separate term coverage on his spouse's life, the spouse would generally need her own policy.",
+      "difficulty": "medium",
+      "tags": ["term-rider", "life-insured", "policy-structure", "riders"]
+    },
+    {
+      "id": 5,
+      "question": "Danny is a 60-year-old widower. He purchased a $100,000 whole life policy decades ago to provide for his wife in the event of his death. The policy has a waiver of premium and accelerated death benefits rider. Danny no longer has any dependents and as a result has questioned whether he still needs the policy. Fortunately he did not cancel the policy as he was just diagnosed with a terminal illness and is likely to die within the year.\nThe monthly premium on the policy is $165. The policy has $23,000 built up in the cash value. The ACB of the policy is $19,000, and Danny is in a 40% tax bracket. As per the terms of the policy, he qualifies for accelerated death benefits up to 50% of the face value.\nWhat is the maximum amount Danny can receive in accelerated death benefits on an after-tax basis?",
+      "options": [
+        "A. $33,600",
+        "B. $50,000",
+        "C. $37,200",
+        "D. $13,800"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This incorrectly subtracts tax or other amounts from the accelerated benefit.",
+        null,
+        "This reduces the accelerated benefit by a tax-style calculation that does not apply here.",
+        "This looks like a tax calculation on another figure, not the maximum accelerated death benefit."
+      ],
+      "explanation": "Danny can accelerate up to 50% of a $100,000 face amount, which is $50,000. The accelerated death benefit itself is generally received tax-free, so the after-tax maximum remains $50,000.",
+      "difficulty": "hard",
+      "tags": ["accelerated-death-benefit", "terminal-illness", "taxation", "riders"]
+    },
+    {
+      "id": 6,
+      "question": "Darren is the single father of a 10-year old son named Bart. Darren has struggled financially his entire life as his parents died when he was only 15 and tragically his wife died a month after Bart was born. Darren would like to put a plan in place that would prevent Bart from suffering a similar fate, should Darren die unexpectedly.\nDespite earning a modest income, Darren has been able to consistently save 10% of his income. While he is an avid saver, he acknowledges that his monthly budget is somewhat tight.\nWhat life insurance strategy would you recommend to Darren?",
+      "options": [
+        "A. Darren should purchase a life insurance policy on himself with Bart as the beneficiary, and add a family term rider.",
+        "B. Darren should purchase a joint-first-to-die term policy with himself and Bart as the life insured.",
+        "C. Darren should purchase a joint-first-to-die permanent policy with himself and Bart as the life insured.",
+        "D. Darren should purchase a life insurance policy on himself with Bart as the beneficiary, and add a child term rider."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "A family rider is broader than he needs because there is no spouse to cover here.",
+        "A joint-first-to-die parent-child policy is not the suitable structure for this need.",
+        "This would be unnecessarily expensive for Darren's budget and objective.",
+        null
+      ],
+      "explanation": "Darren's primary need is life insurance on his own life, with Bart protected as beneficiary. If he also wants some child coverage at low cost, a child term rider is the most appropriate add-on.",
+      "difficulty": "easy",
+      "tags": ["child-term-rider", "family-planning", "budget", "riders"]
+    },
+    {
+      "id": 7,
+      "question": "Anil owns a $500,000 whole life policy with a waiver of premium and GIB rider. The GIB allows Anil to add coverage up to 10% of the face policy on each policy anniversary date. When Anil initially applied for the policy, he was a non-smoker and in excellent health. The policy allows him to add coverage today; however, he was diagnosed with lung cancer a few months ago.\nHow is the insurance company likely to proceed?",
+      "options": [
+        "A. The company will allow him to add the additional coverage at stated dates.",
+        "B. Upon completing a health declaration, Anil will be allowed to add the coverage, but the additional coverage will be rated due and attract higher premium rates.",
+        "C. Anil will be allowed to add the coverage, but due to his health, the additional coverage will be offered at sub-standard rates.",
+        "D. The GIB would be null and void the moment he is diagnosed with cancer because he will be deemed as an uninsurable risk."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "The whole point of the GIB is that new medical evidence is not required at the option date.",
+        "Health changes after issue do not remove the guaranteed right to add coverage at the stated option date.",
+        "A GIB is designed to protect against exactly this problem."
+      ],
+      "explanation": "A Guaranteed Insurability Benefit lets Anil add coverage at the option dates without new evidence of insurability. His recent diagnosis does not cancel that guaranteed right.",
+      "difficulty": "easy",
+      "tags": ["gib", "health-changes", "future-insurability", "riders"]
+    },
+    {
+      "id": 8,
+      "question": "Tracy is a very successful entrepreneur who owns several business and investment properties. She has a special fondness for the first piece of real estate that she ever purchased while still attending university. It is a five-plex that today brings in approximately $20,000 in after-tax profits each year.\nIn the event of her death, Tracy would like to pass her real estate portfolio on to her two children. She is purchasing a whole life insurance policy but wants to add a feature or rider that will allow her to add additional coverage each year without evidence of insurability. She has learned about a PUA rider and a GIB rider but is unsure about the differences between the two.\nWhat should you tell her?",
+      "options": [
+        "A. A PUA locks in the cost of the insurance but will still require the life-insured to provide evidence of insurability. A GIB allows the insured to add additional coverage without evidence of insurability.",
+        "B. When a PUA is exercised, the policyholder pays for the addition via a one-time lump-sum premium. When a GIB is exercised, the premium on the main policy is increased to reflect the additional coverage.",
+        "C. A PUA can be added only to a whole life policy. A GIB is a very similar rider that can be added only to a UL policy.",
+        "D. A PUA pertains to life insurance whereas a GIB can be added only to a disability policy."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "A PUA does not work by requiring new evidence of insurability each time.",
+        null,
+        "GIB is not limited to UL in the way this option suggests.",
+        "GIB is a life-insurance concept here, not a disability-only rider."
+      ],
+      "explanation": "PUAs add paid-up insurance through lump-sum additions, often using dividends on participating whole life. A GIB, by contrast, gives the right to buy more coverage later without new medical evidence, with premium for that added coverage based on the purchase at that time.",
+      "difficulty": "medium",
+      "tags": ["pua", "gib", "whole-life", "riders"]
+    },
+    {
+      "id": 9,
+      "question": "Jordan is a married 52-year-old male. He owns a whole life insurance policy for which his wife is the life-insured. Jordan was very close to his sister, who passed away last year in a tragic car accident. He is now the legal guardian of his 12-year-old niece. Jordan has committed to a monthly savings plan with the purpose of funding his niece's upcoming university education. His agent recommended term insurance, which will provide the required funds in the event that Jordan dies before reaching his goal.\nWhich of the following solutions is both accurate and appropriate?",
+      "options": [
+        "A. He can add a term rider to his existing policy providing the rider will be based upon the same life-insured. If the life-insured will be a different person, then a stand-alone policy must be purchased.",
+        "B. He should purchase a stand-alone policy or a term rider on which his niece is the life-insured.",
+        "C. He could purchase a term rider with himself as the life-insured, but the amount of coverage cannot exceed the coverage available on the main policy.",
+        "D. None of the above"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Jordan's need is coverage on Jordan's life, not on the niece's life.",
+        "That does not fit the rider rule this question is testing.",
+        "One of the options accurately states the correct structure."
+      ],
+      "explanation": "Jordan's need is insurance on Jordan's life. Since his existing base policy is on his wife's life, the accurate rule being tested is that a term rider must stay on the same life insured as the base policy; otherwise a separate policy is needed.",
+      "difficulty": "hard",
+      "tags": ["term-rider", "life-insured", "education-planning", "riders"]
+    },
+    {
+      "id": 10,
+      "question": "Alan and Peggy are married with children. Although they are happily married, they keep their finances separate. Alan covers all expenses. Peggy earns interest income, which is generated from a bond portfolio that her late father bequeathed to her. Alan is a new client of yours and would like to purchase life insurance on his own life.\nPeggy is not employed and does not see that changing and has opted to remain uninsured. Alan would like his policy to cover his funeral costs should one of his dependents die unexpectedly.\nWhat optional coverage would you suggest Alan add to his policy?",
+      "options": [
+        "A. Alan should add a child term rider to cover the funeral costs of any of his children and wife.",
+        "B. Alan should add a paid-up addition rider, which would cover funeral costs up to $20,000 for Alan and family members that meet CHLIA's definition of \"dependents\".",
+        "C. Alan should add a family coverage rider to cover the funeral costs of any of his children and wife.",
+        "D. While Peggy has opted to remain uninsured, Alan has an insurable interest in her life and therefore can purchase life insurance without her consent."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "A child term rider addresses children, not the spouse as well.",
+        "A paid-up additions rider is not a family funeral-cost rider.",
+        null,
+        "Alan still cannot simply ignore the normal consent requirement for insuring another adult."
+      ],
+      "explanation": "A family coverage rider is the best fit because it is designed to provide modest coverage on the spouse and eligible children together. A child term rider would not solve the spouse-coverage part of the need.",
+      "difficulty": "easy",
+      "tags": ["family-coverage-rider", "dependents", "spouse-coverage", "riders"]
+    },
+    {
+      "id": 11,
+      "question": "Jake and Amanda are married and they both require varying amounts of life insurance to address various insurance needs.\nWhich one of the following combinations of term policies and term riders would be permissible?",
+      "options": [
+        "A. A $500,000 10-year term policy on Jake and a $550,000 15-year term rider also on Jake.",
+        "B. An $800,000 20-year term policy on Jake, and a $250,000 10-year term rider on Amanda.",
+        "C. A $500,000 10-year term policy on Jake, and a $500,000 15-year term rider on Amanda.",
+        "D. A $400,000 20-year term policy on Jake and a $300,000 whole life policy on Amanda."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This changes the insured life from Jake on the base policy to Amanda on the rider.",
+        "This also changes the insured life from Jake on the base policy to Amanda on the rider.",
+        "This is not a term-policy-plus-term-rider combination."
+      ],
+      "explanation": "The key rule being tested is that the term rider remains on the same life insured as the base policy. Option A keeps both the base term policy and the rider on Jake's life, so it is the permissible combination in this set.",
+      "difficulty": "hard",
+      "tags": ["term-rider", "policy-structure", "life-insured", "riders"]
+    },
+    {
+      "id": 12,
+      "question": "Martin just found out from his doctor that he has only 1 year to live. Martin's policy will allow him to access 40% of the death benefit now, but then that amount along with accrued interest will be deducted from the death benefit when he dies.\nWhich of the following makes this possible?",
+      "options": [
+        "A. Accelerated death benefits, terminal illness",
+        "B. Long-term care insurance",
+        "C. Accelerated death benefits, accidental dismemberment",
+        "D. Accelerated death benefits, dread disease"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "This question is describing an accelerated death benefit rider, not long-term care insurance.",
+        "Accidental dismemberment does not match the terminal-illness fact pattern.",
+        "The scenario specifically points to terminal illness rather than a dread-disease trigger."
+      ],
+      "explanation": "The rider described is an accelerated death benefit triggered by terminal illness. It lets Martin access part of the death benefit early, with that advance plus accrued interest deducted later from the policy proceeds.",
+      "difficulty": "easy",
+      "tags": ["accelerated-death-benefit", "terminal-illness", "riders"]
+    },
+    {
+      "id": 13,
+      "question": "Brooke owns a whole life insurance policy with accelerated death benefits. Benefits will be accelerated if the life-insured is diagnosed with a terminal illness (TI) or dread disease (DD). The policy has face-value coverage of $500,000. The monthly premium is $350. There is $50,000 in cash value built up within the policy.\nTo assist with creditor proofing, Brooke named her niece as irrevocable beneficiary. Last month, her doctor advised Brooke that she has lung cancer, and it is terminal. The doctor's opinion is that she has four to six months to live. After confirming the diagnosis, she applied for accelerated death benefits.\nWhat issue could Brooke face with her claim?",
+      "options": [
+        "A. If she applies for TI benefits, the payment is not considered a death benefit and is taxable.",
+        "B. She can apply for TI benefits providing she can prove to the insurer that the beneficiary is her niece and therefore not considered part of the protected class.",
+        "C. Four to six months to live is not considered a terminal prognosis.",
+        "D. Brooke would need her niece's permission before applying for TI benefits."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "The tax issue described is not the key problem in this scenario.",
+        "The relationship to the beneficiary is not the issue being tested here.",
+        "A prognosis of four to six months is clearly terminal.",
+        null
+      ],
+      "explanation": "Because Brooke named an irrevocable beneficiary, that beneficiary has a vested interest in the death benefit. Accessing an accelerated death benefit reduces that death benefit, so Brooke would need her niece's consent before the advance could be paid.",
+      "difficulty": "medium",
+      "tags": ["accelerated-death-benefit", "irrevocable-beneficiary", "consent", "riders"]
+    },
+    {
+      "id": 14,
+      "question": "Norman had a $500,000 whole life policy with an AD&D rider that will pay twice the death benefit in the event of accidental death. The policy was purchased three years ago. Norman used to be a respected stand-up comedian, but due to some 'off-color' remarks he made on a TV special, people stopped coming to his shows. Unfortunately, Norman started using illegal narcotics.\nLast week, he accidently overdosed. He was immediately taken to the emergency room but was pronounced dead on arrival. His only daughter is named as the beneficiary on his life insurance policy.\nHow much can she expect to receive?",
+      "options": [
+        "A. The death will not be ruled an accidental death, and therefore a death benefit will not be payable.",
+        "B. She will receive the face value of coverage of $500,000.",
+        "C. The death will be ruled a suicide, and therefore a death benefit will not be payable.",
+        "D. The death will be ruled an accidental death, and therefore she will receive $1,000,000."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The base life policy still pays unless a base-policy exclusion applies, and none is indicated here after three years.",
+        null,
+        "There is no evidence of suicide here.",
+        "The AD&D portion is the part most likely excluded in a drug-overdose situation."
+      ],
+      "explanation": "The daughter should still receive the $500,000 base death benefit. The likely problem is with the AD&D rider, because accidental-death riders often exclude losses tied to drug use or intoxication.",
+      "difficulty": "medium",
+      "tags": ["ad-and-d", "accidental-death", "exclusions", "riders"]
+    },
+    {
+      "id": 15,
+      "question": "Gary owns a life insurance policy in which he is the life insured and his son Bill is the beneficiary. When he applied for the policy, Gary added a \"waiver of premium for total disability benefit\".\nGary recently experienced a nervous breakdown and will be unable to work for a minimum of 90 days. This has been confirmed via an attending physician's statement.\nWhich one of the following statements best describes the total disability benefit?",
+      "options": [
+        "A. Gary's premium will only be waived if he suffers a disability that is deemed to be severe and prolonged.",
+        "B. The benefit will payout (and the premium will be waived) if Gary becomes totally disabled after the applicable waiting period.",
+        "C. The benefit will payout (and the premium will be waived) only if Bill becomes totally disabled.",
+        "D. Premiums will be waived immediately upon confirmation that Gary is totally disabled."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The key trigger is total disability under the contract, not the wording used in this distractor.",
+        null,
+        "The rider is on Gary, not on the beneficiary Bill.",
+        "Waiver of premium riders normally have a waiting period rather than starting immediately."
+      ],
+      "explanation": "A waiver of premium rider generally starts after the contractual waiting period once the insured meets the policy definition of total disability. It does not start instantly on the day the disability is confirmed.",
+      "difficulty": "easy",
+      "tags": ["waiver-of-premium", "total-disability", "waiting-period", "riders"]
+    },
+    {
+      "id": 16,
+      "question": "Jamie and Magda are in their early thirties. Prior to meeting Magda, Jamie applied for life insurance but learned he was uninsurable. They are now having children, and Jamie has decided to purchase life insurance on Magda's life. Jamie is an executive of a large company and earns over $200,000 per year. They have decided that he will continue to work while Magda stays home to care for the children.\nWhich of the following statements is correct?",
+      "options": [
+        "A. The waiver of premium payor is waived only if the individual paying the premium dies.",
+        "B. The waiver of premium payor rider will be underwritten on Jamie's life, and therefore it may not be possible to add it to the policy.",
+        "C. Waiver of premium in the event of disability is a standard feature on all life insurance policies.",
+        "D. Providing Magda qualifies for the life insurance, the waiver of premium payor can be added."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "That does not describe the payor waiver issue correctly.",
+        null,
+        "Waiver of premium is not a standard feature on all policies.",
+        "Jamie is the payor whose disability risk would be underwritten, so Magda qualifying alone is not enough."
+      ],
+      "explanation": "A payor waiver rider is underwritten on the payor, because it protects against the payor becoming disabled and unable to keep paying premiums. Since Jamie is already described as uninsurable, it may not be possible to add that rider.",
+      "difficulty": "hard",
+      "tags": ["payor-waiver", "underwriting", "family-planning", "riders"]
+    },
+    {
+      "id": 17,
+      "question": "Lionel is the policyholder on a $500,000 joint first-to-die whole life policy. Lionel and his wife are the lives-insured, with the survivor being the beneficiary. Lionel was considering purchasing a separate critical illness (CI) insurance policy, but his friend recommended that he add an accelerated death benefits rider to his existing policy.\nWhat is the potential problem with this suggestion?",
+      "options": [
+        "A. Accelerated death benefits do not result in any extra amounts being paid; instead, they are merely a partial advance of the death benefit.",
+        "B. Accelerated death benefits will result in additional funds being paid out in addition to the full death benefit being payable upon death. As a result, the addition of the rider will significantly increase the premium.",
+        "C. An accelerated death benefits rider cannot be added to a policy that has already been issued.",
+        "D. Accelerated death benefits are paid only if the life-insured is terminal and expected to die within one year."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "An accelerated death benefit is not an extra pool of money on top of the full death benefit.",
+        "That is not the core problem being tested here.",
+        "This is too narrow and does not capture the main issue with using ADB as a substitute for CI coverage."
+      ],
+      "explanation": "The main drawback is that an accelerated death benefit is an advance of the existing death benefit, not extra money on top of it. That makes it different from a standalone critical illness policy, which pays a separate benefit.",
+      "difficulty": "medium",
+      "tags": ["accelerated-death-benefit", "critical-illness", "joint-first-to-die", "riders"]
+    },
+    {
+      "id": 18,
+      "question": "Kendra owns a whole life insurance policy with $100,000 face value coverage. The policy also has an AD&D rider. She was involved in an accident two years ago that caused minor brain damage. She was charged at the scene for failing to stop at a stop sign. Two years after the accident, Kendra lost the use of her hands.\nWhile she had some movement in her fingers, she remained unable to grasp anything. After checking her policy, she realized that the policy provides a benefit equal to 100% of the death benefit as a result of accidental loss of both hands. When she filed a claim with the insurer, it was denied.\nWhich of the following is the most likely reason for the claim being denied?",
+      "options": [
+        "A. The loss was more than one year from the accident.",
+        "B. Kendra did not die.",
+        "C. Her failing to stop at a stop sign contributed to the accident.",
+        "D. Her hands were not actually severed."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "AD&D riders can also cover certain dismemberment losses, not just death.",
+        "That is not the most likely reason for denial here.",
+        "The stronger issue in the fact pattern is the timing of the loss after the accident."
+      ],
+      "explanation": "AD&D riders usually require the death or dismemberment loss to occur within a stated period after the accident, often one year. Kendra's loss happened two years later, which is the most likely reason the claim was denied.",
+      "difficulty": "hard",
+      "tags": ["ad-and-d", "dismemberment", "time-limit", "riders"]
+    },
+    {
+      "id": 19,
+      "question": "Derrick has a whole life insurance policy that has face-value coverage of $100,000. The policy offers accelerated death benefits if the life-insured is diagnosed with a dread disease (DD) or is terminally ill (TI). The policy has $20,000 in cash value and requires a monthly premium of $250. Derrick is terminally ill and has applied for accelerated death benefits. The policy will advance up to 50% of the original face value structured as a loan.\nWhat would the tax implications of the accelerated death benefit be?",
+      "options": [
+        "A. Derrick could receive up to $50,000 today tax-free. Upon his death, his beneficiary will receive $70,000 less the accrued interest on the advanced amount.",
+        "B. Receiving accelerated death benefits is a taxable event. From a tax perspective, Derrick would be better off borrowing up to $100,000 from a bank using the life insurance policy as collateral.",
+        "C. Derrick could receive up to $50,000 today tax-free. Upon his death, his beneficiary will receive the remaining $50,000 less the accrued interest on the advanced amount.",
+        "D. The difference between the amount that is advanced under the accelerated death benefit rider and the coverage amount is subject to tax."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "If $50,000 is advanced on a $100,000 policy, the remaining death benefit is not $70,000.",
+        "That overstates the tax problem; accelerated death benefits are generally received tax-free.",
+        null,
+        "That is not how the tax treatment works here."
+      ],
+      "explanation": "Derrick can receive up to $50,000 tax-free today. Because the accelerated benefit is an advance against the policy, the beneficiary later receives the remaining death benefit, reduced by the advanced amount and accrued interest.",
+      "difficulty": "medium",
+      "tags": ["accelerated-death-benefit", "taxation", "terminal-illness", "riders"]
+    },
+    {
+      "id": 20,
+      "question": "Mike requires $600,000 in 15-year term insurance. His wife Leanne requires $500,000 in 20-year term insurance for a different insurance need.\nWhich one of the following recommendations would you make?",
+      "options": [
+        "A. A term rider cannot be added to a main policy unless the life insured will be the same on both policies. For this reason, they will need to consider separate term policies.",
+        "B. A term rider cannot be added to a main policy unless the life insured will be the same on both policies. For this reason, they will need to consider a $600,000 joint first-to-die term policy.",
+        "C. They should consider a $500,000 20-year term insurance policy on Leanne and a $600,000 15-year term rider on Mike.",
+        "D. They should consider a $600,000 15-year term policy on Mike and a $600,000 20-year term rider on Leanne."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "A joint first-to-die policy is not the right fix for two separate needs on two separate lives.",
+        "This changes the insured life from Leanne on the base policy to Mike on the rider.",
+        "This changes the insured life from Mike on the base policy to Leanne on the rider."
+      ],
+      "explanation": "The rule this set is testing is that the term rider must stay on the same insured life as the base policy. Since Mike and Leanne each need separate coverage on separate lives, separate term policies are the appropriate recommendation.",
+      "difficulty": "medium",
+      "tags": ["term-rider", "life-insured", "term-insurance", "riders"]
+    },
+    {
+      "id": 21,
+      "question": "Hector and Martha have been married for 25 years and already have three daughters aged 16, 19, and 23. They own a joint first-to-die policy with $1,000,000 face value coverage. When they established the insurance policy, they also added a family coverage rider that provides $50,000 in coverage for each dependent.\nHector and Martha are extremely proud of their eldest daughter, Lois, who just finished a commerce degree and is now working towards her MBA. Lois also has group coverage through her alumni that includes dependent coverage as well. She just gave birth to a son this morning. While it was a high-risk pregnancy, the doctors have told her that the baby is doing just fine. Lois and the baby are hoping to be discharged from the hospital tomorrow.\nWhich of the following statements is true?",
+      "options": [
+        "A. The baby will be covered under the group plan's dependent coverage rider once she reaches 15 days old. The premium will not increase.",
+        "B. The baby will automatically be covered upon birth by the family coverage rider and the dependent coverage rider of each insurance policy with a coordination of benefits occurring between them. There will not be an increase in the premium.",
+        "C. The baby will be covered under the family coverage rider once she reaches 15 days old. The premium will increase but only marginally.",
+        "D. The baby will be covered under the family coverage rider once she reaches 15 days old. The premium will not increase."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "The grandparents' family coverage rider does not automatically extend to a grandchild in the way this option suggests.",
+        "The grandparents' family coverage rider is not the correct source of coverage for Lois's newborn here.",
+        "The grandparents' family coverage rider is not the correct source of coverage for Lois's newborn here."
+      ],
+      "explanation": "The newborn is Lois's dependent, not Hector and Martha's dependent for purposes of their family coverage rider. The correct coverage source in this fact pattern is Lois's own dependent coverage, which typically starts after the newborn waiting period without a premium increase to the child.",
+      "difficulty": "hard",
+      "tags": ["family-coverage-rider", "dependent-coverage", "newborn-coverage", "riders"]
+    },
+    {
+      "id": 22,
+      "question": "Bradley purchased a universal life (UL) insurance policy last year. The policy was purchased to cover capital gains taxes on a business that would be sold or gifted upon death. Bradley's business is his passion, and he devotes most of his energy to it. Over the past year, the business had record sales and an increased profit margin. Bradley would like to add a GIB to his policy.\nWhich of the following statements is most correct?",
+      "options": [
+        "A. When a GIB is exercised, the premium for the additional coverage will be based upon the life-insured's age at that point in time.",
+        "B. The GIB rider can be added without providing evidence of insurability.",
+        "C. A GIB allows the insured to add coverage on any date and for any amount without evidence of insurability.",
+        "D. None of the above"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "That is not the best general statement here, because the question is testing how GIB pricing works when exercised.",
+        "A GIB does not permit unlimited increases on any date for any amount.",
+        "One of the listed statements is correct."
+      ],
+      "explanation": "When a GIB option is exercised, the new amount of coverage is priced using the insured's attained age at that time. The rider removes the need for new medical evidence, but it does not freeze the insured's age for pricing.",
+      "difficulty": "medium",
+      "tags": ["gib", "ul", "premium-calculation", "riders"]
+    },
+    {
+      "id": 23,
+      "question": "Carol owns a whole life insurance policy with accelerated death benefits. The policy has face-value coverage of $800,000. The monthly premium is $350 per month and has roughly $50,000 in cash value built up within the policy. Her doctor recently advised her that she has lung cancer, and it is terminal. After confirming the diagnosis, she received $400,000 in accelerated death benefits. Last week, Carol succumbed to her illness and died.\nHow much can her beneficiaries expect to receive now?",
+      "options": [
+        "A. $850,000",
+        "B. $800,000 less $400,000 less overdue premiums less accrued interest",
+        "C. $800,000",
+        "D. $850,000 less $400,000 less accrued interest."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Cash value is not added on top of the face amount as a separate death benefit here.",
+        null,
+        "The death benefit is reduced by the accelerated amount that Carol already received.",
+        "This incorrectly adds cash value into the result."
+      ],
+      "explanation": "Carol already accelerated $400,000 of the $800,000 death benefit. The beneficiaries therefore receive the remaining death benefit, reduced by the accelerated amount and any accrued interest or unpaid premium adjustments.",
+      "difficulty": "hard",
+      "tags": ["accelerated-death-benefit", "death-benefit-reduction", "terminal-illness", "riders"]
+    },
+    {
+      "id": 24,
+      "question": "Alexis purchased a whole life insurance policy to address a permanent and potentially increasing insurance need.\nWhat rider should Alexis consider adding when she applies for the policy if she would like to add some level of coverage in the future without having to worry about providing satisfactory evidence of insurability?",
+      "options": [
+        "A. LTC",
+        "B. GIB",
+        "C. DD",
+        "D. AD&D"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Long-term care coverage does not give future guaranteed life-insurance purchase rights.",
+        null,
+        "A dread-disease rider is not a future-insurability rider.",
+        "AD&D is an accidental loss rider, not a future-insurability rider."
+      ],
+      "explanation": "If Alexis wants the right to add future life coverage without new medical evidence, the correct rider is a Guaranteed Insurability Benefit.",
+      "difficulty": "easy",
+      "tags": ["gib", "whole-life", "future-insurability", "riders"]
+    },
+    {
+      "id": 25,
+      "question": "Carol and John have been married for 25 years. They are both self-employed professionals. They purchased a cottage many years ago for $150,000, which today is estimated to be worth $800,000. They want to make sure that they have sufficient insurance in place to cover the tax liability that will arise upon their deaths because they wish to gift the cottage to their daughter upon their deaths.\nThey bought a non-participating whole life policy with the death benefit being equal to today's estimated tax liability on the cottage. The cottage has appreciated nicely, and their hope is it will continue to do so.\nWith reference to their existing policy, what would you recommend?",
+      "options": [
+        "A. Use the extended term insurance option.",
+        "B. Add a waiver of premium rider.",
+        "C. Add a GIB.",
+        "D. Select the PUA dividend option."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "That is a non-forfeiture choice, not a way to increase coverage for a growing future need.",
+        "A waiver of premium does not solve the growing coverage requirement.",
+        null,
+        "PUA dividend options are associated with participating whole life, not non-participating whole life."
+      ],
+      "explanation": "Their need may increase as the cottage continues to appreciate, so they need flexibility to add more life coverage later. A GIB is the best match. The PUA dividend option is not available on a non-participating whole life policy.",
+      "difficulty": "medium",
+      "tags": ["gib", "estate-planning", "non-participating-whole-life", "riders"]
+    },
+    {
+      "id": 26,
+      "question": "Stan owns a 10-year term policy with $250,000 in coverage. He is the life-insured, and his son is the beneficiary. Which of the following term riders could not be added to his policy?",
+      "options": [
+        "A. A 7-year term policy with himself as the life-insured and his sister as revocable beneficiary",
+        "B. A 15-year term rider with coverage in the amount of $1,000,000",
+        "C. A $100,000 8-year term rider with Grace as the life-insured",
+        "D. A 5-year term rider with coverage in the amount of $100,000"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This keeps Stan as the life insured, which is the point being tested here.",
+        "This choice is aggressive, but it does not change the insured life from Stan.",
+        null,
+        "This also keeps Stan as the life insured, which is the point being tested here."
+      ],
+      "explanation": "The rider that could not be added is the one that changes the life insured from Stan to Grace. In this question set, the key restriction is that the term rider remains on the same life insured as the base policy.",
+      "difficulty": "medium",
+      "tags": ["term-rider", "life-insured", "policy-structure", "riders"]
+    },
+    {
+      "id": 27,
+      "question": "Danny owns a whole life insurance policy with face-value coverage of $250,000. The policy was purchased to insure a permanent life investment. His agent, Danny recently, purchased a condominium as an income property. He is looking at purchasing term insurance that will ensure that the mortgage is paid in full in the event of Danny's death, and he suggests that rather than buy a completely separate policy, Danny should add a term rider to his whole life policy.\nWhat would be one of the advantages of adding a rider as opposed to a completely separate term policy?",
+      "options": [
+        "A. If the term rider is being added to an existing policy, evidence of insurability will be waived.",
+        "B. There would be no suicide exclusion and contestability period on the term rider.",
+        "C. The rider would be cheaper than purchasing the term coverage as a stand-alone policy because there would be only one policy fee.",
+        "D. The rider would be cheaper as compared to a stand-alone policy because the addition is not considered a new policy, and therefore the agent does not receive a second commission."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Adding a rider does not automatically waive underwriting.",
+        "A term rider does not avoid the normal policy provisions in that way.",
+        null,
+        "Agent compensation is not the pricing rule being tested here."
+      ],
+      "explanation": "The practical advantage is cost efficiency. A rider usually avoids the extra policy fee and duplicated administration that come with buying a separate standalone term policy.",
+      "difficulty": "easy",
+      "tags": ["term-rider", "policy-cost", "whole-life", "riders"]
+    },
+    {
+      "id": 28,
+      "question": "Paul and Amanda love children, but they were unable to have one of their own. They adopted four children that are now aged 3, 5, 8 and 12. Then, by some miracle, Amanda finally became pregnant. She just gave birth to a healthy baby boy that they named Blake. Paul and Amanda own a joint and last-to-die whole life policy with a child term rider.\nWhich one of the following statements best describes the type of coverage that the child term rider would provide?",
+      "options": [
+        "A. A child term rider covers as many as 3 children without an increase in premium. Each additional child thereafter will result in an incremental increase in premium.",
+        "B. Their adopted children are already covered and Blake will automatically be covered once he reaches 15 days of age, with no increase in premium.",
+        "C. Blake will be covered immediately with an incremental increase in premium. Adopted children are covered subject to a medical underwriting because they have different genes than those of their adoptive parents.",
+        "D. Blake will be covered once he reaches 15 days of age, but there will be an incremental increase in premium."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "A standard child rider is not normally structured that way.",
+        null,
+        "Adopted children are not treated that way under a standard child rider, and newborn coverage does not usually begin immediately at birth.",
+        "The newborn waiting period is right, but the premium-increase part is not."
+      ],
+      "explanation": "A child term rider generally covers all eligible children, including adopted children, under one rider premium. Newborn coverage usually starts after the stated waiting period, commonly 15 days, without a new premium charge for each additional child.",
+      "difficulty": "easy",
+      "tags": ["child-term-rider", "newborn-coverage", "adopted-children", "riders"]
+    },
+    {
+      "id": 29,
+      "question": "Christopher lives a very active lifestyle. He works as a commercial diver for a marine research company. In his spare time, he volunteers for the fire department in his community. He vacations at least twice per year in the Caribbean, where he swims with sharks and explores shipwrecks. He applied for life insurance last year; but the policy was rated based on his current employment.\nChristopher has a five-year-old son. He would like to purchase some form of insurance on his son's life that will ensure his son will have some level of life insurance coverage regardless of the occupation he decides to engage in.\nWhich of the following would address Christopher's concern?",
+      "options": [
+        "A. Purchasing a universal life policy on his own life.",
+        "B. Purchasing a child term rider.",
+        "C. Purchasing a stand-alone policy on his own life, adding a GIB rider, and naming his son as beneficiary.",
+        "D. Purchasing a life annuity."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "That does not create guaranteed future insurability on the son's life.",
+        null,
+        "This still insures Christopher's life, not the son's life.",
+        "A life annuity is unrelated to this need."
+      ],
+      "explanation": "A child term rider can give the son early life coverage plus a conversion privilege, allowing the child to convert to his own permanent coverage later without new evidence of insurability. That is what addresses Christopher's concern.",
+      "difficulty": "medium",
+      "tags": ["child-term-rider", "conversion", "future-insurability", "riders"]
+    },
+    {
+      "id": 30,
+      "question": "Gerard is the policyholder and the life insured on a $500,000 whole life policy that offers accelerated death benefits. He was recently diagnosed with a terminal illness. As a result, he received a $50,000 benefit today.\nWhat would the tax implications be in regards to this payment?",
+      "options": [
+        "A. The payment would likely be received tax-free. The amount advanced would be added to the eventual death benefit of $500,000 plus cash value.",
+        "B. The payment would likely be received tax-free. The amount advanced would be added to the eventual death benefit of $500,000.",
+        "C. The payment would likely be received tax-free. Upon Gerard's death, the amount advanced plus accrued interest would be deducted from the death benefit.",
+        "D. The payment would be taxable and is over and above the eventual death benefit."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "The advance is not added on top of the death benefit and cash value.",
+        "The advanced amount is not added on top of the eventual death benefit.",
+        null,
+        "Accelerated death benefits are generally not treated that way."
+      ],
+      "explanation": "The accelerated payment is generally received tax-free. Because it is an advance against the policy proceeds, the amount advanced plus accrued interest is deducted from the death benefit payable later.",
+      "difficulty": "easy",
+      "tags": ["accelerated-death-benefit", "taxation", "terminal-illness", "riders"]
+    }
+  ]
 }

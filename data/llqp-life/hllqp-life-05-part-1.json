@@ -1,0 +1,258 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 05 QZ - Riders and Supplementary Benefits - Section 1",
+  "examTips": "Focus on how GIB, PUA, waiver of premium, AD&D, accelerated death benefits, child/family riders, and term riders work. Pay close attention to who can be insured under a rider, when evidence of insurability is waived, tax treatment of accelerated benefits, and when family or child coverage begins.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Patrick is buying a renewable 10-year term insurance policy. He would like to add a rider that will allow him to increase coverage in the future without having to provide evidence of insurability.\nWhat rider would you recommend?",
+      "options": [
+        "A. GIB and PUA",
+        "B. Guaranteed Insurability Benefit (GIB)",
+        "C. Double Indemnity",
+        "D. Paid Up Additions (PUA)"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Only one of these riders directly gives the future right to buy more coverage without new evidence of insurability.",
+        null,
+        "Double indemnity is an accidental death rider, not a future-insurability rider.",
+        "PUA relates to participating whole life additions, not future increases on a renewable term policy."
+      ],
+      "explanation": "A Guaranteed Insurability Benefit rider lets the insured buy additional coverage at stated dates or events without giving new medical evidence. That is the rider Patrick is looking for.",
+      "difficulty": "easy",
+      "tags": [
+        "gib",
+        "term-insurance",
+        "future-insurability",
+        "riders"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "All else being equal, which of the following combinations of policies would be the most expensive?",
+      "options": [
+        "A. Separate whole life policy and separate term policy",
+        "B. Combined insurance including a whole life policy and a term rider",
+        "C. Whole life policy and term rider",
+        "D. The cost of all three options would be identical."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Combining coverage under one policy generally avoids the duplicate policy fee and administration of two separate policies.",
+        "A single policy with a rider is generally cheaper than maintaining two separate contracts.",
+        "The structures are not priced identically because policy fees and administration differ."
+      ],
+      "explanation": "Two separate policies are usually the most expensive structure because each contract has its own policy fee and administration. A rider is often cheaper than buying a second standalone policy.",
+      "difficulty": "medium",
+      "tags": [
+        "term-rider",
+        "whole-life",
+        "policy-cost",
+        "riders"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When Victoria was 2 years old, her mother Grace bought a participating whole life insurance policy on which Victoria was the life insured. The policy provided benefits that would be sufficient to cover Victoria's final expenses, such as funeral costs, and income replacement for Grace allowing her to take the necessary time to grieve the loss of her daughter. At the time of purchase, Grace was advised to add a PUA option.\nWhich of the following benefits could be facilitated by the policy's PUA?",
+      "options": [
+        "A. Once Victoria reaches age 18, the whole life policy will be paid in full.",
+        "B. Additional riders can be added to the policy today without having to provide evidence of insurability because the underwriting risk was pre-paid for with the PUA.",
+        "C. Dividends received will be used to add term insurance coverage to the policy without requiring Victoria to provide evidence of insurability.",
+        "D. When Victoria reaches the age of 18, she could maintain the base policy and opt to surrender the PUA and use the funds for whatever purpose she chooses, such as post-secondary education."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "PUAs add paid-up coverage and cash value, but they do not guarantee the base policy will be fully paid by age 18.",
+        "PUAs do not pre-pay future underwriting for unrelated riders.",
+        "Paid-up additions increase paid-up life coverage, not term insurance coverage.",
+        null
+      ],
+      "explanation": "Paid-up additions build extra paid-up life insurance and cash value inside the policy. That extra value can later be surrendered if funds are needed, while the base policy can remain in force.",
+      "difficulty": "medium",
+      "tags": [
+        "pua",
+        "participating-whole-life",
+        "cash-value",
+        "riders"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Bryce already owns a term policy in which he is the life insured. He now would like to purchase term coverage on his spouse's life and is inquiring about a term rider.\nWhich one of the following statements regarding term riders is correct?",
+      "options": [
+        "A. The life insured under the term rider must be the same as the life insured under the main policy.",
+        "B. The premium on a term rider would be lower than the premium on a stand-alone policy.",
+        "C. The term rider must be longer than the term of the base policy.",
+        "D. The amount of coverage under the term rider must be less than the amount of coverage under the main policy."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "A rider may save cost in some situations, but that does not change the core rule being tested here about who can be insured under the rider.",
+        "A term rider is not required to be longer than the base policy.",
+        "That is not the rule this question is testing."
+      ],
+      "explanation": "In this quiz set, the key rule is that a term rider stays on the same life insured as the base policy. If Bryce wants separate term coverage on his spouse's life, the spouse would generally need her own policy.",
+      "difficulty": "medium",
+      "tags": [
+        "term-rider",
+        "life-insured",
+        "policy-structure",
+        "riders"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Danny is a 60-year-old widower. He purchased a $100,000 whole life policy decades ago to provide for his wife in the event of his death. The policy has a waiver of premium and accelerated death benefits rider. Danny no longer has any dependents and as a result has questioned whether he still needs the policy. Fortunately he did not cancel the policy as he was just diagnosed with a terminal illness and is likely to die within the year.\nThe monthly premium on the policy is $165. The policy has $23,000 built up in the cash value. The ACB of the policy is $19,000, and Danny is in a 40% tax bracket. As per the terms of the policy, he qualifies for accelerated death benefits up to 50% of the face value.\nWhat is the maximum amount Danny can receive in accelerated death benefits on an after-tax basis?",
+      "options": [
+        "A. $33,600",
+        "B. $50,000",
+        "C. $37,200",
+        "D. $13,800"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This incorrectly subtracts tax or other amounts from the accelerated benefit.",
+        null,
+        "This reduces the accelerated benefit by a tax-style calculation that does not apply here.",
+        "This looks like a tax calculation on another figure, not the maximum accelerated death benefit."
+      ],
+      "explanation": "Danny can accelerate up to 50% of a $100,000 face amount, which is $50,000. The accelerated death benefit itself is generally received tax-free, so the after-tax maximum remains $50,000.",
+      "difficulty": "hard",
+      "tags": [
+        "accelerated-death-benefit",
+        "terminal-illness",
+        "taxation",
+        "riders"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Darren is the single father of a 10-year old son named Bart. Darren has struggled financially his entire life as his parents died when he was only 15 and tragically his wife died a month after Bart was born. Darren would like to put a plan in place that would prevent Bart from suffering a similar fate, should Darren die unexpectedly.\nDespite earning a modest income, Darren has been able to consistently save 10% of his income. While he is an avid saver, he acknowledges that his monthly budget is somewhat tight.\nWhat life insurance strategy would you recommend to Darren?",
+      "options": [
+        "A. Darren should purchase a life insurance policy on himself with Bart as the beneficiary, and add a family term rider.",
+        "B. Darren should purchase a joint-first-to-die term policy with himself and Bart as the life insured.",
+        "C. Darren should purchase a joint-first-to-die permanent policy with himself and Bart as the life insured.",
+        "D. Darren should purchase a life insurance policy on himself with Bart as the beneficiary, and add a child term rider."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "A family rider is broader than he needs because there is no spouse to cover here.",
+        "A joint-first-to-die parent-child policy is not the suitable structure for this need.",
+        "This would be unnecessarily expensive for Darren's budget and objective.",
+        null
+      ],
+      "explanation": "Darren's primary need is life insurance on his own life, with Bart protected as beneficiary. If he also wants some child coverage at low cost, a child term rider is the most appropriate add-on.",
+      "difficulty": "easy",
+      "tags": [
+        "child-term-rider",
+        "family-planning",
+        "budget",
+        "riders"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Anil owns a $500,000 whole life policy with a waiver of premium and GIB rider. The GIB allows Anil to add coverage up to 10% of the face policy on each policy anniversary date. When Anil initially applied for the policy, he was a non-smoker and in excellent health. The policy allows him to add coverage today; however, he was diagnosed with lung cancer a few months ago.\nHow is the insurance company likely to proceed?",
+      "options": [
+        "A. The company will allow him to add the additional coverage at stated dates.",
+        "B. Upon completing a health declaration, Anil will be allowed to add the coverage, but the additional coverage will be rated due and attract higher premium rates.",
+        "C. Anil will be allowed to add the coverage, but due to his health, the additional coverage will be offered at sub-standard rates.",
+        "D. The GIB would be null and void the moment he is diagnosed with cancer because he will be deemed as an uninsurable risk."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "The whole point of the GIB is that new medical evidence is not required at the option date.",
+        "Health changes after issue do not remove the guaranteed right to add coverage at the stated option date.",
+        "A GIB is designed to protect against exactly this problem."
+      ],
+      "explanation": "A Guaranteed Insurability Benefit lets Anil add coverage at the option dates without new evidence of insurability. His recent diagnosis does not cancel that guaranteed right.",
+      "difficulty": "easy",
+      "tags": [
+        "gib",
+        "health-changes",
+        "future-insurability",
+        "riders"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tracy is a very successful entrepreneur who owns several business and investment properties. She has a special fondness for the first piece of real estate that she ever purchased while still attending university. It is a five-plex that today brings in approximately $20,000 in after-tax profits each year.\nIn the event of her death, Tracy would like to pass her real estate portfolio on to her two children. She is purchasing a whole life insurance policy but wants to add a feature or rider that will allow her to add additional coverage each year without evidence of insurability. She has learned about a PUA rider and a GIB rider but is unsure about the differences between the two.\nWhat should you tell her?",
+      "options": [
+        "A. A PUA locks in the cost of the insurance but will still require the life-insured to provide evidence of insurability. A GIB allows the insured to add additional coverage without evidence of insurability.",
+        "B. When a PUA is exercised, the policyholder pays for the addition via a one-time lump-sum premium. When a GIB is exercised, the premium on the main policy is increased to reflect the additional coverage.",
+        "C. A PUA can be added only to a whole life policy. A GIB is a very similar rider that can be added only to a UL policy.",
+        "D. A PUA pertains to life insurance whereas a GIB can be added only to a disability policy."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "A PUA does not work by requiring new evidence of insurability each time.",
+        null,
+        "GIB is not limited to UL in the way this option suggests.",
+        "GIB is a life-insurance concept here, not a disability-only rider."
+      ],
+      "explanation": "PUAs add paid-up insurance through lump-sum additions, often using dividends on participating whole life. A GIB, by contrast, gives the right to buy more coverage later without new medical evidence, with premium for that added coverage based on the purchase at that time.",
+      "difficulty": "medium",
+      "tags": [
+        "pua",
+        "gib",
+        "whole-life",
+        "riders"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Jordan is a married 52-year-old male. He owns a whole life insurance policy for which his wife is the life-insured. Jordan was very close to his sister, who passed away last year in a tragic car accident. He is now the legal guardian of his 12-year-old niece. Jordan has committed to a monthly savings plan with the purpose of funding his niece's upcoming university education. His agent recommended term insurance, which will provide the required funds in the event that Jordan dies before reaching his goal.\nWhich of the following solutions is both accurate and appropriate?",
+      "options": [
+        "A. He can add a term rider to his existing policy providing the rider will be based upon the same life-insured. If the life-insured will be a different person, then a stand-alone policy must be purchased.",
+        "B. He should purchase a stand-alone policy or a term rider on which his niece is the life-insured.",
+        "C. He could purchase a term rider with himself as the life-insured, but the amount of coverage cannot exceed the coverage available on the main policy.",
+        "D. None of the above"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        null,
+        "Jordan's need is coverage on Jordan's life, not on the niece's life.",
+        "That does not fit the rider rule this question is testing.",
+        "One of the options accurately states the correct structure."
+      ],
+      "explanation": "Jordan's need is insurance on Jordan's life. Since his existing base policy is on his wife's life, the accurate rule being tested is that a term rider must stay on the same life insured as the base policy; otherwise a separate policy is needed.",
+      "difficulty": "hard",
+      "tags": [
+        "term-rider",
+        "life-insured",
+        "education-planning",
+        "riders"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Alan and Peggy are married with children. Although they are happily married, they keep their finances separate. Alan covers all expenses. Peggy earns interest income, which is generated from a bond portfolio that her late father bequeathed to her. Alan is a new client of yours and would like to purchase life insurance on his own life.\nPeggy is not employed and does not see that changing and has opted to remain uninsured. Alan would like his policy to cover his funeral costs should one of his dependents die unexpectedly.\nWhat optional coverage would you suggest Alan add to his policy?",
+      "options": [
+        "A. Alan should add a child term rider to cover the funeral costs of any of his children and wife.",
+        "B. Alan should add a paid-up addition rider, which would cover funeral costs up to $20,000 for Alan and family members that meet CHLIA's definition of \"dependents\".",
+        "C. Alan should add a family coverage rider to cover the funeral costs of any of his children and wife.",
+        "D. While Peggy has opted to remain uninsured, Alan has an insurable interest in her life and therefore can purchase life insurance without her consent."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "A child term rider addresses children, not the spouse as well.",
+        "A paid-up additions rider is not a family funeral-cost rider.",
+        null,
+        "Alan still cannot simply ignore the normal consent requirement for insuring another adult."
+      ],
+      "explanation": "A family coverage rider is the best fit because it is designed to provide modest coverage on the spouse and eligible children together. A child term rider would not solve the spouse-coverage part of the need.",
+      "difficulty": "easy",
+      "tags": [
+        "family-coverage-rider",
+        "dependents",
+        "spouse-coverage",
+        "riders"
+      ]
+    }
+  ]
+}
