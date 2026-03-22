@@ -3047,48 +3047,83 @@ const MCQApp = {
     return 'Focus on the exact fact the rule turns on, then eliminate choices that change that fact.';
   },
 
-  buildBeginnerLesson(question, correctReason = '') {
-    const normalizeSentence = (value) => String(value || '')
+  compactStudySentence(value, maxLength = 120) {
+    const cleaned = String(value || '')
       .replace(/\s+/g, ' ')
       .trim()
       .replace(/[.?!]+$/, '');
 
-    const focusText = normalizeSentence(this.getQuestionFocusText(question));
+    if (!cleaned) return '';
+    if (cleaned.length <= maxLength) return `${cleaned}.`;
+
+    const naturalBreak = cleaned.search(/[:;]\s+/);
+    if (naturalBreak > 28 && naturalBreak < maxLength) {
+      return `${cleaned.slice(0, naturalBreak).trim()}.`;
+    }
+
+    const shortened = cleaned
+      .slice(0, maxLength - 3)
+      .trim()
+      .replace(/[,;:]+$/, '');
+
+    return `${shortened}...`;
+  },
+
+  buildBeginnerLesson(question, correctReason = '') {
+    const topicLesson = this.compactStudySentence(this.buildTopicLesson(question), 118);
+    if (topicLesson) {
+      return topicLesson;
+    }
+
+    const reasonText = this.compactStudySentence(
+      this.summarizeExplanationReason(correctReason) || correctReason,
+      118
+    );
+    if (reasonText) {
+      return reasonText;
+    }
+
+    return 'Match the answer to the key fact the question is testing.';
+  },
+
+  buildStudyTipPoints(question, correctReason = '') {
     const genericRuleText = 'Apply the governing LLQP product, contract, and tax rule to the exact facts in the scenario';
-    const explicitRule = normalizeSentence(this.getRuleReminder(question));
-    const inferredRuleRaw = normalizeSentence(this.inferQuestionRule(question));
-    const inferredRule = this.normalizeStudyText(inferredRuleRaw) === this.normalizeStudyText(genericRuleText)
-      ? 'Use the exact policy, tax, or contract rule that applies to these facts'
-      : inferredRuleRaw;
-    const ruleText = explicitRule || inferredRule;
-    const topicLesson = normalizeSentence(this.buildTopicLesson(question));
-    const reasonText = normalizeSentence(this.toSentence(correctReason));
-    const parts = [];
+    const inferredRuleRaw = String(this.inferQuestionRule(question) || '').trim();
+    const ruleBase = this.getRuleReminder(question)
+      || (
+        this.normalizeStudyText(inferredRuleRaw) === this.normalizeStudyText(genericRuleText)
+          ? 'Match the answer to the exact fact in the question.'
+          : inferredRuleRaw
+      );
+    const ruleText = this.compactStudySentence(
+      String(ruleBase || '')
+        .replace(/^Apply\s+/i, '')
+        .replace(/^Use\s+/i, 'Use '),
+      118
+    );
+    const mainIdea = this.compactStudySentence(this.buildBeginnerLesson(question, correctReason), 118);
+    const rememberText = this.compactStudySentence(
+      this.isExceptionQuestion(question)
+        ? 'This is an exception question. Keep the one choice that breaks the normal rule.'
+        : 'Pick the choice that fits the facts. Ignore answers that add extra details.',
+      110
+    );
 
-    if (focusText) {
-      parts.push(`First, identify what the question is asking: ${focusText}.`);
-    }
+    const seen = new Set();
+    const points = [];
+    const addPoint = (label, text) => {
+      if (!text) return;
+      const normalized = this.normalizeStudyText(text);
+      if (!normalized || seen.has(normalized)) return;
+      seen.add(normalized);
+      points.push({ label, text });
+    };
 
-    if (ruleText) {
-      parts.push(`Then apply this rule: ${ruleText}.`);
-    }
+    addPoint('Main idea', mainIdea);
+    addPoint('Use this rule', ruleText);
+    addPoint('Remember', rememberText);
 
-    if (
-      topicLesson &&
-      this.normalizeStudyText(topicLesson) !== this.normalizeStudyText(ruleText)
-    ) {
-      parts.push(`Quick takeaway: ${topicLesson}.`);
-    }
-
-    if (!parts.length && reasonText) {
-      parts.push(`Quick takeaway: ${reasonText}.`);
-    }
-
-    if (!parts.length) {
-      parts.push('First, identify the key fact pattern, then pick the choice that matches the rule without adding extra assumptions.');
-    }
-
-    return parts.join(' ');
+    return points;
   },
 
   buildWrongAnswerHint(question, optionIndex) {
@@ -3188,8 +3223,8 @@ const MCQApp = {
     const correctIndex = Number.isInteger(question.correctAnswer) ? question.correctAnswer : -1;
     const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
     const correctReason = this.buildCorrectAnswerReason(question);
-    const topicLesson = this.buildBeginnerLesson(question, correctReason);
-    const includeLesson = Boolean(topicLesson);
+    const studyTipPoints = this.buildStudyTipPoints(question, correctReason);
+    const includeLesson = studyTipPoints.length > 0;
     const wrongChoices = options
       .map((option, index) => {
         if (index === correctIndex) return null;
@@ -3204,20 +3239,20 @@ const MCQApp = {
       sections: [
         {
           variant: 'correct',
-          title: 'Why this answer is correct',
+          title: 'Why this is right',
           badge: correctIndex >= 0 ? (letters[correctIndex] || String(correctIndex + 1)) : '',
           badgeTone: 'correct',
           body: correctReason
         },
         ...(includeLesson ? [{
           variant: 'lesson',
-          title: 'What to learn from this',
-          body: topicLesson
+          title: 'Remember this',
+          points: studyTipPoints
         }] : []),
         {
           variant: 'review',
-          title: 'Why the other choices miss',
-          summaryMeta: `${wrongChoices.length} quick notes`,
+          title: 'Why other choices miss',
+          summaryMeta: `${wrongChoices.length} short notes`,
           collapsible: true,
           items: wrongChoices
         }
@@ -3268,6 +3303,26 @@ const MCQApp = {
               <ul class="exp-choice-list">
                 ${itemsHtml}
               </ul>
+            </section>
+          `;
+        }
+
+        if (Array.isArray(section.points)) {
+          const pointsHtml = section.points.map((point) => `
+              <div class="exp-study-point">
+                <div class="exp-study-label">${this.escapeHtml(point.label || 'Study tip')}</div>
+                <p class="exp-study-text">${this.escapeHtml(point.text || '')}</p>
+              </div>
+            `).join('');
+
+          return `
+            <section class="exp-panel is-${this.escapeHtml(section.variant || 'default')}">
+              <div class="exp-panel-head">
+                <h4 class="exp-panel-title">${this.escapeHtml(section.title || '')}</h4>
+              </div>
+              <div class="exp-study-points">
+                ${pointsHtml}
+              </div>
             </section>
           `;
         }
