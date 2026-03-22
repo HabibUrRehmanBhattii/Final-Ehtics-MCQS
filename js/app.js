@@ -161,6 +161,19 @@ const MCQApp = {
     this.updateQuestionTimerDisplay(null);
   },
 
+  pauseQuestionTimer(questionKey = this.state.activeQuestionTimerKey) {
+    this.flushActiveQuestionTimer();
+
+    if (this.state.questionTimerInterval) {
+      window.clearInterval(this.state.questionTimerInterval);
+      this.state.questionTimerInterval = null;
+    }
+
+    this.state.activeQuestionTimerKey = null;
+    this.state.activeQuestionTimerStartedAt = null;
+    this.updateQuestionTimerDisplay(questionKey || null);
+  },
+
   startQuestionTimer(question) {
     const questionKey = this.getQuestionStateKey(question);
     if (!questionKey) {
@@ -184,6 +197,32 @@ const MCQApp = {
     }
 
     this.updateQuestionTimerDisplay(questionKey);
+  },
+
+  shouldTrackQuestionTime(question) {
+    const questionKey = this.getQuestionStateKey(question);
+    if (!questionKey) return false;
+    if (this.state.answersRevealed.has(questionKey)) return false;
+
+    const attempts = this.state.attemptedOptions[questionKey];
+    return !Array.isArray(attempts) || attempts.length === 0;
+  },
+
+  syncQuestionTimer(question) {
+    const questionKey = this.getQuestionStateKey(question);
+    if (!questionKey) {
+      this.stopQuestionTimer();
+      return;
+    }
+
+    // Freeze the timer after the first submitted answer so review time does not
+    // continue to count against the question.
+    if (this.shouldTrackQuestionTime(question)) {
+      this.startQuestionTimer(question);
+      return;
+    }
+
+    this.pauseQuestionTimer(questionKey);
   },
 
   getQuestionTimersSnapshot() {
@@ -2287,7 +2326,7 @@ const MCQApp = {
     document.getElementById('topic-title').textContent = this.state.currentTopic.name;
     document.getElementById('current-question-num').textContent = questionIndex + 1;
     document.getElementById('total-questions').textContent = totalQuestions;
-    this.startQuestionTimer(question);
+    this.syncQuestionTimer(question);
 
     // Update progress bar
     const progressFill = document.getElementById('progress-fill');
@@ -3770,6 +3809,8 @@ const MCQApp = {
 
     // Check if correct answer
     const isCorrect = selectedIndex === question.correctAnswer;
+
+    this.pauseQuestionTimer(stateKey);
 
     if (isFirstAttempt && !this.state.isReviewMode) {
       this.recordDailyPractice(isCorrect);
