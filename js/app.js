@@ -1589,27 +1589,64 @@ const MCQApp = {
     await this.resumeLastSession();
   },
 
-  getLastSession() {
-    const session = this.readJSONFromStorage('last_session', null);
-    if (!session?.topicId || !session?.testId) return null;
+  getSessionTarget(topicId, testId) {
+    if (!topicId || !testId) return null;
 
-    const topic = this.state.topics.find((t) => t.id === session.topicId);
+    const topic = this.state.topics.find((t) => t.id === topicId);
     if (!topic) return null;
 
-    const directTest = topic.practiceTests?.find((t) => t.id === session.testId);
+    const directTest = topic.practiceTests?.find((t) => t.id === testId);
     if (directTest) {
       return { topic, test: directTest, parentTest: null };
     }
 
     const parentTest = topic.practiceTests?.find((t) =>
-      Array.isArray(t.subTests) && t.subTests.some((sub) => sub.id === session.testId)
+      Array.isArray(t.subTests) && t.subTests.some((sub) => sub.id === testId)
     );
-    const subTest = parentTest?.subTests?.find((sub) => sub.id === session.testId);
+    const subTest = parentTest?.subTests?.find((sub) => sub.id === testId);
     if (parentTest && subTest) {
       return { topic, test: subTest, parentTest };
     }
 
     return null;
+  },
+
+  getLastSession() {
+    const session = this.readJSONFromStorage('last_session', null);
+    if (!session?.topicId || !session?.testId) return null;
+
+    return this.getSessionTarget(session.topicId, session.testId);
+  },
+
+  getNextIncompletePracticeUnit(topic, currentTestId = null) {
+    if (!topic) return null;
+
+    const units = this.getTopicPracticeUnits(topic)
+      .filter((test) => test && test.status !== 'coming-soon' && Number(test.questionCount || 0) > 0);
+    if (!units.length) return null;
+
+    const currentIndex = currentTestId
+      ? units.findIndex((test) => test.id === currentTestId)
+      : -1;
+    const orderedCandidates = currentIndex >= 0
+      ? [...units.slice(currentIndex + 1), ...units.slice(0, currentIndex)]
+      : units;
+
+    return orderedCandidates.find((test) =>
+      this.getPracticeTestProgress(topic.id, test.id) < 100
+    ) || null;
+  },
+
+  getContinueSession() {
+    const session = this.getLastSession();
+    if (!session) return null;
+
+    if (this.getPracticeTestProgress(session.topic.id, session.test.id) < 100) {
+      return session;
+    }
+
+    const nextTest = this.getNextIncompletePracticeUnit(session.topic, session.test.id);
+    return nextTest ? this.getSessionTarget(session.topic.id, nextTest.id) : null;
   },
 
   saveLastSession(topicId, testId) {
@@ -1625,13 +1662,21 @@ const MCQApp = {
   },
 
   async resumeLastSession() {
-    const session = this.getLastSession();
+    const storedSession = this.getLastSession();
+    const session = this.getContinueSession();
     if (!session) {
+      if (storedSession) {
+        this.showToast('Your last saved section is already complete. Choose the next course from the list.', 'info');
+        return;
+      }
       this.showToast('No saved session found yet. Start a test first.', 'info');
       return;
     }
 
     const { topic, test, parentTest } = session;
+    if (!storedSession || storedSession.topic.id !== topic.id || storedSession.test.id !== test.id) {
+      this.saveLastSession(topic.id, test.id);
+    }
     this.state.currentTopic = topic;
     this.state.lifeSection = null;
     this.state.practiceTestParent = null;
@@ -1656,10 +1701,13 @@ const MCQApp = {
     if (!host) return;
 
     const stats = this.getHomeStudyStats();
-    const session = this.getLastSession();
+    const storedSession = this.getLastSession();
+    const session = this.getContinueSession();
     const daily = this.getDailyStudyStats();
     const recommended = this.getRecommendedPracticeUnit();
     const wrongCount = this.state.wrongQuestions.length;
+    const promotedSession = session && storedSession &&
+      (session.topic.id !== storedSession.topic.id || session.test.id !== storedSession.test.id);
 
     let title = 'Pick a topic and start.';
     let meta = `${stats.totalCourses} topics ready`;
@@ -1668,7 +1716,7 @@ const MCQApp = {
 
     if (session) {
       title = `${session.topic.name}: ${session.test.name}`;
-      meta = 'Continue where you left off';
+      meta = promotedSession ? 'Next section ready' : 'Continue where you left off';
       primaryLabel = 'Continue';
       primaryAction = 'MCQApp.resumeLastSession()';
     } else if (recommended) {
