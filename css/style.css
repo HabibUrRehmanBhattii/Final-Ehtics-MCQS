@@ -282,6 +282,12 @@ button { font-family: inherit; }
   flex: 1; text-align: center;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+.topbar-status {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  flex: 0 0 auto;
+}
 .topbar-icon { font-size: 1.5rem; width: 60px; text-align: right; }
 
 .pill {
@@ -289,6 +295,19 @@ button { font-family: inherit; }
   background: var(--c-primary); color: #fff;
   padding: .3rem .8rem; border-radius: 20px;
   letter-spacing: .02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.45rem;
+}
+.pill-timer {
+  min-width: 4.2rem;
+  font-variant-numeric: tabular-nums;
+}
+.pill-timer.is-warning {
+  background: linear-gradient(90deg, #ef4444, #f97316);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(239, 68, 68, .28);
 }
 
 /* ════════════════════════════════════
@@ -1928,9 +1947,16 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
     width: 34px;
     font-size: 1.2rem;
   }
+  .topbar-status {
+    gap: .3rem;
+  }
   .pill {
     font-size: .7rem;
     padding: .25rem .55rem;
+    min-width: 3rem;
+  }
+  .pill-timer {
+    min-width: 3.7rem;
   }
   .btn-ghost {
     font-size: .8rem;

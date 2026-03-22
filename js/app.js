@@ -33,6 +33,13 @@ const MCQApp = {
     loadingCount: 0,
     autoAdvanceTimer: null,
     aiAvailable: false,
+    questionElapsedMs: {},
+    activeQuestionTimerKey: null,
+    activeQuestionTimerStartedAt: null,
+    questionTimerInterval: null,
+    lastAdvanceTapAt: 0,
+    lastAdvanceTapKey: null,
+    mcqTouchStart: null,
     auth: {
       available: false,
       authenticated: false,
@@ -103,6 +110,166 @@ const MCQApp = {
       options: question.options.map((option) => this.getOptionDisplayText(option)),
       optionFeedback: this.getNormalizedOptionFeedback(question)
     };
+  },
+
+  formatQuestionTimer(ms = 0) {
+    const totalSeconds = Math.max(0, Math.floor(Number(ms || 0) / 1000));
+    const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+    const seconds = String(totalSeconds % 60).padStart(2, '0');
+    return `${minutes}:${seconds}`;
+  },
+
+  getQuestionElapsedMs(questionKey) {
+    if (!questionKey) return 0;
+
+    let total = Number(this.state.questionElapsedMs[questionKey] || 0);
+    if (this.state.activeQuestionTimerKey === questionKey && this.state.activeQuestionTimerStartedAt) {
+      total += Math.max(0, Date.now() - this.state.activeQuestionTimerStartedAt);
+    }
+
+    return total;
+  },
+
+  flushActiveQuestionTimer() {
+    const { activeQuestionTimerKey, activeQuestionTimerStartedAt } = this.state;
+    if (!activeQuestionTimerKey || !activeQuestionTimerStartedAt) return;
+
+    const elapsed = Math.max(0, Date.now() - activeQuestionTimerStartedAt);
+    this.state.questionElapsedMs[activeQuestionTimerKey] = Number(this.state.questionElapsedMs[activeQuestionTimerKey] || 0) + elapsed;
+    this.state.activeQuestionTimerStartedAt = null;
+  },
+
+  updateQuestionTimerDisplay(questionKey = this.state.activeQuestionTimerKey) {
+    const timerEl = document.getElementById('question-timer');
+    if (!timerEl) return;
+
+    const elapsed = questionKey ? this.getQuestionElapsedMs(questionKey) : 0;
+    timerEl.textContent = this.formatQuestionTimer(elapsed);
+    timerEl.classList.toggle('is-warning', elapsed >= 120000);
+  },
+
+  stopQuestionTimer() {
+    this.flushActiveQuestionTimer();
+
+    if (this.state.questionTimerInterval) {
+      window.clearInterval(this.state.questionTimerInterval);
+      this.state.questionTimerInterval = null;
+    }
+
+    this.state.activeQuestionTimerKey = null;
+    this.state.activeQuestionTimerStartedAt = null;
+    this.updateQuestionTimerDisplay(null);
+  },
+
+  startQuestionTimer(question) {
+    const questionKey = this.getQuestionStateKey(question);
+    if (!questionKey) {
+      this.stopQuestionTimer();
+      return;
+    }
+
+    if (this.state.activeQuestionTimerKey && this.state.activeQuestionTimerKey !== questionKey) {
+      this.flushActiveQuestionTimer();
+    }
+
+    if (this.state.activeQuestionTimerKey !== questionKey || !this.state.activeQuestionTimerStartedAt) {
+      this.state.activeQuestionTimerKey = questionKey;
+      this.state.activeQuestionTimerStartedAt = Date.now();
+    }
+
+    if (!this.state.questionTimerInterval) {
+      this.state.questionTimerInterval = window.setInterval(() => {
+        this.updateQuestionTimerDisplay();
+      }, 1000);
+    }
+
+    this.updateQuestionTimerDisplay(questionKey);
+  },
+
+  getQuestionTimersSnapshot() {
+    const snapshot = { ...this.state.questionElapsedMs };
+    const activeKey = this.state.activeQuestionTimerKey;
+    if (activeKey && this.state.activeQuestionTimerStartedAt) {
+      snapshot[activeKey] = Number(snapshot[activeKey] || 0) + Math.max(0, Date.now() - this.state.activeQuestionTimerStartedAt);
+    }
+    return snapshot;
+  },
+
+  isBlockedAdvanceTapTarget(target) {
+    if (!target || typeof target.closest !== 'function') return false;
+
+    return Boolean(target.closest(
+      'button, a, input, textarea, select, label, summary, details, .option, .q-nav, .question-dot, .btn-dot-nav, .follow-up-composer'
+    ));
+  },
+
+  resetAdvanceTapState() {
+    this.state.lastAdvanceTapAt = 0;
+    this.state.lastAdvanceTapKey = null;
+    this.state.mcqTouchStart = null;
+  },
+
+  handleMcqTouchStart(event) {
+    if (!event.touches || event.touches.length !== 1) {
+      this.state.mcqTouchStart = null;
+      return;
+    }
+
+    const touch = event.touches[0];
+    this.state.mcqTouchStart = {
+      x: touch.clientX,
+      y: touch.clientY
+    };
+  },
+
+  triggerDoubleTapNext(event) {
+    if (this.state.currentView !== 'mcq') return;
+
+    const question = this.getCurrentQuestion();
+    const questionKey = this.getQuestionStateKey(question);
+    if (!question || !questionKey || !this.state.answersRevealed.has(questionKey)) {
+      this.resetAdvanceTapState();
+      return;
+    }
+
+    const filteredQuestions = this.getFilteredQuestions();
+    const isLastQuestion = this.state.currentQuestionIndex >= filteredQuestions.length - 1;
+    if (isLastQuestion || this.isBlockedAdvanceTapTarget(event?.target)) {
+      return;
+    }
+
+    const now = Date.now();
+    const isDoubleTap = this.state.lastAdvanceTapKey === questionKey && (now - this.state.lastAdvanceTapAt) <= 320;
+
+    this.state.lastAdvanceTapAt = now;
+    this.state.lastAdvanceTapKey = questionKey;
+
+    if (!isDoubleTap) return;
+
+    if (typeof event?.preventDefault === 'function') {
+      event.preventDefault();
+    }
+
+    this.resetAdvanceTapState();
+    this.navigateQuestion(1);
+  },
+
+  handleMcqTouchEnd(event) {
+    if (!this.state.mcqTouchStart || !event.changedTouches || event.changedTouches.length !== 1) {
+      this.state.mcqTouchStart = null;
+      return;
+    }
+
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - this.state.mcqTouchStart.x;
+    const dy = touch.clientY - this.state.mcqTouchStart.y;
+    this.state.mcqTouchStart = null;
+
+    if (Math.hypot(dx, dy) > 18) {
+      return;
+    }
+
+    this.triggerDoubleTapNext(event);
   },
 
   normalizeStudyText(value) {
@@ -820,6 +987,10 @@ const MCQApp = {
       return;
     }
 
+    this.stopQuestionTimer();
+    this.state.questionElapsedMs = {};
+    this.resetAdvanceTapState();
+
     // Set up review mode
     this.state.questions = wrongQuestionsToReview;
     this.state.currentQuestionIndex = 0;
@@ -1145,6 +1316,13 @@ const MCQApp = {
     document.getElementById('finish-retry-btn')?.addEventListener('click', () => {
       this.retryCurrentTest();
     });
+
+    const mcqView = document.getElementById('mcq-view');
+    if (mcqView) {
+      mcqView.addEventListener('touchstart', (event) => this.handleMcqTouchStart(event), { passive: true });
+      mcqView.addEventListener('touchend', (event) => this.handleMcqTouchEnd(event), { passive: false });
+      mcqView.addEventListener('dblclick', (event) => this.triggerDoubleTapNext(event));
+    }
 
     if (typeof this.setupAuthEventListeners === 'function') {
       this.setupAuthEventListeners();
@@ -2057,6 +2235,11 @@ const MCQApp = {
   showView(viewName) {
     this.clearAutoAdvanceTimer();
     if (viewName !== 'mcq') {
+      this.stopQuestionTimer();
+      if (!this.state.isReviewMode) {
+        this.saveProgress();
+      }
+      this.resetAdvanceTapState();
       this.stopSpeech();
       // Clean up keyboard listeners when leaving quiz
       this.cleanupQuizKeyboardListeners();
@@ -2104,6 +2287,7 @@ const MCQApp = {
     document.getElementById('topic-title').textContent = this.state.currentTopic.name;
     document.getElementById('current-question-num').textContent = questionIndex + 1;
     document.getElementById('total-questions').textContent = totalQuestions;
+    this.startQuestionTimer(question);
 
     // Update progress bar
     const progressFill = document.getElementById('progress-fill');
@@ -2729,6 +2913,7 @@ const MCQApp = {
 
   // Navigate Question
   navigateQuestion(direction) {
+    this.resetAdvanceTapState();
     return this.setCurrentQuestionIndex(
       this.state.currentQuestionIndex + direction,
       { showBlockedToast: direction > 0 }
@@ -3536,10 +3721,13 @@ const MCQApp = {
     this.state.viewedQuestions = new Set();
     this.state.bookmarkedQuestions = new Set();
     this.state.answersRevealed = new Set();
+    this.stopQuestionTimer();
+    this.state.questionElapsedMs = {};
     this.state.attemptedOptions = {};
     this.state.firstAttemptCorrect = {};
     this.state.lastSelectedIndex = undefined;
     this.state.lastSelectedQuestionKey = null;
+    this.resetAdvanceTapState();
     this.state.currentQuestionIndex = 0;
     
     // Reload and reshuffle questions
@@ -4200,6 +4388,7 @@ const MCQApp = {
       viewed: Array.from(this.state.viewedQuestions),
       bookmarked: Array.from(this.state.bookmarkedQuestions),
       revealed: Array.from(this.state.answersRevealed),
+      timers: this.getQuestionTimersSnapshot(),
       lastUpdated: new Date().toISOString()
     };
 
@@ -4239,6 +4428,7 @@ const MCQApp = {
       this.state.viewedQuestions = new Set();
       this.state.bookmarkedQuestions = new Set();
       this.state.answersRevealed = new Set();
+      this.state.questionElapsedMs = {};
       this.state.currentQuestionIndex = 0;
       return;
     }
@@ -4247,6 +4437,7 @@ const MCQApp = {
       this.state.viewedQuestions = new Set();
       this.state.bookmarkedQuestions = new Set();
       this.state.answersRevealed = new Set();
+      this.state.questionElapsedMs = {};
       this.state.currentQuestionIndex = 0;
       return;
     }
@@ -4257,10 +4448,12 @@ const MCQApp = {
       this.state.viewedQuestions = new Set(saved.viewed || []);
       this.state.bookmarkedQuestions = new Set(saved.bookmarked || []);
       this.state.answersRevealed = new Set(saved.revealed || []);
+      this.state.questionElapsedMs = saved.timers && typeof saved.timers === 'object' ? { ...saved.timers } : {};
     } else {
       this.state.viewedQuestions = new Set();
       this.state.bookmarkedQuestions = new Set();
       this.state.answersRevealed = new Set();
+      this.state.questionElapsedMs = {};
     }
 
     this.state.currentQuestionIndex = this.getResumeQuestionIndex();
@@ -4273,13 +4466,16 @@ const MCQApp = {
       if (!confirm('Reset this review session?')) {
         return;
       }
+      this.stopQuestionTimer();
       this.state.viewedQuestions.clear();
       this.state.bookmarkedQuestions.clear();
       this.state.answersRevealed.clear();
+      this.state.questionElapsedMs = {};
       this.state.attemptedOptions = {};
       this.state.firstAttemptCorrect = {};
       this.state.lastSelectedIndex = undefined;
       this.state.lastSelectedQuestionKey = null;
+      this.resetAdvanceTapState();
       this.state.currentQuestionIndex = 0;
       if (typeof this.scheduleProgressSync === 'function') {
         this.scheduleProgressSync();
@@ -4300,13 +4496,16 @@ const MCQApp = {
     const shuffleKey = `shuffle_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
     localStorage.removeItem(shuffleKey);
     
+    this.stopQuestionTimer();
     this.state.viewedQuestions.clear();
     this.state.bookmarkedQuestions.clear();
     this.state.answersRevealed.clear();
+    this.state.questionElapsedMs = {};
     this.state.attemptedOptions = {};
     this.state.firstAttemptCorrect = {};
     this.state.lastSelectedIndex = undefined;
     this.state.lastSelectedQuestionKey = null;
+    this.resetAdvanceTapState();
     if (typeof this.scheduleProgressSync === 'function') {
       this.scheduleProgressSync();
     }

@@ -93,7 +93,10 @@
             <header class="topbar">
                 <button id="back-btn" class="btn-ghost">&#x2190; Back</button>
                 <h2 id="topic-title" class="topbar-title">Topic</h2>
-                <div id="progress-indicator" class="pill"><span id="current-question-num">1</span>/<span id="total-questions">10</span></div>
+                <div class="topbar-status">
+                    <div id="question-timer" class="pill pill-timer" aria-live="polite">00:00</div>
+                    <div id="progress-indicator" class="pill"><span id="current-question-num">1</span>/<span id="total-questions">10</span></div>
+                </div>
             </header>
             <div class="progress-track"><div id="progress-fill" class="progress-fill" style="width:0%"></div></div>
             <main class="wrap">
