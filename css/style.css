@@ -3270,3 +3270,110 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
     padding: .85rem .9rem;
   }
 }
+
+@media (max-width: 640px) {
+  #mcq-view .wrap {
+    padding: .8rem .45rem 1.2rem;
+  }
+
+  #mcq-view .q-nav {
+    padding: .5rem;
+    gap: .35rem;
+    border-radius: 14px;
+  }
+
+  #mcq-view .card {
+    padding: .85rem;
+    margin-bottom: .9rem;
+    border-radius: 16px;
+  }
+
+  #mcq-view .q-text {
+    margin-bottom: 1rem;
+  }
+
+  #mcq-view .option-main {
+    padding: .82rem .78rem;
+    gap: .62rem;
+  }
+
+  #mcq-view .option-feedback {
+    padding: .62rem .72rem .62rem 3.15rem;
+  }
+
+  #mcq-view .answer-box {
+    margin-top: 1rem;
+    padding: .8rem;
+    border-radius: 16px;
+  }
+
+  #mcq-view .answer-correct {
+    margin-bottom: .7rem;
+    padding: .55rem .7rem;
+  }
+
+  #mcq-view .explain-box,
+  #mcq-view .ai-explanation,
+  #mcq-view .follow-up-composer {
+    margin-top: .7rem;
+    padding: .78rem;
+    border-radius: 14px;
+  }
+
+  #mcq-view .exp-panel,
+  #mcq-view .ai-section {
+    padding: .72rem;
+    border-radius: 14px;
+  }
+
+  #mcq-view .exp-disclosure-summary {
+    padding: .72rem .75rem;
+  }
+
+  #mcq-view .exp-disclosure-body {
+    padding: 0 .75rem .75rem;
+  }
+
+  #mcq-view .ai-box {
+    display: grid;
+    gap: .65rem;
+  }
+
+  #mcq-view #next-question-btn-top,
+  #mcq-view #get-ai-explanation-btn,
+  #mcq-view #hide-answer-btn {
+    width: 100%;
+    min-height: 3.05rem;
+    display: block;
+  }
+
+  #mcq-view #next-question-btn-top {
+    padding: .82rem 1rem !important;
+  }
+
+  #mcq-view #hide-answer-btn {
+    margin-top: .65rem;
+  }
+}
+
+@media (max-width: 420px) {
+  #mcq-view .wrap {
+    padding-inline: .35rem;
+  }
+
+  #mcq-view .card {
+    padding: .75rem;
+  }
+
+  #mcq-view .answer-box,
+  #mcq-view .explain-box,
+  #mcq-view .ai-explanation,
+  #mcq-view .follow-up-composer {
+    padding: .72rem;
+  }
+
+  #mcq-view .exp-panel,
+  #mcq-view .ai-section {
+    padding: .68rem;
+  }
+}
