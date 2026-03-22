@@ -1,190 +1,169 @@
-# AI Explanations - Technical Implementation
+# AI Explanations - Technical Details
 
-## Context Data Flow
+Last updated: `2026-03-22`
 
-```
-Question Object
-    ├── question (text)
-    ├── options (array)
-    ├── correctAnswer (index)
-    ├── optionFeedback (array of reasons)
-    ├── explanation (official explanation)
-    ├── difficulty (Easy/Medium/Hard)
-    ├── tags (array of topics)
-    └── [not used] other metadata
+This file describes the current AI explanation pipeline in the Worker-based version of the app.
 
-                ↓
+## High-level flow
 
-MCQApp.generateAIExplanation()
-    ├── Collects user interaction data
-    ├── Builds comprehensive context object
-    └── Sends to /api/explain endpoint
-
-                ↓
-
-Worker.js Processing
-    ├── Receives context + question data
-    ├── Creates system prompt (instructor persona)
-    ├── Creates structured user prompt
-    ├── Calls Claude AI model
-    ├── Parses structured response
-    └── Returns object with sections
-
-                ↓
-
-Frontend Rendering
-    ├── Receives parsed sections
-    ├── Renders color-coded layout
-    ├── Attaches follow-up button
-    └── Displays to student
+```text
+Question rendered in js/app.js
+    -> MCQApp.generateAIExplanation()
+    -> POST /api/explain
+    -> src/worker.js validates and rate-limits request
+    -> Cloudflare AI generates structured JSON
+    -> frontend normalizes response
+    -> multi-section explanation cards render in the quiz UI
+    -> optional follow-up question composer sends another /api/explain request
 ```
 
-## API Request Format
+## Frontend entry points
 
-```javascript
+Main frontend logic lives in `js/app.js`.
+
+Important methods:
+
+- `generateAIExplanation()`
+- `generateFollowUpExplanation()`
+- `normalizeAIResponse()`
+- `formatAIText()`
+- `getAIApiUrl()`
+
+What the frontend sends for a standard request:
+
+- `question`
+- `userAnswer`
+- `correctAnswer`
+- `options`
+- `isCorrect`
+- `difficulty`
+- `tags`
+- `optionFeedback`
+- `correctFeedback`
+- `explanation`
+- `examTips`
+
+What it sends for a follow-up request:
+
+- all of the above context
+- `isFollowUp: true`
+- `followUpQuestion`
+- `requestType: "deeper_insight"`
+
+## Worker behavior
+
+AI requests are handled by `handleAIExplain()` in `src/worker.js`.
+
+Current behavior:
+
+- reads the request JSON body
+- if D1 is configured, rate-limits by IP using the `ai_ip` scope
+- builds a system prompt and a task-specific user prompt
+- requests JSON output from Cloudflare AI
+- falls back to a smaller model if the primary call fails
+- returns normalized JSON back to the browser
+
+Current model selection:
+
+- primary: `@cf/meta/llama-3.1-8b-instruct-fast`
+- fallback: `@cf/meta/llama-2-7b-chat-int8`
+
+Current inference settings:
+
+- `temperature: 0.2`
+- `max_tokens: 700` for standard explanations
+- `max_tokens: 300` for follow-ups
+
+## Response schema
+
+Standard explanation response shape:
+
+```json
 {
-  question: string,
-  userAnswer: string,
-  correctAnswer: string,
-  options: string[],
-  isCorrect: boolean,
-  difficulty: string,           // NEW
-  tags: string,                 // NEW
-  optionFeedback: string,       // NEW
-  correctFeedback: string,      // NEW
-  explanation: string,          // NEW
-  examTips: string,            // NEW
-  isFollowUp: boolean,         // NEW for follow-up requests
-  requestType: string,         // NEW 'deeper_insight'
+  "success": true,
+  "mainExplanation": "2-4 sentences teaching the topic",
+  "whyCorrect": "2-3 sentences",
+  "whyIncorrect": "2-3 sentences if needed",
+  "keyConcept": "1-2 sentences",
+  "studyTip": "practical memory aid",
+  "relatedConcept": "what to study next"
 }
 ```
 
-## API Response Format
+Follow-up response shape:
 
-### Standard Explanation Response
-```javascript
+```json
 {
-  success: true,
-  mainExplanation: "...",      // Core concept
-  whyCorrect: "...",           // Why answer is right
-  whyIncorrect: "...",         // Why student's answer was wrong (if applicable)
-  keyConcept: "...",           // Fundamental principle
-  studyTip: "...",             // Mnemonic or memory aid
-  relatedConcept: "..."        // Suggestion for further learning
+  "success": true,
+  "followUpInsight": "specific answer to the user's typed follow-up question"
 }
 ```
 
-### Follow-Up Response
-```javascript
-{
-  success: true,
-  followUpInsight: "..."       // Deeper insight or connection
-}
-```
+## Frontend rendering
 
-## Section Styling
+The quiz UI renders structured cards for:
 
-| Section | Class | Color | Icon | Use Case |
-|---------|-------|-------|------|----------|
-| Main | ai-main | Indigo | 💡 | Core explanation |
-| Correct | ai-correct | Green | ✅ | Why answer is right |
-| Incorrect | ai-incorrect | Orange | ❌ | Why student was wrong |
-| Concept | ai-concept | Purple | 🎯 | Key principle |
-| Tip | ai-tip | Cyan | 📚 | Memory aid |
-| Related | ai-related | Pink | 🔗 | Further learning |
-| Follow-up | ai-followup | Orange | 🌟 | Deeper insight |
+- Explanation
+- Why This Is Correct
+- Why Your Answer Wasn't Correct
+- Key Concept
+- Study Tip
+- Related Concept
+- Follow-up Answer
 
-## Key Functions
+The follow-up composer appears only when a `relatedConcept` is present.
 
-### generateAIExplanation()
-- Main entry point for AI explanation requests
-- Collects rich context from question and user interaction
-- Handles UI state (loading, disabled button)
-- Renders multi-section response
-- Attaches follow-up button if applicable
+Current follow-up UX:
 
-**Called by:** Button click handler in HTML
-**Returns:** Renders HTML, no return value
-**Error handling:** Graceful fallback messages
+- user types a specific question
+- frontend sends another request with `isFollowUp: true`
+- Worker returns `followUpInsight`
+- frontend appends the answer below the original explanation
 
-### generateFollowUpExplanation()
-- Triggered by "Ask Another Question" button
-- Uses same context as original explanation
-- Requests `isFollowUp: true` to API
-- Appends new insight section to existing explanation
-- Removes follow-up button after generation
+## Parsing and normalization
 
-**Called by:** Button click on follow-up button
-**Returns:** Renders additional HTML, no return value
-**Error handling:** Silently fails without disrupting existing explanation
+The frontend now expects proper JSON first, but still contains defensive parsing for older or malformed responses.
 
-## Prompt Engineering
+`normalizeAIResponse()` can recover from:
 
-### System Prompt
-Sets instructor persona and guidelines:
-- Expert in ethics for financial insurance exams
-- Clear, supportive tone
-- Explains concepts holistically
-- Provides mnemonics and real-world connections
-- Suggests related learning paths
+- valid JSON objects
+- embedded JSON-like text
+- older header-based text blocks such as `MAIN_EXPLANATION: ...`
 
-### User Prompt (Standard)
-Structures information for parsing:
-- Clear section headers (MAIN_EXPLANATION, WHY_CORRECT, etc.)
-- All available context integrated
-- Request for specific format
-- Conditional sections (WHY_INCORRECT only if incorrect)
+This is deliberate defensive code so the UI does not break if the model returns a slightly messy payload.
 
-### User Prompt (Follow-Up)
-Encourages deeper thinking:
-- Requests connections to related principles
-- Asks about common misconceptions
-- Explores real-world applications
-- Makes it thought-provoking
+## Rate limiting and failure handling
 
-## Response Parsing
+Current worker protections:
 
-```javascript
-const regex = new RegExp(`${headerText}:\\s*(.+?)(?=\\n(?:[A-Z_]+:|$))`, 's');
-const match = responseText.match(regex);
-```
+- AI requests can be rate-limited via D1 when the database is available
+- failed requests are recorded in the auth-attempt tracking table
+- Worker returns `{ success: false, error: ... }` on hard failures
 
-- Uses regex to extract content between headers
-- Handles multi-line responses
-- Graceful fallback if parsing fails
-- Trims whitespace from extracted text
+Frontend fallback behavior:
 
-## Error Handling
+- shows an error state in the explanation area
+- disables AI availability after request failure in the current session
+- does not crash the quiz flow
+- follow-up failures restore the input/button state and show a toast
 
-| Scenario | Behavior |
-|----------|----------|
-| Network error | Shows "Could not connect to AI service" |
-| API error | Shows "AI service temporarily unavailable" |
-| Response parse fails | Uses first 500 chars as explanation |
-| No structured sections | Falls back to single explanation |
-| Follow-up request fails | Silently removes loading state |
+## Current implementation notes
 
-## Performance Considerations
+- The Worker system prompt still says "LLQP/HLLQP ethics tutor" even though the feature now supports broader LLQP content
+- The frontend asks AI only after the user answers a question
+- Follow-ups are user-driven, not automatic
+- The feature depends on the Worker `AI` binding and does not fully work in a static-only preview
 
-1. **One request per explanation** - Not streaming, full response then parse
-2. **Regex parsing** - O(n) where n = response length, typically < 2KB
-3. **DOM manipulation** - Single innerHTML assignment + optional appendChild
-4. **No additional requests** - Follows up in same request cycle if enabled
+## Files involved
 
-## Browser Compatibility
+- `js/app.js`
+- `src/worker.js`
+- `css/style.css`
 
-- Uses `fetch()` - All modern browsers
-- Uses `querySelectorAll()` and `classList` - IE11+
-- CSS custom properties - All modern browsers
-- No polyfills needed for target audience
+## Good places to edit next
 
-## Testing Checklist
+If you want to improve:
 
-- [ ] Correct answer → shows mainExplanation, whyCorrect, keyConcept
-- [ ] Incorrect answer → shows whyCorrect, whyIncorrect, keyConcept
-- [ ] Button disabled during request → re-enables on response
-- [ ] Follow-up button appears → follow-up request works
-- [ ] Response parsing handles missing sections gracefully
-- [ ] Offline → shows error but doesn't crash app
-- [ ] Mobile → sections stack properly, readable font sizes
-- [ ] Dark mode → colors remain visible and accessible
+- prompts or schema: edit `src/worker.js`
+- rendering or parsing: edit `js/app.js`
+- spacing or visual hierarchy: edit `css/style.css`

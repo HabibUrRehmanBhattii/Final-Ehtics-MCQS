@@ -1,554 +1,369 @@
-# 🎯 CODEBASE REFERENCE - LLQP & WFG Exam Prep App
+# Codebase Reference - LLQP & WFG Exam Prep
 
-**Last Updated:** February 7, 2026  
-**Purpose:** Complete reference for AI assistants to understand the entire codebase instantly
+Last updated: `2026-03-22`
 
----
+Purpose: a fast orientation file for maintainers and coding agents working in this repo.
 
-## 📋 PROJECT OVERVIEW
+## 1. Architecture at a glance
 
-**Type:** Progressive Web App (PWA)  
-**Purpose:** Insurance licensing exam preparation platform (LLQP & WFG)  
-**Tech Stack:** Vanilla JavaScript, CSS, HTML5, Service Worker  
-**Hosting:** Static files (no backend server)
+- Frontend: vanilla HTML, CSS, and JavaScript SPA
+- Backend: Cloudflare Worker serving both static assets and same-origin API routes
+- Database: Cloudflare D1 for users, sessions, progress, audit logs, and password reset tokens
+- AI: Cloudflare AI binding for `/api/explain`
+- Auth protection: Cloudflare Turnstile
+- Email delivery: Resend by default, Postmark supported as an alternative
+- Offline support: service worker caches static assets and quiz data, but bypasses API caching
+- Local storage: still used for local-first quiz state and as the cloud-sync payload source
 
----
+This is no longer a "static files only" app. The Worker is now part of the normal production architecture.
 
-## 🗂️ FILE SYSTEM STRUCTURE
+## 2. Current repo layout
 
-```
-c:\Users\C6475\Desktop\Ehtics MCQS\
-│
-├── index.html                    # Main HTML entry point
-├── manifest.webmanifest          # PWA manifest for installability
-├── sw.js                         # Service Worker (handles caching, offline mode)
-├── README.md                     # Project documentation
-├── wrangler.jsonc                # Cloudflare Workers config (if deployed)
-│
-├── assets/
-│   └── icons/                    # PWA icons (192x192, 512x512)
-│
-├── css/
-│   ├── style.css                 # Main stylesheet (active)
-│   └── style_backup.css          # Backup version
-│
-├── js/
-│   └── app.js                    # Main application logic (1420 lines)
-│
-├── data/                         # ⚠️ CRITICAL - All question data lives here
-│   ├── topics.json               # 🔥 MAIN topics configuration (app loads this)
-│   ├── topics-updated.json       # Secondary topics file (both are cached)
-│   ├── user_data.json            # User progress tracking
-│   │
-│   ├── llqp-ethics/              # LLQP Ethics question sets
-│   │   ├── practice-1.json       # 10 questions
-│   │   ├── practice-2.json       # 20 questions
-│   │   └── practice-3.json       # 26 questions
-│   │
-│   ├── llqp-segregated/          # LLQP Segregated Funds & Annuities
-│   │   └── practice-1.json       # 13 questions
-│   │
-│   └── flashcards/               # Flashcard question sets
-│       ├── flashcards-1.json     # 20 flashcards
-│       └── flashcards-2-part-[1-8].json  # 8 parts (20+20+20+20+20+20+20+10)
-│
-└── tools/                        # Python utility scripts
-    ├── debug_flash_json.py
-    ├── fix_explanation_inner_quotes.py
-    ├── fix_flashcards_quotes.py
-    ├── fix_single_option_quotes.py
-    └── split_flashcards.py
-```
-
----
-
-## 🔑 CRITICAL FILES EXPLAINED
-
-### 1. **data/topics.json** (MOST IMPORTANT)
-
-This is the **master configuration file** that controls what appears on the website.
-
-**Structure:**
-```json
-{
-  "topics": [
-    {
-      "id": "unique-id",
-      "name": "Display Name",
-      "slug": "url-slug",
-      "description": "Brief description",
-      "color": "#hex-color",
-      "icon": "emoji",
-      "status": "active" | "coming-soon",
-      "practiceTests": [
-        {
-          "id": "test-id",
-          "name": "Test Name",
-          "description": "Test description",
-          "questionCount": 10,
-          "dataFile": "path/to/file.json?v=cache-version"
-        }
-      ]
-    }
-  ]
-}
+```text
+c:\Users\C6475\OneDrive\Desktop\New folder (7)\Final-Ehtics-MCQS\
+|
+|- index.html
+|- manifest.webmanifest
+|- sw.js
+|- wrangler.jsonc
+|- README.md
+|- CODEBASE_REFERENCE.md
+|- AI_TECHNICAL_DETAILS.md
+|- AI_IMPROVEMENTS.md
+|
+|- assets/
+|  `- icons/
+|
+|- css/
+|  |- style.css
+|  `- style_backup.css
+|
+|- js/
+|  |- app.js
+|  `- auth.js
+|
+|- src/
+|  `- worker.js
+|
+|- migrations/
+|  |- 0001_auth.sql
+|  `- 0002_auth_security.sql
+|
+|- tools/
+|  |- split_life_quizzes.py
+|  |- split_flashcards.py
+|  |- audit_feedback_quality.js
+|  |- repair_feedback_quality.js
+|  |- validate_exam_quality.py
+|  |- debug_flash_json.py
+|  |- fix_explanation_inner_quotes.py
+|  |- fix_flashcards_quotes.py
+|  `- fix_single_option_quotes.py
+|
+`- data/
+   |- topics.json
+   |- topics-updated.json
+   |- user_data.json
+   |- llqp-ethics/
+   |- llqp-life/
+   |- llqp-accident/
+   |- llqp-segregated/
+   |- flashcards/
+   `- insurance-legislation-ethics/
 ```
 
-**⚠️ CRITICAL RULES:**
-- `status: "active"` → Shows on homepage with "Start Practice" button
-- `status: "coming-soon"` → Shows grayed out with "Coming Soon" badge
-- **Active topics MUST come BEFORE coming-soon topics** in the array (display order)
-- `questionCount` MUST match actual question count in the JSON file
-- Cache-busting: Change `?v=...` when updating data files
-- Topics load from this file via `app.js` line 209
-
----
-
-### 2. **Question JSON Files** (data/llqp-ethics/*.json, data/flashcards/*.json)
-
-**Structure:**
-```json
-{
-  "topic": "Topic Name",
-  "topicId": "topic-id",
-  "description": "Description",
-  "examTips": "Study tips",
-  "questions": [
-    {
-      "id": 1,
-      "question": "Question text\nSupports multiline with \\n",
-      "options": [
-        "A. Option 1",
-        "B. Option 2",
-        "C. Option 3",
-        "D. Option 4"
-      ],
-      "correctAnswer": 0,  // Index (0 = A, 1 = B, 2 = C, 3 = D)
-      "optionFeedback": [
-        null,  // Correct answer gets null (explanation is in main explanation)
-        "Why B is wrong",
-        "Why C is wrong",
-        "Why D is wrong"
-      ],
-      "explanation": "Detailed explanation for correct answer",
-      "difficulty": "easy" | "medium" | "hard",
-      "tags": ["tag1", "tag2", "tag3"]
-    }
-  ]
-}
-```
-
-**⚠️ CRITICAL RULES:**
-- `correctAnswer` is **zero-indexed** (0-3 for A-D)
-- `optionFeedback[correctAnswer]` should be `null`
-- All other `optionFeedback` entries explain why that option is WRONG
-- Questions MUST have unique `id` within the file (sequential: 1, 2, 3...)
-- Options should include "A. ", "B. ", "C. ", "D. " prefixes
-
----
-
-### 3. **sw.js** (Service Worker)
-
-**Purpose:** Enables offline mode, caches assets, makes app installable
-
-**Cache Version Control:**
-```javascript
-const CACHE_VERSION = 'v1.0.3';  // ⚠️ INCREMENT THIS when updating data files
-```
-
-**When to bump version:**
-- After editing any JSON data files
-- After changing topics.json
-- After updating questions
-- This forces browser to fetch fresh data
-
-**Cached Files:**
-- All HTML, CSS, JS
-- `topics.json` and `topics-updated.json`
-- All question JSON files listed in CORE_ASSETS
-
----
-
-### 4. **js/app.js** (Main Application Logic)
-
-**Key Functions:**
-
-**Line 209:** Loads topics configuration
-```javascript
-async loadTopics() {
-  const response = await fetch('data/topics.json');  // ⚠️ Loads from topics.json
-  this.state.topics = data.topics;
-}
-```
-
-**Question Loading:** Fetches data file specified in topics.json
-```javascript
-async loadQuestions(topicId) {
-  const topic = this.state.topics.find(t => t.id === topicId);
-  const response = await fetch(topic.dataFile);
-  this.state.questions = data.questions;
-}
-```
-
-**State Management:**
-```javascript
-state: {
-  topics: [],           // Loaded from topics.json
-  questions: [],        // Loaded from individual test files
-  currentTopic: null,
-  currentQuestionIndex: 0,
-  userAnswers: [],
-  showResults: false,
-  darkMode: true
-}
-```
+## 3. Current content footprint
 
----
-
-## 🎯 COMMON TASKS & HOW TO DO THEM
-
-### ✅ **Task: Add New Questions to Existing Topic**
-
-1. **Edit the question JSON file** (e.g., `data/llqp-ethics/practice-1.json`)
-   - Add new question objects to `questions` array
-   - Ensure `id` is sequential
-   - Follow JSON structure (see section 2 above)
+Unique question counts by topic:
 
-2. **Update topics.json**
-   - Find the topic entry
-   - Update `questionCount` to match new total
-   - Change cache version: `?v=20260207e` → `?v=20260207f`
+- `llqp-ethics`: 81
+- `llqp-life`: 201
+- `llqp-accident`: 35
+- `llqp-segregated`: 54
+- `flashcards-basic`: 170
 
-3. **Update topics-updated.json** (same changes as step 2)
+Key content notes:
 
-4. **Bump service worker cache**
-   - Edit `sw.js`
-   - Change `CACHE_VERSION = 'v1.0.3'` → `'v1.0.4'`
+- `llqp-life` currently has full chapter data for `LIFE 01` to `LIFE 05`
+- `LIFE 01` to `LIFE 05` also have `subTests` for shorter section-based study sessions
+- `LIFE 06` to `LIFE 13` already exist in topic metadata as placeholders with `questionCount: 0`
+- Ethics, Life, Accident and Sickness, and Segregated Funds each have a PDF manual entry
+- Manuals are rendered from the same topic system as quizzes, but use `questionCount: 0`
 
-5. **User must clear browser cache** (Ctrl+Shift+R) to see changes
+## 4. Most important runtime files
 
----
+### `index.html`
+
+What it does:
+
+- Defines the app shell and main views
+- Hosts the topic list, quiz view, results chrome, PDF manual viewer, and auth modal
+- Contains the buttons and containers that `js/app.js` and `js/auth.js` attach to
+
+Important recent UI additions visible here:
+
+- auth modal fields for reset flows
+- manual viewer title and iframe
+- review buttons and reset actions
+
+### `js/app.js`
+
+This is the main application brain and is still a large single-file controller.
+
+Major responsibilities:
+
+- loads `data/topics.json`
+- renders the home screen and grouped topic cards
+- loads quizzes and PDF manuals
+- handles sectioned tests via `subTests`
+- tracks progress, wrong answers, bookmarks, question shuffle, and answered state
+- handles review mode and reset behavior
+- tracks daily study stats
+- stores and resumes the last study session
+- powers speech synthesis for the visible question text
+- renders and normalizes AI explanation responses
+
+Local storage keys that matter:
 
-### ✅ **Task: Add Completely New Topic/Section**
+- `progress_*`
+- `shuffle_*`
+- `wrong_questions`
+- `study_daily_stats`
+- `last_session`
+- `auto-advance`
+- `home-insights-expanded`
+- `theme`
+
+Important nuance:
+
+- review mode intentionally avoids giving elimination clues through the option UI
+- question order is randomized once per test and persisted until reset
+- answered-question counts now drive progress stats more accurately than earlier logic
 
-1. **Create question JSON file**
-   ```
-   data/llqp-ethics/new-topic-practice-1.json
-   ```
+### `js/auth.js`
 
-2. **Add to topics.json** in the `topics` array:
-   ```json
-   {
-     "id": "new-topic-id",
-     "name": "New Topic Name",
-     "slug": "new-topic-slug",
-     "description": "Description",
-     "color": "#3b82f6",
-     "icon": "📚",
-     "status": "active",
-     "practiceTests": [
-       {
-         "id": "new-topic-1",
-         "name": "Practice Test 1",
-         "description": "Description",
-         "questionCount": 10,
-         "dataFile": "data/llqp-ethics/new-topic-practice-1.json?v=20260207a"
-       }
-     ]
-   }
-   ```
+This file extends `MCQApp` with optional account features.
 
-3. **IMPORTANT:** Place BEFORE any "coming-soon" topics (active topics go first)
+Major responsibilities:
 
-4. **Update both topics.json AND topics-updated.json**
+- fetches auth config from `/api/auth/config`
+- refreshes the current session from `/api/auth/session`
+- renders the auth panel on the home screen
+- opens and manages auth modal states:
+  - sign in
+  - sign up
+  - password change
+  - password reset request
+  - password reset confirm
+- manages Turnstile widget lifecycle
+- syncs local progress snapshots to the cloud
+- restores cloud progress back into local storage
+- keeps progress isolated per account
 
-5. **Bump sw.js cache version**
+Sync payload scope:
 
-6. **(Optional)** Add to `sw.js` CORE_ASSETS array if you want it cached for offline
+- all `progress_*` keys
+- all `shuffle_*` keys
+- `wrong_questions`
+- `study_daily_stats`
+- `last_session`
+- `auto-advance`
+- `home-insights-expanded`
+- `theme`
 
----
+### `src/worker.js`
 
-### ✅ **Task: Reorder Topics on Homepage**
+This is the backend for production and full local development.
 
-Topics appear in the **exact order** they're listed in `topics.json`.
+Major responsibilities:
 
-**Rule:** Active topics MUST come before coming-soon topics.
+- serves same-origin API routes
+- falls through to `env.ASSETS.fetch(request)` for static app assets
+- signs and validates session cookies
+- rate-limits auth, password reset, and AI requests
+- performs D1 reads/writes for users, sessions, progress, audit logs, and reset tokens
+- sends password reset emails
+- returns AI explanation JSON
 
-**Example:**
-```json
-{
-  "topics": [
-    { /* Active Topic 1 */ },
-    { /* Active Topic 2 */ },
-    { /* Active Topic 3 */ },
-    { /* Coming Soon Topic 1 */ },
-    { /* Coming Soon Topic 2 */ }
-  ]
-}
-```
+Primary routes:
 
-Just reorder the objects in the array, update cache versions, done!
+- `GET /health`
+- `GET /api/auth/config`
+- `POST /api/auth/signup`
+- `POST /api/auth/signin`
+- `POST /api/auth/signout`
+- `GET /api/auth/session`
+- `POST /api/auth/sync-progress`
+- `GET /api/auth/progress`
+- `POST /api/auth/password-reset/request`
+- `POST /api/auth/password-reset/confirm`
+- `POST /api/auth/password-change`
+- `POST /api/admin/password-reset-link`
+- `GET /api/debug/reset-email`
+- `POST /api/explain`
 
----
+Current auth dependencies:
 
-### ✅ **Task: Fix Question Count Mismatch**
+- D1 binding: `DB`
+- secret: `SESSION_SECRET`
+- secret: `TURNSTILE_SECRET_KEY`
+- var: `TURNSTILE_SITE_KEY`
 
-**Problem:** Website shows wrong question count
+Email reset support currently uses these config points:
 
-**Diagnosis:**
-```powershell
-cd 'C:\Users\C6475\Desktop\Ehtics MCQS\data\llqp-ethics'
-Get-Content 'practice-1.json' | ConvertFrom-Json | Select-Object -ExpandProperty questions | Measure-Object | Select-Object -ExpandProperty Count
-```
+- `RESET_EMAIL_PROVIDER`
+- `RESET_EMAIL_FROM`
+- `RESET_EMAIL_REPLY_TO`
+- `RESET_BASE_URL`
+- `RESET_EMAIL_SUBJECT`
+- `RESEND_API_KEY` or `POSTMARK_SERVER_TOKEN`
 
-**Fix:**
-1. Get actual count from command above
-2. Update `questionCount` in topics.json
-3. Update `questionCount` in topics-updated.json
-4. Change cache version `?v=...`
-5. Bump sw.js cache version
+### `data/topics.json`
 
----
+This is still the source of truth for what the homepage can render.
 
-### ✅ **Task: Test Changes Locally**
+Important rules:
 
-**After making any changes:**
+- topic order controls display order
+- `status: "active"` topics render as playable
+- manuals are modeled as tests with `questionCount: 0`
+- sectioned quizzes use `subTests`
+- `dataFile` values often include `?v=...` query strings for cache busting
+- if you change topic metadata here, mirror it into `data/topics-updated.json`
 
-1. **Unregister Service Worker:**
-   - Open browser DevTools (F12)
-   - Application tab → Service Workers
-   - Click "Unregister"
+Important nuance:
 
-2. **Clear all cache:**
-   - Application tab → Storage → Clear storage
-   - Check all boxes → Clear site data
+- top-level Life chapter files and their `subTests` are alternate entry points to the same question pools
+- do not add the parent count and the subtest counts together when reporting unique content totals
 
-3. **Hard refresh:**
-   - Ctrl+Shift+R (Windows)
-   - Cmd+Shift+R (Mac)
+### `sw.js`
 
-4. **Close and reopen browser** (most reliable method)
+Important current behavior:
 
----
+- current cache version in repo: `v1.7.2`
+- caches static assets and topic/data JSON files
+- intentionally bypasses API caching so auth/session state stays fresh
+- should be bumped whenever static assets or data references change materially
 
-## 🐛 COMMON BUGS & SOLUTIONS
+### `wrangler.jsonc`
 
-### Bug: "Questions not showing up after adding them"
+Current deployment configuration includes:
 
-**Causes:**
-1. Service worker cached old version
-2. Forgot to update `questionCount` in topics.json
-3. Forgot to bump cache version `?v=...`
-4. JSON syntax error in question file
+- Worker entrypoint: `src/worker.js`
+- D1 binding: `DB`
+- AI binding: `AI`
+- custom domains:
+  - `hllqpmcqs.com`
+  - `www.hllqpmcqs.com`
+- reset-email vars preconfigured for Resend
 
-**Solution:**
-```powershell
-# 1. Validate JSON
-Get-Content 'data/llqp-ethics/file.json' | ConvertFrom-Json
+### `migrations/0001_auth.sql` and `migrations/0002_auth_security.sql`
 
-# 2. Check actual question count
-(Get-Content 'data/llqp-ethics/file.json' | ConvertFrom-Json).questions.Count
+Current D1 schema:
 
-# 3. Update topics.json with correct count
-# 4. Change ?v= version
-# 5. Bump sw.js cache version
-# 6. User clears browser cache
-```
+- `users`
+- `sessions`
+- `user_progress`
+- `auth_attempts`
+- `audit_logs`
+- `password_reset_tokens`
 
----
+### `tools/split_life_quizzes.py`
 
-### Bug: "Active topic showing at bottom after 'Coming Soon' sections"
+Purpose:
 
-**Cause:** Topic order wrong in topics.json
+- regenerates part files for sectioned Life chapters
 
-**Solution:** Move the topic object in the array to appear BEFORE all coming-soon topics
+Current automated coverage:
 
----
+- `LIFE 01`
+- `LIFE 02`
+- `LIFE 03`
+- `LIFE 05`
 
-### Bug: "Practice test exists but not appearing in topic"
+Important nuance:
 
-**Cause:** Missing from `practiceTests` array in topics.json
+- `LIFE 04` section files exist, but this helper does not currently regenerate them
 
-**Solution:** Add test entry to the topic's `practiceTests` array
+## 5. AI explanation pipeline
 
----
+The full AI details live in `AI_TECHNICAL_DETAILS.md`, but the short version is:
 
-## 🔍 DEBUGGING COMMANDS
+- frontend builds question context in `js/app.js`
+- request is posted to `/api/explain`
+- Worker uses Cloudflare AI with JSON-schema output when possible
+- frontend normalizes the response and renders multi-section teaching cards
+- related-concept output unlocks a specific follow-up question composer
 
-**Audit all topics:**
-```powershell
-cd 'C:\Users\C6475\Desktop\Ehtics MCQS'
-Get-Content 'data\topics.json' | ConvertFrom-Json | Select-Object -ExpandProperty topics | ForEach-Object {
-  [PSCustomObject]@{
-    Name = $_.name
-    Status = $_.status
-    QuestionCount = ($_.practiceTests | Measure-Object -Property questionCount -Sum).Sum
-  }
-} | Format-Table -AutoSize
-```
+Current model behavior:
 
-**Check actual question counts in files:**
-```powershell
-cd 'C:\Users\C6475\Desktop\Ehtics MCQS\data\llqp-ethics'
-Get-ChildItem *.json | ForEach-Object {
-  $count = (Get-Content $_.Name | ConvertFrom-Json).questions.Count
-  [PSCustomObject]@{
-    File = $_.Name
-    ActualQuestions = $count
-  }
-} | Format-Table -AutoSize
-```
+- primary: `@cf/meta/llama-3.1-8b-instruct-fast`
+- fallback: `@cf/meta/llama-2-7b-chat-int8`
 
-**Validate JSON syntax:**
-```powershell
-Get-Content 'data\topics.json' | ConvertFrom-Json
-# If no error = valid JSON
-```
+## 6. Recent changes reflected in this repo
 
----
+Work from the last couple of days includes:
 
-## 📊 CURRENT STATE (as of Mar 15, 2026)
+- custom-domain Worker deployment
+- same-origin auth cookie flow
+- D1-backed account system
+- password reset request, confirm, and admin reset-link endpoints
+- Resend email wiring and debug endpoint for reset-email configuration
+- cloud progress sync isolated per account
+- service worker API-cache bypass
+- home screen redesign toward a calmer mobile-first study layout
+- improved header/menu sizing and focus CTA sizing
+- review flow and reset-state fixes
+- more compact mobile explanation UI
+- improved wrong-answer feedback quality
+- visible-text-only speech support
+- updated CISRO manuals
+- Life chapter content expanded through `LIFE 05`
 
-**Active Topics (in order):**
-1. **LLQP Ethics (Common Law)** - 81 questions
-   - Practice Test 1: 10 questions
-   - Practice Test 2: 20 questions  
-   - Practice Test 3: 26 questions
-   - Mock Exam Test: 25 questions
+## 7. Common content tasks
 
-2. **LLQP Life Insurance** - 19 questions
-   - Chapter Quiz 1: Introduction to Life Insurance (19 questions)
-   - Chapter Quizzes 2–13: Coming soon
+### Add or update a quiz file
 
-3. **LLQP Accident & Sickness Insurance** - 35 questions
-   - Practice Tests 1–3: 10 questions each
-   - Practice Test 4: 5 questions
+1. Edit the target JSON under `data/...`
+2. Keep `correctAnswer` zero-based
+3. Keep IDs unique within the file
+4. Update the matching entry in `data/topics.json`
+5. Mirror the metadata change into `data/topics-updated.json`
+6. Bump the `?v=` suffix on changed `dataFile` entries
+7. Bump `CACHE_VERSION` in `sw.js`
 
-4. **LLQP Segregated Funds & Annuities** - 19 questions
-   - Practice Test 1: 19 questions
+### Add or update a sectioned Life chapter
 
-5. **Flashcards - Beneficiaries & Policy Basics** - 170 cards
-   - 9 flashcard sets (parts 1-8 of Set 2)
+1. Edit the parent chapter JSON
+2. Keep the section files aligned with the parent
+3. Use `python tools/split_life_quizzes.py` if the chapter is supported by that helper
+4. Update both topic metadata files
+5. Verify the parent and section counts match what the UI should show
 
-**Coming Soon:**
-- LLQP Life Chapter Quizzes 2–13 (term life, whole life & term-100, UL, riders, group life, taxation, business life, underwriting, needs analysis, recommendations, ongoing service, full review)
+### Add a manual
 
-**Service Worker Cache:** v1.1.5
+1. Put the PDF under the topic's `Manual/` folder
+2. Add a practice-test style entry with `questionCount: 0`
+3. Point `dataFile` at the PDF and give it a fresh `?v=...`
+4. Bump the service worker cache version
 
----
+## 8. Watch-outs
 
-## 🚨 CRITICAL CONVENTIONS
+- There is no `package.json`; this repo is intentionally lightweight
+- `js/app.js` and `src/worker.js` are both large and easy to over-edit
+- Do not treat section files as additional unique content
+- Do not forget `topics-updated.json`; it is still cached and should stay aligned
+- API requests should not be cached by the service worker
+- Auth features are optional in the UI and should fail gracefully when backend config is unavailable
+- Password reset flows depend on both Turnstile and email provider config
+- Voice playback should only read the visible question text
 
-1. **Always update BOTH topics.json AND topics-updated.json** (app may load either)
+## 9. Best starting points for new work
 
-2. **Cache versions matter:**
-   - Change `?v=...` in dataFile paths when updating data
-   - Bump `CACHE_VERSION` in sw.js
-   - Force users to hard refresh
+If the task is about:
 
-3. **Question IDs are sequential integers** starting from 1 within each file
-
-4. **correctAnswer is zero-indexed:** 0=A, 1=B, 2=C, 3=D
-
-5. **Status values:**
-   - `"active"` = fully functional, clickable
-   - `"coming-soon"` = grayed out, not clickable
-
-6. **Active topics MUST be ordered before coming-soon topics**
-
-7. **optionFeedback[correctAnswer] = null** (explanation goes in main explanation field)
-
----
-
-## 💡 TIPS FOR AI ASSISTANTS
-
-1. **When user says "add questions":**
-   - Edit the JSON file
-   - Update questionCount in topics.json
-   - Update topics-updated.json
-   - Bump cache versions
-   - Tell user to clear browser cache
-
-2. **When user says "not showing up":**
-   - Check service worker cache version
-   - Verify topics.json has correct questionCount
-   - Check JSON file actually contains questions
-   - Verify cache version was updated
-
-3. **Use multi_replace_string_in_file for multiple edits** (faster, more efficient)
-
-4. **Don't create markdown summaries unless requested** (reminder instruction)
-
-5. **Include 3-5 lines context** when using replace_string_in_file
-
----
-
-## 🎓 QUESTION STRUCTURE DEEP DIVE
-
-**Example Perfect Question:**
-
-```json
-{
-  "id": 1,
-  "question": "(PPE-048) SFA\nIt is April 30th, and Summer still has not filed her income taxes. She is wondering which of the following transactions that occurred last year would result in a tax liability. What should you tell her?",
-  "options": [
-    "A. The withdrawal from her RRSP.",
-    "B. An allocation of interest income from an investment held within her LIRA.",
-    "C. The withdrawal from her savings account.",
-    "D. Dividend income received from a segregated fund held within her RRSP."
-  ],
-  "correctAnswer": 0,
-  "optionFeedback": [
-    null,
-    "A Locked-In Retirement Account (LIRA) provides tax-deferred growth; interest, dividends, and capital gains earned within the plan are not taxed until they are withdrawn, usually during retirement.",
-    "Withdrawing your own money from a non-registered savings account is not a taxable event. While the interest earned on that account is taxable, the act of withdrawal itself is not.",
-    "Any income earned, including dividends from a segregated fund, is exempt from tax as long as it remains within the RRSP."
-  ],
-  "explanation": "Funds withdrawn from an RRSP are considered taxable income in the year of the withdrawal and must be included in the individual's total income for tax purposes. This is the key distinguishing factor—RRSP withdrawals trigger immediate tax liability, unlike growth within registered plans or transfers of personal funds.",
-  "difficulty": "medium",
-  "tags": ["tax-liability", "rrsp", "lira", "registered-plans", "withdrawal", "tax-deferred", "ppe-048"]
-}
-```
-
-**Key Points:**
-- Question IDs include context codes like `(PPE-048) SFA`
-- Options are lettered A-D with periods
-- Correct answer feedback is `null`
-- Wrong answer feedback explains WHY it's wrong
-- Main explanation covers the correct answer reasoning
-- Tags include question code for tracking
-
----
-
-## 🔐 FINAL CHECKLIST FOR ANY CHANGE
-
-- [ ] Edit question JSON file(s)
-- [ ] Update questionCount in topics.json
-- [ ] Update questionCount in topics-updated.json  
-- [ ] Change ?v= cache version in both files
-- [ ] Bump CACHE_VERSION in sw.js
-- [ ] Validate JSON syntax (ConvertFrom-Json)
-- [ ] Verify actual question count matches topics.json
-- [ ] Tell user to clear browser cache (Ctrl+Shift+R)
-
----
-
-## 📞 QUICK REFERENCE PATHS
-
-**Main files:**
-- Topics config: `data/topics.json`
-- Service worker: `sw.js`
-- Main app: `js/app.js`
-
-**Question files:**
-- LLQP Ethics: `data/llqp-ethics/practice-[1-3].json`
-- Segregated Funds: `data/llqp-segregated/practice-1.json`
-- Flashcards: `data/flashcards/flashcards-*.json`
-
-**Current cache version:** v1.0.6 (as of Feb 7, 2026)
-
----
-
-**END OF REFERENCE** ✅
-
-This file should be read FIRST by any AI assistant before making changes to the codebase.
+- content or quiz routing: start with `data/topics.json` and `js/app.js`
+- auth or cloud sync: start with `js/auth.js` and `src/worker.js`
+- deployment or secrets: start with `wrangler.jsonc` and `migrations/`
+- AI explanation behavior: start with `AI_TECHNICAL_DETAILS.md`, `js/app.js`, and `src/worker.js`
+- stale docs: update this file and `README.md` together

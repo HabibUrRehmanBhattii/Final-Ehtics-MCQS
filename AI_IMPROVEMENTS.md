@@ -1,105 +1,53 @@
-# Enhanced AI Explanations Feature
+# AI and Feedback Improvements
 
-## What's New
+Last updated: `2026-03-22`
 
-Your AI explanation feature has been significantly upgraded with better context and richer formatting. Here's what changed:
+This file tracks the recent explanation, answer-feedback, and study-support improvements that landed over the last few days.
 
-### 1. **Better Context Integration** 📚
-The AI now receives and analyzes:
-- Question difficulty level
-- Topic tags
-- Option-specific feedback
-- Exam tips from the topic
-- Official question explanations
-- Student's selected answer vs correct answer
+## Recently shipped
 
-This gives Claude deeper context to provide more targeted explanations.
+- Structured AI responses returned as JSON instead of relying on loose text parsing
+- Better teaching-oriented explanations with short, exam-focused copy
+- Specific follow-up question composer so users can ask exactly what confused them
+- Stronger wrong-answer coaching and cleaner option-label handling
+- More compact explanation layout on mobile
+- Better explanation teaching flow tied into resume and review behavior
+- Visible-question-only speech output
+- Review/reset fixes that prevent stale state from leaking between study sessions
+- Progress stats that use answered questions more accurately
 
-### 2. **Structured Multi-Section Explanations** 📋
-Instead of a single paragraph, explanations now break down into focused sections:
-- **💡 Explanation** - Core concept explained
-- **✅ Why This Is Correct** - Why the correct answer is right
-- **❌ Why Your Answer Wasn't Correct** - (shown only if incorrect) Clarifies misconceptions
-- **🎯 Key Concept** - Fundamental principle being tested
-- **📚 Study Tip** - Mnemonic or memory aid
-- **🔗 Related Concept** - Suggests next topic to study
+## User-visible result
 
-### 3. **Visual Hierarchy** 🎨
-Each section has:
-- Color-coded borders (green for correct, orange for incorrect, etc.)
-- Distinct background gradients
-- Clear typography hierarchy
-- Easy-to-scan layout
+The current quiz flow is much more study-oriented than before:
 
-### 4. **Interactive Follow-Ups** 🤔
-When a related concept is suggested, users can click **🤔 Ask Another Question** to:
-- Get a deeper insight into the topic
-- Understand connections to related ethical principles
-- See common misconceptions
-- Explore real-world application scenarios
+- users get more useful feedback after wrong answers
+- AI explanations are broken into clear sections
+- follow-up learning is now interactive instead of one-shot
+- mobile screens waste less space
+- review mode is more predictable
+- resume flow is less likely to feel broken or stale
 
-### 5. **Improved AI Prompts** 🧠
-The worker now:
-- Uses a system prompt that guides the AI to be educational and supportive
-- Requests structured output with clear headers
-- Includes temperature setting (0.7) for balanced creativity
-- Handles both standard explanations and follow-up requests
+## Current explanation sections
 
-## Code Changes
+The UI now renders:
 
-### Frontend (`js/app.js`)
-- **Enhanced prompt building** - Collects rich context (difficulty, tags, feedback, tips)
-- **Structured response parsing** - Extracts sections from AI response
-- **Visual rendering** - Creates color-coded section layout
-- **Follow-up capability** - New `generateFollowUpExplanation()` method
+- Explanation
+- Why This Is Correct
+- Why Your Answer Wasn't Correct
+- Key Concept
+- Study Tip
+- Related Concept
+- Follow-up Answer
 
-### Backend (`src/worker.js`)
-- **Dual-mode operation** - Handles both standard explanations and follow-up requests
-- **Structured prompting** - AI returns clearly labeled sections
-- **Context integration** - Uses all available metadata for better explanations
-- **Response parsing** - Extracts sections with regex for reliable formatting
+## Related repo areas touched by this work
 
-### Styling (`css/style.css`)
-- **Section styling** - `.ai-section` with color variants
-- **Color-coded themes** - Different colors for different insight types
-- **Follow-up button** - Interactive button with hover states
-- **Gradient backgrounds** - Professional visual appearance
+- `js/app.js`
+- `src/worker.js`
+- `css/style.css`
+- `sw.js`
 
-## Example Usage
+## Still worth improving later
 
-1. User selects an answer (correct or incorrect)
-2. User clicks **🤖 Get AI Explanation**
-3. App shows loading state
-4. AI explanation appears with:
-   - Why this answer is correct/incorrect
-   - Key concept explanation
-   - Memory aid or mnemonic
-   - Related concept suggestion
-5. User can click **🤔 Ask Another Question** for deeper learning
-6. Follow-up insight appears with additional context
-
-## Benefits
-
-✅ **Better Understanding** - Multi-section format helps learn concepts holistically
-✅ **Memory Aids** - Study tips with mnemonics stick better
-✅ **Progressive Learning** - Follow-ups guide deeper study
-✅ **Visual Clarity** - Color coding makes scanning easy
-✅ **Contextual** - AI understands question difficulty and exam relevance
-✅ **Supportive** - Tone is encouraging, not punitive on mistakes
-
-## Files Modified
-
-- `js/app.js` - Main functionality for generating enhanced explanations
-- `src/worker.js` - Worker logic for structured AI responses
-- `css/style.css` - Styling for new sections and follow-ups
-
-## Testing
-
-To test the feature:
-1. Start a quiz
-2. Answer a question (try getting one wrong too)
-3. Look for the **🤖 Get AI Explanation** button
-4. Click it and see the multi-section explanation
-5. If a related concept appears, try the **🤔 Ask Another Question** button
-
-The feature will work offline if the API is unavailable - graceful error messages appear instead.
+- broaden the Worker system prompt so it is not framed only as an ethics tutor
+- continue shrinking the size of `js/app.js`
+- add deeper validation around AI response quality if false positives show up again

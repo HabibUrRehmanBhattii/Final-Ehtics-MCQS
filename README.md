@@ -1,889 +1,195 @@
-# 📚 LLQP & WFG Exam Prep - MCQ Study Platform
+# LLQP & WFG Exam Prep
 
-> **Comprehensive interactive study platform with 394 practice questions and flashcards for LLQP exam preparation**
+Interactive LLQP and HLLQP study platform built as a vanilla JavaScript SPA with a Cloudflare Worker backend. The app now supports local-first quiz sessions, optional accounts, cloud progress sync, AI explanations, PDF manuals, offline caching, and a study-first mobile UI.
 
-[![Deploy to Cloudflare Pages](https://img.shields.io/badge/Deploy-Cloudflare%20Pages-F38020?style=flat&logo=cloudflare)](https://pages.cloudflare.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+Live site: `https://hllqpmcqs.com`
 
----
+## Current content snapshot
 
-## 🎯 Core Features
+- `371` unique practice questions across LLQP Ethics, Life Insurance, Accident and Sickness, and Segregated Funds and Annuities
+- `170` quick-review random MCQs
+- `541` total unique study items
+- `4` built-in CISRO PDF manuals
+- Full chapter quizzes for `LIFE 01` to `LIFE 05`
+- Shorter section splits for `LIFE 01` to `LIFE 05`
+- Certification exams for Life Insurance and Segregated Funds
+- Ethics mock exam plus multi-test wrong-answer review
 
-### 📝 **Multiple Learning Formats**
-- **Practice Tests:** 224 MCQs across LLQP Ethics (incl. mock exam), LLQP Life chapter quizzes/certification, Accident & Sickness, and Segregated Funds & Annuities (incl. certification)
-- **Flashcards:** 170 quick-review flashcards across 9 sets
-- **Review Mode:** Dedicated wrong answers review system
+Current topic totals:
 
-### ⚖️ **LLQP Ethics Practice Tests**
-- **Practice Test 1:** 10 questions - Ethics fundamentals & basic concepts
-- **Practice Test 2:** 20 questions - Core principles & regulations  
-- **Practice Test 3:** 26 questions - Scenario-heavy ethics & legal (trafficking, Assuris, beneficiaries, contract law, exclusions, misrepresentation, rebating)
-- **Mock Exam Test:** 25 questions - Insurance legislation, licensing, contract law, and ethics scenarios
+- `LLQP Ethics (Common Law)`: 81 questions plus Ethics manual
+- `LLQP Life Insurance`: 201 unique questions live today across LIFE 01 to LIFE 05 and the certification exam, plus sectioned study splits for shorter sessions
+- `LLQP Accident & Sickness Insurance`: 35 questions plus manual
+- `LLQP Segregated Funds & Annuities`: 54 questions plus manual
+- `Random MCQs - Beneficiaries & Policy Basics`: 170 quick-review questions
 
-### 🏥 **LLQP Life Chapter Quizzes**
-- **Chapter Quiz 1:** 19 questions - Introduction to Life Insurance (active)
-- **Chapter Quizzes 2–13:** Coming soon (Term life, whole life & term-100, universal life, riders, group life, taxation, business life, underwriting, needs analysis, recommendations, ongoing service, and full review)
-- **Certification Exam:** 35 questions - Comprehensive exam covering life insurance needs analysis, policy types, riders, underwriting, claims, and tax implications (active)
+Notes about the Life topic:
 
-### 🧠 **Flashcard System**
-- **Set 1:** 20 cards - Beneficiaries & policy basics
-- **Set 2:** 150 cards (8 parts of 20/10 cards) - Policy provisions, group & health insurance
+- `LIFE 01` to `LIFE 05` are fully loaded
+- `LIFE 06` to `LIFE 13` are already wired into `data/topics.json` as placeholders for future content
+- Section files reuse the same chapter question pools, so they are alternate study entry points, not additional unique questions
 
-### 🎨 **Interactive Learning Experience**
-- **Smart Navigation:** Dual "Next Question" buttons (before & after explanation)
-- **Visual Feedback:** Green ✓ for correct, Red ✗ for wrong answers on question dots
-- **Detailed Explanations:** Comprehensive learning content with real-world context
-- **Option Feedback:** Specific feedback for each answer choice
-- **Bookmark System:** Flag difficult questions for later review
-- **Filter Mode:** View all questions or only bookmarked ones
+## What changed in the last few days
 
-### 🔄 **Smart Question Management**
-- **Persistent Order:** Questions randomized once, same order when resuming
-- **Re-randomization:** Only occurs on manual "Reset Progress"
-- **Shuffled Options:** Answer choices randomized per question
-- **Saved State:** All progress preserved across browser sessions
+Recent work reflected in this repo includes:
 
-### ❌ **Wrong Answer Review System**
-- **Automatic Tracking:** Wrong answers logged automatically
-- **Cross-Test Review:** Review mistakes from any practice test
-- **Clear Function:** Remove questions you've mastered
-- **Counter Badge:** See total wrong answers to review on home screen
+- Added `HLLQP - LIFE 04 QZ - Universal Life Insurance` and `HLLQP - LIFE 05 QZ - Riders and Supplementary Benefits`
+- Split Life chapter quizzes into shorter section files for easier study sessions
+- Added CISRO PDF manuals for Ethics, Life, Accident and Sickness, and Segregated Funds
+- Switched the deployed app to a Cloudflare Worker plus D1 architecture on the custom domain `hllqpmcqs.com`
+- Added optional email/password authentication with Turnstile protection
+- Added cloud progress sync so quiz state and wrong-answer review can move across devices
+- Added password change, password reset request/confirm flows, Resend-based reset email delivery, and an admin reset-link generator endpoint
+- Hardened same-origin session cookie handling and account isolation on the custom domain
+- Improved AI explanations with better teaching prompts, structured JSON responses, and a specific follow-up question composer
+- Improved wrong-answer feedback quality, option-label cleanup, review flow, reset behavior, and answered-question based progress tracking
+- Reworked the home screen and quiz chrome toward a calmer, study-first mobile layout
+- Updated speech support so "speak question" uses only the visible question text
+- Updated the service worker to bypass API caching while still caching static assets and data files
 
-### 📊 **Advanced Progress Tracking**
-- **Visual Question Dots:** Status indicators for each question
-- **First Attempt Tracking:** Monitors if you got it right on first try
-- **Completion Banner:** Shows score and percentage when test finished
-- **Persistent State:** Progress saved across sessions (localStorage)
-- **Multiple States:** Viewed, answered, correct, incorrect, bookmarked
+## Architecture
 
-### 🌓 **Dark/Light Mode**
-- **Theme Toggle:** Switch between dark and light themes
-- **Persistent Preference:** Theme choice saved to localStorage
-- **Icon Indicator:** ☀️ for dark mode, 🌙 for light mode
+- `index.html` provides the application shell, views, auth modal, and manual viewer
+- `css/style.css` contains the active UI styling
+- `js/app.js` contains the main SPA state and quiz flow
+- `js/auth.js` layers optional account, session, and cloud-sync behavior onto the app
+- `src/worker.js` serves static assets and powers auth, progress sync, password reset, and AI APIs
+- `data/topics.json` is the main content map for topics, tests, section splits, and manuals
+- `sw.js` handles offline caching and update behavior
+- `wrangler.jsonc` defines Cloudflare bindings, custom domains, D1, and AI
+- `migrations/` contains the D1 schema for users, sessions, progress, audit logs, and password reset tokens
 
-### 📱 **Responsive Design**
-- **Mobile Optimized:** Works perfectly on phones and tablets
-- **Desktop Ready:** Full-featured on larger screens
-- **Touch Friendly:** Easy navigation on all devices
-- **PWA Ready:** Installable on Android and iOS (Add to Home Screen)
+The app is intentionally dependency-light. There is no `package.json` or frontend bundler in this repo. Most changes are plain HTML, CSS, JavaScript, JSON, or Wrangler configuration.
 
-### ⚡ **Performance**
-- **Zero Dependencies:** Pure vanilla JavaScript
-- **Fast Loading:** < 1 second load time
-- **Tiny Bundle:** ~50KB total
-- **Cloudflare CDN:** Global edge network deployment
-- **Offline Mode:** Works without internet after first load (service worker)
+## Running locally
 
----
+### Quick static preview
 
-## 🚀 Quick Start
-
-### Option 1: Deploy to Cloudflare Pages (Recommended)
-
-1. **Create GitHub Repository**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: MCQ Study Platform"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
-   git push -u origin main
-   ```
-
-2. **Deploy on Cloudflare Pages**
-   - Go to [Cloudflare Pages](https://pages.cloudflare.com/)
-   - Click **"Create a project"**
-   - Select **"Connect to Git"**
-   - Choose your GitHub repository
-   - Configure build settings:
-     - **Framework preset:** None
-     - **Build command:** (leave empty)
-     - **Build output directory:** `/`
-   - Click **"Save and Deploy"**
-
-3. **Access Your Site**
-   - Your site will be live at: `https://your-project.pages.dev`
-   - Every push to `main` branch auto-deploys!
-
-### Option 2: Local Testing
+For content checks and core quiz UX, any static server is enough:
 
 ```bash
-# Simply open index.html in your browser
-# Or use a local server:
-
-# Python 3
 python -m http.server 8000
-
-# Node.js (http-server)
-npx http-server
-
-# Then visit: http://localhost:8000
 ```
 
----
+Then open `http://localhost:8000`.
 
-## 📁 Project Structure
+You can also open `index.html` directly for simple browsing, but a local server is better for PDFs and service-worker behavior.
 
-```
-Ehtics MCQS/
-├── .github/
-│   └── copilot-instructions.md     # AI coding-agent instructions
-├── assets/
-│   └── icons/                      # PWA icons
-├── css/
-│   ├── style.css                   # Main application styling
-│   └── style_backup.css            # Backup version
-├── data/
-│   ├── topics.json                 # Source of truth for topics/tests
-│   ├── topics-updated.json         # Secondary topic metadata copy
-│   ├── user_data.json
-│   ├── llqp-ethics/
-│   │   ├── llqp-ethics-1.json
-│   │   ├── llqp-ethics-2.json
-│   │   └── llqp-ethics-3.json
-│   ├── insurance-legislation-ethics/
-│   │   └── insurance-legislation-ethics-1.json
-│   ├── llqp-life/
-│   │   └── llqp-life-01.json
-│   ├── llqp-accident/
-│   │   ├── llqp-accident-1.json
-│   │   ├── llqp-accident-2.json
-│   │   ├── llqp-accident-3.json
-│   │   └── llqp-accident-4.json
-│   ├── llqp-segregated/
-│   │   └── llqp-segregated-1.json
-│   └── flashcards/
-│       ├── flashcards-1.json
-│       ├── flashcards-2.json
-│       ├── flashcards-2-full.json
-│       ├── flashcards-2-part-1.json
-│       ├── flashcards-2-part-2.json
-│       ├── flashcards-2-part-3.json
-│       ├── flashcards-2-part-4.json
-│       ├── flashcards-2-part-5.json
-│       ├── flashcards-2-part-6.json
-│       ├── flashcards-2-part-7.json
-│       └── flashcards-2-part-8.json
-├── js/
-│   └── app.js                      # Core SPA logic (single MCQApp object)
-├── src/
-│   └── worker.js                   # Cloudflare Worker /api/explain endpoint
-├── tools/                          # Python utility scripts
-│   ├── debug_flash_json.py
-│   ├── fix_explanation_inner_quotes.py
-│   ├── fix_flashcards_quotes.py
-│   ├── fix_single_option_quotes.py
-│   └── split_flashcards.py
-├── CODEBASE_REFERENCE.md
-├── index.html                      # Main entry point with all views
-├── index_backup.html
-├── manifest.webmanifest
-├── sw.js                           # Service worker (offline + caching)
-├── wrangler.jsonc                  # Cloudflare Worker configuration
-└── README.md
+Static preview is good for:
+
+- browsing topics and quizzes
+- checking question data
+- testing most quiz interactions
+- reviewing manuals and styling
+
+Static preview will not fully cover:
+
+- auth and account flows
+- cloud sync
+- password reset
+- Worker-backed AI explanations
+
+### Full Cloudflare Worker stack
+
+For the full app experience, run the Worker locally:
+
+```bash
+npx wrangler d1 migrations apply final-ehtics-mcqs --local
+npx wrangler dev
 ```
 
----
+Useful secrets for full local testing:
 
-## ➕ Adding New Questions
-
-### Practice Test MCQ Format
-
-Each MCQ follows this comprehensive JSON structure:
-
-```json
-{
-  "id": "PPE-001",
-  "question": "Your detailed question text here...",
-  "options": [
-    "A. First option",
-    "B. Second option",
-    "C. Third option",
-    "D. Fourth option"
-  ],
-  "correctAnswer": 2,
-  "optionFeedback": [
-    "Feedback for option A (why it's wrong)",
-    "Feedback for option B (why it's wrong)",
-    "Detailed explanation of why C is correct",
-    "Feedback for option D (why it's wrong)"
-  ],
-  "explanation": "Comprehensive explanation with learning content, real-world examples, legal references, and key concepts to reinforce understanding...",
-  "difficulty": "medium",
-  "tags": ["ethics", "legal", "insurance"]
-}
+```bash
+npx wrangler secret put SESSION_SECRET
+npx wrangler secret put TURNSTILE_SECRET_KEY
+npx wrangler secret put ADMIN_RESET_SECRET
+npx wrangler secret put RESEND_API_KEY
 ```
 
-### Flashcard Format
+Optional alternative email provider:
 
-Flashcards use a simpler structure:
-
-```json
-{
-  "id": 1,
-  "question": "What is the definition of...?",
-  "options": [
-    "A. First option",
-    "B. Second option",
-    "C. Third option",
-    "D. Fourth option"
-  ],
-  "correctAnswer": 0,
-  "explanation": "Brief, focused explanation of the correct answer."
-}
+```bash
+npx wrangler secret put POSTMARK_SERVER_TOKEN
 ```
 
-**Key Notes:**
-- `id`: For MCQs use `PPE-###` format; flashcards use numbers
-- `correctAnswer`: **Zero-indexed** (0 = A, 1 = B, 2 = C, 3 = D)
-- `optionFeedback`: Array must align with options (MCQs only)
-- `explanation`: Comprehensive for MCQs, brief for flashcards
-- `difficulty`: `"easy"`, `"medium"`, or `"hard"`
-- `tags`: Array of relevant keywords for categorization
+Important non-secret vars already live in `wrangler.jsonc`, including:
 
-### Adding to Practice Tests
+- `TURNSTILE_SITE_KEY`
+- `RESET_EMAIL_PROVIDER`
+- `RESET_EMAIL_FROM`
+- `RESET_EMAIL_REPLY_TO`
+- `RESET_BASE_URL`
+- `RESET_EMAIL_SUBJECT`
+- `APP_NAME`
 
-1. **Choose the appropriate file:**
-   - `data/llqp-ethics/practice-1.json` - Fundamentals (10 questions)
-   - `data/llqp-ethics/practice-2.json` - Core concepts (20 questions)
-   - `data/llqp-ethics/practice-3.json` - Advanced scenarios (26 questions)
+### Deploying
 
-2. **Add your question to the `questions` array**
+Apply migrations and deploy with Wrangler:
 
-3. **Update question count in `data/topics.json`:**
-   ```json
-   {
-     "id": "practice-3",
-     "questionCount": 27,  // Update this number
-     "dataFile": "data/llqp-ethics/practice-3.json?v=20260205d"
-   }
-   ```
-
-4. **Test locally** - Open index.html in browser
-
-5. **Commit and push:**
-   ```bash
-   git add data/llqp-ethics/practice-3.json data/topics.json
-   git commit -m "Add new question about [topic]"
-   git push
-   ```
-
-### Adding Flashcards
-
-1. **Edit the appropriate flashcard file** in `data/flashcards/`
-2. **Update `questionCount` in `data/topics.json`**
-3. **Test and deploy**
-
----
-
-## 🎨 Customization
-
-### Change Colors
-
-Edit CSS variables in `css/style.css`:
-
-```css
-:root {
-  --primary-color: #3b82f6;    /* Main theme color */
-  --success-color: #10b981;    /* Correct answer color */
-  --warning-color: #f59e0b;    /* Bookmark color */
-  /* ... more variables ... */
-}
+```bash
+npx wrangler d1 migrations apply final-ehtics-mcqs --remote
+npx wrangler deploy
 ```
 
-### Add Topic Icons
+The app is currently configured for:
 
-Available emoji options for topic icons:
-- ⚖️ Ethics/Legal
-- 🛡️ Compliance
-- 💼 Business/Finance
-- 🏥 Health/Life Insurance
-- 🚑 Accident/Emergency
-- 📊 Funds/Investments
-- 📚 General Study
+- `https://hllqpmcqs.com`
+- `https://www.hllqpmcqs.com`
 
----
+## Working with quiz data
 
-## 🔧 Technical Details
+When adding or updating content:
 
-### Built With
-- **HTML5** - Semantic markup with multiple view system
-- **CSS3** - Modern responsive design with CSS custom properties
-- **Vanilla JavaScript** - Zero dependencies, no frameworks
-- **LocalStorage API** - Persistent progress and preferences
+1. Edit or add the relevant JSON file under `data/`
+2. Update `data/topics.json`
+3. Mirror the same topic metadata changes into `data/topics-updated.json`
+4. Bump the `?v=` cache-busting suffixes for changed `dataFile` entries
+5. Bump `CACHE_VERSION` in `sw.js`
+6. If you changed a sectioned Life chapter, keep the parent file and its section files aligned
 
-### Application Architecture
+For currently automated Life splits, use:
 
-**Single Page Application (SPA) with 4 Main Views:**
-1. **Home View** - Topic selection and wrong answer review
-2. **Practice Test View** - Select specific test within a topic
-3. **MCQ View** - Question interface with navigation
-4. **List View** - Overview of all questions (future feature)
-
-**State Management System:**
-```javascript
-state: {
-  topics: [],                    // All available topics
-  currentTopic: null,            // Active topic
-  currentPracticeTest: null,     // Active test
-  questions: [],                 // Current question set
-  currentQuestionIndex: 0,       // Active question
-  bookmarkedQuestions: Set,      // User flagged questions
-  viewedQuestions: Set,          // Visited questions
-  answersRevealed: Set,          // Questions with shown answers
-  filterMode: 'all',             // 'all' or 'bookmarked'
-  wrongQuestions: [],            // Tracked wrong answers
-  attemptedOptions: {},          // Track option attempts per question
-  firstAttemptCorrect: {},       // First attempt accuracy
-  isReviewMode: false            // Wrong answer review state
-}
+```bash
+python tools/split_life_quizzes.py
 ```
 
-### Key Features Implementation
-
-**1. Question Randomization Logic:**
-- Questions shuffled **once** using Fisher-Yates algorithm
-- Shuffled order saved to localStorage with key: `shuffle_[topicId]_[testId]`
-- **Same order maintained** when resuming incomplete tests
-- Re-randomization only on "Reset Progress" action
-- Answer options also shuffled independently for each question
-- Options stripped of A/B/C/D prefix, shuffled, then re-prefixed
-
-**2. Visual Indicator System:**
-```css
-/* Question dot states */
-.is-correct-dot  → Green background + ✓ (::after pseudo-element)
-.is-wrong-dot    → Red background + ✗ (::after pseudo-element)
-.viewed-dot      → Gray for viewed but unanswered
-.current-dot     → Blue for active question
-```
-
-**3. Wrong Answer Tracking:**
-- Automatically logs incorrect answers with timestamp
-- Stored in localStorage: `wrong_questions`
-- Each entry: `{ key, topicId, testId, questionId, timestamp }`
-- Cross-test review: Loads questions from multiple tests
-- "Clear Wrong" button removes questions from current test
-
-**4. Progress Persistence:**
-```javascript
-// Progress stored per test
-localStorage key: `progress_[topicId]_[testId]`
-Stored data: {
-  viewedQuestions: [],
-  bookmarkedQuestions: [],
-  answersRevealed: [],
-  attemptedOptions: {},
-  firstAttemptCorrect: {}
-}
-```
-
-**5. Dark/Light Mode:**
-- Theme stored in localStorage: `theme`
-- CSS custom properties for color scheme
-- Attribute on `<html>`: `data-theme="dark|light"`
-- Toggle icon changes: ☀️ (dark mode) / 🌙 (light mode)
-
-**6. Completion Banner:**
-- Shows when all questions answered
-- Displays: Correct count / Total questions
-- Calculates first-attempt accuracy percentage
-- Three action buttons: Main Menu, Back to Tests, Retry Test
-
-### Browser Support
-- ✅ Chrome/Edge (latest 2 versions)
-- ✅ Firefox (latest 2 versions)
-- ✅ Safari 14+ (iOS & macOS)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
-
-### Performance Metrics
-- **Load Time:** < 1 second (on 3G)
-- **Bundle Size:** ~50KB total (uncompressed)
-- **Time to Interactive:** < 2 seconds
-- **Lighthouse Score:** 95+ (Performance, Accessibility, Best Practices)
-- **Zero Network Dependencies:** All resources self-hosted
-
----
-
-## 📊 Current Content Count
-
-### Practice Tests (MCQs)
-| Topic/Test | Questions | Status |
-|------------|-----------|--------|
-| LLQP Ethics Practice Test 1 | **10** | ✅ Active |
-| LLQP Ethics Practice Test 2 | **20** | ✅ Active |
-| LLQP Ethics Practice Test 3 | **26** | ✅ Active |
-| LLQP Ethics Mock Exam Test | **25** | ✅ Active |
-| LLQP Life Chapter Quiz 1: Introduction to Life Insurance | **19** | ✅ Active |
-| LLQP Accident & Sickness Practice Test 1 | **10** | ✅ Active |
-| LLQP Accident & Sickness Practice Test 2 | **10** | ✅ Active |
-| LLQP Accident & Sickness Practice Test 3 | **10** | ✅ Active |
-| LLQP Accident & Sickness Practice Test 4 | **5** | ✅ Active |
-| LLQP Segregated Funds & Annuities Practice Test 1 | **19** | ✅ Active |
-| **MCQ Subtotal** | **154** | |
-
-### Flashcards (Quick Review)
-| Set | Cards | Topic | Status |
-|-----|-------|-------|--------|
-| Flashcards Set 1 | **20** | Beneficiaries & Policy Basics | ✅ Active |
-| Flashcards Set 2 - Part 1 | **20** | Policy Provisions | ✅ Active |
-| Flashcards Set 2 - Part 2 | **20** | Group Insurance | ✅ Active |
-| Flashcards Set 2 - Part 3 | **20** | Health Insurance | ✅ Active |
-| Flashcards Set 2 - Part 4 | **20** | Policy Details | ✅ Active |
-| Flashcards Set 2 - Part 5 | **20** | Coverage Types | ✅ Active |
-| Flashcards Set 2 - Part 6 | **20** | Insurance Basics | ✅ Active |
-| Flashcards Set 2 - Part 7 | **20** | Advanced Topics | ✅ Active |
-| Flashcards Set 2 - Part 8 | **10** | Final Review | ✅ Active |
-| **Flashcards Subtotal** | **170** | |
-
-### Coming Soon (LLQP Life Chapter Quizzes)
-| Quiz | Status |
-|------|--------|
-| HLLQP - LIFE 02 QZ - Term Life Insurance | 🔜 Coming Soon |
-| HLLQP - LIFE 03 QZ - Whole Life and Term-100 Insurance | 🔜 Coming Soon |
-| HLLQP - LIFE 04 QZ - Universal Life Insurance | 🔜 Coming Soon |
-| HLLQP - LIFE 05 QZ - Riders and Supplementary Benefits | 🔜 Coming Soon |
-| HLLQP - LIFE 06 QZ - Group Life Insurance | 🔜 Coming Soon |
-| HLLQP - LIFE 07 QZ - Taxation of Life Insurance and Tax Strategies | 🔜 Coming Soon |
-| HLLQP - LIFE 08 QZ - Business Life Insurance | 🔜 Coming Soon |
-| HLLQP - LIFE 09 QZ - Application and Underwriting | 🔜 Coming Soon |
-| HLLQP - LIFE 10 QZ - Assessing the Client's Needs and Situations | 🔜 Coming Soon |
-| HLLQP - LIFE 11 QZ - Recommending an Insurance Policy | 🔜 Coming Soon |
-| HLLQP - LIFE 12 QZ - Ongoing Service | 🔜 Coming Soon |
-| HLLQP - LIFE 13 QZ - Chapter 1 - 12 Review Test | 🔜 Coming Soon |
-
-### **Grand Total: 394 Questions** (224 MCQs + 170 Flashcards)
-
----
-
-## 🎓 Study Content Breakdown
-
-### Practice Test 3 Topics (26 questions):
-- Trafficking in insurance
-- Misrepresentation and disclosure duties
-- Rebating and prohibited practices
-- Assuris coverage (life, disability, cash value)
-- Beneficiary changes and designations
-- Contract law (offer, acceptance, consideration)
-- Group insurance policyholder rights
-- Mortgage insurance replacement rules
-- Policy provisions (anti-lapse, free look, collateral assignment)
-- License revocation scenarios
-- Estate insolvency and creditor protection
-- Criminal exclusions and presumption of death
-
----
-
-## 🔄 Updating Questions
-
-1. **Edit JSON files** in `data/llqp-ethics/` folder
-2. **Update question counts** in `data/topics.json`
-3. **Test locally** - Open index.html in browser
-4. **Commit changes:**
-   ```bash
-   git add .
-   git commit -m "Add 5 new questions to Practice Test 3"
-   git push
-   ```
-5. **Auto-deploys** - Live in ~1 minute!
-
----
-
-## 🌐 Deployment Status
-
-Once deployed to Cloudflare Pages:
-- ✅ Automatic deployments on push
-- ✅ Preview deployments for branches
-- ✅ Free custom domain support
-- ✅ Analytics available (Cloudflare Web Analytics)
-- ✅ Unlimited bandwidth & requests
-
----
-
-## 🤝 Contributing
-
-Want to add more questions? Follow these steps:
-
-1. Fork the repository
-2. Add questions to appropriate JSON files
-3. Test locally
-4. Submit a Pull Request
-
-**Question Guidelines:**
-- Clear, unambiguous wording
-- 4 options (A, B, C, D)
-- Detailed explanations
-- Proper difficulty tagging
-
----
-
-## 📝 License
-
-MIT License - Feel free to use for personal or educational purposes.
-
----
-
-## 🆘 Support & Troubleshooting
-
-### Common Issues
-
-**Q: Questions not showing?**  
-A: 
-- Check browser console (F12) for errors
-- Ensure JSON files are valid using [JSONLint](https://jsonlint.com/)
-- Verify `dataFile` paths in `topics.json` are correct
-- Clear browser cache and hard reload (Ctrl+Shift+R)
-
-**Q: Progress not saving?**  
-A: 
-- Ensure localStorage is enabled in browser settings
-- Check Privacy/Security settings - localStorage must be allowed
-- Try incognito/private mode to test if extensions are interfering
-- Check storage quota (browser dev tools → Application → Storage)
-
-**Q: How do I reset progress for a specific test?**  
-A: 
-1. Open the practice test
-2. Click the **"Reset Progress"** button at the bottom
-3. Confirm the action
-4. This will:
-   - Clear all progress data for that test
-   - Clear saved question order (questions will re-randomize)
-   - Reset to question 1
-   - Remove bookmarks
-   - Clear first-attempt tracking
-
-**Q: Questions keep changing order when I resume?**  
-A: This should NOT happen. Questions are randomized once and saved. If experiencing this:
-- Clear your browser cache completely
-- Check if localStorage is working: Open DevTools → Application → Local Storage
-- Look for keys like `shuffle_llqp-ethics_practice-3`
-- Use "Reset Progress" to start fresh with a new shuffle
-
-**Q: I can't see which questions I've answered?**  
-A: Check the question dots at the top:
-- ✓ **Green** = Correct answer
-- ✗ **Red** = Wrong answer
-- **Gray** = Viewed but not answered
-- **Blue** = Current question
-- **Hover** over dots for detailed tooltips
-
-**Q: Wrong answer counter not updating?**  
-A:
-- Wrong answers are logged automatically when you select incorrect option
-- Counter appears on home screen after at least 1 wrong answer
-- Click "Review Wrong Answers" card to practice them
-- Use "Clear Wrong" button in a test to remove those questions from review
-
-**Q: Dark mode not working?**  
-A:
-- Click the 🌙/☀️ icon in top-right corner
-- Theme preference saved automatically
-- If stuck, clear localStorage and try again
-
-**Q: Bookmarks not saving?**  
-A:
-- Click the ★ icon on any question to bookmark
-- Bookmarks saved per test in localStorage
-- Use "Bookmarked" button to filter and view only flagged questions
-- Bookmarks persist across sessions
-
-**Q: How do flashcards differ from practice tests?**  
-A:
-- **Practice Tests:** Full MCQs with option feedback and detailed explanations
-- **Flashcards:** Simpler format with brief explanations
-- **Purpose:** Flashcards for quick review, practice tests for exam simulation
-
-**Q: Can I export my progress or results?**  
-A: Currently not supported. Feature planned for future release.
-
-### Data Management
-
-**Clear All Data:**
-```javascript
-// Open browser console (F12) and run:
-localStorage.clear();
-location.reload();
-```
-
-**View Saved Progress:**
-```javascript
-// In console:
-Object.keys(localStorage).forEach(key => {
-  if (key.startsWith('progress_') || key.startsWith('shuffle_')) {
-    console.log(key, localStorage.getItem(key));
-  }
-});
-```
-
-**Backup Your Progress:**
-1. Open DevTools (F12)
-2. Go to Application → Local Storage
-3. Right-click → Copy all
-4. Save to a text file
-
-### Contact & Support
-
-- **Issues:** Open a GitHub issue with details
-- **Questions:** Check [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/)
-- **Feature Requests:** Submit via GitHub issues with [Feature Request] tag
-
----
-
-## 🎓 Study Tips & Best Practices
-
-### Effective Study Strategies
-
-📌 **Use Progressive Learning**
-- Start with Practice Test 1 (fundamentals)
-- Move to flashcards for quick reinforcement
-- Progress to Practice Test 2 (core concepts)
-- Tackle Practice Test 3 (advanced scenarios)
-
-🔖 **Leverage the Bookmark System**
-- Flag questions that challenge you immediately
-- Filter to show only bookmarked questions
-- Review these regularly until confident
-- Remove bookmarks as you master topics
-
-✓ **Track Your Performance**
-- Green checkmarks show your strengths - these topics are solid
-- Red X marks reveal weak areas - focus study time here
-- Review wrong answers using the dedicated review system
-- Aim for 100% green before moving to next test
-
-❌ **Master Wrong Answers**
-- Use "Review Wrong Answers" card on home screen
-- Questions from ALL tests appear in review mode
-- Once you get a question right, remove it from review
-- "Clear Wrong" button removes current test's mistakes
-
-📊 **Monitor First-Attempt Accuracy**
-- Completion banner shows first-try score
-- This metric indicates exam readiness
-- Aim for 85%+ first-attempt accuracy
-- Re-take tests after studying to improve score
-
-🎯 **Read Everything Carefully**
-- Study the explanation even when you answer correctly
-- Review option feedback for wrong choices
-- Understand WHY each option is correct/incorrect
-- Context and reasoning matter more than memorization
-
-🔄 **Don't Reset Too Early**
-- Complete all questions before resetting progress
-- Resetting randomizes questions again
-- Build familiarity with the current order first
-- Reset only when ready for fresh practice
-
-💡 **Use Both Formats**
-- **Practice Tests:** Deep learning with detailed explanations
-- **Flashcards:** Quick recall and concept reinforcement
-- Alternate between formats for variety
-- Flashcards great for review sessions
-
-📝 **Take Notes Externally**
-- Copy complex explanations to your notes
-- Create summary sheets by topic
-- Write out concepts in your own words
-- Teaching others reinforces your understanding
-
-⏰ **Create a Study Schedule**
-- 20-30 minutes daily better than cramming
-- Review wrong answers each session
-- Mix practice tests and flashcards
-- Take breaks every 45-60 minutes
-
-🎯 **Exam Simulation**
-- Complete a full practice test without pausing
-- Don't reveal answers until finished
-- Time yourself (though timer not built-in yet)
-- Treat it like the real exam
-
-### Pre-Exam Checklist
-
-✅ Complete all 3 practice tests with 85%+ accuracy  
-✅ Review all 170 flashcards at least twice  
-✅ Wrong answer review queue is empty  
-✅ No bookmarked questions remaining (or all mastered)  
-✅ Can explain reasoning for each answer choice  
-✅ Comfortable with all tags/topics (ethics, legal, Assuris, contracts, etc.)  
-✅ Reviewed explanations thoroughly, not just answers
-
----
-
-## 🚀 Roadmap
-
-### ✅ Completed Features (v2.0)
-- [x] Visual indicators for answered questions (✓/✗)
-- [x] Dual navigation buttons (before & after explanation)
-- [x] Persistent question order across sessions
-- [x] Progress tracking with localStorage
-- [x] Comprehensive question explanations with option feedback
-- [x] 394 total questions (224 MCQs + 170 flashcards)
-- [x] Wrong answer review system with cross-test support
-- [x] Dark/Light mode toggle
-- [x] Bookmark functionality with filter
-- [x] First-attempt accuracy tracking
-- [x] Completion banner with score
-- [x] Question dot tooltips with status
-- [x] Multiple topic/test support
-- [x] Responsive mobile design
-- [x] Offline mode with service worker
-- [x] Audio reading of questions (accessibility)
-
-### 🔜 Planned Enhancements (v3.0)
-
-**High Priority:**
-- [ ] Timer mode for exam simulation
-- [ ] Detailed statistics dashboard
-  - [ ] Score trends over time
-  - [ ] Per-topic performance breakdown
-  - [ ] Time spent per question
-  - [ ] Accuracy charts
-- [ ] Export progress/results as PDF
-- [ ] Search functionality across all questions
-- [ ] Print-friendly question sheets
-
-**Medium Priority:**
-- [ ] Question difficulty filtering (easy/medium/hard)
-- [ ] Tag-based filtering (e.g., show only "Assuris" questions)
-- [ ] Practice by specific topic across all tests
-- [ ] Spaced repetition system for flashcards
-- [ ] Custom quiz creator (mix questions from multiple tests)
-- [ ] Notes system (add personal notes to questions)
-- [ ] Study streaks and achievements
-
-**Low Priority:**
-- [ ] Question shuffle settings (per-question vs per-test)
-- [ ] Keyboard shortcuts for navigation
-- [ ] Question reporting system
-- [ ] Social features (share scores)
-- [ ] Mobile app version (PWA)
-
-### 📝 Content Expansion
-
-**In Development:**
-- [ ] LLQP Life Chapter Quizzes 2–13 (Term life, whole life, UL, riders, group life, taxation, business life, underwriting, needs analysis, recommendations, ongoing service, full review)
-- [ ] Additional mock exams and scenario banks
-- [ ] Extended flashcard sets for LLQP Life and A&S
-
-**Target:** 500+ total questions by end of 2026
-
----
-
-**Built with ❤️ for LLQP exam success**
-
-Good luck with your studies! 📚✨
-
----
-
-## 📋 Version History
-
-### v2.0.0 - Current (February 2026)
-**Major Update - Feature Rich Platform**
-- ✨ Added LLQP Life Chapter Quiz 1 (+19 MCQs) and consolidated topics (324 total: 154 MCQs + 170 flashcards)
-- 🔄 Implemented persistent question order across sessions
-- ✓ Added visual indicators (✓/✗) for answered questions
-- 🎯 Dual "Next Question" buttons for better UX
-- 📊 Enhanced question dots with status tooltips
-- 💡 Comprehensive explanations with option feedback
-- ❌ Wrong answer review system with cross-test support
-- 🌓 Dark/Light mode toggle
-- 🔖 Bookmark functionality with filter mode
-- 📈 First-attempt accuracy tracking
-- 🎉 Completion banner with score calculation
-- 🧠 Flashcard system with 9 sets (170 cards)
-- 🎨 Improved responsive design
-
-### v1.0.0 - Initial Release
-**Basic MCQ Platform**
-- 📝 10 initial practice questions
-- 💾 Progress tracking via localStorage
-- ⭐ Basic bookmark functionality
-- 🏠 Topic selection interface
-- 🔄 Question randomization
-- 📱 Mobile responsive layout
-
----
-
-## 🏗️ Architecture Notes
-
-### Data Flow
-```
-topics.json → Loads all topics and tests
-  ↓
-User selects topic → practiceTests array displayed
-  ↓
-User selects test → dataFile loaded (practice-X.json or flashcards-X.json)
-  ↓
-Questions shuffled → Saved to localStorage (shuffle_[topic]_[test])
-  ↓
-User answers → State updated → Saved to localStorage (progress_[topic]_[test])
-  ↓
-Completion → Banner shown → Score calculated
-```
-
-### LocalStorage Keys
-- `theme` - Dark/light mode preference
-- `wrong_questions` - Array of incorrect answers across all tests
-- `progress_[topicId]_[testId]` - Test-specific progress data
-- `shuffle_[topicId]_[testId]` - Shuffled question order
-
-### File Naming Conventions
-- **Practice Tests:** `practice-[number].json` (e.g., practice-1.json)
-- **Flashcards:** `flashcards-[set]-[part].json` (e.g., flashcards-2-part-1.json)
-- **Question IDs:** `PPE-###` for practice tests, numeric for flashcards
-- **Topic IDs:** Kebab-case (e.g., `llqp-ethics`, `wfg-aml`)
-
-### CSS Architecture
-- CSS Custom Properties for theming
-- `data-theme` attribute on `<html>` for theme switching
-- BEM-like naming for components
-- Mobile-first responsive breakpoints
-- Utility classes for common patterns
-
----
-
-## 🤝 Contributing
-
-Want to add more questions or improve the platform? Contributions welcome!
-
-### Question Contributions
-
-1. Fork the repository
-2. Add questions to appropriate JSON files
-3. Follow the question format guidelines
-4. Update question counts in `topics.json`
-5. Test locally by opening `index.html`
-6. Submit a Pull Request
-
-**Question Quality Guidelines:**
-- ✅ Clear, unambiguous wording
-- ✅ Exactly 4 options (A, B, C, D)
-- ✅ One clearly correct answer
-- ✅ Detailed explanations (2-4 sentences minimum for MCQs)
-- ✅ Option feedback for each choice (MCQs)
-- ✅ Proper difficulty tagging
-- ✅ Relevant tags for categorization
-- ❌ No typos or grammatical errors
-- ❌ No ambiguous or trick questions
-- ❌ No outdated information
-
-### Code Contributions
-
-1. Check existing issues for feature requests
-2. Create a new branch for your feature
-3. Follow existing code style (ES6, no semicolons, 2-space indent)
-4. Test thoroughly across browsers
-5. Update README if adding features
-6. Submit PR with clear description
-
-### Bug Reports
-
-Include:
-- Browser and version
-- Steps to reproduce
-- Expected vs actual behavior
-- Screenshots if applicable
-- Console errors (F12 → Console tab)
+That helper currently regenerates section files for:
+
+- `LIFE 01`
+- `LIFE 02`
+- `LIFE 03`
+- `LIFE 05`
+
+## Important files
+
+- `README.md` - high-level project overview and current status
+- `CODEBASE_REFERENCE.md` - implementation-oriented repo map for maintainers and coding agents
+- `AI_TECHNICAL_DETAILS.md` - current AI explanation request/response pipeline
+- `AI_IMPROVEMENTS.md` - recent AI and feedback-related UX changes
+- `data/topics.json` - source of truth for what the homepage renders
+- `src/worker.js` - auth, progress sync, password reset, AI, and asset serving
+- `js/app.js` - main quiz behavior, review mode, manuals, speech, resume flow
+- `js/auth.js` - auth UI, session refresh, sync, password reset UI
+
+## Operational notes
+
+- `topics.json` and `topics-updated.json` should stay in sync
+- Manual entries use `questionCount: 0` and point to PDF files
+- The service worker caches static assets and data files, but API routes must always hit the network
+- The auth UI intentionally degrades gracefully when the app is served without a configured Worker backend
+- Cloud sync snapshots include quiz progress, shuffle state, wrong-answer review, daily stats, and the last session pointer
+
+## Repo status after the recent work
+
+As of `2026-03-22`, the repo reflects:
+
+- custom-domain Worker deployment
+- first-party auth cookies
+- D1-backed accounts and cloud progress
+- password reset email wiring
+- updated manuals
+- Life chapter content through `LIFE 05`
+- the latest home, review, explanation, and resume-flow improvements
+
+If you are picking work up from here, start with `CODEBASE_REFERENCE.md`, then inspect `data/topics.json`, `js/app.js`, `js/auth.js`, and `src/worker.js`.
