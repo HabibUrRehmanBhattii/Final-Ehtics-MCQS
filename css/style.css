@@ -3273,70 +3273,81 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 @media (max-width: 640px) {
   #mcq-view .wrap {
-    padding: .8rem .45rem 1.2rem;
+    padding: .7rem .25rem 1rem;
   }
 
   #mcq-view .q-nav {
-    padding: .5rem;
+    padding: .42rem;
     gap: .35rem;
     border-radius: 14px;
   }
 
   #mcq-view .card {
-    padding: .85rem;
-    margin-bottom: .9rem;
-    border-radius: 16px;
+    padding: .55rem;
+    margin-bottom: .75rem;
+    border-radius: 14px;
   }
 
   #mcq-view .q-text {
-    margin-bottom: 1rem;
+    margin-bottom: .85rem;
   }
 
   #mcq-view .option-main {
-    padding: .82rem .78rem;
-    gap: .62rem;
+    padding: .78rem .72rem;
+    gap: .55rem;
   }
 
   #mcq-view .option-feedback {
-    padding: .62rem .72rem .62rem 3.15rem;
+    padding: .56rem .65rem .56rem 2.9rem;
   }
 
   #mcq-view .answer-box {
-    margin-top: 1rem;
-    padding: .8rem;
-    border-radius: 16px;
+    margin-top: .8rem;
+    margin-inline: -.15rem;
+    padding: .45rem;
+    border-radius: 14px;
   }
 
   #mcq-view .answer-correct {
-    margin-bottom: .7rem;
-    padding: .55rem .7rem;
+    margin-bottom: .55rem;
+    padding: .5rem .6rem;
   }
 
   #mcq-view .explain-box,
   #mcq-view .ai-explanation,
   #mcq-view .follow-up-composer {
-    margin-top: .7rem;
-    padding: .78rem;
-    border-radius: 14px;
+    margin-top: .55rem;
+    padding: .55rem;
+    border-radius: 12px;
+  }
+
+  #mcq-view .exp-panels,
+  #mcq-view .ai-explanation-enhanced {
+    gap: .5rem;
   }
 
   #mcq-view .exp-panel,
   #mcq-view .ai-section {
-    padding: .72rem;
-    border-radius: 14px;
+    padding: .56rem .58rem;
+    border-radius: 12px;
+  }
+
+  #mcq-view .exp-panel-head,
+  #mcq-view .ai-section-title {
+    margin-bottom: .35rem;
   }
 
   #mcq-view .exp-disclosure-summary {
-    padding: .72rem .75rem;
+    padding: .6rem .65rem;
   }
 
   #mcq-view .exp-disclosure-body {
-    padding: 0 .75rem .75rem;
+    padding: 0 .65rem .65rem;
   }
 
   #mcq-view .ai-box {
     display: grid;
-    gap: .65rem;
+    gap: .55rem;
   }
 
   #mcq-view #next-question-btn-top,
@@ -3358,22 +3369,22 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 @media (max-width: 420px) {
   #mcq-view .wrap {
-    padding-inline: .35rem;
+    padding-inline: .12rem;
   }
 
   #mcq-view .card {
-    padding: .75rem;
+    padding: .42rem;
   }
 
   #mcq-view .answer-box,
   #mcq-view .explain-box,
   #mcq-view .ai-explanation,
   #mcq-view .follow-up-composer {
-    padding: .72rem;
+    padding: .48rem;
   }
 
   #mcq-view .exp-panel,
   #mcq-view .ai-section {
-    padding: .68rem;
+    padding: .5rem .52rem;
   }
 }
