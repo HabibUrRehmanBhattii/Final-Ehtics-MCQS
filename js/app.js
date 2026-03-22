@@ -2613,6 +2613,16 @@ const MCQApp = {
       }
       
       const lines = part.trim().split('\n');
+      const parseTableRow = (line) => {
+        const cells = line.split('|').map((cell) => cell.trim());
+        if (line.trim().startsWith('|')) {
+          cells.shift();
+        }
+        if (line.trim().endsWith('|')) {
+          cells.pop();
+        }
+        return cells;
+      };
       
       // Validate table format (must have at least 3 lines: header, separator, data)
       if (lines.length < 3 || !lines[1].match(/^\s*\|?[\s\-|:]+\|?[\s\-|:]*$/)) {
@@ -2621,16 +2631,12 @@ const MCQApp = {
       
       try {
         // Parse headers
-        const headers = lines[0]
-          .split('|')
-          .map(h => h.trim())
-          .filter(h => h);
+        const headers = parseTableRow(lines[0]).filter((header) => header);
         
         // Parse data rows
         const rows = lines.slice(2).map(line => 
-          line.split('|')
-            .map(cell => cell.trim())
-            .filter((cell, idx) => idx < headers.length)
+          parseTableRow(line)
+            .slice(0, headers.length)
         ).filter(row => row.length > 0);
         
         // Build HTML table
