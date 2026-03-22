@@ -1979,37 +1979,72 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   }
   .explain-box {
     padding: 1rem;
+    border-radius: 14px;
   }
   .explain-label {
-    font-size: .78rem;
-    margin-bottom: .7rem;
+    font-size: .8rem;
+    margin-bottom: .75rem;
+    padding-bottom: .42rem;
   }
   .explain-body {
-    font-size: .9rem;
-    line-height: 1.65;
+    font-size: .94rem;
+    line-height: 1.72;
     word-break: break-word;
     overflow-wrap: anywhere;
   }
+  .exp-panels {
+    gap: .62rem;
+  }
+  .exp-panel {
+    padding: .82rem .85rem;
+  }
+  .exp-panel-head {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: .45rem;
+    margin-bottom: .45rem;
+  }
+  .exp-panel-title {
+    font-size: .88rem;
+    line-height: 1.35;
+  }
+  .exp-panel-text {
+    font-size: .89rem;
+    line-height: 1.6;
+  }
+  .exp-badge {
+    height: 1.8rem;
+    min-width: 1.8rem;
+    font-size: .72rem;
+  }
   .exp-heading {
-    font-size: .86rem;
+    font-size: .88rem;
     margin-top: .9rem;
   }
+  .exp-text {
+    line-height: 1.72;
+  }
+  .exp-list {
+    padding-left: 1rem;
+  }
   .exp-list li {
-    font-size: .88rem;
-    line-height: 1.55;
+    font-size: .89rem;
+    line-height: 1.62;
   }
   .exp-disclosure {
     border-radius: 14px;
   }
   .exp-disclosure-summary {
-    padding: .75rem .8rem;
-    font-size: .83rem;
+    padding: .78rem .82rem;
+    min-height: 44px;
+    font-size: .86rem;
     gap: .55rem;
     align-items: center;
+    line-height: 1.35;
   }
   .exp-disclosure-meta {
-    padding: .2rem .45rem;
-    font-size: .66rem;
+    padding: .24rem .5rem;
+    font-size: .68rem;
   }
   .exp-disclosure-body {
     padding: 0 .7rem .75rem;
@@ -2075,6 +2110,25 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
     width: 100%;
     min-height: 42px;
   }
+
+  [data-theme="dark"] .explain-box {
+    border-left: 4px solid #6366f1;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(10, 35, 54, .9), rgba(8, 29, 47, .9));
+    border-top-color: rgba(56, 189, 248, .22);
+    border-right-color: rgba(56, 189, 248, .14);
+    border-bottom-color: rgba(56, 189, 248, .14);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .28);
+  }
+
+  [data-theme="dark"] .explain-label {
+    color: #38bdf8;
+    border-bottom-color: rgba(56, 189, 248, .45);
+  }
+
+  [data-theme="dark"] .explain-body {
+    color: #e9f3ff;
+  }
 }
 
 @media (max-width: 380px) {
@@ -2084,6 +2138,21 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   .option-letter { width: 1.85rem; height: 1.85rem; min-width: 1.85rem; font-size: .68rem; }
   .option-feedback { padding-left: 3.3rem; }
   .q-text { font-size: .95rem; }
+  .exp-panel {
+    padding: .76rem .78rem;
+  }
+  .exp-panel-title {
+    font-size: .84rem;
+  }
+  .exp-panel-text,
+  .exp-list li,
+  .exp-choice-reason {
+    font-size: .85rem;
+    line-height: 1.56;
+  }
+  .exp-disclosure-summary {
+    font-size: .82rem;
+  }
 }
 
 .auth-panel {
