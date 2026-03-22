@@ -31,23 +31,40 @@ SPECS = [
     },
 ]
 
-for spec in SPECS:
-    source_path = LIFE_DIR / spec["source"]
-    data = json.loads(source_path.read_text(encoding="utf-8"))
+
+def build_part_data(data, description, part_index, group):
     questions = data["questions"]
+    return {
+        "topic": data["topic"],
+        "topicId": data["topicId"],
+        "description": f"{description} - Section {part_index}",
+        "examTips": data.get("examTips"),
+        "questions": [questions[number - 1] for number in group],
+    }
 
+
+def split_quiz_spec(life_dir, spec):
+    source_path = Path(life_dir) / spec["source"]
+    data = json.loads(source_path.read_text(encoding="utf-8"))
+
+    written_paths = []
     for part_index, group in enumerate(spec["groups"], start=1):
-        part_data = {
-            "topic": data["topic"],
-            "topicId": data["topicId"],
-            "description": f"{spec['description']} - Section {part_index}",
-            "examTips": data.get("examTips"),
-            "questions": [questions[number - 1] for number in group],
-        }
-
-        output_path = LIFE_DIR / f"{spec['output_base']}-part-{part_index}.json"
+        part_data = build_part_data(data, spec["description"], part_index, group)
+        output_path = Path(life_dir) / f"{spec['output_base']}-part-{part_index}.json"
         output_path.write_text(
             json.dumps(part_data, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
-        print(output_path.name)
+        written_paths.append(output_path)
+
+    return written_paths
+
+
+def main():
+    for spec in SPECS:
+        for output_path in split_quiz_spec(LIFE_DIR, spec):
+            print(output_path.name)
+
+
+if __name__ == "__main__":
+    main()
