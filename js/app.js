@@ -3595,8 +3595,10 @@ const MCQApp = {
         this.state.firstAttemptCorrect[stateKey] = true;
       }
       
-      // If answered correctly in review mode, remove from wrong questions
-      if (this.state.isReviewMode) {
+      // In review mode, only clear the question if the user got it right
+      // on the first try of this review pass. If they missed it again first,
+      // keep it in the wrong-answer queue for future review.
+      if (this.state.isReviewMode && isFirstAttempt) {
         this.removeFromWrongQuestions(question);
       }
       
@@ -3647,6 +3649,10 @@ const MCQApp = {
 
       // Auto-advance to next question if enabled
       this.autoAdvanceNext();
+
+      if (this.state.isReviewMode && !isFirstAttempt) {
+        this.showToast('You corrected it this time, but it will stay in Review Wrong Answers because the first try was still wrong.', 'info');
+      }
       
     } else {
       // WRONG ANSWER - Show individual feedback, don't reveal correct answer
