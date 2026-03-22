@@ -33,6 +33,7 @@ build/
 # Testing
 coverage/
 .nyc_output/
+.pytest_cache/
 
 # OS files
 .DS_Store
@@ -48,6 +49,7 @@ Desktop.ini
 *.temp
 *.pyc
 __pycache__/
+.venv/
 *.swp
 *.swo
 *~
