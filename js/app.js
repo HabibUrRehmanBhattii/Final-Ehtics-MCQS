@@ -2367,6 +2367,8 @@ const MCQApp = {
 
     if (viewName === 'home') {
       this.renderTopicsGrid();
+    } else if (viewName === 'practice-test' && this.state.currentTopic) {
+      this.renderPracticeTests();
     }
   },
 
@@ -2456,6 +2458,13 @@ const MCQApp = {
       this.resetAIExplanationUi(true);
       answerSection.classList.remove('hidden');
       optionsContainer.querySelectorAll('.option').forEach(opt => {
+        const idx = parseInt(opt.getAttribute('data-index'));
+        if (idx === question.correctAnswer) {
+          opt.classList.add('is-correct');
+          opt.classList.remove('is-dimmed');
+        } else if (!opt.classList.contains('was-attempted')) {
+          opt.classList.add('is-dimmed');
+        }
         opt.style.pointerEvents = 'none';
       });
     }
@@ -4487,6 +4496,8 @@ const MCQApp = {
       bookmarked: Array.from(this.state.bookmarkedQuestions),
       revealed: Array.from(this.state.answersRevealed),
       timers: this.getQuestionTimersSnapshot(),
+      attemptedOptions: this.state.attemptedOptions,
+      firstAttemptCorrect: this.state.firstAttemptCorrect,
       lastUpdated: new Date().toISOString()
     };
 
@@ -4527,6 +4538,8 @@ const MCQApp = {
       this.state.bookmarkedQuestions = new Set();
       this.state.answersRevealed = new Set();
       this.state.questionElapsedMs = {};
+      this.state.attemptedOptions = {};
+      this.state.firstAttemptCorrect = {};
       this.state.currentQuestionIndex = 0;
       return;
     }
@@ -4536,6 +4549,8 @@ const MCQApp = {
       this.state.bookmarkedQuestions = new Set();
       this.state.answersRevealed = new Set();
       this.state.questionElapsedMs = {};
+      this.state.attemptedOptions = {};
+      this.state.firstAttemptCorrect = {};
       this.state.currentQuestionIndex = 0;
       return;
     }
@@ -4547,11 +4562,19 @@ const MCQApp = {
       this.state.bookmarkedQuestions = new Set(saved.bookmarked || []);
       this.state.answersRevealed = new Set(saved.revealed || []);
       this.state.questionElapsedMs = saved.timers && typeof saved.timers === 'object' ? { ...saved.timers } : {};
+      this.state.attemptedOptions = saved.attemptedOptions && typeof saved.attemptedOptions === 'object'
+        ? JSON.parse(JSON.stringify(saved.attemptedOptions))
+        : {};
+      this.state.firstAttemptCorrect = saved.firstAttemptCorrect && typeof saved.firstAttemptCorrect === 'object'
+        ? { ...saved.firstAttemptCorrect }
+        : {};
     } else {
       this.state.viewedQuestions = new Set();
       this.state.bookmarkedQuestions = new Set();
       this.state.answersRevealed = new Set();
       this.state.questionElapsedMs = {};
+      this.state.attemptedOptions = {};
+      this.state.firstAttemptCorrect = {};
     }
 
     this.state.currentQuestionIndex = this.getResumeQuestionIndex();
