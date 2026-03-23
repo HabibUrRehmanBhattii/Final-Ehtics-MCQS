@@ -1,0 +1,268 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLOP - LIFE 06 QZ - Group Life Insurance - Section 2",
+  "examTips": "Focus on AD&D coverage, accidental vs. natural death, creditor insurance, conversion rights, and underwriting practices.",
+  "questions": [
+    {
+      "id": 11,
+      "question": "PQR Inc. provides basic AD&D coverage. Marcus has $100,000 in basic life and $100,000 in basic AD&D. Marcus suffers a massive heart attack while driving home from work and passes away. How much will his beneficiary receive in total?",
+      "options": [
+        "A. $0",
+        "B. $100,000 from the basic life insurance only.",
+        "C. $200,000 from both policies.",
+        "D. $100,000 from the AD&D policy only."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The basic life insurance will still pay out.",
+        "$100,000 from the basic life insurance only.",
+        "AD&D only covers accidental death; a heart attack is a natural death.",
+        "Basic life insurance covers all causes of death, including natural causes."
+      ],
+      "explanation": "Step 1: Identify that this question distinguishes between basic life insurance and AD&D coverage.\nStep 2: Apply the LLQP principle that AD&D (Accidental Death & Dismemberment) only covers accidental deaths, not natural deaths.\nStep 3: Recognize that a heart attack is a natural medical event, not an accident.\nStep 4: Evaluate - basic life insurance pays regardless of cause; AD&D does not apply to natural deaths.\nStep 5: Select the best answer. Option B: $100,000 from the basic life insurance only.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "AD&D",
+        "accidental-death",
+        "natural-death",
+        "coverage-types"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Diana has a base group life benefit of $50,000. She also purchases 3 units of voluntary AD&D ($10,000 per unit). If Diana dies as a direct result of a motor vehicle accident, what is the total combined amount her beneficiary will receive?",
+      "options": [
+        "A. $30,000",
+        "B. $50,000",
+        "C. $80,000",
+        "D. $150,000"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This is only the AD&D portion; it excludes the base life benefit.",
+        "This is only the base benefit; it excludes the voluntary AD&D.",
+        "$80,000 - base life benefit $50,000 plus 3 units × $10,000 AD&D = $30,000.",
+        "This exceeds the actual coverage."
+      ],
+      "explanation": "Step 1: Identify that this question requires calculating total combined benefits.\nStep 2: Apply the rules: base life insurance pays for accidental death; voluntary AD&D also pays for accidental death.\nStep 3: Calculate: Base life = $50,000; AD&D = 3 units × $10,000 = $30,000; Total = $50,000 + $30,000 = $80,000.\nStep 4: Recognize that both benefits pay out when death is from an accident.\nStep 5: Select the best answer. Option C: $80,000",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "AD&D",
+        "voluntary-coverage",
+        "benefit-calculation",
+        "accidental-death"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "After 10 years at STU Ltd., Felix resigns. Under CLHIA guidelines, what right does Felix have regarding his group life insurance coverage?",
+      "options": [
+        "A. He can convert his group coverage to an individual policy without providing proof of insurability.",
+        "B. He can port the exact same group policy to his new business.",
+        "C. He can cash out the accumulated cash surrender value.",
+        "D. He has no rights; coverage is immediately forfeited."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "He can convert his group coverage to an individual policy without providing proof of insurability.",
+        "Porting the group policy itself is not available; only conversion to individual is offered.",
+        "Group term insurance does not accumulate cash surrender value.",
+        "CLHIA guidelines provide conversion rights upon termination of employment."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the rights of a departing employee under CLHIA guidelines.\nStep 2: Apply the CLHIA guideline that employees have the right to convert their group coverage to an individual policy within a specified time period.\nStep 3: Recognize that conversion does not require medical evidence (easy issue).\nStep 4: Eliminate distractors - portability of group policies is not available; term insurance has no cash value; rights are not forfeited.\nStep 5: Select the best answer. Option A: He can convert his group coverage to an individual policy without providing proof of insurability.",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "conversion-rights",
+        "CLHIA-guidelines",
+        "termination-of-employment",
+        "individual-policy"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Monica's employment is terminated on June 1. To avoid having to provide medical evidence of insurability, by what date must she apply to convert her policy?",
+      "options": [
+        "A. June 15 (within 14 days)",
+        "B. July 2 (within 31 days)",
+        "C. August 1 (within 60 days)",
+        "D. December 1 (within 6 months)"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The conversion period is longer than 14 days.",
+        "July 2 (within 31 days) - she must apply within 31 days of termination.",
+        "The conversion period is 31 days, not 60 days.",
+        "The conversion period is 31 days, not 6 months."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the time limit for converting group insurance to individual coverage.\nStep 2: Apply the CLHIA guideline that the conversion must occur within 31 days of termination to avoid requiring medical evidence.\nStep 3: Calculate: June 1 + 31 days = July 2.\nStep 4: Eliminate distractors - 14 days is too short; 60 days and 6 months are too long.\nStep 5: Select the best answer. Option B: July 2 (within 31 days)",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "conversion-rights",
+        "termination-of-employment",
+        "31-day-window",
+        "evidence-of-insurability"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "When converting his group life insurance to an individual policy, Arthur notices the quoted premiums are significantly higher than standard individual rates. What is the primary reason for this?",
+      "options": [
+        "A. The insurer must recoup commissions.",
+        "B. Converted policies are legally required to be participating whole life.",
+        "C. Adverse selection; individuals who choose to convert without a medical exam are statistically a higher risk.",
+        "D. The previous employer adds a surcharge."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Commission recoupment is not the reason for higher conversion rates.",
+        "Converted policies are not required to be participating whole life.",
+        "Adverse selection; individuals who choose to convert without a medical exam are statistically a higher risk.",
+        "The employer does not add a surcharge to conversion rates."
+      ],
+      "explanation": "Step 1: Identify that this question concerns why converted group policies have higher premiums.\nStep 2: Apply the LLQP principle of adverse selection - people who purchase insurance without a medical exam are likely doing so because they anticipate higher risk.\nStep 3: Recognize that the insurer has no medical information to assess the individual's actual health status.\nStep 4: Eliminate distractors - commissions, policy type, and employer surcharges are not the driving factors.\nStep 5: Select the best answer. Option C: Adverse selection; individuals who choose to convert without a medical exam are statistically a higher risk.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "conversion-rights",
+        "adverse-selection",
+        "premium-calculation",
+        "underwriting-risk"
+      ]
+    },
+    {
+      "id": 16,
+      "question": "In Quebec, Nadine leaves her employer's group plan. She had $100,000 coverage on herself and $10,000 dependant life coverage on her husband. According to Quebec rules, what are her conversion rights?",
+      "options": [
+        "A. She can only convert her own coverage.",
+        "B. She can convert her own coverage and must be given the option to convert the dependant coverage on her husband as well.",
+        "C. She can only convert if she has been there 5 years.",
+        "D. She must undergo medical underwriting to convert the dependant coverage."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Quebec has expanded conversion rights that include dependant coverage.",
+        "She can convert her own coverage and must be given the option to convert the dependant coverage on her husband as well.",
+        "Quebec allows conversion regardless of tenure; 5-year requirement applies to mandatory conversion upon contract termination.",
+        "Medical underwriting is not required for conversion within the 31-day window."
+      ],
+      "explanation": "Step 1: Identify that this question concerns Quebec-specific conversion rights for group insurance.\nStep 2: Apply the Quebec rule that departing employees can convert both their own coverage AND dependant coverage.\nStep 3: Recognize that Quebec has more expansive conversion rights than other provinces.\nStep 4: Eliminate distractors - dependant conversion is available; tenure requirements do not apply to termination conversions; medical underwriting is not required.\nStep 5: Select the best answer. Option B: She can convert her own coverage and must be given the option to convert the dependant coverage on her husband as well.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "conversion-rights",
+        "Quebec-rules",
+        "dependant-coverage",
+        "provincial-regulations"
+      ]
+    },
+    {
+      "id": 17,
+      "question": "VWX Corp terminates its group life insurance master contract entirely. George has been insured under this plan for 7 years. In Quebec, what minimum conversion right must George be offered?",
+      "options": [
+        "A. He must be allowed to convert 100% at his original premium.",
+        "B. He has no conversion rights if the contract is terminated by the employer.",
+        "C. He must be given the option of converting at least $10,000 or 25% of his life insurance (whichever is greater) into an individual policy.",
+        "D. The government assumes his coverage."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "When the entire contract is terminated, conversion rights are limited to certain minimums.",
+        "Quebec law provides conversion rights even when the employer terminates the master contract.",
+        "He must be given the option of converting at least $10,000 or 25% of his life insurance (whichever is greater) into an individual policy.",
+        "The government does not assume group insurance coverage."
+      ],
+      "explanation": "Step 1: Identify that this question concerns mandatory conversion rights when an entire group contract is terminated.\nStep 2: Apply the Quebec rule that when a master contract is terminated, employees who have been insured for 5+ years have the right to convert a minimum amount.\nStep 3: Recognize the formula: greater of $10,000 or 25% of coverage.\nStep 4: Calculate for George: 25% of coverage (assuming significant coverage) likely exceeds $10,000.\nStep 5: Select the best answer. Option C: He must be given the option of converting at least $10,000 or 25% of his life insurance (whichever is greater) into an individual policy.",
+      "difficulty": "hard",
+      "tags": [
+        "group-insurance",
+        "conversion-rights",
+        "master-contract-termination",
+        "Quebec-rules",
+        "mandatory-conversion"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "When taking out a mortgage, Harry opted for group creditor life insurance through his bank. The bank utilizes \"post-claim underwriting.\" What does this mean?",
+      "options": [
+        "A. His premiums will be adjusted every year based on claims.",
+        "B. The bank will only thoroughly investigate his medical history to confirm eligibility after he dies and a claim is submitted.",
+        "C. He must undergo a full medical exam 30 days later.",
+        "D. The death benefit is only paid out to his beneficiaries after his estate clears probate."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Post-claim underwriting does not affect premium adjustments.",
+        "The bank will only thoroughly investigate his medical history to confirm eligibility after he dies and a claim is submitted.",
+        "No medical exam is required after issuance in post-claim underwriting.",
+        "Death benefits are not delayed by probate clearance."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the post-claim underwriting process used in creditor insurance.\nStep 2: Apply the principle that post-claim underwriting means the insurer issues the policy with minimal underwriting, then investigates fully if a claim is made.\nStep 3: Recognize that this is a cost-saving measure used in creditor insurance to keep premiums low.\nStep 4: Eliminate distractors - premiums are not adjusted based on claims; no exam is required later; probate does not delay benefits.\nStep 5: Select the best answer. Option B: The bank will only thoroughly investigate his medical history to confirm eligibility after he dies and a claim is submitted.",
+      "difficulty": "medium",
+      "tags": [
+        "creditor-insurance",
+        "post-claim-underwriting",
+        "underwriting-process",
+        "group-insurance",
+        "claim-investigation"
+      ]
+    },
+    {
+      "id": 19,
+      "question": "When underwriting a new basic group life insurance plan for an employer, how does the insurer determine the premium rate?",
+      "options": [
+        "A. By requiring every employee to undergo a medical exam.",
+        "B. By looking at the demographics of the group as a whole (mix of ages, genders) and calculating an average risk per person.",
+        "C. By charging the maximum legally allowed rate.",
+        "D. By reviewing the employer's corporate profit margin."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Individual medical exams are not required for group underwriting.",
+        "By looking at the demographics of the group as a whole (mix of ages, genders) and calculating an average risk per person.",
+        "Insurers do not charge maximum rates for group insurance.",
+        "Employer profitability is not relevant to insurance premiums."
+      ],
+      "explanation": "Step 1: Identify that this question concerns how group life insurance premiums are underwritten.\nStep 2: Apply the LLQP principle of group underwriting - the insurer evaluates the entire group's demographics rather than individual health.\nStep 3: Recognize that group underwriting uses age, gender mix, and other risk factors to calculate an average premium.\nStep 4: Eliminate distractors - no individual medical exams are done; maximum rates are not charged; employer profit is irrelevant.\nStep 5: Select the best answer. Option B: By looking at the demographics of the group as a whole (mix of ages, genders) and calculating an average risk per person.",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "underwriting",
+        "group-underwriting",
+        "demographics",
+        "premium-calculation"
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Why do group life insurance plans typically require evidence of insurability if an employee applies for optional life insurance after the initial enrolment period has passed?",
+      "options": [
+        "A. To guarantee a non-smoker rate.",
+        "B. To protect the insurance company from adverse selection.",
+        "C. To satisfy federal tax regulations.",
+        "D. To comply with CLHIA guidelines."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Evidence of insurability is not specifically to guarantee non-smoker status.",
+        "To protect the insurance company from adverse selection.",
+        "Tax regulations do not drive evidence of insurability requirements.",
+        "CLHIA guidelines do not specifically require evidence of insurability for optional coverage."
+      ],
+      "explanation": "Step 1: Identify that this question concerns why insurers require medical evidence for optional coverage after initial enrolment.\nStep 2: Apply the LLQP principle that optional coverage requested later may indicate the employee has developed health concerns.\nStep 3: Recognize adverse selection - people buy extra insurance when they anticipate higher risk, but the insurer lacks this knowledge.\nStep 4: Evidence of insurability protects the insurer from insuring above-average risks.\nStep 5: Select the best answer. Option B: To protect the insurance company from adverse selection.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "optional-coverage",
+        "evidence-of-insurability",
+        "adverse-selection",
+        "underwriting-principles"
+      ]
+    }
+  ]
+}

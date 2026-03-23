@@ -1,0 +1,262 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLOP - LIFE 06 QZ - Group Life Insurance - Section 1",
+  "examTips": "Focus on group policyholder rights, master contract control, actively-at-work requirements, premium taxation, and death benefit taxation.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "XYZ Corp implements a group life insurance plan for its employees. Sarah, an employee, feels the base coverage amount is too low for her family's needs. She contacts the insurer directly to negotiate an increase to her base coverage under the master contract. How will the insurer respond?",
+      "options": [
+        "A. The insurer will approve the request if Sarah provides satisfactory medical evidence.",
+        "B. The insurer will deny the request because only the group policyholder can amend the terms of the master contract.",
+        "C. The insurer will approve the request but will charge Sarah a higher individual premium rate.",
+        "D. The insurer will direct Sarah to apply for an individual whole life policy instead."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Only the group policyholder can negotiate with the insurer.",
+        "The insurer will deny the request because only the group policyholder can amend the terms of the master contract.",
+        "Employees cannot directly negotiate terms of the master contract.",
+        "Direct negotiation is not available to individual employees."
+      ],
+      "explanation": "Step 1: Identify that this question concerns who controls the master contract in group insurance.\nStep 2: Apply the LLQP principle that the employer (group policyholder) holds and controls the master contract.\nStep 3: Eliminate distractors - Sarah cannot contact the insurer to change master contract terms because she is not the group policyholder.\nStep 4: Select the best answer. Option B: The insurer will deny the request because only the group policyholder can amend the terms of the master contract.",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "master-contract",
+        "policyholder-rights"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ABC Inc. has a 3-month probationary period for its group life plan. Mark finishes his probationary period on a Tuesday, but he is at home recovering from a severe flu from Monday through Thursday. When will Mark's basic group life coverage become effective?",
+      "options": [
+        "A. Tuesday, because he officially completed his probationary period.",
+        "B. Friday, assuming he returns to work and meets the \"actively-at-work\" requirement.",
+        "C. On the first day of the following month.",
+        "D. Immediately, provided he pays his premium retroactively."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Completing the probationary period is not sufficient without meeting the actively-at-work requirement.",
+        "Friday, assuming he returns to work and meets the \"actively-at-work\" requirement.",
+        "The first day of the month is not the standard trigger for coverage.",
+        "Retroactive premium payment does not override the actively-at-work requirement."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the actively-at-work requirement in group insurance.\nStep 2: Apply the LLQP principle that coverage becomes effective when both the probationary period is completed AND the employee is actively at work.\nStep 3: Eliminate distractors - Mark completed his probationary period but was ill, so he did not meet the actively-at-work requirement on Tuesday.\nStep 4: Select the best answer. Option B: Friday, assuming he returns to work and meets the \"actively-at-work\" requirement.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "actively-at-work",
+        "probationary-period",
+        "coverage-effective-date"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "DefCo pays the entire $600 annual premium for David's basic group life insurance coverage. How is this $600 treated for income tax purposes for David?",
+      "options": [
+        "A. It is a tax-free gift to David.",
+        "B. It is considered a taxable benefit and added to David's taxable income.",
+        "C. It is a tax-deductible expense for David.",
+        "D. It triggers a capital gains tax."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Employer-paid premiums for group insurance are not tax-free gifts.",
+        "It is considered a taxable benefit and added to David's taxable income.",
+        "David cannot deduct premiums paid by the employer.",
+        "Premium payments do not trigger capital gains tax."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the tax treatment of employer-paid group life insurance premiums.\nStep 2: Apply the LLQP and CRA rule that employer contributions to group life insurance are considered taxable benefits to the employee.\nStep 3: Eliminate distractors - employer-paid premiums are not tax-free; they are not capital gains; they are not deductible by the employee.\nStep 4: Select the best answer. Option B: It is considered a taxable benefit and added to David's taxable income.",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "taxation",
+        "employer-paid-premiums",
+        "taxable-benefits"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Elena is covered under her employer's group life plan for $150,000. Her employer pays 100% of the premiums. Tragically, Elena passes away and her husband receives the death benefit. What portion of the $150,000 is taxable to her husband?",
+      "options": [
+        "A. $0; the death benefit is received entirely tax-free.",
+        "B. $75,000; only 50% is taxable.",
+        "C. $150,000; because the employer paid the premiums, it is fully taxable.",
+        "D. The amount minus the cumulative premiums paid."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "$0; the death benefit is received entirely tax-free.",
+        "Death benefits are not partially taxable; they are entirely tax-free.",
+        "Death benefits are tax-free to the beneficiary regardless of who paid premiums.",
+        "Death benefits are not reduced by premiums paid."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the tax treatment of group life insurance death benefits.\nStep 2: Apply the LLQP and CRA rule that death benefits from life insurance are always received tax-free by beneficiaries.\nStep 3: Eliminate distractors - the fact that the employer paid premiums does not make the death benefit taxable; death benefits are never partially taxable.\nStep 4: Select the best answer. Option A: $0; the death benefit is received entirely tax-free.",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "death-benefits",
+        "taxation",
+        "beneficiaries"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "GHI Logistics offers a group life plan with an earnings multiple schedule equal to two times the employee's base salary. Frank has a base salary of $60,000 and earned a $15,000 performance bonus this year. If Frank dies, what will be the death benefit paid to his beneficiary?",
+      "options": [
+        "A. $60,000",
+        "B. $120,000",
+        "C. $135,000",
+        "D. $150,000"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This is only the base salary, not the multiple amount.",
+        "$120,000"
+      ],
+      "optionFeedback": [
+        "This is only the base salary, not the multiple amount.",
+        "$120,000 - two times the base salary of $60,000.",
+        "Bonuses are not included in the calculation for group insurance coverage.",
+        "This incorrectly includes the bonus in the calculation."
+      ],
+      "explanation": "Step 1: Identify what the question is asking about coverage calculation under an earnings multiple schedule.\nStep 2: Apply the rule that group insurance coverage is based on base salary only, not bonuses or other variable compensation.\nStep 3: Calculate: 2 × $60,000 (base salary) = $120,000.\nStep 4: Eliminate distractors - bonuses are specifically excluded from the calculation.\nStep 5: Select the best answer. Option B: $120,000",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "earnings-multiple",
+        "coverage-calculation",
+        "base-salary"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "JKL Corp's group life insurance plan specifies that an employee's base coverage drops by 50% when they reach age 65. What is the primary reason the group policyholder includes this provision?",
+      "options": [
+        "A. To encourage older employees to retire.",
+        "B. Because provincial insurance regulations mandate age-based coverage reductions.",
+        "C. To manage costs, as the risk of death—and therefore the cost of insurance—increases significantly with age.",
+        "D. Because employees over 65 qualify for government death benefits instead."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Coverage adjustments are made for cost management, not to encourage retirement.",
+        "Provincial regulations do not mandate age-based reductions in group insurance.",
+        "To manage costs, as the risk of death—and therefore the cost of insurance—increases significantly with age.",
+        "Government death benefits do not replace group insurance coverage."
+      ],
+      "explanation": "Step 1: Identify the question concerns the business reason for age-based coverage reductions.\nStep 2: Apply the LLQP principle that premiums and coverage are adjusted based on mortality risk.\nStep 3: Recognize that mortality risk increases with age, making insurance more expensive.\nStep 4: Eliminate distractors - regulations do not mandate this; government benefits do not replace it; retirement encouragement is not a standard insurance principle.\nStep 5: Select the best answer. Option C: To manage costs, as the risk of death—and therefore the cost of insurance—increases significantly with age.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "age-based-adjustments",
+        "mortality-risk",
+        "cost-management"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Brenda enrolled in her employer's group life plan three years ago. She just had a baby and wants to purchase 4 units of optional additional term life insurance. What will Brenda most likely be required to do?",
+      "options": [
+        "A. Nothing, optional coverage can be added at any time automatically.",
+        "B. Pay a penalty fee to the employer.",
+        "C. Provide evidence of insurability to protect the insurer against adverse selection.",
+        "D. Upgrade her base coverage first."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Optional coverage requested after the initial enrolment period requires evidence of insurability.",
+        "No penalty fee is charged for optional coverage.",
+        "Provide evidence of insurability to protect the insurer against adverse selection.",
+        "Upgrading base coverage is not a prerequisite."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the requirements for obtaining optional group insurance after initial enrolment.\nStep 2: Apply the LLQP principle that optional coverage requested after the initial period requires evidence of insurability.\nStep 3: Understand that this protects the insurer from adverse selection - people buying extra insurance may be doing so because they have health concerns.\nStep 4: Eliminate distractors - automatic coverage only applies during initial enrolment; no penalty is charged; base upgrade is not required.\nStep 5: Select the best answer. Option C: Provide evidence of insurability to protect the insurer against adverse selection.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "optional-coverage",
+        "evidence-of-insurability",
+        "adverse-selection",
+        "enrolment-period"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Omar is reviewing the dependant life coverage provision of his group plan. Which of the following individuals would be eligible for coverage under this provision?",
+      "options": [
+        "A. His common-law partner and his 16-year-old biological daughter.",
+        "B. His legally married spouse and his 65-year-old dependent mother.",
+        "C. His 22-year-old son who works full-time and his 19-year-old daughter.",
+        "D. His brother who lives with him."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "His common-law partner and his 16-year-old biological daughter.",
+        "A 65-year-old parent would typically exceed age limits for dependent coverage.",
+        "A 22-year-old working full-time would not qualify as a dependent.",
+        "Extended family members such as brothers are not eligible for dependent coverage."
+      ],
+      "explanation": "Step 1: Identify that this question concerns who qualifies as eligible dependants under group life insurance.\nStep 2: Apply the LLQP rule that eligible dependants are typically: spouse/common-law partner and dependent children under age 21-25.\nStep 3: Evaluate each option - Option A has spouse and dependent child within age limits; Option B has a parent (extended family, age over limit); Option C has adult child (not dependent); Option D has brother (extended family).\nStep 4: Select the best answer. Option A: His common-law partner and his 16-year-old biological daughter.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "dependant-coverage",
+        "eligible-dependants",
+        "family-coverage"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Under MNO Corp's group life plan, Liam has one child, while Sophia has four children. Both opt for dependant life coverage. How will their premiums for this dependant coverage compare?",
+      "options": [
+        "A. Sophia will pay more because she has three more dependants.",
+        "B. Liam and Sophia will pay the exact same premium, regardless of the number of eligible children.",
+        "C. Sophia's premium is based on the combined ages of all her children.",
+        "D. Liam pays less because he covers fewer lives."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Dependant coverage premiums are flat, not based on number of dependants.",
+        "Liam and Sophia will pay the exact same premium, regardless of the number of eligible children.",
+        "Dependant coverage premiums are not calculated by combined ages.",
+        "Premiums are flat regardless of the number of dependants."
+      ],
+      "explanation": "Step 1: Identify that this question concerns how dependant life insurance premiums are calculated in group plans.\nStep 2: Apply the LLQP principle that dependant life coverage is typically offered on a flat-premium basis, not per-dependent basis.\nStep 3: Recognize that once an employee opts for dependant coverage, all eligible dependants are covered for one flat premium.\nStep 4: Eliminate distractors - premiums do not vary by number of children or combined ages.\nStep 5: Select the best answer. Option B: Liam and Sophia will pay the exact same premium, regardless of the number of eligible children.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "dependant-coverage",
+        "premium-calculation",
+        "flat-premium"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trevor purchased an optional survivor income benefit under his employer's group life plan. How is this specific benefit typically paid out to his surviving spouse?",
+      "options": [
+        "A. As a single, tax-free lump sum.",
+        "B. As an annual dividend based on the insurer's surplus.",
+        "C. As a monthly benefit expressed as a percentage of Trevor's monthly salary just prior to his death.",
+        "D. As an annuity purchased from a third-party bank."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Survivor income benefits are paid monthly, not as a lump sum.",
+        "Survivor income benefits are not based on insurer dividends.",
+        "As a monthly benefit expressed as a percentage of Trevor's monthly salary just prior to his death.",
+        "The benefit is paid directly by the insurer, not through a third-party annuity."
+      ],
+      "explanation": "Step 1: Identify that this question concerns how survivor income benefits are structured and paid.\nStep 2: Apply the LLQP principle that survivor income benefits are designed to provide ongoing income replacement to the surviving spouse.\nStep 3: Recognize that these benefits typically provide monthly payments based on a percentage of the deceased's salary.\nStep 4: Eliminate distractors - they are monthly payments, not lump sums; not based on dividends; paid directly, not through a third party.\nStep 5: Select the best answer. Option C: As a monthly benefit expressed as a percentage of Trevor's monthly salary just prior to his death.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "survivor-income-benefit",
+        "optional-coverage",
+        "income-replacement"
+      ]
+    }
+  ]
+}

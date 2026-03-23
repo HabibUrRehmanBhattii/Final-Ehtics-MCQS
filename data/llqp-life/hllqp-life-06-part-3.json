@@ -1,0 +1,270 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLOP - LIFE 06 QZ - Group Life Insurance - Section 3",
+  "examTips": "Focus on coverage classes, underlying insurance products, sales tax, dismemberment benefits, and exclusions in AD&D coverage.",
+  "questions": [
+    {
+      "id": 21,
+      "question": "An employer's group life plan provides a $50,000 flat coverage rate for hourly workers and an earnings multiple of two times salary for executives. Can the employer legally structure the master contract this way?",
+      "options": [
+        "A. No, it is illegal to offer different benefit levels.",
+        "B. No, executives must be in a completely separate master contract.",
+        "C. Yes, a master contract can establish different membership classes, provided coverage is calculated the same way for everyone within a specific class.",
+        "D. Yes, provided the hourly workers agree in writing."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Different benefit levels for different classes are allowed under one master contract.",
+        "Different classes do not require separate master contracts.",
+        "Yes, a master contract can establish different membership classes, provided coverage is calculated the same way for everyone within a specific class.",
+        "Hourly worker consent is not required to establish different classes."
+      ],
+      "explanation": "Step 1: Identify that this question concerns whether a single master contract can have different benefit structures.\nStep 2: Apply the LLQP principle that master contracts can establish multiple membership classes with different benefit formulas.\nStep 3: Recognize that within each class, coverage must be calculated consistently for all members.\nStep 4: Eliminate distractors - different levels are allowed; separate contracts are not required; consent is not required.\nStep 5: Select the best answer. Option C: Yes, a master contract can establish different membership classes, provided coverage is calculated the same way for everyone within a specific class.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "master-contract",
+        "membership-classes",
+        "coverage-structure",
+        "benefit-formulas"
+      ]
+    },
+    {
+      "id": 22,
+      "question": "Which of the following is a key characteristic that distinguishes basic group life insurance from individual term life insurance?",
+      "options": [
+        "A. Group life insurance always builds a cash surrender value.",
+        "B. The individual plan member does not hold the insurance contract; the employer holds the master contract.",
+        "C. Group life insurance death benefits are fully taxable.",
+        "D. Group life insurance requires a medical exam for everyone."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Group term insurance does not build cash value.",
+        "The individual plan member does not hold the insurance contract; the employer holds the master contract.",
+        "Group life insurance death benefits are tax-free to beneficiaries, just like individual insurance.",
+        "Group insurance does not require individual medical exams."
+      ],
+      "explanation": "Step 1: Identify that this question concerns a fundamental structural difference between group and individual insurance.\nStep 2: Apply the LLQP principle that in group insurance, the employer holds the master contract, and employees hold certificates of insurance.\nStep 3: Recognize that employees do not own their group policies - they participate in the employer's group contract.\nStep 4: Eliminate distractors - group insurance can be term (no cash value); benefits are tax-free; no individual medical exams are required.\nStep 5: Select the best answer. Option B: The individual plan member does not hold the insurance contract; the employer holds the master contract.",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "individual-insurance",
+        "master-contract",
+        "certificate-of-insurance",
+        "contract-ownership"
+      ]
+    },
+    {
+      "id": 23,
+      "question": "Greg resigns and has 31 days to exercise his conversion privilege. Tragically, Greg dies in a car accident 15 days after leaving his job, before he had applied for the conversion policy. What will happen?",
+      "options": [
+        "A. The death benefit is forfeited because he was not an active employee.",
+        "B. The death benefit will be paid out because the group coverage remains in force during the 31-day conversion period.",
+        "C. Only 50% of the death benefit will be paid.",
+        "D. His beneficiary must pay the premium retroactively."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Group coverage does not end immediately upon resignation.",
+        "The death benefit will be paid out because the group coverage remains in force during the 31-day conversion period.",
+        "The full benefit is paid if the death occurs during the conversion period.",
+        "No retroactive premium is required."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the continuation of coverage during the conversion period.\nStep 2: Apply the LLQP principle that group coverage remains in force for 31 days following termination, even if the employee has not yet converted.\nStep 3: Recognize that the conversion period provides a safety period where benefits remain active.\nStep 4: Evaluate - Greg's death occurred within the 31-day window while coverage was still active.\nStep 5: Select the best answer. Option B: The death benefit will be paid out because the group coverage remains in force during the 31-day conversion period.",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "conversion-rights",
+        "31-day-window",
+        "coverage-continuation",
+        "termination-of-employment"
+      ]
+    },
+    {
+      "id": 24,
+      "question": "An employee with $100,000 in AD&D coverage loses a single limb in an accident. How is the accidental dismemberment benefit typically calculated and paid?",
+      "options": [
+        "A. As a monthly disability income payment.",
+        "B. As a single lump-sum payment representing a specific percentage of the base AD&D amount, based on a schedule of loss.",
+        "C. The full $100,000 base amount is paid out immediately.",
+        "D. It only reimburses out-of-pocket medical expenses."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Dismemberment benefits are lump sum, not monthly disability income.",
+        "As a single lump-sum payment representing a specific percentage of the base AD&D amount, based on a schedule of loss.",
+        "A lost limb does not trigger the full base amount; it is a percentage based on the schedule.",
+        "AD&D benefits reimburse the loss itself, not medical expenses."
+      ],
+      "explanation": "Step 1: Identify that this question concerns how dismemberment benefits are calculated under AD&D.\nStep 2: Apply the LLQP principle that AD&D policies include a \"schedule of loss\" that specifies what percentage of the base benefit is paid for different types of losses.\nStep 3: Recognize that loss of a limb typically pays a percentage (often 50%) of the base amount, not the full amount.\nStep 4: Understand that benefits are paid as a lump sum, not monthly or for medical expenses.\nStep 5: Select the best answer. Option B: As a single lump-sum payment representing a specific percentage of the base AD&D amount, based on a schedule of loss.",
+      "difficulty": "medium",
+      "tags": [
+        "AD&D",
+        "dismemberment",
+        "schedule-of-loss",
+        "benefit-calculation",
+        "accidental-loss"
+      ]
+    },
+    {
+      "id": 25,
+      "question": "According to standard CLHIA guidelines in most of Canada, what is the maximum amount of group life insurance a departing employee can typically convert to an individual policy without evidence of insurability?",
+      "options": [
+        "A. $50,000",
+        "B. $100,000",
+        "C. $200,000",
+        "D. The full face amount is always convertible."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "$50,000 is below the standard maximum.",
+        "$100,000 is below the standard maximum.",
+        "$200,000 is the standard maximum under CLHIA guidelines.",
+        "CLHIA guidelines do establish a maximum limit."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the CLHIA maximum for guaranteed-issue conversion.\nStep 2: Apply the CLHIA guideline that employees can convert up to $200,000 without medical evidence.\nStep 3: Recognize that if coverage exceeds $200,000, the excess would require medical underwriting.\nStep 4: Understand this limit protects the insurer from excessive adverse selection.\nStep 5: Select the best answer. Option C: $200,000",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "conversion-rights",
+        "CLHIA-guidelines",
+        "guaranteed-issue",
+        "conversion-limits",
+        "evidence-of-insurability"
+      ]
+    },
+    {
+      "id": 26,
+      "question": "Celine purchased group creditor life insurance through her bank to cover her $30,000 car loan. Two years later, Celine dies. At the time of her death, the loan balance is $18,000. Who receives the death benefit, and how much is paid?",
+      "options": [
+        "A. Her estate receives $30,000.",
+        "B. The bank receives $18,000 to extinguish the debt.",
+        "C. Her named personal beneficiary receives $18,000.",
+        "D. The bank receives $30,000 and forwards $12,000 to her estate."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Creditor insurance benefits are paid to the creditor, not the estate.",
+        "The bank receives $18,000 to extinguish the debt.",
+        "With creditor insurance, the beneficiary is the creditor, not the insured.",
+        "The benefit is only for the outstanding loan balance, not the original amount."
+      ],
+      "explanation": "Step 1: Identify that this question concerns how creditor life insurance works.\nStep 2: Apply the principle that creditor insurance is designed to protect the creditor by paying off the outstanding loan balance.\nStep 3: Recognize that the creditor (bank) is the beneficiary and receives the benefit.\nStep 4: Calculate: Benefit equals the outstanding loan balance at death, which is $18,000.\nStep 5: Select the best answer. Option B: The bank receives $18,000 to extinguish the debt.",
+      "difficulty": "medium",
+      "tags": [
+        "creditor-insurance",
+        "group-insurance",
+        "loan-protection",
+        "death-benefit",
+        "beneficiary"
+      ]
+    },
+    {
+      "id": 27,
+      "question": "ABC Manufacturing requires new hires to work for three months before they are eligible to join the group life insurance plan. What is this three-month timeframe called?",
+      "options": [
+        "A. The conversion period",
+        "B. The contestability period",
+        "C. The probationary period (or waiting period)",
+        "D. The enrolment period"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "The conversion period applies after termination, not upon hire.",
+        "The contestability period relates to claim investigations, not to new hire eligibility.",
+        "The probationary period (or waiting period) is the three-month wait for new hires.",
+        "The enrolment period is when an eligible employee enrolls in the plan."
+      ],
+      "explanation": "Step 1: Identify that this question asks for the terminology for the initial waiting period before coverage begins.\nStep 2: Apply the LLQP definitions - the probationary period (also called the waiting period) is the time a new employee must work before becoming eligible for group insurance.\nStep 3: Recognize the standard timeframes are typically 1-3 months depending on the plan.\nStep 4: Eliminate distractors - conversion period is post-termination; contestability period is for claims; enrolment period is when eligible employees sign up.\nStep 5: Select the best answer. Option C: The probationary period (or waiting period)",
+      "difficulty": "easy",
+      "tags": [
+        "group-insurance",
+        "probationary-period",
+        "waiting-period",
+        "eligibility",
+        "terminology"
+      ]
+    },
+    {
+      "id": 28,
+      "question": "For a group life insurance plan established in Ontario, Quebec, or Manitoba, which of the following taxes is applied to the premiums paid?",
+      "options": [
+        "A. Federal capital gains tax",
+        "B. Provincial retail sales tax (RST)",
+        "C. Goods and Services Tax (GST)",
+        "D. Municipal payroll tax"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Capital gains tax applies to investment gains, not insurance premiums.",
+        "Provincial retail sales tax (RST) is applied to insurance premiums in Ontario, Quebec, and Manitoba.",
+        "GST is a federal tax, but Insurance taxes are provincially regulated.",
+        "Municipal payroll taxes are not applied to group insurance premiums."
+      ],
+      "explanation": "Step 1: Identify that this question concerns the specific tax treatment of group insurance premiums in certain provinces.\nStep 2: Apply the LLQP rule that in Ontario, Quebec, and Manitoba, provincial retail sales tax (RST) applies to group insurance premiums.\nStep 3: Note that other provinces may have different tax treatments (e.g., GST in some cases).\nStep 4: Eliminate distractors - capital gains tax, GST as primary, and municipal taxes are not correct.\nStep 5: Select the best answer. Option B: Provincial retail sales tax (RST)",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "taxation",
+        "provincial-tax",
+        "RST",
+        "premium-tax"
+      ]
+    },
+    {
+      "id": 29,
+      "question": "Under most basic employer-sponsored group life insurance plans, the underlying coverage takes the form of which type of life insurance product?",
+      "options": [
+        "A. Universal life insurance",
+        "B. Term-to-100 (T-100) insurance",
+        "C. Participating whole life insurance",
+        "D. Yearly renewable term (YRT) insurance"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "Universal life is typically used for individual, not group plans.",
+        "T-100 is permanent insurance; group insurance uses renewable term.",
+        "Participating whole life is not the standard for group plans.",
+        "Yearly renewable term (YRT) is the standard underlying product for group insurance."
+      ],
+      "explanation": "Step 1: Identify that this question concerns what type of life insurance underlies group coverage.\nStep 2: Apply the LLQP principle that group life insurance is typically provided through yearly renewable term (YRT) insurance.\nStep 3: Recognize that YRT allows insurers to adjust premiums annually based on the group's age and claims experience.\nStep 4: Eliminate distractors - universal, T-100, and permanent insurance are not standard for group plans.\nStep 5: Select the best answer. Option D: Yearly renewable term (YRT) insurance",
+      "difficulty": "medium",
+      "tags": [
+        "group-insurance",
+        "YRT",
+        "yearly-renewable-term",
+        "insurance-product",
+        "underlying-coverage"
+      ]
+    },
+    {
+      "id": 30,
+      "question": "Under a typical Group Accidental Death and Dismemberment (AD&D) policy, which of the following scenarios would most likely result in a DENIED claim?",
+      "options": [
+        "A. The employee dies as a passenger in a commercial airline crash.",
+        "B. The employee dies in a workplace accident caused by a forklift.",
+        "C. The employee dies in a car accident while legally intoxicated (impaired driving).",
+        "D. The employee loses his sight in an accidental chemical spill at home."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Commercial airline deaths are typically covered as accidents.",
+        "Workplace accidents are covered under AD&D.",
+        "AD&D policies typically exclude deaths caused by the insured's illegal conduct (impaired driving).",
+        "Accidental loss of sight is typically covered under AD&D."
+      ],
+      "explanation": "Step 1: Identify that this question concerns exclusions in AD&D coverage.\nStep 2: Apply the LLQP principle that AD&D policies typically exclude deaths or injuries caused by the insured's criminal conduct or illegal acts.\nStep 3: Recognize that impaired driving is illegal in all jurisdictions and constitutes intentional violation of driving laws.\nStep 4: Evaluate each option - airline crash and workplace accident are covered; chemical spill is accidental and covered; impaired driving is excluded.\nStep 5: Select the best answer. Option C: The employee dies in a car accident while legally intoxicated (impaired driving).",
+      "difficulty": "hard",
+      "tags": [
+        "AD&D",
+        "accidental-death",
+        "exclusions",
+        "illegal-conduct",
+        "impaired-driving",
+        "claim-denial"
+      ]
+    }
+  ]
+}
