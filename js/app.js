@@ -2869,6 +2869,17 @@ const MCQApp = {
       document.getElementById('correct-answer-text').textContent = this.getOptionDisplayText(question.options[question.correctAnswer]);
       const explanationText = this.buildStepByStepExplanation(question);
       document.getElementById('explanation-text').innerHTML = this.formatExplanation(explanationText);
+
+      // Display kidExplanation if available
+      const kidExplanationBox = document.getElementById('kid-explanation-box');
+      const kidExplanationText = document.getElementById('kid-explanation-text');
+      if (question.kidExplanation && kidExplanationText) {
+        kidExplanationText.innerHTML = this.formatExplanation(question.kidExplanation);
+        kidExplanationBox.style.display = 'block';
+      } else if (kidExplanationBox) {
+        kidExplanationBox.style.display = 'none';
+      }
+
       this.resetAIExplanationUi(true);
       answerSection.classList.remove('hidden');
       optionsContainer.querySelectorAll('.option').forEach(opt => {
@@ -4345,7 +4356,17 @@ const MCQApp = {
       document.getElementById('correct-answer-text').textContent = this.getOptionDisplayText(question.options[question.correctAnswer]);
       const explanationText = this.buildStepByStepExplanation(question);
       document.getElementById('explanation-text').innerHTML = this.formatExplanation(explanationText);
-      
+
+      // Display kidExplanation if available
+      const kidExplanationBox = document.getElementById('kid-explanation-box');
+      const kidExplanationText = document.getElementById('kid-explanation-text');
+      if (question.kidExplanation && kidExplanationText) {
+        kidExplanationText.innerHTML = this.formatExplanation(question.kidExplanation);
+        kidExplanationBox.style.display = 'block';
+      } else if (kidExplanationBox) {
+        kidExplanationBox.style.display = 'none';
+      }
+
       // Show AI button and ensure AI container is hidden until used
       this.resetAIExplanationUi(true);
       
