@@ -307,28 +307,28 @@
           "name": "HLLQP - LIFE 06 QZ - Group Life Insurance",
           "description": "Chapter quiz covering master contracts, actively-at-work requirements, taxation of premiums and benefits, AD&D coverage, conversion rights, and underwriting practices",
           "questionCount": 30,
-          "dataFile": "data/llqp-life/hllqp-life-06.json?v=20260323i",
+          "dataFile": "data/llqp-life/hllqp-life-06.json?v=20260323j",
           "subTests": [
             {
               "id": "llqp-life-06-part-1",
               "name": "Section 1",
               "description": "Questions 1-10",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-06-part-1.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-06-part-1.json?v=20260323j"
             },
             {
               "id": "llqp-life-06-part-2",
               "name": "Section 2",
               "description": "Questions 11-20",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-06-part-2.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-06-part-2.json?v=20260323j"
             },
             {
               "id": "llqp-life-06-part-3",
               "name": "Section 3",
               "description": "Questions 21-30",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-06-part-3.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-06-part-3.json?v=20260323j"
             }
           ]
         },
@@ -338,28 +338,28 @@
           "description": "Chapter quiz covering investment income tax implications, tax-deferred growth, policy loans and surrender tax treatment, principal residence exemption, estate tax planning, insurance-linked strategies, prescribed policy rules, and hedging cost considerations",
           "questionCount": 30,
           "status": "active",
-          "dataFile": "data/llqp-life/hllqp-life-07.json?v=20260323i",
+          "dataFile": "data/llqp-life/hllqp-life-07.json?v=20260323j",
           "subTests": [
             {
               "id": "llqp-life-07-part-1",
               "name": "Section 1",
               "description": "Questions 1-10",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-07-part-1.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-07-part-1.json?v=20260323j"
             },
             {
               "id": "llqp-life-07-part-2",
               "name": "Section 2",
               "description": "Questions 11-20",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-07-part-2.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-07-part-2.json?v=20260323j"
             },
             {
               "id": "llqp-life-07-part-3",
               "name": "Section 3",
               "description": "Questions 21-30",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-07-part-3.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-07-part-3.json?v=20260323j"
             }
           ]
         },
@@ -369,28 +369,28 @@
           "description": "Chapter quiz covering key person insurance, buy-sell agreements, business structures (sole proprietorships, partnerships, corporations), split-dollar arrangements, cross-purchase and share redemption plans, criss-cross insurance, business-owned insurance, Capital Dividend Account, and funded succession planning strategies",
           "questionCount": 30,
           "status": "active",
-          "dataFile": "data/llqp-life/hllqp-life-08.json?v=20260323i",
+          "dataFile": "data/llqp-life/hllqp-life-08.json?v=20260323j",
           "subTests": [
             {
               "id": "llqp-life-08-part-1",
               "name": "Section 1",
               "description": "Questions 1-10",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-08-part-1.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-08-part-1.json?v=20260323j"
             },
             {
               "id": "llqp-life-08-part-2",
               "name": "Section 2",
               "description": "Questions 11-20",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-08-part-2.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-08-part-2.json?v=20260323j"
             },
             {
               "id": "llqp-life-08-part-3",
               "name": "Section 3",
               "description": "Questions 21-30",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-08-part-3.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-08-part-3.json?v=20260323j"
             }
           ]
         },
@@ -400,28 +400,28 @@
           "description": "Chapter quiz covering insurable interest, underwriting process, TIA, MIB, MVR, risk classification, misrepresentation, incontestability, and age calculations",
           "questionCount": 30,
           "status": "active",
-          "dataFile": "data/llqp-life/hllqp-life-09.json?v=20260323i",
+          "dataFile": "data/llqp-life/hllqp-life-09.json?v=20260323j",
           "subTests": [
             {
               "id": "llqp-life-09-part-1",
               "name": "Section 1",
               "description": "Questions 1-10",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-09-part-1.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-09-part-1.json?v=20260323j"
             },
             {
               "id": "llqp-life-09-part-2",
               "name": "Section 2",
               "description": "Questions 11-20",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-09-part-2.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-09-part-2.json?v=20260323j"
             },
             {
               "id": "llqp-life-09-part-3",
               "name": "Section 3",
               "description": "Questions 21-30",
               "questionCount": 10,
-              "dataFile": "data/llqp-life/hllqp-life-09-part-3.json?v=20260323i"
+              "dataFile": "data/llqp-life/hllqp-life-09-part-3.json?v=20260323j"
             }
           ]
         },
