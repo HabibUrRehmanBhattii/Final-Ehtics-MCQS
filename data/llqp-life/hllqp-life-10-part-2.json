@@ -1,0 +1,268 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 10 QZ - Life Insurance Needs Analysis - Section 2",
+  "examTips": "Focus on capital gains exemptions, buy-sell agreements, pension planning, estate liquidity, and tax planning strategies.",
+  "questions": [
+    {
+      "id": 11,
+      "question": "When the sole owner of a qualified small business corporation (QSBC) dies, what tax provision allows a portion of the capital gain on the sale of the business to be received tax-free?",
+      "options": [
+        "A. The small business deduction (SBD).",
+        "B. The lifetime capital gains exemption (LCGE).",
+        "C. The dividend tax credit (DTC).",
+        "D. The capital loss carryback provision."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The small business deduction applies to taxable income, not capital gains.",
+        "The lifetime capital gains exemption (LCGE).",
+        "The dividend tax credit is for dividend income, not capital gains.",
+        "Capital loss carrybacks offset losses, not gains."
+      ],
+      "explanation": "Step 1: Identify the question focuses on a tax provision for QSBC sale proceeds.\nStep 2: Apply the LLQP principle that the LCGE provides a once-in-a-lifetime exemption on capital gains from QSBC sales.\nStep 3: Eliminate distractors - SBD is for income; DTC is for dividends; loss carrybacks are for losses.\nStep 4: Select the best answer. Option B: The lifetime capital gains exemption (LCGE).",
+      "kidExplanation": "The government gives small business owners a giant coupon called the LCGE. When they pass away and are forced to sell their business on paper, this coupon protects a massive chunk of their profit so their family doesn't have to pay taxes on it!",
+      "difficulty": "medium",
+      "tags": [
+        "capital-gains",
+        "qsbc",
+        "lcge",
+        "estate-planning"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Mark is a partner in a business and his share of profits has been steadily increasing annually. His partnership interest has a fair market value of $500,000. Mark is concerned about what happens to his partnership interest when he dies. What is the primary tax consequence?",
+      "options": [
+        "A. His partnership interest will transfer to his spouse tax-free as a spousal rollover.",
+        "B. He is deemed to have disposed of his partnership interest for its fair market value, which could trigger a large capital gain.",
+        "C. His partnership interest automatically becomes part of the business estate and continues operating.",
+        "D. The partnership is dissolved and all assets are distributed equally among remaining partners."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Partnership interests do not get automatic spousal rollover treatment.",
+        "He is deemed to have disposed of his partnership interest for its fair market value, which could trigger a large capital gain.",
+        "Partnership interests are personal assets that may not continue operating.",
+        "Partnerships do not automatically dissolve upon a partner's death."
+      ],
+      "explanation": "Step 1: Identify the question focuses on deemed disposition of partnership interests at death.\nStep 2: Apply the LLQP principle that partnerships lack the LCGE protection available to QSBC owners.\nStep 3: Eliminate distractors - no spousal rollover; continuation depends on partnership agreement; dissolution is not automatic.\nStep 4: Select the best answer. Option B: He is deemed to have disposed of his partnership interest for its fair market value, which could trigger a large capital gain.",
+      "kidExplanation": "When Mark passes away, the government pretends he sold his piece of the business on his very last day. Because a partnership doesn't get the special small business coupon (LCGE), his family will likely have to pay a massive tax bill!",
+      "difficulty": "medium",
+      "tags": [
+        "partnerships",
+        "capital-gains",
+        "deemed-disposition",
+        "estate-tax"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "If a business owner is party to a buy-sell agreement that requires surviving partners to purchase the deceased owner's interest, what is the effect on the deceased owner's estate plan?",
+      "options": [
+        "A. The deceased owner's will automatically overrides the buy-sell agreement.",
+        "B. The buy-sell agreement usually prevents the owner from leaving the interest to their spouse, as it dictates the business interest must be sold to the surviving partners or the corporation.",
+        "C. The buy-sell agreement allows the spouse to choose whether to keep the business or sell it.",
+        "D. The buy-sell agreement has no impact on estate planning decisions."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Buy-sell agreements are binding contracts and override wills.",
+        "The buy-sell agreement usually prevents the owner from leaving the interest to their spouse, as it dictates the business interest must be sold to the surviving partners or the corporation.",
+        "Buy-sell agreements limit the spouse's choices by mandating a sale.",
+        "Buy-sell agreements significantly constrain estate planning flexibility."
+      ],
+      "explanation": "Step 1: Identify the question focuses on how buy-sell agreements affect estate planning.\nStep 2: Apply the LLQP principle that buy-sell agreements create binding contractual obligations.\nStep 3: Eliminate distractors - agreements override wills; spouse has limited choice; agreements significantly impact planning.\nStep 4: Select the best answer. Option B: The buy-sell agreement usually prevents the owner from leaving the interest to their spouse, as it dictates the business interest must be sold to the surviving partners or the corporation.",
+      "kidExplanation": "A buy-sell agreement is a strict rulebook you sign with your partners. It says, If I die, you guys HAVE to buy my piece of the company. Because of this rule, you aren't allowed to leave the company shares to your wife or husband in your will!",
+      "difficulty": "medium",
+      "tags": [
+        "buy-sell-agreements",
+        "business-succession",
+        "estate-planning",
+        "legal-obligations"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "When analyzing the insurance needs of a client nearing retirement who has a defined benefit pension plan, what survivor benefit provision significantly reduces the dependency needs calculation?",
+      "options": [
+        "A. The employee can designate anyone they wish as a pension beneficiary.",
+        "B. Pension legislation generally requires the DBPP to provide a 60% to 66% survivor's pension to the surviving spouse, which reduces the dependency needs.",
+        "C. All defined benefit pensions automatically revert to the employee's estate.",
+        "D. Pension benefits are always forfeited upon death."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Pension beneficiaries are usually limited to spouses and dependents.",
+        "Pension legislation generally requires the DBPP to provide a 60% to 66% survivor's pension to the surviving spouse, which reduces the dependency needs.",
+        "DBPPs do not automatically revert to the estate.",
+        "Pension benefits are not automatically forfeited."
+      ],
+      "explanation": "Step 1: Identify the question focuses on survivor pension benefits reducing insurance needs.\nStep 2: Apply the LLQP principle that pension survivor benefits are a valuable form of ongoing income protection.\nStep 3: Eliminate distractors - beneficiary choices are limited; pensions don't revert; benefits aren't forfeited.\nStep 4: Select the best answer. Option B: Pension legislation generally requires the DBPP to provide a 60% to 66% survivor's pension to the surviving spouse, which reduces the dependency needs.",
+      "kidExplanation": "If you have a really good pension at work, the rules usually say that if you die, your spouse still gets a big piece of your pension check for the rest of their life! Because your spouse is getting this extra money, they won't need as much life insurance money.",
+      "difficulty": "medium",
+      "tags": [
+        "pension-planning",
+        "defined-benefit-plans",
+        "survivor-benefits",
+        "needs-analysis"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Why is it important for an estate to have sufficient liquid assets to cover final expenses, taxes, and debts immediately after a person's death?",
+      "options": [
+        "A. To allow the executor to take time to sell estate assets at the best possible prices.",
+        "B. Without them, the executor may be forced to sell estate assets at an inopportune time or at fire sale prices to pay final expenses, taxes, and debts.",
+        "C. Liquid assets are not actually necessary if the estate has real property.",
+        "D. The government provides automatic loans to cover all estate expenses."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Optimal pricing is not guaranteed without liquid assets available.",
+        "Without them, the executor may be forced to sell estate assets at an inopportune time or at fire sale prices to pay final expenses, taxes, and debts.",
+        "Real property alone cannot quickly satisfy immediate cash demands.",
+        "The government does not provide automatic loans for estate expenses."
+      ],
+      "explanation": "Step 1: Identify the question focuses on the need for liquidity in estates.\nStep 2: Apply the LLQP principle that estate liquidity prevents forced asset sales at disadvantageous prices.\nStep 3: Eliminate distractors - optimal pricing requires options; real property can't cover immediate needs; government loans don't exist.\nStep 4: Select the best answer. Option B: Without them, the executor may be forced to sell estate assets at an inopportune time or at fire sale prices to pay final expenses, taxes, and debts.",
+      "kidExplanation": "Liquid assets are things that can be turned into cold, hard cash instantly. If you don't have cash ready when you die, your family might be forced to sell your favorite house or car super fast for a terrible price just to pay the tax monster!",
+      "difficulty": "easy",
+      "tags": [
+        "estate-liquidity",
+        "estate-planning",
+        "cash-flow",
+        "tax-planning"
+      ]
+    },
+    {
+      "id": 16,
+      "question": "A client has $100,000 in a Registered Retirement Savings Plan (RRSP) accumulated over many years. The client has not named a spouse as a beneficiary. What is the tax consequence when the client dies?",
+      "options": [
+        "A. The full amount passes tax-free to the client's estate.",
+        "B. Only 50% of the RRSP is included in the deceased's taxable income.",
+        "C. The full amount must be included in the deceased's income on their final tax return for the year of death.",
+        "D. The RRSP balance is automatically split equally among all children."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "RRSPs are not tax-free upon death; they are subject to deemed disposition.",
+        "The full amount is included, not a partial amount.",
+        "The full amount must be included in the deceased's income on their final tax return for the year of death.",
+        "RRSPs do not automatically split among children without a will or beneficiary designation."
+      ],
+      "explanation": "Step 1: Identify the question focuses on RRSP taxation at death without a spouse as beneficiary.\nStep 2: Apply the LLQP principle that RRSPs without a spousal beneficiary trigger deemed disposition.\nStep 3: Eliminate distractors - RRSPs are not tax-free; 100% is included; automatic distribution to children doesn't occur.\nStep 4: Select the best answer. Option C: The full amount must be included in the deceased's income on their final tax return for the year of death.",
+      "kidExplanation": "An RRSP is a magical tax-free bubble, but if you pass away and you can't pass the bubble to your spouse, the bubble pops! All the money spills out and the government taxes every single penny of it on your very last tax return.",
+      "difficulty": "medium",
+      "tags": [
+        "rrsp",
+        "taxation",
+        "estate-planning",
+        "beneficiaries"
+      ]
+    },
+    {
+      "id": 17,
+      "question": "If a life insured and their spouse are co-owners of a home with a joint mortgage, and the life insured dies, what will likely happen to the mortgage obligation?",
+      "options": [
+        "A. The mortgage is automatically forgiven upon death.",
+        "B. The surviving spouse becomes solely responsible for the full mortgage balance.",
+        "C. The lender may or may not be willing to extend the mortgage to the surviving spouse alone, depending on their ability to make the payments.",
+        "D. The mortgage becomes a joint obligation with the surviving spouse's parents."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Mortgages are not automatically forgiven upon death.",
+        "The mortgage does not automatically transfer to the spouse without lender approval.",
+        "The lender may or may not be willing to extend the mortgage to the surviving spouse alone, depending on their ability to make the payments.",
+        "Parents do not automatically assume mortgage obligations."
+      ],
+      "explanation": "Step 1: Identify the question focuses on mortgage obligations upon a joint borrower's death.\nStep 2: Apply the LLQP principle that lenders evaluate creditworthiness independently.\nStep 3: Eliminate distractors - mortgages are not forgiven; automatic transfer doesn't occur; parents don't assume obligations.\nStep 4: Select the best answer. Option C: The lender may or may not be willing to extend the mortgage to the surviving spouse alone, depending on their ability to make the payments.",
+      "kidExplanation": "If you and your spouse borrow money together for a house, and you pass away, the bank will look at your spouse's wallet. If your spouse doesn't make enough money to pay the bills alone, the bank might demand the house back!",
+      "difficulty": "medium",
+      "tags": [
+        "mortgages",
+        "debt-obligations",
+        "joint-accounts",
+        "financial-dependents"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "What happens to a jointly held home equity line of credit (LOC) when one of the joint holders dies?",
+      "options": [
+        "A. The LOC is immediately closed and all outstanding balances must be repaid within 30 days.",
+        "B. The lender may allow the LOC to remain open since it is secured by assets that remain in the hands of the surviving spouse.",
+        "C. The surviving spouse must immediately replace the deceased spouse with a new joint holder.",
+        "D. The home equity LOC is automatically forgiven as part of the deceased's estate."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "LOCs are not automatically closed upon death.",
+        "The lender may allow the LOC to remain open since it is secured by assets that remain in the hands of the surviving spouse.",
+        "New joint holders cannot automatically replace deceased holders.",
+        "LOCs are not automatically forgiven."
+      ],
+      "explanation": "Step 1: Identify the question focuses on secured LOC continuation after one holder's death.\nStep 2: Apply the LLQP principle that lenders are primarily concerned with security, not personal details.\nStep 3: Eliminate distractors - LOCs don't automatically close; new holders can't automatically replace deceased; forgiveness doesn't occur.\nStep 4: Select the best answer. Option B: The lender may allow the LOC to remain open since it is secured by assets that remain in the hands of the surviving spouse.",
+      "kidExplanation": "A home equity line of credit is basically borrowing money using your house as the guarantee. As long as your surviving spouse gets to keep the house, the bank still has their guarantee, so they usually just leave the account open!",
+      "difficulty": "easy",
+      "tags": [
+        "line-of-credit",
+        "secured-debt",
+        "joint-accounts",
+        "estate-planning"
+      ]
+    },
+    {
+      "id": 19,
+      "question": "A client owns a family cottage with an Adjusted Cost Base (ACB) of $250,000. At the time of the client's death, the cottage is worth $600,000. What is the tax consequence when the cottage is deemed to be disposed of upon death?",
+      "options": [
+        "A. The deemed disposition triggers a capital gain of $250,000, and 100% of it is taxable on the client's final tax return.",
+        "B. The deemed disposition triggers a capital gain of $350,000, 50% of which is taxable on the client's final tax return.",
+        "C. The cottage is deemed to be transferred at its ACB with no capital gain triggered.",
+        "D. The capital gain is deferred until the surviving family members eventually sell the cottage."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The capital gain is $600,000 - $250,000 = $350,000, not $250,000.",
+        "The deemed disposition triggers a capital gain of $350,000, 50% of which is taxable on the client's final tax return.",
+        "Deemed disposition occurs at FMV, not at ACB.",
+        "Capital gains tax is not deferred upon deemed disposition; it applies on the final return."
+      ],
+      "explanation": "Step 1: Identify the question focuses on deemed disposition of real property at death.\nStep 2: Apply the LLQP principle that capital gains equal FMV minus ACB, with 50% inclusion rate.\nStep 3: Calculate: $600,000 - $250,000 = $350,000 capital gain; 50% x $350,000 = $175,000 taxable.\nStep 4: Select the best answer. Option B: The deemed disposition triggers a capital gain of $350,000, 50% of which is taxable on the client's final tax return.",
+      "kidExplanation": "You can't pass a cottage to your kids for free! The government pretends you sold it for $600,000 on your last day. Since you bought it for $250,000, you made a $350,000 profit. The government makes you pay taxes on half of that profit!",
+      "difficulty": "hard",
+      "tags": [
+        "capital-gains",
+        "deemed-disposition",
+        "real-property",
+        "estate-tax"
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When analyzing a family's current expenses to determine insurance needs for replacing income, which of the following should be excluded from the calculation?",
+      "options": [
+        "A. Mortgage or rent payments required to maintain the family home.",
+        "B. Children's education expenses that support the family's desired lifestyle.",
+        "C. The deceased's personal expenses, such as their cell phone or transportation costs.",
+        "D. Food and utilities required for the family's daily living."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Mortgage and rent are necessary family expenses.",
+        "Education expenses support the family's lifestyle choices.",
+        "The deceased's personal expenses, such as their cell phone or transportation costs.",
+        "Food and utilities are essential family expenses."
+      ],
+      "explanation": "Step 1: Identify the question focuses on which expenses to exclude from needs analysis.\nStep 2: Apply the LLQP principle that only expenses the family will continue after death should be counted.\nStep 3: Eliminate distractors - housing, education, and utilities are family needs that continue.\nStep 4: Select the best answer. Option C: The deceased's personal expenses, such as their cell phone or transportation costs.",
+      "kidExplanation": "When we figure out how much money your family needs if you pass away, we get to subtract all the money you spent just on yourself! We delete your cell phone bill, your gas money, and your golf membership from the family budget.",
+      "difficulty": "easy",
+      "tags": [
+        "needs-analysis",
+        "expense-calculation",
+        "income-replacement",
+        "financial-planning"
+      ]
+    }
+  ]
+}
