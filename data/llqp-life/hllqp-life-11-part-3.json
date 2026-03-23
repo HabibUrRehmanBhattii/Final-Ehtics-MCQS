@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 21,
+      "question": "Why are tax liabilities considered in a comprehensive needs analysis?",
+      "options": {
+        "A": "Because life insurance premiums are fully taxable",
+        "B": "Because deemed disposition of capital assets at death can trigger significant capital gains taxes",
+        "C": "Because death benefits are always taxed by the government",
+        "D": "Because the surviving spouse must pay estate taxes immediately"
+      },
+      "correctAnswer": "B",
+      "explanation": "Upon death, assets like cottages are deemed to be sold, triggering capital gains taxes that the estate must pay.",
+      "kidExplanation": "The government pretends you sold your favorite assets (like a cottage) on the day you die, and they want their tax money for the profit! Your insurance needs to be big enough to pay that giant tax bill."
+    },
+    {
+      "id": 22,
+      "question": "What is the purpose of an emergency fund in insurance planning?",
+      "options": {
+        "A": "To pay off all credit card balances immediately",
+        "B": "To ensure the family has 3-6 months of liquid assets not consumed by final expenses and taxes",
+        "C": "To provide the spouse with a vacation fund",
+        "D": "To cover all probate fees"
+      },
+      "correctAnswer": "B",
+      "explanation": "An emergency fund preserves liquid assets for unexpected expenses, ensuring the family maintains financial stability.",
+      "kidExplanation": "Every family needs a rainy-day piggy bank just in case the car breaks down or the roof leaks! The insurance makes sure the family still has their rainy-day money even after paying for the funeral."
+    },
+    {
+      "id": 23,
+      "question": "How is estate equalization used in life insurance planning?",
+      "options": {
+        "A": "By ensuring all children pay the same taxes",
+        "B": "By providing cash to balance inheritance when one child receives a large indivisible asset",
+        "C": "By leaving all assets to the spouse only",
+        "D": "By paying the executor 5% of the estate"
+      },
+      "correctAnswer": "B",
+      "explanation": "Estate equalization uses life insurance proceeds to provide equal cash value when assets cannot be divided equally.",
+      "kidExplanation": "If a dad gives his super expensive cabin to his son, his daughter might feel left out. The dad can buy life insurance that gives the exact same amount of cash to his daughter so everything is perfectly fair!"
+    },
+    {
+      "id": 24,
+      "question": "What does the duration of risk determine in life insurance planning?",
+      "options": {
+        "A": "The type of policy to recommend (term vs. permanent)",
+        "B": "The exact premium amount charged",
+        "C": "Which insurance company to use",
+        "D": "Who the beneficiary must be legally"
+      },
+      "correctAnswer": "A",
+      "explanation": "Duration determines whether term (temporary) or permanent (lifetime) coverage is appropriate for the client's needs.",
+      "kidExplanation": "If you only need a shield for 10 years while you pay off your house, you buy temporary (Term) insurance. But if you need a shield that lasts until you are 100 years old to pay taxes, you buy forever (Permanent) insurance!"
+    },
+    {
+      "id": 25,
+      "question": "Why is it important to compare premiums to the client's cash flow?",
+      "options": {
+        "A": "Because premiums over 10% of income are illegal",
+        "B": "To ensure the client can afford premiums without going into debt and adjust recommendations if needed",
+        "C": "To maximize the insurance agent's commission",
+        "D": "Because it determines the death benefit amount automatically"
+      },
+      "correctAnswer": "B",
+      "explanation": "Cash flow comparison ensures affordability; if cash flow is negative, recommendations must be adjusted.",
+      "kidExplanation": "It doesn't matter if the math says you need a million-dollar permanent shield if you don't have enough allowance money to pay for it! The agent has to make sure you can actually afford the monthly bill."
+    },
+    {
+      "id": 26,
+      "question": "What does an irrevocable beneficiary designation mean?",
+      "options": {
+        "A": "The death benefit goes only to the estate",
+        "B": "The beneficiary can be changed anytime without restriction",
+        "C": "The beneficiary cannot be changed without their written permission",
+        "D": "The benefit must be paid as an annuity only"
+      },
+      "correctAnswer": "C",
+      "explanation": "Irrevocable means the designation is fixed and cannot be changed without the explicit written consent of the beneficiary.",
+      "kidExplanation": "Irrevocable means locked tight! You can never, ever change who gets the prize money unless that person actually signs a piece of paper saying they agree to give it up."
+    },
+    {
+      "id": 27,
+      "question": "What is the benefit of naming a specific beneficiary compared to leaving funds to the estate?",
+      "options": {
+        "A": "The death benefit becomes fully taxable to the beneficiary",
+        "B": "The death benefit bypasses the estate, avoiding probate fees and delays",
+        "C": "The death benefit is automatically cut in half",
+        "D": "The policyholder no longer needs to pay premiums"
+      },
+      "correctAnswer": "B",
+      "explanation": "Named beneficiaries receive funds directly, bypassing probate and avoiding associated fees and delays.",
+      "kidExplanation": "If you give the money to your estate, it gets stuck in a long legal line and the courts take a fee. But if you name a specific person, the money flies straight to them instantly, with no line and no fees!"
+    },
+    {
+      "id": 28,
+      "question": "How should policy exclusions be handled with the client?",
+      "options": {
+        "A": "They should be hidden so the client does not worry",
+        "B": "They must be highlighted and explained to ensure client understanding",
+        "C": "They are illegal in Canada and cannot be included",
+        "D": "They can be removed manually by the agent"
+      },
+      "correctAnswer": "B",
+      "explanation": "Exclusions must be clearly explained so the client understands when the death benefit will not be paid.",
+      "kidExplanation": "Exclusions are the Fine Print. The agent MUST warn you if the policy says, We won't pay if you die while jumping out of an airplane! You need to know the rules of the game."
+    },
+    {
+      "id": 29,
+      "question": "What is the grace period provision in a life insurance policy?",
+      "options": {
+        "A": "A 2-year period during which suicide is excluded",
+        "B": "A 10-day period to cancel the policy for a full refund",
+        "C": "A 30-day period after the premium due date during which coverage remains in force",
+        "D": "A 5-year period to convert term insurance to permanent"
+      },
+      "correctAnswer": "C",
+      "explanation": "The grace period typically allows 30 days after the premium due date for payment without losing coverage.",
+      "kidExplanation": "If you accidentally forget to pay your bill on time, the insurance company doesn't take your shield away instantly. They give you a 30-day grace period to pay up before you lose your protection!"
+    },
+    {
+      "id": 30,
+      "question": "What is the right of rescission (10-day free-look) in life insurance?",
+      "options": {
+        "A": "The right of the company to cancel the policy after 10 years",
+        "B": "The right of the policyholder to review the policy for 10 days and return it for a full refund",
+        "C": "The right of the beneficiary to refuse the death benefit",
+        "D": "The right to change the premium amount within 10 days of issue"
+      },
+      "correctAnswer": "B",
+      "explanation": "The free-look period allows the policyholder to review the delivered policy and cancel within 10 days for a full refund.",
+      "kidExplanation": "It's like a 10-day return policy at a store! When you get your new insurance book, you have 10 days to read it. If you change your mind, you can hand it back and get all your money back!"
+    }
+  ]
+}

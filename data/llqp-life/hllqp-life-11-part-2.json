@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 11,
+      "question": "Why must we account for taxes on investment income in insurance calculations?",
+      "options": {
+        "A": "Death benefits are heavily taxed by the government",
+        "B": "Death benefits are tax-free, but investment income earned on the capital later will be taxable",
+        "C": "Life insurance premiums are fully tax-deductible",
+        "D": "The government taxes all life insurance policies equally"
+      },
+      "correctAnswer": "B",
+      "explanation": "While the death benefit itself is received tax-free, any investment income generated from that capital will be subject to taxation.",
+      "kidExplanation": "When the insurance company hands you the giant check, the government doesn't take any taxes. BUT, when you put that money in the bank and it starts earning extra interest, the government DOES want to tax that new extra money!"
+    },
+    {
+      "id": 12,
+      "question": "If an investment returns 6% but is subject to 30% tax, what is the after-tax return?",
+      "options": {
+        "A": "1.8%",
+        "B": "3.0%",
+        "C": "4.2%",
+        "D": "6.0%"
+      },
+      "correctAnswer": "C",
+      "explanation": "6% × (1 - 0.30) = 6% × 0.70 = 4.2%",
+      "kidExplanation": "First, figure out the tax: 100% minus 30% is 70%. Then, multiply the 6% return by 70% (0.70). 6% x 0.70 = 4.2%. That's the interest you actually get to keep!"
+    },
+    {
+      "id": 13,
+      "question": "How does inflation affect the income replacement approach?",
+      "options": {
+        "A": "It decreases the capital requirement",
+        "B": "It assumes income remains flat forever",
+        "C": "It recognizes that income and living expenses increase over time, requiring larger death benefits",
+        "D": "It eliminates all taxes on returns"
+      },
+      "correctAnswer": "C",
+      "explanation": "Inflation means a larger death benefit is needed to preserve purchasing power as costs increase over time.",
+      "kidExplanation": "Things get more expensive every year—that's inflation! Because a loaf of bread will cost more in 10 years, your family will need a bigger pile of insurance money to make sure they can still afford to buy groceries."
+    },
+    {
+      "id": 14,
+      "question": "What is a major weakness of the income replacement approach?",
+      "options": {
+        "A": "It fails to address lump-sum needs like debts",
+        "B": "It assumes beneficiaries will never spend the underlying capital, only living on interest",
+        "C": "It is too complicated for most clients to understand",
+        "D": "It only works with capital drawdown strategies"
+      },
+      "correctAnswer": "B",
+      "explanation": "The approach assumes the beneficiary will never touch the capital, which is unrealistic since families often need to draw down the principal.",
+      "kidExplanation": "The biggest problem with this math is it pretends your family will NEVER touch the main pile of money! In real life, families usually need to spend chunks of that money to pay for big things like a new roof or a car."
+    },
+    {
+      "id": 15,
+      "question": "How does the capital needs approach differ from income replacement?",
+      "options": {
+        "A": "It ignores the surviving spouse's income completely",
+        "B": "It identifies all specific income shortfalls and lump-sum needs, converting them into a single required amount",
+        "C": "It only covers funeral expenses",
+        "D": "It assumes capital will be retained forever"
+      },
+      "correctAnswer": "B",
+      "explanation": "Capital needs approach identifies all shortfalls (income gaps) and one-time needs (debts, funeral costs, education) as a total lump sum.",
+      "kidExplanation": "Instead of just replacing a paycheck, the Capital Needs Approach makes a giant shopping list! It adds up the missing paychecks, the cost of the funeral, the credit card bills, and the kids' college funds to get one perfect total!"
+    },
+    {
+      "id": 16,
+      "question": "Which source of income reduces the required life insurance benefit?",
+      "options": {
+        "A": "Cell phone bill reimbursement",
+        "B": "Expected future salary raises",
+        "C": "CPP survivor's pension or children's benefits",
+        "D": "Capital gains tax refunds"
+      },
+      "correctAnswer": "C",
+      "explanation": "Government benefits like CPP survivor benefits reduce the need for insurance because the family receives income from another source.",
+      "kidExplanation": "The government gives a little bit of monthly money to the surviving family. Because the family is getting this extra cash, they don't need to ask for quite as much money from the life insurance company!"
+    },
+    {
+      "id": 17,
+      "question": "Which expense is eliminated when a person passes away?",
+      "options": {
+        "A": "Property taxes on the home",
+        "B": "Utilities for the household",
+        "C": "Food and clothing for the children",
+        "D": "The deceased person's personal expenses"
+      },
+      "correctAnswer": "D",
+      "explanation": "Personal expenses like memberships, personal transportation, or personal hobbies of the deceased are no longer needed.",
+      "kidExplanation": "When someone passes away, the family doesn't have to pay for that person's specific hobbies or cell phone anymore. We get to erase those costs from the family budget!"
+    },
+    {
+      "id": 18,
+      "question": "If a family needs $5,000 in expenses but has $2,000 in income, what is the annual shortfall?",
+      "options": {
+        "A": "$2,000",
+        "B": "$3,000",
+        "C": "$5,000",
+        "D": "$7,000"
+      },
+      "correctAnswer": "B",
+      "explanation": "$5,000 (expenses) - $2,000 (income) = $3,000 shortfall",
+      "kidExplanation": "If you need $5,000 to buy everything on your list, but you only have $2,000 in your pocket, you are short by $3,000! ($5,000 - $2,000 = $3,000)."
+    },
+    {
+      "id": 19,
+      "question": "How is the capital drawdown method calculated for a 10-year period?",
+      "options": {
+        "A": "Divide the annual amount by the return rate",
+        "B": "Multiply the annual shortfall by 10 years",
+        "C": "Multiply monthly expenses by inflation",
+        "D": "Subtract client age from 100"
+      },
+      "correctAnswer": "B",
+      "explanation": "Capital drawdown multiplies the annual amount needed by the number of years to determine total capital required.",
+      "kidExplanation": "The drawdown method is super simple math! If you need $10,000 a year for 10 years, you just multiply them. $10,000 x 10 = $100,000. You use up the pile of money until it's gone!"
+    },
+    {
+      "id": 20,
+      "question": "What are final expenses in insurance planning?",
+      "options": {
+        "A": "The final mortgage payment",
+        "B": "Funeral, burial, cremation, and remembrance service costs",
+        "C": "The final tax bill owed to the government",
+        "D": "University tuition for children"
+      },
+      "correctAnswer": "B",
+      "explanation": "Final expenses refer specifically to the costs of funeral, cremation, burial, and memorial services.",
+      "kidExplanation": "Final expenses is just the grown-up way of talking about the costs of a funeral or a memorial service when someone passes away."
+    }
+  ]
+}

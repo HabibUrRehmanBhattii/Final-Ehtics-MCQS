@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "question": "What is the risk matrix for a healthy 30-year-old?",
+      "options": {
+        "A": "High probability / High financial impact",
+        "B": "Low probability / High financial impact",
+        "C": "High probability / Low financial impact",
+        "D": "Low probability / Low financial impact"
+      },
+      "correctAnswer": "B",
+      "explanation": "A healthy 30-year-old has low probability of death but high financial impact due to dependents and earning potential.",
+      "kidExplanation": "If you are young and healthy, it's very unlikely you will pass away soon (low probability). But if you do, your young family would lose all the money you bring home to pay for food and the house, which is a huge deal (high financial impact)!"
+    },
+    {
+      "id": 2,
+      "question": "How do statistical odds of dying change as a person ages?",
+      "options": {
+        "A": "Constant until age 65, then increase sharply",
+        "B": "Decrease from birth to age 100",
+        "C": "Increase with age; females generally have lower odds than males",
+        "D": "Increase with age; males generally have lower odds than females"
+      },
+      "correctAnswer": "C",
+      "explanation": "Mortality odds increase with age, and females generally have lower odds of dying than males of the same age.",
+      "kidExplanation": "As people get older, the chance of them passing away goes up. And generally, statistics show that ladies tend to live a little bit longer than men!"
+    },
+    {
+      "id": 3,
+      "question": "What is considered a lifestyle risk?",
+      "options": {
+        "A": "Family history of diabetes",
+        "B": "Being age 65 or older",
+        "C": "History of driving infractions or frequent travel to dangerous countries",
+        "D": "Being female"
+      },
+      "correctAnswer": "C",
+      "explanation": "Lifestyle risks include personal choices like reckless driving, frequent travel to dangerous locations, or high-risk activities.",
+      "kidExplanation": "Lifestyle risks are about the choices you make! If you drive too fast and get lots of tickets, or travel to dangerous places, you are taking extra risks with your life!"
+    },
+    {
+      "id": 4,
+      "question": "What is the primary financial impact of a stay-at-home parent's death?",
+      "options": {
+        "A": "Need to pay off student loans",
+        "B": "Cost to replace the caregiver so the surviving spouse can continue working",
+        "C": "Loss of the deceased's employment income",
+        "D": "Tax liability on the home"
+      },
+      "correctAnswer": "B",
+      "explanation": "The main financial impact is the cost of hiring someone to replace the childcare and household responsibilities.",
+      "kidExplanation": "Even if a stay-at-home parent doesn't bring home a paycheck, the work they do is super valuable! If they aren't there, the family has to pay a babysitter or nanny to watch the kids, which costs a lot of money."
+    },
+    {
+      "id": 5,
+      "question": "What is the duration of the risk from cottage tax liability?",
+      "options": {
+        "A": "Short-term risk that disappears after 5 years",
+        "B": "Long-term risk of unknown timing lasting 40-50 years, typically increasing in value",
+        "C": "Strictly 10 years from purchase",
+        "D": "Until the children reach the age of majority"
+      },
+      "correctAnswer": "B",
+      "explanation": "Cottage tax liability is a long-term risk of unknown timing that could continue for 40-50 years as the property appreciates.",
+      "kidExplanation": "You don't know exactly when you will pass away, so the risk of paying taxes on the cottage lasts your whole life! And since houses usually get more expensive over time, the tax bill gets bigger the longer you live."
+    },
+    {
+      "id": 6,
+      "question": "Why is it important to discuss illness and disability in a needs analysis?",
+      "options": {
+        "A": "Life insurance covers all disability costs",
+        "B": "To determine if the client might benefit from a waiver of premium or dread disease rider",
+        "C": "Disability insurance is legally required",
+        "D": "To prove the client is uninsurable"
+      },
+      "correctAnswer": "B",
+      "explanation": "Discussion helps identify if the client would benefit from adding riders like waiver of premium or dread disease coverage.",
+      "kidExplanation": "Getting sick or hurt is actually more likely than passing away! The agent brings it up to see if you want to add a special shield (a rider) to your policy that pays your insurance bill for you if you get too sick to work."
+    },
+    {
+      "id": 7,
+      "question": "What is the goal of the income replacement approach?",
+      "options": {
+        "A": "To pay off all client debts",
+        "B": "To calculate the capital needed to generate an income stream replacing lost employment income",
+        "C": "To replace the surviving spouse's income only",
+        "D": "To calculate final taxes owed"
+      },
+      "correctAnswer": "B",
+      "explanation": "The goal is to calculate the capital that must be invested to produce an ongoing income stream equivalent to the deceased's lost employment income.",
+      "kidExplanation": "The income replacement approach asks a math question: How giant does a pile of money need to be so that the interest it earns every year perfectly replaces the paycheck you used to bring home?"
+    },
+    {
+      "id": 8,
+      "question": "What is the formula for capitalization of lost income?",
+      "options": {
+        "A": "Annual income × inflation rate",
+        "B": "Annual income ÷ assumed rate of return",
+        "C": "Annual income ÷ years to retirement",
+        "D": "Monthly income × 12"
+      },
+      "correctAnswer": "B",
+      "explanation": "The formula is Annual income divided by the assumed rate of return to determine the lump sum required.",
+      "kidExplanation": "To figure out how big the money pile needs to be, you take your yearly allowance (income) and divide it by the interest rate the bank gives you. That tells you the exact size of the magical money-making pile!"
+    },
+    {
+      "id": 9,
+      "question": "What is the capitalized value of a $60,000 annual income with a 5% rate of return?",
+      "options": {
+        "A": "$300,000",
+        "B": "$600,000",
+        "C": "$1,200,000",
+        "D": "$3,000,000"
+      },
+      "correctAnswer": "C",
+      "explanation": "$60,000 ÷ 0.05 = $1,200,000",
+      "kidExplanation": "To find the giant pile of money, just take the $60,000 and divide it by 5% (or 0.05). $60,000 ÷ 0.05 = $1,200,000!"
+    },
+    {
+      "id": 10,
+      "question": "Why is the capital retention method often high?",
+      "options": {
+        "A": "Because 50% of death benefits are taxed",
+        "B": "Because it assumes the capital itself remains completely intact and only interest is used",
+        "C": "Because it assumes the spouse will never work again",
+        "D": "Because it automatically adds $1 million to all calculations"
+      },
+      "correctAnswer": "B",
+      "explanation": "The method assumes the capital (death benefit) remains intact forever, using only investment income, requiring a much larger death benefit.",
+      "kidExplanation": "This math assumes you never actually spend the giant pile of money! It assumes you only spend the little bits of interest it grows every year, keeping the giant pile perfectly full forever. That takes a LOT of money!"
+    }
+  ]
+}
