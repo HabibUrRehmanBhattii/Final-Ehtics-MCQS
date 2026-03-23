@@ -305,10 +305,32 @@
         {
           "id": "llqp-life-06",
           "name": "HLLQP - LIFE 06 QZ - Group Life Insurance",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-06.json"
+          "description": "Chapter quiz covering master contracts, actively-at-work requirements, taxation of premiums and benefits, AD&D coverage, conversion rights, and underwriting practices",
+          "questionCount": 30,
+          "dataFile": "data/llqp-life/hllqp-life-06.json?v=20260323a",
+          "subTests": [
+            {
+              "id": "llqp-life-06-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-06-part-1.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-06-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-06-part-2.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-06-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-06-part-3.json?v=20260323a"
+            }
+          ]
         },
         {
           "id": "llqp-life-07",
