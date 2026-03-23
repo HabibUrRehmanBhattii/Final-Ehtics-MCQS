@@ -1,60 +1,90 @@
 import json
 from pathlib import Path
 
-ROOT = Path(r"c:\Users\C6475\Desktop\Ehtics MCQS")
-SRC = ROOT / "data" / "flashcards" / "flashcards-2.json"
-BACKUP = ROOT / "data" / "flashcards" / "flashcards-2-full.json"
-OUT_DIR = ROOT / "data" / "flashcards"
+ROOT = Path(__file__).resolve().parents[1]
+FLASHCARDS_DIR = ROOT / "data" / "flashcards"
+SRC = FLASHCARDS_DIR / "flashcards-2.json"
+BACKUP = FLASHCARDS_DIR / "flashcards-2-full.json"
 TOPICS = ROOT / "data" / "topics.json"
-CHUNK = 20
+CHUNK_SIZE = 20
 
-with open(SRC, "r", encoding="utf-8") as f:
-    data = json.load(f)
 
-# Backup full
-with open(BACKUP, "w", encoding="utf-8") as f:
-    json.dump(data, f, indent=2, ensure_ascii=False)
-
-questions = data.get("questions", [])
-chunks = [questions[i:i+CHUNK] for i in range(0, len(questions), CHUNK)]
-created = []
-for idx, chunk in enumerate(chunks, start=1):
-    out = {
-        "topic": f"Flashcards - Policy Provisions & Health/Group (Set 2 - Part {idx})",
-        "topicId": f"flashcards-advanced-2-part-{idx}",
-        "description": f"Part {idx} of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
-        "questions": chunk
+def build_part_data(data, part_index, chunk):
+    return {
+        "topic": f"Flashcards - Policy Provisions & Health/Group (Set 2 - Part {part_index})",
+        "topicId": f"flashcards-advanced-2-part-{part_index}",
+        "description": f"Part {part_index} of Flashcards Set 2 (Policy provisions, group & health insurance basics)",
+        "questions": chunk,
     }
-    filename = OUT_DIR / f"flashcards-2-part-{idx}.json"
-    with open(filename, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False)
-    created.append((filename.name, len(chunk)))
 
-# Update topics.json: replace existing flash-2 with the new parts
-with open(TOPICS, "r", encoding="utf-8") as f:
-    topics = json.load(f)
 
-for t in topics.get("topics", []):
-    if t.get("id") == "flashcards-basic":
-        tests = t.get("practiceTests", [])
-        # remove any existing flash-2 entries
-        tests = [p for p in tests if not (p.get("id","").startswith("flash-2"))]
-        # append new parts
-        for idx, (_, count) in enumerate(created, start=1):
-            tests.append({
-                "id": f"flash-2-part-{idx}",
-                "name": f"Flashcards Set 2 - Part {idx}",
-                "description": f"Part {idx} — Policy provisions, group & health insurance basics",
-                "questionCount": count,
-                "dataFile": f"data/flashcards/flashcards-2-part-{idx}.json"
-            })
-        t["practiceTests"] = tests
+def update_topics(topics, created_parts):
+    for topic in topics.get("topics", []):
+        if topic.get("id") != "flashcards-basic":
+            continue
+
+        tests = [
+            practice_test
+            for practice_test in topic.get("practiceTests", [])
+            if not practice_test.get("id", "").startswith("flash-2")
+        ]
+        for part_index, (_, count) in enumerate(created_parts, start=1):
+            tests.append(
+                {
+                    "id": f"flash-2-part-{part_index}",
+                    "name": f"Flashcards Set 2 - Part {part_index}",
+                    "description": f"Part {part_index} - Policy provisions, group & health insurance basics",
+                    "questionCount": count,
+                    "dataFile": f"data/flashcards/flashcards-2-part-{part_index}.json",
+                }
+            )
+        topic["practiceTests"] = tests
         break
 
-with open(TOPICS, "w", encoding="utf-8") as f:
-    json.dump(topics, f, indent=2, ensure_ascii=False)
+    return topics
 
-print("Created files:")
-for name, cnt in created:
-    print(f" - {name}: {cnt} questions")
-print("topics.json updated.")
+
+def split_flashcards(root=ROOT, chunk_size=CHUNK_SIZE):
+    flashcards_dir = Path(root) / "data" / "flashcards"
+    src = flashcards_dir / "flashcards-2.json"
+    backup = flashcards_dir / "flashcards-2-full.json"
+    topics_path = Path(root) / "data" / "topics.json"
+
+    data = json.loads(src.read_text(encoding="utf-8"))
+    backup.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+    questions = data.get("questions", [])
+    created = []
+    for index, start in enumerate(range(0, len(questions), chunk_size), start=1):
+        chunk = questions[start:start + chunk_size]
+        output = build_part_data(data, index, chunk)
+        output_path = flashcards_dir / f"flashcards-2-part-{index}.json"
+        output_path.write_text(
+            json.dumps(output, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        created.append((output_path.name, len(chunk)))
+
+    topics = json.loads(topics_path.read_text(encoding="utf-8"))
+    updated_topics = update_topics(topics, created)
+    topics_path.write_text(
+        json.dumps(updated_topics, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+    return created
+
+
+def main():
+    created = split_flashcards()
+    print("Created files:")
+    for name, count in created:
+        print(f" - {name}: {count} questions")
+    print("topics.json updated.")
+
+
+if __name__ == "__main__":
+    main()

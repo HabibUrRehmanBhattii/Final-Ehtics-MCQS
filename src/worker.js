@@ -92,9 +92,17 @@ function escapeHtml(value) {
 }
 
 function getClientIp(request) {
-  return request.headers.get('CF-Connecting-IP')
-    || request.headers.get('x-forwarded-for')
-    || 'unknown';
+  const cfIp = String(request.headers.get('CF-Connecting-IP') || '').trim();
+  if (cfIp) {
+    return cfIp;
+  }
+
+  const forwardedFor = String(request.headers.get('x-forwarded-for') || '').trim();
+  if (forwardedFor) {
+    return forwardedFor.split(',')[0].trim();
+  }
+
+  return 'unknown';
 }
 
 async function sha256(value) {

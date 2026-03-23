@@ -40,13 +40,29 @@ class ClassList {
 }
 
 class ElementStub {
-  constructor({ classes = [], querySelectorAll } = {}) {
-    this.textContent = '';
+  constructor({
+    classes = [],
+    querySelectorAll,
+    closest,
+    matches,
+    parentElement = null,
+    innerText = '',
+    textContent = ''
+  } = {}) {
+    this.textContent = textContent;
+    this.innerText = innerText;
     this.innerHTML = '';
     this.style = {};
     this.attributes = {};
     this.classList = new ClassList(classes);
     this.querySelectorAll = querySelectorAll || (() => []);
+    this.closestImpl = closest || null;
+    this.matchesImpl = matches || null;
+    this.parentElement = parentElement;
+    this.disabled = false;
+    this.required = false;
+    this.value = '';
+    this.children = [];
   }
 
   setAttribute(name, value) {
@@ -63,25 +79,97 @@ class ElementStub {
 
   focus() {}
 
-  matches() {
+  matches(...args) {
+    if (typeof this.matchesImpl === 'function') {
+      return this.matchesImpl(...args);
+    }
     return false;
   }
 
-  closest() {
+  closest(...args) {
+    if (typeof this.closestImpl === 'function') {
+      return this.closestImpl(...args);
+    }
     return null;
+  }
+
+  reset() {
+    this.value = '';
+  }
+
+  appendChild(child) {
+    this.children.push(child);
+    child.parentElement = this;
+    return child;
+  }
+
+  removeChild(child) {
+    this.children = this.children.filter((entry) => entry !== child);
+    child.parentElement = null;
+    return child;
+  }
+
+  remove() {
+    if (this.parentElement && typeof this.parentElement.removeChild === 'function') {
+      this.parentElement.removeChild(this);
+    }
   }
 }
 
-function loadMCQApp(customElements = {}) {
+function createStorage(initialEntries = {}) {
+  const storage = new Map(Object.entries(initialEntries));
+
+  return {
+    get length() {
+      return storage.size;
+    },
+    key(index) {
+      return Array.from(storage.keys())[index] ?? null;
+    },
+    getItem(key) {
+      return storage.has(key) ? storage.get(key) : null;
+    },
+    setItem(key, value) {
+      storage.set(key, String(value));
+    },
+    removeItem(key) {
+      storage.delete(key);
+    },
+    clear() {
+      storage.clear();
+    }
+  };
+}
+
+function buildLocation(overrides = {}) {
+  const href = overrides.href || 'http://localhost:8000/';
+  const parsed = new URL(href);
+
+  return {
+    hostname: overrides.hostname || parsed.hostname,
+    origin: overrides.origin || parsed.origin,
+    href: parsed.href,
+    pathname: parsed.pathname,
+    search: parsed.search,
+    hash: parsed.hash
+  };
+}
+
+function createAppHarness(customElements = {}, options = {}, includeAuth = false) {
   const elements = new Map(
     Object.entries(customElements).map(([id, element]) => [id, element])
   );
 
+  const documentElement = new ElementStub();
   const document = {
     addEventListener() {},
     removeEventListener() {},
-    querySelectorAll() {
-      return [];
+    querySelector: options.documentQuerySelector || (() => null),
+    querySelectorAll: options.documentQuerySelectorAll || (() => []),
+    documentElement,
+    body: new ElementStub(),
+    createElement() {
+      return new ElementStub();
     },
     getElementById(id) {
       if (!elements.has(id)) {
@@ -91,7 +179,7 @@ function loadMCQApp(customElements = {}) {
     }
   };
 
-  const storage = new Map();
+  const localStorage = createStorage(options.storage || {});
   let nowValue = 0;
 
   class MockDate extends Date {
@@ -104,53 +192,63 @@ function loadMCQApp(customElements = {}) {
     }
   }
 
-  const localStorage = {
-    getItem(key) {
-      return storage.has(key) ? storage.get(key) : null;
-    },
-    setItem(key, value) {
-      storage.set(key, String(value));
-    },
-    removeItem(key) {
-      storage.delete(key);
-    }
-  };
+  const location = buildLocation(options.location);
+  const historyCalls = [];
 
   const windowObject = {
-    location: {
-      hostname: 'localhost',
-      origin: 'http://localhost:8000'
+    location,
+    history: {
+      replaceState(_state, _title, nextUrl) {
+        historyCalls.push(nextUrl);
+        if (!nextUrl) return;
+        Object.assign(location, buildLocation({
+          href: new URL(nextUrl, location.origin).toString()
+        }));
+      }
     },
+    turnstile: options.turnstile,
+    innerWidth: options.innerWidth ?? 1024,
     setInterval() {
       return 1;
     },
     clearInterval() {},
-    setTimeout() {
+    setTimeout(callback) {
+      if (typeof options.onSetTimeout === 'function') {
+        return options.onSetTimeout(callback);
+      }
       return 1;
     },
     clearTimeout() {},
     scrollTo() {},
     addEventListener() {},
-    removeEventListener() {}
+    removeEventListener() {},
+    requestAnimationFrame(callback) {
+      callback();
+      return 1;
+    }
   };
+
+  class MockURL extends URL {}
+  MockURL.createObjectURL = () => 'blob:test';
+  MockURL.revokeObjectURL = () => {};
 
   const context = vm.createContext({
     console,
     window: windowObject,
     document,
-    navigator: { onLine: true, userAgent: 'node' },
-    localStorage,
-    fetch: async () => ({
-      ok: true,
-      json: async () => ({})
-    }),
-    confirm: () => true,
-    URL: {
-      createObjectURL() {
-        return 'blob:test';
-      },
-      revokeObjectURL() {}
+    navigator: {
+      onLine: options.navigator?.onLine ?? true,
+      userAgent: options.navigator?.userAgent || 'node',
+      language: options.navigator?.language || 'en-US'
     },
+    localStorage,
+    fetch: options.fetchImpl || (async () => ({
+      ok: true,
+      json: async () => ({}),
+      text: async () => '{}'
+    })),
+    confirm: () => true,
+    URL: MockURL,
     speechSynthesis: {
       cancel() {},
       speak() {},
@@ -163,24 +261,38 @@ function loadMCQApp(customElements = {}) {
     setTimeout: (...args) => windowObject.setTimeout(...args),
     clearTimeout: (...args) => windowObject.clearTimeout(...args),
     setInterval: (...args) => windowObject.setInterval(...args),
-    clearInterval: (...args) => windowObject.clearInterval(...args)
+    clearInterval: (...args) => windowObject.clearInterval(...args),
+    requestAnimationFrame: (...args) => windowObject.requestAnimationFrame(...args)
   });
 
-  const source = fs.readFileSync(
+  const appSource = fs.readFileSync(
     path.join(__dirname, '..', '..', 'js', 'app.js'),
     'utf8'
   );
-  vm.runInContext(`${source}\nthis.__TEST_EXPORTS__ = MCQApp;`, context);
+  const authSource = includeAuth
+    ? fs.readFileSync(path.join(__dirname, '..', '..', 'js', 'auth.js'), 'utf8')
+    : '';
+  vm.runInContext(`${appSource}\n${authSource}\nthis.__TEST_EXPORTS__ = MCQApp;`, context);
 
   return {
     app: context.__TEST_EXPORTS__,
     elements,
     localStorage,
     windowObject,
+    historyCalls,
+    context,
     setNow(value) {
       nowValue = value;
     }
   };
+}
+
+function loadMCQApp(customElements = {}, options = {}) {
+  return createAppHarness(customElements, options, false);
+}
+
+function loadMCQAppWithAuth(customElements = {}, options = {}) {
+  return createAppHarness(customElements, options, true);
 }
 
 function createOptionElement(index) {
@@ -212,5 +324,6 @@ module.exports = {
   ElementStub,
   createOptionElement,
   loadMCQApp,
+  loadMCQAppWithAuth,
   setupQuizState
 };

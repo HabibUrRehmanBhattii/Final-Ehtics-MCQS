@@ -889,8 +889,8 @@ const MCQApp = {
     }[type] || 'Notice';
 
     toast.innerHTML = `
-      <div class="toast-title">${resolvedTitle}</div>
-      <div class="toast-message">${message}</div>
+      <div class="toast-title">${this.escapeHtml(resolvedTitle)}</div>
+      <div class="toast-message">${this.escapeHtml(message)}</div>
     `;
 
     root.appendChild(toast);
@@ -1799,17 +1799,19 @@ const MCQApp = {
       const isActive = topic.status === 'active';
       const isCompact = this.isCompactHomeTopic(topic.id);
       const totalQuestions = topic.practiceTests?.reduce((sum, test) => sum + test.questionCount, 0) || 0;
+      const safeColor = this.escapeHtml(this.getSafeThemeColor(topic.color));
+      const selectTopicCall = this.getInlineActionCall('MCQApp.selectTopic', topic.id);
       
       return `
         <div class="topic-card topic-list-item ${isCompact ? 'compact-topic' : ''} ${!isActive ? 'coming-soon' : ''}" 
-             ${isActive ? `onclick="MCQApp.selectTopic('${topic.id}')"` : ''}
-             style="--topic-color: ${topic.color}">
+             ${isActive ? `onclick="${selectTopicCall}"` : ''}
+             style="--topic-color: ${safeColor}">
           <div class="topic-card-top">
-            <div class="topic-icon">${topic.icon}</div>
+            <div class="topic-icon">${this.escapeHtml(topic.icon)}</div>
           </div>
           <div class="topic-list-copy">
-            <h3 class="topic-name">${topic.name}</h3>
-            <p class="topic-description">${topic.description}</p>
+            <h3 class="topic-name">${this.escapeHtml(topic.name)}</h3>
+            <p class="topic-description">${this.escapeHtml(topic.description)}</p>
             <div class="topic-meta">
               <span class="question-count">
                 ${totalQuestions} Question${totalQuestions !== 1 ? 's' : ''}
@@ -1861,11 +1863,11 @@ const MCQApp = {
     grid.classList.remove('catalog-list', 'catalog-tiles');
 
     grid.innerHTML = `
-      <div class="catalog-shell" style="--topic-color: ${topic.color}">
-        <div class="catalog-breadcrumb">${topic.name} / Chapter Quizzes / ${parentTest.name}</div>
-        <h3 class="catalog-heading">${parentTest.name}</h3>
+      <div class="catalog-shell" style="--topic-color: ${this.escapeHtml(this.getSafeThemeColor(topic.color))}">
+        <div class="catalog-breadcrumb">${this.escapeHtml(topic.name)} / Chapter Quizzes / ${this.escapeHtml(parentTest.name)}</div>
+        <h3 class="catalog-heading">${this.escapeHtml(parentTest.name)}</h3>
         <p class="muted-text">Choose a smaller section below.</p>
-        <button class="btn-outline" onclick="MCQApp.backToPracticeTests()" style="margin-bottom:.75rem;">
+        <button class="btn-outline" onclick="${this.getInlineActionCall('MCQApp.backToPracticeTests')}" style="margin-bottom:.75rem;">
           ← Back to Chapter Quizzes
         </button>
 
@@ -1874,11 +1876,11 @@ const MCQApp = {
             const testProgress = this.getPracticeTestProgress(topic.id, test.id);
             return `
               <div class="practice-test-card"
-                   onclick="MCQApp.selectSubPracticeTest('${parentTest.id}', '${test.id}')"
-                   style="--topic-color: ${topic.color}">
+                   onclick="${this.getInlineActionCall('MCQApp.selectSubPracticeTest', parentTest.id, test.id)}"
+                   style="--topic-color: ${this.escapeHtml(this.getSafeThemeColor(topic.color))}">
                 <div class="test-number">${index + 1}</div>
-                <h3 class="test-name">${test.name}</h3>
-                <p class="test-description">${test.description}</p>
+                <h3 class="test-name">${this.escapeHtml(test.name)}</h3>
+                <p class="test-description">${this.escapeHtml(test.description)}</p>
                 <div class="test-meta">
                   <span class="question-count">
                     📝 ${test.questionCount} Question${test.questionCount !== 1 ? 's' : ''}
@@ -2044,19 +2046,19 @@ const MCQApp = {
       if (!selectedSection) {
         grid.classList.remove('catalog-list', 'catalog-tiles');
         grid.innerHTML = `
-          <div class="catalog-shell" style="--topic-color: ${topic.color}">
-            <div class="catalog-breadcrumb">${topic.name}</div>
+          <div class="catalog-shell" style="--topic-color: ${this.escapeHtml(this.getSafeThemeColor(topic.color))}">
+            <div class="catalog-breadcrumb">${this.escapeHtml(topic.name)}</div>
             <h3 class="catalog-heading">Choose a Sub Heading</h3>
             <div class="catalog-subgrid">
               ${sections.map(section => `
-                <div class="catalog-subcard" style="--topic-color: ${topic.color}">
-                  <div class="catalog-subtitle">${section.title}</div>
-                  <div class="catalog-subdesc">${section.description}</div>
+                <div class="catalog-subcard" style="--topic-color: ${this.escapeHtml(this.getSafeThemeColor(topic.color))}">
+                  <div class="catalog-subtitle">${this.escapeHtml(section.title)}</div>
+                  <div class="catalog-subdesc">${this.escapeHtml(section.description)}</div>
                   <div class="catalog-submeta">
                     <span class="catalog-chip">${section.count} Course${section.count !== 1 ? 's' : ''}</span>
                   </div>
-                  <button class="btn-start-test" onclick="MCQApp.setLifeSection('${section.id}')">
-                    Open ${section.title} →
+                  <button class="btn-start-test" onclick="${this.getInlineActionCall('MCQApp.setLifeSection', section.id)}">
+                    Open ${this.escapeHtml(section.title)} →
                   </button>
                 </div>
               `).join('')}
@@ -2080,11 +2082,11 @@ const MCQApp = {
 
         return `
           <div class="practice-test-card ${!isActive ? 'coming-soon' : ''}"
-               ${isActive ? `onclick="MCQApp.selectPracticeTest('${test.id}')"` : ''}
-               style="--topic-color: ${topic.color}">
+               ${isActive ? `onclick="${this.getInlineActionCall('MCQApp.selectPracticeTest', test.id)}"` : ''}
+               style="--topic-color: ${this.escapeHtml(this.getSafeThemeColor(topic.color))}">
             <div class="test-number">${index + 1}</div>
-            <h3 class="test-name">${test.name}</h3>
-            <p class="test-description">${test.description}</p>
+            <h3 class="test-name">${this.escapeHtml(test.name)}</h3>
+            <p class="test-description">${this.escapeHtml(test.description)}</p>
             <div class="test-meta">
               ${isPdf ? `
                 <span class="question-count">📘 PDF Manual</span>
@@ -2107,10 +2109,10 @@ const MCQApp = {
       }).join('');
 
       grid.innerHTML = `
-        <div class="catalog-shell" style="--topic-color: ${topic.color}">
-          <div class="catalog-breadcrumb">${topic.name} / ${selectedSection.title}</div>
-          <h3 class="catalog-heading">${selectedSection.title}</h3>
-          <button class="btn-outline" onclick="MCQApp.setLifeSection(null)" style="margin-bottom:.75rem;">
+        <div class="catalog-shell" style="--topic-color: ${this.escapeHtml(this.getSafeThemeColor(topic.color))}">
+          <div class="catalog-breadcrumb">${this.escapeHtml(topic.name)} / ${this.escapeHtml(selectedSection.title)}</div>
+          <h3 class="catalog-heading">${this.escapeHtml(selectedSection.title)}</h3>
+          <button class="btn-outline" onclick="${this.getInlineActionCall('MCQApp.setLifeSection', null)}" style="margin-bottom:.75rem;">
             ← Back to Sub Headings
           </button>
 
@@ -2131,11 +2133,11 @@ const MCQApp = {
       
       return `
         <div class="practice-test-card ${!isActive ? 'coming-soon' : ''}"
-             ${isActive ? `onclick="MCQApp.selectPracticeTest('${test.id}')"` : ''}
-             style="--topic-color: ${topic.color}">
+             ${isActive ? `onclick="${this.getInlineActionCall('MCQApp.selectPracticeTest', test.id)}"` : ''}
+             style="--topic-color: ${this.escapeHtml(this.getSafeThemeColor(topic.color))}">
           <div class="test-number">${index + 1}</div>
-          <h3 class="test-name">${test.name}</h3>
-          <p class="test-description">${test.description}</p>
+          <h3 class="test-name">${this.escapeHtml(test.name)}</h3>
+          <p class="test-description">${this.escapeHtml(test.description)}</p>
           <div class="test-meta">
             ${isPdf ? `
               <span class="question-count">📘 PDF Manual</span>
@@ -2687,6 +2689,22 @@ const MCQApp = {
     return String(text).replace(/[&<>"']/g, m => map[m]);
   },
 
+  getSafeThemeColor(value, fallback = '#2563eb') {
+    const color = String(value || '').trim();
+    if (
+      /^(#[0-9a-f]{3,8}|rgba?\([^()]+\)|hsla?\([^()]+\)|[a-z]+)$/i.test(color)
+    ) {
+      return color;
+    }
+    return fallback;
+  },
+
+  getInlineActionCall(methodName, ...args) {
+    const safeMethod = String(methodName || '').replace(/[^\w.$]/g, '');
+    const serializedArgs = args.map((arg) => JSON.stringify(arg ?? null)).join(', ');
+    return this.escapeHtml(`${safeMethod}(${serializedArgs})`);
+  },
+
   renderSafeTextWithTables(text) {
     if (!text) return '';
 
@@ -3064,70 +3082,35 @@ const MCQApp = {
 
   // Render Question Dots
   renderQuestionDots() {
-    {
-      const dotsContainer = document.getElementById('question-dots');
-      if (!dotsContainer) return;
-
-      const filtered = this.getFilteredQuestions();
-      const totalQuestions = filtered.length;
-      const currentIndex = this.state.currentQuestionIndex;
-      const canAdvance = this.canAdvanceFromCurrentQuestion();
-      let html = '';
-
-      for (let i = 0; i < totalQuestions; i++) {
-        const q = filtered[i];
-        const isActive = i === currentIndex;
-        const isLocked = i > currentIndex && !canAdvance;
-        const questionKey = this.getQuestionStateKey(q);
-        const isBookmarked = this.state.bookmarkedQuestions.has(questionKey);
-        const isViewed = this.state.viewedQuestions.has(questionKey);
-        const isAnswered = this.state.answersRevealed.has(questionKey);
-        const wasFirstCorrect = this.state.firstAttemptCorrect[questionKey];
-        const dotStateClass = isAnswered ? (wasFirstCorrect ? 'is-correct-dot' : 'is-wrong-dot') : '';
-        const dotContent = isAnswered ? '' : (isBookmarked ? '&#9733;' : i + 1);
-        const dotTitle = isLocked
-          ? `Question ${i + 1} - Answer the current question first`
-          : `Question ${i + 1}${isAnswered ? (wasFirstCorrect ? ' - Correct' : ' - Wrong') : ''}`;
-
-        html += `
-          <button class="question-dot ${isActive ? 'is-active' : ''} ${isViewed ? 'is-viewed' : ''} ${isBookmarked ? 'is-bookmarked' : ''} ${dotStateClass} ${isLocked ? 'is-locked' : ''}"
-                  onclick="MCQApp.jumpToQuestion(${i})"
-                  title="${dotTitle}"
-                  aria-label="${dotTitle}"
-                  aria-current="${isActive ? 'page' : 'false'}"
-                  ${isLocked ? 'disabled' : ''}>
-            ${dotContent}
-          </button>
-        `;
-      }
-
-      dotsContainer.innerHTML = html;
-      this.scrollActiveQuestionDotIntoView();
-      return;
-    }
-
     const dotsContainer = document.getElementById('question-dots');
+    if (!dotsContainer) return;
+
     const filtered = this.getFilteredQuestions();
     const totalQuestions = filtered.length;
     const currentIndex = this.state.currentQuestionIndex;
-    
-    // For mobile/small screens: show only 5 dots at a time in a window
-    // For desktop: show more dots (up to 12)
+    const canAdvance = this.canAdvanceFromCurrentQuestion();
+    if (totalQuestions === 0) {
+      dotsContainer.innerHTML = '';
+      return;
+    }
+
+    // For mobile/small screens: show only 5 dots at a time in a window.
+    // For desktop: show more dots without rendering a huge strip.
     const isMobile = window.innerWidth < 768;
     const dotsPerWindow = isMobile ? 5 : 12;
-    
+
     // Calculate which window the current question is in
     const currentWindow = Math.floor(currentIndex / dotsPerWindow);
     const windowStart = currentWindow * dotsPerWindow;
     const windowEnd = Math.min(windowStart + dotsPerWindow, totalQuestions);
-    
+
     let html = '';
     
     // Add previous window button if not first window
     if (windowStart > 0) {
       html += `
         <button class="dot-nav-btn dot-nav-prev" 
-                onclick="MCQApp.jumpToQuestion(${Math.max(0, windowStart - dotsPerWindow)})"
+                onclick="${this.getInlineActionCall('MCQApp.jumpToQuestion', Math.max(0, windowStart - dotsPerWindow))}"
                 aria-label="Previous questions">
           ‹
         </button>
@@ -3138,19 +3121,25 @@ const MCQApp = {
     for (let i = windowStart; i < windowEnd; i++) {
       const q = filtered[i];
       const isActive = i === currentIndex;
+      const isLocked = i > currentIndex && !canAdvance;
       const questionKey = this.getQuestionStateKey(q);
       const isBookmarked = this.state.bookmarkedQuestions.has(questionKey);
       const isViewed = this.state.viewedQuestions.has(questionKey);
       const isAnswered = this.state.answersRevealed.has(questionKey);
       const wasFirstCorrect = this.state.firstAttemptCorrect[questionKey];
       const dotStateClass = isAnswered ? (wasFirstCorrect ? 'is-correct-dot' : 'is-wrong-dot') : '';
+      const dotTitle = isLocked
+        ? `Question ${i + 1} - Answer the current question first`
+        : `Question ${i + 1}${isAnswered ? (wasFirstCorrect ? ' - Correct' : ' - Wrong') : ''}`;
       const dotContent = isAnswered ? '' : (isBookmarked ? '⭐' : i + 1);
       
       html += `
-        <button class="question-dot ${isActive ? 'is-active' : ''} ${isViewed ? 'is-viewed' : ''} ${isBookmarked ? 'is-bookmarked' : ''} ${dotStateClass}"
-                onclick="MCQApp.jumpToQuestion(${i})"
-                title="Question ${i + 1}${isAnswered ? (wasFirstCorrect ? ' - Correct' : ' - Wrong') : ''}"
-                aria-label="Question ${i + 1}${isAnswered ? (wasFirstCorrect ? ' - Correct' : ' - Wrong') : ''}">
+        <button class="question-dot ${isActive ? 'is-active' : ''} ${isViewed ? 'is-viewed' : ''} ${isBookmarked ? 'is-bookmarked' : ''} ${dotStateClass} ${isLocked ? 'is-locked' : ''}"
+                onclick="${this.getInlineActionCall('MCQApp.jumpToQuestion', i)}"
+                title="${this.escapeHtml(dotTitle)}"
+                aria-label="${this.escapeHtml(dotTitle)}"
+                aria-current="${isActive ? 'page' : 'false'}"
+                ${isLocked ? 'disabled' : ''}>
           ${dotContent}
         </button>
       `;
@@ -3159,15 +3148,17 @@ const MCQApp = {
     // Add next window button if not last window
     if (windowEnd < totalQuestions) {
       html += `
-        <button class="dot-nav-btn dot-nav-next" 
-                onclick="MCQApp.jumpToQuestion(${Math.min(windowEnd, totalQuestions - 1)})"
-                aria-label="Next questions">
+        <button class="dot-nav-btn dot-nav-next ${Math.min(windowEnd, totalQuestions - 1) > currentIndex && !canAdvance ? 'is-locked' : ''}" 
+                onclick="${this.getInlineActionCall('MCQApp.jumpToQuestion', Math.min(windowEnd, totalQuestions - 1))}"
+                aria-label="Next questions"
+                ${Math.min(windowEnd, totalQuestions - 1) > currentIndex && !canAdvance ? 'disabled' : ''}>
           ›
         </button>
       `;
     }
     
     dotsContainer.innerHTML = html;
+    this.scrollActiveQuestionDotIntoView();
   },
 
   // Jump to Question

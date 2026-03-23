@@ -58,6 +58,16 @@ const CORE_ASSETS = [
   '/data/flashcards/flashcards-2-part-8.json'
 ];
 
+function cacheIfOk(cacheName, key, response) {
+  if (!response || !response.ok) {
+    return response;
+  }
+
+  const copy = response.clone();
+  caches.open(cacheName).then((cache) => cache.put(key, copy));
+  return response;
+}
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
@@ -115,11 +125,7 @@ self.addEventListener('fetch', (event) => {
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(STATIC_CACHE).then((cache) => cache.put('/index.html', copy));
-          return response;
-        })
+        .then((response) => cacheIfOk(STATIC_CACHE, '/index.html', response))
         .catch(() => caches.match('/index.html'))
     );
     return;
@@ -129,11 +135,7 @@ self.addEventListener('fetch', (event) => {
   if (url.pathname.startsWith('/data/') && url.pathname.endsWith('.json')) {
     event.respondWith(
       fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(DATA_CACHE).then((cache) => cache.put(request, copy));
-          return response;
-        })
+        .then((response) => cacheIfOk(DATA_CACHE, request, response))
         .catch(() => caches.match(request).then((cached) => cached || caches.match(url.pathname)))
         .then((fallback) => fallback || new Response('Offline', { status: 503 }))
     );
@@ -150,11 +152,7 @@ self.addEventListener('fetch', (event) => {
   ) {
     event.respondWith(
       fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(STATIC_CACHE).then((cache) => cache.put(request, copy));
-          return response;
-        })
+        .then((response) => cacheIfOk(STATIC_CACHE, request, response))
         .catch(() => caches.match(request).then((cached) => cached || caches.match(url.pathname)))
     );
     return;
@@ -167,9 +165,7 @@ self.addEventListener('fetch', (event) => {
       caches.match(url.pathname).then((pathCached) =>
         pathCached ||
         fetch(request).then((response) => {
-          const copy = response.clone();
-          caches.open(STATIC_CACHE).then((cache) => cache.put(request, copy));
-          return response;
+          return cacheIfOk(STATIC_CACHE, request, response);
         })
       )
     )
