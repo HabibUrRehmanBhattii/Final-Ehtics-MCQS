@@ -1,7 +1,7 @@
 // ===================================
 // MCQ Study Platform - Main Application
 // ===================================
-// Test: Auto-versioning system - A&S chapters fixed (0 questions for coming-soon)
+// Test: Auto-versioning system - Final cache bust for A&S questionCount
 
 const MCQApp = {
   appBuildVersion: '20260323i',

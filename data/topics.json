@@ -594,7 +594,7 @@
           "description": "Chapter quiz covering financial protection mechanisms in accident and sickness insurance",
           "questionCount": 0,
           "status": "coming-soon",
-          "dataFile": "data/llqp-accident/hllqp-accident-01.json"
+          "dataFile": "data/llqp-accident/hllqp-accident-01.json?v=20260323i"
         },
         {
           "id": "hllqp-accident-02",
@@ -602,7 +602,7 @@
           "description": "Chapter quiz covering income protection strategies and disability benefits",
           "questionCount": 0,
           "status": "coming-soon",
-          "dataFile": "data/llqp-accident/hllqp-accident-02.json"
+          "dataFile": "data/llqp-accident/hllqp-accident-02.json?v=20260323i"
         },
         {
           "id": "hllqp-accident-03",
@@ -610,7 +610,7 @@
           "description": "Chapter quiz covering asset protection through accident and sickness insurance",
           "questionCount": 0,
           "status": "coming-soon",
-          "dataFile": "data/llqp-accident/hllqp-accident-03.json"
+          "dataFile": "data/llqp-accident/hllqp-accident-03.json?v=20260323i"
         },
         {
           "id": "hllqp-accident-04",
@@ -618,7 +618,7 @@
           "description": "Chapter quiz covering savings protection and critical illness coverage",
           "questionCount": 0,
           "status": "coming-soon",
-          "dataFile": "data/llqp-accident/hllqp-accident-04.json"
+          "dataFile": "data/llqp-accident/hllqp-accident-04.json?v=20260323i"
         },
         {
           "id": "hllqp-accident-05",
@@ -626,7 +626,7 @@
           "description": "Chapter quiz covering business protection strategies and key person insurance",
           "questionCount": 0,
           "status": "coming-soon",
-          "dataFile": "data/llqp-accident/hllqp-accident-05.json"
+          "dataFile": "data/llqp-accident/hllqp-accident-05.json?v=20260323i"
         },
         {
           "id": "hllqp-accident-06",
@@ -634,7 +634,7 @@
           "description": "Chapter quiz covering client needs assessment and profile analysis",
           "questionCount": 0,
           "status": "coming-soon",
-          "dataFile": "data/llqp-accident/hllqp-accident-06.json"
+          "dataFile": "data/llqp-accident/hllqp-accident-06.json?v=20260323i"
         },
         {
           "id": "hllqp-accident-07",
@@ -649,7 +649,7 @@
           "description": "Chapter quiz covering group accident and sickness plan structures and features",
           "questionCount": 0,
           "status": "coming-soon",
-          "dataFile": "data/llqp-accident/hllqp-accident-08.json"
+          "dataFile": "data/llqp-accident/hllqp-accident-08.json?v=20260323i"
         },
         {
           "id": "hllqp-accident-09",
@@ -657,7 +657,7 @@
           "description": "Comprehensive review test covering all chapters 1-8 of accident and sickness insurance",
           "questionCount": 0,
           "status": "coming-soon",
-          "dataFile": "data/llqp-accident/hllqp-accident-09.json"
+          "dataFile": "data/llqp-accident/hllqp-accident-09.json?v=20260323i"
         },
         {
           "id": "llqp-accident-manual-1",
