@@ -4,7 +4,7 @@
 
 const MCQApp = {
   appBuildVersion: '20260323i',
-  cacheVersion: 'v1.7.9',
+  cacheVersion: 'v1.7.10',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
@@ -5162,4 +5162,5 @@ const MCQApp = {
 document.addEventListener('DOMContentLoaded', () => {
   MCQApp.init();
 });
+ 
  
