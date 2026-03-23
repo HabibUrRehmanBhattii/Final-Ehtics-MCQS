@@ -5162,3 +5162,4 @@ const MCQApp = {
 document.addEventListener('DOMContentLoaded', () => {
   MCQApp.init();
 });
+ 
