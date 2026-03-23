@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 21,
+      "question": "Upon the death of the life insured, it is discovered that the insured's age was not proven at the time the policy was issued. What must happen during the claims process?",
+      "options": {
+        "A": "Nothing, age is assumed to be correct after death",
+        "B": "The claimant must provide proof of the deceased's age (like a birth certificate) before the claim can be paid",
+        "C": "The death benefit is automatically reduced by 10%",
+        "D": "The policy is instantly voided"
+      },
+      "correctAnswer": "B",
+      "explanation": "The claimant must provide proof of the deceased's age (like a birth certificate) before the claim can be paid",
+      "kidExplanation": "Insurance math is entirely based on how old you are! If you never showed the insurance company your birth certificate when you bought the policy, your family HAS to show it to them before they get the prize money."
+    },
+    {
+      "id": 22,
+      "question": "If proof of age at the time of claim reveals the insured was actually 5 years OLDER than stated on the application, how does the insurer adjust the payout?",
+      "options": {
+        "A": "They deny the claim completely for fraud",
+        "B": "They pay the full face amount but fine the agent",
+        "C": "They recalculate the death benefit, paying only the amount of insurance that the premiums paid would have purchased at the correct, older age",
+        "D": "They refund the premiums"
+      },
+      "correctAnswer": "C",
+      "explanation": "They recalculate the death benefit, paying only the amount of insurance that the premiums paid would have purchased at the correct, older age",
+      "kidExplanation": "If you accidentally said you were younger, you were paying a cheaper, young person price! The insurance company won't cancel the policy, but they will shrink the prize money to match the cheaper price you were paying."
+    },
+    {
+      "id": 23,
+      "question": "Under the Settlement Options of a life insurance policy, what does the Interest Option (or Interest on Deposit) entail?",
+      "options": {
+        "A": "The beneficiary receives the money in a lump sum and puts it in their own bank",
+        "B": "The insurance company keeps the death benefit principal and pays the beneficiary a guaranteed rate of interest at regular intervals",
+        "C": "The beneficiary must pay interest to the insurance company",
+        "D": "The death benefit is converted to a stock market portfolio"
+      },
+      "correctAnswer": "B",
+      "explanation": "The insurance company keeps the death benefit principal and pays the beneficiary a guaranteed rate of interest at regular intervals",
+      "kidExplanation": "Instead of taking the giant pile of money home, you leave it safely locked inside the insurance company's vault. The company uses it, and as a thank you, they send you a smaller check of extra interest money every single month!"
+    },
+    {
+      "id": 24,
+      "question": "If a beneficiary selects the Life Annuity settlement option for a death claim, how is the money paid?",
+      "options": {
+        "A": "As a single, tax-free lump sum",
+        "B": "As a series of regular payments that are guaranteed to continue for the rest of the beneficiary's life, no matter how long they live",
+        "C": "As a 10-year temporary loan",
+        "D": "As dividends paid once a year"
+      },
+      "correctAnswer": "B",
+      "explanation": "As a series of regular payments that are guaranteed to continue for the rest of the beneficiary's life, no matter how long they live",
+      "kidExplanation": "Instead of getting one giant mountain of cash, you trade it for a magical machine! This machine (an annuity) promises to spit out a little bit of money every single month for the rest of your life, so you never run out of cash!"
+    },
+    {
+      "id": 25,
+      "question": "A policyholder names their minor child (age 8) as the direct beneficiary of their life insurance policy without naming a trustee. If the policyholder dies, what happens to the death benefit?",
+      "options": {
+        "A": "The insurance company writes a check directly to the 8-year-old",
+        "B": "The money is paid to the surviving parent to spend as they wish",
+        "C": "The money must be paid to a court-appointed guardian or the Public Trustee, who manages it until the child reaches the age of majority",
+        "D": "The money is kept by the insurance company forever"
+      },
+      "correctAnswer": "C",
+      "explanation": "The money must be paid to a court-appointed guardian or the Public Trustee, who manages it until the child reaches the age of majority",
+      "kidExplanation": "You can't hand a million dollars to an 8-year-old! If you forget to name a trusted adult to hold the money, the government steps in. A government worker (the Public Trustee) puts the money in a special timeout account until the kid turns 18!"
+    },
+    {
+      "id": 26,
+      "question": "An insured individual has a term life insurance policy that allows conversion to permanent insurance. What ongoing service should the agent provide regarding this feature?",
+      "options": {
+        "A": "The agent should ignore it, as conversions don't pay commission",
+        "B": "The agent should track the policy's conversion expiry date and remind the client well in advance so they don't miss the opportunity to convert without a medical exam",
+        "C": "The agent should force the client to take a medical exam every year",
+        "D": "The agent should cancel the term policy automatically on the expiry date"
+      },
+      "correctAnswer": "B",
+      "explanation": "The agent should track the policy's conversion expiry date and remind the client well in advance so they don't miss the opportunity to convert without a medical exam",
+      "kidExplanation": "Term insurance has an expiration date! A good agent marks their calendar and calls you before that date arrives to say, Hey! Your temporary shield is about to expire. Do you want to trade it in for a permanent shield before it's too late?"
+    },
+    {
+      "id": 27,
+      "question": "During a policy review, a client mentions they have recently taken up scuba diving. The client has an existing standard life insurance policy that has been in force for 5 years. Does the client need to notify the insurer?",
+      "options": {
+        "A": "Yes, they must notify the insurer and pay a higher premium",
+        "B": "Yes, and the insurer will likely add an exclusion rider",
+        "C": "No, once a life insurance policy is issued, subsequent changes in health, occupation, or hobbies do not affect the coverage or premiums",
+        "D": "No, but the policy will automatically void if they die while scuba diving"
+      },
+      "correctAnswer": "C",
+      "explanation": "No, once a life insurance policy is issued, subsequent changes in health, occupation, or hobbies do not affect the coverage or premiums",
+      "kidExplanation": "Once you buy the policy and shake hands, the rules are locked! If you decide to take up a dangerous hobby 5 years later, the insurance company can't charge you extra or take your policy away. Your coverage stays exactly the same!"
+    },
+    {
+      "id": 28,
+      "question": "If an insurance company delays the payment of a death claim significantly (e.g., beyond 30 days after receiving all necessary proof), what are they usually required to do?",
+      "options": {
+        "A": "Pay a 10% penalty to the government",
+        "B": "Pay interest on the death benefit from the date they received the proof of claim until the date they actually pay out the funds",
+        "C": "Double the death benefit",
+        "D": "Refund all premiums paid over the life of the policy"
+      },
+      "correctAnswer": "B",
+      "explanation": "Pay interest on the death benefit from the date they received the proof of claim until the date they actually pay out the funds",
+      "kidExplanation": "If the insurance company drags their feet and takes way too long to hand over the prize money, they have to pay a late fee. They have to add extra interest money to the prize to apologize for making the family wait!"
+    },
+    {
+      "id": 29,
+      "question": "A policyholder loses their physical life insurance contract in a house fire. What is the standard procedure to resolve this?",
+      "options": {
+        "A": "The policy is legally voided if the original document is destroyed",
+        "B": "The policyholder must apply for a brand new policy and undergo new medical underwriting",
+        "C": "The policyholder signs a Declaration of Lost Policy, and the insurer issues a replacement or duplicate contract",
+        "D": "The agent writes a new contract by hand"
+      },
+      "correctAnswer": "C",
+      "explanation": "The policyholder signs a Declaration of Lost Policy, and the insurer issues a replacement or duplicate contract",
+      "kidExplanation": "The actual paper isn't magic! The magic is the promise in the computer system. If your paper burns up, you just sign a form promising you lost it, and the insurance company prints you a brand new copy of your rulebook!"
+    },
+    {
+      "id": 30,
+      "question": "Which of the following is a key reason an agent should conduct regular (e.g., annual) policy reviews with their clients?",
+      "options": {
+        "A": "To guarantee the client's premiums will decrease every year",
+        "B": "To ensure the client's beneficiary designations, coverage amounts, and policy types still align with their changing life circumstances (e.g., marriage, divorce, new children, paid-off mortgage)",
+        "C": "To legally extend the contestability period",
+        "D": "To reset the 10-day right of rescission"
+      },
+      "correctAnswer": "B",
+      "explanation": "To ensure the client's beneficiary designations, coverage amounts, and policy types still align with their changing life circumstances (e.g., marriage, divorce, new children, paid-off mortgage)",
+      "kidExplanation": "Life changes fast! You might buy a new house, get married, or have a baby. The agent visits you every year to check if your old shield is still the right size for your new life, and fixes it if it's not!"
+    }
+  ]
+}

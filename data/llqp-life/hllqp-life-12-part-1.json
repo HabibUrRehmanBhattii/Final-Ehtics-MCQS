@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "question": "When an agent physically or electronically delivers a newly issued life insurance policy to the client, they will ask the client to sign a delivery receipt. What is the primary legal purpose of this receipt?",
+      "options": {
+        "A": "To prove the client has paid their first premium",
+        "B": "To officially start the clock on the 10-day right of rescission (free-look period)",
+        "C": "To bind the insurance company to a guaranteed premium rate",
+        "D": "To waive the client's right to cancel the policy"
+      },
+      "correctAnswer": "B",
+      "explanation": "To officially start the clock on the 10-day right of rescission (free-look period)",
+      "kidExplanation": "When you buy a toy, you usually have a few days to return it if you don't like it. The delivery receipt is just a piece of paper that proves exactly what day you brought the toy home, so the store knows exactly when your 10-day return window starts!"
+    },
+    {
+      "id": 2,
+      "question": "A client receives their new life insurance policy and decides 5 days later that they do not want it. Under the right of rescission, what are they entitled to?",
+      "options": {
+        "A": "A refund of their premium, minus a 10% administrative penalty",
+        "B": "A conversion to a cheaper term policy",
+        "C": "Cancellation of the policy and a full 100% refund of any premiums paid",
+        "D": "Only a refund of the unearned portion of the premium"
+      },
+      "correctAnswer": "C",
+      "explanation": "Cancellation of the policy and a full 100% refund of any premiums paid",
+      "kidExplanation": "The 10-day free look is a magic undo button! If you press it within the first 10 days of getting your policy, the insurance company takes the policy back and gives you back every single penny you paid. No penalties, no questions asked!"
+    },
+    {
+      "id": 3,
+      "question": "What happens if a policyholder misses their scheduled premium payment date?",
+      "options": {
+        "A": "The policy is instantly canceled the very next day",
+        "B": "The policy enters a grace period (usually 30 or 31 days) during which it remains fully in force",
+        "C": "The death benefit is permanently cut in half",
+        "D": "The insurance company automatically sues the policyholder"
+      },
+      "correctAnswer": "B",
+      "explanation": "The policy enters a grace period (usually 30 or 31 days) during which it remains fully in force",
+      "kidExplanation": "If you forget to pay your bill, the insurance company doesn't take your shield away immediately! They give you a 30-day grace period to remember and pay your bill. If something bad happens during those 30 days, your family is still 100% protected."
+    },
+    {
+      "id": 4,
+      "question": "If a policyholder dies during the 31-day grace period without having paid the overdue premium, how does the insurance company handle the claim?",
+      "options": {
+        "A": "The claim is denied because the premium was late",
+        "B": "The insurance company pays 50% of the death benefit",
+        "C": "The insurance company pays the full death benefit but deducts the exact amount of the overdue premium from the payout",
+        "D": "The beneficiary must pay the premium out-of-pocket before filing the claim"
+      },
+      "correctAnswer": "C",
+      "explanation": "The insurance company pays the full death benefit but deducts the exact amount of the overdue premium from the payout",
+      "kidExplanation": "If you pass away during the grace period, the insurance company still pays your family the giant prize! BUT, because you forgot to pay your last monthly bill, they will subtract that one missing bill from the giant prize before handing it over."
+    },
+    {
+      "id": 5,
+      "question": "When a life insurance policy lapses due to non-payment of premiums after the grace period expires, what right does the policyholder usually have?",
+      "options": {
+        "A": "The right to demand a full refund of all past premiums",
+        "B": "The right to reinstate the policy, typically within two years, by paying all back premiums with interest and providing new evidence of insurability",
+        "C": "The right to force the insurer to issue a new policy at their original age",
+        "D": "The right to convert the lapsed policy into a public stock"
+      },
+      "correctAnswer": "B",
+      "explanation": "The right to reinstate the policy, typically within two years, by paying all back premiums with interest and providing new evidence of insurability",
+      "kidExplanation": "If your shield turns off because you forgot to pay for too long, you can turn it back on (reinstate it)! But you have to pay back all the money you missed, plus a little extra for being late, AND take a new health test to prove you are still healthy."
+    },
+    {
+      "id": 6,
+      "question": "If a policyholder successfully reinstates a lapsed life insurance policy, what happens to the 2-year suicide exclusion and the 2-year contestability period?",
+      "options": {
+        "A": "They do not apply; the original dates remain in effect",
+        "B": "They permanently disappear",
+        "C": "The 2-year clocks for both suicide and contestability usually restart from the date of reinstatement",
+        "D": "They are extended to 5 years"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 2-year clocks for both suicide and contestability usually restart from the date of reinstatement",
+      "kidExplanation": "When you turn a canceled policy back on, the insurance company resets the safety clocks. They get a brand-new 2-year window to check for any lies on your new health test, just like when you first bought the policy!"
+    },
+    {
+      "id": 7,
+      "question": "A whole life policyholder forgets to pay their premium and goes on a long vacation. The policy has a large cash surrender value. Which provision will likely prevent the policy from lapsing?",
+      "options": {
+        "A": "The incontestability provision",
+        "B": "The Automatic Premium Loan (APL) provision",
+        "C": "The guaranteed insurability benefit",
+        "D": "The reinstatement provision"
+      },
+      "correctAnswer": "B",
+      "explanation": "The Automatic Premium Loan (APL) provision",
+      "kidExplanation": "APL is like a secret emergency robot! If you forget to pay your bill, the robot reaches into your policy's savings account (the cash value), takes out just enough money to pay the bill for you, and keeps your shield turned on!"
+    },
+    {
+      "id": 8,
+      "question": "During an annual review, an agent discovers their client recently had a baby. What ongoing service recommendation is most appropriate?",
+      "options": {
+        "A": "Cancel the current policy and start a new one",
+        "B": "Add the new child as a beneficiary and consider adding a Children's Term Rider to the existing policy",
+        "C": "Assign the policy absolutely to the baby",
+        "D": "Change the policy to an annuity"
+      },
+      "correctAnswer": "B",
+      "explanation": "Add the new child as a beneficiary and consider adding a Children's Term Rider to the existing policy",
+      "kidExplanation": "When a new baby arrives, the agent needs to update your rulebook! They write the baby's name down so the baby gets a piece of the prize if you pass away. They might also suggest buying a mini-shield just for the baby!"
+    },
+    {
+      "id": 9,
+      "question": "A client wants to use their life insurance policy as collateral for a bank loan. What type of assignment must they execute?",
+      "options": {
+        "A": "Absolute assignment",
+        "B": "Collateral assignment",
+        "C": "Irrevocable assignment",
+        "D": "Beneficiary assignment"
+      },
+      "correctAnswer": "B",
+      "explanation": "Collateral assignment",
+      "kidExplanation": "Collateral just means a promise. You promise the bank, If I die before I pay you back, my life insurance will pay you first! You still own the policy, you are just letting the bank hold onto a piece of it until your loan is paid off."
+    },
+    {
+      "id": 10,
+      "question": "What happens if a policyholder makes an absolute assignment of their life insurance policy to another person?",
+      "options": {
+        "A": "The policyholder retains the right to change the beneficiary",
+        "B": "The policyholder transfers all rights, privileges, and ownership of the policy permanently to the new owner",
+        "C": "The policy is temporarily paused",
+        "D": "The insurance company automatically cancels the contract"
+      },
+      "correctAnswer": "B",
+      "explanation": "The policyholder transfers all rights, privileges, and ownership of the policy permanently to the new owner",
+      "kidExplanation": "Absolute means total and forever. If you make an absolute assignment, you are completely giving your toy away to someone else. They are the new boss of the policy, and you can never take it back!"
+    }
+  ]
+}

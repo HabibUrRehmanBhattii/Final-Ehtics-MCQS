@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 11,
+      "question": "A policyholder with a participating whole life policy receives an annual dividend and chooses the Paid-Up Additions (PUA) option. What does this mean?",
+      "options": {
+        "A": "The dividend is used to pay the next month's premium",
+        "B": "The dividend is paid out in cash",
+        "C": "The dividend is used as a single premium to buy a small chunk of additional, fully paid-up permanent life insurance, increasing the total death benefit",
+        "D": "The dividend is deposited into a mutual fund"
+      },
+      "correctAnswer": "C",
+      "explanation": "The dividend is used as a single premium to buy a small chunk of additional, fully paid-up permanent life insurance, increasing the total death benefit",
+      "kidExplanation": "Imagine your insurance company gives you a $50 bonus. Instead of taking the cash, you use that $50 to buy a tiny, extra shield that you never have to pay for again! Every year you get a bonus, your total shield gets bigger and bigger."
+    },
+    {
+      "id": 12,
+      "question": "When a client takes out a policy loan against the cash value of their whole life insurance, what are they actually borrowing against?",
+      "options": {
+        "A": "Their future employment income",
+        "B": "The cash surrender value of the policy",
+        "C": "The face amount (death benefit) of the policy",
+        "D": "The insurance company's general reserve fund"
+      },
+      "correctAnswer": "B",
+      "explanation": "The cash surrender value of the policy",
+      "kidExplanation": "You aren't borrowing the death benefit money; you are borrowing from the secret savings account (the cash value) growing inside your policy. It's like taking a loan from your very own piggy bank!"
+    },
+    {
+      "id": 13,
+      "question": "What happens if a policyholder dies while they have an outstanding policy loan that has not been paid back?",
+      "options": {
+        "A": "The claim is completely denied",
+        "B": "The outstanding loan amount plus any accumulated interest is deducted from the death benefit before it is paid to the beneficiary",
+        "C": "The beneficiary inherits the loan and must pay it off monthly",
+        "D": "The insurance company forgives the loan entirely"
+      },
+      "correctAnswer": "B",
+      "explanation": "The outstanding loan amount plus any accumulated interest is deducted from the death benefit before it is paid to the beneficiary",
+      "kidExplanation": "If you borrow $10 from your policy and pass away before you put it back, the insurance company still pays your family the giant prize. But, they take their $10 back first!"
+    },
+    {
+      "id": 14,
+      "question": "A client wishes to change the beneficiary on their policy. They currently have an irrevocable beneficiary named. What is required to make this change?",
+      "options": {
+        "A": "Only the policyholder's signature",
+        "B": "A court order from a judge",
+        "C": "The written consent and signature of the current irrevocable beneficiary",
+        "D": "The agent's signature"
+      },
+      "correctAnswer": "C",
+      "explanation": "The written consent and signature of the current irrevocable beneficiary",
+      "kidExplanation": "Irrevocable means locked tight! You cannot take that person's name off the policy unless they agree to it and sign a piece of paper saying, Yes, I am okay with giving up my prize."
+    },
+    {
+      "id": 15,
+      "question": "At the time of a death claim, the beneficiary must submit a Claimant's Statement. What is the purpose of this document?",
+      "options": {
+        "A": "To prove the age of the deceased",
+        "B": "To officially notify the insurer of the death, identify the claimant, and formally request the death benefit payment",
+        "C": "To provide a detailed medical history of the deceased",
+        "D": "To legally transfer ownership of the policy"
+      },
+      "correctAnswer": "B",
+      "explanation": "To officially notify the insurer of the death, identify the claimant, and formally request the death benefit payment",
+      "kidExplanation": "The Claimant's Statement is just a form you fill out that says, Hello Insurance Company, I am the person named on the policy, the insured has passed away, and I would like to collect the prize money now, please."
+    },
+    {
+      "id": 16,
+      "question": "Along with the Claimant's Statement, what is the most critical official document the insurance company requires to process a death claim?",
+      "options": {
+        "A": "The original application form",
+        "B": "A valid Proof of Death (such as an official Death Certificate issued by the province or a funeral director's statement)",
+        "C": "The deceased's last will and testament",
+        "D": "The deceased's final tax return"
+      },
+      "correctAnswer": "B",
+      "explanation": "A valid Proof of Death (such as an official Death Certificate issued by the province or a funeral director's statement)",
+      "kidExplanation": "The insurance company needs proof that the person actually went to heaven before they hand out a million dollars! An official Death Certificate from the government or the funeral home is the ultimate proof."
+    },
+    {
+      "id": 17,
+      "question": "If a life insured dies within the 2-year contestability period, what additional document will the insurance company almost certainly request during the claims process?",
+      "options": {
+        "A": "An Attending Physician's Statement (APS) or access to the deceased's medical records",
+        "B": "A Motor Vehicle Report",
+        "C": "The deceased's high school diploma",
+        "D": "A new inspection report from a private investigator"
+      },
+      "correctAnswer": "A",
+      "explanation": "An Attending Physician's Statement (APS) or access to the deceased's medical records",
+      "kidExplanation": "If someone passes away very shortly after buying insurance, the company gets a little suspicious. They will ask the doctor for the medical files to make sure the person didn't lie about being secretly sick when they filled out the application!"
+    },
+    {
+      "id": 18,
+      "question": "What happens if the insurance company discovers during a claim investigation that the deceased committed suicide 14 months after the policy was issued?",
+      "options": {
+        "A": "They pay the full death benefit",
+        "B": "They deny the claim and keep all the money",
+        "C": "They invoke the suicide clause, deny the death benefit, but refund the premiums paid to the beneficiary or estate",
+        "D": "They pay exactly 50% of the death benefit"
+      },
+      "correctAnswer": "C",
+      "explanation": "They invoke the suicide clause, deny the death benefit, but refund the premiums paid to the beneficiary or estate",
+      "kidExplanation": "Most policies have a 2-year rule for suicide. If it happens in the first two years, the insurance company doesn't pay the giant prize. But to be fair, they do give back all the monthly bills (premiums) you paid into it."
+    },
+    {
+      "id": 19,
+      "question": "What is the agent's appropriate role when a client's beneficiary contacts them to report a death and start a claim?",
+      "options": {
+        "A": "Guarantee the beneficiary that the claim will be paid within 7 days",
+        "B": "Investigate the cause of death personally to protect the insurer",
+        "C": "Provide the necessary claim forms, offer empathetic assistance in completing them, and act as a liaison with the insurer, without ever promising that a claim will be paid",
+        "D": "Tell the beneficiary to contact a lawyer immediately"
+      },
+      "correctAnswer": "C",
+      "explanation": "Provide the necessary claim forms, offer empathetic assistance in completing them, and act as a liaison with the insurer, without ever promising that a claim will be paid",
+      "kidExplanation": "The agent is a helper, not the boss! When a family is sad, the agent gives them a hug, hands them the right paperwork, and helps them fill it out. But the agent can NEVER promise the company will pay, because only the head office gets to make that final decision!"
+    },
+    {
+      "id": 20,
+      "question": "A policyholder designated his wife as the primary beneficiary and his brother as the contingent (secondary) beneficiary. If the policyholder and his wife die simultaneously in a car accident, who receives the death benefit?",
+      "options": {
+        "A": "The wife's estate",
+        "B": "The policyholder's estate",
+        "C": "The brother (contingent beneficiary)",
+        "D": "The provincial government"
+      },
+      "correctAnswer": "C",
+      "explanation": "The brother (contingent beneficiary)",
+      "kidExplanation": "The law has a special rule for this! If a husband and wife pass away at the exact same time, the law pretends the beneficiary (the wife) went to heaven first. Since she is gone, the money skips her and goes straight to the backup player—the brother!"
+    }
+  ]
+}
