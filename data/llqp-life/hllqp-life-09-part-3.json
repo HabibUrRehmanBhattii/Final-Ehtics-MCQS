@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 21,
+      "question": "If policy issued at standard rates to healthy applicant, and life insured develops severe illness three years later, can insurance company increase premiums or downgrade risk class?",
+      "options": {
+        "A": "Yes, can re-evaluate risk class yearly",
+        "B": "Yes, but must wait until 10-year anniversary",
+        "C": "No, locked in once issued; cannot downgrade or increase premium due to health decline",
+        "D": "No, but can legally cancel policy"
+      },
+      "correctAnswer": "C",
+      "explanation": "Once issued, premiums and risk class cannot be changed due to applicant's health",
+      "kidExplanation": "Once the insurance company shakes your hand and gives you the policy, your health is locked in! If you get really sick later, they are NOT allowed to raise your price or take away your policy. That's why you buy insurance when you are healthy!"
+    },
+    {
+      "id": 22,
+      "question": "When processing a death claim, insurer discovers life insured honestly misstated age, appearing 5 years younger. How will insurer handle claim?",
+      "options": {
+        "A": "Deny claim entirely due to misrepresentation",
+        "B": "Pay full face amount but fine beneficiary",
+        "C": "Pay adjusted death benefit reflecting amount premiums would have purchased at correct age",
+        "D": "Refund premiums to estate and cancel"
+      },
+      "correctAnswer": "C",
+      "explanation": "Age misstatement results in adjusted death benefit to match premium paid",
+      "kidExplanation": "If you accidentally say you are younger than you are, you paid a cheaper price than you were supposed to. The insurance company won't cancel the policy, they just shrink the payout to match the cheaper price you were paying!"
+    },
+    {
+      "id": 23,
+      "question": "In the \"Agent's comments\" section of the application, what is the agent expected to do?",
+      "options": {
+        "A": "Provide formal medical diagnosis based on observation",
+        "B": "Record observations regarding applicant's health, lifestyle, smoking status that contradict answers",
+        "C": "Demand underwriter approve policy",
+        "D": "Calculate exact premium modal factor"
+      },
+      "correctAnswer": "B",
+      "explanation": "Agent comments document observations that may indicate misrepresentation",
+      "kidExplanation": "If the client checks the box saying 'I never smoke,' but the agent sees them put out a cigarette before the meeting, the agent has to tell the truth in the 'Agent's Comments' box. The agent's job is to protect the insurance company from fibs!"
+    },
+    {
+      "id": 24,
+      "question": "Michael is in excellent health but frequently travels to a dangerous conflict zone. To avoid declining entirely, underwriter might issue with a specific condition. What is this called?",
+      "options": {
+        "A": "A preferred rating",
+        "B": "Temporary Insurance Agreement",
+        "C": "An exclusion denying death benefit if dies in that country",
+        "D": "Incontestability clause"
+      },
+      "correctAnswer": "C",
+      "explanation": "Activity-specific exclusions allow issuance while limiting exposure",
+      "kidExplanation": "An 'exclusion' is a special rule that says 'We will cover you for EVERYTHING... except for this one super dangerous thing you like to do.' If you pass away doing that one specific thing, they don't pay."
+    },
+    {
+      "id": 25,
+      "question": "Why is agent's delivery of issued policy considered a continuation of underwriting?",
+      "options": {
+        "A": "Agent must recalculate premium",
+        "B": "Agent must ensure medical or personal situation hasn't changed since application",
+        "C": "Agent must administer second medical exam",
+        "D": "Agent must verbally read entire contract"
+      },
+      "correctAnswer": "B",
+      "explanation": "Agent confirms applicant's condition hasn't materially changed before policy delivery",
+      "kidExplanation": "Between the time you apply and the time the policy is ready, you might have had a heart attack! When the agent hands you the final policy, they have to double-check that you are still just as healthy as you were when you first applied."
+    },
+    {
+      "id": 26,
+      "question": "If policyholder names spouse as \"irrevocable beneficiary\" on application, what does this mean for future changes?",
+      "options": {
+        "A": "Can never change beneficiary under any circumstances",
+        "B": "Can only change if spouse dies",
+        "C": "Cannot change without written permission of spouse",
+        "D": "Can change anytime by paying fee"
+      },
+      "correctAnswer": "C",
+      "explanation": "Irrevocable beneficiary designation requires beneficiary's written consent to change",
+      "kidExplanation": "'Irrevocable' means locked tight! If you make your spouse the irrevocable beneficiary, you can't ever take them off the policy unless they literally sign a piece of paper saying, 'I agree to let you take me off.'"
+    },
+    {
+      "id": 27,
+      "question": "Susan applied for $10 million coverage on her husband who earns $45,000 yearly and has no major debts. Underwriter declines. Why?",
+      "options": {
+        "A": "Amount not justified; insurance not meant to provide way to profit from death",
+        "B": "Companies forbidden from issuing over $5 million",
+        "C": "Underwriter suspects Susan of crime",
+        "D": "Husband must apply for his own insurance"
+      },
+      "correctAnswer": "A",
+      "explanation": "Insurance must be proportional to financial need, not create profit motive",
+      "kidExplanation": "Life insurance is supposed to act as a safety net to replace the money your family lost, not act as a giant lottery ticket to make you super rich! If the husband only makes a little bit of money, asking for 10 million dollars is way too much."
+    },
+    {
+      "id": 28,
+      "question": "When underwriter assigns baseline score (e.g., 100), this usually represents what?",
+      "options": {
+        "A": "Perfectly healthy 20-year-old",
+        "B": "Mortality risk posed by average person same age",
+        "C": "Completely uninsurable applicant",
+        "D": "Maximum allowable premium rate"
+      },
+      "correctAnswer": "B",
+      "explanation": "Baseline score represents standard mortality risk for age",
+      "kidExplanation": "The underwriter starts everyone at a completely average score of 100. If you are healthier than average, your score drops. If you are sicker than average, your score goes up. It's just a starting point!"
+    },
+    {
+      "id": 29,
+      "question": "What happens if agent submits application missing answers to several medical questions?",
+      "options": {
+        "A": "Underwriter assumes \"No\" and issues policy",
+        "B": "Underwriter automatically declines permanently",
+        "C": "Underwriter returns to agent to obtain missing information, causing delay",
+        "D": "Underwriter charges 50% premium penalty"
+      },
+      "correctAnswer": "C",
+      "explanation": "Incomplete applications must be completed before underwriting",
+      "kidExplanation": "If you hand in a test with blank questions, the teacher gives it back to you to finish! The underwriter won't guess your answers, they will mail it back to the agent and you have to wait even longer for your insurance."
+    },
+    {
+      "id": 30,
+      "question": "When premiums at issue are based on \"attained age\" of life insured, how is age typically calculated?",
+      "options": {
+        "A": "Always exact age in years, months, and days",
+        "B": "May be age at last birthday, nearest birthday, or next birthday depending on insurer",
+        "C": "Always age turning on December 31st that year",
+        "D": "Age when first met agent"
+      },
+      "correctAnswer": "B",
+      "explanation": "Attained age calculation varies by insurer",
+      "kidExplanation": "Different insurance companies use different clocks! Some look at how old you were on your last birthday, some look at how old you will be on your next birthday, and some just pick the birthday you are closest to today!"
+    }
+  ]
+}

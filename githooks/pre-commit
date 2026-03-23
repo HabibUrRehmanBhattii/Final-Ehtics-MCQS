@@ -28,8 +28,8 @@ SOURCE_FILES=(
   "js/auth.js"
   "css/style.css"
   "data/topics.json"
-  "data/llqp-life/*.json"
-  "tests/*.js"
+  "data/llqp-life/.*\.json"
+  "tests/.*\.js"
   "index.html"
 )
 

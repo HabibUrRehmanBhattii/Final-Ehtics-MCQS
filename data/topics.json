@@ -397,10 +397,33 @@
         {
           "id": "llqp-life-09",
           "name": "HLLQP - LIFE 09 QZ - Application and Underwriting",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-09.json"
+          "description": "Chapter quiz covering insurable interest, underwriting process, TIA, MIB, MVR, risk classification, misrepresentation, incontestability, and age calculations",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-09.json?v=20260323g",
+          "subTests": [
+            {
+              "id": "llqp-life-09-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-09-part-1.json?v=20260323g"
+            },
+            {
+              "id": "llqp-life-09-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-09-part-2.json?v=20260323g"
+            },
+            {
+              "id": "llqp-life-09-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-09-part-3.json?v=20260323g"
+            }
+          ]
         },
         {
           "id": "llqp-life-10",
