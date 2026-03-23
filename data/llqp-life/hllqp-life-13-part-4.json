@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 31,
+      "question": "If fraudulent misrepresentation is discovered after 5 years, what happens?",
+      "options": {
+        "A": "Insurer must pay, contestability period expired",
+        "B": "Insurer can void policy entirely, fraud invalidates contestability limit",
+        "C": "Benefit is adjusted for age error only",
+        "D": "10% penalty is assessed on death benefit"
+      },
+      "correctAnswer": "B",
+      "explanation": "They can void the policy entirely and deny the claim, because fraud invalidates the 2-year contestability limit",
+      "kidExplanation": "The insurance company has a 2-year safety window for honest mistakes. But if you lied ON PURPOSE to trick them, that safety window disappears! They can rip up your contract even 5 years later."
+    },
+    {
+      "id": 32,
+      "question": "What is an Attending Physician Statement (APS)?",
+      "options": {
+        "A": "Hospital bill documentation",
+        "B": "Report from applicant's doctor detailing medical history",
+        "C": "Contract between applicant and agent",
+        "D": "Official death certificate"
+      },
+      "correctAnswer": "B",
+      "explanation": "A report written by the applicant's personal doctor detailing their medical history, requested by the underwriter",
+      "kidExplanation": "An APS is just a fancy letter the insurance company asks your personal doctor to write. The letter tells the company exactly how healthy you are and what medicines you take!"
+    },
+    {
+      "id": 33,
+      "question": "Why might a stay-at-home parent need life insurance?",
+      "options": {
+        "A": "To pay off business debts",
+        "B": "To cover caregiving replacement expenses like childcare",
+        "C": "Because CRA requires it",
+        "D": "Only if they have high income"
+      },
+      "correctAnswer": "B",
+      "explanation": "Because replacing their caregiving duties (e.g., childcare, household management) will result in significant new expenses for the surviving spouse",
+      "kidExplanation": "Even if mom or dad doesn't bring home a paycheck, the work they do is super valuable! If they aren't there, the family has to pay for a nanny or babysitter, which costs a lot of money."
+    },
+    {
+      "id": 34,
+      "question": "What are liquid assets in estate planning?",
+      "options": {
+        "A": "Real estate property like cottages",
+        "B": "Art collection and valuables",
+        "C": "Cash, savings accounts, and life insurance that convert to cash quickly",
+        "D": "Private business interests"
+      },
+      "correctAnswer": "C",
+      "explanation": "Assets like cash, savings accounts, or life insurance that can be quickly converted to cash to pay final expenses",
+      "kidExplanation": "Liquid assets are things that can be turned into cold, hard cash instantly. If you don't have cash ready when you pass away, your family might have to sell your house in a panic just to pay the bills!"
+    },
+    {
+      "id": 35,
+      "question": "Why might life insurance be used for cottage capital gains tax?",
+      "options": {
+        "A": "It stops government from collecting tax",
+        "B": "Provides cash to pay capital gains tax, preventing cottage sale",
+        "C": "Forces family to continue living there",
+        "D": "Transfers cottage to corporation"
+      },
+      "correctAnswer": "B",
+      "explanation": "It provides the liquid cash needed to pay the capital gains tax, preventing the children from having to sell the cottage to pay the CRA",
+      "kidExplanation": "The government taxes the profit on your cottage when you pass away! Life insurance gives your kids a giant pile of cash so they can pay the tax monster and keep the family cabin."
+    },
+    {
+      "id": 36,
+      "question": "What is the Capitalization method for Income Replacement?",
+      "options": {
+        "A": "Divide annual income needed by expected interest rate",
+        "B": "Multiply total debt by inflation rate",
+        "C": "Move capital from one account to another",
+        "D": "Pay off mortgage completely"
+      },
+      "correctAnswer": "A",
+      "explanation": "Dividing the needed annual income by the expected interest rate to determine the lump sum required",
+      "kidExplanation": "Capitalization asks a math question: How giant does a pile of money need to be so that the interest it earns every year perfectly replaces the paycheck you used to bring home?"
+    },
+    {
+      "id": 37,
+      "question": "What is the Capital Needs Approach to life insurance needs analysis?",
+      "options": {
+        "A": "Calculates final expenses only",
+        "B": "Ignores inflation in calculations",
+        "C": "Creates comprehensive list of all specific capital needs to calculate exact lump sum",
+        "D": "Assumes money will never be spent"
+      },
+      "correctAnswer": "C",
+      "explanation": "It creates a comprehensive list of all specific capital needs (debts, taxes, education funds, and income shortfalls) to calculate the exact lump sum required",
+      "kidExplanation": "Instead of just replacing a paycheck, the Capital Needs Approach makes a giant shopping list! It adds up the missing paychecks, the funeral cost, the credit card bills, and the kids' college funds to get one perfect total!"
+    },
+    {
+      "id": 38,
+      "question": "Why is a cash flow check important before recommending Whole Life insurance?",
+      "options": {
+        "A": "Government grants are available",
+        "B": "If no positive cash flow, client cannot afford premium and policy will lapse",
+        "C": "Determines the death benefit amount",
+        "D": "Calculates agent commission"
+      },
+      "correctAnswer": "B",
+      "explanation": "Because permanent insurance is expensive; if the client doesn't have positive cash flow (extra money at the end of the month), they cannot afford the premium and the policy will lapse",
+      "kidExplanation": "It doesn't matter if the math says you need a permanent shield if you don't have enough allowance money to pay for it! The agent has to make sure you can actually afford the monthly bill."
+    },
+    {
+      "id": 39,
+      "question": "What type of insurance is best for a young family with a tight budget?",
+      "options": {
+        "A": "Small Whole Life policy",
+        "B": "UL insurance with maximum contributions",
+        "C": "Term Life insurance for highest benefit at lowest initial premium",
+        "D": "No insurance coverage"
+      },
+      "correctAnswer": "C",
+      "explanation": "A Term Life insurance policy, as it provides the highest death benefit for the lowest initial premium",
+      "kidExplanation": "If you need a giant shield right now but you don't have a lot of money, you rent a temporary shield (Term insurance). It's super cheap and gives your family maximum protection!"
+    },
+    {
+      "id": 40,
+      "question": "What is an exclusion in an insurance contract?",
+      "options": {
+        "A": "Retirement bonus for long-term policyholders",
+        "B": "Specific condition or activity the policy will NOT cover",
+        "C": "Removal of the insurance agent from policy",
+        "D": "Tax-free dividend payment option"
+      },
+      "correctAnswer": "B",
+      "explanation": "A specific condition or activity (like suicide within 2 years, or a dangerous hobby) that the policy will NOT cover",
+      "kidExplanation": "Exclusions are the Fine Print. It's a rule that says, We will cover you for EVERYTHING... except if you die doing this one specific dangerous thing, like skydiving."
+    }
+  ]
+}

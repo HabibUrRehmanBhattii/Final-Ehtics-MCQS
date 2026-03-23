@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 21,
+      "question": "Are death benefits taxable to the beneficiary?",
+      "options": {
+        "A": "Fully taxable as income",
+        "B": "50% taxed as capital gains",
+        "C": "Entirely tax-free",
+        "D": "Taxable only if over $1 million"
+      },
+      "correctAnswer": "C",
+      "explanation": "No, they are received entirely tax-free",
+      "kidExplanation": "The government keeps its hands completely off the giant prize money. Your family gets to keep every single penny of the death benefit completely tax-free!"
+    },
+    {
+      "id": 22,
+      "question": "What is the tax treatment when surrendering a permanent policy for its cash value?",
+      "options": {
+        "A": "Entirely tax-free",
+        "B": "Must pay tax on the gain (proceeds minus adjusted cost basis)",
+        "C": "Amount is confiscated by government",
+        "D": "Policy owner goes to jail"
+      },
+      "correctAnswer": "B",
+      "explanation": "The policyholder must pay tax on the policy gain (Proceeds of Disposition minus the Adjusted Cost Basis)",
+      "kidExplanation": "If you turn your policy back into the store for cash, you have to do some math. If you got back more money than the policy actually cost you, that extra money is profit, and you have to pay taxes on the profit!"
+    },
+    {
+      "id": 23,
+      "question": "Can a permanent policy be transferred to a spouse tax-free?",
+      "options": {
+        "A": "No, must be sold to a stranger for cash",
+        "B": "Yes, if transferred to spouse or common-law partner",
+        "C": "Only if transferred to business partner",
+        "D": "Only if transferred to parent"
+      },
+      "correctAnswer": "B",
+      "explanation": "If it is transferred absolutely to a spouse or common-law partner",
+      "kidExplanation": "The government lets you pass your policy to your husband or wife like a hot potato! Because they are your spouse, the tax monster won't bite you when you hand it over."
+    },
+    {
+      "id": 24,
+      "question": "What is the purpose of the Maximum Tax Actuarial Reserve (MTAR) rule?",
+      "options": {
+        "A": "Sets minimum premium requirement",
+        "B": "Ensures policy is primarily for insurance, not investment",
+        "C": "Limits coverage to maximum of $5 million",
+        "D": "Determines agent commission"
+      },
+      "correctAnswer": "B",
+      "explanation": "To ensure a policy is primarily for life insurance protection and not just a giant, tax-sheltered investment account",
+      "kidExplanation": "The MTAR rule is a speed limit for your policy's savings account. It stops people from using insurance as a secret treasure chest to hide millions of dollars from the tax man!"
+    },
+    {
+      "id": 25,
+      "question": "What is the purpose of Key Person insurance?",
+      "options": {
+        "A": "Provides retirement pay for key employees",
+        "B": "Provides tax-free cash to cover lost revenue and replacement costs if crucial employee dies",
+        "C": "Helps avoid income taxes",
+        "D": "Covers spouse death expenses"
+      },
+      "correctAnswer": "B",
+      "explanation": "To provide a tax-free cash injection to the business to cover lost revenue and the costs of finding a replacement if a crucial employee dies",
+      "kidExplanation": "If the company's star quarterback passes away, the team is in big trouble. Key Person insurance gives the team a pile of cash to survive while they search for a new star player!"
+    },
+    {
+      "id": 26,
+      "question": "What is the purpose of a Buy-Sell Agreement?",
+      "options": {
+        "A": "Forces employees to buy company stock",
+        "B": "Dictates what happens to partner's shares if they die, with insurance funding buyout",
+        "C": "Allows foreign investors to purchase business",
+        "D": "Determines price for office equipment"
+      },
+      "correctAnswer": "B",
+      "explanation": "To dictate exactly what happens to a partner's shares if they die, using the insurance money to guarantee the surviving partners can buy out the deceased's family",
+      "kidExplanation": "It's a What If rulebook! If a partner passes away, the insurance company hands the surviving partners a pile of cash so they can instantly buy the shares back from the partner's family, keeping strangers out of the business!"
+    },
+    {
+      "id": 27,
+      "question": "What is the Capital Dividend Account (CDA) in a private corporation?",
+      "options": {
+        "A": "Account for employee salaries",
+        "B": "Notional account allowing tax-free death benefit passage to shareholders",
+        "C": "High-risk mutual fund account",
+        "D": "Government tax collection account"
+      },
+      "correctAnswer": "B",
+      "explanation": "A notional tracking account that allows the corporation to pass the tax-free life insurance death benefit down to the surviving shareholders completely tax-free",
+      "kidExplanation": "The CDA is a magic tax-free scorecard! It proves to the government that the insurance money the company just received is special, so the company can hand that cash to the owners without anyone paying taxes."
+    },
+    {
+      "id": 28,
+      "question": "What is the tax treatment of premiums for business collateral insurance?",
+      "options": {
+        "A": "Death benefit is taxable income",
+        "B": "Business may deduct portion of premiums (NCPI) as business expense",
+        "C": "Loan is automatically forgiven",
+        "D": "Zero income tax applies"
+      },
+      "correctAnswer": "B",
+      "explanation": "The business may be able to deduct a portion of the premiums (the NCPI) as a business expense",
+      "kidExplanation": "Normally, you can't deduct insurance costs from your taxes. But if the bank makes you buy it just to get a loan for your business, the government feels bad and lets you write off part of the cost!"
+    },
+    {
+      "id": 29,
+      "question": "What is the purpose of the Medical Information Bureau (MIB)?",
+      "options": {
+        "A": "Provides official diagnosis information",
+        "B": "Shares coded medical information among insurers to detect fraud and omissions",
+        "C": "Forces applicants to take blood tests",
+        "D": "Sells medical data to advertisers"
+      },
+      "correctAnswer": "B",
+      "explanation": "To share coded medical information among insurers to detect fraud and omissions on applications",
+      "kidExplanation": "The MIB is a secret group chat for insurance companies. If you tell Company A you have a bad heart, they put a code in the chat. If you lie to Company B later, they check the chat and catch you!"
+    },
+    {
+      "id": 30,
+      "question": "What is a Temporary Insurance Agreement (TIA)?",
+      "options": {
+        "A": "Permanent coverage that requires no application",
+        "B": "Limited temporary coverage while application is being medically underwritten",
+        "C": "10-day free look period for policy review",
+        "D": "Waives first year premium requirement"
+      },
+      "correctAnswer": "B",
+      "explanation": "It provides a limited amount of temporary coverage immediately while the application is being medically underwritten",
+      "kidExplanation": "A TIA is a temporary shield that protects you while you wait for your real shield to be built in the factory. You only get it if you pay today and promise you are healthy!"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 41,
+      "question": "What is the 10-day right of rescission (free look period)?",
+      "options": {
+        "A": "Insurer's right to cancel policy",
+        "B": "Policyholder's right to review and return policy for full refund",
+        "C": "Grace period for missed premium payment",
+        "D": "Waiting period before claim payout"
+      },
+      "correctAnswer": "B",
+      "explanation": "The policyholder's right to review the newly delivered policy for 10 days and return it for a full, 100% refund if they change their mind",
+      "kidExplanation": "It's a 10-day return policy! When you get your new insurance book, you have 10 days to read it. If you decide you don't want it, you give it back and get all your money back!"
+    },
+    {
+      "id": 42,
+      "question": "What is the standard grace period for a missed premium?",
+      "options": {
+        "A": "10 days",
+        "B": "30 or 31 days",
+        "C": "60 days",
+        "D": "6 months"
+      },
+      "correctAnswer": "B",
+      "explanation": "30 or 31 days",
+      "kidExplanation": "If you accidentally forget to pay your bill on time, the company doesn't take your shield away instantly. They give you a 30-day grace period to pay up before you lose your protection!"
+    },
+    {
+      "id": 43,
+      "question": "If the policyholder dies during the grace period with an unpaid premium, what happens?",
+      "options": {
+        "A": "Claim is denied entirely",
+        "B": "Only 50% of death benefit is paid",
+        "C": "Insurer pays full death benefit but deducts unpaid premium",
+        "D": "Beneficiary goes to jail"
+      },
+      "correctAnswer": "C",
+      "explanation": "The insurer pays the full death benefit but deducts the unpaid premium from the payout",
+      "kidExplanation": "If you pass away during the grace period, the company still pays your family the giant prize! BUT, because you forgot to pay your last bill, they subtract that one bill from the prize before handing it over."
+    },
+    {
+      "id": 44,
+      "question": "Who must consent to change an irrevocable beneficiary?",
+      "options": {
+        "A": "Only the policyholder",
+        "B": "The insurance agent",
+        "C": "The current irrevocable beneficiary",
+        "D": "A judge"
+      },
+      "correctAnswer": "C",
+      "explanation": "The current irrevocable beneficiary must provide written consent",
+      "kidExplanation": "Irrevocable means locked tight! You can never take that person's name off the policy unless they actually sign a piece of paper saying they agree to give up the prize."
+    },
+    {
+      "id": 45,
+      "question": "What is the most critical document needed for a death claim?",
+      "options": {
+        "A": "Birth certificate",
+        "B": "Valid Death Certificate (Proof of Death)",
+        "C": "Original insurance application",
+        "D": "Bank statements"
+      },
+      "correctAnswer": "B",
+      "explanation": "A valid Proof of Death (such as a provincial Death Certificate)",
+      "kidExplanation": "The insurance company needs absolute proof that the person went to heaven before they hand out a million dollars! An official Death Certificate is the ultimate proof."
+    },
+    {
+      "id": 46,
+      "question": "If an error in age is discovered at the time of a death claim, what happens?",
+      "options": {
+        "A": "Policy is voided as fraud",
+        "B": "Death benefit is adjusted to amount correct age would have purchased",
+        "C": "Insurer sues the estate",
+        "D": "Full death benefit is paid regardless"
+      },
+      "correctAnswer": "B",
+      "explanation": "Adjust the death benefit to the amount the premiums would have purchased at the correct, older age",
+      "kidExplanation": "If you accidentally said you were younger, you were paying a cheaper price! The company won't cancel the policy, but they will shrink the prize money to match the cheaper price you were actually paying."
+    },
+    {
+      "id": 47,
+      "question": "What is a Life Annuity as a settlement option?",
+      "options": {
+        "A": "Single lump sum payment",
+        "B": "Series of regular payments guaranteed for rest of life",
+        "C": "Interest-only payments each month",
+        "D": "Invested in stock portfolio"
+      },
+      "correctAnswer": "B",
+      "explanation": "As a series of regular payments guaranteed to last for the rest of their life",
+      "kidExplanation": "Instead of getting one giant mountain of cash, you trade it for a magical machine! This machine promises to spit out a little bit of money every single month for the rest of your life."
+    },
+    {
+      "id": 48,
+      "question": "Why is a conversion expiry date important for Term Life insurance?",
+      "options": {
+        "A": "Policyholder loses license after date",
+        "B": "Reminds agent to remind client to convert before deadline with no exam required",
+        "C": "Policy is automatically canceled",
+        "D": "Premiums increase after expiry date"
+      },
+      "correctAnswer": "B",
+      "explanation": "So the agent can remind the client to convert the policy to permanent insurance before the deadline, guaranteeing coverage without a medical exam",
+      "kidExplanation": "Term insurance has an expiration date! A good agent calls you before that date to say, Hey! Your temporary shield is about to expire. Do you want to trade it in for a permanent shield before it's too late?"
+    },
+    {
+      "id": 49,
+      "question": "What should be done if the physical insurance contract is lost?",
+      "options": {
+        "A": "Must apply for entirely new policy",
+        "B": "Sign Declaration of Lost Policy so insurer can issue duplicate",
+        "C": "Policy is void and unenforceable",
+        "D": "Must hire lawyer to recover"
+      },
+      "correctAnswer": "B",
+      "explanation": "Sign a Declaration of Lost Policy so the insurer can issue a duplicate contract",
+      "kidExplanation": "The actual paper isn't magic! If your paper burns up or gets lost, you just sign a form promising you lost it, and the insurance company prints you a brand new copy of your rulebook!"
+    },
+    {
+      "id": 50,
+      "question": "What is the purpose of an annual policy review?",
+      "options": {
+        "A": "To extend the contestability period",
+        "B": "To ensure coverage matches client's current life situation",
+        "C": "To force the client to buy more insurance",
+        "D": "To reset the grace period"
+      },
+      "correctAnswer": "B",
+      "explanation": "To ensure the coverage, beneficiaries, and policy type still match the client's current life situation (e.g., new house, new baby, marriage)",
+      "kidExplanation": "Life changes fast! The agent visits you every year to check if your old shield is still the right size for your new life, and fixes it if it's not!"
+    }
+  ]
+}

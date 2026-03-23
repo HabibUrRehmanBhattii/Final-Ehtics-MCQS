@@ -97,6 +97,18 @@ NEW_TAG="20260323${NEW_VERSION}"
 
 echo -e "${BLUE}Version: ${OLD_TAG} → ${NEW_TAG}${NC}"
 
+# Extract and increment cacheVersion (semantic version like v1.7.8)
+CURRENT_CACHE_VERSION=$(grep -oP "cacheVersion: 'v\K[0-9]+\.[0-9]+\.[0-9]+" js/app.js | head -1)
+if [ -n "$CURRENT_CACHE_VERSION" ]; then
+  # Split version into major, minor, patch
+  MAJOR=$(echo $CURRENT_CACHE_VERSION | cut -d. -f1)
+  MINOR=$(echo $CURRENT_CACHE_VERSION | cut -d. -f2)
+  PATCH=$(echo $CURRENT_CACHE_VERSION | cut -d. -f3)
+  # Increment patch version
+  NEW_PATCH=$((PATCH + 1))
+  NEW_CACHE_VERSION="${MAJOR}.${MINOR}.${NEW_PATCH}"
+fi
+
 # Update index.html
 sed -i "s/v=${OLD_TAG}/v=${NEW_TAG}/g" index.html
 echo -e "${GREEN}✓ Updated index.html${NC}"
@@ -105,8 +117,19 @@ echo -e "${GREEN}✓ Updated index.html${NC}"
 sed -i "s/v=${OLD_TAG}/v=${NEW_TAG}/g" data/topics.json
 echo -e "${GREEN}✓ Updated data/topics.json${NC}"
 
+# Update js/app.js hardcoded appBuildVersion
+sed -i "s/appBuildVersion: '${OLD_TAG}'/appBuildVersion: '${NEW_TAG}'/g" js/app.js
+
+# Update js/app.js cacheVersion
+if [ -n "$NEW_CACHE_VERSION" ]; then
+  sed -i "s/cacheVersion: 'v${CURRENT_CACHE_VERSION}'/cacheVersion: 'v${NEW_CACHE_VERSION}'/g" js/app.js
+  echo -e "${GREEN}✓ Updated js/app.js (appBuildVersion & cacheVersion: v${CURRENT_CACHE_VERSION} → v${NEW_CACHE_VERSION})${NC}"
+else
+  echo -e "${GREEN}✓ Updated js/app.js appBuildVersion${NC}"
+fi
+
 # Stage the updated files
-git add index.html data/topics.json
+git add index.html data/topics.json js/app.js
 echo -e "${GREEN}✓ Staged version updates${NC}"
 
 echo -e "${BLUE}=================================="
