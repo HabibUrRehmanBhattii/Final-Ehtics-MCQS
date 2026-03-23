@@ -3,8 +3,8 @@
 // ===================================
 
 const MCQApp = {
-  appBuildVersion: '20260323c',
-  cacheVersion: 'v1.7.5',
+  appBuildVersion: '20260323d',
+  cacheVersion: 'v1.7.6',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
@@ -271,7 +271,7 @@ const MCQApp = {
   },
 
   getVersionChipLabel() {
-    return `Build ${this.appBuildVersion} | Cache ${this.cacheVersion}`;
+    return `Cache ${this.cacheVersion}`;
   },
 
   renderVersionChip() {
@@ -4232,7 +4232,6 @@ const MCQApp = {
           <div class="finish-stat"><span class="stat-label">Time goal:</span> <span class="stat-value">${timeSummary.recommendedTotalLabel} total</span></div>
           <div class="finish-stat"><span class="stat-label">Average / question:</span> <span class="stat-value">${timeSummary.averageQuestionLabel}</span></div>
           <div class="finish-stat"><span class="stat-label">Pace:</span> <span class="stat-value ${timeSummary.withinRecommended ? 'is-good' : 'is-warning'}">${this.escapeHtml(timeSummary.paceLabel)}</span></div>
-          <div class="finish-note">The 2:00 guideline is for the whole test total. One question can take longer if the full test still stays inside the target.</div>
         `;
       }
 

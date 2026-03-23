@@ -1819,13 +1819,6 @@ button { font-family: inherit; }
 .stat-value { font-weight: 700; background: rgba(255,255,255,.15); padding: .2rem .6rem; border-radius: var(--radius-xs); }
 .stat-value.is-good { background: rgba(16,185,129,.22); }
 .stat-value.is-warning { background: rgba(249,115,22,.22); }
-.finish-note {
-  max-width: 34rem;
-  margin: .4rem auto 0;
-  font-size: .82rem;
-  line-height: 1.45;
-  opacity: .9;
-}
 .finish-actions {
   display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center;
 }

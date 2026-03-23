@@ -214,5 +214,5 @@ test('checkCompletion shows total time guidance in the finish overview', () => {
   assert.match(elements.get('finish-stats').innerHTML, /20:00 total/);
   assert.match(elements.get('finish-stats').innerHTML, /Average \/ question:/);
   assert.match(elements.get('finish-stats').innerHTML, /Right on the total target/);
-  assert.match(elements.get('finish-stats').innerHTML, /One question can take longer/);
+  assert.doesNotMatch(elements.get('finish-stats').innerHTML, /finish-note/);
 });

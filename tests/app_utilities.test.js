@@ -233,6 +233,6 @@ test('renderVersionChip shows the current build and cache versions in the tiny b
 
   assert.equal(
     elements.get('app-build-chip').textContent,
-    `Build ${app.appBuildVersion} | Cache ${app.cacheVersion}`
+    `Cache ${app.cacheVersion}`
   );
 });
