@@ -589,32 +589,67 @@
       "status": "active",
       "practiceTests": [
         {
-          "id": "llqp-accident-1",
-          "name": "Practice Test 1",
-          "description": "A&S Insurance — LTC, disability calculations, and policy types (Questions 1–10)",
-          "questionCount": 10,
-          "dataFile": "data/llqp-accident/llqp-accident-1.json"
+          "id": "hllqp-accident-01",
+          "name": "HLLQP - A&S 01 QZ - Financial Protection Provided by Accident and Sickness Insurance",
+          "description": "Chapter quiz covering financial protection mechanisms in accident and sickness insurance",
+          "questionCount": 30,
+          "status": "active"
         },
         {
-          "id": "llqp-accident-2",
-          "name": "Practice Test 2",
-          "description": "A&S Insurance — CI, dental, travel, and tax treatment (Questions 11–20)",
-          "questionCount": 10,
-          "dataFile": "data/llqp-accident/llqp-accident-2.json"
+          "id": "hllqp-accident-02",
+          "name": "HLLQP - A&S 02 QZ - Insurance to Protect Income",
+          "description": "Chapter quiz covering income protection strategies and disability benefits",
+          "questionCount": 30,
+          "status": "active"
         },
         {
-          "id": "llqp-accident-3",
-          "name": "Practice Test 3",
-          "description": "A&S Insurance — Business insurance, buy-sell, underwriting, and claims (Questions 21–30)",
-          "questionCount": 10,
-          "dataFile": "data/llqp-accident/llqp-accident-3.json"
+          "id": "hllqp-accident-03",
+          "name": "HLLQP - A&S 03 QZ - Insurance to Protect Assets",
+          "description": "Chapter quiz covering asset protection through accident and sickness insurance",
+          "questionCount": 30,
+          "status": "active"
         },
         {
-          "id": "llqp-accident-4",
-          "name": "Practice Test 4",
-          "description": "A&S Insurance — FPO, group benefits, EAP, and coordination of benefits (Questions 31–35)",
-          "questionCount": 5,
-          "dataFile": "data/llqp-accident/llqp-accident-4.json"
+          "id": "hllqp-accident-04",
+          "name": "HLLQP - A&S 04 QZ - Insurance to Protect Savings",
+          "description": "Chapter quiz covering savings protection and critical illness coverage",
+          "questionCount": 30,
+          "status": "active"
+        },
+        {
+          "id": "hllqp-accident-05",
+          "name": "HLLQP - A&S 05 QZ - Insurance to Protect Businesses",
+          "description": "Chapter quiz covering business protection strategies and key person insurance",
+          "questionCount": 30,
+          "status": "active"
+        },
+        {
+          "id": "hllqp-accident-06",
+          "name": "HLLQP - A&S 06 QZ - Client Profile",
+          "description": "Chapter quiz covering client needs assessment and profile analysis",
+          "questionCount": 30,
+          "status": "active"
+        },
+        {
+          "id": "hllqp-accident-07",
+          "name": "HLLQP - A&S 07 QZ - Insurance Recommendation, Contract and Service Needs",
+          "description": "Chapter quiz covering policy recommendations, contract details, and ongoing service",
+          "questionCount": 30,
+          "status": "not-available"
+        },
+        {
+          "id": "hllqp-accident-08",
+          "name": "HLLQP - A&S 08 QZ - Group Plan Specifics",
+          "description": "Chapter quiz covering group accident and sickness plan structures and features",
+          "questionCount": 30,
+          "status": "active"
+        },
+        {
+          "id": "hllqp-accident-09",
+          "name": "HLLQP - A&S 09 QZ - Chapter 1 - 8 Review Test",
+          "description": "Comprehensive review test covering all chapters 1-8 of accident and sickness insurance",
+          "questionCount": 50,
+          "status": "active"
         },
         {
           "id": "llqp-accident-manual-1",
