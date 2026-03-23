@@ -488,6 +488,36 @@
           ]
         },
         {
+          "id": "llqp-life-07",
+          "name": "HLLQP - LIFE 07 QZ - Taxation of Life Insurance and Tax Strategies",
+          "description": "Chapter quiz covering death benefit tax treatment, policy dispositions, ACB calculations, exempt vs non-exempt policies, policy loans, transfers, and tax-efficient strategies",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-07.json?v=20260323f",
+          "subTests": [
+            {
+              "id": "llqp-life-07-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-07-part-1.json?v=20260323f"
+            },
+            {
+              "id": "llqp-life-07-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-07-part-2.json?v=20260323f"
+            },
+            {
+              "id": "llqp-life-07-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-07-part-3.json?v=20260323f"
+            }
+          ]
+        },
         {
           "id": "llqp-life-12",
           "name": "HLLQP - LIFE 12 QZ - Ongoing Service",
