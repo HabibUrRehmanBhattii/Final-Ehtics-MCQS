@@ -1,5 +1,5 @@
 /* PWA Service Worker for LLQP & WFG Exam Prep */
-const CACHE_VERSION = 'v1.7.6';
+const CACHE_VERSION = 'v1.7.7';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const DATA_CACHE = `data-${CACHE_VERSION}`;
 
@@ -43,6 +43,10 @@ const CORE_ASSETS = [
   '/data/llqp-life/hllqp-life-05-part-1.json',
   '/data/llqp-life/hllqp-life-05-part-2.json',
   '/data/llqp-life/hllqp-life-05-part-3.json',
+  '/data/llqp-life/hllqp-life-06.json',
+  '/data/llqp-life/hllqp-life-06-part-1.json',
+  '/data/llqp-life/hllqp-life-06-part-2.json',
+  '/data/llqp-life/hllqp-life-06-part-3.json',
   '/data/llqp-life/llqp-life-certification-exam.json',
   '/data/insurance-legislation-ethics/insurance-legislation-ethics-1.json',
   '/data/flashcards/flashcards-1.json',
