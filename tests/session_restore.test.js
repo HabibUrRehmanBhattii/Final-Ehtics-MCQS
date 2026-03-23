@@ -54,6 +54,7 @@ test('saveProgress and loadProgress preserve attempt history and first-try corre
   app.state.currentTopic = { id: 'llqp-life' };
   app.state.currentPracticeTest = { id: 'life-01' };
   app.state.questions = [{ id: 1 }, { id: 2 }];
+  app.state.currentQuestionIndex = 1;
   app.state.viewedQuestions = new Set(['1']);
   app.state.bookmarkedQuestions = new Set(['2']);
   app.state.answersRevealed = new Set(['1']);
@@ -82,6 +83,7 @@ test('saveProgress and loadProgress preserve attempt history and first-try corre
   assert.deepEqual(JSON.parse(JSON.stringify(app.state.questionElapsedMs)), { '1': 4200 });
   assert.deepEqual(JSON.parse(JSON.stringify(app.state.attemptedOptions)), { '1': [0, 2] });
   assert.deepEqual(JSON.parse(JSON.stringify(app.state.firstAttemptCorrect)), { '1': false });
+  assert.equal(app.state.currentQuestionIndex, 1);
 });
 
 test('renderQuestion restores answered-option styling after resuming a completed question', () => {
@@ -173,4 +175,57 @@ test('resumed correct answers keep a green navigation dot instead of falling bac
 
   assert.match(dotsContainer.innerHTML, /is-correct-dot/);
   assert.doesNotMatch(dotsContainer.innerHTML, /is-wrong-dot/);
+});
+
+test('setupEventListeners restores the previous in-app view on browser back navigation', () => {
+  const homeView = createViewElement();
+  const practiceView = createViewElement();
+  const mcqView = createViewElement();
+  const { app, dispatchWindowEvent, historyCalls } = loadMCQApp({
+    'home-view': homeView,
+    'practice-test-view': practiceView,
+    'mcq-view': mcqView
+  }, {
+    documentQuerySelectorAll: (selector) => selector === '.view'
+      ? [homeView, practiceView, mcqView]
+      : []
+  });
+
+  app.state.topics = [
+    {
+      id: 'llqp-life',
+      practiceTests: [
+        { id: 'life-01', name: 'LIFE 01', questionCount: 2 }
+      ]
+    }
+  ];
+  app.state.currentTopic = app.state.topics[0];
+  app.state.currentPracticeTest = app.state.topics[0].practiceTests[0];
+  app.state.questions = [{ id: 1, options: ['A'], correctAnswer: 0 }];
+
+  let renderPracticeTestsCalls = 0;
+  let renderQuestionCalls = 0;
+  app.renderPracticeTests = () => {
+    renderPracticeTestsCalls += 1;
+  };
+  app.renderQuestion = () => {
+    renderQuestionCalls += 1;
+  };
+  app.clearAutoAdvanceTimer = () => {};
+  app.stopQuestionTimer = () => {};
+  app.saveProgress = () => {};
+  app.resetAdvanceTapState = () => {};
+  app.stopSpeech = () => {};
+  app.cleanupQuizKeyboardListeners = () => {};
+
+  app.setupEventListeners();
+  app.showView('practice-test');
+  app.showView('mcq');
+
+  const practiceState = historyCalls.find((entry) => entry.type === 'push' && entry.state?.view === 'practice-test');
+  dispatchWindowEvent('popstate', { state: practiceState.state });
+
+  assert.equal(app.state.currentView, 'practice-test');
+  assert.equal(renderPracticeTestsCalls >= 2, true);
+  assert.equal(renderQuestionCalls, 0);
 });

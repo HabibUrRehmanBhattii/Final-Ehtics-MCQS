@@ -1091,6 +1091,9 @@ const MCQApp = {
     }
     this.setupEventListeners();
     this.renderTopicsGrid();
+    if (window.history && typeof window.history.replaceState === 'function') {
+      window.history.replaceState(this.buildNavigationState('home'), '', window.location.href);
+    }
     console.log('✅ App initialized successfully');
   },
 
@@ -1373,6 +1376,18 @@ const MCQApp = {
     window.addEventListener('online', () => {
       if (typeof this.syncProgressToCloud === 'function') {
         this.syncProgressToCloud({ silent: true, force: false });
+      }
+    });
+
+    window.addEventListener('popstate', (event) => {
+      const navState = event.state;
+      if (!navState?.view) return;
+
+      this.restoreNavigationState(navState);
+      this.showView(navState.view, { updateHistory: false });
+
+      if (navState.view === 'mcq' && this.getCurrentQuestion()) {
+        this.renderQuestion();
       }
     });
   },
@@ -2333,7 +2348,47 @@ const MCQApp = {
   },
 
   // Show View
-  showView(viewName) {
+  buildNavigationState(viewName = this.state.currentView) {
+    return {
+      view: viewName,
+      topicId: this.state.currentTopic?.id || null,
+      testId: this.state.currentPracticeTest?.id || null,
+      parentTestId: this.state.practiceTestParent?.id || null,
+      lifeSection: this.state.lifeSection || null
+    };
+  },
+
+  restoreNavigationState(navState = {}) {
+    if (!navState || typeof navState !== 'object') return;
+
+    const topic = navState.topicId
+      ? this.state.topics.find((item) => item.id === navState.topicId)
+      : null;
+
+    if (topic) {
+      this.state.currentTopic = topic;
+      this.state.lifeSection = navState.lifeSection || null;
+
+      if (navState.parentTestId) {
+        this.state.practiceTestParent = topic.practiceTests?.find((test) => test.id === navState.parentTestId) || null;
+      } else {
+        this.state.practiceTestParent = null;
+      }
+
+      if (navState.testId) {
+        if (this.state.practiceTestParent?.subTests?.some((test) => test.id === navState.testId)) {
+          this.state.currentPracticeTest = this.state.practiceTestParent.subTests.find((test) => test.id === navState.testId) || null;
+        } else {
+          this.state.currentPracticeTest = this.findPracticeTestById(topic, navState.testId);
+        }
+      } else {
+        this.state.currentPracticeTest = null;
+      }
+    }
+  },
+
+  showView(viewName, options = {}) {
+    const { updateHistory = true, historyMode = 'push' } = options;
     this.clearAutoAdvanceTimer();
     if (viewName !== 'mcq') {
       this.stopQuestionTimer();
@@ -2369,6 +2424,13 @@ const MCQApp = {
       this.renderTopicsGrid();
     } else if (viewName === 'practice-test' && this.state.currentTopic) {
       this.renderPracticeTests();
+    }
+
+    if (updateHistory && window.history) {
+      const method = historyMode === 'replace' ? 'replaceState' : 'pushState';
+      if (typeof window.history[method] === 'function') {
+        window.history[method](this.buildNavigationState(viewName), '', window.location.href);
+      }
     }
   },
 
@@ -4491,6 +4553,7 @@ const MCQApp = {
     if (!this.state.currentTopic.id || !this.state.currentPracticeTest.id) return;
 
     const key = `progress_${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`;
+    const currentQuestion = this.getCurrentQuestion();
     const data = {
       viewed: Array.from(this.state.viewedQuestions),
       bookmarked: Array.from(this.state.bookmarkedQuestions),
@@ -4498,6 +4561,9 @@ const MCQApp = {
       timers: this.getQuestionTimersSnapshot(),
       attemptedOptions: this.state.attemptedOptions,
       firstAttemptCorrect: this.state.firstAttemptCorrect,
+      filterMode: this.state.filterMode,
+      currentQuestionIndex: this.state.currentQuestionIndex,
+      currentQuestionKey: currentQuestion ? this.getQuestionStateKey(currentQuestion) : null,
       lastUpdated: new Date().toISOString()
     };
 
@@ -4540,6 +4606,7 @@ const MCQApp = {
       this.state.questionElapsedMs = {};
       this.state.attemptedOptions = {};
       this.state.firstAttemptCorrect = {};
+      this.state.filterMode = 'all';
       this.state.currentQuestionIndex = 0;
       return;
     }
@@ -4551,6 +4618,7 @@ const MCQApp = {
       this.state.questionElapsedMs = {};
       this.state.attemptedOptions = {};
       this.state.firstAttemptCorrect = {};
+      this.state.filterMode = 'all';
       this.state.currentQuestionIndex = 0;
       return;
     }
@@ -4568,6 +4636,7 @@ const MCQApp = {
       this.state.firstAttemptCorrect = saved.firstAttemptCorrect && typeof saved.firstAttemptCorrect === 'object'
         ? { ...saved.firstAttemptCorrect }
         : {};
+      this.state.filterMode = saved.filterMode === 'bookmarked' ? 'bookmarked' : 'all';
     } else {
       this.state.viewedQuestions = new Set();
       this.state.bookmarkedQuestions = new Set();
@@ -4575,9 +4644,31 @@ const MCQApp = {
       this.state.questionElapsedMs = {};
       this.state.attemptedOptions = {};
       this.state.firstAttemptCorrect = {};
+      this.state.filterMode = 'all';
     }
 
-    this.state.currentQuestionIndex = this.getResumeQuestionIndex();
+    const filteredQuestions = this.getFilteredQuestions();
+    const savedQuestionKey = saved?.currentQuestionKey ? String(saved.currentQuestionKey) : '';
+    const savedQuestionIndex = Number.isInteger(saved?.currentQuestionIndex) ? saved.currentQuestionIndex : -1;
+    const savedQuestionPosition = savedQuestionKey
+      ? filteredQuestions.findIndex((question) => this.getQuestionStateKey(question) === savedQuestionKey)
+      : -1;
+
+    if (savedQuestionPosition >= 0) {
+      this.state.currentQuestionIndex = savedQuestionPosition;
+      return;
+    }
+
+    if (filteredQuestions.length > 0 && savedQuestionIndex >= 0) {
+      this.state.currentQuestionIndex = Math.max(0, Math.min(savedQuestionIndex, filteredQuestions.length - 1));
+      return;
+    }
+
+    if (this.state.filterMode === 'bookmarked' && filteredQuestions.length === 0) {
+      this.state.filterMode = 'all';
+    }
+
+    this.state.currentQuestionIndex = this.getResumeQuestionIndex(this.getFilteredQuestions());
   },
 
   async resetProgress() {

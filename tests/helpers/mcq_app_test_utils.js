@@ -194,12 +194,26 @@ function createAppHarness(customElements = {}, options = {}, includeAuth = false
 
   const location = buildLocation(options.location);
   const historyCalls = [];
+  const windowEventListeners = new Map();
+  let historyState = null;
 
   const windowObject = {
     location,
     history: {
+      get state() {
+        return historyState;
+      },
+      pushState(state, _title, nextUrl) {
+        historyState = state;
+        historyCalls.push({ type: 'push', state, nextUrl });
+        if (!nextUrl) return;
+        Object.assign(location, buildLocation({
+          href: new URL(nextUrl, location.origin).toString()
+        }));
+      },
       replaceState(_state, _title, nextUrl) {
-        historyCalls.push(nextUrl);
+        historyState = _state;
+        historyCalls.push({ type: 'replace', state: _state, nextUrl });
         if (!nextUrl) return;
         Object.assign(location, buildLocation({
           href: new URL(nextUrl, location.origin).toString()
@@ -220,8 +234,12 @@ function createAppHarness(customElements = {}, options = {}, includeAuth = false
     },
     clearTimeout() {},
     scrollTo() {},
-    addEventListener() {},
-    removeEventListener() {},
+    addEventListener(type, handler) {
+      windowEventListeners.set(type, handler);
+    },
+    removeEventListener(type) {
+      windowEventListeners.delete(type);
+    },
     requestAnimationFrame(callback) {
       callback();
       return 1;
@@ -280,9 +298,16 @@ function createAppHarness(customElements = {}, options = {}, includeAuth = false
     localStorage,
     windowObject,
     historyCalls,
+    windowEventListeners,
     context,
     setNow(value) {
       nowValue = value;
+    },
+    dispatchWindowEvent(type, event = {}) {
+      const handler = windowEventListeners.get(type);
+      if (typeof handler === 'function') {
+        handler(event);
+      }
     }
   };
 }
