@@ -1,11 +1,11 @@
 // ===================================
 // MCQ Study Platform - Main Application
 // ===================================
-// Test: Auto-versioning system verification
+// Test: Auto-versioning system - A&S chapters coming-soon status
 
 const MCQApp = {
-  appBuildVersion: '20260323g',
-  cacheVersion: 'v1.7.18',
+  appBuildVersion: '20260323h',
+  cacheVersion: 'v1.7.19',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
