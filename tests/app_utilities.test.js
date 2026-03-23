@@ -184,3 +184,41 @@ test('shuffle helpers read legacy and structured cache entries and persist the c
     }
   );
 });
+
+test('saveProgress prunes stale shuffle caches when storage pressure blocks the write', () => {
+  const { app, localStorage } = loadMCQApp();
+  const originalSetItem = localStorage.setItem.bind(localStorage);
+
+  app.state.currentTopic = { id: 'llqp-life' };
+  app.state.currentPracticeTest = { id: 'life-01' };
+  app.state.questions = [
+    { id: 1, options: ['A', 'B'], correctAnswer: 0 },
+    { id: 2, options: ['C', 'D'], correctAnswer: 1 }
+  ];
+  app.state.currentQuestionIndex = 1;
+  app.state.answersRevealed = new Set(['2']);
+  app.state.firstAttemptCorrect = { '2': true };
+  app.state.loadedQuestionSourceSignature = 'sig-quiz';
+  app.getQuestionTimersSnapshot = () => ({});
+
+  originalSetItem('shuffle_old_topic_test', JSON.stringify([
+    { id: 99, options: ['Legacy A', 'Legacy B'], correctAnswer: 0 }
+  ]));
+
+  localStorage.setItem = (key, value) => {
+    if (key === 'progress_llqp-life_life-01' && localStorage.getItem('shuffle_old_topic_test')) {
+      const error = new Error('quota');
+      error.name = 'QuotaExceededError';
+      throw error;
+    }
+    return originalSetItem(key, value);
+  };
+
+  app.saveProgress();
+
+  const saved = JSON.parse(localStorage.getItem('progress_llqp-life_life-01'));
+  assert.equal(localStorage.getItem('shuffle_old_topic_test'), null);
+  assert.equal(saved.currentQuestionKey, '2');
+  assert.deepEqual(saved.firstAttemptCorrect, { '2': true });
+  assert.deepEqual(saved.questionLayout.questionOrder, ['1', '2']);
+});

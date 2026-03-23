@@ -985,6 +985,97 @@ const MCQApp = {
     }
   },
 
+  isQuotaExceededError(error) {
+    return Boolean(
+      error && (
+        error.name === 'QuotaExceededError' ||
+        error.name === 'NS_ERROR_DOM_QUOTA_REACHED' ||
+        error.code === 22 ||
+        error.code === 1014
+      )
+    );
+  },
+
+  compactLegacyShuffleCaches() {
+    const shuffleKeys = [];
+    for (let index = 0; index < localStorage.length; index += 1) {
+      const key = localStorage.key(index);
+      if (key && key.startsWith('shuffle_')) {
+        shuffleKeys.push(key);
+      }
+    }
+
+    shuffleKeys.forEach((key) => {
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return;
+
+        const parsed = JSON.parse(raw);
+        if (parsed && parsed.layout && Array.isArray(parsed.layout.questionOrder)) {
+          return;
+        }
+
+        const legacyQuestions = Array.isArray(parsed)
+          ? parsed
+          : (parsed && Array.isArray(parsed.questions) ? parsed.questions : null);
+        if (!legacyQuestions) return;
+
+        localStorage.setItem(key, JSON.stringify({
+          version: typeof parsed?.version === 'string' ? parsed.version : this.shuffleSchemaVersion,
+          signature: typeof parsed?.signature === 'string' ? parsed.signature : null,
+          layout: this.buildQuestionLayoutSnapshot(legacyQuestions)
+        }));
+      } catch (error) {
+        console.warn(`Unable to compact shuffle cache ${key}; removing it.`, error);
+        localStorage.removeItem(key);
+      }
+    });
+  },
+
+  pruneShuffleCaches() {
+    const shuffleKeys = [];
+    for (let index = 0; index < localStorage.length; index += 1) {
+      const key = localStorage.key(index);
+      if (key && key.startsWith('shuffle_')) {
+        shuffleKeys.push(key);
+      }
+    }
+
+    shuffleKeys.forEach((key) => localStorage.removeItem(key));
+  },
+
+  setStorageItemWithRecovery(key, value) {
+    try {
+      localStorage.setItem(key, value);
+      return true;
+    } catch (error) {
+      if (!this.isQuotaExceededError(error)) {
+        console.warn(`Failed to write localStorage key ${key}.`, error);
+        return false;
+      }
+    }
+
+    try {
+      this.compactLegacyShuffleCaches();
+      localStorage.setItem(key, value);
+      return true;
+    } catch (error) {
+      if (!this.isQuotaExceededError(error)) {
+        console.warn(`Failed to recover storage while writing ${key}.`, error);
+        return false;
+      }
+    }
+
+    try {
+      this.pruneShuffleCaches();
+      localStorage.setItem(key, value);
+      return true;
+    } catch (error) {
+      console.warn(`Unable to persist localStorage key ${key} after cache cleanup.`, error);
+      return false;
+    }
+  },
+
   showToast(message, type = 'info', title = '', durationMs = 2600) {
     const root = document.getElementById('toast-root');
     if (!root || !message) return;
@@ -3051,7 +3142,7 @@ const MCQApp = {
   },
 
   saveShuffleData(shuffleKey, questions, signature) {
-    localStorage.setItem(shuffleKey, JSON.stringify({
+    this.setStorageItemWithRecovery(shuffleKey, JSON.stringify({
       version: this.shuffleSchemaVersion,
       signature,
       layout: this.buildQuestionLayoutSnapshot(questions)
@@ -4786,7 +4877,9 @@ const MCQApp = {
       lastUpdated: new Date().toISOString()
     };
 
-    localStorage.setItem(key, JSON.stringify(data));
+    if (!this.setStorageItemWithRecovery(key, JSON.stringify(data))) {
+      return;
+    }
     if (typeof this.scheduleProgressSync === 'function') {
       this.scheduleProgressSync();
     }
