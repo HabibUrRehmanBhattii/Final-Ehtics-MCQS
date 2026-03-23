@@ -1252,7 +1252,7 @@ const MCQApp = {
       });
 
       navigator.serviceWorker
-        .register('/sw.js?v=20260321b')
+        .register('/sw.js?v=20260323a')
         .then((registration) => {
           // Proactively check for updates each load/session
           registration.update();
