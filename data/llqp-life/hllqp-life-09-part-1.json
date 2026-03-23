@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "question": "What is the primary role of a life insurance agent during the underwriting process?",
+      "options": {
+        "A": "To personally assess mortality risk and decide approval/decline",
+        "B": "To help collect information that the insurance company needs to perform its risk assessment, acting as the \"eyes\" of the insurer",
+        "C": "To order and personally administer medical exams and blood tests",
+        "D": "To calculate and set the exact premium rate"
+      },
+      "correctAnswer": "B",
+      "explanation": "The agent collects information and acts as the insurer's representative on the field",
+      "kidExplanation": "The agent isn't the judge who decides if you win the prize (the insurance policy). The agent is just the helpful reporter who gathers all your info, takes notes on how you look, and sends the file to the real judge (the underwriter) at the insurance company!"
+    },
+    {
+      "id": 2,
+      "question": "For a life insurance contract to be legally valid, when MUST an \"insurable interest\" exist between the applicant and the life insured?",
+      "options": {
+        "A": "Only at the time of the life insured's death",
+        "B": "At the time of policy issue only",
+        "C": "Continuously throughout the entire duration of the contract",
+        "D": "Only when the first premium is paid"
+      },
+      "correctAnswer": "B",
+      "explanation": "Insurable interest must exist at the application and policy issue date",
+      "kidExplanation": "You have to prove you actually care if this person lives or dies on the day you buy the policy. If you get divorced 10 years later and don't care anymore, the policy is still perfectly fine, because the rule only matters on Day 1!"
+    },
+    {
+      "id": 3,
+      "question": "An applicant wishes to purchase a life insurance policy on his neighbor, with whom he has no financial or blood relationship (no insurable interest). What exception would allow this contract to be valid?",
+      "options": {
+        "A": "The neighbor must pass a strict medical exam",
+        "B": "The applicant must name the neighbor's estate as the beneficiary",
+        "C": "The neighbor (life insured) must consent in writing to the insurance being placed on his life",
+        "D": "It is illegal and no exception exists"
+      },
+      "correctAnswer": "C",
+      "explanation": "Written consent of the life insured can establish insurable interest",
+      "kidExplanation": "You can't just secretly buy insurance on the person living next door to get rich if they pass away! But, if the neighbor signs a piece of paper saying, 'Sure, I give you permission to buy insurance on me,' then it's allowed!"
+    },
+    {
+      "id": 4,
+      "question": "In which of the following scenarios should an agent provide a Temporary Insurance Agreement (TIA) to an applicant?",
+      "options": {
+        "A": "Applicant submitted completed application and first month's premium, answered \"No\" to all health questions",
+        "B": "Applicant is applying but has pending medical exam for previously diagnosed heart condition",
+        "C": "Applicant submitted application but delayed first premium payment",
+        "D": "Agent noted persistent smoker's cough, but applicant checked \"non-smoker\""
+      },
+      "correctAnswer": "A",
+      "explanation": "TIA requires completed application, first premium payment, and good health",
+      "kidExplanation": "A TIA is a 'temporary shield' that protects you while you wait for your real shield to be built in the factory. But the insurance company only gives you the temporary shield if you are super healthy right now AND you give them the first payment today!"
+    },
+    {
+      "id": 5,
+      "question": "What is typically the maximum coverage limit provided by a Temporary Insurance Agreement (TIA)?",
+      "options": {
+        "A": "The full face amount of the policy applied for, with no maximum limit",
+        "B": "The lesser of a fixed amount (such as $250,000 or $500,000) or the amount requested",
+        "C": "Exactly 50% of the amount requested",
+        "D": "A standard flat rate of $100,000"
+      },
+      "correctAnswer": "B",
+      "explanation": "TIAs have maximum coverage limits to limit insurer exposure",
+      "kidExplanation": "Even if you order a massive 5-million-dollar shield, the temporary shield they give you to hold while you wait has a safety limit (like $500,000). They won't risk giving you 5 million dollars of protection before they've even had time to check your doctor's notes!"
+    },
+    {
+      "id": 6,
+      "question": "If an applicant accidentally enters their birth year as 1964 instead of 1954 on an application, how would the insurer treat this if discovered 5 years after policy issue?",
+      "options": {
+        "A": "Void policy immediately as it's a material fact",
+        "B": "Cannot void due to two-year contestability period and honest mistake; will adjust death benefit",
+        "C": "Void policy as misstatement of age is always fraudulent",
+        "D": "Refund all premiums and cancel"
+      },
+      "correctAnswer": "B",
+      "explanation": "After contestability period, honest errors cannot void policy but may be adjusted",
+      "kidExplanation": "If you make an honest, 'oopsie' mistake on your test, the teacher can only punish you if they catch it in the first two years. After two years, they can't tear up your test, but they can fix the math to make sure your family only gets the money your premiums actually paid for."
+    },
+    {
+      "id": 7,
+      "question": "Eric intentionally hides his history of a severe liver condition when applying for life insurance. Five years later, he dies of liver failure and the insurer discovers the hidden condition. What action will the insurer likely take?",
+      "options": {
+        "A": "Must pay full death benefit as two-year contestability passed",
+        "B": "Void policy and deny claim due to fraudulent material misrepresentation",
+        "C": "Pay reduced death benefit based on rated policy",
+        "D": "Pay full benefit but deduct premium difference"
+      },
+      "correctAnswer": "B",
+      "explanation": "Fraudulent misrepresentation can void a policy beyond contestability period",
+      "kidExplanation": "If you lie on purpose (fraud), the two-year safety rule disappears! The insurance company can rip up your contract even 50 years later if they find out you lied to trick them into giving you a policy."
+    },
+    {
+      "id": 8,
+      "question": "Under the mandatory incontestability limitation, how long does an insurance company generally have to void a policy if it discovers an honest error in a material fact?",
+      "options": {
+        "A": "30 days",
+        "B": "1 year",
+        "C": "2 years",
+        "D": "5 years"
+      },
+      "correctAnswer": "C",
+      "explanation": "The incontestability period is typically 2 years from policy issue",
+      "kidExplanation": "The insurance company has exactly 2 years to do their homework and catch any honest mistakes you made. Once those 2 years are up, your policy is locked in and they can't cancel it just because of an accident!"
+    },
+    {
+      "id": 9,
+      "question": "During underwriting, if an applicant indicates a medical issue on the application, what document might the underwriter request directly from the applicant's doctor to get a summary of their medical history and prognosis?",
+      "options": {
+        "A": "Medical Information Bureau (MIB) report",
+        "B": "Attending Physician's Statement (APS)",
+        "C": "Inspection Report",
+        "D": "Temporary Insurance Agreement (TIA)"
+      },
+      "correctAnswer": "B",
+      "explanation": "An Attending Physician's Statement provides medical information from the applicant's doctor",
+      "kidExplanation": "APS stands for 'Attending Physician's Statement.' It's just a fancy letter the insurance company asks your personal doctor to write. The letter tells the insurance company exactly how healthy you are and what medicines you take!"
+    },
+    {
+      "id": 10,
+      "question": "What is the primary purpose of the Medical Information Bureau (MIB) in the underwriting process?",
+      "options": {
+        "A": "Provide definitive medical diagnosis to decline applications",
+        "B": "Facilitate exchange of coded medical information between member insurance companies to alert underwriters to omissions or misrepresentations",
+        "C": "Arrange paramedical exams and blood tests",
+        "D": "Verify financial status and credit score"
+      },
+      "correctAnswer": "B",
+      "explanation": "The MIB is a central database that member insurers use to share underwriting information",
+      "kidExplanation": "The MIB is like a giant, secret group chat for insurance companies. If you apply at Company A and tell them you have a bad heart, Company A puts a secret code in the group chat. If you later apply to Company B and lie about your heart, Company B checks the group chat and catches you!"
+    }
+  ]
+}

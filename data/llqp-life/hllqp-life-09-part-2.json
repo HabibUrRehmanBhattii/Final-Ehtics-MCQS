@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 11,
+      "question": "An underwriter pulls an MIB report indicating an applicant previously reported a heart condition to another insurer, though current application denies it. What MUST the underwriter do next?",
+      "options": {
+        "A": "Instantly decline the application based on MIB report",
+        "B": "Issue policy but with 200% premium rating",
+        "C": "Investigate further to obtain more information and verify condition",
+        "D": "Report applicant to police"
+      },
+      "correctAnswer": "C",
+      "explanation": "MIB information must be verified before making underwriting decisions",
+      "kidExplanation": "The insurance company isn't allowed to deny your application just because of a rumor in the MIB group chat! They have to use that clue to order more tests and prove if the rumor is actually true first."
+    },
+    {
+      "id": 12,
+      "question": "Why would a life insurance underwriter request a Motor Vehicle Record (MVR) for a life insurance applicant?",
+      "options": {
+        "A": "Verify primary residential address",
+        "B": "Determine if applicant requires travel insurance",
+        "C": "Driving record directly influences risk of death through accidents",
+        "D": "Ensure applicant has valid ID for anti-money laundering"
+      },
+      "correctAnswer": "C",
+      "explanation": "Driving records reflect risk-taking behavior and accident likelihood",
+      "kidExplanation": "If you drive like a crazy race car driver and get lots of speeding tickets, you have a much higher chance of getting into a bad crash. The insurance company checks your driving record because bad driving means a higher risk of passing away!"
+    },
+    {
+      "id": 13,
+      "question": "What is the primary purpose of \"financial underwriting\" in the life insurance application process?",
+      "options": {
+        "A": "Ensure applicant's investment portfolio is diversified",
+        "B": "Assess if coverage requested is reasonable based on needs and applicant can afford premiums",
+        "C": "Verify applicant has never filed for bankruptcy",
+        "D": "Calculate MTAR for the policy"
+      },
+      "correctAnswer": "B",
+      "explanation": "Financial underwriting ensures coverage is proportional to need and applicant can pay",
+      "kidExplanation": "The insurance company looks at your wallet to make sure of two things: 1) You actually have enough money to pay the monthly bills for the insurance, and 2) You aren't asking for way more insurance money than you actually need!"
+    },
+    {
+      "id": 14,
+      "question": "If an underwriter has ongoing concerns about an applicant's non-medical risks (lifestyle, finances, dangerous hobbies), what might they order?",
+      "options": {
+        "A": "Attending Physician's Statement (APS)",
+        "B": "Inspection Report",
+        "C": "Accelerated Underwriting profile",
+        "D": "Temporary Insurance Agreement"
+      },
+      "correctAnswer": "B",
+      "explanation": "An Inspection Report investigates non-medical risk factors",
+      "kidExplanation": "If the insurance company is worried about your dangerous hobbies or your money, they hire a special investigator to do an 'Inspection Report.' Usually, the investigator just calls you on the phone to ask a bunch of detailed questions about your life!"
+    },
+    {
+      "id": 15,
+      "question": "How do life insurance underwriters generally handle applications from individuals who regularly participate in hazardous \"avocations\" like skydiving or mountain climbing?",
+      "options": {
+        "A": "Automatically decline all such applications",
+        "B": "Only issue if applicant stops activity immediately",
+        "C": "Request additional information and may issue with substandard rating or exclusion",
+        "D": "Ignore avocations if primary occupation is safe"
+      },
+      "correctAnswer": "C",
+      "explanation": "Hazardous hobbies can result in rated policies or activity-specific exclusions",
+      "kidExplanation": "'Avocations' is a fancy word for hobbies. If your hobby is jumping out of airplanes, the insurance company will still give you insurance, but they will either charge you extra money (a rating) OR say 'we won't pay if you die while skydiving' (an exclusion)."
+    },
+    {
+      "id": 16,
+      "question": "How are non-citizens who have been granted permanent residency status in Canada generally treated during underwriting?",
+      "options": {
+        "A": "Strictly limited to maximum coverage of $100,000",
+        "B": "Generally eligible for same coverage as Canadian citizens; recent arrivals may face additional screening",
+        "C": "Automatically rated as substandard risk",
+        "D": "Must wait until they become full citizens"
+      },
+      "correctAnswer": "B",
+      "explanation": "Permanent residents are generally treated similarly to citizens with additional screening if recent",
+      "kidExplanation": "If you are a permanent resident, the insurance company treats you just like a Canadian citizen! You can get the exact same insurance. The only catch is if you just moved here less than a year ago, they might ask you to do a few extra health tests first."
+    },
+    {
+      "id": 17,
+      "question": "Which of the following accurately describes \"accelerated underwriting\"?",
+      "options": {
+        "A": "Issuing policy instantly without questions",
+        "B": "Fully underwritten process using technology, algorithms, and data without traditional medical exams",
+        "C": "Simplified issue policy with higher premium",
+        "D": "Agent makes final underwriting decision"
+      },
+      "correctAnswer": "B",
+      "explanation": "Accelerated underwriting uses technology and data analytics instead of traditional medical exams",
+      "kidExplanation": "Accelerated Underwriting is when the insurance company uses super-smart computers and artificial intelligence to check your background so fast that they don't even need to send a nurse to poke you with a needle or take your blood!"
+    },
+    {
+      "id": 18,
+      "question": "If an applicant undergoes medical screening and presents exceptionally low mortality risk compared to average, into which risk class will they likely be placed?",
+      "options": {
+        "A": "Standard risk",
+        "B": "Rated risk",
+        "C": "Preferred risk",
+        "D": "Substandard risk"
+      },
+      "correctAnswer": "C",
+      "explanation": "Superior health results in preferred risk classification with lower premiums",
+      "kidExplanation": "If you eat all your vegetables, run marathons, and are super-duper healthy, you are a lower risk than normal people. The insurance company puts you in the 'Preferred' VIP club and gives you a discount on your price!"
+    },
+    {
+      "id": 19,
+      "question": "What does it mean if an insurance company issues a policy to an applicant on a \"rated\" basis?",
+      "options": {
+        "A": "Above-average but acceptable risk, charged higher premium than standard",
+        "B": "Uninsurable risk, policy is declined",
+        "C": "Receiving discount as preferred risk",
+        "D": "Issued but completely excludes illness coverage"
+      },
+      "correctAnswer": "A",
+      "explanation": "Rated policies indicate above-average risk with premium surcharges",
+      "kidExplanation": "A 'rated' policy means the insurance company thinks you are a bit riskier than normal (maybe you smoke or have a dangerous job). They will still give you the insurance, but you have to pay extra money every month!"
+    },
+    {
+      "id": 20,
+      "question": "Bill was issued a rated policy 5 years ago for working as a commercial deep-sea fisherman. He now works as a high school teacher. What can Bill do?",
+      "options": {
+        "A": "Nothing; rating is permanent",
+        "B": "Ask to remove rating and decrease premiums",
+        "C": "Must cancel and wait two years before applying for new one",
+        "D": "Insurance company automatically detects and lowers premium"
+      },
+      "correctAnswer": "B",
+      "explanation": "Risk factors can change and rated policies can be re-evaluated",
+      "kidExplanation": "If you stop doing the dangerous thing that made your insurance expensive, you can call the insurance company and say, 'I'm safe now!' If you prove it, they will happily lower your price back to normal."
+    }
+  ]
+}
