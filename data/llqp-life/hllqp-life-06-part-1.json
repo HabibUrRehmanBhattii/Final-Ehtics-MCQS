@@ -21,6 +21,7 @@
         "Direct negotiation is not available to individual employees."
       ],
       "explanation": "Step 1: Identify that this question concerns who controls the master contract in group insurance.\nStep 2: Apply the LLQP principle that the employer (group policyholder) holds and controls the master contract.\nStep 3: Eliminate distractors - Sarah cannot contact the insurer to change master contract terms because she is not the group policyholder.\nStep 4: Select the best answer. Option B: The insurer will deny the request because only the group policyholder can amend the terms of the master contract.",
+      "kidExplanation": "Imagine your boss buys a giant pizza for the whole office. You get a slice, but you don't get to call the pizza place to change the toppings because your boss is the one who bought it! In group insurance, the boss (employer) owns the main contract, not you.",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -45,6 +46,7 @@
         "Retroactive premium payment does not override the actively-at-work requirement."
       ],
       "explanation": "Step 1: Identify that this question concerns the actively-at-work requirement in group insurance.\nStep 2: Apply the LLQP principle that coverage becomes effective when both the probationary period is completed AND the employee is actively at work.\nStep 3: Eliminate distractors - Mark completed his probationary period but was ill, so he did not meet the actively-at-work requirement on Tuesday.\nStep 4: Select the best answer. Option B: Friday, assuming he returns to work and meets the \"actively-at-work\" requirement.",
+      "kidExplanation": "To get your official team jersey, you actually have to show up to the game! If you are home sick in bed on the day your insurance is supposed to start, you have to wait until you are feeling better and back at work to get your coverage.",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -70,6 +72,7 @@
         "Premium payments do not trigger capital gains tax."
       ],
       "explanation": "Step 1: Identify that this question concerns the tax treatment of employer-paid group life insurance premiums.\nStep 2: Apply the LLQP and CRA rule that employer contributions to group life insurance are considered taxable benefits to the employee.\nStep 3: Eliminate distractors - employer-paid premiums are not tax-free; they are not capital gains; they are not deductible by the employee.\nStep 4: Select the best answer. Option B: It is considered a taxable benefit and added to David's taxable income.",
+      "kidExplanation": "When your boss pays for your insurance, the government sees it as an extra prize or bonus on top of your regular allowance (salary). Because it's an extra prize for you, you have to pay a little bit of tax on it!",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -95,6 +98,7 @@
         "Death benefits are not reduced by premiums paid."
       ],
       "explanation": "Step 1: Identify that this question concerns the tax treatment of group life insurance death benefits.\nStep 2: Apply the LLQP and CRA rule that death benefits from life insurance are always received tax-free by beneficiaries.\nStep 3: Eliminate distractors - the fact that the employer paid premiums does not make the death benefit taxable; death benefits are never partially taxable.\nStep 4: Select the best answer. Option A: $0; the death benefit is received entirely tax-free.",
+      "kidExplanation": "If the insurance company gives your family the giant piggy bank of money (the death benefit) because someone passed away, the government leaves it completely alone. Your family gets to keep 100% of it, tax-free!",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -124,6 +128,7 @@
         "This incorrectly includes the bonus in the calculation."
       ],
       "explanation": "Step 1: Identify what the question is asking about coverage calculation under an earnings multiple schedule.\nStep 2: Apply the rule that group insurance coverage is based on base salary only, not bonuses or other variable compensation.\nStep 3: Calculate: 2 × $60,000 (base salary) = $120,000.\nStep 4: Eliminate distractors - bonuses are specifically excluded from the calculation.\nStep 5: Select the best answer. Option B: $120,000",
+      "kidExplanation": "If the rule is \"you get double your regular allowance,\" and your regular allowance is $60,000, you get $120,000. Even if you earned extra bonus money for doing a great job, the insurance only doubles your regular base allowance!",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -149,6 +154,7 @@
         "Government death benefits do not replace group insurance coverage."
       ],
       "explanation": "Step 1: Identify the question concerns the business reason for age-based coverage reductions.\nStep 2: Apply the LLQP principle that premiums and coverage are adjusted based on mortality risk.\nStep 3: Recognize that mortality risk increases with age, making insurance more expensive.\nStep 4: Eliminate distractors - regulations do not mandate this; government benefits do not replace it; retirement encouragement is not a standard insurance principle.\nStep 5: Select the best answer. Option C: To manage costs, as the risk of death—and therefore the cost of insurance—increases significantly with age.",
+      "kidExplanation": "As people get much older, the chance of them passing away gets higher, which makes insurance super expensive. To keep the price fair for everyone in the group, the plan just shrinks the size of the coverage for the older folks.",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -174,6 +180,7 @@
         "Upgrading base coverage is not a prerequisite."
       ],
       "explanation": "Step 1: Identify that this question concerns the requirements for obtaining optional group insurance after initial enrolment.\nStep 2: Apply the LLQP principle that optional coverage requested after the initial period requires evidence of insurability.\nStep 3: Understand that this protects the insurer from adverse selection - people buying extra insurance may be doing so because they have health concerns.\nStep 4: Eliminate distractors - automatic coverage only applies during initial enrolment; no penalty is charged; base upgrade is not required.\nStep 5: Select the best answer. Option C: Provide evidence of insurability to protect the insurer against adverse selection.",
+      "kidExplanation": "If you wait a long time to ask for extra shields in a video game, the game might ask, \"Are you only asking now because you're about to fight the boss?\" The insurance company makes you prove you are healthy so people don't only buy extra insurance when they are already sick!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -200,6 +207,7 @@
         "Extended family members such as brothers are not eligible for dependent coverage."
       ],
       "explanation": "Step 1: Identify that this question concerns who qualifies as eligible dependants under group life insurance.\nStep 2: Apply the LLQP rule that eligible dependants are typically: spouse/common-law partner and dependent children under age 21-25.\nStep 3: Evaluate each option - Option A has spouse and dependent child within age limits; Option B has a parent (extended family, age over limit); Option C has adult child (not dependent); Option D has brother (extended family).\nStep 4: Select the best answer. Option A: His common-law partner and his 16-year-old biological daughter.",
+      "kidExplanation": "Group insurance for your family is like a VIP pass. It only works for your very closest family members: your husband/wife and your dependent kids! It doesn't work for your mom, dad, or brother.",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -225,6 +233,7 @@
         "Premiums are flat regardless of the number of dependants."
       ],
       "explanation": "Step 1: Identify that this question concerns how dependant life insurance premiums are calculated in group plans.\nStep 2: Apply the LLQP principle that dependant life coverage is typically offered on a flat-premium basis, not per-dependent basis.\nStep 3: Recognize that once an employee opts for dependant coverage, all eligible dependants are covered for one flat premium.\nStep 4: Eliminate distractors - premiums do not vary by number of children or combined ages.\nStep 5: Select the best answer. Option B: Liam and Sophia will pay the exact same premium, regardless of the number of eligible children.",
+      "kidExplanation": "Family insurance is like an \"all-you-can-eat\" buffet pass. You pay one flat price, and it covers your whole family, whether you have one kid or four kids!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -250,6 +259,7 @@
         "The benefit is paid directly by the insurer, not through a third-party annuity."
       ],
       "explanation": "Step 1: Identify that this question concerns how survivor income benefits are structured and paid.\nStep 2: Apply the LLQP principle that survivor income benefits are designed to provide ongoing income replacement to the surviving spouse.\nStep 3: Recognize that these benefits typically provide monthly payments based on a percentage of the deceased's salary.\nStep 4: Eliminate distractors - they are monthly payments, not lump sums; not based on dividends; paid directly, not through a third party.\nStep 5: Select the best answer. Option C: As a monthly benefit expressed as a percentage of Trevor's monthly salary just prior to his death.",
+      "kidExplanation": "Instead of giving your family one giant pile of money all at once, this special benefit gives them a steady stream of money every single month, just like a regular paycheck, to help pay the bills!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",

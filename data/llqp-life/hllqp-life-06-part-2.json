@@ -21,6 +21,7 @@
         "Basic life insurance covers all causes of death, including natural causes."
       ],
       "explanation": "Step 1: Identify that this question distinguishes between basic life insurance and AD&D coverage.\nStep 2: Apply the LLQP principle that AD&D (Accidental Death & Dismemberment) only covers accidental deaths, not natural deaths.\nStep 3: Recognize that a heart attack is a natural medical event, not an accident.\nStep 4: Evaluate - basic life insurance pays regardless of cause; AD&D does not apply to natural deaths.\nStep 5: Select the best answer. Option B: $100,000 from the basic life insurance only.",
+      "kidExplanation": "AD&D stands for \"Accidental Death.\" A heart attack is a sickness, not an accident (like a car crash). So, the family gets the regular life insurance money, but they don't get the extra \"accident\" bonus money.",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -47,6 +48,7 @@
         "This exceeds the actual coverage."
       ],
       "explanation": "Step 1: Identify that this question requires calculating total combined benefits.\nStep 2: Apply the rules: base life insurance pays for accidental death; voluntary AD&D also pays for accidental death.\nStep 3: Calculate: Base life = $50,000; AD&D = 3 units × $10,000 = $30,000; Total = $50,000 + $30,000 = $80,000.\nStep 4: Recognize that both benefits pay out when death is from an accident.\nStep 5: Select the best answer. Option C: $80,000",
+      "kidExplanation": "If you have a base shield of $50,000, and you buy 3 extra \"accident\" shields for $10,000 each ($30,000 total), you have $50,000 + $30,000 = $80,000 total protection if an accident happens!",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -73,6 +75,7 @@
         "CLHIA guidelines provide conversion rights upon termination of employment."
       ],
       "explanation": "Step 1: Identify that this question concerns the rights of a departing employee under CLHIA guidelines.\nStep 2: Apply the CLHIA guideline that employees have the right to convert their group coverage to an individual policy within a specified time period.\nStep 3: Recognize that conversion does not require medical evidence (easy issue).\nStep 4: Eliminate distractors - portability of group policies is not available; term insurance has no cash value; rights are not forfeited.\nStep 5: Select the best answer. Option A: He can convert his group coverage to an individual policy without providing proof of insurability.",
+      "kidExplanation": "If you leave your job, you don't have to leave your insurance behind completely! The insurance company lets you trade in your \"team jersey\" for your very own \"personal jersey\" without making you take a health test.",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -99,6 +102,7 @@
         "The conversion period is 31 days, not 6 months."
       ],
       "explanation": "Step 1: Identify that this question concerns the time limit for converting group insurance to individual coverage.\nStep 2: Apply the CLHIA guideline that the conversion must occur within 31 days of termination to avoid requiring medical evidence.\nStep 3: Calculate: June 1 + 31 days = July 2.\nStep 4: Eliminate distractors - 14 days is too short; 60 days and 6 months are too long.\nStep 5: Select the best answer. Option B: July 2 (within 31 days)",
+      "kidExplanation": "When you quit your job, you have exactly 31 days—about one month—to tell the insurance company you want to keep your coverage. It's a ticking clock, so don't be late!",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -125,6 +129,7 @@
         "The employer does not add a surcharge to conversion rates."
       ],
       "explanation": "Step 1: Identify that this question concerns why converted group policies have higher premiums.\nStep 2: Apply the LLQP principle of adverse selection - people who purchase insurance without a medical exam are likely doing so because they anticipate higher risk.\nStep 3: Recognize that the insurer has no medical information to assess the individual's actual health status.\nStep 4: Eliminate distractors - commissions, policy type, and employer surcharges are not the driving factors.\nStep 5: Select the best answer. Option C: Adverse selection; individuals who choose to convert without a medical exam are statistically a higher risk.",
+      "kidExplanation": "Because they let you keep your insurance without checking if you are healthy, the insurance company assumes you might be hiding a cold! Since they are taking a bigger risk on you, they charge you a higher price.",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -151,6 +156,7 @@
         "Medical underwriting is not required for conversion within the 31-day window."
       ],
       "explanation": "Step 1: Identify that this question concerns Quebec-specific conversion rights for group insurance.\nStep 2: Apply the Quebec rule that departing employees can convert both their own coverage AND dependant coverage.\nStep 3: Recognize that Quebec has more expansive conversion rights than other provinces.\nStep 4: Eliminate distractors - dependant conversion is available; tenure requirements do not apply to termination conversions; medical underwriting is not required.\nStep 5: Select the best answer. Option B: She can convert her own coverage and must be given the option to convert the dependant coverage on her husband as well.",
+      "kidExplanation": "Every province has rules, but Quebec has a special extra rule: if you leave your job, you get to keep the insurance for yourself AND you are allowed to keep the insurance you bought for your husband or wife, too!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -177,6 +183,7 @@
         "The government does not assume group insurance coverage."
       ],
       "explanation": "Step 1: Identify that this question concerns mandatory conversion rights when an entire group contract is terminated.\nStep 2: Apply the Quebec rule that when a master contract is terminated, employees who have been insured for 5+ years have the right to convert a minimum amount.\nStep 3: Recognize the formula: greater of $10,000 or 25% of coverage.\nStep 4: Calculate for George: 25% of coverage (assuming significant coverage) likely exceeds $10,000.\nStep 5: Select the best answer. Option C: He must be given the option of converting at least $10,000 or 25% of his life insurance (whichever is greater) into an individual policy.",
+      "kidExplanation": "In Quebec, if your boss totally cancels the whole company's insurance plan, the rules say that if you've worked there a long time (at least 5 years), the insurance company still has to let you keep a little piece of your coverage for yourself.",
       "difficulty": "hard",
       "tags": [
         "group-insurance",
@@ -203,6 +210,7 @@
         "Death benefits are not delayed by probate clearance."
       ],
       "explanation": "Step 1: Identify that this question concerns the post-claim underwriting process used in creditor insurance.\nStep 2: Apply the principle that post-claim underwriting means the insurer issues the policy with minimal underwriting, then investigates fully if a claim is made.\nStep 3: Recognize that this is a cost-saving measure used in creditor insurance to keep premiums low.\nStep 4: Eliminate distractors - premiums are not adjusted based on claims; no exam is required later; probate does not delay benefits.\nStep 5: Select the best answer. Option B: The bank will only thoroughly investigate his medical history to confirm eligibility after he dies and a claim is submitted.",
+      "kidExplanation": "The bank gives you the insurance first and asks questions later! But watch out—if something bad happens to you, then they investigate to see if you were really healthy when you signed up. If they find out you lied, they won't pay!",
       "difficulty": "medium",
       "tags": [
         "creditor-insurance",
@@ -229,6 +237,7 @@
         "Employer profitability is not relevant to insurance premiums."
       ],
       "explanation": "Step 1: Identify that this question concerns how group life insurance premiums are underwritten.\nStep 2: Apply the LLQP principle of group underwriting - the insurer evaluates the entire group's demographics rather than individual health.\nStep 3: Recognize that group underwriting uses age, gender mix, and other risk factors to calculate an average premium.\nStep 4: Eliminate distractors - no individual medical exams are done; maximum rates are not charged; employer profit is irrelevant.\nStep 5: Select the best answer. Option B: By looking at the demographics of the group as a whole (mix of ages, genders) and calculating an average risk per person.",
+      "kidExplanation": "Instead of checking every single person with a doctor, the insurance company just looks at the whole group—like how many young people and old people there are—and guesses an average, fair price for the whole team!",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -255,6 +264,7 @@
         "CLHIA guidelines do not specifically require evidence of insurability for optional coverage."
       ],
       "explanation": "Step 1: Identify that this question concerns why insurers require medical evidence for optional coverage after initial enrolment.\nStep 2: Apply the LLQP principle that optional coverage requested later may indicate the employee has developed health concerns.\nStep 3: Recognize adverse selection - people buy extra insurance when they anticipate higher risk, but the insurer lacks this knowledge.\nStep 4: Evidence of insurability protects the insurer from insuring above-average risks.\nStep 5: Select the best answer. Option B: To protect the insurance company from adverse selection.",
+      "kidExplanation": "If you suddenly want extra insurance long after you started your job, the company gets suspicious. They make you take a health test to prove you aren't secretly sick and just trying to get a big payout!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",

@@ -10,7 +10,8 @@
         "D": "To reduce the business's corporate income tax through premium deductions"
       },
       "correctAnswer": "B",
-      "explanation": "To receive a tax-free death benefit that can be used to recruit a replacement, make up for lost revenue, or cover overhead if the salesperson dies."
+      "explanation": "To receive a tax-free death benefit that can be used to recruit a replacement, make up for lost revenue, or cover overhead if the salesperson dies.",
+      "kidExplanation": "If the company's best baker passes away, the bakery is going to lose a lot of money because nobody else knows the secret recipe! Key person insurance gives the bakery a pile of cash to help them survive while they search for a new star baker."
     },
     {
       "id": 12,
@@ -22,7 +23,8 @@
         "D": "An arrangement where the policyholder receives 50% of the death benefit while the insurer retains 50%"
       },
       "correctAnswer": "B",
-      "explanation": "A method of sharing the attributes and costs of a permanent life insurance policy between two or more parties, such as a company and a key employee."
+      "explanation": "A method of sharing the attributes and costs of a permanent life insurance policy between two or more parties, such as a company and a key employee.",
+      "kidExplanation": "Imagine a giant superhero shield (a permanent insurance policy). The boss needs the front of the shield to protect the company if the hero dies, but the hero wants to use the secret storage pocket inside the shield for their own savings. They split the cost and share the shield!"
     },
     {
       "id": 13,
@@ -34,7 +36,8 @@
         "D": "The corporation owns everything until the employee reaches retirement, then ownership transfers to the employee"
       },
       "correctAnswer": "B",
-      "explanation": "The corporation owns the death benefit up to the original face amount, and the employee owns the cash value and any excess death benefit."
+      "explanation": "The corporation owns the death benefit up to the original face amount, and the employee owns the cash value and any excess death benefit.",
+      "kidExplanation": "The company gets the main prize (the face amount) if the key employee passes away to save the business. But the employee gets to keep the policy's savings account (the cash value) as a special perk for being such a great worker!"
     },
     {
       "id": 14,
@@ -46,7 +49,8 @@
         "D": "Premiums should always be split equally 50/50 between the parties"
       },
       "correctAnswer": "C",
-      "explanation": "The premium allocation should reflect the fair market value of their respective interests in the contract (e.g., the company pays for the pure term cost of the death benefit)."
+      "explanation": "The premium allocation should reflect the fair market value of their respective interests in the contract (e.g., the company pays for the pure term cost of the death benefit).",
+      "kidExplanation": "The tax rules say that everyone has to pay their fair share! If the company is getting 80% of the benefit and the employee is getting a 20% savings perk, they need to split the bill fairly so nobody is getting a sneaky, untaxed freebie."
     },
     {
       "id": 15,
@@ -58,7 +62,8 @@
         "D": "The premiums must be deducted over a 10-year period"
       },
       "correctAnswer": "B",
-      "explanation": "The premiums (or the net cost of pure insurance) can be deducted from the business's income as a business expense."
+      "explanation": "The premiums (or the net cost of pure insurance) can be deducted from the business's income as a business expense.",
+      "kidExplanation": "Normally, you can't deduct life insurance costs from your taxes. But if the bank forces you to buy it just to get a loan for your business, the government feels bad and lets you write it off as a business expense!"
     },
     {
       "id": 16,
@@ -70,7 +75,8 @@
         "D": "To establish the salary levels for all employees of the business"
       },
       "correctAnswer": "C",
-      "explanation": "To control what happens to an owner's interest in the business if they die, retire, or become disabled."
+      "explanation": "To control what happens to an owner's interest in the business if they die, retire, or become disabled.",
+      "kidExplanation": "A buy-sell agreement is a \"What If\" rulebook. It tells everybody exactly what will happen to the company shares if one of the owners unexpectedly passes away, so people don't fight over the business later!"
     },
     {
       "id": 17,
@@ -82,7 +88,8 @@
         "D": "The deceased's heirs retain full ownership and control of the shares"
       },
       "correctAnswer": "B",
-      "explanation": "The surviving shareholders personally buy the shares from the deceased's estate."
+      "explanation": "The surviving shareholders personally buy the shares from the deceased's estate.",
+      "kidExplanation": "\"Cross-purchase\" means the business partners buy the shares directly from each other. If Partner A passes away, Partner B reaches into their own wallet, hands the money to Partner A's family, and takes the shares."
     },
     {
       "id": 18,
@@ -94,7 +101,8 @@
         "D": "An external third party chosen by the board of directors"
       },
       "correctAnswer": "B",
-      "explanation": "The corporation itself redeems and cancels the shares."
+      "explanation": "The corporation itself redeems and cancels the shares.",
+      "kidExplanation": "\"Share redemption\" means the company is the buyer! The company uses its own money to buy back the shares from the deceased partner's family. Since those shares are \"deleted,\" the surviving partners automatically own a bigger piece of the pie!"
     },
     {
       "id": 19,
@@ -106,7 +114,8 @@
         "D": "It requires the business to hire the spouse as an employee at a high salary"
       },
       "correctAnswer": "B",
-      "explanation": "It provides a guaranteed buyer and a guaranteed value for business shares that might otherwise be very hard to sell (illiquid)."
+      "explanation": "It provides a guaranteed buyer and a guaranteed value for business shares that might otherwise be very hard to sell (illiquid).",
+      "kidExplanation": "If your husband owned half a tractor factory, you probably don't want half a tractor factory when he dies—you want cash! The agreement promises that the other partners MUST buy the factory shares from you at a fair price so you get the money you need."
     },
     {
       "id": 20,
@@ -118,7 +127,8 @@
         "D": "Insurance that provides benefits when any employee of the company dies, not just owners"
       },
       "correctAnswer": "B",
-      "explanation": "Each business owner buys and owns a life insurance policy on the lives of the other owners to fund their purchase obligation."
+      "explanation": "Each business owner buys and owns a life insurance policy on the lives of the other owners to fund their purchase obligation.",
+      "kidExplanation": "If you and I are partners, I buy a policy on your life, and you buy a policy on my life. We criss-cross! That way, if you pass away, the insurance company gives ME the money, and I use that money to buy your half of the business from your family."
     }
   ]
 }

@@ -10,7 +10,8 @@
         "D": "Yes, but only if the business is a partnership and not a corporation"
       },
       "correctAnswer": "C",
-      "explanation": "No, because the insurance is not being used to secure a loan for business purposes; the death benefit is received tax-free."
+      "explanation": "No, because the insurance is not being used to secure a loan for business purposes; the death benefit is received tax-free.",
+      "kidExplanation": "Because the owners get to keep the giant pile of insurance money tax-free when the other partner dies, the government says, \"Nope, you don't get a tax discount on the premiums, too! You have to pay out of your own pocket.\""
     },
     {
       "id": 22,
@@ -22,7 +23,8 @@
         "D": "The arrangement becomes illegal under business partnership laws"
       },
       "correctAnswer": "B",
-      "explanation": "The younger/healthier owner will have to pay much higher premiums to insure the older/unhealthy owner, which can feel unfair."
+      "explanation": "The younger/healthier owner will have to pay much higher premiums to insure the older/unhealthy owner, which can feel unfair.",
+      "kidExplanation": "If you are a healthy 30-year-old and your business partner is a 60-year-old smoker, it's going to cost YOU a fortune to buy a policy on their life! But it will be super cheap for them to buy a policy on you. That doesn't feel very fair, does it?"
     },
     {
       "id": 23,
@@ -34,7 +36,8 @@
         "D": "It allows the business to deduct the full death benefit as a business expense"
       },
       "correctAnswer": "B",
-      "explanation": "The costs are shared equally among the owners, and the premiums are paid with corporate after-tax dollars, which are often taxed at a lower rate than personal income."
+      "explanation": "The costs are shared equally among the owners, and the premiums are paid with corporate after-tax dollars, which are often taxed at a lower rate than personal income.",
+      "kidExplanation": "Instead of the partners fighting over who has to pay the bigger insurance bill, they just make the company buy the policies! The company pays the bills using its own money, so the cost is shared perfectly fairly between all the partners."
     },
     {
       "id": 24,
@@ -46,7 +49,8 @@
         "D": "It is a retained earnings account used only for declaring annual bonuses to employees"
       },
       "correctAnswer": "B",
-      "explanation": "It is a notional tracking account that allows the corporation to pass tax-free amounts (like a life insurance death benefit) to its shareholders as a tax-free capital dividend."
+      "explanation": "It is a notional tracking account that allows the corporation to pass tax-free amounts (like a life insurance death benefit) to its shareholders as a tax-free capital dividend.",
+      "kidExplanation": "The CDA isn't a real bank account with actual money in it; it's a magic scorecard! It keeps track of special, tax-free money the company gets (like life insurance). When the company passes that money out to the owners, the scorecard proves to the government that the money shouldn't be taxed!"
     },
     {
       "id": 25,
@@ -58,7 +62,8 @@
         "D": "None of the death benefit; death benefits do not qualify for CDA treatment"
       },
       "correctAnswer": "C",
-      "explanation": "Only the portion of the death benefit that exceeds the policy's Adjusted Cost Basis (ACB)."
+      "explanation": "Only the portion of the death benefit that exceeds the policy's Adjusted Cost Basis (ACB).",
+      "kidExplanation": "If your company gets a $1,000,000 life insurance payout, the government looks at the policy's \"cost\" (the ACB). If the ACB is $100,000, only the $900,000 difference gets to go onto the magic tax-free scorecard (the CDA)."
     },
     {
       "id": 26,
@@ -70,7 +75,8 @@
         "D": "The deceased's estate lends the money to the surviving shareholders"
       },
       "correctAnswer": "B",
-      "explanation": "The corporation receives the death benefit and pays it to the surviving shareholders as a tax-free capital dividend."
+      "explanation": "The corporation receives the death benefit and pays it to the surviving shareholders as a tax-free capital dividend.",
+      "kidExplanation": "First, the insurance company gives the big payout to the business. Then, the business uses its magic CDA scorecard to pass that exact same cash down to the surviving partners completely tax-free. Finally, the partners use that cash to buy the shares from their friend's family!"
     },
     {
       "id": 27,
@@ -82,7 +88,8 @@
         "D": "A lease agreement for the shares"
       },
       "correctAnswer": "B",
-      "explanation": "A promissory note."
+      "explanation": "A promissory note.",
+      "kidExplanation": "A promissory note is an official \"I Owe You.\" The surviving partners hand an I.O.U. to the family to get the shares immediately. Once the business gives them the insurance cash, they use the cash to pay off the I.O.U.!"
     },
     {
       "id": 28,
@@ -94,7 +101,8 @@
         "D": "The corporation sells the deceased's shares to a third party buyer"
       },
       "correctAnswer": "A",
-      "explanation": "The corporation receives the death benefit, credits the CDA, and directly uses the funds to redeem (buy back) and cancel the shares from the deceased's estate."
+      "explanation": "The corporation receives the death benefit, credits the CDA, and directly uses the funds to redeem (buy back) and cancel the shares from the deceased's estate.",
+      "kidExplanation": "It's super simple! The company gets the insurance money, walks over to the deceased partner's family, and says, \"Here is the cash for your shares.\" The company takes the shares back, deletes them, and the surviving partners are left owning the whole company!"
     },
     {
       "id": 29,
@@ -106,7 +114,8 @@
         "D": "A buy-sell agreement cannot legally be established without life insurance"
       },
       "correctAnswer": "B",
-      "explanation": "Through a sinking fund or by taking out a loan when the owner dies, though this is much riskier and more expensive than insurance."
+      "explanation": "Through a sinking fund or by taking out a loan when the owner dies, though this is much riskier and more expensive than insurance.",
+      "kidExplanation": "If you can't buy an umbrella before it rains (life insurance), you have to save up your own money in a jar just in case, or run to the bank for a loan when the storm hits. It's way harder and costs a lot more, but sometimes it's the only choice!"
     },
     {
       "id": 30,
@@ -118,7 +127,8 @@
         "D": "It requires the surviving shareholder to automatically sell the business to a third party"
       },
       "correctAnswer": "B",
-      "explanation": "It is an efficient and cost-effective option when there are exactly two shareholders, paying out upon the death of the first partner."
+      "explanation": "It is an efficient and cost-effective option when there are exactly two shareholders, paying out upon the death of the first partner.",
+      "kidExplanation": "If there are only two partners running a business, they don't need two separate policies. They can buy one \"First-To-Die\" policy. It's cheaper, and it pays out the moment the first partner passes away, giving the business the exact money it needs to buy their half!"
     }
   ]
 }

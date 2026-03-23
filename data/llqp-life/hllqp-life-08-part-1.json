@@ -10,7 +10,8 @@
         "D": "A shareholder with the largest equity stake in the company"
       },
       "correctAnswer": "B",
-      "explanation": "A key person is an employee whose death, incapacity, or departure would cause severe financial harm to the business. This is typically someone with unique skills, client relationships, or expertise that cannot be easily replaced."
+      "explanation": "A key person is an employee whose death, incapacity, or departure would cause severe financial harm to the business. This is typically someone with unique skills, client relationships, or expertise that cannot be easily replaced.",
+      "kidExplanation": "A key person is like the star quarterback of a hockey team. If the star player suddenly can't play, the whole team might start losing games because that player was super important to winning!"
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
         "D": "The business will be required to replace the deceased key person within 30 days"
       },
       "correctAnswer": "C",
-      "explanation": "A demand loan can be recalled at any time by the creditor. If the lender believes the death of a key person jeopardizes the business's ability to repay, they may exercise the right to demand immediate full repayment."
+      "explanation": "A demand loan can be recalled at any time by the creditor. If the lender believes the death of a key person jeopardizes the business's ability to repay, they may exercise the right to demand immediate full repayment.",
+      "kidExplanation": "A demand loan is like borrowing a toy from a friend who says, \"You can use this, but you have to give it back exactly when I ask for it.\" If your friend thinks you might break the toy because your big brother isn't there to help you anymore, they will demand the toy back right now!"
     },
     {
       "id": 3,
@@ -34,7 +36,8 @@
         "D": "The business is transferred to Jason's creditors as payment of his personal debts"
       },
       "correctAnswer": "C",
-      "explanation": "Without a buy-sell agreement, the deceased's heirs automatically inherit the business share and may demand voting rights, management control, or the right to liquidate."
+      "explanation": "Without a buy-sell agreement, the deceased's heirs automatically inherit the business share and may demand voting rights, management control, or the right to liquidate.",
+      "kidExplanation": "Imagine you and your best friend build an awesome treehouse. If your friend moves away and gives his half of the treehouse to a grumpy kid who wants to paint it pink and change all the rules, that's family interference! A contract stops random people from taking over your clubhouse."
     },
     {
       "id": 4,
@@ -46,7 +49,8 @@
         "D": "The garden centre cannot be transferred to family members under Canadian tax law"
       },
       "correctAnswer": "B",
-      "explanation": "Christina faces an equality challenge: the garden center is much larger than her other assets, creating an imbalance in inheritance distribution between her two children."
+      "explanation": "Christina faces an equality challenge: the garden center is much larger than her other assets, creating an imbalance in inheritance distribution between her two children.",
+      "kidExplanation": "If you have two cookies, it's easy to share. But if you have one giant chocolate cake and one tiny cracker, it's really hard to share fairly between two kids. Christina has to figure out how to be fair to both kids when her biggest prize is the business!"
     },
     {
       "id": 5,
@@ -58,7 +62,8 @@
         "D": "The heirs must immediately sell the shares to the remaining shareholders"
       },
       "correctAnswer": "B",
-      "explanation": "Upon death, Canadian tax law deems the deceased to have disposed of their shares at fair market value on the date of death. This triggers a capital gains inclusion (50% of the gain is taxable)."
+      "explanation": "Upon death, Canadian tax law deems the deceased to have disposed of their shares at fair market value on the date of death. This triggers a capital gains inclusion (50% of the gain is taxable).",
+      "kidExplanation": "When you pass away, the government pretends you \"sold\" your business on your very last day. If your business is worth a lot of money, the government wants a slice of the profit as a tax payment, even if your family wants to keep the business!"
     },
     {
       "id": 6,
@@ -70,7 +75,8 @@
         "D": "The business is treated as a corporation and continues as a separate legal entity"
       },
       "correctAnswer": "B",
-      "explanation": "A sole proprietorship is not a separate legal entity—the business and the owner are one and the same. Upon the owner's death, the business ceases to exist as a legal entity."
+      "explanation": "A sole proprietorship is not a separate legal entity—the business and the owner are one and the same. Upon the owner's death, the business ceases to exist as a legal entity.",
+      "kidExplanation": "A sole proprietorship is basically just YOU. If you run a lemonade stand all by yourself, and you decide to pack up and go home, the lemonade stand disappears. You and the stand are the exact same thing!"
     },
     {
       "id": 7,
@@ -82,7 +88,8 @@
         "D": "No personal liability; only the partnership assets can be used to satisfy debts"
       },
       "correctAnswer": "B",
-      "explanation": "In a general partnership, partners have unlimited personal liability. Each partner is jointly and severally liable, meaning a creditor can pursue any partner for the full amount of the partnership's debt."
+      "explanation": "In a general partnership, partners have unlimited personal liability. Each partner is jointly and severally liable, meaning a creditor can pursue any partner for the full amount of the partnership's debt.",
+      "kidExplanation": "If you and your friend accidentally break a window while running your lawn-mowing business, the homeowner can ask either of you to pay for the whole window from your own piggy banks. You are both on the hook for mistakes!"
     },
     {
       "id": 8,
@@ -94,7 +101,8 @@
         "D": "Liability that increases as the partnership's profits increase"
       },
       "correctAnswer": "B",
-      "explanation": "A limited partner's liability is capped at their investment in the partnership. They cannot be held personally responsible for partnership debts beyond what they invested."
+      "explanation": "A limited partner's liability is capped at their investment in the partnership. They cannot be held personally responsible for partnership debts beyond what they invested.",
+      "kidExplanation": "A limited partner is like a silent backer. You give your friend $10 to start a lemonade stand, and you get some of the profits. But if the lemonade stand goes bankrupt, you only lose your $10. Nobody can come take your bicycle to pay the stand's debts!"
     },
     {
       "id": 9,
@@ -106,7 +114,8 @@
         "D": "A sole proprietorship that has been registered with the government"
       },
       "correctAnswer": "A",
-      "explanation": "A corporation is a separate legal entity created by law. It owns assets, enters contracts, and is taxed independently of its owners. Shareholders have limited liability."
+      "explanation": "A corporation is a separate legal entity created by law. It owns assets, enters contracts, and is taxed independently of its owners. Shareholders have limited liability.",
+      "kidExplanation": "A corporation is like a robot you built. The robot has its own name, its own wallet, and pays its own bills. If the robot gets a parking ticket, the robot has to pay it, not you! It is totally separate from you."
     },
     {
       "id": 10,
@@ -118,7 +127,8 @@
         "D": "The business must have annual revenue exceeding $1 million"
       },
       "correctAnswer": "C",
-      "explanation": "The Lifetime Capital Gains Exemption applies only to qualified small business shares (QSBS), which include shares of Canadian-Controlled Private Corporations (CCPCs) and family farm or fishing corporations."
+      "explanation": "The Lifetime Capital Gains Exemption applies only to qualified small business shares (QSBS), which include shares of Canadian-Controlled Private Corporations (CCPCs) and family farm or fishing corporations.",
+      "kidExplanation": "The government has a super special discount coupon (the LCGE) that saves you from paying huge taxes when you sell your business. But the coupon only works if your business is a private, homegrown Canadian company!"
     }
   ]
 }

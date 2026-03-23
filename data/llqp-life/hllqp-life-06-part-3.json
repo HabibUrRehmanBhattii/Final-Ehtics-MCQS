@@ -21,6 +21,7 @@
         "Hourly worker consent is not required to establish different classes."
       ],
       "explanation": "Step 1: Identify that this question concerns whether a single master contract can have different benefit structures.\nStep 2: Apply the LLQP principle that master contracts can establish multiple membership classes with different benefit formulas.\nStep 3: Recognize that within each class, coverage must be calculated consistently for all members.\nStep 4: Eliminate distractors - different levels are allowed; separate contracts are not required; consent is not required.\nStep 5: Select the best answer. Option C: Yes, a master contract can establish different membership classes, provided coverage is calculated the same way for everyone within a specific class.",
+      "kidExplanation": "A boss is allowed to have different rules for different teams. They can give the managers one type of insurance and the hourly workers a different type, as long as everyone on the same team gets the same deal!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -47,6 +48,7 @@
         "Group insurance does not require individual medical exams."
       ],
       "explanation": "Step 1: Identify that this question concerns a fundamental structural difference between group and individual insurance.\nStep 2: Apply the LLQP principle that in group insurance, the employer holds the master contract, and employees hold certificates of insurance.\nStep 3: Recognize that employees do not own their group policies - they participate in the employer's group contract.\nStep 4: Eliminate distractors - group insurance can be term (no cash value); benefits are tax-free; no individual medical exams are required.\nStep 5: Select the best answer. Option B: The individual plan member does not hold the insurance contract; the employer holds the master contract.",
+      "kidExplanation": "With group insurance, you don't own the contract—your boss does! You just get a little booklet that says you are allowed to be a part of the boss's big plan.",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -73,6 +75,7 @@
         "No retroactive premium is required."
       ],
       "explanation": "Step 1: Identify that this question concerns the continuation of coverage during the conversion period.\nStep 2: Apply the LLQP principle that group coverage remains in force for 31 days following termination, even if the employee has not yet converted.\nStep 3: Recognize that the conversion period provides a safety period where benefits remain active.\nStep 4: Evaluate - Greg's death occurred within the 31-day window while coverage was still active.\nStep 5: Select the best answer. Option B: The death benefit will be paid out because the group coverage remains in force during the 31-day conversion period.",
+      "kidExplanation": "The 31 days after you leave your job is a magical safety bubble. If something bad happens to you while you are inside that 31-day bubble, your old insurance still works and pays your family!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -99,6 +102,7 @@
         "AD&D benefits reimburse the loss itself, not medical expenses."
       ],
       "explanation": "Step 1: Identify that this question concerns how dismemberment benefits are calculated under AD&D.\nStep 2: Apply the LLQP principle that AD&D policies include a \"schedule of loss\" that specifies what percentage of the base benefit is paid for different types of losses.\nStep 3: Recognize that loss of a limb typically pays a percentage (often 50%) of the base amount, not the full amount.\nStep 4: Understand that benefits are paid as a lump sum, not monthly or for medical expenses.\nStep 5: Select the best answer. Option B: As a single lump-sum payment representing a specific percentage of the base AD&D amount, based on a schedule of loss.",
+      "kidExplanation": "If you lose an arm or a leg in an accident, the insurance company looks at a special chart. The chart tells them exactly what percentage of the big money pile to give you to help you out.",
       "difficulty": "medium",
       "tags": [
         "AD&D",
@@ -125,6 +129,7 @@
         "CLHIA guidelines do establish a maximum limit."
       ],
       "explanation": "Step 1: Identify that this question concerns the CLHIA maximum for guaranteed-issue conversion.\nStep 2: Apply the CLHIA guideline that employees can convert up to $200,000 without medical evidence.\nStep 3: Recognize that if coverage exceeds $200,000, the excess would require medical underwriting.\nStep 4: Understand this limit protects the insurer from excessive adverse selection.\nStep 5: Select the best answer. Option C: $200,000",
+      "kidExplanation": "There is a cap on how much insurance you can take with you when you leave your job without taking a health test. For most of Canada, that maximum limit is $200,000. It's the biggest slice of pie you're allowed to take!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -152,6 +157,7 @@
         "The benefit is only for the outstanding loan balance, not the original amount."
       ],
       "explanation": "Step 1: Identify that this question concerns how creditor life insurance works.\nStep 2: Apply the principle that creditor insurance is designed to protect the creditor by paying off the outstanding loan balance.\nStep 3: Recognize that the creditor (bank) is the beneficiary and receives the benefit.\nStep 4: Calculate: Benefit equals the outstanding loan balance at death, which is $18,000.\nStep 5: Select the best answer. Option B: The bank receives $18,000 to extinguish the debt.",
+      "kidExplanation": "If you borrow money to buy a car, and you pass away, \"creditor\" insurance pays the bank exactly what you still owe for the car. It protects your family so they don't have to pay off your car loan!",
       "difficulty": "medium",
       "tags": [
         "creditor-insurance",
@@ -178,6 +184,7 @@
         "The enrolment period is when an eligible employee enrolls in the plan."
       ],
       "explanation": "Step 1: Identify that this question asks for the terminology for the initial waiting period before coverage begins.\nStep 2: Apply the LLQP definitions - the probationary period (also called the waiting period) is the time a new employee must work before becoming eligible for group insurance.\nStep 3: Recognize the standard timeframes are typically 1-3 months depending on the plan.\nStep 4: Eliminate distractors - conversion period is post-termination; contestability period is for claims; enrolment period is when eligible employees sign up.\nStep 5: Select the best answer. Option C: The probationary period (or waiting period)",
+      "kidExplanation": "When you start a new job, you are the new kid on the block. The boss makes you wait a few months to prove you are going to stay before they give you all the cool insurance perks. This waiting time is called the probationary period!",
       "difficulty": "easy",
       "tags": [
         "group-insurance",
@@ -204,6 +211,7 @@
         "Municipal payroll taxes are not applied to group insurance premiums."
       ],
       "explanation": "Step 1: Identify that this question concerns the specific tax treatment of group insurance premiums in certain provinces.\nStep 2: Apply the LLQP rule that in Ontario, Quebec, and Manitoba, provincial retail sales tax (RST) applies to group insurance premiums.\nStep 3: Note that other provinces may have different tax treatments (e.g., GST in some cases).\nStep 4: Eliminate distractors - capital gains tax, GST as primary, and municipal taxes are not correct.\nStep 5: Select the best answer. Option B: Provincial retail sales tax (RST)",
+      "kidExplanation": "In some places like Ontario, when you or your boss buy group insurance, the government adds a little extra shopping tax on top of the price, just like when you buy a toy at the store!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -230,6 +238,7 @@
         "Yearly renewable term (YRT) is the standard underlying product for group insurance."
       ],
       "explanation": "Step 1: Identify that this question concerns what type of life insurance underlies group coverage.\nStep 2: Apply the LLQP principle that group life insurance is typically provided through yearly renewable term (YRT) insurance.\nStep 3: Recognize that YRT allows insurers to adjust premiums annually based on the group's age and claims experience.\nStep 4: Eliminate distractors - universal, T-100, and permanent insurance are not standard for group plans.\nStep 5: Select the best answer. Option D: Yearly renewable term (YRT) insurance",
+      "kidExplanation": "Group insurance is usually rented one year at a time. Every year, the insurance company checks how old the group is getting and gives the boss a brand new price tag for the next year!",
       "difficulty": "medium",
       "tags": [
         "group-insurance",
@@ -256,6 +265,7 @@
         "Accidental loss of sight is typically covered under AD&D."
       ],
       "explanation": "Step 1: Identify that this question concerns exclusions in AD&D coverage.\nStep 2: Apply the LLQP principle that AD&D policies typically exclude deaths or injuries caused by the insured's criminal conduct or illegal acts.\nStep 3: Recognize that impaired driving is illegal in all jurisdictions and constitutes intentional violation of driving laws.\nStep 4: Evaluate each option - airline crash and workplace accident are covered; chemical spill is accidental and covered; impaired driving is excluded.\nStep 5: Select the best answer. Option C: The employee dies in a car accident while legally intoxicated (impaired driving).",
+      "kidExplanation": "The insurance company won't pay the extra \"accident\" money if the accident happened because you were doing something against the rules, like driving while drunk. You have to be safe and follow the rules to get the prize!",
       "difficulty": "hard",
       "tags": [
         "AD&D",
