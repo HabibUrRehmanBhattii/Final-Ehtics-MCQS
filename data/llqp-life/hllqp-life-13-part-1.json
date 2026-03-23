@@ -1,132 +1,136 @@
 {
-  "data": [
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 13 QZ - Chapter 1-12 Review Test - Section 1",
+  "examTips": "Comprehensive review of chapters 1-12. Focus on core concepts, policy types, and fundamental insurance principles.",
+  "questions": [
     {
       "id": 1,
       "question": "What is the primary purpose of life insurance?",
-      "options": {
-        "A": "High return on investment",
-        "B": "Financial protection for family after death",
-        "C": "Pay off credit card debts",
-        "D": "Supplement retirement income"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) High return on investment",
+        "B) Financial protection for family after death",
+        "C) Pay off credit card debts",
+        "D) Supplement retirement income"
+      ],
+      "correctAnswer": 1,
       "explanation": "To protect against the financial consequences of an individual's death",
       "kidExplanation": "Life insurance is a safety net. If someone passes away, the net catches their family so they don't crash and run out of money to buy food and keep their house."
     },
     {
       "id": 2,
       "question": "What is the core characteristic of Term Life insurance?",
-      "options": {
-        "A": "Cash value component included",
-        "B": "Provides lifetime coverage",
-        "C": "Temporary coverage for a specific period, pays only if death occurs during that period",
-        "D": "Premiums decrease over time"
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) Cash value component included",
+        "B) Provides lifetime coverage",
+        "C) Temporary coverage for a specific period, pays only if death occurs during that period",
+        "D) Premiums decrease over time"
+      ],
+      "correctAnswer": 2,
       "explanation": "It provides temporary coverage for a specific period and pays out only if death occurs during that period",
       "kidExplanation": "Term insurance is like renting an apartment for a year. You only have it for the time you pay for it. If you move out (or the term ends), you don't get to keep it!"
     },
     {
       "id": 3,
       "question": "What does the renewable feature allow in Term Life insurance?",
-      "options": {
-        "A": "Renew without medical exam",
-        "B": "Keep the same premium upon renewal",
-        "C": "Convert automatically to whole life",
-        "D": "Cancel anytime with full refund"
-      },
-      "correctAnswer": "A",
+      "options": [
+        "A) Renew without medical exam",
+        "B) Keep the same premium upon renewal",
+        "C) Convert automatically to whole life",
+        "D) Cancel anytime with full refund"
+      ],
+      "correctAnswer": 0,
       "explanation": "Renew the policy for another term without providing medical evidence of insurability",
       "kidExplanation": "Renewable means you can hit the Continue button on your insurance when it expires, and the company is NOT allowed to make you take a doctor's test, even if you got sick!"
     },
     {
       "id": 4,
       "question": "How do Year Renewable Term (YRT) premiums work?",
-      "options": {
-        "A": "Premiums remain perfectly level throughout",
-        "B": "Premiums decrease each year",
-        "C": "Premiums start low and increase every year",
-        "D": "Single lump sum payment upfront"
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) Premiums remain perfectly level throughout",
+        "B) Premiums decrease each year",
+        "C) Premiums start low and increase every year",
+        "D) Single lump sum payment upfront"
+      ],
+      "correctAnswer": 2,
       "explanation": "They start low and increase every year as the insured gets older and the risk of death increases",
       "kidExplanation": "Every time you have a birthday, you get a little bit older and a little bit closer to heaven. Because the risk goes up every year, the price tag of a YRT policy goes up every year, too!"
     },
     {
       "id": 5,
       "question": "What are the two main guarantees of Whole Life insurance?",
-      "options": {
-        "A": "Guaranteed dividends and temporary coverage",
-        "B": "Guaranteed level premium and guaranteed death benefit for life",
-        "C": "10% return on cash surrender value",
-        "D": "Acceptance with no medical exam"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) Guaranteed dividends and temporary coverage",
+        "B) Guaranteed level premium and guaranteed death benefit for life",
+        "C) 10% return on cash surrender value",
+        "D) Acceptance with no medical exam"
+      ],
+      "correctAnswer": 1,
       "explanation": "A guaranteed level premium and a guaranteed death benefit for life",
       "kidExplanation": "Whole life is a forever promise! The company promises that your price will never, ever go up, and your family will definitely get the prize money no matter how old you are when you pass away."
     },
     {
       "id": 6,
       "question": "What is Cash Surrender Value (CSV)?",
-      "options": {
-        "A": "Amount paid to beneficiary upon death",
-        "B": "Savings component that grows and is available if policyholder surrenders the policy",
-        "C": "Total of all premiums paid",
-        "D": "Penalty fee charged for cancellation"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) Amount paid to beneficiary upon death",
+        "B) Savings component that grows and is available if policyholder surrenders the policy",
+        "C) Total of all premiums paid",
+        "D) Penalty fee charged for cancellation"
+      ],
+      "correctAnswer": 1,
       "explanation": "A savings component that grows over time and is available to the policyholder if they cancel (surrender) the policy",
       "kidExplanation": "Whole life insurance has a secret piggy bank inside it. If you decide you don't want the insurance anymore, you can smash the piggy bank and walk away with the cash inside!"
     },
     {
       "id": 7,
       "question": "What is a dividend in a par policy?",
-      "options": {
-        "A": "Guaranteed annual interest payment",
-        "B": "Penalty for late premium payment",
-        "C": "Partial refund of premiums when insurer has favorable results",
-        "D": "Mandatory tax payment to government"
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) Guaranteed annual interest payment",
+        "B) Penalty for late premium payment",
+        "C) Partial refund of premiums when insurer has favorable results",
+        "D) Mandatory tax payment to government"
+      ],
+      "correctAnswer": 2,
       "explanation": "A partial refund of premiums paid out when the insurance company experiences favorable mortality, interest, or expense results",
       "kidExplanation": "If the insurance company makes extra profit because not many people got sick and their investments did well, they share that extra profit with you! It's like a special bonus check."
     },
     {
       "id": 8,
       "question": "What is the Paid-Up Additions (PUA) dividend option?",
-      "options": {
-        "A": "Use dividend to reduce premium payments",
-        "B": "Reduce monthly premium amount",
-        "C": "Use dividend to buy additional paid-up permanent life insurance",
-        "D": "Add term insurance coverage for one year"
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) Use dividend to reduce premium payments",
+        "B) Reduce monthly premium amount",
+        "C) Use dividend to buy additional paid-up permanent life insurance",
+        "D) Add term insurance coverage for one year"
+      ],
+      "correctAnswer": 2,
       "explanation": "The dividend is used as a single premium to buy a small chunk of additional, fully paid-up permanent life insurance, increasing the total death benefit",
       "kidExplanation": "Instead of taking the bonus money in cash, you use it to buy tiny, extra shields that you never have to pay for again. Every year you get a bonus, your total shield gets bigger!"
     },
     {
       "id": 9,
       "question": "What is the unique structure of Universal Life (UL) insurance?",
-      "options": {
-        "A": "Unbundles insurance cost and investment account for transparency and flexibility",
-        "B": "Combines home and auto insurance coverage",
-        "C": "Guarantees 5% return on investment account",
-        "D": "Provides no investment choice options"
-      },
-      "correctAnswer": "A",
+      "options": [
+        "A) Unbundles insurance cost and investment account for transparency and flexibility",
+        "B) Combines home and auto insurance coverage",
+        "C) Guarantees 5% return on investment account",
+        "D) Provides no investment choice options"
+      ],
+      "correctAnswer": 0,
       "explanation": "It unbundles the insurance cost and the investment account, making it completely transparent and flexible",
       "kidExplanation": "UL is a build-it-yourself policy! Instead of the company hiding the math, you can see exactly how much goes to the insurance shield and how much goes into your investment bucket."
     },
     {
       "id": 10,
       "question": "What is Net Cost of Pure Insurance (NCPI) in a UL policy?",
-      "options": {
-        "A": "Administrative fee paid to the agent",
-        "B": "Monthly cost deducted from the investment account to provide death benefit protection",
-        "C": "Total premium amount paid by policyholder",
-        "D": "Minimum guaranteed return on investment"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) Administrative fee paid to the agent",
+        "B) Monthly cost deducted from the investment account to provide death benefit protection",
+        "C) Total premium amount paid by policyholder",
+        "D) Minimum guaranteed return on investment"
+      ],
+      "correctAnswer": 1,
       "explanation": "The actual cost the insurer charges each month to provide the death benefit protection, deducted from the investment account",
       "kidExplanation": "The NCPI is the actual price tag of the insurance shield. Every month, the insurance company reaches into your UL savings bucket and takes out just enough coins to pay for that month's shield."
     }

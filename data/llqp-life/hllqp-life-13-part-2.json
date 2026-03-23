@@ -1,132 +1,136 @@
 {
-  "data": [
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 13 QZ - Chapter 1-12 Review Test - Section 2",
+  "examTips": "Comprehensive review of chapters 1-12. Focus on riders, group insurance, and benefit options.",
+  "questions": [
     {
       "id": 11,
       "question": "If the policyholder stops paying premiums in a UL policy, what happens?",
-      "options": {
-        "A": "Policy lapses immediately",
-        "B": "Insurer continues to deduct NCPI from investment account until account runs dry",
-        "C": "Death benefit is cut in half",
-        "D": "Account is canceled automatically"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) Policy lapses immediately",
+        "B) Insurer continues to deduct NCPI from investment account until account runs dry",
+        "C) Death benefit is cut in half",
+        "D) Account is canceled automatically"
+      ],
+      "correctAnswer": 1,
       "explanation": "The insurer will continue to deduct the monthly NCPI and expenses from the investment account, keeping the policy in force until the account runs dry",
       "kidExplanation": "Because it's a flexible policy, you can take a vacation from paying bills! As long as your savings bucket has enough coins in it to pay the monthly shield cost, the policy stays turned on."
     },
     {
       "id": 12,
       "question": "What does the UL death benefit option of 'face plus fund value' mean?",
-      "options": {
-        "A": "Level death benefit amount",
-        "B": "Indexed to inflation rate",
-        "C": "Pays original face amount plus total value of investment account",
-        "D": "Decreasing term benefit amount"
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) Level death benefit amount",
+        "B) Indexed to inflation rate",
+        "C) Pays original face amount plus total value of investment account",
+        "D) Decreasing term benefit amount"
+      ],
+      "correctAnswer": 2,
       "explanation": "Pays the beneficiary the original face amount PLUS the total value of the investment account",
       "kidExplanation": "With this option, your family gets the main prize (the face amount) AND they get to keep the entire piggy bank of savings you built up inside the policy!"
     },
     {
       "id": 13,
       "question": "What does the Waiver of Premium rider do?",
-      "options": {
-        "A": "Waives the first year premium",
-        "B": "Pays policy premiums if policyholder becomes totally disabled",
-        "C": "Waives medical exam requirement",
-        "D": "Allows policyholder to skip any payment anytime"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) Waives the first year premium",
+        "B) Pays policy premiums if policyholder becomes totally disabled",
+        "C) Waives medical exam requirement",
+        "D) Allows policyholder to skip any payment anytime"
+      ],
+      "correctAnswer": 1,
       "explanation": "It pays the policy premiums on behalf of the policyholder if they become totally disabled",
       "kidExplanation": "If you get super sick or hurt and can't go to work to make money, this special rule steps in and pays your monthly insurance bill for you until you get better!"
     },
     {
       "id": 14,
       "question": "What is the Guaranteed Insurability Benefit (GIB) rider?",
-      "options": {
-        "A": "Guarantees policy will never lapse",
-        "B": "Allows purchase of additional insurance at future events without medical exam",
-        "C": "Guarantees coverage for terminal illnesses",
-        "D": "Guarantees premium will never decrease"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) Guarantees policy will never lapse",
+        "B) Allows purchase of additional insurance at future events without medical exam",
+        "C) Guarantees coverage for terminal illnesses",
+        "D) Guarantees premium will never decrease"
+      ],
+      "correctAnswer": 1,
       "explanation": "It allows the insured to purchase additional insurance at specific future dates or life events (like marriage) without proving they are healthy",
       "kidExplanation": "The GIB rider is a VIP pass for the future! It lets you buy a bigger shield later on when you get married or have kids, and the company isn't allowed to ask you any health questions."
     },
     {
       "id": 15,
       "question": "What is the Accidental Death (AD) rider?",
-      "options": {
-        "A": "Covers death from cancer diagnosis",
-        "B": "Pays additional amount (often double) if death results from accident",
-        "C": "Covers funeral expenses only",
-        "D": "Refunds all premiums paid"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) Covers death from cancer diagnosis",
+        "B) Pays additional amount (often double) if death results from accident",
+        "C) Covers funeral expenses only",
+        "D) Refunds all premiums paid"
+      ],
+      "correctAnswer": 1,
       "explanation": "It pays an additional amount (often double the base face amount) if the insured dies as a direct result of an accident",
       "kidExplanation": "If you buy this extra sticker for your policy and you pass away in a tragic accident (like a car crash), the insurance company pays your family DOUBLE the prize money!"
     },
     {
       "id": 16,
       "question": "What can happen to a Children's Term Rider when they grow up?",
-      "options": {
-        "A": "Provides college scholarship benefit",
-        "B": "Can be converted to individual permanent policies without medical exam",
-        "C": "Provides cash bonus on 18th birthday",
-        "D": "Refunds all premiums paid"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) Provides college scholarship benefit",
+        "B) Can be converted to individual permanent policies without medical exam",
+        "C) Provides cash bonus on 18th birthday",
+        "D) Refunds all premiums paid"
+      ],
+      "correctAnswer": 1,
       "explanation": "It can usually be converted into individual permanent policies for the children without medical evidence of insurability",
       "kidExplanation": "When the kids grow up and leave the house, they can take their mini-shield with them and turn it into a big adult shield, and they don't have to take a doctor's test to do it!"
     },
     {
       "id": 17,
       "question": "Who owns the master contract in a group insurance plan?",
-      "options": {
-        "A": "Individual employee",
-        "B": "Insurance agent",
-        "C": "Plan sponsor (usually the employer)",
-        "D": "Policy beneficiary"
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) Individual employee",
+        "B) Insurance agent",
+        "C) Plan sponsor (usually the employer)",
+        "D) Policy beneficiary"
+      ],
+      "correctAnswer": 2,
       "explanation": "The plan sponsor (usually the employer)",
       "kidExplanation": "The boss owns the giant group policy. The employees just get a little booklet saying they are allowed to stand under the boss's giant umbrella!"
     },
     {
       "id": 18,
       "question": "What is a probationary period in group insurance?",
-      "options": {
-        "A": "Time employee must wait after hiring before becoming eligible",
-        "B": "Period after claim is filed before payment",
-        "C": "Time to cancel the master contract",
-        "D": "31-day grace period for premium payment"
-      },
-      "correctAnswer": "A",
+      "options": [
+        "A) Time employee must wait after hiring before becoming eligible",
+        "B) Period after claim is filed before payment",
+        "C) Time to cancel the master contract",
+        "D) 31-day grace period for premium payment"
+      ],
+      "correctAnswer": 0,
       "explanation": "The time an employee has to wait after being hired before they are eligible to join the group plan",
       "kidExplanation": "When you are the new kid at work, the boss makes you wait a few months to prove you are going to stay before they let you use the cool company insurance perks."
     },
     {
       "id": 19,
       "question": "What is the conversion privilege for a departing group member?",
-      "options": {
-        "A": "Convert group coverage to individual permanent policy without exam within 31 days",
-        "B": "Convert to coverage at new employer",
-        "C": "Match coverage from new employer",
-        "D": "Cash out the master contract value"
-      },
-      "correctAnswer": "A",
+      "options": [
+        "A) Convert group coverage to individual permanent policy without exam within 31 days",
+        "B) Convert to coverage at new employer",
+        "C) Match coverage from new employer",
+        "D) Cash out the master contract value"
+      ],
+      "correctAnswer": 0,
       "explanation": "Convert their group coverage to an individual permanent policy without providing proof of insurability within 31 days",
       "kidExplanation": "If you quit your job, you have exactly 31 days to trade your company team jersey for your own personal jersey, and you don't even have to pass a health test to do it!"
     },
     {
       "id": 20,
       "question": "How are employer-paid group life insurance premiums taxed?",
-      "options": {
-        "A": "Entirely tax-free for both employer and employee",
-        "B": "Deductible business expense for employer, taxable benefit for employee",
-        "C": "Not deductible as business expense",
-        "D": "Treated as capital gains income"
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) Entirely tax-free for both employer and employee",
+        "B) Deductible business expense for employer, taxable benefit for employee",
+        "C) Not deductible as business expense",
+        "D) Treated as capital gains income"
+      ],
+      "correctAnswer": 1,
       "explanation": "They are a deductible business expense for the employer, but a taxable benefit to the employee",
       "kidExplanation": "The boss gets a tax discount for buying the insurance, but the government sees the insurance as an extra prize for the employee, so the employee has to pay a little bit of tax on that prize!"
     }

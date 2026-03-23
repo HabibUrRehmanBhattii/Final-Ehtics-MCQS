@@ -1,7 +1,658 @@
 {
-  "topic": "LLQP Life Insurance - Chapter Quizzes",
-  "topicId": "llqp-life",
-  "description": "HLLQP - LIFE 13 QZ - Policy Delivery and Post-Sale Responsibilities",
-  "examTips": "Coming soon",
-  "questions": []
+  "topic": "LLQP Life Insurance - Chapter 1-12 Review Test",
+  "topicId": "llqp-life-13",
+  "description": "HLLQP - LIFE 13 QZ - Chapter 1 - 12 Review Test = Chapter 1 & 2: Introduction to Life Insurance & Term Insurance",
+  "examTips": "Review all chapters 1-12 materials. This comprehensive review covers all major life insurance concepts.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of life insurance?",
+      "options": {
+        "A": "To guarantee a high return on investment.",
+        "B": "To protect against the financial consequences of an individual's death.",
+        "C": "To pay off the policyholder's credit card debt while they are alive.",
+        "D": "To provide tax-free income during retirement."
+      },
+      "correctAnswer": "B",
+      "explanation": "To protect against the financial consequences of an individual's death",
+      "kidExplanation": "Life insurance is a safety net. If someone passes away, the net catches their family so they don't crash and run out of money to buy food and keep their house."
+    },
+    {
+      "id": 2,
+      "question": "Which of the following is a core characteristic of Term Life Insurance?",
+      "options": {
+        "A": "It builds a cash surrender value over time.",
+        "B": "It provides coverage for the entire lifetime of the insured.",
+        "C": "It provides temporary coverage for a specific period and pays out only if death occurs during that period.",
+        "D": "The premiums are guaranteed to decrease every year."
+      },
+      "correctAnswer": "C",
+      "explanation": "It provides temporary coverage for a specific period and pays out only if death occurs during that period.",
+      "kidExplanation": "Term insurance is like renting an apartment for a year. You only have it for the time you pay for it. If you move out (or the term ends), you don't get to keep it!"
+    },
+    {
+      "id": 3,
+      "question": "What does a \"Renewable\" feature on a term life policy allow the policyholder to do?",
+      "options": {
+        "A": "Renew the policy for another term without providing medical evidence of insurability.",
+        "B": "Renew the policy at the exact same premium rate they paid originally.",
+        "C": "Convert the policy to a whole life policy.",
+        "D": "Cancel the policy and get all their premiums back."
+      },
+      "correctAnswer": "A",
+      "explanation": "Renew the policy for another term without providing medical evidence of insurability.",
+      "kidExplanation": "\"Renewable\" means you can hit the \"Continue\" button on your insurance when it expires, and the company is NOT allowed to make you take a doctor's test, even if you got sick!"
+    },
+    {
+      "id": 4,
+      "question": "How do premiums for Yearly Renewable Term (YRT) insurance change over time?",
+      "options": {
+        "A": "They remain perfectly level for the life of the policy.",
+        "B": "They start high and decrease each year.",
+        "C": "They start low and increase every year as the insured gets older and the risk of death increases.",
+        "D": "They are only paid once as a single lump sum."
+      },
+      "correctAnswer": "C",
+      "explanation": "They start low and increase every year as the insured gets older and the risk of death increases.",
+      "kidExplanation": "Every time you have a birthday, you get a little bit older and a little bit closer to heaven. Because the risk goes up every year, the price tag of a YRT policy goes up every year, too!"
+    },
+    {
+      "id": 5,
+      "question": "What are the two main guarantees provided by a traditional Whole Life insurance policy?",
+      "options": {
+        "A": "Guaranteed dividends and a guaranteed term length.",
+        "B": "A guaranteed level premium and a guaranteed death benefit for life.",
+        "C": "A guaranteed 10% investment return and a guaranteed cash value.",
+        "D": "Guaranteed acceptance with no medical questions."
+      },
+      "correctAnswer": "B",
+      "explanation": "A guaranteed level premium and a guaranteed death benefit for life.",
+      "kidExplanation": "Whole life is a forever promise! The company promises that your price will never, ever go up, and your family will definitely get the prize money no matter how old you are when you pass away."
+    },
+    {
+      "id": 6,
+      "question": "What is the \"Cash Surrender Value\" (CSV) in a permanent life insurance policy?",
+      "options": {
+        "A": "The amount paid to the beneficiary at death.",
+        "B": "A savings component that grows over time and is available to the policyholder if they cancel (surrender) the policy.",
+        "C": "The total amount of premiums paid into the policy.",
+        "D": "A penalty fee charged for cancelling early."
+      },
+      "correctAnswer": "B",
+      "explanation": "A savings component that grows over time and is available to the policyholder if they cancel (surrender) the policy.",
+      "kidExplanation": "Whole life insurance has a secret piggy bank inside it. If you decide you don't want the insurance anymore, you can smash the piggy bank and walk away with the cash inside!"
+    },
+    {
+      "id": 7,
+      "question": "In a Participating (Par) Whole Life policy, what is a \"dividend\"?",
+      "options": {
+        "A": "A guaranteed annual interest payment.",
+        "B": "A penalty charged for late premium payments.",
+        "C": "A partial refund of premiums paid out when the insurance company experiences favorable mortality, interest, or expense results.",
+        "D": "A mandatory tax paid to the government."
+      },
+      "correctAnswer": "C",
+      "explanation": "A partial refund of premiums paid out when the insurance company experiences favorable mortality, interest, or expense results.",
+      "kidExplanation": "If the insurance company makes extra profit because not many people got sick and their investments did well, they share that extra profit with you! It's like a special bonus check."
+    },
+    {
+      "id": 8,
+      "question": "Which dividend option uses the annual dividend to purchase a tiny, fully paid-up permanent insurance policy that adds to the total death benefit?",
+      "options": {
+        "A": "Cash reduction",
+        "B": "Premium reduction",
+        "C": "Paid-Up Additions (PUA)",
+        "D": "Term additions"
+      },
+      "correctAnswer": "C",
+      "explanation": "Paid-Up Additions (PUA)",
+      "kidExplanation": "Instead of taking the bonus money in cash, you use it to buy tiny, extra shields that you never have to pay for again. Every year you get a bonus, your total shield gets bigger!"
+    },
+    {
+      "id": 9,
+      "question": "How is a Universal Life (UL) policy uniquely structured compared to traditional Whole Life?",
+      "options": {
+        "A": "It unbundles the insurance cost and the investment account, making it completely transparent and flexible.",
+        "B": "It combines life insurance with home insurance.",
+        "C": "It guarantees a 5% return on all investments.",
+        "D": "It does not allow the policyholder to choose their investments."
+      },
+      "correctAnswer": "A",
+      "explanation": "It unbundles the insurance cost and the investment account, making it completely transparent and flexible.",
+      "kidExplanation": "UL is a \"build-it-yourself\" policy! Instead of the company hiding the math, you can see exactly how much goes to the insurance shield and how much goes into your investment bucket."
+    },
+    {
+      "id": 10,
+      "question": "In a UL policy, what is the \"Net Cost of Pure Insurance\" (NCPI)?",
+      "options": {
+        "A": "The administrative fee charged by the agent.",
+        "B": "The actual cost the insurer charges each month to provide the death benefit protection, deducted from the investment account.",
+        "C": "The total premium paid by the policyholder.",
+        "D": "The minimum guaranteed return on the investment account."
+      },
+      "correctAnswer": "B",
+      "explanation": "The actual cost the insurer charges each month to provide the death benefit protection, deducted from the investment account.",
+      "kidExplanation": "The NCPI is the actual price tag of the insurance shield. Every month, the insurance company reaches into your UL savings bucket and takes out just enough coins to pay for that month's shield."
+    },
+    {
+      "id": 11,
+      "question": "What happens if a UL policyholder stops paying premiums, but there is still plenty of money in the investment account?",
+      "options": {
+        "A": "The policy lapses immediately.",
+        "B": "The insurer will continue to deduct the monthly NCPI and expenses from the investment account, keeping the policy in force until the account runs dry.",
+        "C": "The death benefit is cut in half.",
+        "D": "The insurer cancels the investment account."
+      },
+      "correctAnswer": "B",
+      "explanation": "The insurer will continue to deduct the monthly NCPI and expenses from the investment account, keeping the policy in force until the account runs dry.",
+      "kidExplanation": "Because it's a flexible policy, you can take a vacation from paying bills! As long as your savings bucket has enough coins in it to pay the monthly shield cost, the policy stays turned on."
+    },
+    {
+      "id": 12,
+      "question": "Which UL death benefit option pays the beneficiary the original face amount PLUS the total value of the investment account?",
+      "options": {
+        "A": "Level death benefit",
+        "B": "Indexed death benefit",
+        "C": "Face amount plus fund value (increasing death benefit)",
+        "D": "Decreasing term benefit"
+      },
+      "correctAnswer": "C",
+      "explanation": "Face amount plus fund value (increasing death benefit)",
+      "kidExplanation": "With this option, your family gets the main prize (the face amount) AND they get to keep the entire piggy bank of savings you built up inside the policy!"
+    },
+    {
+      "id": 13,
+      "question": "What does a \"Waiver of Premium\" rider do?",
+      "options": {
+        "A": "It waives the first year of premiums for new clients.",
+        "B": "It pays the policy premiums on behalf of the policyholder if they become totally disabled.",
+        "C": "It waives the requirement for a medical exam.",
+        "D": "It allows the policyholder to skip premiums whenever they want."
+      },
+      "correctAnswer": "B",
+      "explanation": "It pays the policy premiums on behalf of the policyholder if they become totally disabled.",
+      "kidExplanation": "If you get super sick or hurt and can't go to work to make money, this special rule steps in and pays your monthly insurance bill for you until you get better!"
+    },
+    {
+      "id": 14,
+      "question": "What is the primary function of a Guaranteed Insurability Benefit (GIB) rider?",
+      "options": {
+        "A": "It guarantees the policy will never lapse.",
+        "B": "It allows the insured to purchase additional insurance at specific future dates or life events (like marriage) without proving they are healthy.",
+        "C": "It guarantees the insured will never be diagnosed with a terminal illness.",
+        "D": "It ensures the premium will decrease over time."
+      },
+      "correctAnswer": "B",
+      "explanation": "It allows the insured to purchase additional insurance at specific future dates or life events (like marriage) without proving they are healthy.",
+      "kidExplanation": "The GIB rider is a VIP pass for the future! It lets you buy a bigger shield later on when you get married or have kids, and the company isn't allowed to ask you any health questions."
+    },
+    {
+      "id": 15,
+      "question": "How does an Accidental Death (AD) rider typically pay out?",
+      "options": {
+        "A": "It pays the death benefit early if the insured is diagnosed with cancer.",
+        "B": "It pays an additional amount (often double the base face amount) if the insured dies as a direct result of an accident.",
+        "C": "It covers funeral expenses only.",
+        "D": "It refunds all premiums if the insured dies in an accident."
+      },
+      "correctAnswer": "B",
+      "explanation": "It pays an additional amount (often double the base face amount) if the insured dies as a direct result of an accident.",
+      "kidExplanation": "If you buy this extra sticker for your policy and you pass away in a tragic accident (like a car crash), the insurance company pays your family DOUBLE the prize money!"
+    },
+    {
+      "id": 16,
+      "question": "A Children's Term Rider provides coverage for all eligible children of the insured. What is a major advantage of this rider when the children grow up?",
+      "options": {
+        "A": "It converts into a college scholarship.",
+        "B": "It can usually be converted into individual permanent policies for the children without medical evidence of insurability.",
+        "C": "It pays a cash bonus on their 18th birthday.",
+        "D": "The parents receive a refund of all premiums."
+      },
+      "correctAnswer": "B",
+      "explanation": "It can usually be converted into individual permanent policies for the children without medical evidence of insurability.",
+      "kidExplanation": "When the kids grow up and leave the house, they can take their mini-shield with them and turn it into a big adult shield, and they don't have to take a doctor's test to do it!"
+    },
+    {
+      "id": 17,
+      "question": "In a group life insurance plan, who owns the master contract?",
+      "options": {
+        "A": "The individual employee",
+        "B": "The insurance agent",
+        "C": "The plan sponsor (usually the employer)",
+        "D": "The beneficiary"
+      },
+      "correctAnswer": "C",
+      "explanation": "The plan sponsor (usually the employer)",
+      "kidExplanation": "The boss owns the giant group policy. The employees just get a little booklet saying they are allowed to stand under the boss's giant umbrella!"
+    },
+    {
+      "id": 18,
+      "question": "What is the \"probationary period\" in group insurance?",
+      "options": {
+        "A": "The time an employee has to wait after being hired before they are eligible to join the group plan.",
+        "B": "The time between a claim being filed and paid.",
+        "C": "The period during which the insurer can cancel the master contract.",
+        "D": "The 31-day grace period for paying premiums."
+      },
+      "correctAnswer": "A",
+      "explanation": "The time an employee has to wait after being hired before they are eligible to join the group plan.",
+      "kidExplanation": "When you are the new kid at work, the boss makes you wait a few months to prove you are going to stay before they let you use the cool company insurance perks."
+    },
+    {
+      "id": 19,
+      "question": "What does the \"conversion privilege\" allow a departing group member to do?",
+      "options": {
+        "A": "Convert their group coverage to an individual permanent policy without providing proof of insurability within 31 days.",
+        "B": "Convert their life insurance into health insurance.",
+        "C": "Force their new employer to match their old coverage.",
+        "D": "Cash out the master contract."
+      },
+      "correctAnswer": "A",
+      "explanation": "Convert their group coverage to an individual permanent policy without providing proof of insurability within 31 days.",
+      "kidExplanation": "If you quit your job, you have exactly 31 days to trade your company \"team jersey\" for your own \"personal jersey,\" and you don't even have to pass a health test to do it!"
+    },
+    {
+      "id": 20,
+      "question": "How are employer-paid premiums for basic group life insurance treated for tax purposes?",
+      "options": {
+        "A": "They are tax-free for both employer and employee.",
+        "B": "They are a deductible business expense for the employer, but a taxable benefit to the employee.",
+        "C": "They are not deductible for the employer.",
+        "D": "They are treated as a capital gain."
+      },
+      "correctAnswer": "B",
+      "explanation": "They are a deductible business expense for the employer, but a taxable benefit to the employee.",
+      "kidExplanation": "The boss gets a tax discount for buying the insurance, but the government sees the insurance as an extra \"prize\" for the employee, so the employee has to pay a little bit of tax on that prize!"
+    },
+    {
+      "id": 21,
+      "question": "Are the death benefits paid out from a personally owned life insurance policy taxable to the beneficiary?",
+      "options": {
+        "A": "Yes, fully taxable as income.",
+        "B": "Yes, 50% taxable as a capital gain.",
+        "C": "No, they are received entirely tax-free.",
+        "D": "Only if the benefit exceeds $1 million."
+      },
+      "correctAnswer": "C",
+      "explanation": "No, they are received entirely tax-free.",
+      "kidExplanation": "The government keeps its hands completely off the giant prize money. Your family gets to keep every single penny of the death benefit completely tax-free!"
+    },
+    {
+      "id": 22,
+      "question": "What happens if a policyholder completely surrenders their permanent life insurance policy for its cash value?",
+      "options": {
+        "A": "The cash is received completely tax-free.",
+        "B": "The policyholder must pay tax on the \"policy gain\" (Proceeds of Disposition minus the Adjusted Cost Basis).",
+        "C": "The cash value is confiscated by the government.",
+        "D": "The policyholder goes to jail."
+      },
+      "correctAnswer": "B",
+      "explanation": "The policyholder must pay tax on the \"policy gain\" (Proceeds of Disposition minus the Adjusted Cost Basis).",
+      "kidExplanation": "If you turn your policy back into the store for cash, you have to do some math. If you got back more money than the policy actually \"cost\" you, that extra money is profit, and you have to pay taxes on the profit!"
+    },
+    {
+      "id": 23,
+      "question": "Under what condition can a life insurance policy \"roll over\" to another person without triggering immediate taxes?",
+      "options": {
+        "A": "If it is sold to a stranger for cash.",
+        "B": "If it is transferred absolutely to a spouse or common-law partner.",
+        "C": "If it is transferred to a business partner.",
+        "D": "If it is transferred to a parent."
+      },
+      "correctAnswer": "B",
+      "explanation": "If it is transferred absolutely to a spouse or common-law partner.",
+      "kidExplanation": "The government lets you pass your policy to your husband or wife like a hot potato! Because they are your spouse, the tax monster won't bite you when you hand it over."
+    },
+    {
+      "id": 24,
+      "question": "What is the purpose of the MTAR (Maximum Tax Actuarial Reserve) rule?",
+      "options": {
+        "A": "To set the minimum premium an insurer can charge.",
+        "B": "To ensure a policy is primarily for life insurance protection and not just a giant, tax-sheltered investment account.",
+        "C": "To limit the death benefit to $5 million.",
+        "D": "To regulate how much agents get paid."
+      },
+      "correctAnswer": "B",
+      "explanation": "To ensure a policy is primarily for life insurance protection and not just a giant, tax-sheltered investment account.",
+      "kidExplanation": "The MTAR rule is a speed limit for your policy's savings account. It stops people from using insurance as a secret treasure chest to hide millions of dollars from the tax man!"
+    },
+    {
+      "id": 25,
+      "question": "Why would a corporation purchase \"Key Person\" insurance?",
+      "options": {
+        "A": "To pay for the key person's retirement.",
+        "B": "To provide a tax-free cash injection to the business to cover lost revenue and the costs of finding a replacement if a crucial employee dies.",
+        "C": "To avoid paying corporate taxes.",
+        "D": "To provide a death benefit to the key person's spouse."
+      },
+      "correctAnswer": "B",
+      "explanation": "To provide a tax-free cash injection to the business to cover lost revenue and the costs of finding a replacement if a crucial employee dies.",
+      "kidExplanation": "If the company's star quarterback passes away, the team is in big trouble. Key Person insurance gives the team a pile of cash to survive while they search for a new star player!"
+    },
+    {
+      "id": 26,
+      "question": "What is the purpose of a \"Buy-Sell Agreement\" funded by life insurance?",
+      "options": {
+        "A": "To force employees to buy company products.",
+        "B": "To dictate exactly what happens to a partner's shares if they die, using the insurance money to guarantee the surviving partners can buy out the deceased's family.",
+        "C": "To sell the business to a foreign investor.",
+        "D": "To buy new equipment for the office."
+      },
+      "correctAnswer": "B",
+      "explanation": "To dictate exactly what happens to a partner's shares if they die, using the insurance money to guarantee the surviving partners can buy out the deceased's family.",
+      "kidExplanation": "It's a \"What If\" rulebook! If a partner passes away, the insurance company hands the surviving partners a pile of cash so they can instantly buy the shares back from the partner's family, keeping strangers out of the business!"
+    },
+    {
+      "id": 27,
+      "question": "In a private corporation, what is the Capital Dividend Account (CDA)?",
+      "options": {
+        "A": "The account used to pay employee salaries.",
+        "B": "A notional tracking account that allows the corporation to pass the tax-free life insurance death benefit down to the surviving shareholders completely tax-free.",
+        "C": "A high-risk mutual fund.",
+        "D": "The government's tax collection account."
+      },
+      "correctAnswer": "B",
+      "explanation": "A notional tracking account that allows the corporation to pass the tax-free life insurance death benefit down to the surviving shareholders completely tax-free.",
+      "kidExplanation": "The CDA is a magic tax-free scorecard! It proves to the government that the insurance money the company just received is special, so the company can hand that cash to the owners without anyone paying taxes."
+    },
+    {
+      "id": 28,
+      "question": "If a bank forces a business owner to buy life insurance to secure a commercial loan (collateral insurance), what tax advantage might the business get?",
+      "options": {
+        "A": "The death benefit becomes taxable.",
+        "B": "The business may be able to deduct a portion of the premiums (the NCPI) as a business expense.",
+        "C": "The loan is automatically forgiven.",
+        "D": "The business pays zero income tax that year."
+      },
+      "correctAnswer": "B",
+      "explanation": "The business may be able to deduct a portion of the premiums (the NCPI) as a business expense.",
+      "kidExplanation": "Normally, you can't deduct insurance costs from your taxes. But if the bank makes you buy it just to get a loan for your business, the government feels bad and lets you write off part of the cost!"
+    },
+    {
+      "id": 29,
+      "question": "What is the primary purpose of the Medical Information Bureau (MIB)?",
+      "options": {
+        "A": "To provide a definitive medical diagnosis for the applicant.",
+        "B": "To share coded medical information among insurers to detect fraud and omissions on applications.",
+        "C": "To force clients to take blood tests.",
+        "D": "To sell medical data to advertisers."
+      },
+      "correctAnswer": "B",
+      "explanation": "To share coded medical information among insurers to detect fraud and omissions on applications.",
+      "kidExplanation": "The MIB is a secret group chat for insurance companies. If you tell Company A you have a bad heart, they put a code in the chat. If you lie to Company B later, they check the chat and catch you!"
+    },
+    {
+      "id": 30,
+      "question": "If an applicant is given a \"Temporary Insurance Agreement\" (TIA), what does it do?",
+      "options": {
+        "A": "It provides permanent coverage without an application.",
+        "B": "It provides a limited amount of temporary coverage immediately while the application is being medically underwritten.",
+        "C": "It gives the applicant a 10-day free look.",
+        "D": "It waives the first year's premium."
+      },
+      "correctAnswer": "B",
+      "explanation": "It provides a limited amount of temporary coverage immediately while the application is being medically underwritten.",
+      "kidExplanation": "A TIA is a \"temporary shield\" that protects you while you wait for your real shield to be built in the factory. You only get it if you pay today and promise you are healthy!"
+    },
+    {
+      "id": 31,
+      "question": "What happens if the insurance company discovers a \"fraudulent material misrepresentation\" 5 years after the policy was issued?",
+      "options": {
+        "A": "They must pay the claim because the 2-year contestability period expired.",
+        "B": "They can void the policy entirely and deny the claim, because fraud invalidates the 2-year contestability limit.",
+        "C": "They adjust the age on the policy.",
+        "D": "They charge a 10% penalty."
+      },
+      "correctAnswer": "B",
+      "explanation": "They can void the policy entirely and deny the claim, because fraud invalidates the 2-year contestability limit.",
+      "kidExplanation": "The insurance company has a 2-year safety window for honest mistakes. But if you lied ON PURPOSE to trick them, that safety window disappears! They can rip up your contract even 5 years later."
+    },
+    {
+      "id": 32,
+      "question": "What is an \"Attending Physician's Statement\" (APS)?",
+      "options": {
+        "A": "A bill from the hospital.",
+        "B": "A report written by the applicant's personal doctor detailing their medical history, requested by the underwriter.",
+        "C": "A contract signed by the agent.",
+        "D": "A death certificate."
+      },
+      "correctAnswer": "B",
+      "explanation": "A report written by the applicant's personal doctor detailing their medical history, requested by the underwriter.",
+      "kidExplanation": "An APS is just a fancy letter the insurance company asks your personal doctor to write. The letter tells the company exactly how healthy you are and what medicines you take!"
+    },
+    {
+      "id": 33,
+      "question": "When conducting a needs analysis, why must you account for the death of a stay-at-home parent?",
+      "options": {
+        "A": "To pay off their business debts.",
+        "B": "Because replacing their caregiving duties (e.g., childcare, household management) will result in significant new expenses for the surviving spouse.",
+        "C": "Because it is legally required by the CRA.",
+        "D": "Because they have a high income."
+      },
+      "correctAnswer": "B",
+      "explanation": "Because replacing their caregiving duties (e.g., childcare, household management) will result in significant new expenses for the surviving spouse.",
+      "kidExplanation": "Even if mom or dad doesn't bring home a paycheck, the work they do is super valuable! If they aren't there, the family has to pay for a nanny or babysitter, which costs a lot of money."
+    },
+    {
+      "id": 34,
+      "question": "What is a \"liquid asset\" in the context of estate planning?",
+      "options": {
+        "A": "A family cottage.",
+        "B": "A rare art collection.",
+        "C": "Assets like cash, savings accounts, or life insurance that can be quickly converted to cash to pay final expenses.",
+        "D": "A private business."
+      },
+      "correctAnswer": "C",
+      "explanation": "Assets like cash, savings accounts, or life insurance that can be quickly converted to cash to pay final expenses.",
+      "kidExplanation": "Liquid assets are things that can be turned into cold, hard cash instantly. If you don't have cash ready when you pass away, your family might have to sell your house in a panic just to pay the bills!"
+    },
+    {
+      "id": 35,
+      "question": "If a business owner leaves a family cottage with a massive capital gain to their children, how can life insurance help?",
+      "options": {
+        "A": "It stops the government from taxing the cottage.",
+        "B": "It provides the liquid cash needed to pay the capital gains tax, preventing the children from having to sell the cottage to pay the CRA.",
+        "C": "It forces the children to live in the cottage.",
+        "D": "It transfers the cottage to a corporation."
+      },
+      "correctAnswer": "B",
+      "explanation": "It provides the liquid cash needed to pay the capital gains tax, preventing the children from having to sell the cottage to pay the CRA.",
+      "kidExplanation": "The government taxes the profit on your cottage when you pass away! Life insurance gives your kids a giant pile of cash so they can pay the tax monster and keep the family cabin."
+    },
+    {
+      "id": 36,
+      "question": "In the \"Income Replacement Approach\" math, what does \"capitalization\" mean?",
+      "options": {
+        "A": "Dividing the needed annual income by the expected interest rate to determine the lump sum required.",
+        "B": "Multiplying the debt by the inflation rate.",
+        "C": "Moving all money to the nation's capital.",
+        "D": "Paying off the mortgage entirely."
+      },
+      "correctAnswer": "A",
+      "explanation": "Dividing the needed annual income by the expected interest rate to determine the lump sum required.",
+      "kidExplanation": "Capitalization asks a math question: \"How giant does a pile of money need to be so that the interest it earns every year perfectly replaces the paycheck you used to bring home?\""
+    },
+    {
+      "id": 37,
+      "question": "How does the \"Capital Needs Approach\" differ from the \"Income Replacement Approach\"?",
+      "options": {
+        "A": "It only covers final expenses.",
+        "B": "It ignores inflation.",
+        "C": "It creates a comprehensive list of all specific capital needs (debts, taxes, education funds, and income shortfalls) to calculate the exact lump sum required.",
+        "D": "It assumes the capital is never spent."
+      },
+      "correctAnswer": "C",
+      "explanation": "It creates a comprehensive list of all specific capital needs (debts, taxes, education funds, and income shortfalls) to calculate the exact lump sum required.",
+      "kidExplanation": "Instead of just replacing a paycheck, the Capital Needs Approach makes a giant shopping list! It adds up the missing paychecks, the funeral cost, the credit card bills, and the kids' college funds to get one perfect total!"
+    },
+    {
+      "id": 38,
+      "question": "Why is it crucial to check a client's \"cash flow\" before recommending a $1 million Whole Life policy?",
+      "options": {
+        "A": "To see if they qualify for a government grant.",
+        "B": "Because permanent insurance is expensive; if the client doesn't have positive cash flow (extra money at the end of the month), they cannot afford the premium and the policy will lapse.",
+        "C": "Because cash flow determines the death benefit.",
+        "D": "Because the agent gets a cash flow bonus."
+      },
+      "correctAnswer": "B",
+      "explanation": "Because permanent insurance is expensive; if the client doesn't have positive cash flow (extra money at the end of the month), they cannot afford the premium and the policy will lapse.",
+      "kidExplanation": "It doesn't matter if the math says you need a permanent shield if you don't have enough allowance money to pay for it! The agent has to make sure you can actually afford the monthly bill."
+    },
+    {
+      "id": 39,
+      "question": "If a client needs a massive amount of insurance coverage to protect their young family but has a very tight budget, what is the best recommendation?",
+      "options": {
+        "A": "A small Whole Life policy.",
+        "B": "A Universal Life policy with maximum deposits.",
+        "C": "A Term Life insurance policy, as it provides the highest death benefit for the lowest initial premium.",
+        "D": "No insurance until they make more money."
+      },
+      "correctAnswer": "C",
+      "explanation": "A Term Life insurance policy, as it provides the highest death benefit for the lowest initial premium.",
+      "kidExplanation": "If you need a giant shield right now but you don't have a lot of money, you rent a temporary shield (Term insurance). It's super cheap and gives your family maximum protection!"
+    },
+    {
+      "id": 40,
+      "question": "What is an \"exclusion\" in an insurance contract?",
+      "options": {
+        "A": "A bonus paid at retirement.",
+        "B": "A specific condition or activity (like suicide within 2 years, or a dangerous hobby) that the policy will NOT cover.",
+        "C": "The removal of the agent from the contract.",
+        "D": "A tax-free dividend."
+      },
+      "correctAnswer": "B",
+      "explanation": "A specific condition or activity (like suicide within 2 years, or a dangerous hobby) that the policy will NOT cover.",
+      "kidExplanation": "Exclusions are the \"Fine Print.\" It's a rule that says, \"We will cover you for EVERYTHING... except if you die doing this one specific dangerous thing, like skydiving.\""
+    },
+    {
+      "id": 41,
+      "question": "What is the \"10-day right of rescission\" (free look period)?",
+      "options": {
+        "A": "The insurer's right to cancel the policy within 10 days.",
+        "B": "The policyholder's right to review the newly delivered policy for 10 days and return it for a full, 100% refund if they change their mind.",
+        "C": "The grace period for late premiums.",
+        "D": "The waiting period before a claim is paid."
+      },
+      "correctAnswer": "B",
+      "explanation": "The policyholder's right to review the newly delivered policy for 10 days and return it for a full, 100% refund if they change their mind.",
+      "kidExplanation": "It's a 10-day return policy! When you get your new insurance book, you have 10 days to read it. If you decide you don't want it, you give it back and get all your money back!"
+    },
+    {
+      "id": 42,
+      "question": "How long is the standard grace period for a missed premium payment?",
+      "options": {
+        "A": "10 days",
+        "B": "30 or 31 days",
+        "C": "60 days",
+        "D": "6 months"
+      },
+      "correctAnswer": "B",
+      "explanation": "30 or 31 days",
+      "kidExplanation": "If you accidentally forget to pay your bill on time, the company doesn't take your shield away instantly. They give you a 30-day \"grace period\" to pay up before you lose your protection!"
+    },
+    {
+      "id": 43,
+      "question": "What happens if an insured dies during the grace period before paying the overdue premium?",
+      "options": {
+        "A": "The claim is denied.",
+        "B": "The policy pays out 50%.",
+        "C": "The insurer pays the full death benefit but deducts the unpaid premium from the payout.",
+        "D": "The beneficiary goes to jail."
+      },
+      "correctAnswer": "C",
+      "explanation": "The insurer pays the full death benefit but deducts the unpaid premium from the payout.",
+      "kidExplanation": "If you pass away during the grace period, the company still pays your family the giant prize! BUT, because you forgot to pay your last bill, they subtract that one bill from the prize before handing it over."
+    },
+    {
+      "id": 44,
+      "question": "If an irrevocable beneficiary is named on a policy, who must sign off to change the beneficiary designation?",
+      "options": {
+        "A": "The policyholder only.",
+        "B": "The insurance agent.",
+        "C": "The current irrevocable beneficiary must provide written consent.",
+        "D": "A judge."
+      },
+      "correctAnswer": "C",
+      "explanation": "The current irrevocable beneficiary must provide written consent.",
+      "kidExplanation": "\"Irrevocable\" means locked tight! You can never take that person's name off the policy unless they actually sign a piece of paper saying they agree to give up the prize."
+    },
+    {
+      "id": 45,
+      "question": "What is the most critical document the beneficiary must submit to the insurance company to process a death claim?",
+      "options": {
+        "A": "The deceased's original birth certificate.",
+        "B": "A valid Proof of Death (such as a provincial Death Certificate).",
+        "C": "The original application form.",
+        "D": "The deceased's bank statements."
+      },
+      "correctAnswer": "B",
+      "explanation": "A valid Proof of Death (such as a provincial Death Certificate).",
+      "kidExplanation": "The insurance company needs absolute proof that the person went to heaven before they hand out a million dollars! An official Death Certificate is the ultimate proof."
+    },
+    {
+      "id": 46,
+      "question": "If the insurer discovers at the time of claim that the insured was actually older than stated on the application, what will they do?",
+      "options": {
+        "A": "Void the policy for fraud.",
+        "B": "Adjust the death benefit to the amount the premiums would have purchased at the correct, older age.",
+        "C": "Sue the estate.",
+        "D": "Pay the full face amount anyway."
+      },
+      "correctAnswer": "B",
+      "explanation": "Adjust the death benefit to the amount the premiums would have purchased at the correct, older age.",
+      "kidExplanation": "If you accidentally said you were younger, you were paying a cheaper price! The company won't cancel the policy, but they will shrink the prize money to match the cheaper price you were actually paying."
+    },
+    {
+      "id": 47,
+      "question": "When a beneficiary chooses the \"Life Annuity\" settlement option, how do they receive the death benefit?",
+      "options": {
+        "A": "As a single lump sum.",
+        "B": "As a series of regular payments guaranteed to last for the rest of their life.",
+        "C": "As an interest-only payment.",
+        "D": "As a stock portfolio."
+      },
+      "correctAnswer": "B",
+      "explanation": "As a series of regular payments guaranteed to last for the rest of their life.",
+      "kidExplanation": "Instead of getting one giant mountain of cash, you trade it for a magical machine! This machine promises to spit out a little bit of money every single month for the rest of your life."
+    },
+    {
+      "id": 48,
+      "question": "Why is it important for an agent to track the \"conversion expiry date\" on a client's term policy?",
+      "options": {
+        "A": "Because the agent loses their license if they forget.",
+        "B": "So the agent can remind the client to convert the policy to permanent insurance before the deadline, guaranteeing coverage without a medical exam.",
+        "C": "So the insurer can cancel the policy.",
+        "D": "So the premium can be increased."
+      },
+      "correctAnswer": "B",
+      "explanation": "So the agent can remind the client to convert the policy to permanent insurance before the deadline, guaranteeing coverage without a medical exam.",
+      "kidExplanation": "Term insurance has an expiration date! A good agent calls you before that date to say, \"Hey! Your temporary shield is about to expire. Do you want to trade it in for a permanent shield before it's too late?\""
+    },
+    {
+      "id": 49,
+      "question": "If a policyholder loses their physical life insurance contract, what should they do?",
+      "options": {
+        "A": "Apply for a completely new policy.",
+        "B": "Sign a \"Declaration of Lost Policy\" so the insurer can issue a duplicate contract.",
+        "C": "Nothing, the policy is legally void.",
+        "D": "Hire a lawyer to sue the company."
+      },
+      "correctAnswer": "B",
+      "explanation": "Sign a \"Declaration of Lost Policy\" so the insurer can issue a duplicate contract.",
+      "kidExplanation": "The actual paper isn't magic! If your paper burns up or gets lost, you just sign a form promising you lost it, and the insurance company prints you a brand new copy of your rulebook!"
+    },
+    {
+      "id": 50,
+      "question": "What is the primary purpose of an annual policy review between the agent and the client?",
+      "options": {
+        "A": "To legally extend the contestability period.",
+        "B": "To ensure the coverage, beneficiaries, and policy type still match the client's current life situation (e.g., new house, new baby, marriage).",
+        "C": "To force the client to buy more insurance.",
+        "D": "To reset the grace period."
+      },
+      "correctAnswer": "B",
+      "explanation": "To ensure the coverage, beneficiaries, and policy type still match the client's current life situation (e.g., new house, new baby, marriage).",
+      "kidExplanation": "Life changes fast! The agent visits you every year to check if your old shield is still the right size for your new life, and fixes it if it's not!"
+    }
+  ]
 }
