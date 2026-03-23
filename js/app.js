@@ -2873,11 +2873,21 @@ const MCQApp = {
       // Display kidExplanation if available
       const kidExplanationBox = document.getElementById('kid-explanation-box');
       const kidExplanationText = document.getElementById('kid-explanation-text');
+      console.log('📚 Kid Explanation Check:', {
+        hasQuestion: !!question,
+        hasKidExplanation: !!question.kidExplanation,
+        kidBoxFound: !!kidExplanationBox,
+        kidTextFound: !!kidExplanationText,
+        kidExplanationPreview: question.kidExplanation?.substring(0, 50) || 'NONE'
+      });
+
       if (question.kidExplanation && kidExplanationText) {
         kidExplanationText.innerHTML = this.formatExplanation(question.kidExplanation);
         kidExplanationBox.style.display = 'block';
+        console.log('✅ Kid explanation displayed');
       } else if (kidExplanationBox) {
         kidExplanationBox.style.display = 'none';
+        console.log('⚠️ Kid explanation not available for this question');
       }
 
       this.resetAIExplanationUi(true);
@@ -4360,11 +4370,21 @@ const MCQApp = {
       // Display kidExplanation if available
       const kidExplanationBox = document.getElementById('kid-explanation-box');
       const kidExplanationText = document.getElementById('kid-explanation-text');
+      console.log('📚 Kid Explanation Check:', {
+        hasQuestion: !!question,
+        hasKidExplanation: !!question.kidExplanation,
+        kidBoxFound: !!kidExplanationBox,
+        kidTextFound: !!kidExplanationText,
+        kidExplanationPreview: question.kidExplanation?.substring(0, 50) || 'NONE'
+      });
+
       if (question.kidExplanation && kidExplanationText) {
         kidExplanationText.innerHTML = this.formatExplanation(question.kidExplanation);
         kidExplanationBox.style.display = 'block';
+        console.log('✅ Kid explanation displayed');
       } else if (kidExplanationBox) {
         kidExplanationBox.style.display = 'none';
+        console.log('⚠️ Kid explanation not available for this question');
       }
 
       // Show AI button and ensure AI container is hidden until used
