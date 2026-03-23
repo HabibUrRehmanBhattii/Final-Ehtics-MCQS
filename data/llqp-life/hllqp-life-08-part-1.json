@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "question": "Which of the following describes a \"key person\" in a business?",
+      "options": {
+        "A": "Any employee who has been with the company for more than 5 years",
+        "B": "An employee whose death, incapacity, or departure would cause severe financial harm to the business",
+        "C": "The person responsible for accounting and financial reporting",
+        "D": "A shareholder with the largest equity stake in the company"
+      },
+      "correctAnswer": "B",
+      "explanation": "A key person is an employee whose death, incapacity, or departure would cause severe financial harm to the business. This is typically someone with unique skills, client relationships, or expertise that cannot be easily replaced."
+    },
+    {
+      "id": 2,
+      "question": "If a business has taken out a \"demand loan\" from a bank, what is the primary risk to the business if a key person dies?",
+      "options": {
+        "A": "The interest rate on the loan will increase automatically",
+        "B": "The bank will require additional collateral before releasing any funds",
+        "C": "The lender may demand immediate full repayment of the loan",
+        "D": "The business will be required to replace the deceased key person within 30 days"
+      },
+      "correctAnswer": "C",
+      "explanation": "A demand loan can be recalled at any time by the creditor. If the lender believes the death of a key person jeopardizes the business's ability to repay, they may exercise the right to demand immediate full repayment."
+    },
+    {
+      "id": 3,
+      "question": "Jason and Ivan own a successful plumbing business together as equal partners. Jason dies suddenly without a written buy-sell agreement in place. What is the likely consequence?",
+      "options": {
+        "A": "Ivan automatically becomes the sole owner of the business",
+        "B": "The business is automatically dissolved and assets are liquidated",
+        "C": "Jason's heirs inherit his business share and may demand voting rights, management control, or liquidation",
+        "D": "The business is transferred to Jason's creditors as payment of his personal debts"
+      },
+      "correctAnswer": "C",
+      "explanation": "Without a buy-sell agreement, the deceased's heirs automatically inherit the business share and may demand voting rights, management control, or the right to liquidate."
+    },
+    {
+      "id": 4,
+      "question": "Christina owns a $1.5 million garden centre and has assets totaling $2 million. She has two adult children. What is the primary challenge Christina faces in her estate planning?",
+      "options": {
+        "A": "The business is worth too little to be divided equally between her children",
+        "B": "An equality challenge: the garden centre is much larger than her other assets, creating an imbalance in inheritance distribution",
+        "C": "She will need to pay capital gains tax on the entire value of the business immediately",
+        "D": "The garden centre cannot be transferred to family members under Canadian tax law"
+      },
+      "correctAnswer": "B",
+      "explanation": "Christina faces an equality challenge: the garden center is much larger than her other assets, creating an imbalance in inheritance distribution between her two children."
+    },
+    {
+      "id": 5,
+      "question": "What happens to the shares of a successful business owner when they die from a Canadian tax perspective?",
+      "options": {
+        "A": "The shares pass to the heirs tax-free with no deemed disposition",
+        "B": "There is a deemed disposition at fair market value on the date of death, triggering capital gains inclusion",
+        "C": "The shares are automatically cancelled and the business ceases to exist",
+        "D": "The heirs must immediately sell the shares to the remaining shareholders"
+      },
+      "correctAnswer": "B",
+      "explanation": "Upon death, Canadian tax law deems the deceased to have disposed of their shares at fair market value on the date of death. This triggers a capital gains inclusion (50% of the gain is taxable)."
+    },
+    {
+      "id": 6,
+      "question": "From a legal and tax perspective, how is a \"sole proprietorship\" treated when the owner dies?",
+      "options": {
+        "A": "The business automatically transfers to the business's named executor",
+        "B": "The business ceases to exist as a legal entity because it is not a separate legal entity from the owner",
+        "C": "The business continues indefinitely under the ownership of the deceased's heirs",
+        "D": "The business is treated as a corporation and continues as a separate legal entity"
+      },
+      "correctAnswer": "B",
+      "explanation": "A sole proprietorship is not a separate legal entity—the business and the owner are one and the same. Upon the owner's death, the business ceases to exist as a legal entity."
+    },
+    {
+      "id": 7,
+      "question": "In a standard general partnership, what level of personal liability do the partners have?",
+      "options": {
+        "A": "Limited liability; personal assets are protected from partnership debts",
+        "B": "Unlimited personal liability; each partner is jointly and severally liable for all partnership debts",
+        "C": "Liability is limited to the amount each partner has invested in the partnership",
+        "D": "No personal liability; only the partnership assets can be used to satisfy debts"
+      },
+      "correctAnswer": "B",
+      "explanation": "In a general partnership, partners have unlimited personal liability. Each partner is jointly and severally liable, meaning a creditor can pursue any partner for the full amount of the partnership's debt."
+    },
+    {
+      "id": 8,
+      "question": "Which of the following accurately describes the liability of a \"limited partner\" in a limited partnership?",
+      "options": {
+        "A": "Unlimited personal liability, similar to a general partner",
+        "B": "Liability is capped at their investment in the partnership",
+        "C": "No liability whatsoever for partnership debts or obligations",
+        "D": "Liability that increases as the partnership's profits increase"
+      },
+      "correctAnswer": "B",
+      "explanation": "A limited partner's liability is capped at their investment in the partnership. They cannot be held personally responsible for partnership debts beyond what they invested."
+    },
+    {
+      "id": 9,
+      "question": "What is a key characteristic of a corporation?",
+      "options": {
+        "A": "A separate legal entity created by law with limited liability for shareholders",
+        "B": "An unincorporated business structure where all owners have unlimited liability",
+        "C": "A partnership where all partners have limited liability by default",
+        "D": "A sole proprietorship that has been registered with the government"
+      },
+      "correctAnswer": "A",
+      "explanation": "A corporation is a separate legal entity created by law. It owns assets, enters contracts, and is taxed independently of its owners. Shareholders have limited liability."
+    },
+    {
+      "id": 10,
+      "question": "To qualify for the Lifetime Capital Gains Exemption (LCGE), the business shares must meet certain criteria. Which of the following is a requirement?",
+      "options": {
+        "A": "The shares must be in a publicly traded company listed on a major stock exchange",
+        "B": "The owner must have held the shares for a minimum of 10 years",
+        "C": "The shares must be qualified small business shares (QSBS) of a Canadian-Controlled Private Corporation",
+        "D": "The business must have annual revenue exceeding $1 million"
+      },
+      "correctAnswer": "C",
+      "explanation": "The Lifetime Capital Gains Exemption applies only to qualified small business shares (QSBS), which include shares of Canadian-Controlled Private Corporations (CCPCs) and family farm or fishing corporations."
+    }
+  ]
+}

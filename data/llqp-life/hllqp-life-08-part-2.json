@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "id": 11,
+      "question": "Why might a business choose to buy \"Key Person\" life insurance on its top salesperson?",
+      "options": {
+        "A": "To cover the salesperson's personal income taxes after retirement",
+        "B": "To receive a tax-free death benefit that can be used to recruit a replacement, make up for lost revenue, or cover overhead if the salesperson dies",
+        "C": "To ensure that the salesperson's commissions continue to be paid to their family indefinitely",
+        "D": "To reduce the business's corporate income tax through premium deductions"
+      },
+      "correctAnswer": "B",
+      "explanation": "To receive a tax-free death benefit that can be used to recruit a replacement, make up for lost revenue, or cover overhead if the salesperson dies."
+    },
+    {
+      "id": 12,
+      "question": "What is a \"split-dollar arrangement\" in business life insurance?",
+      "options": {
+        "A": "A method of splitting the death benefit equally between multiple beneficiaries named in the policy",
+        "B": "A method of sharing the attributes and costs of a permanent life insurance policy between two or more parties, such as a company and a key employee",
+        "C": "A type of term insurance policy that increases in cost every two years",
+        "D": "An arrangement where the policyholder receives 50% of the death benefit while the insurer retains 50%"
+      },
+      "correctAnswer": "B",
+      "explanation": "A method of sharing the attributes and costs of a permanent life insurance policy between two or more parties, such as a company and a key employee."
+    },
+    {
+      "id": 13,
+      "question": "In a typical key person split-dollar arrangement using a Universal Life policy, how are the benefits usually divided?",
+      "options": {
+        "A": "The employee owns the death benefit and the corporation owns the cash value",
+        "B": "The corporation owns the death benefit up to the original face amount, and the employee owns the cash value and any excess death benefit",
+        "C": "The death benefit and cash value are split 50/50 between the corporation and the employee",
+        "D": "The corporation owns everything until the employee reaches retirement, then ownership transfers to the employee"
+      },
+      "correctAnswer": "B",
+      "explanation": "The corporation owns the death benefit up to the original face amount, and the employee owns the cash value and any excess death benefit."
+    },
+    {
+      "id": 14,
+      "question": "What is the Canada Revenue Agency's (CRA) administrative view on how premiums should be allocated in a split-dollar arrangement?",
+      "options": {
+        "A": "The corporation should pay 100% of the premiums to simplify administration",
+        "B": "The employee should pay 100% of the premiums since they benefit from the insurance",
+        "C": "The premium allocation should reflect the fair market value of their respective interests in the contract",
+        "D": "Premiums should always be split equally 50/50 between the parties"
+      },
+      "correctAnswer": "C",
+      "explanation": "The premium allocation should reflect the fair market value of their respective interests in the contract (e.g., the company pays for the pure term cost of the death benefit)."
+    },
+    {
+      "id": 15,
+      "question": "If a business is required by a bank to buy life insurance on a key person to secure a business loan, how are the premiums treated for tax purposes?",
+      "options": {
+        "A": "The premiums cannot be deducted under any circumstances",
+        "B": "The premiums (or the net cost of pure insurance) can be deducted from the business's income as a business expense",
+        "C": "Only 50% of the premiums can be deducted as a capital expense",
+        "D": "The premiums must be deducted over a 10-year period"
+      },
+      "correctAnswer": "B",
+      "explanation": "The premiums (or the net cost of pure insurance) can be deducted from the business's income as a business expense."
+    },
+    {
+      "id": 16,
+      "question": "What is the primary purpose of a business \"buy-sell agreement\"?",
+      "options": {
+        "A": "To set minimum prices for goods and services sold by the business",
+        "B": "To determine how profits are distributed annually among shareholders",
+        "C": "To control what happens to an owner's interest in the business if they die, retire, or become disabled",
+        "D": "To establish the salary levels for all employees of the business"
+      },
+      "correctAnswer": "C",
+      "explanation": "To control what happens to an owner's interest in the business if they die, retire, or become disabled."
+    },
+    {
+      "id": 17,
+      "question": "In a \"cross-purchase\" buy-sell agreement, what happens when one of the corporate shareholders dies?",
+      "options": {
+        "A": "The corporation automatically buys the shares from the deceased's estate",
+        "B": "The surviving shareholders personally buy the shares from the deceased's estate",
+        "C": "The shares are donated to a charitable organization",
+        "D": "The deceased's heirs retain full ownership and control of the shares"
+      },
+      "correctAnswer": "B",
+      "explanation": "The surviving shareholders personally buy the shares from the deceased's estate."
+    },
+    {
+      "id": 18,
+      "question": "In a \"share redemption plan\" (a type of buy-sell agreement), who purchases the shares of the deceased owner?",
+      "options": {
+        "A": "The deceased owner's heirs and family members",
+        "B": "The corporation itself redeems and cancels the shares",
+        "C": "The surviving shareholders acting as individuals",
+        "D": "An external third party chosen by the board of directors"
+      },
+      "correctAnswer": "B",
+      "explanation": "The corporation itself redeems and cancels the shares."
+    },
+    {
+      "id": 19,
+      "question": "Why is a buy-sell agreement crucial for the surviving spouse of a deceased business owner?",
+      "options": {
+        "A": "It ensures the spouse receives an annual pension from the business indefinitely",
+        "B": "It provides a guaranteed buyer and a guaranteed value for business shares that might otherwise be very hard to sell",
+        "C": "It allows the spouse to automatically become the owner of the business without any estate taxes",
+        "D": "It requires the business to hire the spouse as an employee at a high salary"
+      },
+      "correctAnswer": "B",
+      "explanation": "It provides a guaranteed buyer and a guaranteed value for business shares that might otherwise be very hard to sell (illiquid)."
+    },
+    {
+      "id": 20,
+      "question": "What is \"criss-cross insurance\" in the context of a buy-sell agreement?",
+      "options": {
+        "A": "Insurance purchased from multiple insurance companies to reduce costs",
+        "B": "Each business owner buys and owns a life insurance policy on the lives of the other owners to fund their purchase obligation",
+        "C": "A type of insurance that provides coverage for business liability in multiple jurisdictions",
+        "D": "Insurance that provides benefits when any employee of the company dies, not just owners"
+      },
+      "correctAnswer": "B",
+      "explanation": "Each business owner buys and owns a life insurance policy on the lives of the other owners to fund their purchase obligation."
+    }
+  ]
+}

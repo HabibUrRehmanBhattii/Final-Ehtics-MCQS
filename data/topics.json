@@ -366,10 +366,33 @@
         {
           "id": "llqp-life-08",
           "name": "HLLQP - LIFE 08 QZ - Business Life Insurance",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-08.json"
+          "description": "Chapter quiz covering key person insurance, buy-sell agreements, business structures (sole proprietorships, partnerships, corporations), split-dollar arrangements, cross-purchase and share redemption plans, criss-cross insurance, business-owned insurance, Capital Dividend Account, and funded succession planning strategies",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-08.json?v=20260323a",
+          "subTests": [
+            {
+              "id": "llqp-life-08-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-08-part-1.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-08-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-08-part-2.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-08-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-08-part-3.json?v=20260323a"
+            }
+          ]
         },
         {
           "id": "llqp-life-09",

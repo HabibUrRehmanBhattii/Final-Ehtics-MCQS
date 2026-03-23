@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "id": 21,
+      "question": "Are the premiums paid for \"criss-cross\" life insurance tax-deductible for the business owners?",
+      "options": {
+        "A": "Yes, because the insurance is purchased for business purposes",
+        "B": "Yes, if the business owners can prove the insurance relates to a business loan",
+        "C": "No, because the insurance is not being used to secure a loan for business purposes; the death benefit is received tax-free",
+        "D": "Yes, but only if the business is a partnership and not a corporation"
+      },
+      "correctAnswer": "C",
+      "explanation": "No, because the insurance is not being used to secure a loan for business purposes; the death benefit is received tax-free."
+    },
+    {
+      "id": 22,
+      "question": "What is a major disadvantage of using \"criss-cross\" insurance when the business owners have significant age or health differences?",
+      "options": {
+        "A": "The younger owner will refuse to participate in the arrangement",
+        "B": "The younger/healthier owner will have to pay much higher premiums to insure the older/unhealthy owner, which can feel unfair",
+        "C": "The older owner will not be insurable at any price",
+        "D": "The arrangement becomes illegal under business partnership laws"
+      },
+      "correctAnswer": "B",
+      "explanation": "The younger/healthier owner will have to pay much higher premiums to insure the older/unhealthy owner, which can feel unfair."
+    },
+    {
+      "id": 23,
+      "question": "To solve the cost disparity of criss-cross insurance, a business can use \"business-owned insurance.\" What is a key advantage of this method?",
+      "options": {
+        "A": "It allows each owner to eliminate their life insurance premiums completely",
+        "B": "The costs are shared equally among the owners, and the premiums are paid with corporate after-tax dollars, which are often taxed at a lower rate than personal income",
+        "C": "It provides coverage for the owners' personal liabilities and debts",
+        "D": "It allows the business to deduct the full death benefit as a business expense"
+      },
+      "correctAnswer": "B",
+      "explanation": "The costs are shared equally among the owners, and the premiums are paid with corporate after-tax dollars, which are often taxed at a lower rate than personal income."
+    },
+    {
+      "id": 24,
+      "question": "In private corporations, what is the role of the Capital Dividend Account (CDA)?",
+      "options": {
+        "A": "It is a savings account where the corporation must deposit surplus cash annually",
+        "B": "It is a notional tracking account that allows the corporation to pass tax-free amounts (like a life insurance death benefit) to its shareholders as a tax-free capital dividend",
+        "C": "It is a government account that holds corporate income taxes temporarily",
+        "D": "It is a retained earnings account used only for declaring annual bonuses to employees"
+      },
+      "correctAnswer": "B",
+      "explanation": "It is a notional tracking account that allows the corporation to pass tax-free amounts (like a life insurance death benefit) to its shareholders as a tax-free capital dividend."
+    },
+    {
+      "id": 25,
+      "question": "When a corporation receives a death benefit from a permanent life insurance policy (like Whole Life or UL), how much of that death benefit is credited to the Capital Dividend Account (CDA)?",
+      "options": {
+        "A": "The full amount of the death benefit",
+        "B": "50% of the death benefit",
+        "C": "Only the portion of the death benefit that exceeds the policy's Adjusted Cost Basis (ACB)",
+        "D": "None of the death benefit; death benefits do not qualify for CDA treatment"
+      },
+      "correctAnswer": "C",
+      "explanation": "Only the portion of the death benefit that exceeds the policy's Adjusted Cost Basis (ACB)."
+    },
+    {
+      "id": 26,
+      "question": "If a cross-purchase agreement is funded by corporate-owned insurance, how do the surviving shareholders usually get the money to buy the shares from the deceased's estate?",
+      "options": {
+        "A": "They must obtain a loan from the bank in their personal names",
+        "B": "The corporation receives the death benefit and pays it to the surviving shareholders as a tax-free capital dividend",
+        "C": "The insurance company directly transfers the death benefit to the surviving shareholders' personal bank accounts",
+        "D": "The deceased's estate lends the money to the surviving shareholders"
+      },
+      "correctAnswer": "B",
+      "explanation": "The corporation receives the death benefit and pays it to the surviving shareholders as a tax-free capital dividend."
+    },
+    {
+      "id": 27,
+      "question": "In the scenario above (funding a cross-purchase with corporate insurance), what financial instrument is often used by the surviving owners to temporarily acquire the shares from the estate before the capital dividend is paid?",
+      "options": {
+        "A": "A personal bank loan",
+        "B": "A promissory note",
+        "C": "A mortgage on the business premises",
+        "D": "A lease agreement for the shares"
+      },
+      "correctAnswer": "B",
+      "explanation": "A promissory note."
+    },
+    {
+      "id": 28,
+      "question": "How is a \"share redemption\" buy-sell agreement executed when funded by corporate-owned insurance?",
+      "options": {
+        "A": "The corporation receives the death benefit, credits the CDA, and directly uses the funds to redeem (buy back) and cancel the shares from the deceased's estate",
+        "B": "The surviving shareholders must purchase the shares personally with personal funds",
+        "C": "The shares are donated to a charity and the corporation receives a tax deduction",
+        "D": "The corporation sells the deceased's shares to a third party buyer"
+      },
+      "correctAnswer": "A",
+      "explanation": "The corporation receives the death benefit, credits the CDA, and directly uses the funds to redeem (buy back) and cancel the shares from the deceased's estate."
+    },
+    {
+      "id": 29,
+      "question": "If a business owner is uninsurable and the company cannot buy life insurance on them, how might the company fund a buy-sell agreement?",
+      "options": {
+        "A": "The company must immediately liquidate and distribute assets to shareholders",
+        "B": "Through a sinking fund or by taking out a loan when the owner dies, though this is much riskier and more expensive than insurance",
+        "C": "The company is required by law to purchase insurance even if the owner is uninsurable",
+        "D": "A buy-sell agreement cannot legally be established without life insurance"
+      },
+      "correctAnswer": "B",
+      "explanation": "Through a sinking fund or by taking out a loan when the owner dies, though this is much riskier and more expensive than insurance."
+    },
+    {
+      "id": 30,
+      "question": "Why is a joint first-to-die life insurance policy sometimes used to fund a business-owned buy-sell agreement?",
+      "options": {
+        "A": "It is required by law for all partnerships with more than two owners",
+        "B": "It is an efficient and cost-effective option when there are exactly two shareholders, paying out upon the death of the first partner",
+        "C": "It provides lower premiums but does not pay out if both shareholders survive to age 85",
+        "D": "It requires the surviving shareholder to automatically sell the business to a third party"
+      },
+      "correctAnswer": "B",
+      "explanation": "It is an efficient and cost-effective option when there are exactly two shareholders, paying out upon the death of the first partner."
+    }
+  ]
+}
