@@ -3,6 +3,8 @@
 // ===================================
 
 const MCQApp = {
+  appBuildVersion: '20260323c',
+  cacheVersion: 'v1.7.5',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
@@ -228,6 +230,58 @@ const MCQApp = {
     const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
     const seconds = String(totalSeconds % 60).padStart(2, '0');
     return `${minutes}:${seconds}`;
+  },
+
+  getRecommendedTotalQuestionTimeMs(questionCount = 0) {
+    return Math.max(0, Number(questionCount || 0)) * 120000;
+  },
+
+  getCompletionTimeSummary(questions = this.getFilteredQuestions()) {
+    const list = Array.isArray(questions) ? questions : [];
+    const totalQuestions = list.length;
+    const totalElapsedMs = list.reduce((sum, question) => {
+      const questionKey = this.getQuestionStateKey(question);
+      return sum + (questionKey ? this.getQuestionElapsedMs(questionKey) : 0);
+    }, 0);
+    const recommendedTotalMs = this.getRecommendedTotalQuestionTimeMs(totalQuestions);
+    const averageQuestionMs = totalQuestions > 0 ? Math.round(totalElapsedMs / totalQuestions) : 0;
+    const deltaMs = totalElapsedMs - recommendedTotalMs;
+    const isOnTarget = deltaMs === 0;
+    const withinRecommended = deltaMs <= 0;
+
+    let paceLabel = 'Right on the total target';
+    if (deltaMs < 0) {
+      paceLabel = `${this.formatQuestionTimer(Math.abs(deltaMs))} under total target`;
+    } else if (deltaMs > 0) {
+      paceLabel = `${this.formatQuestionTimer(deltaMs)} over total target`;
+    }
+
+    return {
+      totalQuestions,
+      totalElapsedMs,
+      recommendedTotalMs,
+      averageQuestionMs,
+      withinRecommended,
+      isOnTarget,
+      totalElapsedLabel: this.formatQuestionTimer(totalElapsedMs),
+      recommendedTotalLabel: this.formatQuestionTimer(recommendedTotalMs),
+      averageQuestionLabel: this.formatQuestionTimer(averageQuestionMs),
+      paceLabel
+    };
+  },
+
+  getVersionChipLabel() {
+    return `Build ${this.appBuildVersion} | Cache ${this.cacheVersion}`;
+  },
+
+  renderVersionChip() {
+    const chip = document.getElementById('app-build-chip');
+    if (!chip) return;
+
+    const label = this.getVersionChipLabel();
+    chip.textContent = label;
+    chip.setAttribute('title', label);
+    chip.setAttribute('aria-label', label);
   },
 
   getQuestionElapsedMs(questionKey) {
@@ -1295,6 +1349,7 @@ const MCQApp = {
     }
     this.setupEventListeners();
     this.renderTopicsGrid();
+    this.renderVersionChip();
     if (window.history && typeof window.history.replaceState === 'function') {
       window.history.replaceState(this.buildNavigationState('home'), '', window.location.href);
     }
@@ -1343,7 +1398,7 @@ const MCQApp = {
       });
 
       navigator.serviceWorker
-        .register('/sw.js?v=20260323b')
+        .register(`/sw.js?v=${this.appBuildVersion}`)
         .then((registration) => {
           // Proactively check for updates each load/session
           registration.update();
@@ -4159,6 +4214,7 @@ const MCQApp = {
       const correctFirst = filtered.filter(q => this.state.firstAttemptCorrect[this.getQuestionStateKey(q)] === true).length;
       const wrongFirst = filtered.filter(q => this.state.firstAttemptCorrect[this.getQuestionStateKey(q)] === false).length;
       const pct = Math.round((correctFirst / totalQ) * 100);
+      const timeSummary = this.getCompletionTimeSummary(filtered);
 
       // Update banner with detailed stats
       document.getElementById('finish-correct').textContent = correctFirst;
@@ -4172,6 +4228,11 @@ const MCQApp = {
           <div class="finish-stat"><span class="stat-label">Correct on 1st try:</span> <span class="stat-value">${correctFirst}</span></div>
           <div class="finish-stat"><span class="stat-label">Needed retry:</span> <span class="stat-value">${wrongFirst}</span></div>
           <div class="finish-stat"><span class="stat-label">Accuracy:</span> <span class="stat-value">${pct}%</span></div>
+          <div class="finish-stat"><span class="stat-label">Total time:</span> <span class="stat-value">${timeSummary.totalElapsedLabel}</span></div>
+          <div class="finish-stat"><span class="stat-label">Time goal:</span> <span class="stat-value">${timeSummary.recommendedTotalLabel} total</span></div>
+          <div class="finish-stat"><span class="stat-label">Average / question:</span> <span class="stat-value">${timeSummary.averageQuestionLabel}</span></div>
+          <div class="finish-stat"><span class="stat-label">Pace:</span> <span class="stat-value ${timeSummary.withinRecommended ? 'is-good' : 'is-warning'}">${this.escapeHtml(timeSummary.paceLabel)}</span></div>
+          <div class="finish-note">The 2:00 guideline is for the whole test total. One question can take longer if the full test still stays inside the target.</div>
         `;
       }
 

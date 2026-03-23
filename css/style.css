@@ -1817,6 +1817,15 @@ button { font-family: inherit; }
 }
 .stat-label { font-weight: 600; }
 .stat-value { font-weight: 700; background: rgba(255,255,255,.15); padding: .2rem .6rem; border-radius: var(--radius-xs); }
+.stat-value.is-good { background: rgba(16,185,129,.22); }
+.stat-value.is-warning { background: rgba(249,115,22,.22); }
+.finish-note {
+  max-width: 34rem;
+  margin: .4rem auto 0;
+  font-size: .82rem;
+  line-height: 1.45;
+  opacity: .9;
+}
 .finish-actions {
   display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center;
 }
@@ -1834,6 +1843,22 @@ button { font-family: inherit; }
 }
 .btn-finish-alt { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.08); }
 .btn-finish-alt:hover { background: rgba(255,255,255,.22); }
+.app-build-chip {
+  position: fixed;
+  right: .85rem;
+  bottom: .85rem;
+  z-index: 60;
+  padding: .22rem .55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(15,23,42,.82);
+  color: rgba(255,255,255,.78);
+  font-size: .68rem;
+  letter-spacing: .02em;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
 
 /* ════════════════════════════════════
    KEYFRAME ANIMATIONS

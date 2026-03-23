@@ -2,6 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 const {
+  ElementStub,
   loadMCQApp
 } = require('./helpers/mcq_app_test_utils');
 
@@ -221,4 +222,17 @@ test('saveProgress prunes stale shuffle caches when storage pressure blocks the 
   assert.equal(saved.currentQuestionKey, '2');
   assert.deepEqual(saved.firstAttemptCorrect, { '2': true });
   assert.deepEqual(saved.questionLayout.questionOrder, ['1', '2']);
+});
+
+test('renderVersionChip shows the current build and cache versions in the tiny badge', () => {
+  const { app, elements } = loadMCQApp({
+    'app-build-chip': new ElementStub()
+  });
+
+  app.renderVersionChip();
+
+  assert.equal(
+    elements.get('app-build-chip').textContent,
+    `Build ${app.appBuildVersion} | Cache ${app.cacheVersion}`
+  );
 });

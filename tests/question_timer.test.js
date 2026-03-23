@@ -165,3 +165,54 @@ test('selectOption pauses the timer after a correct answer and reveals the expla
   assert.equal(optionElements[0].style.pointerEvents, 'none');
   assert.equal(optionElements[1].style.pointerEvents, 'none');
 });
+
+test('getCompletionTimeSummary uses the total test time target instead of enforcing two minutes on each single question', () => {
+  const { app } = loadMCQApp();
+  const questions = Array.from({ length: 10 }, (_, index) => ({ id: index + 1 }));
+
+  app.state.questions = questions;
+  app.state.questionElapsedMs = Object.fromEntries(
+    questions.map((question) => [String(question.id), 120000])
+  );
+  app.state.questionElapsedMs['1'] = 180000;
+  app.state.questionElapsedMs['2'] = 60000;
+
+  const summary = app.getCompletionTimeSummary(questions);
+
+  assert.equal(summary.totalElapsedLabel, '20:00');
+  assert.equal(summary.recommendedTotalLabel, '20:00');
+  assert.equal(summary.averageQuestionLabel, '02:00');
+  assert.equal(summary.withinRecommended, true);
+  assert.equal(summary.paceLabel, 'Right on the total target');
+});
+
+test('checkCompletion shows total time guidance in the finish overview', () => {
+  const { app, elements } = loadMCQApp({
+    'finish-banner': new ElementStub({ classes: ['hidden'] }),
+    'finish-correct': new ElementStub(),
+    'finish-total': new ElementStub(),
+    'finish-percent': new ElementStub(),
+    'finish-stats': new ElementStub()
+  });
+
+  app.state.questions = Array.from({ length: 10 }, (_, index) => ({ id: index + 1 }));
+  app.state.answersRevealed = new Set(app.state.questions.map((question) => String(question.id)));
+  app.state.firstAttemptCorrect = Object.fromEntries(
+    app.state.questions.map((question, index) => [String(question.id), index < 8])
+  );
+  app.state.questionElapsedMs = Object.fromEntries(
+    app.state.questions.map((question) => [String(question.id), 120000])
+  );
+  app.state.questionElapsedMs['1'] = 180000;
+  app.state.questionElapsedMs['2'] = 60000;
+
+  app.checkCompletion();
+
+  assert.equal(elements.get('finish-banner').classList.contains('hidden'), false);
+  assert.equal(elements.get('finish-percent').textContent, '80%');
+  assert.match(elements.get('finish-stats').innerHTML, /Total time:/);
+  assert.match(elements.get('finish-stats').innerHTML, /20:00 total/);
+  assert.match(elements.get('finish-stats').innerHTML, /Average \/ question:/);
+  assert.match(elements.get('finish-stats').innerHTML, /Right on the total target/);
+  assert.match(elements.get('finish-stats').innerHTML, /One question can take longer/);
+});
