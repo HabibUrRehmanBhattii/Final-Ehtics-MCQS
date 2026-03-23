@@ -456,11 +456,9 @@
             }
           ]
         },
-        },
         {
           "id": "llqp-life-11",
           "name": "HLLQP - LIFE 11 QZ - Recommending an Insurance Policy",
-          "description": "Coming soon",
           "questionCount": 0,
           "status": "coming-soon",
           "dataFile": "data/llqp-life/hllqp-life-11.json"
