@@ -1,0 +1,57 @@
+# ⚡ Auto-Versioning Quick Reference
+
+## 🚀 One-Time Setup
+```bash
+cd Final-Ehtics-MCQS
+bash setup-hooks.sh
+```
+
+## ✅ Normal Usage
+```bash
+# Make changes
+git add your_files
+git commit -m "Your message"
+
+# Hook automatically:
+# ✓ Detects source file changes
+# ✓ Bumps version (a→b→c...)
+# ✓ Updates index.html
+# ✓ Updates data/topics.json
+# ✓ Includes updates in commit
+```
+
+## 📊 Version Format
+```
+v=YYYYMMDD{letter}
+Example: v=20260323g (version g of day 2026-03-23)
+```
+
+## 🔄 Auto-Increment
+```
+Same day: a → b → c → d → e → f → g → h → i → j → k → l
+Next day: Reset to a with new date
+```
+
+## ❌ Skip Hook (Only if needed)
+```bash
+git commit --no-verify -m "message"
+```
+
+## 🔧 If Hook Doesn't Run
+```bash
+# Make executable
+chmod +x .git/hooks/pre-commit
+
+# Or reinstall
+bash setup-hooks.sh
+```
+
+## 📝 What Gets Updated
+- `index.html` - manifest, CSS, JS links
+- `data/topics.json` - all dataFile URLs
+
+## ✨ Benefits
+✅ Never forget to bump versions
+✅ Users always see fresh content
+✅ Phone cache issues solved
+✅ Automatic and consistent
