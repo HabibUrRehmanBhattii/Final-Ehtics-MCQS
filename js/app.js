@@ -1343,7 +1343,7 @@ const MCQApp = {
       });
 
       navigator.serviceWorker
-        .register('/sw.js?v=20260323a')
+        .register('/sw.js?v=20260323b')
         .then((registration) => {
           // Proactively check for updates each load/session
           registration.update();
