@@ -428,10 +428,34 @@
         {
           "id": "llqp-life-10",
           "name": "HLLQP - LIFE 10 QZ - Assessing the Client's Needs and Situations",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-10.json"
+          "description": "Chapter quiz covering assessing client needs, financial dependents, income analysis, insurance planning, employer benefits, business succession, tax implications, pension planning, and government benefits",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-10.json?v=20260323a",
+          "subTests": [
+            {
+              "id": "llqp-life-10-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-10-part-1.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-10-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-10-part-2.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-10-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-10-part-3.json?v=20260323a"
+            }
+          ]
+        },
         },
         {
           "id": "llqp-life-11",
