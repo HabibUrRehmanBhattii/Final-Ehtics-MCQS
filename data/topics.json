@@ -593,7 +593,7 @@
           "name": "HLLQP - A&S 01 QZ - Financial Protection Provided by Accident and Sickness Insurance",
           "description": "Chapter quiz covering financial protection mechanisms in accident and sickness insurance",
           "questionCount": 30,
-          "status": "active",
+          "status": "coming-soon",
           "dataFile": "data/llqp-accident/hllqp-accident-01.json"
         },
         {
@@ -601,7 +601,7 @@
           "name": "HLLQP - A&S 02 QZ - Insurance to Protect Income",
           "description": "Chapter quiz covering income protection strategies and disability benefits",
           "questionCount": 30,
-          "status": "active",
+          "status": "coming-soon",
           "dataFile": "data/llqp-accident/hllqp-accident-02.json"
         },
         {
@@ -609,7 +609,7 @@
           "name": "HLLQP - A&S 03 QZ - Insurance to Protect Assets",
           "description": "Chapter quiz covering asset protection through accident and sickness insurance",
           "questionCount": 30,
-          "status": "active",
+          "status": "coming-soon",
           "dataFile": "data/llqp-accident/hllqp-accident-03.json"
         },
         {
@@ -617,7 +617,7 @@
           "name": "HLLQP - A&S 04 QZ - Insurance to Protect Savings",
           "description": "Chapter quiz covering savings protection and critical illness coverage",
           "questionCount": 30,
-          "status": "active",
+          "status": "coming-soon",
           "dataFile": "data/llqp-accident/hllqp-accident-04.json"
         },
         {
@@ -625,7 +625,7 @@
           "name": "HLLQP - A&S 05 QZ - Insurance to Protect Businesses",
           "description": "Chapter quiz covering business protection strategies and key person insurance",
           "questionCount": 30,
-          "status": "active",
+          "status": "coming-soon",
           "dataFile": "data/llqp-accident/hllqp-accident-05.json"
         },
         {
@@ -633,7 +633,7 @@
           "name": "HLLQP - A&S 06 QZ - Client Profile",
           "description": "Chapter quiz covering client needs assessment and profile analysis",
           "questionCount": 30,
-          "status": "active",
+          "status": "coming-soon",
           "dataFile": "data/llqp-accident/hllqp-accident-06.json"
         },
         {
@@ -641,14 +641,14 @@
           "name": "HLLQP - A&S 07 QZ - Insurance Recommendation, Contract and Service Needs",
           "description": "Chapter quiz covering policy recommendations, contract details, and ongoing service",
           "questionCount": 30,
-          "status": "not-available"
+          "status": "coming-soon"
         },
         {
           "id": "hllqp-accident-08",
           "name": "HLLQP - A&S 08 QZ - Group Plan Specifics",
           "description": "Chapter quiz covering group accident and sickness plan structures and features",
           "questionCount": 30,
-          "status": "active",
+          "status": "coming-soon",
           "dataFile": "data/llqp-accident/hllqp-accident-08.json"
         },
         {
@@ -656,7 +656,7 @@
           "name": "HLLQP - A&S 09 QZ - Chapter 1 - 8 Review Test",
           "description": "Comprehensive review test covering all chapters 1-8 of accident and sickness insurance",
           "questionCount": 50,
-          "status": "active",
+          "status": "coming-soon",
           "dataFile": "data/llqp-accident/hllqp-accident-09.json"
         },
         {
