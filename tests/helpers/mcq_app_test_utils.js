@@ -306,8 +306,9 @@ function createAppHarness(customElements = {}, options = {}, includeAuth = false
     dispatchWindowEvent(type, event = {}) {
       const handler = windowEventListeners.get(type);
       if (typeof handler === 'function') {
-        handler(event);
+        return handler(event);
       }
+      return undefined;
     }
   };
 }

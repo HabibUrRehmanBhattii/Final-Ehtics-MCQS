@@ -140,6 +140,13 @@ test('getQuestionContentSignature treats prefixed and cleaned options as the sam
 test('shuffle helpers read legacy and structured cache entries and persist the current schema version', () => {
   const { app, localStorage } = loadMCQApp();
   const questions = [{ id: 1 }, { id: 2 }];
+  const layout = {
+    questionOrder: ['1', '2'],
+    optionTextsByQuestion: {
+      '1': ['A', 'B'],
+      '2': ['C', 'D']
+    }
+  };
 
   localStorage.setItem('shuffle_legacy', JSON.stringify(questions));
   assert.deepEqual(
@@ -153,13 +160,25 @@ test('shuffle helpers read legacy and structured cache entries and persist the c
     {
       version: app.shuffleSchemaVersion,
       signature: 'sig-123',
-      questions
+      layout: {
+        questionOrder: ['1', '2'],
+        optionTextsByQuestion: {
+          '1': [],
+          '2': []
+        }
+      }
     }
   );
+  localStorage.setItem('shuffle_layout', JSON.stringify({
+    version: app.shuffleSchemaVersion,
+    signature: 'sig-123',
+    layout
+  }));
   assert.deepEqual(
-    JSON.parse(JSON.stringify(app.getSavedShuffleData('shuffle_current'))),
+    JSON.parse(JSON.stringify(app.getSavedShuffleData('shuffle_layout'))),
     {
-      questions,
+      questions: null,
+      layout,
       signature: 'sig-123',
       version: app.shuffleSchemaVersion
     }

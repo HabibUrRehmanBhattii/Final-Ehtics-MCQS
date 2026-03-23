@@ -3,13 +3,15 @@
 // ===================================
 
 const MCQApp = {
-  shuffleSchemaVersion: '20260321-option-cleanup-v4',
+  shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
     topics: [],
     currentTopic: null,
     currentPracticeTest: null,
     questions: [],
+    loadedQuestionSetId: null,
+    loadedQuestionSourceSignature: '',
     currentQuestionIndex: 0,
     bookmarkedQuestions: new Set(),
     viewedQuestions: new Set(),
@@ -110,6 +112,115 @@ const MCQApp = {
       options: question.options.map((option) => this.getOptionDisplayText(option)),
       optionFeedback: this.getNormalizedOptionFeedback(question)
     };
+  },
+
+  getLoadedQuestionSetKey(topicId = this.state.currentTopic?.id, testId = this.state.currentPracticeTest?.id) {
+    if (!topicId || !testId) return null;
+    return `${topicId}:${testId}`;
+  },
+
+  buildQuestionFromOptionOrder(question, optionOrder = null) {
+    if (!question || !Array.isArray(question.options)) return question;
+
+    const optionsWithoutPrefix = question.options.map((option) => this.getOptionDisplayText(option));
+    const defaultOrder = optionsWithoutPrefix.map((_, index) => index);
+    const isValidOptionOrder = Array.isArray(optionOrder) &&
+      optionOrder.length === defaultOrder.length &&
+      optionOrder.every((value) => Number.isInteger(value) && value >= 0 && value < defaultOrder.length) &&
+      new Set(optionOrder).size === optionOrder.length;
+    const resolvedOrder = isValidOptionOrder ? optionOrder.slice() : defaultOrder;
+    const originalCorrectAnswer = Number.isInteger(question.correctAnswer) ? question.correctAnswer : -1;
+    const shuffledOptions = resolvedOrder.map((originalIndex) => optionsWithoutPrefix[originalIndex]);
+    const shuffledFeedback = this.getNormalizedOptionFeedback(question, resolvedOrder);
+    const newCorrectAnswer = originalCorrectAnswer >= 0 ? resolvedOrder.indexOf(originalCorrectAnswer) : -1;
+
+    return this.normalizeQuestionOptionLabels({
+      ...question,
+      options: shuffledOptions,
+      correctAnswer: newCorrectAnswer,
+      optionFeedback: shuffledFeedback,
+      __optionOrder: resolvedOrder
+    });
+  },
+
+  resolveOptionOrderFromTexts(question, optionTexts = []) {
+    if (!question || !Array.isArray(question.options) || !Array.isArray(optionTexts)) {
+      return null;
+    }
+
+    const normalizedSourceOptions = question.options.map((option) => this.getOptionDisplayText(option));
+    if (normalizedSourceOptions.length !== optionTexts.length) {
+      return null;
+    }
+
+    const order = [];
+    const used = new Set();
+    for (const optionText of optionTexts) {
+      const normalizedTarget = this.getOptionDisplayText(optionText);
+      const sourceIndex = normalizedSourceOptions.findIndex((value, index) =>
+        value === normalizedTarget && !used.has(index)
+      );
+      if (sourceIndex < 0) {
+        return null;
+      }
+      used.add(sourceIndex);
+      order.push(sourceIndex);
+    }
+
+    return order;
+  },
+
+  buildQuestionLayoutSnapshot(questions = this.state.questions) {
+    const questionOrder = [];
+    const optionTextsByQuestion = {};
+
+    (Array.isArray(questions) ? questions : []).forEach((question) => {
+      const questionKey = this.getQuestionStateKey(question);
+      if (!questionKey) return;
+      questionOrder.push(questionKey);
+      optionTextsByQuestion[questionKey] = Array.isArray(question.options)
+        ? question.options.map((option) => this.getOptionDisplayText(option))
+        : [];
+    });
+
+    return {
+      questionOrder,
+      optionTextsByQuestion
+    };
+  },
+
+  buildQuestionsFromLayout(rawQuestions, layout) {
+    if (!Array.isArray(rawQuestions) || rawQuestions.length === 0) return [];
+    if (!layout || !Array.isArray(layout.questionOrder)) return null;
+
+    const optionTextsByQuestion = layout.optionTextsByQuestion && typeof layout.optionTextsByQuestion === 'object'
+      ? layout.optionTextsByQuestion
+      : {};
+    const questionMap = new Map(rawQuestions.map((question) => [String(question?.id), question]));
+    const seen = new Set();
+    const restoredQuestions = [];
+
+    for (const questionKey of layout.questionOrder) {
+      const normalizedKey = String(questionKey);
+      const rawQuestion = questionMap.get(normalizedKey);
+      if (!rawQuestion || seen.has(normalizedKey)) {
+        return null;
+      }
+
+      const optionOrder = this.resolveOptionOrderFromTexts(rawQuestion, optionTextsByQuestion[normalizedKey] || []);
+      if (!optionOrder) {
+        return null;
+      }
+
+      restoredQuestions.push(this.buildQuestionFromOptionOrder(rawQuestion, optionOrder));
+      seen.add(normalizedKey);
+    }
+
+    if (restoredQuestions.length !== rawQuestions.length || seen.size !== questionMap.size) {
+      return null;
+    }
+
+    return restoredQuestions;
   },
 
   formatQuestionTimer(ms = 0) {
@@ -1032,6 +1143,8 @@ const MCQApp = {
 
     // Set up review mode
     this.state.questions = wrongQuestionsToReview;
+    this.state.loadedQuestionSetId = 'review-mode';
+    this.state.loadedQuestionSourceSignature = '';
     this.state.currentQuestionIndex = 0;
     this.state.filterMode = 'all';
     this.state.currentTopic = { name: 'Wrong Answers Review', icon: '❌' };
@@ -1379,16 +1492,38 @@ const MCQApp = {
       }
     });
 
-    window.addEventListener('popstate', (event) => {
+    window.addEventListener('pagehide', () => {
+      if (this.state.currentView === 'mcq' && !this.state.isReviewMode) {
+        this.saveProgress();
+      }
+      this.syncNavigationState('replace');
+    });
+
+    window.addEventListener('popstate', async (event) => {
       const navState = event.state;
       if (!navState?.view) return;
 
       this.restoreNavigationState(navState);
-      this.showView(navState.view, { updateHistory: false });
 
-      if (navState.view === 'mcq' && this.getCurrentQuestion()) {
+      if (navState.view === 'mcq') {
+        const restored = await this.ensureCurrentPracticeTestQuestionsLoaded({ showLoading: false });
+        if (this.state.currentTopic && this.state.currentPracticeTest) {
+          this.loadProgress();
+          this.applyNavigationSessionState(navState);
+        }
+
+        if (!restored || !this.getCurrentQuestion()) {
+          this.showView('practice-test', { updateHistory: false });
+          this.showToast('We restored the test list. Open the quiz again to continue.', 'warning');
+          return;
+        }
+
+        this.showView('mcq', { updateHistory: false });
         this.renderQuestion();
+        return;
       }
+
+      this.showView(navState.view, { updateHistory: false });
     });
   },
 
@@ -2280,82 +2415,147 @@ const MCQApp = {
         throw new Error(`Failed to load questions (${response.status})`);
       }
       const data = await response.json();
-      
+      const rawQuestions = Array.isArray(data?.questions) ? data.questions : [];
+
       // Check if we have a saved shuffled order for this test
       const shuffleKey = `shuffle_${this.state.currentTopic?.id}_${testId}`;
-      const sourceSignature = this.getQuestionContentSignature(data.questions);
+      const progressKey = this.state.currentTopic?.id && testId
+        ? `progress_${this.state.currentTopic.id}_${testId}`
+        : null;
+      const sourceSignature = this.getQuestionContentSignature(rawQuestions);
+      const savedProgress = progressKey ? this.readJSONFromStorage(progressKey, null) : null;
+      const savedProgressLayout = savedProgress?.questionLayoutSignature === sourceSignature
+        ? savedProgress.questionLayout
+        : null;
       const savedShuffleData = this.getSavedShuffleData(shuffleKey);
-      const savedShuffle = savedShuffleData?.questions || null;
-      const savedShuffleNeedsCleanup = this.hasPrefixedOptionLabels(savedShuffle || []);
-      const canReuseSavedShuffle = Boolean(
-        savedShuffle &&
-        savedShuffle.length === data.questions.length &&
-        savedShuffleData?.version === this.shuffleSchemaVersion &&
-        savedShuffleData?.signature &&
-        savedShuffleData.signature === sourceSignature &&
-        !savedShuffleNeedsCleanup
+      const savedQuestionsFromProgress = savedProgressLayout
+        ? this.buildQuestionsFromLayout(rawQuestions, savedProgressLayout)
+        : null;
+      const savedQuestionsFromLayout = savedShuffleData?.layout &&
+        savedShuffleData?.signature === sourceSignature &&
+        savedShuffleData?.version === this.shuffleSchemaVersion
+        ? this.buildQuestionsFromLayout(rawQuestions, savedShuffleData.layout)
+        : null;
+      const legacySavedQuestions = Array.isArray(savedShuffleData?.questions) ? savedShuffleData.questions : null;
+      const legacySavedShuffleNeedsCleanup = this.hasPrefixedOptionLabels(legacySavedQuestions || []);
+      const canReuseLegacyShuffle = Boolean(
+        legacySavedQuestions &&
+        legacySavedQuestions.length === rawQuestions.length &&
+        savedShuffleData?.signature === sourceSignature &&
+        !legacySavedShuffleNeedsCleanup
       );
-      
-      // If we have saved shuffle data, use it; otherwise create new shuffle
-      if (canReuseSavedShuffle) {
+
+      if (savedQuestionsFromProgress) {
+        console.log('Using question order from saved progress');
+        this.state.questions = savedQuestionsFromProgress;
+        this.saveShuffleData(shuffleKey, this.state.questions, sourceSignature);
+      } else if (savedQuestionsFromLayout) {
         console.log('Using saved question order');
-        this.state.questions = savedShuffle.map((question) => this.normalizeQuestionOptionLabels(question));
+        this.state.questions = savedQuestionsFromLayout;
+      } else if (canReuseLegacyShuffle) {
+        console.log('Using saved question order');
+        this.state.questions = legacySavedQuestions.map((question) => this.normalizeQuestionOptionLabels(question));
+        this.saveShuffleData(shuffleKey, this.state.questions, sourceSignature);
       } else {
         console.log('Creating new randomized order');
-        // Randomize questions order
-        const shuffledQuestions = this.shuffleArray(data.questions);
-        
-        // Randomize answer options for each question
-        this.state.questions = shuffledQuestions.map(question => {
-          // Normalize option labels so the UI can render its own A/B/C/D badge cleanly.
-          const optionsWithoutPrefix = question.options.map(opt => 
-            this.getOptionDisplayText(opt)
-          );
-          
-          const originalCorrectAnswer = question.correctAnswer;
-          
-          // Create array of indices and shuffle them
-          const indices = optionsWithoutPrefix.map((_, index) => index);
+        const shuffledQuestions = this.shuffleArray(rawQuestions);
+        this.state.questions = shuffledQuestions.map((question) => {
+          const indices = Array.isArray(question.options)
+            ? question.options.map((_, index) => index)
+            : [];
           const shuffledIndices = this.shuffleArray(indices);
-          
-          // Shuffle options without embedding letter prefixes in the text itself.
-          const shuffledOptions = shuffledIndices.map((originalIndex, newIndex) => {
-            return optionsWithoutPrefix[originalIndex];
-          });
-          const shuffledFeedback = this.getNormalizedOptionFeedback(question, shuffledIndices);
-          
-          // Find new position of correct answer
-          const newCorrectAnswer = shuffledIndices.indexOf(originalCorrectAnswer);
-          
-          return this.normalizeQuestionOptionLabels({
-            ...question,
-            options: shuffledOptions,
-            correctAnswer: newCorrectAnswer,
-            optionFeedback: shuffledFeedback
-          });
+          return this.buildQuestionFromOptionOrder(question, shuffledIndices);
         });
-        
-        // Save the shuffled order
         this.saveShuffleData(shuffleKey, this.state.questions, sourceSignature);
       }
-      
+
+      this.state.loadedQuestionSetId = this.getLoadedQuestionSetKey(this.state.currentTopic?.id, testId);
+      this.state.loadedQuestionSourceSignature = sourceSignature;
       console.log(`Loaded ${this.state.questions.length} questions`);
     } catch (error) {
       console.error('Error loading questions:', error);
       this.state.questions = [];
+      this.state.loadedQuestionSetId = null;
+      this.state.loadedQuestionSourceSignature = '';
       this.showToast('Unable to load questions right now.', 'error');
     }
   },
 
   // Show View
   buildNavigationState(viewName = this.state.currentView) {
-    return {
+    const navState = {
       view: viewName,
       topicId: this.state.currentTopic?.id || null,
       testId: this.state.currentPracticeTest?.id || null,
       parentTestId: this.state.practiceTestParent?.id || null,
       lifeSection: this.state.lifeSection || null
     };
+
+    if (viewName === 'mcq') {
+      const currentQuestion = this.getCurrentQuestion();
+      navState.filterMode = this.state.filterMode;
+      navState.currentQuestionIndex = this.state.currentQuestionIndex;
+      navState.currentQuestionKey = currentQuestion ? this.getQuestionStateKey(currentQuestion) : null;
+    }
+
+    return navState;
+  },
+
+  applyNavigationSessionState(navState = {}) {
+    if (!navState || navState.view !== 'mcq') return;
+
+    this.state.filterMode = navState.filterMode === 'bookmarked' ? 'bookmarked' : this.state.filterMode;
+    const filteredQuestions = this.getFilteredQuestions();
+    const targetQuestionKey = navState.currentQuestionKey ? String(navState.currentQuestionKey) : '';
+    const targetQuestionIndex = targetQuestionKey
+      ? filteredQuestions.findIndex((question) => this.getQuestionStateKey(question) === targetQuestionKey)
+      : -1;
+
+    if (targetQuestionIndex >= 0) {
+      this.state.currentQuestionIndex = targetQuestionIndex;
+      return;
+    }
+
+    if (filteredQuestions.length > 0 && Number.isInteger(navState.currentQuestionIndex)) {
+      this.state.currentQuestionIndex = Math.max(0, Math.min(navState.currentQuestionIndex, filteredQuestions.length - 1));
+    }
+  },
+
+  syncNavigationState(historyMode = 'replace') {
+    if (!window.history) return;
+    const method = historyMode === 'push' ? 'pushState' : 'replaceState';
+    if (typeof window.history[method] !== 'function') return;
+    window.history[method](this.buildNavigationState(this.state.currentView), '', window.location.href);
+  },
+
+  async ensureCurrentPracticeTestQuestionsLoaded(options = {}) {
+    const { showLoading = true } = options;
+    if (this.state.isReviewMode) {
+      return this.state.questions.length > 0;
+    }
+
+    const topic = this.state.currentTopic;
+    const practiceTest = this.state.currentPracticeTest;
+    if (!topic || !practiceTest?.id || !practiceTest?.dataFile) {
+      return false;
+    }
+
+    const expectedQuestionSetId = this.getLoadedQuestionSetKey(topic.id, practiceTest.id);
+    if (this.state.loadedQuestionSetId === expectedQuestionSetId && this.state.questions.length > 0) {
+      return true;
+    }
+
+    if (showLoading) {
+      this.beginLoading('Restoring quiz...');
+    }
+    try {
+      await this.loadQuestions(practiceTest.dataFile, practiceTest.id);
+    } finally {
+      if (showLoading) {
+        this.endLoading();
+      }
+    }
+    return this.state.questions.length > 0;
   },
 
   restoreNavigationState(navState = {}) {
@@ -2439,7 +2639,13 @@ const MCQApp = {
     this.clearAutoAdvanceTimer();
     this.stopSpeech();
     const question = this.getCurrentQuestion();
-    if (!question) return;
+    if (!question) {
+      if (this.state.currentPracticeTest && this.state.currentTopic && this.state.currentView === 'mcq') {
+        this.showView('practice-test', { updateHistory: false });
+        this.showToast('We could not restore that exact question. Open the test again to continue.', 'warning');
+      }
+      return;
+    }
     const stateKey = this.getQuestionStateKey(question);
 
     const questionIndex = this.state.currentQuestionIndex;
@@ -2534,6 +2740,7 @@ const MCQApp = {
     // Mark as viewed
     this.state.viewedQuestions.add(stateKey);
     this.saveProgress();
+    this.syncNavigationState('replace');
 
     // Update navigation buttons
     this.updateNavigationButtons();
@@ -2822,6 +3029,16 @@ const MCQApp = {
       if (parsed && Array.isArray(parsed.questions)) {
         return {
           questions: parsed.questions,
+          layout: null,
+          signature: typeof parsed.signature === 'string' ? parsed.signature : null,
+          version: typeof parsed.version === 'string' ? parsed.version : null
+        };
+      }
+
+      if (parsed && parsed.layout && Array.isArray(parsed.layout.questionOrder)) {
+        return {
+          questions: null,
+          layout: parsed.layout,
           signature: typeof parsed.signature === 'string' ? parsed.signature : null,
           version: typeof parsed.version === 'string' ? parsed.version : null
         };
@@ -2837,7 +3054,7 @@ const MCQApp = {
     localStorage.setItem(shuffleKey, JSON.stringify({
       version: this.shuffleSchemaVersion,
       signature,
-      questions
+      layout: this.buildQuestionLayoutSnapshot(questions)
     }));
   },
 
@@ -4561,6 +4778,8 @@ const MCQApp = {
       timers: this.getQuestionTimersSnapshot(),
       attemptedOptions: this.state.attemptedOptions,
       firstAttemptCorrect: this.state.firstAttemptCorrect,
+      questionLayout: this.buildQuestionLayoutSnapshot(),
+      questionLayoutSignature: this.state.loadedQuestionSourceSignature || null,
       filterMode: this.state.filterMode,
       currentQuestionIndex: this.state.currentQuestionIndex,
       currentQuestionKey: currentQuestion ? this.getQuestionStateKey(currentQuestion) : null,

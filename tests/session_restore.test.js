@@ -12,6 +12,33 @@ function createViewElement() {
   return new ElementStub({ classes: ['view'] });
 }
 
+function createPracticeTestFixture(questionCount = 7) {
+  return {
+    id: 'llqp-life',
+    name: 'Life',
+    practiceTests: [
+      {
+        id: 'life-01',
+        name: 'LIFE 01',
+        questionCount,
+        dataFile: 'life-01.json',
+        status: 'active'
+      }
+    ]
+  };
+}
+
+function createQuestionPayload(count = 7) {
+  return {
+    questions: Array.from({ length: count }, (_, index) => ({
+      id: index + 1,
+      question: `Question ${index + 1}`,
+      options: [`A${index + 1}`, `B${index + 1}`],
+      correctAnswer: 0
+    }))
+  };
+}
+
 test('showView rerenders practice tests when returning from an MCQ session', () => {
   const homeView = createViewElement();
   const practiceView = createViewElement();
@@ -77,6 +104,7 @@ test('saveProgress and loadProgress preserve attempt history and first-try corre
   const saved = JSON.parse(localStorage.getItem('progress_llqp-life_life-01'));
   assert.deepEqual(saved.attemptedOptions, { '1': [0, 2] });
   assert.deepEqual(saved.firstAttemptCorrect, { '1': false });
+  assert.deepEqual(saved.questionLayout.questionOrder, ['1', '2']);
   assert.deepEqual(Array.from(app.state.viewedQuestions), ['1']);
   assert.deepEqual(Array.from(app.state.bookmarkedQuestions), ['2']);
   assert.deepEqual(Array.from(app.state.answersRevealed), ['1']);
@@ -177,7 +205,136 @@ test('resumed correct answers keep a green navigation dot instead of falling bac
   assert.doesNotMatch(dotsContainer.innerHTML, /is-wrong-dot/);
 });
 
-test('setupEventListeners restores the previous in-app view on browser back navigation', () => {
+test('reopening a saved test keeps the same visible question order when the shuffle cache is missing', async () => {
+  const quizData = createQuestionPayload(7);
+  const firstHarness = loadMCQApp({}, {
+    fetchImpl: async () => ({
+      ok: true,
+      json: async () => quizData
+    })
+  });
+  const topic = createPracticeTestFixture(7);
+  const firstApp = firstHarness.app;
+
+  firstApp.state.topics = [topic];
+  firstApp.state.currentTopic = topic;
+  firstApp.beginLoading = () => {};
+  firstApp.endLoading = () => {};
+  firstApp.clearAutoAdvanceTimer = () => {};
+  firstApp.stopQuestionTimer = () => {};
+  firstApp.resetAdvanceTapState = () => {};
+  firstApp.stopSpeech = () => {};
+  firstApp.cleanupQuizKeyboardListeners = () => {};
+  firstApp.showToast = () => {};
+  firstApp.renderQuestion = () => {};
+  firstApp.shuffleArray = (items) => {
+    if (items.length === 7 && items[0] && typeof items[0] === 'object') {
+      return [items[0], items[6], ...items.slice(1, 6)];
+    }
+    return items.slice();
+  };
+
+  await firstApp.selectPracticeTest('life-01');
+  firstApp.state.currentQuestionIndex = 1;
+  firstApp.saveProgress();
+
+  const savedProgress = JSON.parse(firstHarness.localStorage.getItem('progress_llqp-life_life-01'));
+  assert.equal(savedProgress.currentQuestionKey, '7');
+  assert.deepEqual(savedProgress.questionLayout.questionOrder, ['1', '7', '2', '3', '4', '5', '6']);
+
+  firstHarness.localStorage.removeItem('shuffle_llqp-life_life-01');
+
+  const storage = {};
+  for (let index = 0; index < firstHarness.localStorage.length; index += 1) {
+    const key = firstHarness.localStorage.key(index);
+    storage[key] = firstHarness.localStorage.getItem(key);
+  }
+
+  const secondHarness = loadMCQApp({}, {
+    storage,
+    fetchImpl: async () => ({
+      ok: true,
+      json: async () => quizData
+    })
+  });
+  const secondApp = secondHarness.app;
+  secondApp.state.topics = [topic];
+  secondApp.state.currentTopic = topic;
+  secondApp.beginLoading = () => {};
+  secondApp.endLoading = () => {};
+  secondApp.clearAutoAdvanceTimer = () => {};
+  secondApp.stopQuestionTimer = () => {};
+  secondApp.resetAdvanceTapState = () => {};
+  secondApp.stopSpeech = () => {};
+  secondApp.cleanupQuizKeyboardListeners = () => {};
+  secondApp.showToast = () => {};
+  secondApp.renderQuestion = () => {};
+  secondApp.shuffleArray = (items) => items.slice();
+
+  await secondApp.selectPracticeTest('life-01');
+
+  assert.equal(secondApp.state.currentQuestionIndex, 1);
+  assert.equal(secondApp.getCurrentQuestion().id, 7);
+});
+
+test('setupEventListeners reloads quiz data before restoring an mcq history entry', async () => {
+  const homeView = createViewElement();
+  const practiceView = createViewElement();
+  const mcqView = createViewElement();
+  const topic = createPracticeTestFixture(3);
+  const quizData = createQuestionPayload(3);
+  const { app, dispatchWindowEvent, historyCalls } = loadMCQApp({
+    'home-view': homeView,
+    'practice-test-view': practiceView,
+    'mcq-view': mcqView
+  }, {
+    documentQuerySelectorAll: (selector) => selector === '.view'
+      ? [homeView, practiceView, mcqView]
+      : [],
+    fetchImpl: async () => ({
+      ok: true,
+      json: async () => quizData
+    })
+  });
+
+  app.state.topics = [topic];
+  app.state.currentTopic = topic;
+  app.beginLoading = () => {};
+  app.endLoading = () => {};
+  app.clearAutoAdvanceTimer = () => {};
+  app.stopQuestionTimer = () => {};
+  app.resetAdvanceTapState = () => {};
+  app.stopSpeech = () => {};
+  app.cleanupQuizKeyboardListeners = () => {};
+  app.showToast = () => {};
+  app.renderPracticeTests = () => {};
+  app.renderQuestion = () => {};
+
+  app.setupEventListeners();
+  await app.selectPracticeTest('life-01');
+  app.state.currentQuestionIndex = 1;
+  app.saveProgress();
+  app.syncNavigationState('replace');
+
+  app.state.questions = [];
+  app.state.loadedQuestionSetId = null;
+  app.state.currentQuestionIndex = 0;
+
+  let renderQuestionCalls = 0;
+  app.renderQuestion = () => {
+    renderQuestionCalls += 1;
+  };
+
+  const mcqState = historyCalls.filter((entry) => entry.state?.view === 'mcq').pop();
+  await dispatchWindowEvent('popstate', { state: mcqState.state });
+
+  assert.equal(app.state.currentView, 'mcq');
+  assert.equal(app.state.questions.length, 3);
+  assert.equal(app.state.currentQuestionIndex, 1);
+  assert.equal(renderQuestionCalls, 1);
+});
+
+test('setupEventListeners restores the previous in-app view on browser back navigation', async () => {
   const homeView = createViewElement();
   const practiceView = createViewElement();
   const mcqView = createViewElement();
@@ -217,13 +374,14 @@ test('setupEventListeners restores the previous in-app view on browser back navi
   app.resetAdvanceTapState = () => {};
   app.stopSpeech = () => {};
   app.cleanupQuizKeyboardListeners = () => {};
+  app.showToast = () => {};
 
   app.setupEventListeners();
   app.showView('practice-test');
   app.showView('mcq');
 
   const practiceState = historyCalls.find((entry) => entry.type === 'push' && entry.state?.view === 'practice-test');
-  dispatchWindowEvent('popstate', { state: practiceState.state });
+  await dispatchWindowEvent('popstate', { state: practiceState.state });
 
   assert.equal(app.state.currentView, 'practice-test');
   assert.equal(renderPracticeTestsCalls >= 2, true);
