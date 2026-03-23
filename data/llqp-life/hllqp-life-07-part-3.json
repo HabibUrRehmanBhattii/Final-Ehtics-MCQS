@@ -1,0 +1,208 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 07 QZ - Taxation of Life Insurance and Tax Strategies - Section 3",
+  "examTips": "Focus on policy transfers, spousal/child rollovers, income attribution, leveraging strategies, charitable donations, and annuitization.",
+  "questions": [
+    {
+      "id": 21,
+      "question": "How is an absolute assignment of a life insurance policy to a spouse treated for tax purposes?",
+      "options": [
+        "A) It triggers an immediate 50% tax penalty.",
+        "B) The spouse must pay tax on the entire cash value.",
+        "C) It qualifies for an automatic tax-free \"rollover,\" transferring at the policy's ACB.",
+        "D) The policy must be surrendered and restarted."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Spousal transfers don't incur penalties.",
+        "Spouses don't pay immediate tax.",
+        "It qualifies for an automatic tax-free \"rollover,\" transferring at the policy's ACB.",
+        "The policy continues without interruption."
+      ],
+      "explanation": "Step 1: Identify the transfer (to spouse).\nStep 2: Apply the rule: Spouse transfers qualify for automatic tax-free rollover at ACB value.\nStep 3: Eliminate distractors. No penalties; spouse assumes ACB, not current CSV; no surrender required.\nStep 4: Select the best answer. Option C: It qualifies for an automatic tax-free \"rollover,\" transferring at the policy's ACB.",
+      "difficulty": "medium",
+      "tags": ["spousal-transfer", "rollover", "acb-transfer"]
+    },
+    {
+      "id": 22,
+      "question": "If a policy is transferred to a spouse under the automatic rollover, what happens under the \"income attribution rules\" if the recipient spouse later surrenders the policy for a gain?",
+      "options": [
+        "A) The recipient spouse pays the tax.",
+        "B) The tax is forgiven completely.",
+        "C) The original transferring spouse must report the policy gain and pay the tax.",
+        "D) The insurance company pays the tax."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Income attribution rules may override normal assignment rules.",
+        "Tax is not forgiven in attribution situations.",
+        "The original transferring spouse must report the policy gain and pay the tax.",
+        "The insurance company does not pay policy gains."
+      ],
+      "explanation": "Step 1: Identify the attribution rule application.\nStep 2: Apply the rule: Original transferor reports gain if attribution rules apply, despite spouse's surrender.\nStep 3: Eliminate distractors. Recipient spouse doesn't report gain; tax isn't forgiven; insurer doesn't pay.\nStep 4: Select the best answer. Option C: The original transferring spouse must report the policy gain and pay the tax.",
+      "difficulty": "hard",
+      "tags": ["income-attribution", "spousal-transfer", "gain-reporting"]
+    },
+    {
+      "id": 23,
+      "question": "Under what specific conditions can a life insurance policy roll over tax-free to a child?",
+      "options": [
+        "A) Only if the child is over 21 and the policy has no cash value.",
+        "B) If the policyholder receives no money for it AND the life insured by the policy is the child.",
+        "C) Any policy can roll over to a child at any time.",
+        "D) Only if the child pays fair market value for it."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Age and cash value are not the determining factors.",
+        "If the policyholder receives no money for it AND the life insured by the policy is the child.",
+        "Conditions do apply for tax-free transfers.",
+        "Paying fair market value would create a taxable gain."
+      ],
+      "explanation": "Step 1: Identify conditions for tax-free rollover to child.\nStep 2: Apply the rule: Tax-free only if (1) no consideration paid AND (2) child is the life insured.\nStep 3: Eliminate distractors. Age and cash value are irrelevant; not all transfers qualify; fair market value creates tax.\nStep 4: Select the best answer. Option B: If the policyholder receives no money for it AND the life insured by the policy is the child.",
+      "difficulty": "hard",
+      "tags": ["child-transfer", "rollover", "life-insured"]
+    },
+    {
+      "id": 24,
+      "question": "If a policyholder dies and they are NOT the life insured on the policy, how is the policy treated?",
+      "options": [
+        "A) The policy pays out the death benefit.",
+        "B) The policy is deemed disposed of just before death, potentially triggering a policy gain on their final tax return.",
+        "C) The policy is canceled without value.",
+        "D) The government takes ownership of the policy."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The policy doesn't simply pass on; it's a disposition event.",
+        "The policy is deemed disposed of just before death, potentially triggering a policy gain on their final tax return.",
+        "The policy has value and is deemed disposed of.",
+        "The government doesn't seize policies."
+      ],
+      "explanation": "Step 1: Identify the situation (owner dies, not the insured).\nStep 2: Apply the rule: Deemed disposition occurs just before death; gain calculated and reported on final return.\nStep 3: Eliminate distractors. Policy isn't simply paid out; it's disposed of; it has value; government doesn't seize.\nStep 4: Select the best answer. Option B: The policy is deemed disposed of just before death, potentially triggering a policy gain on their final tax return.",
+      "difficulty": "hard",
+      "tags": ["deemed-disposition", "death-of-owner", "final-return"]
+    },
+    {
+      "id": 25,
+      "question": "What is the primary benefit of naming a \"contingent policyholder\" (successor owner)?",
+      "options": [
+        "A) It doubles the death benefit.",
+        "B) It allows the policy to bypass the deceased owner's estate, avoiding probate fees and delays.",
+        "C) It eliminates all income tax forever.",
+        "D) It allows the policy to be sold for twice its value."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Contingent ownership doesn't double benefits.",
+        "It allows the policy to bypass the deceased owner's estate, avoiding probate fees and delays.",
+        "Contingent ownership doesn't eliminate all taxes.",
+        "It doesn't affect policy sale value."
+      ],
+      "explanation": "Step 1: Identify the purpose of contingent policyholder.\nStep 2: Apply the benefit: Direct transfer to successor avoids probate delays and fees.\nStep 3: Eliminate distractors. No doubled benefits; taxes not eliminated; sale value unaffected.\nStep 4: Select the best answer. Option B: It allows the policy to bypass the deceased owner's estate, avoiding probate fees and delays.",
+      "difficulty": "easy",
+      "tags": ["contingent-owner", "estate-planning", "probate"]
+    },
+    {
+      "id": 26,
+      "question": "If a business owner uses a partial assignment of their life insurance policy as collateral for a business loan, what tax benefit might they receive?",
+      "options": [
+        "A) They can deduct the entire loan amount from their taxes.",
+        "B) They can deduct a portion of the premiums paid (limited to the Net Cost of Pure Insurance) as a business expense.",
+        "C) The death benefit becomes a tax deduction.",
+        "D) They do not have to pay the loan back."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The loan itself is not fully deductible.",
+        "They can deduct a portion of the premiums paid (limited to the Net Cost of Pure Insurance) as a business expense.",
+        "Death benefits are not deductible.",
+        "Loans must be repaid."
+      ],
+      "explanation": "Step 1: Identify the situation (business use of policy collateral).\nStep 2: Apply the rule: NCPI portion of premiums may be deductible as business expense.\nStep 3: Eliminate distractors. Loan not fully deductible; death benefit not deductible; loans must be repaid.\nStep 4: Select the best answer. Option B: They can deduct a portion of the premiums paid (limited to the Net Cost of Pure Insurance) as a business expense.",
+      "difficulty": "hard",
+      "tags": ["business-use", "ncpi", "collateral", "premium-deduction"]
+    },
+    {
+      "id": 27,
+      "question": "What does it mean to \"annuitize\" the Cash Surrender Value (CSV) of a life insurance policy?",
+      "options": [
+        "A) Cashing out the policy to buy a series of ongoing income payments (an annuity).",
+        "B) Changing the policy from whole life to term life.",
+        "C) Adding an annual bonus to the death benefit.",
+        "D) Transferring the policy to a spouse annually."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "Cashing out the policy to buy a series of ongoing income payments (an annuity).",
+        "Annuitization doesn't change policy type.",
+        "Annuitization doesn't add bonuses.",
+        "Annuitization is not an annual transfer."
+      ],
+      "explanation": "Step 1: Define annuitization.\nStep 2: Apply the concept: CSV is converted to an annuity product providing ongoing income.\nStep 3: Eliminate distractors. Not a policy type change; no bonus addition; not a spousal transfer.\nStep 4: Select the best answer. Option A: Cashing out the policy to buy a series of ongoing income payments (an annuity).",
+      "difficulty": "medium",
+      "tags": ["annuitization", "csv", "annuity", "income-conversion"]
+    },
+    {
+      "id": 28,
+      "question": "How does an \"insured retirement strategy\" (leveraging) generate tax-free cash for a retiree?",
+      "options": [
+        "A) By surrendering the policy piece by piece.",
+        "B) By receiving policy dividends in cash.",
+        "C) By using the policy's CSV as collateral to secure a series of bank loans, which are received tax-free.",
+        "D) By lowering the face amount of the policy annually."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Piece-by-piece surrender triggers tax on gains.",
+        "Dividend amounts are limited.",
+        "By using the policy's CSV as collateral to secure a series of bank loans, which are received tax-free.",
+        "Lowering face amount doesn't generate cash for retirement."
+      ],
+      "explanation": "Step 1: Identify the strategy (leveraging/insured retirement).\nStep 2: Apply the concept: CSV collateralizes bank loans; loan proceeds are tax-free; death benefit repays loan.\nStep 3: Eliminate distractors. Piece-by-piece surrenders create tax; dividends are insufficient; face amount reduction doesn't help.\nStep 4: Select the best answer. Option C: By using the policy's CSV as collateral to secure a series of bank loans, which are received tax-free.",
+      "difficulty": "hard",
+      "tags": ["leveraging", "insured-retirement", "tax-free-loan"]
+    },
+    {
+      "id": 29,
+      "question": "What is the general limit on claiming the Charitable Donation Tax Credit in a normal tax year?",
+      "options": [
+        "A) 100% of your net income.",
+        "B) 75% of your net income.",
+        "C) $50,000 maximum.",
+        "D) $200 maximum."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The limit is not 100%.",
+        "75% of your net income.",
+        "There is no $50,000 cap.",
+        "The limit is not $200."
+      ],
+      "explanation": "Step 1: Identify the donation credit limit.\nStep 2: Apply the rule: In a normal year, the credit is limited to 75% of net income.\nStep 3: Eliminate distractors. 100% is too high; $50,000 and $200 are incorrect thresholds.\nStep 4: Select the best answer. Option B: 75% of your net income.",
+      "difficulty": "easy",
+      "tags": ["charitable-donation", "tax-credit", "limits"]
+    },
+    {
+      "id": 30,
+      "question": "If you assign a brand NEW life insurance policy to a registered charity, why can't the charity issue you an immediate tax receipt for the face amount?",
+      "options": [
+        "A) Charities are not allowed to own life insurance.",
+        "B) Because a new policy has no Cash Surrender Value (CSV) yet, so it has no immediate value to the charity.",
+        "C) Because the death benefit is taxable.",
+        "D) Because new policies take 5 years to be approved by the CRA."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Charities are allowed to own life insurance.",
+        "Because a new policy has no Cash Surrender Value (CSV) yet, so it has no immediate value to the charity.",
+        "The death benefit is not immediately taxable.",
+        "There is no 5-year approval requirement."
+      ],
+      "explanation": "Step 1: Identify the issue (new policy to charity).\nStep 2: Apply the rule: Tax receipt is based on the policy's current value (CSV), not future death benefit.\nStep 3: Eliminate distractors. Charities can own policies; death benefit isn't immediately taxable; no 5-year CRA approval.\nStep 4: Select the best answer. Option B: Because a new policy has no Cash Surrender Value (CSV) yet, so it has no immediate value to the charity.",
+      "difficulty": "medium",
+      "tags": ["charitable-donation", "policy-assignment", "csv-value"]
+    }
+  ]
+}

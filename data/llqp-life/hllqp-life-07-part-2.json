@@ -1,0 +1,208 @@
+{
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 07 QZ - Taxation of Life Insurance and Tax Strategies - Section 2",
+  "examTips": "Focus on policy loans, interest deductibility, exempt test, MTAR rules, and non-exempt policy consequences.",
+  "questions": [
+    {
+      "id": 11,
+      "question": "If a policyholder repays a policy loan that previously caused a taxable policy gain, what tax relief is available?",
+      "options": [
+        "A) They get a free year of insurance.",
+        "B) They can deduct the repayment from their taxable income, up to the amount of the previous gain.",
+        "C) The death benefit becomes tax-deductible.",
+        "D) They never have to pay premiums again."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Free insurance is not a tax relief mechanism.",
+        "They can deduct the repayment from their taxable income, up to the amount of the previous gain.",
+        "The death benefit is not tax-deductible.",
+        "Premium obligations are not waived."
+      ],
+      "explanation": "Step 1: Identify tax relief for loan repayment.\nStep 2: Apply the rule: Repayment of a loan that caused a taxable gain allows deduction up to the prior gain amount.\nStep 3: Eliminate distractors. Free insurance, death benefit deductions, and premium waivers are not tax relief mechanisms.\nStep 4: Select the best answer. Option B: They can deduct the repayment from their taxable income, up to the amount of the previous gain.",
+      "difficulty": "medium",
+      "tags": ["policy-loan", "tax-relief", "deductions"]
+    },
+    {
+      "id": 12,
+      "question": "When can a policyholder deduct the interest paid on a policy loan from their taxable income?",
+      "options": [
+        "A) When the loan is used to buy a personal vacation home.",
+        "B) When the loan is used to buy a family car.",
+        "C) When the loan proceeds are invested to earn business or property income.",
+        "D) Policy loan interest is never tax-deductible."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "Personal uses do not allow interest deduction.",
+        "Personal uses do not allow interest deduction.",
+        "When the loan proceeds are invested to earn business or property income.",
+        "Policy loan interest can be deductible in specific circumstances."
+      ],
+      "explanation": "Step 1: Identify when policy loan interest is deductible.\nStep 2: Apply the rule: Interest is deductible when loan proceeds are used to earn business or property income.\nStep 3: Eliminate distractors. Personal or consumer uses do not allow deduction; vacation homes and cars are non-deductible uses.\nStep 4: Select the best answer. Option C: When the loan proceeds are invested to earn business or property income.",
+      "difficulty": "medium",
+      "tags": ["policy-loan", "interest-deduction", "business-income"]
+    },
+    {
+      "id": 13,
+      "question": "What is the main purpose of the \"exempt test\" under the Income Tax Act?",
+      "options": [
+        "A) To test if the policyholder needs a medical exam.",
+        "B) To ensure the policy emphasizes insurance protection rather than acting as a tax-sheltered investment.",
+        "C) To see if the beneficiary is exempt from paying premiums.",
+        "D) To test if the insurance agent is exempt from taxes."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Medical exams are unrelated to the exempt test.",
+        "To ensure the policy emphasizes insurance protection rather than acting as a tax-sheltered investment.",
+        "Beneficiaries do not pay premiums.",
+        "Agent taxes are not tested by the exempt test."
+      ],
+      "explanation": "Step 1: Define the exempt test.\nStep 2: Apply its purpose: Ensure policies function as insurance, not investment vehicles.\nStep 3: Eliminate distractors. Medical exams, beneficiary premium status, and agent taxes have no connection.\nStep 4: Select the best answer. Option B: To ensure the policy emphasizes insurance protection rather than acting as a tax-sheltered investment.",
+      "difficulty": "medium",
+      "tags": ["exempt-test", "policy-classification", "tax-shelter"]
+    },
+    {
+      "id": 14,
+      "question": "What does the Maximum Tax Actuarial Reserve (MTAR) rule establish?",
+      "options": [
+        "A) The maximum death benefit a person can buy.",
+        "B) The maximum age a person can live to.",
+        "C) The maximum limit that a policy's cash value can grow to without losing its tax-exempt status.",
+        "D) The minimum premium an insurance company can charge."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "MTAR does not limit death benefit amounts.",
+        "MTAR is not related to mortality.",
+        "The maximum limit that a policy's cash value can grow to without losing its tax-exempt status.",
+        "MTAR does not set minimum premiums."
+      ],
+      "explanation": "Step 1: Define MTAR.\nStep 2: Apply the rule: MTAR sets the maximum CSV growth limit to maintain tax-exempt status.\nStep 3: Eliminate distractors. MTAR doesn't limit death benefits, mortality, or premiums.\nStep 4: Select the best answer. Option C: The maximum limit that a policy's cash value can grow to without losing its tax-exempt status.",
+      "difficulty": "medium",
+      "tags": ["mtar", "csv", "exempt-status"]
+    },
+    {
+      "id": 15,
+      "question": "If a universal life policy's cash value exceeds the MTAR line, what is a common automatic remedy to prevent the policy from becoming non-exempt?",
+      "options": [
+        "A) The policy is canceled immediately.",
+        "B) The insurance company automatically increases the death benefit by up to 8% per year.",
+        "C) The insurance company confiscates the extra cash.",
+        "D) The policy is converted to term insurance."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Policies are not automatically canceled.",
+        "The insurance company automatically increases the death benefit by up to 8% per year.",
+        "No confiscation occurs.",
+        "Conversion is not automatic."
+      ],
+      "explanation": "Step 1: Identify the remedy for excess CSV over MTAR.\nStep 2: Apply the rule: Automatic death benefit increase (up to 8% annually) maintains exemption.\nStep 3: Eliminate distractors. Policies don't auto-cancel; confiscation doesn't occur; conversion isn't automatic.\nStep 4: Select the best answer. Option B: The insurance company automatically increases the death benefit by up to 8% per year.",
+      "difficulty": "medium",
+      "tags": ["mtar", "ul-policy", "death-benefit-increase"]
+    },
+    {
+      "id": 16,
+      "question": "What is the purpose of the 250% rule (anti-dump-in rule)?",
+      "options": [
+        "A) It requires policyholders to pay 250% more on their 10th anniversary.",
+        "B) It prevents policyholders from depositing massive lump sums into older policies to avoid taxes.",
+        "C) It guarantees a 250% return on investments.",
+        "D) It allows the government to tax 250% of the death benefit."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "The 250% rule doesn't mandate premium increases.",
+        "It prevents policyholders from depositing massive lump sums into older policies to avoid taxes.",
+        "The rule has no investment return guarantees.",
+        "Tax rates are not 250%."
+      ],
+      "explanation": "Step 1: Identify the 250% rule purpose.\nStep 2: Apply the rule: Prevents abuse by restricting lump sum deposits into policies.\nStep 3: Eliminate distractors. No premium surges on anniversaries; no investment guarantees; tax rates are not 250%.\nStep 4: Select the best answer. Option B: It prevents policyholders from depositing massive lump sums into older policies to avoid taxes.",
+      "difficulty": "medium",
+      "tags": ["250%-rule", "anti-abuse", "policy-funding"]
+    },
+    {
+      "id": 17,
+      "question": "What happens if an insurance policy fails the exempt test and officially becomes a \"non-exempt\" policy?",
+      "options": [
+        "A) The policyholder must report investment income earned within the policy as taxable income every year.",
+        "B) The policyholder goes to jail.",
+        "C) The death benefit becomes fully taxable to the beneficiary.",
+        "D) The policy is automatically transferred to the government."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "The policyholder must report investment income earned within the policy as taxable income every year.",
+        "Non-exemption does not result in criminal penalties.",
+        "Death benefits remain tax-exempt.",
+        "Policies are not transferred to government."
+      ],
+      "explanation": "Step 1: Identify consequences of non-exempt status.\nStep 2: Apply the rule: Non-exempt policies require annual reporting of investment income as taxable.\nStep 3: Eliminate distractors. Non-exemption is not criminal; death benefits remain exempt; policies aren't seized.\nStep 4: Select the best answer. Option A: The policyholder must report investment income earned within the policy as taxable income every year.",
+      "difficulty": "medium",
+      "tags": ["non-exempt-policy", "taxable-income", "investment-income"]
+    },
+    {
+      "id": 18,
+      "question": "What is the immediate tax implication of canceling an old life insurance policy to replace it with a new one?",
+      "options": [
+        "A) There is no tax implication if you buy a new one within 30 days.",
+        "B) The cancellation is a disposition, triggering a taxable policy gain if the CSV exceeds the ACB.",
+        "C) You get a tax credit for buying a new policy.",
+        "D) The new policy assumes the old policy's cash value tax-free."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "30-day replacements still trigger tax on gains.",
+        "The cancellation is a disposition, triggering a taxable policy gain if the CSV exceeds the ACB.",
+        "No tax credit exists for buying new policies.",
+        "New policies do not assume prior values."
+      ],
+      "explanation": "Step 1: Identify the tax event (cancellation).\nStep 2: Apply the rule: Cancellation is a disposition; if CSV > ACB, a taxable gain results.\nStep 3: Eliminate distractors. No 30-day exemption exists; no new policy credits; no free transfer of values.\nStep 4: Select the best answer. Option B: The cancellation is a disposition, triggering a taxable policy gain if the CSV exceeds the ACB.",
+      "difficulty": "medium",
+      "tags": ["cancellation", "disposition", "policy-replacement"]
+    },
+    {
+      "id": 19,
+      "question": "Why might it be a bad idea to replace an older \"G1\" (pre-1982) policy?",
+      "options": [
+        "A) G1 policies do not charge premiums.",
+        "B) G1 policies are not subject to the exempt test (MTAR) and can accumulate larger tax-sheltered cash values.",
+        "C) G1 policies guarantee that the policyholder will never die.",
+        "D) G1 policies automatically pay out double the death benefit."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "G1 policies do charge premiums.",
+        "G1 policies are not subject to the exempt test (MTAR) and can accumulate larger tax-sheltered cash values.",
+        "No policy guarantees immortality.",
+        "G1 policies do not pay double benefits."
+      ],
+      "explanation": "Step 1: Identify the advantage of G1 policies.\nStep 2: Apply the rule: G1 policies are exempt from MTAR limits, allowing larger tax-free accumulation.\nStep 3: Eliminate distractors. G1 policies charge premiums; no immortality guarantees; no double benefits.\nStep 4: Select the best answer. Option B: G1 policies are not subject to the exempt test (MTAR) and can accumulate larger tax-sheltered cash values.",
+      "difficulty": "medium",
+      "tags": ["g1-policy", "mtar-exemption", "grandfathered"]
+    },
+    {
+      "id": 20,
+      "question": "According to the general rule, what are the tax consequences of an absolute assignment (sale) of a life insurance policy to an arm's length party (a stranger)?",
+      "options": [
+        "A) It transfers tax-free.",
+        "B) The transferor realizes a policy gain equal to the transfer price minus the ACB.",
+        "C) The stranger has to pay tax on the death benefit.",
+        "D) The policy becomes invalid."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "Sales to strangers are not tax-free.",
+        "The transferor realizes a policy gain equal to the transfer price minus the ACB.",
+        "Strangers don't inherit tax on the death benefit.",
+        "Transfers do not invalidate the policy."
+      ],
+      "explanation": "Step 1: Identify the transaction (absolute assignment to third party).\nStep 2: Apply the rule: Transferor realizes a gain = Sale Price - ACB.\nStep 3: Eliminate distractors. Arm's length transfers are not tax-free; stranger doesn't inherit prior taxes; policy remains valid.\nStep 4: Select the best answer. Option B: The transferor realizes a policy gain equal to the transfer price minus the ACB.",
+      "difficulty": "medium",
+      "tags": ["absolute-assignment", "policy-sale", "third-party-transfer"]
+    }
+  ]
+}
