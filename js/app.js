@@ -4,8 +4,8 @@
 // Test: Auto-versioning system verification
 
 const MCQApp = {
-  appBuildVersion: '20260323e',
-  cacheVersion: 'v1.7.16',
+  appBuildVersion: '20260323f',
+  cacheVersion: 'v1.7.17',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {

@@ -1,132 +1,136 @@
 {
-  "data": [
+  "topic": "LLQP Life Insurance - Chapter Quizzes",
+  "topicId": "llqp-life",
+  "description": "HLLQP - LIFE 07 QZ - Taxation of Life Insurance and Tax Strategies - Section 1",
+  "examTips": "Focus on death benefit tax treatment, policy dispositions, ACB calculations, and policy classification rules.",
+  "questions": [
     {
       "id": 1,
       "question": "Under the Income Tax Act, how is the death benefit of a personally owned life insurance policy treated for tax purposes?",
-      "options": {
-        "A": "It is fully taxable to the beneficiary.",
-        "B": "Half of it is taxed as a capital gain.",
-        "C": "It is entirely exempt from income tax.",
-        "D": "It is taxable only if it exceeds $10,000."
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) It is fully taxable to the beneficiary.",
+        "B) Half of it is taxed as a capital gain.",
+        "C) It is entirely exempt from income tax.",
+        "D) It is taxable only if it exceeds $10,000."
+      ],
+      "correctAnswer": 2,
       "explanation": "Death benefits from life insurance are not subject to income tax in Canada. Only investment income earned within a policy is taxable.",
       "kidExplanation": "Imagine you have a magical piggy bank. When the person with the life insurance passes away, the insurance company gives the piggy bank to their family. The government doesn't take any of the coins out of this piggy bank—the family gets to keep every single penny tax-free!"
     },
     {
       "id": 2,
       "question": "Which of the following events would result in a \"disposition\" of a life insurance policy?",
-      "options": {
-        "A": "Changing the beneficiary.",
-        "B": "Paying the annual premium.",
-        "C": "Surrendering the policy for its cash value.",
-        "D": "Changing the address of the policyholder."
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) Changing the beneficiary.",
+        "B) Paying the annual premium.",
+        "C) Surrendering the policy for its cash value.",
+        "D) Changing the address of the policyholder."
+      ],
+      "correctAnswer": 2,
       "explanation": "A disposition occurs when a policy is surrendered for cash value, when interest or dividends are not taken in cash, or when there is a change in control of the policy.",
       "kidExplanation": "A \"disposition\" is just a fancy adult word for \"getting rid of something.\" If you give your toy away, sell it, or trade it in for cash at the store, you have \"disposed\" of it. Surrendering an insurance policy means you are turning it in for cash."
     },
     {
       "id": 3,
       "question": "How is a \"policy gain\" calculated when a life insurance policy is fully surrendered?",
-      "options": {
-        "A": "Proceeds of disposition minus the Adjusted Cost Basis (ACB).",
-        "B": "Total premiums paid minus the death benefit.",
-        "C": "Cash surrender value plus the death benefit.",
-        "D": "The total premiums paid multiplied by the inflation rate."
-      },
-      "correctAnswer": "A",
+      "options": [
+        "A) Proceeds of disposition minus the Adjusted Cost Basis (ACB).",
+        "B) Total premiums paid minus the death benefit.",
+        "C) Cash surrender value plus the death benefit.",
+        "D) The total premiums paid multiplied by the inflation rate."
+      ],
+      "correctAnswer": 0,
       "explanation": "Policy gain = Proceeds of disposition (usually the cash surrender value) minus the Adjusted Cost Basis (ACB). Any gain is taxable as income to the policyholder.",
       "kidExplanation": "If you bought a video game for $10 (your cost) and sold it later for $15 (your proceeds), you made $5 of profit. For life insurance, that $5 profit is called a \"policy gain,\" and you might have to pay a little bit of tax on that extra money!"
     },
     {
       "id": 4,
       "question": "What does the Adjusted Cost Basis (ACB) of an insurance policy generally represent?",
-      "options": {
-        "A": "The total death benefit payable.",
-        "B": "The future cash value of the policy.",
-        "C": "The cost of the policy for tax purposes.",
-        "D": "The commission paid to the insurance agent."
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) The total death benefit payable.",
+        "B) The future cash value of the policy.",
+        "C) The cost of the policy for tax purposes.",
+        "D) The commission paid to the insurance agent."
+      ],
+      "correctAnswer": 2,
       "explanation": "ACB is the tax cost basis of the policy, calculated as the total premiums paid minus any dividends received in cash, minus any amounts deducted under policy gain rules.",
       "kidExplanation": "ACB is basically a scorecard of what the insurance policy \"cost\" you. Keeping track of the exact cost helps the government figure out how much profit you made later so they know how much to tax you."
     },
     {
       "id": 5,
       "question": "Life insurance policies are classified into different groups for tax purposes. Which group represents \"grandfathered\" policies last acquired before December 2, 1982?",
-      "options": {
-        "A": "G1 policies",
-        "B": "G2 policies",
-        "C": "G3 policies",
-        "D": "G4 policies"
-      },
-      "correctAnswer": "A",
+      "options": [
+        "A) G1 policies",
+        "B) G2 policies",
+        "C) G3 policies",
+        "D) G4 policies"
+      ],
+      "correctAnswer": 0,
       "explanation": "G1 policies are grandfathered policies acquired before December 2, 1982. They are not subject to the exempt test (MTAR) and other restrictions that apply to newer policies.",
       "kidExplanation": "Think of G1 policies as super-old, ultra-rare trading cards. Because they are so old, they get to follow the original, older rules. Those old rules are often much better than the new rules!"
     },
     {
       "id": 6,
       "question": "If a policyholder chooses to receive their participating policy dividends in cash, how does this affect the policy?",
-      "options": {
-        "A": "It increases the death benefit.",
-        "B": "It reduces the policy's Adjusted Cost Basis (ACB).",
-        "C": "It triggers an immediate 50% tax penalty.",
-        "D": "It converts the policy into term insurance."
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) It increases the death benefit.",
+        "B) It reduces the policy's Adjusted Cost Basis (ACB).",
+        "C) It triggers an immediate 50% tax penalty.",
+        "D) It converts the policy into term insurance."
+      ],
+      "correctAnswer": 1,
       "explanation": "Cash dividends reduce the ACB of the policy, since they represent a return of cost basis to the policyholder.",
       "kidExplanation": "Sometimes the insurance company makes extra money and shares it with you as a \"dividend.\" If you take the cash, it lowers the original \"cost\" of your policy—kind of like getting a partial refund on a toy you bought!"
     },
     {
       "id": 7,
       "question": "When calculating the proceeds of disposition for a full surrender, what is deducted from the Cash Surrender Value (CSV)?",
-      "options": {
-        "A": "The agent's original commission.",
-        "B": "Outstanding policy loans and unpaid premiums.",
-        "C": "The Net Cost of Pure Insurance (NCPI).",
-        "D": "The total amount of premiums paid."
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) The agent's original commission.",
+        "B) Outstanding policy loans and unpaid premiums.",
+        "C) The Net Cost of Pure Insurance (NCPI).",
+        "D) The total amount of premiums paid."
+      ],
+      "correctAnswer": 1,
       "explanation": "The proceeds of disposition equal the cash surrender value received minus any outstanding policy loans and unpaid premiums owed to the insurer.",
       "kidExplanation": "Surrendering means returning your policy to the store for cash. The money you get back is the cash value. But, if you borrowed money from the store or forgot to pay a bill, they will subtract what you owe them before giving you your cash!"
     },
     {
       "id": 8,
       "question": "If a policyholder reduces their life insurance coverage amount from $200,000 to $150,000, how is this treated for tax purposes?",
-      "options": {
-        "A": "It is ignored until death.",
-        "B": "It is treated as a full surrender of the entire policy.",
-        "C": "It is treated as a partial surrender, and the ACB is prorated.",
-        "D": "It triggers a tax on the entire cash surrender value."
-      },
-      "correctAnswer": "C",
+      "options": [
+        "A) It is ignored until death.",
+        "B) It is treated as a full surrender of the entire policy.",
+        "C) It is treated as a partial surrender, and the ACB is prorated.",
+        "D) It triggers a tax on the entire cash surrender value."
+      ],
+      "correctAnswer": 2,
       "explanation": "A reduction in coverage is a partial disposition. The ACB is apportioned based on the proportion of the death benefit being reduced.",
       "kidExplanation": "Reducing coverage is like cutting a slice out of a big pie. The government only looks at the little slice you took out to see if you made a profit, not the whole pie!"
     },
     {
       "id": 9,
       "question": "For a G2 or G3 universal life policy, what happens when a policyholder withdraws cash from the investment account?",
-      "options": {
-        "A": "The withdrawal is totally tax-free in all situations.",
-        "B": "A prorated portion of the policy's ACB is used to calculate the policy gain.",
-        "C": "The policy is automatically canceled.",
-        "D": "The insurance company must double the death benefit."
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) The withdrawal is totally tax-free in all situations.",
+        "B) A prorated portion of the policy's ACB is used to calculate the policy gain.",
+        "C) The policy is automatically canceled.",
+        "D) The insurance company must double the death benefit."
+      ],
+      "correctAnswer": 1,
       "explanation": "A withdrawal from the investment account of a G2 or G3 policy is a partial disposition. A prorated portion of the ACB is deducted from the withdrawal to calculate the taxable policy gain.",
       "kidExplanation": "If you take a little bit of money out of your policy's savings account, you have to figure out the profit on just that little bit. It's like taking a handful of jellybeans from a jar and only calculating the cost of that one handful."
     },
     {
       "id": 10,
       "question": "Under what condition will taking a policy loan trigger a taxable policy gain?",
-      "options": {
-        "A": "If the loan is taken before the life insured turns 18.",
-        "B": "If the loan amount is greater than the policy's Adjusted Cost Basis (ACB).",
-        "C": "If the loan is used to buy a car.",
-        "D": "All policy loans are fully taxable immediately."
-      },
-      "correctAnswer": "B",
+      "options": [
+        "A) If the loan is taken before the life insured turns 18.",
+        "B) If the loan amount is greater than the policy's Adjusted Cost Basis (ACB).",
+        "C) If the loan is used to buy a car.",
+        "D) All policy loans are fully taxable immediately."
+      ],
+      "correctAnswer": 1,
       "explanation": "A policy loan itself is not taxable (it's borrowed money). However, if the loan amount exceeds the ACB, the excess is treated as a policy gain and is taxable.",
       "kidExplanation": "If you borrow more money from your policy than the policy actually \"cost\" you to set up, the government treats the extra money like a profit. And yup, you have to pay taxes on that extra profit!"
     }
