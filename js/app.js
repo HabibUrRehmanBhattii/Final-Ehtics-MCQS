@@ -3,8 +3,8 @@
 // ===================================
 
 const MCQApp = {
-  appBuildVersion: '20260324a',
-  cacheVersion: 'v1.7.7',
+  appBuildVersion: '20260324b',
+  cacheVersion: 'v1.7.8',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {

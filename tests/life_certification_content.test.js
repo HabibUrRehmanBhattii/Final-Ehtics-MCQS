@@ -14,6 +14,10 @@ function loadLifeCertificationExam() {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
+function stripOptionPrefix(optionText) {
+  return String(optionText || '').replace(/^\s*[A-D]\s*[.)]\s*/, '').trim();
+}
+
 test('life certification exam includes the curated 35-question ID set', () => {
   const exam = loadLifeCertificationExam();
   const expectedIds = [
@@ -37,10 +41,18 @@ test('life certification exam includes the curated 35-question ID set', () => {
     assert.ok(question.question.trim().length > 0);
     assert.equal(Array.isArray(question.options), true);
     assert.equal(question.options.length, 4);
+    assert.match(question.options[0], /^A\.\s+/);
+    assert.match(question.options[1], /^B\.\s+/);
+    assert.match(question.options[2], /^C\.\s+/);
+    assert.match(question.options[3], /^D\.\s+/);
     assert.equal(Number.isInteger(question.correctAnswer), true);
     assert.ok(question.correctAnswer >= 0 && question.correctAnswer < question.options.length);
     assert.equal(typeof question.explanation, 'string');
     assert.ok(question.explanation.trim().length > 0);
+    assert.match(question.explanation, /^Step 1:/);
+    assert.match(question.explanation, /\nStep 2:/);
+    assert.match(question.explanation, /\nStep 3:/);
+    assert.match(question.explanation, /\nStep 4:/);
     assert.equal(typeof question.kidExplanation, 'string');
     assert.ok(question.kidExplanation.trim().length > 0);
     assert.equal(seen.has(question.id), false);
@@ -93,6 +105,6 @@ test('life certification exam answer keys map to expected option text', () => {
   for (const [questionId, expectedAnswerText] of expectedCorrectAnswers.entries()) {
     const question = byId.get(questionId);
     assert.ok(question, `Question ${questionId} should exist`);
-    assert.equal(question.options[question.correctAnswer], expectedAnswerText);
+    assert.equal(stripOptionPrefix(question.options[question.correctAnswer]), expectedAnswerText);
   }
 });
