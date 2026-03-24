@@ -63,37 +63,56 @@ fi
 
 echo -e "${BLUE}✅ Source files changed, bumping version...${NC}"
 
-# Extract current version from index.html
-CURRENT_VERSION=$(grep -oP 'v=20260323\K[a-z]' index.html | head -1)
+# Extract current version tag from index.html (v=YYYYMMDDa)
+OLD_TAG=$(grep -oP 'v=\K[0-9]{8}[a-z]' index.html | head -1)
 
-if [ -z "$CURRENT_VERSION" ]; then
-  echo -e "${RED}❌ Could not find version in index.html${NC}"
+if [ -z "$OLD_TAG" ]; then
+  echo -e "${RED}❌ Could not find version tag (v=YYYYMMDDa) in index.html${NC}"
   exit 1
 fi
 
-# Calculate next version letter (a→b, b→c, etc.)
-case "$CURRENT_VERSION" in
-  a) NEW_VERSION="b" ;;
-  b) NEW_VERSION="c" ;;
-  c) NEW_VERSION="d" ;;
-  d) NEW_VERSION="e" ;;
-  e) NEW_VERSION="f" ;;
-  f) NEW_VERSION="g" ;;
-  g) NEW_VERSION="h" ;;
-  h) NEW_VERSION="i" ;;
-  i) NEW_VERSION="j" ;;
-  j) NEW_VERSION="k" ;;
-  k) NEW_VERSION="l" ;;
-  *)
-    echo -e "${YELLOW}⚠️  Version letter 'z' reached, resetting to 'a' with new date${NC}"
-    # Reset to new date
-    CURRENT_DATE=$(date -d tomorrow +%Y%m%d)
-    NEW_VERSION="a"
-    ;;
-esac
+OLD_DATE="${OLD_TAG:0:8}"
+CURRENT_VERSION="${OLD_TAG:8:1}"
 
-OLD_TAG="20260323${CURRENT_VERSION}"
-NEW_TAG="20260323${NEW_VERSION}"
+# Reset suffix to "a" when date changes; otherwise increment suffix.
+if [ "$OLD_DATE" != "$CURRENT_DATE" ]; then
+  NEW_VERSION="a"
+else
+  case "$CURRENT_VERSION" in
+    a) NEW_VERSION="b" ;;
+    b) NEW_VERSION="c" ;;
+    c) NEW_VERSION="d" ;;
+    d) NEW_VERSION="e" ;;
+    e) NEW_VERSION="f" ;;
+    f) NEW_VERSION="g" ;;
+    g) NEW_VERSION="h" ;;
+    h) NEW_VERSION="i" ;;
+    i) NEW_VERSION="j" ;;
+    j) NEW_VERSION="k" ;;
+    k) NEW_VERSION="l" ;;
+    l) NEW_VERSION="m" ;;
+    m) NEW_VERSION="n" ;;
+    n) NEW_VERSION="o" ;;
+    o) NEW_VERSION="p" ;;
+    p) NEW_VERSION="q" ;;
+    q) NEW_VERSION="r" ;;
+    r) NEW_VERSION="s" ;;
+    s) NEW_VERSION="t" ;;
+    t) NEW_VERSION="u" ;;
+    u) NEW_VERSION="v" ;;
+    v) NEW_VERSION="w" ;;
+    w) NEW_VERSION="x" ;;
+    x) NEW_VERSION="y" ;;
+    y) NEW_VERSION="z" ;;
+    *)
+      echo -e "${YELLOW}⚠️  Version suffix reached max; rolling to next day with suffix a${NC}"
+      CURRENT_DATE=$(date -d tomorrow +%Y%m%d)
+      NEW_VERSION="a"
+      ;;
+  esac
+fi
+
+NEW_TAG="${CURRENT_DATE}${NEW_VERSION}"
 
 echo -e "${BLUE}Version: ${OLD_TAG} → ${NEW_TAG}${NC}"
 
