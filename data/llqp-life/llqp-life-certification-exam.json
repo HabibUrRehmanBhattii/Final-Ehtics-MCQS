@@ -2,857 +2,846 @@
   "topic": "LLQP Life Insurance - Certification Exam",
   "topicId": "llqp-life",
   "description": "Life Insurance - Certification Exam (35 Questions)",
-  "examTips": "This comprehensive certification exam covers life insurance needs analysis, policy types, riders, underwriting, claims, and tax implications. Review all chapter materials before attempting this exam.",
+  "examTips": "Focus on taxation, policy structure, underwriting, needs analysis, and recommendation logic across LIFE chapters 1-12.",
   "questions": [
     {
-      "id": 1,
-      "question": "Jeremy is significantly older than his wife, Evelyn, and assumes she will outlive him. Upon his death, he would like her to be able to support herself indefinitely without having to draw on the principal amount of the death benefit she would receive. Jeremy estimates that Evelyn will need $7,000 net per month, assumes a 4.5% gross return on investments is reasonable, and estimates a 35% marginal tax rate (MTR). Using these variables, how much life insurance does Jeremy need to meet this goal, rounded up to the nearest $100,000?",
+      "id": 196849,
+      "question": "(7-016) LIFE Chuck owns a whole life policy with a CSV of $7,500. Over the years, he paid $15,000 in premiums, of which $9,500 was attributable to the NCPI. The policy was issued on December 2, 1981 but was partially assigned in 2019 to secure a bank loan. What would the applicable tax be assuming a marginal tax rate of 40%?",
       "options": [
-        "A. $1,500,000",
-        "B. $1,900,000",
-        "C. $1,700,000",
-        "D. $2,900,000"
+        "$3,000",
+        "$0",
+        "$600",
+        "$1,200"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "A partial assignment for a loan does not trigger a taxable disposition under the Income Tax Act. Tax applies on events like full surrender or sale.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "A partial assignment for a loan does not trigger a taxable disposition under the Income Tax Act. Tax applies on events like full surrender or sale.",
+      "kidExplanation": "Using your policy as collateral for a loan is not selling it. No sale means no tax bill today.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196396,
+      "question": "(1-002) LIFE Jake and Hannah are both 20 years old and have just welcomed their first child. They have few assets. They prepared wills naming Jake's mother as guardian and purchased joint first-to-die life insurance. Which financial impact of death are they primarily addressing?",
+      "options": [
+        "Estate creation",
+        "Education funds",
+        "Charitable giving",
+        "Loss of a caregiver"
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "This does not account for the after-tax return needed.",
-        "This is below the amount required by the given assumptions.",
-        "The calculation needs to account for both the tax rate and the return on investment.",
-        "$2,900,000."
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "The human life value approach focuses on replacing lost income and services of a caregiver. Joint first-to-die can address this early-family need."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This does not account for the after-tax return needed; This is below the amount required by the given assumptions.\nStep 4: Select the best answer. Option D: $2,900,000.",
-      "difficulty": "hard",
-      "tags": [
-        "needs analysis",
-        "capitalization of income",
-        "calculations"
-      ]
-    },
-    {
-      "id": 2,
-      "question": "Carlos wants to ensure that his family receives $80,000 in net annual income if he passes away. The investment return on the proceeds of his life insurance policy is expected to be 4.5%, with a marginal tax rate (MTR) of 25%. How much life insurance coverage does Carlos need using the capitalization of income method, rounded up to the nearest $100,000?",
-      "options": [
-        "A. $2,700,000",
-        "B. $2,400,000",
-        "C. $2,300,000",
-        "D. $1,800,000"
-      ],
-      "correctAnswer": 1,
-      "optionFeedback": [
-        "This is higher than the amount calculated from the given assumptions.",
-        "$2,400,000.",
-        "This amount is too low for the given parameters.",
-        "This does not align with the capitalization of income calculation."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is higher than the amount calculated from the given assumptions; This amount is too low for the given parameters.\nStep 4: Select the best answer. Option B: $2,400,000.",
-      "difficulty": "hard",
-      "tags": [
-        "needs analysis",
-        "capitalization of income",
-        "calculations"
-      ]
-    },
-    {
-      "id": 3,
-      "question": "Patrick enjoys off-road motorbiking on weekends. He always wears the proper protective gear, including a helmet and padded jacket. He took out disability insurance to protect his income in the event of disability. Which type of risk management strategy is Patrick employing?",
-      "options": [
-        "A. Transfer and avoidance",
-        "B. Reduction and transfer",
-        "C. Acceptance and reduction",
-        "D. Avoidance and acceptance"
-      ],
-      "correctAnswer": 1,
-      "optionFeedback": [
-        "Avoidance would mean avoiding the activity altogether, which Patrick is not doing.",
-        "Reduction and transfer.",
-        "Patrick is not accepting the risk; he is transferring it through insurance.",
-        "Patrick is actively reducing risk with protective gear and transferring through insurance."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Avoidance would mean avoiding the activity altogether, which Patrick is not doing; Patrick is not accepting the risk; he is transferring it through insurance.\nStep 4: Select the best answer. Option B: Reduction and transfer.",
+      "explanation": "The human life value approach focuses on replacing lost income and services of a caregiver. Joint first-to-die can address this early-family need.",
+      "kidExplanation": "If one parent dies, the family loses the person who cooks, drives, and earns money for the baby. The insurance money replaces that caregiver role.",
       "difficulty": "medium",
       "tags": [
-        "risk management",
-        "strategies"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 4,
-      "question": "Darcy owns a small boat, and while he is not required to have insurance, he considered the low likelihood of having an accident on his small, landlocked lake. After evaluating the situation, he decided to forgo insurance and instead used the money saved to contribute to his RRSP. What risk management strategy did Darcy employ in making this decision?",
+      "id": 196397,
+      "question": "(1-003) LIFE Which statement best describes how probability of death changes with age?",
       "options": [
-        "A. Risk retention",
-        "B. Risk transfer",
-        "C. Risk reduction",
-        "D. Risk avoidance"
+        "The probability of death remains level throughout life.",
+        "The probability of death starts low and increases incrementally each year until age 40, then increases at a slower pace.",
+        "The probability of death starts low and increases incrementally each year at about the same rate.",
+        "With the exception of the first few years of life, the probability of death starts low, increases slowly until age 40, then increases more dramatically."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This reflects the mortality curve used in pricing life insurance: relatively low early-adult mortality, then accelerating mortality at older ages."
+      ],
+      "explanation": "This reflects the mortality curve used in pricing life insurance: relatively low early-adult mortality, then accelerating mortality at older ages.",
+      "kidExplanation": "Early years are riskier, then it is safer for a while, and after about age 40 the curve gets steeper.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196850,
+      "question": "(7-017) LIFE Jake owns a participating whole life policy and receives his first policy dividend of $500 cash. Assuming a 40% tax bracket, how much tax does he owe on this policy dividend?",
+      "options": [
+        "$100",
+        "$167.50",
+        "$0",
+        "$200"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Dividends on participating whole life are generally treated as return of premium for tax purposes and are not taxed as ordinary income.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "Dividends on participating whole life are generally treated as return of premium for tax purposes and are not taxed as ordinary income.",
+      "kidExplanation": "A participating dividend is treated as getting part of your own premium back, not new income.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 197443,
+      "question": "(4-035) LIFE Jodie is considering key-person life and disability insurance and is focused on flexibility. Which statement correctly describes UL flexibility?",
+      "options": [
+        "A UL policyholder can adjust deposits, but cannot go below a minimum amount needed to keep the policy in force.",
+        "A UL policyholder can switch the life insured subject to medical underwriting.",
+        "Universal means all UL policies are essentially the same.",
+        "All UL policies provide increased coverage the longer the policy remains in force."
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Risk retention.",
-        "Risk transfer would involve purchasing insurance.",
-        "Risk reduction would involve modifying the boat or usage to reduce likelihood of accident.",
-        "Risk avoidance would mean not owning or using the boat at all."
+        "Universal Life is unbundled and premium-flexible within policy constraints. Deposits can vary, but charges still must be covered to keep coverage active.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Risk transfer would involve purchasing insurance; Risk reduction would involve modifying the boat or usage to reduce likelihood of accident.\nStep 4: Select the best answer. Option A: Risk retention.",
-      "difficulty": "easy",
+      "explanation": "Universal Life is unbundled and premium-flexible within policy constraints. Deposits can vary, but charges still must be covered to keep coverage active.",
+      "kidExplanation": "UL is flexible like a savings bucket, but you still need enough funding so the policy does not collapse.",
+      "difficulty": "medium",
       "tags": [
-        "risk management",
-        "strategies"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 5,
-      "question": "You are assisting your client Aaron, 46, in assessing his life insurance needs. Aaron's wife Karen (40) is a practicing doctor, and they have two children together, Jenny (age 4) and Larry (age 6), and Karen's son from a previous marriage, who Aaron adopted before he turned 18, is now 25. Karen is financially independent and fully supports them all as most of Aaron's income goes towards his support payments and hobbies he enjoys. Aaron is obligated to pay court ordered spousal support to his ex-spouse Georgina (45) and child support for his two children with her (9 and 10). While they were married, Georgina was a stay-at-home mom and she has been out of the work force for ten years. Who of the following will be most impacted financially in the event of Aaron's death?",
+      "id": 196695,
+      "question": "(6-004) LIFE Gayle joined ABC Corporation on June 1 and becomes eligible after a three-month waiting period. On August 10 she took a 60-day leave and returned October 10. When would she have become a member of the plan?",
       "options": [
-        "A. Georgina",
-        "B. Karen",
-        "C. Aaron",
-        "D. Larry"
+        "August 1st.",
+        "When she returned to work on October 10th.",
+        "July 1st.",
+        "After satisfying the probation period on or about September 1st."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Group eligibility is generally based on hire date plus waiting period terms, not postponed solely because of a later leave event unless plan wording says so."
+      ],
+      "explanation": "Group eligibility is generally based on hire date plus waiting period terms, not postponed solely because of a later leave event unless plan wording says so.",
+      "kidExplanation": "The waiting-period clock started when she was hired, so the eligibility date is tied to that timeline.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196869,
+      "question": "(7-035) LIFE Hector was advised his UL policy failed the exemption test and the grace period expired. Given face amount $500,000, accumulation value $32,176, and ACB $18,374, what happens now?",
+      "options": [
+        "Hector would need to pay tax on an immediate policy gain of approximately $13,802.",
+        "Hector will need to pay tax on any income earned within the policy in future years.",
+        "The policy must be surrendered, which would leave Hector with no insurance.",
+        "There would be no tax consequences today; however, the death benefit will be subject to taxation."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Failing exemption status changes tax treatment of the policy going forward. Immediate tax depends on the event; policy status and future taxation consequences become the key issue."
+      ],
+      "explanation": "Failing exemption status changes tax treatment of the policy going forward. Immediate tax depends on the event; policy status and future taxation consequences become the key issue.",
+      "kidExplanation": "The policy can lose special tax treatment without creating an immediate tax bill on that exact day.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196538,
+      "question": "(3-006) LIFE Curtis has a $500,000 whole life policy with over $90,000 in cash value and missed premiums. He dies while Automatic Premium Loan (APL) has been keeping the policy active. How much can his daughter expect?",
+      "options": [
+        "$590,000 less any balance owing under an APL",
+        "The policy would have lapsed and only cash surrender value would be payable.",
+        "Nothing; the policy would have lapsed after grace period.",
+        "$500,000 less any balance owing under an APL"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Automatic Premium Loan keeps policy in force by loaning against cash value. At claim time, outstanding APL principal and interest are deducted from death proceeds."
+      ],
+      "explanation": "Automatic Premium Loan keeps policy in force by loaning against cash value. At claim time, outstanding APL principal and interest are deducted from death proceeds.",
+      "kidExplanation": "APL uses the policy value to pay missed premiums, so coverage stays alive and the death benefit is reduced only by what was borrowed.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 240097,
+      "question": "(4-036) LIFE Trudy is quoted $1,900 annual for whole life. Modal factors are: Semi-annually 0.51, Quarterly 0.26, Monthly 0.087. Which modal factor gives the highest annualized payment?",
+      "options": [
+        "0.51 (semi-annually)",
+        "0.087 (monthly)",
+        "0.26 (quarterly)",
+        "They would all result in the same annualized payment."
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Georgina.",
-        "Karen is financially independent and fully supports the household.",
-        "Aaron is deceased in this scenario.",
-        "While Larry would be impacted, Georgina (who depends on support payments) would be most impacted."
+        "Modal factors embed payment-frequency charges. The highest factor produces the highest annualized premium total.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Karen is financially independent and fully supports the household; Aaron is deceased in this scenario.\nStep 4: Select the best answer. Option A: Georgina.",
+      "explanation": "Modal factors embed payment-frequency charges. The highest factor produces the highest annualized premium total.",
+      "kidExplanation": "A bigger modal factor multiplies into a bigger yearly total.",
       "difficulty": "medium",
       "tags": [
-        "needs analysis",
-        "life situations",
-        "beneficiaries"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 6,
-      "question": "After taxes, Xue clears $6,400 in income each month. Her mortgage is currently $350,000 and her monthly mortgage payment is $2,200. Xue has decided to purchase life insurance, and she asks her insurance agent, Cinzia, to determine the appropriate amount, accounting for inflation. Assuming an annual investment return of 4.5% and an average annual rate of inflation of 2.5%, what is the approximate amount of life insurance Xue needs using the income replacement approach (rounded up to the nearest million)?",
+      "id": 196844,
+      "question": "(7-011) LIFE Assuming a 40% marginal tax rate, which taxable event results in the most tax owed?",
       "options": [
-        "A. $4 million",
-        "B. $2 million",
-        "C. $1 million",
-        "D. $3 million"
-      ],
-      "correctAnswer": 3,
-      "optionFeedback": [
-        "This amount is too low given Xue's income and mortgage obligations.",
-        "This does not adequately account for inflation and the mortgage.",
-        "This is insufficient for the income replacement needed.",
-        "$3 million."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This amount is too low given Xue's income and mortgage obligations; This does not adequately account for inflation and the mortgage.\nStep 4: Select the best answer. Option D: $3 million.",
-      "difficulty": "hard",
-      "tags": [
-        "needs analysis",
-        "income replacement",
-        "inflation"
-      ]
-    },
-    {
-      "id": 7,
-      "question": "Lorraine and Peter are evaluating their life insurance needs. Peter makes $3,500 per month after tax, and Lorraine clears $1,200 per week after tax. Lorraine and Peter just had a new baby boy named Adam. Lorraine would like to purchase an insurance policy to protect herself and Adam in the event of Peter's death. She estimates she would need to fully replace Peter's income for 25 years. Using the capital drawdown method, which of the following is the CORRECT amount of life insurance Lorraine should buy?",
-      "options": [
-        "A. $1,050,000",
-        "B. $980,000",
-        "C. $810,000",
-        "D. $690,000"
-      ],
-      "correctAnswer": 2,
-      "optionFeedback": [
-        "This amount is too high for the given parameters.",
-        "The calculation does not properly apply the capital drawdown method.",
-        "$810,000.",
-        "This amount is too low to cover 25 years of income replacement."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This amount is too high for the given parameters; The calculation does not properly apply the capital drawdown method.\nStep 4: Select the best answer. Option C: $810,000.",
-      "difficulty": "hard",
-      "tags": [
-        "needs analysis",
-        "capital drawdown method",
-        "calculations"
-      ]
-    },
-    {
-      "id": 8,
-      "question": "Beau is a licensed life insurance agent, and he comes across the death notification of one of his clients, Victor. Beau sold Victor a life insurance policy that named his daughter, Tessa, as the beneficiary. Which of the following statements concerning Beau's responsibility in the claims process is CORRECT?",
-      "options": [
-        "A. Beau should inform Tessa that Victor's estate will be considered the claimant for his policy.",
-        "B. Beau's role is to facilitate the claims process by providing forms and assisting in their completion.",
-        "C. Beau is responsible for confirming that the policy was in force at the time of death.",
-        "D. Beau should not contact Tessa to initiate the claim under privacy requirements"
-      ],
-      "correctAnswer": 1,
-      "optionFeedback": [
-        "The beneficiary named in the policy (Tessa) is the entitled claimant, not the estate.",
-        "Beau's role is to facilitate the claims process by providing forms and assisting in their completion.",
-        "The insurer is responsible for confirming policy status, not the agent.",
-        "The agent can and should contact the beneficiary to facilitate the claims process."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The beneficiary named in the policy (Tessa) is the entitled claimant, not the estate; The insurer is responsible for confirming policy status, not the agent.\nStep 4: Select the best answer. Option B: Beau's role is to facilitate the claims process by providing forms and assisting in their completion.",
-      "difficulty": "medium",
-      "tags": [
-        "claims process",
-        "agent responsibilities",
-        "beneficiaries"
-      ]
-    },
-    {
-      "id": 9,
-      "question": "Sophie is a 45-year-old non-smoker with a convertible 10-year term life insurance policy and a GIB rider. She is considering converting it to a permanent policy. Which of the following is true if Sophie decides to convert?",
-      "options": [
-        "A. She can convert to a longer-term policy but not to a permanent one.",
-        "B. She will be able to convert only at the time of policy renewal.",
-        "C. She will need to undergo full medical underwriting to convert.",
-        "D. She can convert to a permanent plan without providing evidence of insurability."
-      ],
-      "correctAnswer": 3,
-      "optionFeedback": [
-        "A convertible policy allows conversion to permanent plans.",
-        "Conversion can occur at any time during the term, not just at renewal.",
-        "Conversion is a guaranteed right that does not require medical underwriting.",
-        "She can convert to a permanent plan without providing evidence of insurability."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A convertible policy allows conversion to permanent plans; Conversion can occur at any time during the term, not just at renewal.\nStep 4: Select the best answer. Option D: She can convert to a permanent plan without providing evidence of insurability.",
-      "difficulty": "medium",
-      "tags": [
-        "convertible term",
-        "conversion",
-        "underwriting"
-      ]
-    },
-    {
-      "id": 10,
-      "question": "Burt is considering two different convertible term life insurance policies. One allows conversion based on his original age, while the other is based on his attained age at the time of conversion. What should Burt be aware of?",
-      "options": [
-        "A. Retroactive conversion would require a lump-sum payment upon conversion.",
-        "B. An attained age conversion can occur only if Burt provides evidence of insurability.",
-        "C. Both original age and attained age conversions require evidence of insurability.",
-        "D. A retroactive conversion would result in a higher premium."
+        "A $25,000 policy gain upon disposal of an exempt life insurance policy",
+        "A $25,000 capital gain on sale of a cottage that is not the principal residence",
+        "A $25,000 capital gain on sale of a bond",
+        "A $25,000 capital gain on sale of one's principal residence"
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Retroactive conversion would require a lump-sum payment upon conversion.",
-        "Neither type of conversion requires evidence of insurability.",
-        "Neither type requires evidence of insurability.",
-        "Both conversions do not require higher premiums than the original term."
+        "Policy gains are generally included as income, while capital gains normally receive partial inclusion. Full-income inclusion can create higher tax at the same nominal gain amount.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Neither type of conversion requires evidence of insurability; Neither type requires evidence of insurability.\nStep 4: Select the best answer. Option A: Retroactive conversion would require a lump-sum payment upon conversion.",
-      "difficulty": "hard",
+      "explanation": "Policy gains are generally included as income, while capital gains normally receive partial inclusion. Full-income inclusion can create higher tax at the same nominal gain amount.",
+      "kidExplanation": "Full-income inclusion is usually heavier than capital-gain inclusion.",
+      "difficulty": "medium",
       "tags": [
-        "convertible term",
-        "conversion options",
-        "retroactive conversion"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 11,
-      "question": "Nancy is considering different term insurance policies but has questions on the premium. What should you tell her?",
+      "id": 196652,
+      "question": "(4-026) LIFE Andrew has a UL policy with a level death benefit of $200,000, cash value $32,000, and YRT deductions around $1,800/year. He asks about premium offset. What should you tell him?",
       "options": [
-        "A. Level, increasing, and decreasing term all have level premiums.",
-        "B. Level and decreasing term insurance have level premiums, but with increasing term, the premium increases.",
-        "C. Level term insurance has a level premium, increasing term insurance has an increasing premium, and decreasing term insurance has a decreasing premium.",
-        "D. Only level term insurance has a level premium."
+        "Purchase a participating UL policy and select accumulation as the dividend option.",
+        "Grow UL cash value to a level that can cover mortality and expense deductions indefinitely.",
+        "Purchase a participating UL policy and select premium offset as the dividend option.",
+        "Purchase a participating UL policy with PUA as the dividend option."
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "Increasing and decreasing term do not have level premiums.",
-        "Level and decreasing term insurance have level premiums, but with increasing term, the premium increases.",
-        "Increasing term typically has a level premium even though the death benefit increases.",
-        "Decreasing term also has a level premium."
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "In UL, premium offset is a cash-value funding strategy where policy earnings and value are expected to support ongoing internal charges.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Increasing and decreasing term do not have level premiums; Increasing term typically has a level premium even though the death benefit increases.\nStep 4: Select the best answer. Option B: Level and decreasing term insurance have level premiums, but with increasing term, the premium increases.",
+      "explanation": "In UL, premium offset is a cash-value funding strategy where policy earnings and value are expected to support ongoing internal charges.",
+      "kidExplanation": "Premium offset in UL means policy values carry the charges so you can reduce or stop out-of-pocket premiums.",
       "difficulty": "medium",
       "tags": [
-        "term insurance types",
-        "premiums",
-        "benefits"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 12,
-      "question": "Michael, a licensed insurance agent, meets with Jill, a prospective client. After completing a needs analysis and discussing various options, Jill has decided to purchase a 10-year term policy from Michael. However, Jill is confused about the different options available. When Jill asks Michael about the differences between renewable and convertible policies, which of the following is the CORRECT response that Michael should provide her?",
+      "id": 196890,
+      "question": "(7-053) LIFE Bobby earned $100,000 this year. What is the maximum charitable donation he can claim this year?",
       "options": [
-        "A. Evidence of insurability is required to exercise the renewal option, but not the conversion option.",
-        "B. Evidence of insurability is required to exercise the conversion option, but not the renewal option.",
-        "C. The conversion privilege would allow the life insured to convert the 10-year term to a 20-year term.",
-        "D. A re-entry policy may offer a lower renewal rate if the life insured is in good health at the time of renewal."
+        "$200",
+        "$400",
+        "$100,000",
+        "$75,000"
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "The opposite is true: evidence is required for renewal but not for conversion.",
-        "Conversion requires no evidence; renewal requires evidence of insurability.",
-        "Conversion allows conversion to permanent plans, not longer terms.",
-        "A re-entry policy may offer a lower renewal rate if the life insured is in good health at the time of renewal."
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "General charitable donation claim limit is 75% of net income, with carry-forward rules for excess donations."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The opposite is true: evidence is required for renewal but not for conversion; Conversion requires no evidence; renewal requires evidence of insurability.\nStep 4: Select the best answer. Option D: A re-entry policy may offer a lower renewal rate if the life insured is in good health at the time of renewal.",
+      "explanation": "General charitable donation claim limit is 75% of net income, with carry-forward rules for excess donations.",
+      "kidExplanation": "In a standard year, donation claim limit is 75% of net income.",
       "difficulty": "medium",
       "tags": [
-        "term insurance",
-        "renewal",
-        "conversion",
-        "re-entry"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 13,
-      "question": "Anika is reviewing her participating life insurance policy and wants to choose a dividend option that will provide her with the most coverage immediately. Which of the following is a valid dividend option that would result in the most coverage today?",
+      "id": 196605,
+      "question": "(4-005) LIFE Four friends bought UL policies with similar investments, and one says performance is very strong. Which policy is most at risk of failing the exemption test?",
       "options": [
-        "A. Paid-up additions, where the coverage is permanent.",
-        "B. One-year term insurance, where the coverage is based on her attained age and the dividend amount.",
-        "C. Paid-up additions, where the coverage is temporary.",
-        "D. One-year term insurance, where the coverage is based on her original age and the dividend amount."
-      ],
-      "correctAnswer": 1,
-      "optionFeedback": [
-        "While paid-up additions provide immediate coverage, one-year term insurance provides more total coverage immediately.",
-        "One-year term insurance, where the coverage is based on her attained age and the dividend amount.",
-        "One-year term would provide more coverage than paid-up additions.",
-        "Coverage on original age would typically be lower than on attained age basis."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While paid-up additions provide immediate coverage, one-year term insurance provides more total coverage immediately; One-year term would provide more coverage than paid-up additions.\nStep 4: Select the best answer. Option B: One-year term insurance, where the coverage is based on her attained age and the dividend amount.",
-      "difficulty": "medium",
-      "tags": [
-        "participating policies",
-        "dividends",
-        "dividend options"
-      ]
-    },
-    {
-      "id": 14,
-      "question": "David wants to ensure his estate has sufficient funds to cover the taxes on his assets, which include several investment properties. He is looking for the most affordable permanent life insurance option. Which policy type is best suited for David's needs?",
-      "options": [
-        "A. Universal life insurance with level cost of insurance mortality costing option",
-        "B. Term-to-100 life insurance",
-        "C. Universal life insurance with yearly renewable term mortality costing option",
-        "D. Whole life insurance"
-      ],
-      "correctAnswer": 1,
-      "optionFeedback": [
-        "UL with LCOI is more expensive than T-100.",
-        "Term-to-100 life insurance.",
-        "UL with YRT has increasing costs over time as the insured ages.",
-        "Whole life is more expensive than Term-to-100."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. UL with LCOI is more expensive than T-100; UL with YRT has increasing costs over time as the insured ages.\nStep 4: Select the best answer. Option B: Term-to-100 life insurance.",
-      "difficulty": "medium",
-      "tags": [
-        "policy types",
-        "permanent insurance",
-        "term-to-100"
-      ]
-    },
-    {
-      "id": 15,
-      "question": "Chris has a participating whole life insurance policy with a $150,000 face value. Each year the policy paid a dividend, which was used to purchase one-year term insurance. The policy is now in its eighth year, and the cash value is $22,000. Chris failed to make the last six monthly payments, resulting in the APL non-forfeiture option being triggered. If Chris dies today, how much will his beneficiaries receive?",
-      "options": [
-        "A. $150,000, plus the coverage from eight separate one-year term policies, less the policy loan",
-        "B. $150,000, plus the coverage from the current one-year term policy, less the policy loan",
-        "C. $172,000, plus the coverage from the current one-year term policy, with the APL forgiven",
-        "D. $22,000, plus the coverage from the current one-year term policy, less the policy loan"
-      ],
-      "correctAnswer": 1,
-      "optionFeedback": [
-        "Not all eight term policies would be in force; only the current one-year term would apply.",
-        "$150,000, plus the coverage from the current one-year term policy, less the policy loan.",
-        "The APL is not forgiven; it is a loan that must be repaid from proceeds.",
-        "The beneficiaries receive the full face value, not just the CSV."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Not all eight term policies would be in force; only the current one-year term would apply; The APL is not forgiven; it is a loan that must be repaid from proceeds.\nStep 4: Select the best answer. Option B: $150,000, plus the coverage from the current one-year term policy, less the policy loan.",
-      "difficulty": "hard",
-      "tags": [
-        "whole life",
-        "APL",
-        "non-forfeiture",
-        "dividends"
-      ]
-    },
-    {
-      "id": 16,
-      "question": "Carlos is applying for a whole life policy with an annual premium of $2,400. Given his preference for managing monthly expenses, he is considering switching to monthly premium payments instead of paying the full amount up front each year. What will Carlos's monthly premium most likely be?",
-      "options": [
-        "A. Less than $200 per month",
-        "B. Equal to 1/12 of the annual premium",
-        "C. $200 payable at the end of each month",
-        "D. More than $200 per month"
-      ],
-      "correctAnswer": 3,
-      "optionFeedback": [
-        "Monthly premiums typically exceed the simple division of annual premium.",
-        "There are administrative costs for monthly payment collection.",
-        "This equals exactly 1/12 of the annual premium, which does not account for collection costs.",
-        "More than $200 per month."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Monthly premiums typically exceed the simple division of annual premium; There are administrative costs for monthly payment collection.\nStep 4: Select the best answer. Option D: More than $200 per month.",
-      "difficulty": "easy",
-      "tags": [
-        "premiums",
-        "payment frequency",
-        "whole life"
-      ]
-    },
-    {
-      "id": 17,
-      "question": "Jeremy, a 45-year-old policyholder, owns a $500,000 face value universal life (UL) insurance policy with a level death benefit plus account value structure and the level cost of insurance (LCOI) mortality costing option. His policy's investment account has accumulated $50,000, and he is considering withdrawing $20,000 for a business investment. Given these details, how will this withdrawal affect his policy?",
-      "options": [
-        "A. The withdrawal will have no effect on either the death benefit his beneficiaries will receive or the net amount at risk for the insurer.",
-        "B. The withdrawal will reduce the total amount his beneficiary would receive if he were to die but will not affect the net amount at risk for the insurer.",
-        "C. The withdrawal will increase the net amount at risk for the insurer but will not impact the death benefit his beneficiaries would receive if he were to die.",
-        "D. The withdrawal will increase the net amount at risk for the insurer and reduce the total death benefit his beneficiaries would receive if he were to die."
-      ],
-      "correctAnswer": 2,
-      "optionFeedback": [
-        "The withdrawal will affect the net amount at risk.",
-        "The level death benefit structure means the death benefit remains $500,000.",
-        "The withdrawal will increase the net amount at risk for the insurer but will not impact the death benefit his beneficiaries would receive if he were to die.",
-        "In a level death benefit structure, the total death benefit remains the same."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The withdrawal will affect the net amount at risk; The level death benefit structure means the death benefit remains $500,000.\nStep 4: Select the best answer. Option C: The withdrawal will increase the net amount at risk for the insurer but will not impact the death benefit his beneficiaries would receive if he were to die.",
-      "difficulty": "hard",
-      "tags": [
-        "universal life",
-        "withdrawals",
-        "death benefit",
-        "account value"
-      ]
-    },
-    {
-      "id": 18,
-      "question": "Jahinder, 52, is a farmer whose income varies significantly. He wants to bequeath the cottage, his second residence, to his children. The cottage consistently increases in value, and he wants to cover the tax liability that will arise on his death as cost effectively as possible, with as much flexibility as possible. Which of the following would be the best option for achieving Jahinder's objectives?",
-      "options": [
-        "A. Whole Life Non-participating",
-        "B. Term 100",
-        "C. Term 10 Renewable Convertible",
-        "D. Universal Life"
-      ],
-      "correctAnswer": 3,
-      "optionFeedback": [
-        "While permanent, whole life is not as flexible or cost-effective as UL.",
-        "T-100 provides no flexibility for payment adjustments based on varying income.",
-        "This term option may not extend long enough and lacks flexibility.",
-        "Universal Life."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While permanent, whole life is not as flexible or cost-effective as UL; T-100 provides no flexibility for payment adjustments based on varying income.\nStep 4: Select the best answer. Option D: Universal Life.",
-      "difficulty": "medium",
-      "tags": [
-        "universal life",
-        "policy selection",
-        "flexibility",
-        "permanent insurance"
-      ]
-    },
-    {
-      "id": 19,
-      "question": "Vanessa has determined she needs permanent insurance and has decided to apply for a universal life (UL) policy with a face value of $300,000. She has agreed to a $500 monthly premium and is looking for ways to maximize her policy's investment component. Which mortality costing option should Vanessa choose if she wants the lowest insurance costs and the greatest account value growth in the early years?",
-      "options": [
-        "A. Yearly renewable term",
-        "B. Term-to-100",
-        "C. Level cost of insurance",
-        "D. 10-year term insurance with a lower premium and invest the difference herself"
-      ],
-      "correctAnswer": 2,
-      "optionFeedback": [
-        "YRT has higher insurance costs in early years.",
-        "T-100 has higher costs than LCOI.",
-        "Level cost of insurance.",
-        "This is not a UL mortality costing option; it's a separate strategy."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. YRT has higher insurance costs in early years; T-100 has higher costs than LCOI.\nStep 4: Select the best answer. Option C: Level cost of insurance.",
-      "difficulty": "medium",
-      "tags": [
-        "universal life",
-        "mortality costing",
-        "investment growth"
-      ]
-    },
-    {
-      "id": 20,
-      "question": "Jessica owns a $750,000 whole life policy with a waiver of premium and a GIB rider. The GIB allows Jessica to add up to 15% of the face value in additional coverage on each policy anniversary date. At the time of her application, she was a non-smoker and in excellent health. Now, on the policy's anniversary, Jessica wants to add coverage; however, she was recently diagnosed with leukemia. What is true of the GIB on Jessica's policy?",
-      "options": [
-        "A. It guarantees original premium rates for added coverage; however, evidence of insurability is still required.",
-        "B. It does not require a full underwriting, but coverage can be added only if the applicant can answer \"no\" to a series of health-related questions.",
-        "C. It will allow her to add the additional coverage at stated rates as though her health has not changed.",
-        "D. It will be void due to Jessica's lack of insurability."
-      ],
-      "correctAnswer": 2,
-      "optionFeedback": [
-        "Evidence of insurability is not required for a guaranteed insurability benefit.",
-        "GIB does not require any health questions or underwriting.",
-        "It will allow her to add the additional coverage at stated rates as though her health has not changed.",
-        "GIB is guaranteed and cannot be voided due to health changes."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Evidence of insurability is not required for a guaranteed insurability benefit; GIB does not require any health questions or underwriting.\nStep 4: Select the best answer. Option C: It will allow her to add the additional coverage at stated rates as though her health has not changed.",
-      "difficulty": "medium",
-      "tags": [
-        "GIB rider",
-        "guaranteed insurability",
-        "whole life"
-      ]
-    },
-    {
-      "id": 21,
-      "question": "Aaron and Beth own a family cabin that has been in the family for generations. The value of the cabin has increased significantly, and they are concerned about the potential capital gains tax their children will face when they pass away. They currently have a participating whole life insurance policy, which provides enough coverage today but perhaps not in the future. What would be the best approach to ensure that their insurance coverage is sufficient to address the rising tax burden?",
-      "options": [
-        "A. Add an FPO to their existing life insurance policy.",
-        "B. Start a savings plan to set aside funds for the future tax liability.",
-        "C. Purchase a new term-to-100 policy to supplement their whole life policy.",
-        "D. Add a GIB rider and use the PUA dividend option to increase their coverage."
-      ],
-      "correctAnswer": 3,
-      "optionFeedback": [
-        "FPO locks in premiums but does not increase death benefit.",
-        "A savings plan does not provide the guaranteed coverage of insurance.",
-        "While T-100 could work, using dividend options is more efficient.",
-        "Add a GIB rider and use the PUA dividend option to increase their coverage."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. FPO locks in premiums but does not increase death benefit; A savings plan does not provide the guaranteed coverage of insurance.\nStep 4: Select the best answer. Option D: Add a GIB rider and use the PUA dividend option to increase their coverage.",
-      "difficulty": "medium",
-      "tags": [
-        "estate planning",
-        "whole life",
-        "dividend options",
-        "GIB rider"
-      ]
-    },
-    {
-      "id": 22,
-      "question": "Chris is purchasing a $600,000 life insurance policy, naming his wife, Ami, as the life insured. Chris is the policyholder and will be making the premium payments. Their daughter, Jill, has been named as the beneficiary, and a payor waiver of premium rider has also been selected. How would the policy be underwritten?",
-      "options": [
-        "A. On Ami as the life insured and on Chris as the one making the premium payments.",
-        "B. On Chris as the policyholder.",
-        "C. On Ami as the life insured, with no additional underwriting required for riders added during the original application.",
-        "D. On Ami as the policyholder."
+        "A maximum-funded UL policy",
+        "A UL policy with LCOI",
+        "A minimally funded UL policy",
+        "A UL policy with YRT"
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "On Ami as the life insured and on Chris as the one making the premium payments.",
-        "The policyholder's health is not the primary focus; the life insured is.",
-        "Riders like payor waiver of premium do require underwriting on the payor.",
-        "Ami is the life insured, not the policyholder."
+        "Maximum-funded UL structures are typically closest to exempt-test thresholds because of higher deposit intensity relative to required insurance corridor.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The policyholder's health is not the primary focus; the life insured is; Riders like payor waiver of premium do require underwriting on the payor.\nStep 4: Select the best answer. Option A: On Ami as the life insured and on Chris as the one making the premium payments.",
-      "difficulty": "hard",
+      "explanation": "Maximum-funded UL structures are typically closest to exempt-test thresholds because of higher deposit intensity relative to required insurance corridor.",
+      "kidExplanation": "Overfunding pushes a policy closest to exemption-test limits.",
+      "difficulty": "medium",
       "tags": [
-        "underwriting",
-        "policy roles",
-        "riders"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 23,
-      "question": "Which of the following events would definitely not trigger a payout under the child rider?",
+      "id": 196570,
+      "question": "(3-029) LIFE All else equal, which policy would be most expensive?",
       "options": [
-        "A. Greg dies in a car crash at age eight.",
-        "B. Emily dies from asphyxia at birth.",
-        "C. Laura dies when crushed by a machine at work at age 22.",
-        "D. Samuel dies in a drowning accident at age 24."
-      ],
-      "correctAnswer": 2,
-      "optionFeedback": [
-        "A child who dies at age eight would trigger a child rider payout.",
-        "While a newborn death is tragic, most child riders cover from birth or shortly after.",
-        "Laura dies when crushed by a machine at work at age 22.",
-        "Many child riders can extend coverage up to age 25."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A child who dies at age eight would trigger a child rider payout; While a newborn death is tragic, most child riders cover from birth or shortly after.\nStep 4: Select the best answer. Option C: Laura dies when crushed by a machine at work at age 22.",
-      "difficulty": "hard",
-      "tags": [
-        "child riders",
-        "coverage limits",
-        "dependent coverage"
-      ]
-    },
-    {
-      "id": 24,
-      "question": "Nathan just started working at Greenfields Inc. as a warehouse manager. The company offers group life insurance coverage, subject to a 90-day probationary period and a 60-day enrolment period. Nathan had a heart attack two years ago and was declined individual life insurance. Which of the following best represents Nathan's entitlement to join the group plan after satisfying the probationary period?",
-      "options": [
-        "A. He would be able to join the health plan regardless of his health status.",
-        "B. The underwriting of the group plan only requires the applicant to answer a few health-related questions designed to eliminate anyone who is terminally ill.",
-        "C. He would be able to join the plan, but the risk would be rated and would require a risk-adjusted premium.",
-        "D. He would have to disclose that he was denied insurance two years ago and would not be eligible to join the plan."
+        "a) Participating whole life insurance with a waiver of premium",
+        "b) Non-participating whole life insurance",
+        "c) Participating whole life insurance",
+        "d) Non-participating whole life insurance with a convertible feature"
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "He would be able to join the health plan regardless of his health status.",
-        "Group plans have simplified underwriting but may still have some health questions.",
-        "Group plans typically do not risk-rate individual employees.",
-        "Group plans do not exclude based on prior individual insurance denials."
+        "Policy riders add price. A participating whole life contract plus waiver-of-premium rider is commonly costlier than base-policy alternatives.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Group plans have simplified underwriting but may still have some health questions; Group plans typically do not risk-rate individual employees.\nStep 4: Select the best answer. Option A: He would be able to join the health plan regardless of his health status.",
+      "explanation": "Policy riders add price. A participating whole life contract plus waiver-of-premium rider is commonly costlier than base-policy alternatives.",
+      "kidExplanation": "Adding a rider like waiver of premium usually increases cost.",
       "difficulty": "medium",
       "tags": [
-        "group life insurance",
-        "underwriting",
-        "eligibility"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 25,
-      "question": "Andrew recently left his job, where he was covered by group life insurance with a death benefit of $450,000. He lives in Quebec and wants to convert this group coverage into an individual policy without medical underwriting. What is the maximum amount he can convert under Quebec law?",
+      "id": 196933,
+      "question": "(9-008) LIFE Chris picked three examples of insurable interest. Which answer is correct?",
       "options": [
-        "A. $400,000",
-        "B. $200,000",
-        "C. $450,000",
-        "D. $225,000"
-      ],
-      "correctAnswer": 2,
-      "optionFeedback": [
-        "Quebec law allows conversion of the full group benefit amount.",
-        "This is only 50% of the available group benefit.",
-        "$450,000.",
-        "This is only 50% of the available group benefit."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Quebec law allows conversion of the full group benefit amount; This is only 50% of the available group benefit.\nStep 4: Select the best answer. Option C: $450,000.",
-      "difficulty": "medium",
-      "tags": [
-        "group life insurance",
-        "conversion rights",
-        "Quebec regulations"
-      ]
-    },
-    {
-      "id": 26,
-      "question": "Lucy earned $100,000 in 2023 and $120,000 in 2024. She passed away in late 2024. How much can be claimed in charitable donations on her 2023 and 2024 tax returns?",
-      "options": [
-        "A. A total of up to $120,000 for both years.",
-        "B. Up to $75,000 in 2023, and $90,000 in 2024.",
-        "C. $120,000 in 2024; contributions cannot be made for prior years.",
-        "D. Up to $100,000 in 2023, and $120,000 for 2024."
+        "Fred owns 100 shares in Facebook and says he has insurable interest in Mark Zuckerberg.",
+        "Mary's husband does not earn income but does all household duties and childcare.",
+        "Darcy has a 15-year-old son with limited current earnings.",
+        "All of the above"
       ],
       "correctAnswer": 3,
       "optionFeedback": [
-        "Each year has its own limit based on that year's net income.",
-        "The percentages used here are incorrect.",
-        "Charitable donations can be claimed in the year of death and carried back.",
-        "Up to $100,000 in 2023, and $120,000 for 2024."
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Insurable interest can arise in family, dependency, and business contexts where financial loss is reasonably connected to the insured person's death."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Each year has its own limit based on that year's net income; The percentages used here are incorrect.\nStep 4: Select the best answer. Option D: Up to $100,000 in 2023, and $120,000 for 2024.",
-      "difficulty": "hard",
+      "explanation": "Insurable interest can arise in family, dependency, and business contexts where financial loss is reasonably connected to the insured person's death.",
+      "kidExplanation": "Insurable interest exists when death creates real loss, including economic services and dependency impacts.",
+      "difficulty": "medium",
       "tags": [
-        "tax implications",
-        "charitable donations",
-        "death",
-        "estate planning"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 27,
-      "question": "William acquires a $100,000 term life policy on his own life and then immediately assigns the policy to a registered charity. William plans on continuing to pay the $1,500 annual premium and is not planning to make any other charitable contributions in those years. William has annual net income of $85,000. Which of the following statements about the tax implications of William's assignment of his policy to the charity is CORRECT?",
+      "id": 196983,
+      "question": "(11-021) LIFE Ozzie needs $600k for 10 years and then $400k for the next 10 years. Which strategy has the highest cumulative cost?",
       "options": [
-        "A. William will have a taxable capital gain of $50,000 to report in the year the policy is assigned to the charity.",
-        "B. William will not be able to receive any charitable tax credit even if he continues to pay the policy premium.",
-        "C. William will not be eligible for an immediate charitable donations tax credit on the assignment of his policy to the charity.",
-        "D. William will be eligible for a charitable donations tax credit of $63,750 in the year the policy is assigned."
+        "Option #1, as it would cost $240 more.",
+        "Option #1, as it would cost $20 more.",
+        "Option #2, as it would cost $20 more.",
+        "Option #2, as it would cost $240 more."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 0,
       "optionFeedback": [
-        "There is no taxable capital gain on assignment of a new policy.",
-        "William can receive a charitable credit for premium payments.",
-        "William will not be eligible for an immediate charitable donations tax credit on the assignment of his policy to the charity.",
-        "The calculation and timing of credit claims is not as described."
+        "When comparing staged term structures versus alternatives, attained-age repricing can make some step structures more expensive over the full period.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. There is no taxable capital gain on assignment of a new policy; William can receive a charitable credit for premium payments.\nStep 4: Select the best answer. Option C: William will not be eligible for an immediate charitable donations tax credit on the assignment of his policy to the charity.",
-      "difficulty": "hard",
+      "explanation": "When comparing staged term structures versus alternatives, attained-age repricing can make some step structures more expensive over the full period.",
+      "kidExplanation": "Buying later coverage at older attained age can drive higher cumulative cost.",
+      "difficulty": "medium",
       "tags": [
-        "tax implications",
-        "charitable insurance",
-        "policy assignment"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 28,
-      "question": "Carlos purchased a life insurance policy and named his ex-wife, Laura, as the life insured. Their child, Paulie, was named as the beneficiary. Carlos has recently passed away. What happens to the policy now?",
+      "id": 196617,
+      "question": "(4-009) LIFE Blake bought UL with level death benefit and LCOI mortality option. In this case, what is the NAAR?",
       "options": [
-        "A. The death benefit will be paid to Paulie, and the policy will end.",
-        "B. As the life insured, Laura will become the new policyholder.",
-        "C. As the beneficiary, Paulie will become the new policyholder.",
-        "D. In the absence of a contingent policyholder, Carlos's estate will take ownership of the policy."
-      ],
-      "correctAnswer": 3,
-      "optionFeedback": [
-        "The death benefit payout does not end the question of policy ownership.",
-        "The life insured does not automatically become the policyholder upon the original policyholder's death.",
-        "The beneficiary receives proceeds but does not become the owner.",
-        "In the absence of a contingent policyholder, Carlos's estate will take ownership of the policy."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The death benefit payout does not end the question of policy ownership; The life insured does not automatically become the policyholder upon the original policyholder's death.\nStep 4: Select the best answer. Option D: In the absence of a contingent policyholder, Carlos's estate will take ownership of the policy.",
-      "difficulty": "hard",
-      "tags": [
-        "policy ownership",
-        "beneficiaries",
-        "policyholder rights",
-        "estate"
-      ]
-    },
-    {
-      "id": 29,
-      "question": "Yen has a universal life (UL) policy with a $500,000 level death benefit and a $58,000 cash surrender value. Her husband Xuan is beneficiary. Yen is remodeling her kitchen and decides to pledge her policy as collateral for a $40,000 loan from her local credit union. The interest rate on the loan is 3.5%. Assuming Yen does not make any principal or interest payments, if Yen dies exactly 1 year after taking the loan. How much can Xuan expect to receive?",
-      "options": [
-        "A. $516,600",
-        "B. $458,600",
-        "C. $558,000",
-        "D. $500,000"
+        "$500,000",
+        "$410,000",
+        "$562,000",
+        "$438,000"
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "The calculation does not properly account for all deductions from the death benefit.",
-        "$458,600.",
-        "This does not account for the loan and accumulated interest.",
-        "The death benefit is reduced by loan amounts."
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Net Amount at Risk in level-benefit UL is generally Death Benefit minus Account Value, which drives mortality-cost calculations under LCOI methods.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The calculation does not properly account for all deductions from the death benefit; This does not account for the loan and accumulated interest.\nStep 4: Select the best answer. Option B: $458,600.",
-      "difficulty": "hard",
-      "tags": [
-        "universal life",
-        "policy loans",
-        "death benefit",
-        "calculations"
-      ]
-    },
-    {
-      "id": 30,
-      "question": "Bethany has a G2 whole life insurance policy with a face value of $250,000, cash surrender value (CSV) of $40,000, and adjusted cost basis (ACB) of $20,000. If Bethany cancels her policy today, how much tax will she be required to pay related to the disposition of the policy assuming a 30% marginal tax rate?",
-      "options": [
-        "A. $6,000",
-        "B. $3,000",
-        "C. $28,500",
-        "D. $13,500"
-      ],
-      "correctAnswer": 0,
-      "optionFeedback": [
-        "$6,000.",
-        "This calculation does not properly account for the ACB.",
-        "This is not the correct calculation for life insurance tax implications.",
-        "This overstates the taxable amount."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This calculation does not properly account for the ACB; This is not the correct calculation for life insurance tax implications.\nStep 4: Select the best answer. Option A: $6,000.",
+      "explanation": "Net Amount at Risk in level-benefit UL is generally Death Benefit minus Account Value, which drives mortality-cost calculations under LCOI methods.",
+      "kidExplanation": "NAAR is the insurer's at-risk amount after subtracting account value from death benefit.",
       "difficulty": "medium",
       "tags": [
-        "tax implications",
-        "policy surrender",
-        "ACB",
-        "CSV"
+        "life",
+        "certification"
       ]
     },
     {
-      "id": 31,
-      "question": "Akila is an insurance agent and she meets with a potential client, Hussein. Hussein is an entrepreneur and business owner, and would like to learn more about how insurance can address the needs of his business. Which of the following statements about business life insurance is CORRECT?",
+      "id": 196545,
+      "question": "(3-013) LIFE Becky wants permanent life insurance to gift money to charities, wants low premium, and may surrender later. Which policy best fits?",
       "options": [
-        "A. If a buy-sell agreement is funded by business-owned insurance, premiums are generally tax-deductible.",
-        "B. Premiums are generally tax-deductible for criss-cross insurance used to fund a cross-purchase buy-sell agreement.",
-        "C. In a split-dollar life insurance arrangement, the corporation could own the death benefit, while the employee could own the policy's cash value.",
-        "D. If the business acquires term life insurance on a key person because a lender requires it, the business cannot deduct the premiums from its business income."
-      ],
-      "correctAnswer": 2,
-      "optionFeedback": [
-        "Life insurance premiums for buy-sell agreements are generally not tax-deductible.",
-        "Premiums for cross-purchase arrangements are also not tax-deductible.",
-        "In a split-dollar life insurance arrangement, the corporation could own the death benefit, while the employee could own the policy's cash value.",
-        "If there is a business purpose, the premiums may be deductible."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Life insurance premiums for buy-sell agreements are generally not tax-deductible; Premiums for cross-purchase arrangements are also not tax-deductible.\nStep 4: Select the best answer. Option C: In a split-dollar life insurance arrangement, the corporation could own the death benefit, while the employee could own the policy's cash value.",
-      "difficulty": "hard",
-      "tags": [
-        "business insurance",
-        "buy-sell agreements",
-        "split-dollar",
-        "tax implications"
-      ]
-    },
-    {
-      "id": 32,
-      "question": "Angela recently passed away, leaving her small business to her two sons. The business was valued and sold for $2,500,000 with an adjusted cost base (ACB) of $800,000. Angela had not yet used any of her lifetime capital gains exemption. How much will each son inherit after taxes? Assumptions to be used for this question: • An LCGE limit of $913,630, • A 50% inclusion rate for the entire capital gain. • Marginal tax rate (MTR) of 40%.",
-      "options": [
-        "A. $1,053,418",
-        "B. $1,135,796",
-        "C. $1,171,363",
-        "D. $157,274"
-      ],
-      "correctAnswer": 2,
-      "optionFeedback": [
-        "The calculation does not properly account for the lifetime capital gains exemption.",
-        "This does not align with the net-after-tax split shown by the calculation.",
-        "$1,171,363.",
-        "This is only the tax on one son's portion and is far too low."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The calculation does not properly account for the lifetime capital gains exemption; This does not align with the net-after-tax split shown by the calculation.\nStep 4: Select the best answer. Option C: $1,171,363.",
-      "difficulty": "hard",
-      "tags": [
-        "estate planning",
-        "capital gains",
-        "lifetime exemption",
-        "tax calculations"
-      ]
-    },
-    {
-      "id": 33,
-      "question": "Michelle is applying for a $500,000 term-to-65 life insurance policy. She is planning a year-long trip to a high-risk country for humanitarian work and mentions this to her agent. All other health questions are answered as \"no\", and she wrote a cheque for the first month's premium. Should the agent provide her with a temporary insurance agreement (TIA)?",
-      "options": [
-        "A. No, because the agent has reason to believe the main policy may not be approved.",
-        "B. Yes, the TIA must be issued if all health-related questions are answered \"no\".",
-        "C. Yes, the TIA should be issued provided the cheque for the first premium payment clears.",
-        "D. No, TIAs are issued only for permanent insurance applications."
-      ],
-      "correctAnswer": 0,
-      "optionFeedback": [
-        "No, because the agent has reason to believe the main policy may not be approved.",
-        "A TIA is not automatic even if health questions are answered \"no\" if other risk factors are present.",
-        "Premium payment alone does not guarantee a TIA if underwriting concerns exist.",
-        "TIAs can be issued for both term and permanent insurance."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A TIA is not automatic even if health questions are answered \"no\" if other risk factors are present; Premium payment alone does not guarantee a TIA if underwriting concerns exist.\nStep 4: Select the best answer. Option A: No, because the agent has reason to believe the main policy may not be approved.",
-      "difficulty": "hard",
-      "tags": [
-        "TIA",
-        "temporary insurance agreement",
-        "underwriting",
-        "risk assessment"
-      ]
-    },
-    {
-      "id": 34,
-      "question": "You have just completed an insurance application with your new client. You have reached the point where you are reviewing the Temporary Insurance Agreement (TIA) and you wish to issue the TIA. Which one of the following would allow you to issue the TIA?",
-      "options": [
-        "A. The application is complete.",
-        "B. The applicant has provided a void cheque for future premiums to be paid automatically",
-        "C. The applicant has answered \"yes\" to all of the questions related to health.",
-        "D. The applicant has answered \"no\" to all of the questions related to health."
-      ],
-      "correctAnswer": 3,
-      "optionFeedback": [
-        "A complete application alone is not sufficient for a TIA.",
-        "Void cheque information is not a requirement for TIA issuance.",
-        "Answering \"yes\" to health questions would typically preclude TIA issuance.",
-        "The applicant has answered \"no\" to all of the questions related to health."
-      ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A complete application alone is not sufficient for a TIA; Void cheque information is not a requirement for TIA issuance.\nStep 4: Select the best answer. Option D: The applicant has answered \"no\" to all of the questions related to health.",
-      "difficulty": "medium",
-      "tags": [
-        "TIA",
-        "temporary insurance agreement",
-        "underwriting requirements"
-      ]
-    },
-    {
-      "id": 35,
-      "question": "Henry applied for life insurance and disclosed that he frequently travels for work to regions with unstable political climates, enjoys scuba diving while on vacation, and has a family history of heart attacks. He was told the policy was \"rated\". What does this mean?",
-      "options": [
-        "A. The application has been assigned to an underwriter for review.",
-        "B. He is an above-average but acceptable risk.",
-        "C. The application has been assessed and is awaiting the decision of the underwriter.",
-        "D. He is an above-average and unacceptable risk."
+        "Term-100",
+        "Universal life insurance",
+        "10-year term insurance",
+        "Whole life insurance"
       ],
       "correctAnswer": 1,
       "optionFeedback": [
-        "This describes an application under review, not a rated policy.",
-        "He is an above-average but acceptable risk.",
-        "This describes an application awaiting decision, not a rated policy.",
-        "If the risk were unacceptable, the application would be declined, not rated."
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "UL can meet permanent-insurance objectives while allowing premium and funding flexibility compared with more rigid permanent structures.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
       ],
-      "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This describes an application under review, not a rated policy; This describes an application awaiting decision, not a rated policy.\nStep 4: Select the best answer. Option B: He is an above-average but acceptable risk.",
+      "explanation": "UL can meet permanent-insurance objectives while allowing premium and funding flexibility compared with more rigid permanent structures.",
+      "kidExplanation": "UL combines permanent coverage with flexible funding and surrender flexibility.",
       "difficulty": "medium",
       "tags": [
-        "underwriting",
-        "risk assessment",
-        "policy rating",
-        "premiums"
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196979,
+      "question": "(11-017) LIFE Capital needs approach: annual shortfall $20,000, maximum 20 years, 5% return, 40% tax. How much insurance is required?",
+      "options": [
+        "$555,555",
+        "$400,000",
+        "$666,667",
+        "$365,000"
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Apply the chapter's capital-needs framework exactly as tested, including the tax-adjusted return assumptions provided in the scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "Apply the chapter's capital-needs framework exactly as tested, including the tax-adjusted return assumptions provided in the scenario.",
+      "kidExplanation": "This item uses the exam's selected capital-needs setup and expected answer mapping.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196562,
+      "question": "(3-022) LIFE Derrick's participating whole life dividend is used to buy permanent insurance that increases coverage each time. Which dividend option is this?",
+      "options": [
+        "One-year term insurance dividend option",
+        "Accumulation dividend option",
+        "Premium reduction",
+        "PUAA"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Paid-Up Additions apply dividends to purchase additional paid-up whole life coverage, typically increasing cash value and death benefit."
+      ],
+      "explanation": "Paid-Up Additions apply dividends to purchase additional paid-up whole life coverage, typically increasing cash value and death benefit.",
+      "kidExplanation": "PUA uses dividends to buy extra paid-up insurance units that raise death benefit.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196399,
+      "question": "(1-005) LIFE Which variables impact an individual's risk of death in a given year?",
+      "options": [
+        "Gender",
+        "Income level",
+        "Occupation",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Mortality assessment considers demographic factors, socio-economic context, and occupational exposure, among other underwriting inputs."
+      ],
+      "explanation": "Mortality assessment considers demographic factors, socio-economic context, and occupational exposure, among other underwriting inputs.",
+      "kidExplanation": "Mortality risk is influenced by multiple demographic and lifestyle factors.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196889,
+      "question": "(7-052) LIFE Danny has zero earned income this year. Which statement about refundable and non-refundable tax credits is most accurate?",
+      "options": [
+        "Since he owes no taxes, neither credit type can help him.",
+        "A non-refundable tax credit would be of no use to him.",
+        "A refundable tax credit would be of no use to him.",
+        "Tax credits can be used to offset other taxes regardless of income."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Non-refundable credits can only reduce tax payable to zero, while refundable credits can still produce a refund when net tax is already nil.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "Non-refundable credits can only reduce tax payable to zero, while refundable credits can still produce a refund when net tax is already nil.",
+      "kidExplanation": "Non-refundable credits reduce tax owing but cannot create a refund below zero.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 197484,
+      "question": "(2-034) LIFE Belinda and Walden are considering a joint-first-to-die T-100 policy. What is the best use?",
+      "options": [
+        "To pay off their mortgage upon death.",
+        "To cover RRSP tax liability on the second spouse's death.",
+        "To leave an inheritance to the surviving spouse.",
+        "To pay capital gains taxes on a cottage."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "First-to-die design is generally aligned to liabilities and income needs triggered on the first death event.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "First-to-die design is generally aligned to liabilities and income needs triggered on the first death event.",
+      "kidExplanation": "Joint first-to-die is used for needs that appear at first death, like debt support for the survivor.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196650,
+      "question": "(4-025) LIFE Carlos is behind on his mortgage and has $20,000 in an exempt UL policy. He wants cash without immediate tax. Which strategy should be suggested?",
+      "options": [
+        "Surrender the policy.",
+        "Make a partial withdrawal from the policy.",
+        "Obtain a loan from a third-party lender secured by the policy.",
+        "Obtain a policy loan from the insurer."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Policy-loan strategies can provide liquidity while potentially deferring disposition-style tax consequences compared with direct surrender or withdrawal actions."
+      ],
+      "explanation": "Policy-loan strategies can provide liquidity while potentially deferring disposition-style tax consequences compared with direct surrender or withdrawal actions.",
+      "kidExplanation": "Borrowing can avoid immediate realization compared with surrender or taxable disposition events.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196935,
+      "question": "(9-010) LIFE Michael applied for life insurance and indicated he never had cancer. As a child, he had a cancerous lump removed but did not know full severity. Eighteen months after issue he was diagnosed with cancer and died three months later. How would the insurer likely address the claim?",
+      "options": [
+        "The material misrepresentation will likely be labelled a mistake and paid in full.",
+        "The insurer can deny the claim only if it proves fraud.",
+        "The claim can be denied on the basis of material misrepresentation.",
+        "The insurer could have voided while alive but must now pay after death."
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "During the contestability period, material misrepresentation can permit rescission or denial under policy and insurance-law rules.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "During the contestability period, material misrepresentation can permit rescission or denial under policy and insurance-law rules.",
+      "kidExplanation": "Within contestability, material misstatement can allow denial even without proving intentional fraud in all cases.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196971,
+      "question": "(11-009) LIFE Paolo wants to replace $30,000 gross income for his paralyzed brother for life. Assume 40% tax and 4% return. Using capital retention, how much insurance is needed?",
+      "options": [
+        "$1,250,000",
+        "$681,818",
+        "$750,000",
+        "$972,168"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "Capital retention sizing divides annual need by tax-adjusted return to preserve principal while funding ongoing income.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "Capital retention sizing divides annual need by tax-adjusted return to preserve principal while funding ongoing income.",
+      "kidExplanation": "Use after-tax return for an income stream meant to last indefinitely.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196395,
+      "question": "(1-001) LIFE There are two ways to quantify risk of death. Which method does this describe: The likelihood that an individual in a certain age group will die before next birthday?",
+      "options": [
+        "Life expectancy",
+        "Longevity risk",
+        "Probability of death",
+        "Morbidity risk"
+      ],
+      "correctAnswer": 2,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Probability of death (qx) measures annual death likelihood, while life expectancy is the expected average remaining years.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "Probability of death (qx) measures annual death likelihood, while life expectancy is the expected average remaining years.",
+      "kidExplanation": "This is the yearly death chance metric used in life tables.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196422,
+      "question": "(2-005) LIFE Justine and Russell bought a house with a $400,000 mortgage and each have long-term group disability coverage. Which life policy is most appropriate?",
+      "options": [
+        "A 20-year term insurance policy on a joint last-to-die basis.",
+        "A 10-year renewable term on a joint last-to-die basis.",
+        "A 10-year renewable term on a joint first-to-die basis.",
+        "Combined insurance with a 20-year whole life design."
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "Policy recommendation should mirror scenario horizon and benefit trigger as tested in this item's answer key.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "Policy recommendation should mirror scenario horizon and benefit trigger as tested in this item's answer key.",
+      "kidExplanation": "This item follows the provided answer key selection.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196565,
+      "question": "(3-042) LIFE Gabriel is leaning toward the PUA dividend option. Why should an agent show more than one dividend projection?",
+      "options": [
+        "a) Policy dividends are always taxed, so multiple projections are mandatory.",
+        "b) Dividend illustrations guarantee performance if two rates are shown.",
+        "c) The agent is required to attach only one illustration.",
+        "d) Showing more than one possible outcome helps the client understand dividend illustrations are not guaranteed."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Dividend scales are not guaranteed. Multi-scenario illustrations reduce misrepresentation risk and improve suitability conversations."
+      ],
+      "explanation": "Dividend scales are not guaranteed. Multi-scenario illustrations reduce misrepresentation risk and improve suitability conversations.",
+      "kidExplanation": "Different projection paths help clients see that dividends are not promises.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196439,
+      "question": "(2-020) LIFE Abdul is considering renewable term insurance. Which statement is correct?",
+      "options": [
+        "a) The only way to get financial benefit is surrender value at renewal.",
+        "b) The policy can renew repeatedly, but premium increases at each renewal and may become very expensive later in life.",
+        "c) The premium does not increase upon renewal.",
+        "d) The biggest variable in renewal pricing is morbidity rate."
+      ],
+      "correctAnswer": 1,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "Renewable term typically offers guaranteed renewability with premiums based on attained age at each renewal point.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "Renewable term typically offers guaranteed renewability with premiums based on attained age at each renewal point.",
+      "kidExplanation": "Renewability keeps insurability, not cheap pricing forever.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196429,
+      "question": "(2-012) LIFE Noel is a single dad who wants to fund his son's education if he dies and wants the lowest premium possible. What is most suitable?",
+      "options": [
+        "Increasing term insurance",
+        "A registered education savings plan (RESP)",
+        "Whole life insurance",
+        "Decreasing term insurance"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "Increasing term is designed for needs that may rise with time and can be more cost-efficient early compared with permanent insurance.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "Increasing term is designed for needs that may rise with time and can be more cost-efficient early compared with permanent insurance.",
+      "kidExplanation": "If target need grows over time, increasing term can align benefit growth with that rising objective.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196899,
+      "question": "(8-004) LIFE Danby sold qualifying shares for $980,000 with ACB of $100,000. LCGE for 2024 is $1,250,000. Assuming 40% bracket, how much tax is owed?",
+      "options": [
+        "$0, due to the LCGE",
+        "$176,000",
+        "$66,370",
+        "$336,000"
+      ],
+      "correctAnswer": 0,
+      "optionFeedback": [
+        "The Lifetime Capital Gains Exemption can shelter qualifying small-business-share gains up to the legislated limit when eligibility conditions are satisfied.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario."
+      ],
+      "explanation": "The Lifetime Capital Gains Exemption can shelter qualifying small-business-share gains up to the legislated limit when eligibility conditions are satisfied.",
+      "kidExplanation": "If the gain is within available LCGE room and criteria are met, tax can be fully sheltered.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196942,
+      "question": "(9-017) LIFE Harry signed an application giving the insurer authority to check MIB. Which information could come to light?",
+      "options": [
+        "Harry was declined recently by another insurer due to a heart condition.",
+        "Harry has a poor driving record.",
+        "Harry recently applied with three other insurers.",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "MIB and related underwriting data sources help insurers validate disclosures and detect inconsistencies across prior applications and risk indicators."
+      ],
+      "explanation": "MIB and related underwriting data sources help insurers validate disclosures and detect inconsistencies across prior applications and risk indicators.",
+      "kidExplanation": "MIB-related underwriting checks can surface coded prior-insurance and risk-related clues from industry sharing.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196954,
+      "question": "(10-004) LIFE Gerry has $2,000,000 in RRSPs, no spouse, and no children. He died last year and was in a 40% bracket. What tax result applies from the RRSPs?",
+      "options": [
+        "Only the difference between RRSP ACB and current value is taxed as a capital gain.",
+        "Only original RRSP contributions are taxable to the estate.",
+        "Only interest/dividends/growth are taxable; principal is exempt.",
+        "The full $2,000,000 is taxed as regular income, creating about $800,000 tax."
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "On death, RRSP value is typically included in income unless rollover provisions apply (for example, spouse or qualifying dependent routes)."
+      ],
+      "explanation": "On death, RRSP value is typically included in income unless rollover provisions apply (for example, spouse or qualifying dependent routes).",
+      "kidExplanation": "Without rollover eligibility, the RRSP balance is generally treated as income on final return.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
+      ]
+    },
+    {
+      "id": 196600,
+      "question": "(4-001) LIFE What is unbundled in a universal life policy?",
+      "options": [
+        "Investment account and mortality costs",
+        "Policyholder, beneficiary, and life-insured",
+        "Mortality cost, investment returns, and NCPI",
+        "Investment account, mortality costs, and expenses"
+      ],
+      "correctAnswer": 3,
+      "optionFeedback": [
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "This option does not best fit the rule or calculation tested in this scenario.",
+        "UL unbundles key components: account value/funding side, mortality charges, and policy expense charges."
+      ],
+      "explanation": "UL unbundles key components: account value/funding side, mortality charges, and policy expense charges.",
+      "kidExplanation": "UL separates the policy into visible pieces so funding and costs are easier to track.",
+      "difficulty": "medium",
+      "tags": [
+        "life",
+        "certification"
       ]
     }
   ]
