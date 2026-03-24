@@ -9,7 +9,8 @@
     "RESET_EMAIL_REPLY_TO": "no-reply@hllqpmcqs.com",
     "RESET_BASE_URL": "https://hllqpmcqs.com",
     "RESET_EMAIL_SUBJECT": "Reset your LLQP & WFG Exam Prep password",
-    "APP_NAME": "LLQP & WFG Exam Prep"
+    "APP_NAME": "LLQP & WFG Exam Prep",
+    "ADMIN_EMAIL_ALLOWLIST": "habibcanad@gmail.com"
   },
   "d1_databases": [
     {

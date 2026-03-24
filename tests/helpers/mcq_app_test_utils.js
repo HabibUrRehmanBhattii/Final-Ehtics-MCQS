@@ -196,6 +196,7 @@ function createAppHarness(customElements = {}, options = {}, includeAuth = false
   const historyCalls = [];
   const windowEventListeners = new Map();
   let historyState = null;
+  let intervalCounter = 1;
 
   const windowObject = {
     location,
@@ -222,10 +223,17 @@ function createAppHarness(customElements = {}, options = {}, includeAuth = false
     },
     turnstile: options.turnstile,
     innerWidth: options.innerWidth ?? 1024,
-    setInterval() {
-      return 1;
+    setInterval(callback, delay) {
+      if (typeof options.onSetInterval === 'function') {
+        return options.onSetInterval(callback, delay);
+      }
+      return intervalCounter++;
     },
-    clearInterval() {},
+    clearInterval(id) {
+      if (typeof options.onClearInterval === 'function') {
+        options.onClearInterval(id);
+      }
+    },
     setTimeout(callback) {
       if (typeof options.onSetTimeout === 'function') {
         return options.onSetTimeout(callback);
@@ -267,6 +275,7 @@ function createAppHarness(customElements = {}, options = {}, includeAuth = false
     })),
     confirm: () => true,
     URL: MockURL,
+    URLSearchParams,
     speechSynthesis: {
       cancel() {},
       speak() {},

@@ -2,8 +2,8 @@
 // MCQ Study Platform - Main Application
 // ===================================
 const MCQApp = {
-  appBuildVersion: '20260324c',
-  cacheVersion: 'v1.7.9',
+  appBuildVersion: '20260324d',
+  cacheVersion: 'v1.8.0',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
@@ -49,6 +49,7 @@ const MCQApp = {
       loading: false,
       error: '',
       user: null,
+      admin: null,
       passwordResetEmailEnabled: false,
       pendingResetToken: '',
       turnstileReady: false,
@@ -2735,6 +2736,9 @@ const MCQApp = {
   showView(viewName, options = {}) {
     const { updateHistory = true, historyMode = 'push' } = options;
     this.clearAutoAdvanceTimer();
+    if (viewName !== 'admin' && typeof this.onLeaveAdminView === 'function') {
+      this.onLeaveAdminView();
+    }
     if (viewName !== 'mcq') {
       this.stopQuestionTimer();
       if (!this.state.isReviewMode) {
@@ -2755,7 +2759,8 @@ const MCQApp = {
       'practice-test': 'practice-test-view',
       'mcq': 'mcq-view',
       'list': 'list-view',
-      'pdf': 'pdf-view'
+      'pdf': 'pdf-view',
+      'admin': 'admin-view'
     };
 
     const targetView = document.getElementById(viewMap[viewName]);
@@ -2769,6 +2774,8 @@ const MCQApp = {
       this.renderTopicsGrid();
     } else if (viewName === 'practice-test' && this.state.currentTopic) {
       this.renderPracticeTests();
+    } else if (viewName === 'admin' && typeof this.onEnterAdminView === 'function') {
+      this.onEnterAdminView();
     }
 
     if (updateHistory && window.history) {

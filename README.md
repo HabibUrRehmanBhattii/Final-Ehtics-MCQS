@@ -40,6 +40,7 @@ Recent work reflected in this repo includes:
 - Added optional email/password authentication with Turnstile protection
 - Added cloud progress sync so quiz state and wrong-answer review can move across devices
 - Added password change, password reset request/confirm flows, Resend-based reset email delivery, and an admin reset-link generator endpoint
+- Added allowlist-based admin accounts with an in-app admin dashboard for student overview, deep per-student analytics, and per-test progress reset actions
 - Hardened same-origin session cookie handling and account isolation on the custom domain
 - Improved AI explanations with better teaching prompts, structured JSON responses, and a specific follow-up question composer
 - Improved wrong-answer feedback quality, option-label cleanup, review flow, reset behavior, and answered-question based progress tracking
@@ -103,7 +104,6 @@ Useful secrets for full local testing:
 ```bash
 npx wrangler secret put SESSION_SECRET
 npx wrangler secret put TURNSTILE_SECRET_KEY
-npx wrangler secret put ADMIN_RESET_SECRET
 npx wrangler secret put RESEND_API_KEY
 ```
 
@@ -122,6 +122,7 @@ Important non-secret vars already live in `wrangler.jsonc`, including:
 - `RESET_BASE_URL`
 - `RESET_EMAIL_SUBJECT`
 - `APP_NAME`
+- `ADMIN_EMAIL_ALLOWLIST` (comma-separated admin emails, default includes `habibcanad@gmail.com`)
 
 ### Deploying
 

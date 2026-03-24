@@ -9,4 +9,4 @@ RESET_BASE_URL=http://127.0.0.1:8787
 RESET_EMAIL_SUBJECT=Reset your LLQP & WFG Exam Prep password
 POSTMARK_MESSAGE_STREAM=outbound
 APP_NAME=LLQP & WFG Exam Prep
-ADMIN_RESET_SECRET=replace-with-a-long-admin-reset-secret
+ADMIN_EMAIL_ALLOWLIST=habibcanad@gmail.com

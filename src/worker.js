@@ -12,6 +12,8 @@ const RESET_RATE_LIMIT_EMAIL_MAX = 5;
 const PASSWORD_RESET_TTL_MS = 1000 * 60 * 30;
 const RESEND_API_URL = 'https://api.resend.com/emails';
 const POSTMARK_API_URL = 'https://api.postmarkapp.com/email';
+const ADMIN_ACTIVE_WINDOW_DAYS = 7;
+const DEFAULT_ADMIN_EMAIL = 'habibcanad@gmail.com';
 
 const jsonResponse = (request, payload, init = {}) => {
   const headers = new Headers(init.headers || {});
@@ -44,6 +46,7 @@ function getErrorStatus(error) {
   if (/too many attempts/i.test(message)) return 429;
   if (/missing/i.test(message) || /not configured/i.test(message)) return 503;
   if (/authentication required/i.test(message)) return 401;
+  if (/admin access denied/i.test(message)) return 403;
   return 500;
 }
 
@@ -80,6 +83,33 @@ function validateEmail(email) {
 
 function normalizeEmail(email) {
   return String(email || '').trim().toLowerCase();
+}
+
+function getAdminEmailAllowlist(env) {
+  const configuredRaw = String(env?.ADMIN_EMAIL_ALLOWLIST || '').trim();
+  const source = configuredRaw || DEFAULT_ADMIN_EMAIL;
+  return Array.from(
+    new Set(
+      source
+        .split(',')
+        .map((email) => normalizeEmail(email))
+        .filter(Boolean)
+    )
+  );
+}
+
+function isAdminEmail(env, email) {
+  const normalized = normalizeEmail(email);
+  if (!normalized) return false;
+  return getAdminEmailAllowlist(env).includes(normalized);
+}
+
+function buildAuthUser(env, userId, email) {
+  return {
+    id: userId,
+    email,
+    isAdmin: isAdminEmail(env, email)
+  };
 }
 
 function escapeHtml(value) {
@@ -463,10 +493,7 @@ async function getSessionContext(env, request) {
 
   return {
     sessionId: row.session_id,
-    user: {
-      id: row.user_id,
-      email: row.email
-    }
+    user: buildAuthUser(env, row.user_id, row.email)
   };
 }
 
@@ -478,23 +505,12 @@ async function requireSession(env, request) {
   return session;
 }
 
-function getAdminSecret(request) {
-  const authHeader = request.headers.get('Authorization') || '';
-  if (authHeader.startsWith('Bearer ')) {
-    return authHeader.slice('Bearer '.length).trim();
-  }
-  return String(request.headers.get('x-admin-reset-secret') || '').trim();
-}
-
-function requireAdminResetAccess(env, request) {
-  const expected = String(env.ADMIN_RESET_SECRET || '').trim();
-  const provided = getAdminSecret(request);
-  if (!expected) {
-    throw new Error('ADMIN_RESET_SECRET secret is missing');
-  }
-  if (!provided || provided !== expected) {
+async function requireAdminSession(env, request) {
+  const session = await requireSession(env, request);
+  if (!session.user?.isAdmin) {
     throw new Error('Admin access denied');
   }
+  return session;
 }
 
 async function issuePasswordResetToken(db, request, userId) {
@@ -575,7 +591,7 @@ async function handleSignup(request, env) {
 
     return jsonResponse(request, {
       authenticated: true,
-      user: { id: userId, email }
+      user: buildAuthUser(env, userId, email)
     }, {
       headers: {
         'Set-Cookie': session.cookie
@@ -634,7 +650,7 @@ async function handleSignin(request, env) {
 
     return jsonResponse(request, {
       authenticated: true,
-      user: { id: user.id, email: user.email }
+      user: buildAuthUser(env, user.id, user.email)
     }, {
       headers: {
         'Set-Cookie': session.cookie
@@ -986,13 +1002,539 @@ async function handlePasswordResetRequest(request, env) {
   }
 }
 
-async function handleAdminPasswordResetLink(request, env) {
+function parseJsonString(rawValue, fallback = null) {
+  if (typeof rawValue !== 'string') {
+    return fallback;
+  }
+
+  try {
+    return JSON.parse(rawValue);
+  } catch {
+    return fallback;
+  }
+}
+
+function roundToOneDecimal(value) {
+  const numeric = Number(value || 0);
+  if (!Number.isFinite(numeric)) return 0;
+  return Math.round(numeric * 10) / 10;
+}
+
+function parseProgressStorageKey(key, prefix) {
+  if (typeof key !== 'string' || !key.startsWith(prefix)) {
+    return null;
+  }
+
+  const remainder = key.slice(prefix.length);
+  const separatorIndex = remainder.indexOf('_');
+  if (separatorIndex <= 0 || separatorIndex === remainder.length - 1) {
+    return null;
+  }
+
+  return {
+    topicId: remainder.slice(0, separatorIndex),
+    testId: remainder.slice(separatorIndex + 1)
+  };
+}
+
+function countUniqueEntries(list) {
+  if (!Array.isArray(list)) return 0;
+  return new Set(list.map((value) => String(value))).size;
+}
+
+function sumTimerValues(timerMap) {
+  if (!timerMap || typeof timerMap !== 'object') {
+    return 0;
+  }
+
+  return Object.values(timerMap).reduce((sum, value) => {
+    const numeric = Number(value || 0);
+    if (!Number.isFinite(numeric) || numeric <= 0) {
+      return sum;
+    }
+    return sum + numeric;
+  }, 0);
+}
+
+function extractProgressItems(payloadRaw) {
+  const snapshot = parseJsonString(payloadRaw, {});
+  if (!snapshot || typeof snapshot !== 'object') {
+    return {};
+  }
+  if (!snapshot.items || typeof snapshot.items !== 'object') {
+    return {};
+  }
+  return snapshot.items;
+}
+
+function buildStudentAnalyticsFromPayload(payloadRaw) {
+  const items = extractProgressItems(payloadRaw);
+  const testMetrics = new Map();
+
+  const ensureTestMetric = (topicId, testId) => {
+    const testKey = `${topicId}_${testId}`;
+    if (!testMetrics.has(testKey)) {
+      testMetrics.set(testKey, {
+        testKey,
+        topicId,
+        testId,
+        progressKey: `progress_${topicId}_${testId}`,
+        shuffleKey: `shuffle_${topicId}_${testId}`,
+        hasProgress: false,
+        hasShuffle: false,
+        viewedCount: 0,
+        bookmarkedCount: 0,
+        revealedCount: 0,
+        answeredCount: 0,
+        firstTryCorrectCount: 0,
+        firstTryAttemptedCount: 0,
+        firstTryAccuracyPct: 0,
+        totalQuestions: 0,
+        completionPct: 0,
+        studyTimeMs: 0,
+        studyTimeMinutes: 0,
+        lastUpdatedAt: null
+      });
+    }
+    return testMetrics.get(testKey);
+  };
+
+  let lastSession = null;
+
+  Object.entries(items).forEach(([storageKey, storageValue]) => {
+    if (storageKey === 'last_session') {
+      const parsedSession = parseJsonString(storageValue, null);
+      if (parsedSession && typeof parsedSession === 'object') {
+        lastSession = {
+          topicId: String(parsedSession.topicId || '').trim() || null,
+          testId: String(parsedSession.testId || '').trim() || null,
+          savedAt: typeof parsedSession.savedAt === 'string' ? parsedSession.savedAt : null
+        };
+      }
+      return;
+    }
+
+    const progressMatch = parseProgressStorageKey(storageKey, 'progress_');
+    if (progressMatch) {
+      const parsedProgress = parseJsonString(storageValue, {});
+      const metric = ensureTestMetric(progressMatch.topicId, progressMatch.testId);
+      metric.hasProgress = true;
+
+      const viewedCount = countUniqueEntries(parsedProgress?.viewed);
+      const bookmarkedCount = countUniqueEntries(parsedProgress?.bookmarked);
+      const revealedCount = countUniqueEntries(parsedProgress?.revealed);
+      const firstAttemptMap = parsedProgress?.firstAttemptCorrect && typeof parsedProgress.firstAttemptCorrect === 'object'
+        ? parsedProgress.firstAttemptCorrect
+        : {};
+      const timerMap = parsedProgress?.timers && typeof parsedProgress.timers === 'object'
+        ? parsedProgress.timers
+        : {};
+
+      let firstTryCorrectCount = 0;
+      let firstTryAttemptedCount = 0;
+      Object.values(firstAttemptMap).forEach((value) => {
+        if (value === true || value === false) {
+          firstTryAttemptedCount += 1;
+          if (value === true) {
+            firstTryCorrectCount += 1;
+          }
+        }
+      });
+
+      const layoutQuestionCount = Array.isArray(parsedProgress?.questionLayout?.questionOrder)
+        ? parsedProgress.questionLayout.questionOrder.length
+        : 0;
+      const fallbackQuestionCount = Math.max(
+        viewedCount,
+        bookmarkedCount,
+        revealedCount,
+        Object.keys(firstAttemptMap).length,
+        Object.keys(timerMap).length
+      );
+      const totalQuestions = Math.max(layoutQuestionCount, fallbackQuestionCount);
+      const studyTimeMs = sumTimerValues(timerMap);
+      const firstTryAccuracyPct = firstTryAttemptedCount > 0
+        ? roundToOneDecimal((firstTryCorrectCount / firstTryAttemptedCount) * 100)
+        : 0;
+      const completionPct = totalQuestions > 0
+        ? roundToOneDecimal((revealedCount / totalQuestions) * 100)
+        : 0;
+
+      metric.viewedCount = viewedCount;
+      metric.bookmarkedCount = bookmarkedCount;
+      metric.revealedCount = revealedCount;
+      metric.answeredCount = revealedCount;
+      metric.firstTryCorrectCount = firstTryCorrectCount;
+      metric.firstTryAttemptedCount = firstTryAttemptedCount;
+      metric.firstTryAccuracyPct = firstTryAccuracyPct;
+      metric.totalQuestions = totalQuestions;
+      metric.completionPct = completionPct;
+      metric.studyTimeMs = studyTimeMs;
+      metric.studyTimeMinutes = roundToOneDecimal(studyTimeMs / 60000);
+      metric.lastUpdatedAt = typeof parsedProgress?.lastUpdated === 'string' ? parsedProgress.lastUpdated : null;
+      return;
+    }
+
+    const shuffleMatch = parseProgressStorageKey(storageKey, 'shuffle_');
+    if (shuffleMatch) {
+      const metric = ensureTestMetric(shuffleMatch.topicId, shuffleMatch.testId);
+      metric.hasShuffle = true;
+    }
+  });
+
+  const tests = Array.from(testMetrics.values()).sort((a, b) => {
+    if (a.topicId === b.topicId) {
+      return a.testId.localeCompare(b.testId);
+    }
+    return a.topicId.localeCompare(b.topicId);
+  });
+
+  const topicMap = new Map();
+  let totalTests = 0;
+  let totalQuestions = 0;
+  let answeredCount = 0;
+  let viewedCount = 0;
+  let bookmarkedCount = 0;
+  let firstTryCorrectCount = 0;
+  let firstTryAttemptedCount = 0;
+  let totalStudyTimeMs = 0;
+  let lastUpdatedAt = null;
+
+  tests.forEach((test) => {
+    totalTests += 1;
+    totalQuestions += Number(test.totalQuestions || 0);
+    answeredCount += Number(test.answeredCount || 0);
+    viewedCount += Number(test.viewedCount || 0);
+    bookmarkedCount += Number(test.bookmarkedCount || 0);
+    firstTryCorrectCount += Number(test.firstTryCorrectCount || 0);
+    firstTryAttemptedCount += Number(test.firstTryAttemptedCount || 0);
+    totalStudyTimeMs += Number(test.studyTimeMs || 0);
+
+    if (test.lastUpdatedAt && (!lastUpdatedAt || Date.parse(test.lastUpdatedAt) > Date.parse(lastUpdatedAt))) {
+      lastUpdatedAt = test.lastUpdatedAt;
+    }
+
+    if (!topicMap.has(test.topicId)) {
+      topicMap.set(test.topicId, {
+        topicId: test.topicId,
+        totalTests: 0,
+        totalQuestions: 0,
+        answeredCount: 0,
+        viewedCount: 0,
+        bookmarkedCount: 0,
+        firstTryCorrectCount: 0,
+        firstTryAttemptedCount: 0,
+        firstTryAccuracyPct: 0,
+        completionPct: 0,
+        totalStudyTimeMs: 0,
+        totalStudyTimeMinutes: 0,
+        lastUpdatedAt: null,
+        tests: []
+      });
+    }
+
+    const topic = topicMap.get(test.topicId);
+    topic.totalTests += 1;
+    topic.totalQuestions += Number(test.totalQuestions || 0);
+    topic.answeredCount += Number(test.answeredCount || 0);
+    topic.viewedCount += Number(test.viewedCount || 0);
+    topic.bookmarkedCount += Number(test.bookmarkedCount || 0);
+    topic.firstTryCorrectCount += Number(test.firstTryCorrectCount || 0);
+    topic.firstTryAttemptedCount += Number(test.firstTryAttemptedCount || 0);
+    topic.totalStudyTimeMs += Number(test.studyTimeMs || 0);
+    topic.totalStudyTimeMinutes = roundToOneDecimal(topic.totalStudyTimeMs / 60000);
+    topic.completionPct = topic.totalQuestions > 0
+      ? roundToOneDecimal((topic.answeredCount / topic.totalQuestions) * 100)
+      : 0;
+    topic.firstTryAccuracyPct = topic.firstTryAttemptedCount > 0
+      ? roundToOneDecimal((topic.firstTryCorrectCount / topic.firstTryAttemptedCount) * 100)
+      : 0;
+    if (test.lastUpdatedAt && (!topic.lastUpdatedAt || Date.parse(test.lastUpdatedAt) > Date.parse(topic.lastUpdatedAt))) {
+      topic.lastUpdatedAt = test.lastUpdatedAt;
+    }
+    topic.tests.push(test);
+  });
+
+  const completionPct = totalQuestions > 0
+    ? roundToOneDecimal((answeredCount / totalQuestions) * 100)
+    : 0;
+  const firstTryAccuracyPct = firstTryAttemptedCount > 0
+    ? roundToOneDecimal((firstTryCorrectCount / firstTryAttemptedCount) * 100)
+    : 0;
+
+  const topics = Array.from(topicMap.values()).sort((a, b) => a.topicId.localeCompare(b.topicId));
+
+  return {
+    summary: {
+      totalTests,
+      totalQuestions,
+      answeredCount,
+      viewedCount,
+      bookmarkedCount,
+      firstTryCorrectCount,
+      firstTryAttemptedCount,
+      firstTryAccuracyPct,
+      completionPct,
+      totalStudyTimeMs,
+      totalStudyTimeMinutes: roundToOneDecimal(totalStudyTimeMs / 60000),
+      lastUpdatedAt
+    },
+    topics,
+    tests,
+    lastSession
+  };
+}
+
+function isTimestampWithinDays(isoTimestamp, days = ADMIN_ACTIVE_WINDOW_DAYS) {
+  if (!isoTimestamp) return false;
+  const parsed = Date.parse(isoTimestamp);
+  if (!Number.isFinite(parsed)) return false;
+  return parsed >= (Date.now() - (days * 24 * 60 * 60 * 1000));
+}
+
+async function listStudentRows(env) {
+  const rows = await env.DB.prepare(
+    `SELECT users.id, users.email, users.status, users.created_at, users.updated_at, users.last_login_at,
+            user_progress.payload, user_progress.updated_at AS progress_updated_at
+     FROM users
+     LEFT JOIN user_progress ON user_progress.user_id = users.id
+     WHERE users.status = 'active'
+     ORDER BY users.email ASC`
+  ).all();
+
+  return (rows?.results || []).filter((row) => !isAdminEmail(env, row.email));
+}
+
+async function getStudentRowById(env, userId) {
+  const row = await env.DB.prepare(
+    `SELECT users.id, users.email, users.status, users.created_at, users.updated_at, users.last_login_at,
+            user_progress.payload, user_progress.updated_at AS progress_updated_at
+     FROM users
+     LEFT JOIN user_progress ON user_progress.user_id = users.id
+     WHERE users.id = ?
+     LIMIT 1`
+  ).bind(userId).first();
+
+  if (!row || row.status !== 'active' || isAdminEmail(env, row.email)) {
+    return null;
+  }
+
+  return row;
+}
+
+async function handleAdminStudentsOverview(request, env) {
   if (!env.DB) {
     return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
   }
 
   try {
-    requireAdminResetAccess(env, request);
+    await requireAdminSession(env, request);
+    const url = new URL(request.url);
+    const query = normalizeEmail(url.searchParams.get('q') || url.searchParams.get('email') || '');
+    const studentRows = await listStudentRows(env);
+    const filteredRows = query
+      ? studentRows.filter((row) => normalizeEmail(row.email).includes(query))
+      : studentRows;
+
+    let totalAnswered = 0;
+    let completionAccumulator = 0;
+    let firstTryAccuracyAccumulator = 0;
+    let firstTryAccuracyCount = 0;
+
+    const students = filteredRows.map((row) => {
+      const analytics = buildStudentAnalyticsFromPayload(row.payload);
+      const lastSyncedAt = row.progress_updated_at || analytics.summary.lastUpdatedAt || null;
+      const isActive = isTimestampWithinDays(lastSyncedAt);
+
+      totalAnswered += analytics.summary.answeredCount;
+      completionAccumulator += analytics.summary.completionPct;
+      if (analytics.summary.firstTryAttemptedCount > 0) {
+        firstTryAccuracyAccumulator += analytics.summary.firstTryAccuracyPct;
+        firstTryAccuracyCount += 1;
+      }
+
+      return {
+        id: row.id,
+        email: row.email,
+        createdAt: row.created_at,
+        lastLoginAt: row.last_login_at || null,
+        lastSyncedAt,
+        isActive,
+        ...analytics.summary
+      };
+    });
+
+    const studentsCount = students.length;
+    const activeStudents = students.filter((student) => student.isActive).length;
+    const avgCompletionPct = studentsCount > 0
+      ? roundToOneDecimal(completionAccumulator / studentsCount)
+      : 0;
+    const avgFirstTryAccuracyPct = firstTryAccuracyCount > 0
+      ? roundToOneDecimal(firstTryAccuracyAccumulator / firstTryAccuracyCount)
+      : 0;
+
+    return jsonResponse(request, {
+      metrics: {
+        studentsCount,
+        activeStudents,
+        totalAnswered,
+        avgCompletionPct,
+        avgFirstTryAccuracyPct
+      },
+      filters: {
+        query: query || ''
+      },
+      students,
+      generatedAt: new Date().toISOString()
+    });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Unable to load student overview.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminStudentDetail(request, env, userId) {
+  if (!env.DB) {
+    return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  try {
+    await requireAdminSession(env, request);
+    const row = await getStudentRowById(env, userId);
+    if (!row) {
+      return jsonResponse(request, { error: 'Student not found.' }, { status: 404 });
+    }
+
+    const analytics = buildStudentAnalyticsFromPayload(row.payload);
+    const lastSyncedAt = row.progress_updated_at || analytics.summary.lastUpdatedAt || null;
+
+    return jsonResponse(request, {
+      student: {
+        id: row.id,
+        email: row.email,
+        createdAt: row.created_at,
+        updatedAt: row.updated_at,
+        lastLoginAt: row.last_login_at || null,
+        lastSyncedAt,
+        isActive: isTimestampWithinDays(lastSyncedAt)
+      },
+      summary: analytics.summary,
+      topics: analytics.topics,
+      tests: analytics.tests,
+      lastSession: analytics.lastSession,
+      generatedAt: new Date().toISOString()
+    });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Unable to load student details.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminResetStudentTestProgress(request, env, userId) {
+  if (!env.DB) {
+    return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  let adminSession = null;
+  try {
+    adminSession = await requireAdminSession(env, request);
+    const body = await request.json();
+    const topicId = String(body?.topicId || '').trim();
+    const testId = String(body?.testId || '').trim();
+
+    if (!topicId || !testId) {
+      return jsonResponse(request, { error: 'topicId and testId are required.' }, { status: 400 });
+    }
+
+    const row = await getStudentRowById(env, userId);
+    if (!row) {
+      return jsonResponse(request, { error: 'Student not found.' }, { status: 404 });
+    }
+    if (!row.payload) {
+      return jsonResponse(request, { error: 'No synced progress found for this student.' }, { status: 404 });
+    }
+
+    const snapshot = parseJsonString(row.payload, null);
+    if (!snapshot || typeof snapshot !== 'object') {
+      return jsonResponse(request, { error: 'Stored progress payload is invalid.' }, { status: 500 });
+    }
+
+    const items = snapshot.items && typeof snapshot.items === 'object'
+      ? { ...snapshot.items }
+      : {};
+    const progressKey = `progress_${topicId}_${testId}`;
+    const shuffleKey = `shuffle_${topicId}_${testId}`;
+    const removedKeys = [];
+
+    if (Object.prototype.hasOwnProperty.call(items, progressKey)) {
+      delete items[progressKey];
+      removedKeys.push(progressKey);
+    }
+    if (Object.prototype.hasOwnProperty.call(items, shuffleKey)) {
+      delete items[shuffleKey];
+      removedKeys.push(shuffleKey);
+    }
+
+    const lastSession = parseJsonString(items.last_session, null);
+    if (
+      lastSession &&
+      typeof lastSession === 'object' &&
+      String(lastSession.topicId || '') === topicId &&
+      String(lastSession.testId || '') === testId
+    ) {
+      delete items.last_session;
+      removedKeys.push('last_session');
+    }
+
+    const now = new Date().toISOString();
+    const nextSnapshot = {
+      ...snapshot,
+      version: Number(snapshot.version || 1),
+      items
+    };
+
+    await env.DB.prepare(
+      `INSERT INTO user_progress (user_id, payload, updated_at)
+       VALUES (?, ?, ?)
+       ON CONFLICT(user_id) DO UPDATE SET payload = excluded.payload, updated_at = excluded.updated_at`
+    ).bind(
+      row.id,
+      JSON.stringify(nextSnapshot),
+      now
+    ).run();
+
+    await logAuditEvent(env.DB, request, 'admin.progress_reset_test', 'success', adminSession.user.id, {
+      actorAdminUserId: adminSession.user.id,
+      targetUserId: row.id,
+      testKey: `${topicId}_${testId}`,
+      removedKeys
+    });
+
+    return jsonResponse(request, {
+      success: true,
+      targetUserId: row.id,
+      testKey: `${topicId}_${testId}`,
+      removedKeys,
+      updatedAt: now
+    });
+  } catch (error) {
+    try {
+      await logAuditEvent(env.DB, request, 'admin.progress_reset_test', 'failed', adminSession?.user?.id || null, {
+        actorAdminUserId: adminSession?.user?.id || null,
+        targetUserId: userId,
+        reason: error.message
+      });
+    } catch {}
+    return jsonResponse(request, { error: error.message || 'Unable to reset student test progress.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminPasswordResetLink(request, env) {
+  if (!env.DB) {
+    return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  let adminSession = null;
+  try {
+    adminSession = await requireAdminSession(env, request);
     const body = await request.json();
     const email = normalizeEmail(body.email);
 
@@ -1012,7 +1554,12 @@ async function handleAdminPasswordResetLink(request, env) {
     const { rawToken, expiresAt } = await issuePasswordResetToken(env.DB, request, user.id);
     const resetUrl = `${getResetEmailConfig(env, request).baseUrl}/?reset=${encodeURIComponent(rawToken)}`;
 
-    await logAuditEvent(env.DB, request, 'auth.password_reset_admin', 'success', user.id, { email, expiresAt });
+    await logAuditEvent(env.DB, request, 'auth.password_reset_admin', 'success', adminSession.user.id, {
+      actorAdminUserId: adminSession.user.id,
+      targetUserId: user.id,
+      email,
+      expiresAt
+    });
 
     return jsonResponse(request, {
       success: true,
@@ -1022,11 +1569,13 @@ async function handleAdminPasswordResetLink(request, env) {
       expiresAt
     });
   } catch (error) {
-    const status = /access denied/i.test(String(error?.message || '')) ? 403 : getErrorStatus(error);
     try {
-      await logAuditEvent(env.DB, request, 'auth.password_reset_admin', 'failed', null, { reason: error.message });
+      await logAuditEvent(env.DB, request, 'auth.password_reset_admin', 'failed', adminSession?.user?.id || null, {
+        actorAdminUserId: adminSession?.user?.id || null,
+        reason: error.message
+      });
     } catch {}
-    return jsonResponse(request, { error: error.message || 'Admin reset link generation failed.' }, { status });
+    return jsonResponse(request, { error: error.message || 'Admin reset link generation failed.' }, { status: getErrorStatus(error) });
   }
 }
 
@@ -1208,6 +1757,20 @@ export default {
 
     if (path === '/api/auth/password-change' && request.method === 'POST') {
       return handlePasswordChange(request, env);
+    }
+
+    if (path === '/api/admin/students/overview' && request.method === 'GET') {
+      return handleAdminStudentsOverview(request, env);
+    }
+
+    const adminStudentDetailMatch = path.match(/^\/api\/admin\/students\/([^/]+)$/);
+    if (adminStudentDetailMatch && request.method === 'GET') {
+      return handleAdminStudentDetail(request, env, decodeURIComponent(adminStudentDetailMatch[1]));
+    }
+
+    const adminStudentResetMatch = path.match(/^\/api\/admin\/students\/([^/]+)\/reset-test-progress$/);
+    if (adminStudentResetMatch && request.method === 'POST') {
+      return handleAdminResetStudentTestProgress(request, env, decodeURIComponent(adminStudentResetMatch[1]));
     }
 
     if (path === '/api/admin/password-reset-link' && request.method === 'POST') {

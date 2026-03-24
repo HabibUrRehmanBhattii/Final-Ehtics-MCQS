@@ -3,6 +3,394 @@ Object.assign(MCQApp, {
     return window.location.origin;
   },
 
+  normalizeAuthUser(user) {
+    if (!user || typeof user !== 'object') return null;
+    return {
+      ...user,
+      isAdmin: Boolean(user.isAdmin)
+    };
+  },
+
+  ensureAdminDashboardState() {
+    if (!this.state.auth.admin || typeof this.state.auth.admin !== 'object') {
+      this.state.auth.admin = {
+        overview: null,
+        students: [],
+        selectedStudentId: '',
+        selectedStudentDetail: null,
+        searchQuery: '',
+        loadingOverview: false,
+        loadingDetail: false,
+        loadingResetKey: '',
+        error: '',
+        detailError: '',
+        refreshIntervalId: null,
+        lastRefreshedAt: null
+      };
+    }
+    return this.state.auth.admin;
+  },
+
+  isCurrentUserAdmin() {
+    return Boolean(this.state.auth.authenticated && this.state.auth.user && this.state.auth.user.isAdmin);
+  },
+
+  formatAdminDuration(ms = 0) {
+    const totalSeconds = Math.max(0, Math.floor(Number(ms || 0) / 1000));
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    if (hours > 0) {
+      return `${hours}h ${minutes}m`;
+    }
+    if (minutes > 0) {
+      return `${minutes}m ${seconds}s`;
+    }
+    return `${seconds}s`;
+  },
+
+  stopAdminDashboardAutoRefresh() {
+    const admin = this.ensureAdminDashboardState();
+    if (admin.refreshIntervalId) {
+      window.clearInterval(admin.refreshIntervalId);
+      admin.refreshIntervalId = null;
+    }
+  },
+
+  startAdminDashboardAutoRefresh() {
+    const admin = this.ensureAdminDashboardState();
+    this.stopAdminDashboardAutoRefresh();
+    admin.refreshIntervalId = window.setInterval(() => {
+      if (this.state.currentView !== 'admin' || !this.isCurrentUserAdmin()) {
+        this.stopAdminDashboardAutoRefresh();
+        return;
+      }
+      this.refreshAdminDashboard({ silent: true, preserveSelection: true });
+    }, 60000);
+  },
+
+  openAdminDashboard() {
+    if (!this.isCurrentUserAdmin()) {
+      this.showToast('Admin access is not enabled for this account.', 'warning');
+      return;
+    }
+    this.showView('admin');
+  },
+
+  onEnterAdminView() {
+    if (!this.isCurrentUserAdmin()) {
+      this.showView('home');
+      this.showToast('Admin access is restricted to allowed accounts.', 'warning');
+      return;
+    }
+
+    const admin = this.ensureAdminDashboardState();
+    this.renderAdminDashboard();
+    this.startAdminDashboardAutoRefresh();
+    if (!admin.overview) {
+      this.refreshAdminDashboard({ silent: false, preserveSelection: true });
+    }
+  },
+
+  onLeaveAdminView() {
+    this.stopAdminDashboardAutoRefresh();
+  },
+
+  async refreshAdminDashboard({ silent = false, preserveSelection = true } = {}) {
+    if (!this.isCurrentUserAdmin()) {
+      return false;
+    }
+
+    const admin = this.ensureAdminDashboardState();
+    admin.loadingOverview = true;
+    admin.error = '';
+    if (!silent) {
+      this.renderAdminDashboard();
+    }
+
+    try {
+      const params = new URLSearchParams();
+      if (admin.searchQuery) {
+        params.set('q', admin.searchQuery);
+      }
+      const queryString = params.toString();
+      const endpoint = `/api/admin/students/overview${queryString ? `?${queryString}` : ''}`;
+      const data = await this.fetchAuthJson(endpoint, { method: 'GET' });
+
+      admin.overview = data.metrics || null;
+      admin.students = Array.isArray(data.students) ? data.students : [];
+      admin.lastRefreshedAt = data.generatedAt || new Date().toISOString();
+      admin.error = '';
+
+      if (admin.students.length === 0) {
+        admin.selectedStudentId = '';
+        admin.selectedStudentDetail = null;
+      } else {
+        const hasSelectedStudent = preserveSelection &&
+          admin.selectedStudentId &&
+          admin.students.some((student) => String(student.id) === String(admin.selectedStudentId));
+        admin.selectedStudentId = hasSelectedStudent
+          ? String(admin.selectedStudentId)
+          : String(admin.students[0].id);
+        await this.loadAdminStudentDetail(admin.selectedStudentId, { silent: true });
+      }
+
+      return true;
+    } catch (error) {
+      admin.error = error.message || 'Unable to load student overview.';
+      if (!silent) {
+        this.showToast(admin.error, 'warning');
+      }
+      return false;
+    } finally {
+      admin.loadingOverview = false;
+      this.renderAdminDashboard();
+    }
+  },
+
+  async loadAdminStudentDetail(userId, { silent = false } = {}) {
+    const admin = this.ensureAdminDashboardState();
+    if (!this.isCurrentUserAdmin()) {
+      return false;
+    }
+    if (!userId) {
+      admin.selectedStudentId = '';
+      admin.selectedStudentDetail = null;
+      admin.detailError = '';
+      this.renderAdminDashboard();
+      return true;
+    }
+
+    admin.loadingDetail = true;
+    admin.detailError = '';
+    admin.selectedStudentId = String(userId);
+    if (!silent) {
+      this.renderAdminDashboard();
+    }
+
+    try {
+      const data = await this.fetchAuthJson(`/api/admin/students/${encodeURIComponent(String(userId))}`, { method: 'GET' });
+      admin.selectedStudentDetail = data;
+      admin.detailError = '';
+      return true;
+    } catch (error) {
+      admin.selectedStudentDetail = null;
+      admin.detailError = error.message || 'Unable to load student details.';
+      if (!silent) {
+        this.showToast(admin.detailError, 'warning');
+      }
+      return false;
+    } finally {
+      admin.loadingDetail = false;
+      this.renderAdminDashboard();
+    }
+  },
+
+  async resetAdminStudentTestProgress(topicId, testId) {
+    const admin = this.ensureAdminDashboardState();
+    const userId = admin.selectedStudentId;
+    if (!this.isCurrentUserAdmin() || !userId || !topicId || !testId) {
+      return false;
+    }
+
+    if (!confirm(`Reset progress for ${topicId} / ${testId} for this student?`)) {
+      return false;
+    }
+
+    const resetKey = `${topicId}_${testId}`;
+    admin.loadingResetKey = resetKey;
+    this.renderAdminDashboard();
+
+    try {
+      await this.fetchAuthJson(`/api/admin/students/${encodeURIComponent(String(userId))}/reset-test-progress`, {
+        method: 'POST',
+        body: JSON.stringify({ topicId, testId })
+      });
+      this.showToast('Student test progress reset.', 'success');
+      await this.refreshAdminDashboard({ silent: true, preserveSelection: true });
+      return true;
+    } catch (error) {
+      this.showToast(error.message || 'Unable to reset test progress.', 'warning');
+      return false;
+    } finally {
+      admin.loadingResetKey = '';
+      this.renderAdminDashboard();
+    }
+  },
+
+  renderAdminDashboard() {
+    const root = document.getElementById('admin-dashboard-root');
+    if (!root) return;
+
+    if (!this.isCurrentUserAdmin()) {
+      root.innerHTML = `
+        <div class="admin-empty-card">
+          <h3>Admin access required</h3>
+          <p>Sign in with an allowlisted admin account to open this dashboard.</p>
+        </div>
+      `;
+      return;
+    }
+
+    const admin = this.ensureAdminDashboardState();
+    const overview = admin.overview || {
+      studentsCount: 0,
+      activeStudents: 0,
+      totalAnswered: 0,
+      avgCompletionPct: 0,
+      avgFirstTryAccuracyPct: 0
+    };
+    const students = Array.isArray(admin.students) ? admin.students : [];
+    const selectedDetail = admin.selectedStudentDetail || null;
+    const selectedSummary = selectedDetail?.summary || null;
+    const topics = Array.isArray(selectedDetail?.topics) ? selectedDetail.topics : [];
+    const lastRefreshed = admin.lastRefreshedAt
+      ? new Date(admin.lastRefreshedAt).toLocaleString()
+      : 'Not refreshed yet';
+
+    const studentRowsHtml = students.length === 0
+      ? `
+        <tr>
+          <td colspan="7" class="admin-empty-row">No students matched this filter.</td>
+        </tr>
+      `
+      : students.map((student) => {
+        const isSelected = String(student.id) === String(admin.selectedStudentId);
+        return `
+          <tr class="${isSelected ? 'is-selected' : ''}">
+            <td>${this.escapeHtml(student.email || '')}</td>
+            <td>${Number(student.totalTests || 0)}</td>
+            <td>${Number(student.answeredCount || 0)}</td>
+            <td>${Number(student.completionPct || 0)}%</td>
+            <td>${Number(student.firstTryAccuracyPct || 0)}%</td>
+            <td>${this.escapeHtml(this.formatAdminDuration(student.totalStudyTimeMs || 0))}</td>
+            <td>
+              <button class="btn-outline admin-table-btn" type="button" data-admin-action="load-student" data-user-id="${this.escapeHtml(String(student.id))}">
+                View
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+    const detailTopicsHtml = topics.length === 0
+      ? '<div class="admin-empty-card"><p>No synced test payload available for this student yet.</p></div>'
+      : topics.map((topic) => {
+        const testsHtml = (topic.tests || []).map((testItem) => {
+          const resetKey = `${testItem.topicId}_${testItem.testId}`;
+          const isResetting = admin.loadingResetKey === resetKey;
+          return `
+            <tr>
+              <td>${this.escapeHtml(testItem.testId || '')}</td>
+              <td>${Number(testItem.answeredCount || 0)}</td>
+              <td>${Number(testItem.viewedCount || 0)}</td>
+              <td>${Number(testItem.revealedCount || 0)}</td>
+              <td>${Number(testItem.bookmarkedCount || 0)}</td>
+              <td>${Number(testItem.firstTryAccuracyPct || 0)}%</td>
+              <td>${this.escapeHtml(this.formatAdminDuration(testItem.studyTimeMs || 0))}</td>
+              <td>${this.escapeHtml(testItem.lastUpdatedAt ? new Date(testItem.lastUpdatedAt).toLocaleString() : 'n/a')}</td>
+              <td>
+                <button class="btn-outline admin-reset-btn" type="button" data-admin-action="reset-test" data-topic-id="${this.escapeHtml(testItem.topicId || '')}" data-test-id="${this.escapeHtml(testItem.testId || '')}" ${isResetting ? 'disabled' : ''}>
+                  ${isResetting ? 'Resetting...' : 'Reset'}
+                </button>
+              </td>
+            </tr>
+          `;
+        }).join('');
+
+        return `
+          <section class="admin-topic-card">
+            <header class="admin-topic-head">
+              <h4>${this.escapeHtml(topic.topicId || '')}</h4>
+              <div class="admin-topic-meta">
+                <span>Answered ${Number(topic.answeredCount || 0)}</span>
+                <span>Completion ${Number(topic.completionPct || 0)}%</span>
+                <span>Accuracy ${Number(topic.firstTryAccuracyPct || 0)}%</span>
+              </div>
+            </header>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Test</th>
+                    <th>Answered</th>
+                    <th>Viewed</th>
+                    <th>Revealed</th>
+                    <th>Bookmarked</th>
+                    <th>First try</th>
+                    <th>Study time</th>
+                    <th>Updated</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>${testsHtml}</tbody>
+              </table>
+            </div>
+          </section>
+        `;
+      }).join('');
+
+    root.innerHTML = `
+      <section class="admin-toolbar">
+        <div>
+          <h3>Student Progress Monitor</h3>
+          <p>Last refresh: ${this.escapeHtml(lastRefreshed)}</p>
+        </div>
+        <div class="admin-toolbar-actions">
+          <input id="admin-search-input" class="admin-search-input" type="search" placeholder="Search student email" value="${this.escapeHtml(admin.searchQuery || '')}">
+          <button class="btn-outline" type="button" data-admin-action="search">Search</button>
+          <button class="btn-outline" type="button" data-admin-action="refresh">${admin.loadingOverview ? 'Refreshing...' : 'Refresh'}</button>
+          <button class="btn-outline" type="button" data-admin-action="back-home">Home</button>
+        </div>
+      </section>
+
+      ${admin.error ? `<div class="admin-error">${this.escapeHtml(admin.error)}</div>` : ''}
+
+      <section class="admin-kpi-grid">
+        <article class="admin-kpi-card"><span>Students</span><strong>${Number(overview.studentsCount || 0)}</strong></article>
+        <article class="admin-kpi-card"><span>Active (7d)</span><strong>${Number(overview.activeStudents || 0)}</strong></article>
+        <article class="admin-kpi-card"><span>Total Answered</span><strong>${Number(overview.totalAnswered || 0)}</strong></article>
+        <article class="admin-kpi-card"><span>Avg Completion</span><strong>${Number(overview.avgCompletionPct || 0)}%</strong></article>
+        <article class="admin-kpi-card"><span>Avg First-Try</span><strong>${Number(overview.avgFirstTryAccuracyPct || 0)}%</strong></article>
+      </section>
+
+      <section class="admin-table-section">
+        <h4>Students</h4>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Tests</th>
+                <th>Answered</th>
+                <th>Completion</th>
+                <th>First try</th>
+                <th>Study time</th>
+                <th>Open</th>
+              </tr>
+            </thead>
+            <tbody>${studentRowsHtml}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-detail-section">
+        <h4>Student Detail</h4>
+        ${admin.loadingDetail ? '<div class="admin-empty-card"><p>Loading student details...</p></div>' : ''}
+        ${admin.detailError ? `<div class="admin-error">${this.escapeHtml(admin.detailError)}</div>` : ''}
+        ${selectedDetail ? `
+          <div class="admin-student-summary">
+            <div><strong>${this.escapeHtml(selectedDetail.student?.email || '')}</strong></div>
+            <div>Answered: ${Number(selectedSummary?.answeredCount || 0)} | Completion: ${Number(selectedSummary?.completionPct || 0)}% | First-try: ${Number(selectedSummary?.firstTryAccuracyPct || 0)}%</div>
+            <div>Total study time: ${this.escapeHtml(this.formatAdminDuration(selectedSummary?.totalStudyTimeMs || 0))}</div>
+          </div>
+          ${detailTopicsHtml}
+        ` : '<div class="admin-empty-card"><p>Select a student to inspect topic/test detail.</p></div>'}
+      </section>
+    `;
+  },
+
   getManagedProgressKeys() {
     const explicitKeys = new Set([
       'wrong_questions',
@@ -145,6 +533,7 @@ Object.assign(MCQApp, {
   },
 
   async initAuth() {
+    this.ensureAdminDashboardState();
     await this.loadAuthConfig();
     await this.refreshAuthSession({ restoreProgress: true, silent: true });
     this.renderAuthPanel();
@@ -161,15 +550,21 @@ Object.assign(MCQApp, {
     try {
       const data = await this.fetchAuthJson('/api/auth/session', { method: 'GET' });
       this.state.auth.authenticated = Boolean(data.authenticated);
-      this.state.auth.user = data.user || null;
+      this.state.auth.user = this.normalizeAuthUser(data.user || null);
       if (restoreProgress && this.state.auth.authenticated) {
         await this.loadCloudProgress({ silent: true });
+      }
+      if (!this.isCurrentUserAdmin() && this.state.currentView === 'admin') {
+        this.showView('home');
       }
       this.renderAuthPanel();
       return data;
     } catch (error) {
       this.state.auth.authenticated = false;
       this.state.auth.user = null;
+      if (this.state.currentView === 'admin') {
+        this.showView('home');
+      }
       this.renderAuthPanel();
       if (!silent) {
         this.showToast('Unable to load your account session right now.', 'warning');
@@ -199,6 +594,9 @@ Object.assign(MCQApp, {
       const syncedCopy = auth.lastSyncedAt
         ? `Last synced ${new Date(auth.lastSyncedAt).toLocaleString()}`
         : 'Cloud sync ready';
+      const adminAction = auth.user.isAdmin
+        ? '<button class="btn-outline" type="button" data-auth-action="admin-dashboard">Admin Dashboard</button>'
+        : '';
 
       host.innerHTML = `
         <div class="auth-card auth-card-active">
@@ -209,6 +607,7 @@ Object.assign(MCQApp, {
           </div>
           <div class="auth-panel-actions">
             <button class="btn-outline" type="button" data-auth-action="sync">Sync</button>
+            ${adminAction}
             <button class="btn-outline" type="button" data-auth-action="password">Password</button>
             <button class="btn-outline" type="button" data-auth-action="signout">Sign out</button>
           </div>
@@ -246,6 +645,11 @@ Object.assign(MCQApp, {
         return;
       }
 
+      if (action === 'admin-dashboard') {
+        this.openAdminDashboard();
+        return;
+      }
+
       if (action === 'signout') {
         this.signOut();
         return;
@@ -254,6 +658,54 @@ Object.assign(MCQApp, {
       if (action === 'sync') {
         this.syncProgressToCloud({ silent: false, force: true });
       }
+    });
+
+    document.getElementById('admin-view')?.addEventListener('click', (event) => {
+      const actionEl = event.target.closest('[data-admin-action]');
+      const action = actionEl?.getAttribute('data-admin-action');
+      if (!action) return;
+
+      if (action === 'back-home') {
+        this.showView('home');
+        return;
+      }
+      if (action === 'refresh') {
+        this.refreshAdminDashboard({ silent: false, preserveSelection: true });
+        return;
+      }
+      if (action === 'search') {
+        const input = document.getElementById('admin-search-input');
+        const admin = this.ensureAdminDashboardState();
+        admin.searchQuery = String(input?.value || '').trim().toLowerCase();
+        this.refreshAdminDashboard({ silent: false, preserveSelection: false });
+        return;
+      }
+      if (action === 'load-student') {
+        const userId = String(actionEl?.getAttribute('data-user-id') || '').trim();
+        if (userId) {
+          this.loadAdminStudentDetail(userId, { silent: false });
+        }
+        return;
+      }
+      if (action === 'reset-test') {
+        const topicId = String(actionEl?.getAttribute('data-topic-id') || '').trim();
+        const testId = String(actionEl?.getAttribute('data-test-id') || '').trim();
+        if (topicId && testId) {
+          this.resetAdminStudentTestProgress(topicId, testId);
+        }
+      }
+    });
+
+    document.getElementById('admin-view')?.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter') return;
+      const target = event.target;
+      if (!target || target.id !== 'admin-search-input') {
+        return;
+      }
+      event.preventDefault();
+      const admin = this.ensureAdminDashboardState();
+      admin.searchQuery = String(target.value || '').trim().toLowerCase();
+      this.refreshAdminDashboard({ silent: false, preserveSelection: false });
     });
 
     document.getElementById('auth-close-btn')?.addEventListener('click', () => this.closeAuthModal());
@@ -598,7 +1050,7 @@ Object.assign(MCQApp, {
       });
 
       this.state.auth.authenticated = Boolean(data.authenticated);
-      this.state.auth.user = data.user || null;
+      this.state.auth.user = this.normalizeAuthUser(data.user || null);
 
       if (this.state.auth.user) {
         const migrationKey = this.getAuthMigrationKey(this.state.auth.user.id);
@@ -631,6 +1083,7 @@ Object.assign(MCQApp, {
 
   async signOut() {
     this.clearPendingSyncTimer();
+    this.stopAdminDashboardAutoRefresh();
     try {
       await this.fetchAuthJson('/api/auth/signout', { method: 'POST', body: JSON.stringify({}) });
     } catch (error) {
@@ -640,6 +1093,13 @@ Object.assign(MCQApp, {
     this.state.auth.authenticated = false;
     this.state.auth.user = null;
     this.state.auth.lastSyncedAt = null;
+    this.ensureAdminDashboardState();
+    this.state.auth.admin.overview = null;
+    this.state.auth.admin.students = [];
+    this.state.auth.admin.selectedStudentId = '';
+    this.state.auth.admin.selectedStudentDetail = null;
+    this.state.auth.admin.error = '';
+    this.state.auth.admin.detailError = '';
     this.state.currentTopic = null;
     this.state.currentPracticeTest = null;
     this.state.practiceTestParent = null;

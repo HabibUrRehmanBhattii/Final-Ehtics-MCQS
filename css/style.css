@@ -3474,3 +3474,218 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
     padding: .5rem .52rem;
   }
 }
+
+/* Admin Dashboard */
+.admin-dashboard {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+}
+
+.admin-toolbar h3 {
+  margin: 0 0 .3rem;
+}
+
+.admin-toolbar p {
+  margin: 0;
+  color: var(--c-text2);
+}
+
+.admin-toolbar-actions {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto auto;
+  gap: .55rem;
+  width: min(720px, 100%);
+}
+
+.admin-search-input {
+  width: 100%;
+  min-height: 42px;
+  padding: .6rem .7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--c-border);
+  background: var(--c-surface2);
+  color: var(--c-text);
+}
+
+.admin-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  gap: .75rem;
+}
+
+.admin-kpi-card {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface);
+  padding: .85rem;
+  display: grid;
+  gap: .35rem;
+}
+
+.admin-kpi-card span {
+  font-size: .78rem;
+  color: var(--c-text2);
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+.admin-kpi-card strong {
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.admin-table-section,
+.admin-detail-section {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+  padding: 1rem;
+}
+
+.admin-table-section h4,
+.admin-detail-section h4 {
+  margin: 0 0 .7rem;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+  min-width: 760px;
+}
+
+.admin-table thead th {
+  text-align: left;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--c-text2);
+  background: var(--c-surface2);
+  border-bottom: 1px solid var(--c-border);
+  padding: .6rem .65rem;
+}
+
+.admin-table tbody td {
+  padding: .6rem .65rem;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tbody tr.is-selected {
+  background: var(--c-primary-a);
+}
+
+.admin-table-btn,
+.admin-reset-btn {
+  min-height: 34px;
+  padding: .35rem .65rem;
+  font-size: .8rem;
+}
+
+.admin-empty-row {
+  text-align: center;
+  color: var(--c-text2);
+}
+
+.admin-empty-card {
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: .95rem;
+  color: var(--c-text2);
+  background: var(--c-surface2);
+}
+
+.admin-empty-card h3 {
+  margin: 0 0 .35rem;
+  color: var(--c-text);
+}
+
+.admin-empty-card p {
+  margin: 0;
+}
+
+.admin-error {
+  border: 1px solid var(--c-err);
+  background: var(--c-err-bg);
+  color: var(--c-err2);
+  border-radius: var(--radius-sm);
+  padding: .75rem .85rem;
+}
+
+.admin-student-summary {
+  margin-bottom: .8rem;
+  padding: .8rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  display: grid;
+  gap: .25rem;
+}
+
+.admin-topic-card {
+  margin-top: .75rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: .75rem;
+  background: var(--c-surface2);
+}
+
+.admin-topic-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .7rem;
+  margin-bottom: .6rem;
+}
+
+.admin-topic-head h4 {
+  margin: 0;
+}
+
+.admin-topic-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  color: var(--c-text2);
+  font-size: .82rem;
+}
+
+@media (max-width: 980px) {
+  .admin-kpi-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+
+  .admin-toolbar {
+    flex-direction: column;
+  }
+
+  .admin-toolbar-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-toolbar-actions {
+    grid-template-columns: 1fr;
+  }
+}

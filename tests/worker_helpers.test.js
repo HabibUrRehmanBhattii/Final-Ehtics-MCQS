@@ -1,9 +1,72 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const { createHmac } = require('node:crypto');
 
 const {
   loadWorkerModule
 } = require('./helpers/worker_test_utils');
+
+function signSessionToken(secret, token) {
+  return createHmac('sha256', secret)
+    .update(token)
+    .digest('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/g, '');
+}
+
+function createSessionCookie(secret, token = 'session-token') {
+  const signature = signSessionToken(secret, token);
+  return `mcq_session=${encodeURIComponent(`${token}.${signature}`)}`;
+}
+
+function createDbMock({ sessionRow = null, studentRows = [], studentById = {} } = {}) {
+  const state = {
+    progressWrites: [],
+    auditLogWrites: []
+  };
+
+  return {
+    state,
+    prepare(sql) {
+      const statement = {
+        sql,
+        bound: []
+      };
+
+      return {
+        bind(...args) {
+          statement.bound = args;
+          return this;
+        },
+        async first() {
+          if (sql.includes('FROM sessions')) {
+            return sessionRow;
+          }
+          if (sql.includes('WHERE users.id = ?')) {
+            return studentById[statement.bound[0]] || null;
+          }
+          return null;
+        },
+        async all() {
+          if (sql.includes("WHERE users.status = 'active'")) {
+            return { results: studentRows };
+          }
+          return { results: [] };
+        },
+        async run() {
+          if (sql.includes('INSERT INTO user_progress')) {
+            state.progressWrites.push(statement.bound);
+          }
+          if (sql.includes('INSERT INTO audit_logs')) {
+            state.auditLogWrites.push(statement.bound);
+          }
+          return { success: true };
+        }
+      };
+    }
+  };
+}
 
 test('getClientIp prefers CF headers and falls back to the first forwarded IP', () => {
   const worker = loadWorkerModule();
@@ -118,4 +181,309 @@ test('worker fetch serves the health and auth config endpoints without hitting s
   });
   assert.equal((await configResponse.json()).enabled, true);
   assert.equal(assetFetches, 0);
+});
+
+test('admin allowlist utilities normalize emails and mark admin users in session responses', async () => {
+  const worker = loadWorkerModule();
+
+  const allowlist = worker.getAdminEmailAllowlist({
+    ADMIN_EMAIL_ALLOWLIST: ' HABIBCANAD@gmail.com, teammate@example.com '
+  });
+  assert.deepEqual(Array.from(allowlist), ['habibcanad@gmail.com', 'teammate@example.com']);
+  assert.equal(worker.isAdminEmail({ ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com' }, 'HabibCanad@gmail.com'), true);
+  assert.equal(worker.buildAuthUser({ ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com' }, 'u-1', 'student@example.com').isAdmin, false);
+
+  const secret = 'session-secret';
+  const db = createDbMock({
+    sessionRow: {
+      session_id: 'sess-1',
+      user_id: 'user-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    }
+  });
+
+  const response = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/auth/session', {
+      headers: {
+        Cookie: createSessionCookie(secret)
+      }
+    }),
+    {
+      DB: db,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  const payload = await response.json();
+  assert.equal(payload.authenticated, true);
+  assert.equal(payload.user.email, 'habibcanad@gmail.com');
+  assert.equal(payload.user.isAdmin, true);
+});
+
+test('/api/admin/students/overview rejects unauthenticated and non-admin sessions', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+
+  const unauthenticatedResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/overview'),
+    {
+      DB: createDbMock({ sessionRow: null }),
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+  assert.equal(unauthenticatedResponse.status, 401);
+
+  const nonAdminDb = createDbMock({
+    sessionRow: {
+      session_id: 'sess-2',
+      user_id: 'user-2',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'student@example.com',
+      status: 'active'
+    }
+  });
+
+  const nonAdminResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/overview', {
+      headers: {
+        Cookie: createSessionCookie(secret, 'non-admin-token')
+      }
+    }),
+    {
+      DB: nonAdminDb,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+  assert.equal(nonAdminResponse.status, 403);
+});
+
+test('/api/admin/students/overview aggregates student payload metrics correctly', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+
+  const studentPayload = JSON.stringify({
+    version: 1,
+    items: {
+      'progress_llqp-life_life-01': JSON.stringify({
+        viewed: ['1', '2'],
+        bookmarked: ['1'],
+        revealed: ['1'],
+        timers: { '1': 60000, '2': 30000 },
+        firstAttemptCorrect: { '1': true, '2': false },
+        questionLayout: { questionOrder: ['1', '2', '3'] },
+        lastUpdated: '2026-03-24T10:00:00.000Z'
+      }),
+      'shuffle_llqp-life_life-01': JSON.stringify({ order: ['1', '2', '3'] }),
+      'progress_llqp-life_life-02': JSON.stringify({
+        viewed: ['4'],
+        bookmarked: [],
+        revealed: ['4'],
+        timers: { '4': 120000 },
+        firstAttemptCorrect: { '4': true },
+        questionLayout: { questionOrder: ['4', '5'] },
+        lastUpdated: '2026-03-24T11:00:00.000Z'
+      }),
+      'last_session': JSON.stringify({ topicId: 'llqp-life', testId: 'life-02', savedAt: '2026-03-24T11:05:00.000Z' })
+    }
+  });
+
+  const db = createDbMock({
+    sessionRow: {
+      session_id: 'sess-3',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    studentRows: [
+      {
+        id: 'student-1',
+        email: 'alpha.student@example.com',
+        status: 'active',
+        created_at: '2026-01-01T00:00:00.000Z',
+        updated_at: '2026-03-24T11:00:00.000Z',
+        last_login_at: '2026-03-24T10:59:00.000Z',
+        payload: studentPayload,
+        progress_updated_at: '2026-03-24T11:06:00.000Z'
+      },
+      {
+        id: 'student-2',
+        email: 'beta.student@example.com',
+        status: 'active',
+        created_at: '2026-01-02T00:00:00.000Z',
+        updated_at: '2026-03-01T00:00:00.000Z',
+        last_login_at: '2026-03-01T00:00:00.000Z',
+        payload: null,
+        progress_updated_at: null
+      },
+      {
+        id: 'admin-2',
+        email: 'habibcanad@gmail.com',
+        status: 'active',
+        created_at: '2026-01-03T00:00:00.000Z',
+        updated_at: '2026-03-02T00:00:00.000Z',
+        last_login_at: '2026-03-02T00:00:00.000Z',
+        payload: null,
+        progress_updated_at: null
+      }
+    ]
+  });
+
+  const response = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/overview', {
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-token')
+      }
+    }),
+    {
+      DB: db,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  assert.equal(response.status, 200);
+  const payload = await response.json();
+
+  assert.equal(payload.metrics.studentsCount, 2);
+  assert.equal(payload.metrics.totalAnswered, 2);
+  assert.equal(payload.metrics.avgCompletionPct, 20);
+  assert.equal(payload.metrics.avgFirstTryAccuracyPct, 66.7);
+
+  const alpha = payload.students.find((student) => student.id === 'student-1');
+  assert.equal(alpha.totalTests, 2);
+  assert.equal(alpha.answeredCount, 2);
+  assert.equal(alpha.completionPct, 40);
+  assert.equal(alpha.firstTryAccuracyPct, 66.7);
+  assert.equal(alpha.totalStudyTimeMs, 210000);
+});
+
+test('/api/admin/students/:userId returns deep analytics and reset endpoint removes only targeted keys', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+
+  const originalSnapshot = {
+    version: 1,
+    items: {
+      'progress_llqp-life_life-01': JSON.stringify({
+        viewed: ['1', '2'],
+        bookmarked: ['1'],
+        revealed: ['1'],
+        timers: { '1': 60000, '2': 30000 },
+        firstAttemptCorrect: { '1': true, '2': false },
+        questionLayout: { questionOrder: ['1', '2', '3'] },
+        lastUpdated: '2026-03-24T10:00:00.000Z'
+      }),
+      'shuffle_llqp-life_life-01': JSON.stringify({ order: ['1', '2', '3'] }),
+      'progress_llqp-life_life-02': JSON.stringify({
+        viewed: ['4'],
+        bookmarked: [],
+        revealed: ['4'],
+        timers: { '4': 120000 },
+        firstAttemptCorrect: { '4': true },
+        questionLayout: { questionOrder: ['4', '5'] },
+        lastUpdated: '2026-03-24T11:00:00.000Z'
+      }),
+      'last_session': JSON.stringify({ topicId: 'llqp-life', testId: 'life-01', savedAt: '2026-03-24T11:05:00.000Z' })
+    }
+  };
+
+  const studentRow = {
+    id: 'student-1',
+    email: 'alpha.student@example.com',
+    status: 'active',
+    created_at: '2026-01-01T00:00:00.000Z',
+    updated_at: '2026-03-24T11:00:00.000Z',
+    last_login_at: '2026-03-24T10:59:00.000Z',
+    payload: JSON.stringify(originalSnapshot),
+    progress_updated_at: '2026-03-24T11:06:00.000Z'
+  };
+
+  const db = createDbMock({
+    sessionRow: {
+      session_id: 'sess-4',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    studentById: {
+      'student-1': studentRow
+    }
+  });
+
+  const detailResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/student-1', {
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-token-detail')
+      }
+    }),
+    {
+      DB: db,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  assert.equal(detailResponse.status, 200);
+  const detailPayload = await detailResponse.json();
+  assert.equal(detailPayload.summary.totalTests, 2);
+  assert.equal(detailPayload.summary.answeredCount, 2);
+  assert.equal(detailPayload.summary.viewedCount, 3);
+  assert.equal(detailPayload.summary.bookmarkedCount, 1);
+  assert.equal(detailPayload.summary.firstTryAccuracyPct, 66.7);
+  assert.equal(detailPayload.summary.totalStudyTimeMs, 210000);
+  assert.equal(detailPayload.lastSession.topicId, 'llqp-life');
+  assert.equal(detailPayload.lastSession.testId, 'life-01');
+
+  const resetResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/student-1/reset-test-progress', {
+      method: 'POST',
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-token-reset'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        topicId: 'llqp-life',
+        testId: 'life-01'
+      })
+    }),
+    {
+      DB: db,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  assert.equal(resetResponse.status, 200);
+  const resetPayload = await resetResponse.json();
+  assert.deepEqual(resetPayload.removedKeys.sort(), [
+    'last_session',
+    'progress_llqp-life_life-01',
+    'shuffle_llqp-life_life-01'
+  ]);
+
+  assert.equal(db.state.progressWrites.length, 1);
+  const [, serializedSnapshot] = db.state.progressWrites[0];
+  const writtenSnapshot = JSON.parse(serializedSnapshot);
+  assert.equal(writtenSnapshot.items['progress_llqp-life_life-01'], undefined);
+  assert.equal(writtenSnapshot.items['shuffle_llqp-life_life-01'], undefined);
+  assert.equal(writtenSnapshot.items['last_session'], undefined);
+  assert.ok(writtenSnapshot.items['progress_llqp-life_life-02']);
+
+  const resetAudit = db.state.auditLogWrites.find((entry) => entry[2] === 'admin.progress_reset_test');
+  assert.ok(resetAudit);
+  const details = JSON.parse(resetAudit[6]);
+  assert.equal(details.actorAdminUserId, 'admin-1');
+  assert.equal(details.targetUserId, 'student-1');
+  assert.equal(details.testKey, 'llqp-life_life-01');
 });
