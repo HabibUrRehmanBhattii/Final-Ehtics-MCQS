@@ -1,11 +1,9 @@
 // ===================================
 // MCQ Study Platform - Main Application
 // ===================================
-// Test: Auto-versioning system - Final cache bust for A&S questionCount
-
 const MCQApp = {
-  appBuildVersion: '20260323i',
-  cacheVersion: 'v1.7.20',
+  appBuildVersion: '20260324c',
+  cacheVersion: 'v1.7.9',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {

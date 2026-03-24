@@ -364,7 +364,7 @@
           "name": "Life Insurance - Certification Exam",
           "description": "Comprehensive 35-question certification exam covering life insurance needs analysis, policy types, riders, underwriting, claims, and tax implications",
           "questionCount": 35,
-          "dataFile": "data/llqp-life/llqp-life-certification-exam.json?v=20260319a"
+          "dataFile": "data/llqp-life/llqp-life-certification-exam.json?v=20260324c"
         }
       ]
     },
