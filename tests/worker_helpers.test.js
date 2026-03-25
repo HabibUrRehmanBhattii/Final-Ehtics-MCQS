@@ -175,6 +175,94 @@ function createAuthDbMock() {
   };
 }
 
+function createHeatmapDbMock({
+  sessionRow = null,
+  replaySessionRow = null,
+  replayChunkRows = []
+} = {}) {
+  const state = {
+    authAttempts: [],
+    heatmapSessions: [],
+    heatmapEvents: [],
+    heatmapAggregates: [],
+    heatmapReplayChunks: [],
+    auditLogWrites: [],
+    deleteRuns: []
+  };
+
+  return {
+    state,
+    prepare(sql) {
+      const statement = {
+        sql,
+        bound: []
+      };
+
+      return {
+        bind(...args) {
+          statement.bound = args;
+          return this;
+        },
+        async first() {
+          if (sql.includes('SELECT COUNT(*) AS count FROM auth_attempts')) {
+            return { count: 0 };
+          }
+          if (sql.includes('FROM sessions')) {
+            return sessionRow;
+          }
+          if (sql.includes('SELECT id FROM heatmap_sessions WHERE site_session_id = ? LIMIT 1')) {
+            const siteSessionId = statement.bound[0];
+            const existing = state.heatmapSessions.find((row) => row.siteSessionId === siteSessionId);
+            return existing ? { id: existing.id } : null;
+          }
+          if (sql.includes('FROM heatmap_sessions') && sql.includes('WHERE id = ?')) {
+            return replaySessionRow;
+          }
+          return null;
+        },
+        async all() {
+          if (sql.includes('FROM heatmap_replay_chunks')) {
+            return { results: replayChunkRows };
+          }
+          return { results: [] };
+        },
+        async run() {
+          if (sql.includes('INSERT INTO auth_attempts')) {
+            state.authAttempts.push(statement.bound);
+          }
+          if (sql.includes('INSERT INTO heatmap_sessions')) {
+            state.heatmapSessions.push({
+              id: statement.bound[0],
+              siteSessionId: statement.bound[1],
+              visitorId: statement.bound[2],
+              userId: statement.bound[3]
+            });
+          }
+          if (sql.includes('INSERT INTO heatmap_events')) {
+            state.heatmapEvents.push(statement.bound);
+          }
+          if (sql.includes('INSERT INTO heatmap_daily_aggregates')) {
+            state.heatmapAggregates.push(statement.bound);
+          }
+          if (sql.includes('INSERT INTO heatmap_replay_chunks')) {
+            state.heatmapReplayChunks.push(statement.bound);
+          }
+          if (sql.includes('INSERT INTO audit_logs')) {
+            state.auditLogWrites.push(statement.bound);
+          }
+          if (sql.includes('DELETE FROM heatmap_events')
+            || sql.includes('DELETE FROM heatmap_daily_aggregates')
+            || sql.includes('DELETE FROM heatmap_replay_chunks')
+            || sql.includes('DELETE FROM heatmap_sessions')) {
+            state.deleteRuns.push({ sql, bound: statement.bound });
+          }
+          return { success: true, meta: { changes: 1 } };
+        }
+      };
+    }
+  };
+}
+
 test('getClientIp prefers CF headers and falls back to the first forwarded IP', () => {
   const worker = loadWorkerModule();
 
@@ -818,4 +906,344 @@ test('/api/admin/students/:userId returns deep analytics and reset endpoint remo
   assert.equal(details.actorAdminUserId, 'admin-1');
   assert.equal(details.targetUserId, 'student-1');
   assert.equal(details.testKey, 'llqp-life_life-01');
+});
+
+test('/api/auth/config reports heatmapEnabled based on HEATMAP_ENABLED env flag', async () => {
+  const worker = loadWorkerModule();
+
+  const disabledResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/auth/config'),
+    {
+      DB: {},
+      SESSION_SECRET: 'secret',
+      TURNSTILE_SECRET_KEY: 'turnstile',
+      TURNSTILE_SITE_KEY: 'site-key',
+      HEATMAP_ENABLED: 'false'
+    }
+  );
+  const disabledPayload = await disabledResponse.json();
+  assert.equal(disabledPayload.heatmapEnabled, false);
+
+  const enabledResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/auth/config'),
+    {
+      DB: {},
+      SESSION_SECRET: 'secret',
+      TURNSTILE_SECRET_KEY: 'turnstile',
+      TURNSTILE_SITE_KEY: 'site-key',
+      HEATMAP_ENABLED: 'true'
+    }
+  );
+  const enabledPayload = await enabledResponse.json();
+  assert.equal(enabledPayload.heatmapEnabled, true);
+});
+
+test('/api/analytics/track ingests guest and authenticated batches with replay chunks', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+
+  const guestDb = createHeatmapDbMock();
+  const guestResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/analytics/track', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        sessionId: 'client-session-guest',
+        context: {
+          routePath: '/#mcq',
+          topicId: 'llqp-life',
+          testId: 'life-01',
+          questionId: 'q-1',
+          deviceType: 'mobile',
+          viewport: { width: 390, height: 844 }
+        },
+        events: [
+          {
+            type: 'click',
+            optionIndex: 1,
+            xPercent: 48.5,
+            yPercent: 62.2,
+            selector: '.option[data-index="1"]'
+          }
+        ],
+        replayChunk: {
+          chunkIndex: 0,
+          events: [
+            {
+              type: 'click',
+              ts: '2026-03-25T11:00:00.000Z',
+              selector: '.option[data-index="1"]'
+            }
+          ]
+        }
+      })
+    }),
+    {
+      DB: guestDb,
+      SESSION_SECRET: secret,
+      HEATMAP_ENABLED: 'true'
+    }
+  );
+
+  assert.equal(guestResponse.status, 200);
+  const guestPayload = await guestResponse.json();
+  assert.equal(guestPayload.success, true);
+  assert.equal(guestPayload.authenticated, false);
+  assert.equal(guestPayload.acceptedEventCount, 1);
+  assert.equal(guestPayload.acceptedReplayEvents, 1);
+  assert.match(String(guestResponse.headers.get('Set-Cookie') || ''), /mcq_visitor=/);
+  assert.equal(guestDb.state.heatmapEvents.length, 1);
+  assert.equal(guestDb.state.heatmapAggregates.length, 1);
+  assert.equal(guestDb.state.heatmapReplayChunks.length, 1);
+
+  const authDb = createHeatmapDbMock({
+    sessionRow: {
+      session_id: 'sess-track-admin',
+      user_id: 'user-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'student@example.com',
+      status: 'active'
+    }
+  });
+  const authResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/analytics/track', {
+      method: 'POST',
+      headers: {
+        Cookie: createSessionCookie(secret, 'track-auth-token'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        sessionId: 'client-session-auth',
+        context: {
+          routePath: '/#mcq',
+          topicId: 'llqp-ethics',
+          testId: 'ethics-01',
+          questionId: 'q-2',
+          deviceType: 'desktop',
+          viewport: { width: 1280, height: 800 }
+        },
+        events: [
+          {
+            type: 'hover',
+            optionIndex: 0,
+            xPercent: 44.1,
+            yPercent: 22.7,
+            selector: '.option[data-index="0"]'
+          }
+        ]
+      })
+    }),
+    {
+      DB: authDb,
+      SESSION_SECRET: secret,
+      HEATMAP_ENABLED: 'true'
+    }
+  );
+
+  assert.equal(authResponse.status, 200);
+  const authPayload = await authResponse.json();
+  assert.equal(authPayload.authenticated, true);
+  assert.equal(authPayload.acceptedEventCount, 1);
+  assert.equal(authDb.state.heatmapEvents.length, 1);
+  assert.equal(authDb.state.heatmapEvents[0][2], 'user-1');
+});
+
+test('/api/analytics/track enforces same-origin requests', async () => {
+  const worker = loadWorkerModule();
+  const db = createHeatmapDbMock();
+
+  const response = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/analytics/track', {
+      method: 'POST',
+      headers: {
+        Origin: 'https://evil.example.com',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        sessionId: 'cross-origin',
+        events: [{ type: 'click' }]
+      })
+    }),
+    {
+      DB: db,
+      SESSION_SECRET: 'secret',
+      HEATMAP_ENABLED: 'true'
+    }
+  );
+
+  assert.equal(response.status, 403);
+  assert.equal(db.state.heatmapEvents.length, 0);
+});
+
+test('all /api/admin/heatmaps/* routes reject unauthenticated and non-admin access', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+  const routes = [
+    '/api/admin/heatmaps/overview',
+    '/api/admin/heatmaps/question/q-1',
+    '/api/admin/heatmaps/replays',
+    '/api/admin/heatmaps/replays/session-1'
+  ];
+
+  for (const route of routes) {
+    const unauthResponse = await worker.defaultExport.fetch(
+      new Request(`https://hllqpmcqs.com${route}`),
+      {
+        DB: createHeatmapDbMock({ sessionRow: null }),
+        SESSION_SECRET: secret,
+        ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+      }
+    );
+    assert.equal(unauthResponse.status, 401, `expected 401 for ${route}`);
+
+    const nonAdminResponse = await worker.defaultExport.fetch(
+      new Request(`https://hllqpmcqs.com${route}`, {
+        headers: {
+          Cookie: createSessionCookie(secret, `non-admin-${route}`)
+        }
+      }),
+      {
+        DB: createHeatmapDbMock({
+          sessionRow: {
+            session_id: `sess-non-admin-${route}`,
+            user_id: 'student-1',
+            expires_at: new Date(Date.now() + 60_000).toISOString(),
+            revoked_at: null,
+            email: 'student@example.com',
+            status: 'active'
+          }
+        }),
+        SESSION_SECRET: secret,
+        ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+      }
+    );
+    assert.equal(nonAdminResponse.status, 403, `expected 403 for ${route}`);
+  }
+});
+
+test('/api/admin/heatmaps/overview returns the expected summary and question list shape for admin users', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+  const db = createHeatmapDbMock({
+    sessionRow: {
+      session_id: 'sess-admin-overview',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    }
+  });
+
+  const response = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/heatmaps/overview', {
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-overview-token')
+      }
+    }),
+    {
+      DB: db,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  assert.equal(response.status, 200);
+  const payload = await response.json();
+  assert.equal(typeof payload.summary.sessionCount, 'number');
+  assert.equal(Array.isArray(payload.questions), true);
+  assert.equal(typeof payload.generatedAt, 'string');
+});
+
+test('/api/admin/heatmaps/replays/:sessionId returns replay chunks and session metadata for admins', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+  const db = createHeatmapDbMock({
+    sessionRow: {
+      session_id: 'sess-admin-heatmap',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    replaySessionRow: {
+      id: 'session-123',
+      site_session_id: 'client-session-123',
+      visitor_id: 'visitor-123',
+      user_id: 'student-1',
+      is_authenticated: 1,
+      device_type: 'mobile',
+      route_path: '/#mcq',
+      topic_id: 'llqp-life',
+      test_id: 'life-01',
+      quiz_key: 'llqp-life_life-01',
+      viewport_width: 390,
+      viewport_height: 844,
+      created_at: '2026-03-25T09:00:00.000Z',
+      updated_at: '2026-03-25T09:01:00.000Z',
+      last_event_at: '2026-03-25T09:01:00.000Z'
+    },
+    replayChunkRows: [
+      {
+        chunk_index: 0,
+        chunk_json: JSON.stringify({ events: [{ type: 'click', ts: '2026-03-25T09:00:01.000Z' }] }),
+        event_count: 1,
+        occurred_from: '2026-03-25T09:00:01.000Z',
+        occurred_to: '2026-03-25T09:00:01.000Z',
+        created_at: '2026-03-25T09:00:05.000Z'
+      },
+      {
+        chunk_index: 1,
+        chunk_json: JSON.stringify({ events: [{ type: 'scroll', ts: '2026-03-25T09:00:03.000Z' }] }),
+        event_count: 1,
+        occurred_from: '2026-03-25T09:00:03.000Z',
+        occurred_to: '2026-03-25T09:00:03.000Z',
+        created_at: '2026-03-25T09:00:06.000Z'
+      }
+    ]
+  });
+
+  const response = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/heatmaps/replays/session-123', {
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-heatmap-replay')
+      }
+    }),
+    {
+      DB: db,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  assert.equal(response.status, 200);
+  const payload = await response.json();
+  assert.equal(payload.session.sessionId, 'session-123');
+  assert.equal(payload.session.deviceType, 'mobile');
+  assert.deepEqual(payload.chunks.map((chunk) => chunk.chunkIndex), [0, 1]);
+  assert.equal(payload.chunks[0].payload.events[0].type, 'click');
+  assert.equal(payload.chunks[1].payload.events[0].type, 'scroll');
+});
+
+test('scheduled cleanup runs retention deletes for events, aggregates, replay chunks, and orphan sessions', async () => {
+  const worker = loadWorkerModule();
+  const db = createHeatmapDbMock();
+  const waits = [];
+
+  await worker.defaultExport.scheduled({}, { DB: db }, {
+    waitUntil(promise) {
+      waits.push(promise);
+    }
+  });
+  await Promise.all(waits);
+
+  const deleteSql = db.state.deleteRuns.map((entry) => entry.sql);
+  assert.equal(deleteSql.some((sql) => sql.includes('DELETE FROM heatmap_events')), true);
+  assert.equal(deleteSql.some((sql) => sql.includes('DELETE FROM heatmap_daily_aggregates')), true);
+  assert.equal(deleteSql.some((sql) => sql.includes('DELETE FROM heatmap_replay_chunks')), true);
+  assert.equal(deleteSql.some((sql) => sql.includes('DELETE FROM heatmap_sessions')), true);
 });

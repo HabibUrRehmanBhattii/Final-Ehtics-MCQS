@@ -50,6 +50,7 @@ const MCQApp = {
       error: '',
       user: null,
       admin: null,
+      heatmapEnabled: true,
       passwordResetEmailEnabled: false,
       pendingResetToken: '',
       turnstileReady: false,
@@ -59,6 +60,21 @@ const MCQApp = {
       lastSyncedAt: null,
       syncTimer: null,
       migrating: false
+    },
+    analytics: {
+      enabled: true,
+      initialized: false,
+      visitorId: '',
+      sessionId: '',
+      queue: [],
+      replayQueue: [],
+      flushTimer: null,
+      flushing: false,
+      moveLastSentAt: 0,
+      scrollLastSentAt: 0,
+      hoverLastEventKey: '',
+      hoverLastAt: 0,
+      replayChunkIndex: 0
     },
     autoAdvanceEnabled: localStorage.getItem('auto-advance') === 'true',
     autoAdvanceDelay: 1500,
@@ -282,6 +298,238 @@ const MCQApp = {
     chip.textContent = label;
     chip.setAttribute('title', label);
     chip.setAttribute('aria-label', label);
+  },
+
+  isHeatmapTrackingActive() {
+    return Boolean(
+      this.state.analytics.enabled &&
+      this.state.currentView === 'mcq' &&
+      this.state.currentTopic?.id &&
+      this.state.currentPracticeTest?.id
+    );
+  },
+
+  getHeatmapTrackingContext() {
+    const question = this.getCurrentQuestion();
+    const questionId = question ? this.getQuestionStateKey(question) : '';
+    const userAgent = String(navigator?.userAgent || '').toLowerCase();
+    const uaClass = /ipad|tablet/.test(userAgent)
+      ? 'tablet'
+      : /mobile|iphone|android|ipod/.test(userAgent)
+        ? 'mobile'
+        : userAgent
+          ? 'desktop'
+          : 'unknown';
+    return {
+      routePath: `${window.location.pathname}#${this.state.currentView}`,
+      topicId: this.state.currentTopic?.id || '',
+      testId: this.state.currentPracticeTest?.id || '',
+      questionId: questionId || '',
+      quizKey: this.state.currentTopic?.id && this.state.currentPracticeTest?.id
+        ? `${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`
+        : '',
+      deviceType: window.innerWidth <= 820 ? 'mobile' : 'desktop',
+      viewport: {
+        width: Math.max(0, Math.floor(window.innerWidth || 0)),
+        height: Math.max(0, Math.floor(window.innerHeight || 0))
+      },
+      uaClass,
+      timezoneOffset: new Date().getTimezoneOffset()
+    };
+  },
+
+  queueHeatmapEvent(event = {}) {
+    if (!this.isHeatmapTrackingActive()) return;
+    if (!event || typeof event !== 'object') return;
+
+    const analytics = this.state.analytics;
+    const normalized = {
+      type: String(event.type || '').trim().toLowerCase(),
+      ts: Date.now(),
+      ...event
+    };
+    if (!['click', 'move', 'scroll', 'hover'].includes(normalized.type)) return;
+
+    if (typeof normalized.xPercent === 'number') {
+      normalized.xPercent = Math.max(0, Math.min(100, normalized.xPercent));
+    }
+    if (typeof normalized.yPercent === 'number') {
+      normalized.yPercent = Math.max(0, Math.min(100, normalized.yPercent));
+    }
+    if (typeof normalized.scrollPercent === 'number') {
+      normalized.scrollPercent = Math.max(0, Math.min(100, normalized.scrollPercent));
+    }
+
+    analytics.queue.push(normalized);
+    this.queueReplayEvent(normalized);
+    this.scheduleHeatmapFlush();
+
+    if (analytics.queue.length >= 120) {
+      this.flushHeatmapEvents();
+    }
+  },
+
+  queueReplayEvent(event = {}) {
+    const analytics = this.state.analytics;
+    const safeEvent = {
+      type: String(event.type || 'event').slice(0, 32),
+      ts: new Date(event.ts || Date.now()).toISOString(),
+      xPercent: typeof event.xPercent === 'number' ? event.xPercent : null,
+      yPercent: typeof event.yPercent === 'number' ? event.yPercent : null,
+      scrollPercent: typeof event.scrollPercent === 'number' ? event.scrollPercent : null,
+      selector: String(event.selector || '').slice(0, 255),
+      value: String(event.value || '').slice(0, 180)
+    };
+    if (/(password|token|email|auth|secret|reset)/i.test(safeEvent.selector)) {
+      safeEvent.selector = '[masked]';
+      safeEvent.value = '[masked]';
+    }
+
+    analytics.replayQueue.push(safeEvent);
+    if (analytics.replayQueue.length >= 220) {
+      this.flushHeatmapEvents();
+    }
+  },
+
+  scheduleHeatmapFlush(delayMs = 5000) {
+    const analytics = this.state.analytics;
+    if (analytics.flushTimer) return;
+    analytics.flushTimer = window.setTimeout(() => {
+      analytics.flushTimer = null;
+      this.flushHeatmapEvents();
+    }, delayMs);
+  },
+
+  stopHeatmapFlushTimer() {
+    const analytics = this.state.analytics;
+    if (analytics.flushTimer) {
+      window.clearTimeout(analytics.flushTimer);
+      analytics.flushTimer = null;
+    }
+  },
+
+  async flushHeatmapEvents({ useBeacon = false, force = false } = {}) {
+    const analytics = this.state.analytics;
+    if (!analytics.enabled || analytics.flushing) return false;
+    if (!force && !this.isHeatmapTrackingActive()) return false;
+    if (analytics.queue.length === 0 && analytics.replayQueue.length === 0) return false;
+
+    analytics.flushing = true;
+    try {
+      const events = analytics.queue.slice(0, 500);
+      const replayEvents = analytics.replayQueue.slice(0, 500);
+      const payload = {
+        sessionId: analytics.sessionId || '',
+        context: this.getHeatmapTrackingContext(),
+        events,
+        replayChunk: replayEvents.length > 0
+          ? {
+            chunkIndex: analytics.replayChunkIndex,
+            events: replayEvents
+          }
+          : null
+      };
+
+      let accepted = false;
+      if (useBeacon && typeof navigator !== 'undefined' && typeof navigator.sendBeacon === 'function') {
+        const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+        accepted = Boolean(navigator.sendBeacon('/api/analytics/track', blob));
+      } else {
+        const response = await fetch('/api/analytics/track', {
+          method: 'POST',
+          credentials: 'include',
+          keepalive: true,
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+        if (response.ok) {
+          const data = await response.json().catch(() => ({}));
+          if (data?.sessionId) analytics.sessionId = String(data.sessionId);
+          if (data?.visitorId) analytics.visitorId = String(data.visitorId);
+          accepted = true;
+        }
+      }
+
+      if (accepted) {
+        analytics.queue.splice(0, events.length);
+        analytics.replayQueue.splice(0, replayEvents.length);
+        if (replayEvents.length > 0) {
+          analytics.replayChunkIndex += 1;
+        }
+      }
+
+      return accepted;
+    } catch (error) {
+      console.warn('Heatmap flush failed', error);
+      return false;
+    } finally {
+      analytics.flushing = false;
+    }
+  },
+
+  initHeatmapTracking() {
+    const analytics = this.state.analytics;
+    if (analytics.initialized) return;
+    analytics.initialized = true;
+    analytics.enabled = this.state.auth.heatmapEnabled !== false;
+    analytics.sessionId = `s_${Math.random().toString(36).slice(2, 12)}${Date.now().toString(36).slice(-4)}`;
+
+    window.addEventListener('mousemove', (event) => {
+      if (!this.isHeatmapTrackingActive()) return;
+      const now = Date.now();
+      if (now - analytics.moveLastSentAt < (window.innerWidth <= 820 ? 240 : 150)) return;
+      analytics.moveLastSentAt = now;
+      const width = Math.max(window.innerWidth || 1, 1);
+      const height = Math.max(window.innerHeight || 1, 1);
+      this.queueHeatmapEvent({
+        type: 'move',
+        xPercent: (Number(event.clientX || 0) / width) * 100,
+        yPercent: (Number(event.clientY || 0) / height) * 100
+      });
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (event) => {
+      if (!this.isHeatmapTrackingActive()) return;
+      const touch = event.touches && event.touches[0];
+      if (!touch) return;
+      const now = Date.now();
+      if (now - analytics.moveLastSentAt < 260) return;
+      analytics.moveLastSentAt = now;
+      const width = Math.max(window.innerWidth || 1, 1);
+      const height = Math.max(window.innerHeight || 1, 1);
+      this.queueHeatmapEvent({
+        type: 'move',
+        xPercent: (Number(touch.clientX || 0) / width) * 100,
+        yPercent: (Number(touch.clientY || 0) / height) * 100
+      });
+    }, { passive: true });
+
+    window.addEventListener('scroll', () => {
+      if (!this.isHeatmapTrackingActive()) return;
+      const now = Date.now();
+      if (now - analytics.scrollLastSentAt < 300) return;
+      analytics.scrollLastSentAt = now;
+      const doc = document.documentElement || document.body;
+      const scrollTop = window.scrollY || doc.scrollTop || 0;
+      const maxScroll = Math.max((doc.scrollHeight || 0) - (window.innerHeight || 0), 1);
+      this.queueHeatmapEvent({
+        type: 'scroll',
+        scrollPercent: (scrollTop / maxScroll) * 100
+      });
+    }, { passive: true });
+
+    window.addEventListener('beforeunload', () => {
+      this.stopHeatmapFlushTimer();
+      this.flushHeatmapEvents({ useBeacon: true, force: true });
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) return;
+      this.stopHeatmapFlushTimer();
+      this.flushHeatmapEvents({ useBeacon: true, force: true });
+    });
   },
 
   getQuestionElapsedMs(questionKey) {
@@ -1348,6 +1596,7 @@ const MCQApp = {
       this.endLoading();
     }
     this.setupEventListeners();
+    this.initHeatmapTracking();
     this.renderTopicsGrid();
     this.renderVersionChip();
     if (window.history && typeof window.history.replaceState === 'function') {
@@ -2736,10 +2985,12 @@ const MCQApp = {
   showView(viewName, options = {}) {
     const { updateHistory = true, historyMode = 'push' } = options;
     this.clearAutoAdvanceTimer();
-    if (viewName !== 'admin' && typeof this.onLeaveAdminView === 'function') {
+    if (viewName !== 'admin' && viewName !== 'admin-heatmaps' && typeof this.onLeaveAdminView === 'function') {
       this.onLeaveAdminView();
     }
     if (viewName !== 'mcq') {
+      this.stopHeatmapFlushTimer();
+      this.flushHeatmapEvents({ useBeacon: true, force: true });
       this.stopQuestionTimer();
       if (!this.state.isReviewMode) {
         this.saveProgress();
@@ -2760,7 +3011,8 @@ const MCQApp = {
       'mcq': 'mcq-view',
       'list': 'list-view',
       'pdf': 'pdf-view',
-      'admin': 'admin-view'
+      'admin': 'admin-view',
+      'admin-heatmaps': 'admin-heatmaps-view'
     };
 
     const targetView = document.getElementById(viewMap[viewName]);
@@ -2776,6 +3028,8 @@ const MCQApp = {
       this.renderPracticeTests();
     } else if (viewName === 'admin' && typeof this.onEnterAdminView === 'function') {
       this.onEnterAdminView();
+    } else if (viewName === 'admin-heatmaps' && typeof this.onEnterAdminHeatmapsView === 'function') {
+      this.onEnterAdminHeatmapsView();
     }
 
     if (updateHistory && window.history) {
@@ -2850,7 +3104,9 @@ const MCQApp = {
         <div class="option ${wasAttempted ? 'was-attempted' : ''} ${isRevealed && isCorrect ? 'is-correct' : ''} ${isFocused ? 'is-focused' : ''} ${dimmedClass}" 
              data-index="${index}" 
              tabindex="0"
-             onclick="MCQApp.selectOption(${index})">
+             onmouseenter="MCQApp.trackOptionHover(${index}, event)"
+             ontouchstart="MCQApp.trackOptionHover(${index}, event)"
+             onclick="MCQApp.selectOption(${index}, event)">
           <div class="option-main">
             <span class="option-letter">${letters[index] || index + 1}</span>
             <span class="option-text">${this.escapeHtml(this.getOptionDisplayText(option))}</span>
@@ -4306,8 +4562,47 @@ const MCQApp = {
     return this.buildWrongAnswerHint(question, optionIndex);
   },
 
+  trackOptionHover(optionIndex, pointerEvent = null) {
+    if (!this.isHeatmapTrackingActive()) return;
+    const question = this.getCurrentQuestion();
+    if (!question) return;
+    const questionId = this.getQuestionStateKey(question);
+    const hoverKey = `${questionId}:${optionIndex}`;
+    const now = Date.now();
+    if (this.state.analytics.hoverLastEventKey === hoverKey && (now - this.state.analytics.hoverLastAt) < 900) {
+      return;
+    }
+    this.state.analytics.hoverLastEventKey = hoverKey;
+    this.state.analytics.hoverLastAt = now;
+
+    let xPercent = null;
+    let yPercent = null;
+    const eventTarget = pointerEvent?.currentTarget || pointerEvent?.target;
+    const targetEl = eventTarget && typeof eventTarget.getBoundingClientRect === 'function'
+      ? eventTarget
+      : document.querySelector(`#options-container .option[data-index="${optionIndex}"]`);
+    if (targetEl && typeof targetEl.getBoundingClientRect === 'function') {
+      const rect = targetEl.getBoundingClientRect();
+      const eventX = Number(pointerEvent?.clientX ?? pointerEvent?.touches?.[0]?.clientX ?? (rect.left + (rect.width / 2)));
+      const eventY = Number(pointerEvent?.clientY ?? pointerEvent?.touches?.[0]?.clientY ?? (rect.top + (rect.height / 2)));
+      if (rect.width > 0 && rect.height > 0) {
+        xPercent = ((eventX - rect.left) / rect.width) * 100;
+        yPercent = ((eventY - rect.top) / rect.height) * 100;
+      }
+    }
+
+    this.queueHeatmapEvent({
+      type: 'hover',
+      optionIndex,
+      questionId,
+      selector: `.option[data-index="${optionIndex}"]`,
+      xPercent,
+      yPercent
+    });
+  },
+
   // Select Option
-  selectOption(selectedIndex) {
+  selectOption(selectedIndex, pointerEvent = null) {
     const question = this.getCurrentQuestion();
     if (!question) return;
     const stateKey = this.getQuestionStateKey(question);
@@ -4329,6 +4624,31 @@ const MCQApp = {
     // Store selected answer index for AI explanation
     this.state.lastSelectedIndex = selectedIndex;
     this.state.lastSelectedQuestionKey = stateKey;
+
+    let xPercent = null;
+    let yPercent = null;
+    const eventTarget = pointerEvent?.currentTarget || pointerEvent?.target;
+    const targetEl = eventTarget && typeof eventTarget.getBoundingClientRect === 'function'
+      ? eventTarget
+      : document.querySelector(`#options-container .option[data-index="${selectedIndex}"]`);
+    if (targetEl && typeof targetEl.getBoundingClientRect === 'function') {
+      const rect = targetEl.getBoundingClientRect();
+      const eventX = Number(pointerEvent?.clientX ?? pointerEvent?.touches?.[0]?.clientX ?? (rect.left + (rect.width / 2)));
+      const eventY = Number(pointerEvent?.clientY ?? pointerEvent?.touches?.[0]?.clientY ?? (rect.top + (rect.height / 2)));
+      if (rect.width > 0 && rect.height > 0) {
+        xPercent = ((eventX - rect.left) / rect.width) * 100;
+        yPercent = ((eventY - rect.top) / rect.height) * 100;
+      }
+    }
+
+    this.queueHeatmapEvent({
+      type: 'click',
+      optionIndex: selectedIndex,
+      questionId: stateKey,
+      selector: `.option[data-index="${selectedIndex}"]`,
+      xPercent,
+      yPercent
+    });
 
     // Check if correct answer
     const isCorrect = selectedIndex === question.correctAnswer;

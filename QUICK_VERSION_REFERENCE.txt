@@ -1,57 +1,40 @@
-# ⚡ Auto-Versioning Quick Reference
+AUTO VERSIONING QUICK REFERENCE
+===============================
 
-## 🚀 One-Time Setup
-```bash
-cd Final-Ehtics-MCQS
-bash setup-hooks.sh
-```
+SETUP (ONCE)
+------------
+Windows (PowerShell):
+  .\setup-hooks.ps1
+If blocked by execution policy:
+  powershell -ExecutionPolicy Bypass -File .\setup-hooks.ps1
 
-## ✅ Normal Usage
-```bash
-# Make changes
-git add your_files
-git commit -m "Your message"
+macOS/Linux/Git Bash:
+  sh setup-hooks.sh
 
-# Hook automatically:
-# ✓ Detects source file changes
-# ✓ Bumps version (a→b→c...)
-# ✓ Updates index.html
-# ✓ Updates data/topics.json
-# ✓ Includes updates in commit
-```
+NORMAL COMMIT
+-------------
+  git add .
+  git commit -m "message"
 
-## 📊 Version Format
-```
-v=YYYYMMDD{letter}
-Example: v=20260323g (version g of day 2026-03-23)
-```
+WHAT AUTO-UPDATES
+-----------------
+  - index.html (v=YYYYMMDDx)
+  - data/topics.json
+  - data/topics-updated.json (if present)
+  - js/app.js (appBuildVersion + cacheVersion patch)
 
-## 🔄 Auto-Increment
-```
-Same day: a → b → c → d → e → f → g → h → i → j → k → l
-Next day: Reset to a with new date
-```
+VERIFY BEFORE COMMIT
+--------------------
+  git status
+  git diff --cached --name-only
 
-## ❌ Skip Hook (Only if needed)
-```bash
-git commit --no-verify -m "message"
-```
+IF AUTOMATION FAILS
+-------------------
+  1) Re-run setup script
+  2) Confirm .git/hooks/pre-commit exists
+  3) Confirm node -v works
+  4) Commit again
 
-## 🔧 If Hook Doesn't Run
-```bash
-# Make executable
-chmod +x .git/hooks/pre-commit
-
-# Or reinstall
-bash setup-hooks.sh
-```
-
-## 📝 What Gets Updated
-- `index.html` - manifest, CSS, JS links
-- `data/topics.json` - all dataFile URLs
-
-## ✨ Benefits
-✅ Never forget to bump versions
-✅ Users always see fresh content
-✅ Phone cache issues solved
-✅ Automatic and consistent
+EMERGENCY BYPASS
+----------------
+  git commit --no-verify -m "message"

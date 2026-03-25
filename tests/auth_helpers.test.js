@@ -229,6 +229,7 @@ test('refreshAdminDashboard renders overview, student table, and deep detail fro
   assert.match(adminRoot.innerHTML, /alpha\.student@example\.com/);
   assert.match(adminRoot.innerHTML, /life-01/);
   assert.match(adminRoot.innerHTML, /Avg Completion/);
+  assert.match(adminRoot.innerHTML, /Heatmaps/);
 });
 
 test('admin auto-refresh interval starts in admin view and stops when leaving admin view', () => {
@@ -432,4 +433,168 @@ test('fetchAuthJson sends same-origin JSON requests and surfaces raw text errors
   assert.equal(fetchCalls[0].options.cache, 'no-store');
   assert.equal(fetchCalls[0].options.headers['Content-Type'], 'application/json');
   assert.equal(fetchCalls[0].options.headers['X-Test'], '1');
+});
+
+test('refreshAdminHeatmapDashboard renders overview, question analytics, and replay details from mocked APIs', async () => {
+  const heatmapRoot = new ElementStub();
+  const { app } = loadMCQAppWithAuth({
+    'admin-heatmaps-root': heatmapRoot
+  }, {
+    location: { href: 'https://hllqpmcqs.com/' },
+    fetchImpl: async (url) => {
+      const parsed = new URL(url);
+
+      if (parsed.pathname === '/api/admin/heatmaps/overview') {
+        return new Response(JSON.stringify({
+          summary: {
+            sessionCount: 4,
+            eventCount: 120,
+            clickCount: 45,
+            moveCount: 55,
+            scrollCount: 20,
+            avgScrollPercent: 63.2
+          },
+          questions: [
+            {
+              questionId: 'q-1',
+              topicId: 'llqp-life',
+              testId: 'life-01',
+              clickCount: 25,
+              moveCount: 31,
+              scrollCount: 10,
+              distractorPressurePct: 42.5
+            }
+          ],
+          generatedAt: '2026-03-25T12:00:00.000Z'
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (parsed.pathname === '/api/admin/heatmaps/replays') {
+        return new Response(JSON.stringify({
+          sessions: [
+            {
+              sessionId: 'session-1',
+              isAuthenticated: true,
+              deviceType: 'mobile',
+              topicId: 'llqp-life',
+              testId: 'life-01',
+              eventCount: 55,
+              replayChunkCount: 1
+            }
+          ],
+          generatedAt: '2026-03-25T12:00:00.000Z'
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (parsed.pathname === '/api/admin/heatmaps/question/q-1') {
+        return new Response(JSON.stringify({
+          questionId: 'q-1',
+          metrics: {
+            scrollCount: 12
+          },
+          optionStats: [
+            { optionIndex: 0, clickCount: 18, sharePct: 72 },
+            { optionIndex: 1, clickCount: 7, sharePct: 28 }
+          ],
+          clickPoints: [{ x: 40, y: 35, weight: 3 }],
+          movePoints: [{ x: 60, y: 45, weight: 2 }],
+          scrollBuckets: [{ bucketStart: 0, bucketEnd: 10, count: 3 }],
+          generatedAt: '2026-03-25T12:00:00.000Z'
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (parsed.pathname === '/api/admin/heatmaps/replays/session-1') {
+        return new Response(JSON.stringify({
+          session: {
+            sessionId: 'session-1',
+            deviceType: 'mobile'
+          },
+          chunks: [
+            {
+              chunkIndex: 0,
+              payload: {
+                events: [
+                  {
+                    ts: '2026-03-25T12:00:01.000Z',
+                    type: 'click',
+                    selector: '.option[data-index="0"]'
+                  }
+                ]
+              }
+            }
+          ],
+          generatedAt: '2026-03-25T12:00:00.000Z'
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      return new Response(JSON.stringify({ error: 'not found' }), {
+        status: 404,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+  });
+
+  app.state.auth.authenticated = true;
+  app.state.auth.user = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    isAdmin: true
+  };
+
+  await app.refreshAdminHeatmapDashboard({ silent: true });
+
+  assert.match(heatmapRoot.innerHTML, /Heatmaps & Replays/);
+  assert.match(heatmapRoot.innerHTML, /Question Analytics/);
+  assert.match(heatmapRoot.innerHTML, /Replay Sessions/);
+  assert.match(heatmapRoot.innerHTML, /q-1/);
+  assert.match(heatmapRoot.innerHTML, /session-1/);
+});
+
+test('heatmap auto-refresh interval starts in heatmap view and stops when leaving the view', () => {
+  const homeView = new ElementStub({ classes: ['view', 'active'] });
+  const adminView = new ElementStub({ classes: ['view'] });
+  const heatmapView = new ElementStub({ classes: ['view'] });
+  const heatmapRoot = new ElementStub();
+  const intervalIds = [];
+  const clearedIds = [];
+
+  const { app } = loadMCQAppWithAuth({
+    'home-view': homeView,
+    'admin-view': adminView,
+    'admin-heatmaps-view': heatmapView,
+    'admin-heatmaps-root': heatmapRoot
+  }, {
+    documentQuerySelectorAll: (selector) => selector === '.view' ? [homeView, adminView, heatmapView] : [],
+    onSetInterval: (_callback, delay) => {
+      const id = intervalIds.length + 1;
+      intervalIds.push({ id, delay });
+      return id;
+    },
+    onClearInterval: (id) => {
+      clearedIds.push(id);
+    }
+  });
+
+  app.state.auth.authenticated = true;
+  app.state.auth.user = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    isAdmin: true
+  };
+  app.refreshAdminHeatmapDashboard = async () => true;
+  app.renderAdminHeatmapDashboard = () => {};
+  app.clearAutoAdvanceTimer = () => {};
+  app.stopQuestionTimer = () => {};
+  app.saveProgress = () => {};
+  app.resetAdvanceTapState = () => {};
+  app.stopSpeech = () => {};
+  app.cleanupQuizKeyboardListeners = () => {};
+  app.renderTopicsGrid = () => {};
+
+  app.showView('admin-heatmaps');
+  assert.equal(intervalIds.length, 1);
+  assert.equal(intervalIds[0].delay, 60000);
+
+  app.showView('home');
+  assert.deepEqual(clearedIds, [1]);
 });

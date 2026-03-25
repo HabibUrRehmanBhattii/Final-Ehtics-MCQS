@@ -58,7 +58,7 @@ Recent work reflected in this repo includes:
 - `data/topics.json` is the main content map for topics, tests, section splits, and manuals
 - `sw.js` handles offline caching and update behavior
 - `wrangler.jsonc` defines Cloudflare bindings, custom domains, D1, and AI
-- `migrations/` contains the D1 schema for users, sessions, progress, audit logs, and password reset tokens
+- `migrations/` contains the D1 schema for users, sessions, progress, audit logs, password reset tokens, and native heatmap tables
 
 The app is intentionally dependency-light. There is no `package.json` or frontend bundler in this repo. Most changes are plain HTML, CSS, JavaScript, JSON, or Wrangler configuration.
 
@@ -123,6 +123,7 @@ Important non-secret vars already live in `wrangler.jsonc`, including:
 - `RESET_EMAIL_SUBJECT`
 - `APP_NAME`
 - `ADMIN_EMAIL_ALLOWLIST` (comma-separated admin emails, default includes `habibcanad@gmail.com`)
+- `HEATMAP_ENABLED` (`true`/`false` kill switch for native in-app tracking + admin heatmap APIs)
 
 ### Deploying
 
@@ -137,6 +138,18 @@ The app is currently configured for:
 
 - `https://hllqpmcqs.com`
 - `https://www.hllqpmcqs.com`
+
+## Commit automation
+
+This repo has a pre-commit hook that auto-bumps version tags and cache version when source files are committed.
+
+Install hooks once:
+
+- Windows PowerShell: `.\setup-hooks.ps1`
+- macOS/Linux/Git Bash: `sh setup-hooks.sh`
+
+Hook source is stored at `githooks/pre-commit` and installed to `.git/hooks/pre-commit`.
+The hook calls `tools/pre-commit-version-bump.cjs`.
 
 ## Working with quiz data
 

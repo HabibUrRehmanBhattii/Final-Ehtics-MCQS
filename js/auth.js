@@ -31,6 +31,48 @@ Object.assign(MCQApp, {
     return this.state.auth.admin;
   },
 
+  ensureHeatmapDashboardState() {
+    if (!this.state.auth.heatmaps || typeof this.state.auth.heatmaps !== 'object') {
+      this.state.auth.heatmaps = {
+        filters: {
+          from: '',
+          to: '',
+          topicId: '',
+          testId: '',
+          questionId: '',
+          device: 'all',
+          audience: 'all'
+        },
+        overview: null,
+        questions: [],
+        selectedQuestionId: '',
+        selectedQuestion: null,
+        replays: [],
+        selectedReplaySessionId: '',
+        selectedReplay: null,
+        loadingOverview: false,
+        loadingQuestion: false,
+        loadingReplays: false,
+        loadingReplayDetail: false,
+        error: '',
+        questionError: '',
+        replayError: '',
+        refreshIntervalId: null,
+        lastRefreshedAt: null
+      };
+    }
+
+    const heatmaps = this.state.auth.heatmaps;
+    if (!heatmaps.filters.from || !heatmaps.filters.to) {
+      const now = new Date();
+      const toDate = now.toISOString().slice(0, 10);
+      const fromDate = new Date(now.getTime() - (6 * 24 * 60 * 60 * 1000)).toISOString().slice(0, 10);
+      heatmaps.filters.from = heatmaps.filters.from || fromDate;
+      heatmaps.filters.to = heatmaps.filters.to || toDate;
+    }
+    return heatmaps;
+  },
+
   isCurrentUserAdmin() {
     return Boolean(this.state.auth.authenticated && this.state.auth.user && this.state.auth.user.isAdmin);
   },
@@ -78,6 +120,14 @@ Object.assign(MCQApp, {
     this.showView('admin');
   },
 
+  openAdminHeatmaps() {
+    if (!this.isCurrentUserAdmin()) {
+      this.showToast('Admin access is not enabled for this account.', 'warning');
+      return;
+    }
+    this.showView('admin-heatmaps');
+  },
+
   onEnterAdminView() {
     if (!this.isCurrentUserAdmin()) {
       this.showView('home');
@@ -85,6 +135,7 @@ Object.assign(MCQApp, {
       return;
     }
 
+    this.stopAdminHeatmapAutoRefresh();
     this.ensureAdminDashboardState();
     this.renderAdminDashboard();
     this.startAdminDashboardAutoRefresh();
@@ -93,6 +144,243 @@ Object.assign(MCQApp, {
 
   onLeaveAdminView() {
     this.stopAdminDashboardAutoRefresh();
+    this.stopAdminHeatmapAutoRefresh();
+  },
+
+  stopAdminHeatmapAutoRefresh() {
+    const heatmaps = this.ensureHeatmapDashboardState();
+    if (heatmaps.refreshIntervalId) {
+      window.clearInterval(heatmaps.refreshIntervalId);
+      heatmaps.refreshIntervalId = null;
+    }
+  },
+
+  startAdminHeatmapAutoRefresh() {
+    const heatmaps = this.ensureHeatmapDashboardState();
+    this.stopAdminHeatmapAutoRefresh();
+    heatmaps.refreshIntervalId = window.setInterval(() => {
+      if (this.state.currentView !== 'admin-heatmaps' || !this.isCurrentUserAdmin()) {
+        this.stopAdminHeatmapAutoRefresh();
+        return;
+      }
+      this.refreshAdminHeatmapDashboard({ silent: true });
+    }, 60000);
+  },
+
+  buildHeatmapQueryString(filters = {}) {
+    const params = new URLSearchParams();
+    const appendIfSet = (key, value) => {
+      if (value === undefined || value === null) return;
+      const normalized = String(value).trim();
+      if (!normalized || normalized === 'all') return;
+      params.set(key, normalized);
+    };
+
+    appendIfSet('from', filters.from);
+    appendIfSet('to', filters.to);
+    appendIfSet('topicId', filters.topicId);
+    appendIfSet('testId', filters.testId);
+    appendIfSet('questionId', filters.questionId);
+    appendIfSet('device', filters.device);
+    appendIfSet('audience', filters.audience);
+    return params.toString();
+  },
+
+  async refreshAdminHeatmapDashboard({ silent = false } = {}) {
+    if (!this.isCurrentUserAdmin()) return false;
+    const heatmaps = this.ensureHeatmapDashboardState();
+    heatmaps.loadingOverview = true;
+    heatmaps.loadingReplays = true;
+    heatmaps.error = '';
+    heatmaps.replayError = '';
+
+    if (!silent) {
+      this.renderAdminHeatmapDashboard();
+    }
+
+    try {
+      const query = this.buildHeatmapQueryString(heatmaps.filters);
+      const [overview, replays] = await Promise.all([
+        this.fetchAuthJson(`/api/admin/heatmaps/overview${query ? `?${query}` : ''}`, { method: 'GET' }),
+        this.fetchAuthJson(`/api/admin/heatmaps/replays${query ? `?${query}` : ''}`, { method: 'GET' })
+      ]);
+
+      heatmaps.overview = overview.summary || null;
+      heatmaps.questions = Array.isArray(overview.questions) ? overview.questions : [];
+      heatmaps.replays = Array.isArray(replays.sessions) ? replays.sessions : [];
+      heatmaps.lastRefreshedAt = overview.generatedAt || replays.generatedAt || new Date().toISOString();
+
+      if (heatmaps.questions.length > 0) {
+        const selectedQuestionExists = heatmaps.selectedQuestionId &&
+          heatmaps.questions.some((question) => String(question.questionId) === String(heatmaps.selectedQuestionId));
+        heatmaps.selectedQuestionId = selectedQuestionExists
+          ? heatmaps.selectedQuestionId
+          : String(heatmaps.questions[0].questionId);
+        await this.loadAdminHeatmapQuestion(heatmaps.selectedQuestionId, { silent: true });
+      } else {
+        heatmaps.selectedQuestionId = '';
+        heatmaps.selectedQuestion = null;
+      }
+
+      if (heatmaps.replays.length > 0 && !heatmaps.selectedReplaySessionId) {
+        heatmaps.selectedReplaySessionId = String(heatmaps.replays[0].sessionId || '');
+      }
+      const selectedReplayExists = heatmaps.selectedReplaySessionId &&
+        heatmaps.replays.some((session) => String(session.sessionId) === String(heatmaps.selectedReplaySessionId));
+      if (!selectedReplayExists) {
+        heatmaps.selectedReplaySessionId = heatmaps.replays.length > 0
+          ? String(heatmaps.replays[0].sessionId || '')
+          : '';
+        heatmaps.selectedReplay = null;
+      }
+
+      if (heatmaps.selectedReplaySessionId) {
+        await this.loadAdminHeatmapReplayDetail(heatmaps.selectedReplaySessionId, { silent: true });
+      }
+
+      return true;
+    } catch (error) {
+      heatmaps.error = error.message || 'Unable to load heatmap analytics.';
+      if (!silent) {
+        this.showToast(heatmaps.error, 'warning');
+      }
+      return false;
+    } finally {
+      heatmaps.loadingOverview = false;
+      heatmaps.loadingReplays = false;
+      this.renderAdminHeatmapDashboard();
+    }
+  },
+
+  async exportAdminHeatmapCsv() {
+    if (!this.isCurrentUserAdmin()) return false;
+    const heatmaps = this.ensureHeatmapDashboardState();
+    const params = new URLSearchParams(this.buildHeatmapQueryString(heatmaps.filters));
+    params.set('format', 'csv');
+
+    try {
+      const response = await fetch(`/api/admin/heatmaps/overview?${params.toString()}`, {
+        method: 'GET',
+        credentials: 'include',
+        cache: 'no-store'
+      });
+      if (!response.ok) {
+        let message = `Request failed (${response.status})`;
+        try {
+          const data = await response.json();
+          if (data?.error) {
+            message = data.error;
+          }
+        } catch {}
+        throw new Error(message);
+      }
+
+      const csvText = await response.text();
+      const blob = new Blob([csvText], { type: 'text/csv;charset=utf-8' });
+      const downloadUrl = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      const fileName = `heatmaps-overview-${heatmaps.filters.from || 'from'}-to-${heatmaps.filters.to || 'to'}.csv`;
+      link.href = downloadUrl;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(downloadUrl);
+      this.showToast('Heatmap CSV export downloaded.', 'success');
+      return true;
+    } catch (error) {
+      this.showToast(error.message || 'Unable to export heatmap CSV right now.', 'warning');
+      return false;
+    }
+  },
+
+  async loadAdminHeatmapQuestion(questionId, { silent = false } = {}) {
+    if (!this.isCurrentUserAdmin()) return false;
+    const heatmaps = this.ensureHeatmapDashboardState();
+    if (!questionId) {
+      heatmaps.selectedQuestionId = '';
+      heatmaps.selectedQuestion = null;
+      heatmaps.questionError = '';
+      this.renderAdminHeatmapDashboard();
+      return true;
+    }
+
+    heatmaps.loadingQuestion = true;
+    heatmaps.questionError = '';
+    heatmaps.selectedQuestionId = String(questionId);
+    if (!silent) {
+      this.renderAdminHeatmapDashboard();
+    }
+
+    try {
+      const query = this.buildHeatmapQueryString(heatmaps.filters);
+      const data = await this.fetchAuthJson(
+        `/api/admin/heatmaps/question/${encodeURIComponent(String(questionId))}${query ? `?${query}` : ''}`,
+        { method: 'GET' }
+      );
+      heatmaps.selectedQuestion = data;
+      return true;
+    } catch (error) {
+      heatmaps.selectedQuestion = null;
+      heatmaps.questionError = error.message || 'Unable to load question heatmap.';
+      if (!silent) {
+        this.showToast(heatmaps.questionError, 'warning');
+      }
+      return false;
+    } finally {
+      heatmaps.loadingQuestion = false;
+      this.renderAdminHeatmapDashboard();
+    }
+  },
+
+  async loadAdminHeatmapReplayDetail(sessionId, { silent = false } = {}) {
+    if (!this.isCurrentUserAdmin()) return false;
+    const heatmaps = this.ensureHeatmapDashboardState();
+    if (!sessionId) {
+      heatmaps.selectedReplaySessionId = '';
+      heatmaps.selectedReplay = null;
+      this.renderAdminHeatmapDashboard();
+      return true;
+    }
+
+    heatmaps.loadingReplayDetail = true;
+    heatmaps.replayError = '';
+    heatmaps.selectedReplaySessionId = String(sessionId);
+    if (!silent) {
+      this.renderAdminHeatmapDashboard();
+    }
+
+    try {
+      const data = await this.fetchAuthJson(
+        `/api/admin/heatmaps/replays/${encodeURIComponent(String(sessionId))}`,
+        { method: 'GET' }
+      );
+      heatmaps.selectedReplay = data;
+      return true;
+    } catch (error) {
+      heatmaps.selectedReplay = null;
+      heatmaps.replayError = error.message || 'Unable to load replay details.';
+      if (!silent) {
+        this.showToast(heatmaps.replayError, 'warning');
+      }
+      return false;
+    } finally {
+      heatmaps.loadingReplayDetail = false;
+      this.renderAdminHeatmapDashboard();
+    }
+  },
+
+  onEnterAdminHeatmapsView() {
+    if (!this.isCurrentUserAdmin()) {
+      this.showView('home');
+      this.showToast('Admin access is restricted to allowed accounts.', 'warning');
+      return;
+    }
+    this.stopAdminDashboardAutoRefresh();
+    this.ensureHeatmapDashboardState();
+    this.renderAdminHeatmapDashboard();
+    this.startAdminHeatmapAutoRefresh();
+    this.refreshAdminHeatmapDashboard({ silent: false });
   },
 
   async refreshAdminDashboard({ silent = false, preserveSelection = true } = {}) {
@@ -339,6 +627,7 @@ Object.assign(MCQApp, {
           <input id="admin-search-input" class="admin-search-input" type="search" placeholder="Search student email" value="${this.escapeHtml(admin.searchQuery || '')}">
           <button class="btn-outline" type="button" data-admin-action="search">Search</button>
           <button class="btn-outline" type="button" data-admin-action="refresh">${admin.loadingOverview ? 'Refreshing...' : 'Refresh'}</button>
+          <button class="btn-outline" type="button" data-admin-action="open-heatmaps">Heatmaps</button>
           <button class="btn-outline" type="button" data-admin-action="back-home">Home</button>
         </div>
       </section>
@@ -385,6 +674,260 @@ Object.assign(MCQApp, {
           </div>
           ${detailTopicsHtml}
         ` : '<div class="admin-empty-card"><p>Select a student to inspect topic/test detail.</p></div>'}
+      </section>
+    `;
+  },
+
+  formatHeatmapPercent(value) {
+    const parsed = Number(value || 0);
+    return Number.isFinite(parsed) ? `${parsed}%` : '0%';
+  },
+
+  renderHeatmapPointLayer(points = [], cssClass = 'is-click') {
+    const list = Array.isArray(points) ? points.slice(0, 350) : [];
+    return list.map((point) => {
+      const left = Math.max(0, Math.min(100, Number(point.x || 0)));
+      const top = Math.max(0, Math.min(100, Number(point.y || 0)));
+      const weight = Math.max(1, Number(point.weight || 1));
+      const opacity = Math.max(0.12, Math.min(0.85, 0.12 + (weight / 20)));
+      const size = Math.max(6, Math.min(24, 5 + (weight * 0.9)));
+      return `<span class="heatmap-point ${cssClass}" style="left:${left}%;top:${top}%;width:${size}px;height:${size}px;opacity:${opacity}"></span>`;
+    }).join('');
+  },
+
+  renderAdminHeatmapDashboard() {
+    const root = document.getElementById('admin-heatmaps-root');
+    if (!root) return;
+
+    if (!this.isCurrentUserAdmin()) {
+      root.innerHTML = `
+        <div class="admin-empty-card">
+          <h3>Admin access required</h3>
+          <p>Sign in with an allowlisted admin account to open heatmap analytics.</p>
+        </div>
+      `;
+      return;
+    }
+
+    const heatmaps = this.ensureHeatmapDashboardState();
+    const overview = heatmaps.overview || {
+      sessionCount: 0,
+      eventCount: 0,
+      clickCount: 0,
+      moveCount: 0,
+      scrollCount: 0,
+      hoverCount: 0,
+      avgScrollPercent: 0
+    };
+    const questions = Array.isArray(heatmaps.questions) ? heatmaps.questions : [];
+    const replays = Array.isArray(heatmaps.replays) ? heatmaps.replays : [];
+    const selectedQuestion = heatmaps.selectedQuestion || null;
+    const optionStats = Array.isArray(selectedQuestion?.optionStats) ? selectedQuestion.optionStats : [];
+    const scrollBuckets = Array.isArray(selectedQuestion?.scrollBuckets) ? selectedQuestion.scrollBuckets : [];
+    const selectedReplay = heatmaps.selectedReplay || null;
+
+    const questionRows = questions.length === 0
+      ? `<tr><td colspan="8" class="admin-empty-row">No question analytics matched this filter.</td></tr>`
+      : questions.map((item) => `
+        <tr class="${String(item.questionId) === String(heatmaps.selectedQuestionId) ? 'is-selected' : ''}">
+          <td>${this.escapeHtml(item.questionId || '')}</td>
+          <td>${this.escapeHtml(item.topicId || '')}</td>
+          <td>${this.escapeHtml(item.testId || '')}</td>
+          <td>${Number(item.clickCount || 0)}</td>
+          <td>${Number(item.moveCount || 0)}</td>
+          <td>${Number(item.scrollCount || 0)}</td>
+          <td>${Number(item.distractorPressurePct || 0)}%</td>
+          <td>
+            <button class="btn-outline admin-table-btn" type="button" data-heatmap-action="load-question" data-question-id="${this.escapeHtml(String(item.questionId || ''))}">
+              View
+            </button>
+          </td>
+        </tr>
+      `).join('');
+
+    const replayRows = replays.length === 0
+      ? `<tr><td colspan="8" class="admin-empty-row">No replay sessions matched this filter.</td></tr>`
+      : replays.map((item) => `
+        <tr class="${String(item.sessionId) === String(heatmaps.selectedReplaySessionId) ? 'is-selected' : ''}">
+          <td>${this.escapeHtml(item.sessionId || '')}</td>
+          <td>${item.isAuthenticated ? 'Authenticated' : 'Guest'}</td>
+          <td>${this.escapeHtml(item.deviceType || '')}</td>
+          <td>${this.escapeHtml(item.topicId || '')}</td>
+          <td>${this.escapeHtml(item.testId || '')}</td>
+          <td>${Number(item.eventCount || 0)}</td>
+          <td>${Number(item.replayChunkCount || 0)}</td>
+          <td>
+            <button class="btn-outline admin-table-btn" type="button" data-heatmap-action="load-replay" data-replay-id="${this.escapeHtml(String(item.sessionId || ''))}">
+              Open
+            </button>
+          </td>
+        </tr>
+      `).join('');
+
+    const lastRefreshed = heatmaps.lastRefreshedAt
+      ? new Date(heatmaps.lastRefreshedAt).toLocaleString()
+      : 'Not refreshed yet';
+
+    const replayEvents = Array.isArray(selectedReplay?.chunks)
+      ? selectedReplay.chunks.flatMap((chunk) => Array.isArray(chunk?.payload?.events) ? chunk.payload.events : []).slice(0, 120)
+      : [];
+    const replayTimelineHtml = replayEvents.length === 0
+      ? '<div class="admin-empty-card"><p>No replay events loaded for this session yet.</p></div>'
+      : `<div class="heatmap-replay-list">${
+        replayEvents.map((entry) => `
+          <div class="heatmap-replay-item">
+            <span>${this.escapeHtml(entry.ts || '')}</span>
+            <strong>${this.escapeHtml(entry.type || 'event')}</strong>
+            <span>${this.escapeHtml(entry.selector || '')}</span>
+          </div>
+        `).join('')
+      }</div>`;
+
+    root.innerHTML = `
+      <section class="admin-toolbar">
+        <div>
+          <h3>Heatmaps & Replays</h3>
+          <p>Last refresh: ${this.escapeHtml(lastRefreshed)}</p>
+        </div>
+        <div class="admin-toolbar-actions heatmap-toolbar-actions">
+          <button class="btn-outline" type="button" data-heatmap-action="refresh">${heatmaps.loadingOverview ? 'Refreshing...' : 'Refresh'}</button>
+          <button class="btn-outline" type="button" data-heatmap-action="export-csv">Export CSV</button>
+          <button class="btn-outline" type="button" data-heatmap-action="open-students">Student Dashboard</button>
+          <button class="btn-outline" type="button" data-heatmap-action="back-home">Home</button>
+        </div>
+      </section>
+
+      <section class="heatmap-filter-grid">
+        <label>From <input id="heatmap-filter-from" type="date" value="${this.escapeHtml(heatmaps.filters.from || '')}"></label>
+        <label>To <input id="heatmap-filter-to" type="date" value="${this.escapeHtml(heatmaps.filters.to || '')}"></label>
+        <label>Topic <input id="heatmap-filter-topic" type="text" placeholder="topic id" value="${this.escapeHtml(heatmaps.filters.topicId || '')}"></label>
+        <label>Test <input id="heatmap-filter-test" type="text" placeholder="test id" value="${this.escapeHtml(heatmaps.filters.testId || '')}"></label>
+        <label>Question <input id="heatmap-filter-question" type="text" placeholder="question id" value="${this.escapeHtml(heatmaps.filters.questionId || '')}"></label>
+        <label>Device
+          <select id="heatmap-filter-device">
+            <option value="all" ${heatmaps.filters.device === 'all' ? 'selected' : ''}>All</option>
+            <option value="mobile" ${heatmaps.filters.device === 'mobile' ? 'selected' : ''}>Mobile</option>
+            <option value="desktop" ${heatmaps.filters.device === 'desktop' ? 'selected' : ''}>Desktop</option>
+            <option value="tablet" ${heatmaps.filters.device === 'tablet' ? 'selected' : ''}>Tablet</option>
+          </select>
+        </label>
+        <label>Audience
+          <select id="heatmap-filter-audience">
+            <option value="all" ${heatmaps.filters.audience === 'all' ? 'selected' : ''}>All</option>
+            <option value="authenticated" ${heatmaps.filters.audience === 'authenticated' ? 'selected' : ''}>Authenticated</option>
+            <option value="guest" ${heatmaps.filters.audience === 'guest' ? 'selected' : ''}>Guest</option>
+          </select>
+        </label>
+        <button class="btn-outline" type="button" data-heatmap-action="apply-filters">Apply Filters</button>
+      </section>
+
+      ${heatmaps.error ? `<div class="admin-error">${this.escapeHtml(heatmaps.error)}</div>` : ''}
+
+      <section class="admin-kpi-grid">
+        <article class="admin-kpi-card"><span>Sessions</span><strong>${Number(overview.sessionCount || 0)}</strong></article>
+        <article class="admin-kpi-card"><span>Total Events</span><strong>${Number(overview.eventCount || 0)}</strong></article>
+        <article class="admin-kpi-card"><span>Clicks</span><strong>${Number(overview.clickCount || 0)}</strong></article>
+        <article class="admin-kpi-card"><span>Moves</span><strong>${Number(overview.moveCount || 0)}</strong></article>
+        <article class="admin-kpi-card"><span>Avg Scroll</span><strong>${this.formatHeatmapPercent(overview.avgScrollPercent || 0)}</strong></article>
+      </section>
+
+      <section class="admin-table-section">
+        <h4>Question Analytics</h4>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Question</th>
+                <th>Topic</th>
+                <th>Test</th>
+                <th>Clicks</th>
+                <th>Moves</th>
+                <th>Scroll</th>
+                <th>Distractor</th>
+                <th>Open</th>
+              </tr>
+            </thead>
+            <tbody>${questionRows}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-detail-section">
+        <h4>Question Heatmap</h4>
+        ${heatmaps.loadingQuestion ? '<div class="admin-empty-card"><p>Loading question heatmap...</p></div>' : ''}
+        ${heatmaps.questionError ? `<div class="admin-error">${this.escapeHtml(heatmaps.questionError)}</div>` : ''}
+        ${selectedQuestion ? `
+          <div class="heatmap-overlay-wrap">
+            <div class="heatmap-overlay-box">
+              <div class="heatmap-overlay-layer">${this.renderHeatmapPointLayer(selectedQuestion.clickPoints || [], 'is-click')}</div>
+              <div class="heatmap-overlay-layer">${this.renderHeatmapPointLayer(selectedQuestion.movePoints || [], 'is-move')}</div>
+            </div>
+            <div class="heatmap-overlay-legend">
+              <span><i class="dot dot-click"></i> Click points</span>
+              <span><i class="dot dot-move"></i> Move points</span>
+            </div>
+          </div>
+          <div class="heatmap-detail-grid">
+            <article>
+              <h5>Option Click Distribution</h5>
+              <div class="heatmap-bars">
+                ${(optionStats || []).map((row) => `
+                  <div class="heatmap-bar-row">
+                    <span>Option ${Number(row.optionIndex) + 1}</span>
+                    <div class="heatmap-bar-track"><div class="heatmap-bar-fill" style="width:${Math.max(0, Math.min(100, Number(row.sharePct || 0)))}%"></div></div>
+                    <span>${Number(row.clickCount || 0)} (${Number(row.sharePct || 0)}%)</span>
+                  </div>
+                `).join('')}
+              </div>
+            </article>
+            <article>
+              <h5>Scroll Depth</h5>
+              <div class="heatmap-bars">
+                ${(scrollBuckets || []).map((bucket) => `
+                  <div class="heatmap-bar-row">
+                    <span>${Number(bucket.bucketStart)}-${Number(bucket.bucketEnd)}%</span>
+                    <div class="heatmap-bar-track"><div class="heatmap-bar-fill is-scroll" style="width:${Math.max(0, Math.min(100, (Number(bucket.count || 0) / Math.max(1, (selectedQuestion.metrics?.scrollCount || 1))) * 100))}%"></div></div>
+                    <span>${Number(bucket.count || 0)}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </article>
+          </div>
+        ` : '<div class="admin-empty-card"><p>Select a question to render click/move/scroll heatmaps.</p></div>'}
+      </section>
+
+      <section class="admin-table-section">
+        <h4>Replay Sessions</h4>
+        ${heatmaps.replayError ? `<div class="admin-error">${this.escapeHtml(heatmaps.replayError)}</div>` : ''}
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Audience</th>
+                <th>Device</th>
+                <th>Topic</th>
+                <th>Test</th>
+                <th>Events</th>
+                <th>Chunks</th>
+                <th>Open</th>
+              </tr>
+            </thead>
+            <tbody>${replayRows}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-detail-section">
+        <h4>Replay Player</h4>
+        ${heatmaps.loadingReplayDetail ? '<div class="admin-empty-card"><p>Loading replay timeline...</p></div>' : ''}
+        ${selectedReplay ? `
+          <div class="admin-student-summary">
+            <div><strong>${this.escapeHtml(selectedReplay.session?.sessionId || '')}</strong></div>
+            <div>Chunks: ${Number((selectedReplay.chunks || []).length)} | Device: ${this.escapeHtml(selectedReplay.session?.deviceType || 'unknown')}</div>
+          </div>
+          ${replayTimelineHtml}
+        ` : '<div class="admin-empty-card"><p>Select a replay session to inspect timeline events.</p></div>'}
       </section>
     `;
   },
@@ -519,11 +1062,13 @@ Object.assign(MCQApp, {
     try {
       const data = await this.fetchAuthJson('/api/auth/config', { method: 'GET' });
       this.state.auth.available = Boolean(data.enabled);
+      this.state.auth.heatmapEnabled = data.heatmapEnabled !== false;
       this.state.auth.turnstileSiteKey = String(data.turnstileSiteKey || '');
       this.state.auth.passwordResetEmailEnabled = Boolean(data.passwordResetEmailEnabled);
       return data;
     } catch (error) {
       this.state.auth.available = false;
+      this.state.auth.heatmapEnabled = false;
       this.state.auth.turnstileSiteKey = '';
       this.state.auth.passwordResetEmailEnabled = false;
       return null;
@@ -552,7 +1097,7 @@ Object.assign(MCQApp, {
       if (restoreProgress && this.state.auth.authenticated) {
         await this.loadCloudProgress({ silent: true });
       }
-      if (!this.isCurrentUserAdmin() && this.state.currentView === 'admin') {
+      if (!this.isCurrentUserAdmin() && (this.state.currentView === 'admin' || this.state.currentView === 'admin-heatmaps')) {
         this.showView('home');
       }
       this.renderAuthPanel();
@@ -560,7 +1105,7 @@ Object.assign(MCQApp, {
     } catch (error) {
       this.state.auth.authenticated = false;
       this.state.auth.user = null;
-      if (this.state.currentView === 'admin') {
+      if (this.state.currentView === 'admin' || this.state.currentView === 'admin-heatmaps') {
         this.showView('home');
       }
       this.renderAuthPanel();
@@ -678,6 +1223,10 @@ Object.assign(MCQApp, {
         this.refreshAdminDashboard({ silent: false, preserveSelection: false });
         return;
       }
+      if (action === 'open-heatmaps') {
+        this.openAdminHeatmaps();
+        return;
+      }
       if (action === 'load-student') {
         const userId = String(actionEl?.getAttribute('data-user-id') || '').trim();
         if (userId) {
@@ -704,6 +1253,78 @@ Object.assign(MCQApp, {
       const admin = this.ensureAdminDashboardState();
       admin.searchQuery = String(target.value || '').trim().toLowerCase();
       this.refreshAdminDashboard({ silent: false, preserveSelection: false });
+    });
+
+    document.getElementById('admin-heatmaps-view')?.addEventListener('click', (event) => {
+      const actionEl = event.target.closest('[data-heatmap-action]');
+      const action = actionEl?.getAttribute('data-heatmap-action');
+      if (!action) return;
+
+      if (action === 'back-home') {
+        this.showView('home');
+        return;
+      }
+
+      if (action === 'open-students') {
+        this.showView('admin');
+        return;
+      }
+
+      if (action === 'refresh') {
+        this.refreshAdminHeatmapDashboard({ silent: false });
+        return;
+      }
+
+      if (action === 'export-csv') {
+        this.exportAdminHeatmapCsv();
+        return;
+      }
+
+      if (action === 'apply-filters') {
+        const heatmaps = this.ensureHeatmapDashboardState();
+        heatmaps.filters.from = String(document.getElementById('heatmap-filter-from')?.value || '').trim();
+        heatmaps.filters.to = String(document.getElementById('heatmap-filter-to')?.value || '').trim();
+        heatmaps.filters.topicId = String(document.getElementById('heatmap-filter-topic')?.value || '').trim();
+        heatmaps.filters.testId = String(document.getElementById('heatmap-filter-test')?.value || '').trim();
+        heatmaps.filters.questionId = String(document.getElementById('heatmap-filter-question')?.value || '').trim();
+        heatmaps.filters.device = String(document.getElementById('heatmap-filter-device')?.value || 'all').trim().toLowerCase() || 'all';
+        heatmaps.filters.audience = String(document.getElementById('heatmap-filter-audience')?.value || 'all').trim().toLowerCase() || 'all';
+        heatmaps.selectedQuestion = null;
+        heatmaps.selectedReplay = null;
+        this.refreshAdminHeatmapDashboard({ silent: false });
+        return;
+      }
+
+      if (action === 'load-question') {
+        const questionId = String(actionEl?.getAttribute('data-question-id') || '').trim();
+        if (questionId) {
+          this.loadAdminHeatmapQuestion(questionId, { silent: false });
+        }
+        return;
+      }
+
+      if (action === 'load-replay') {
+        const replayId = String(actionEl?.getAttribute('data-replay-id') || '').trim();
+        if (replayId) {
+          this.loadAdminHeatmapReplayDetail(replayId, { silent: false });
+        }
+      }
+    });
+
+    document.getElementById('admin-heatmaps-view')?.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter') return;
+      const target = event.target;
+      if (!target || !target.id || !target.id.startsWith('heatmap-filter-')) return;
+      event.preventDefault();
+      const heatmaps = this.ensureHeatmapDashboardState();
+      heatmaps.filters.from = String(document.getElementById('heatmap-filter-from')?.value || '').trim();
+      heatmaps.filters.to = String(document.getElementById('heatmap-filter-to')?.value || '').trim();
+      heatmaps.filters.topicId = String(document.getElementById('heatmap-filter-topic')?.value || '').trim();
+      heatmaps.filters.testId = String(document.getElementById('heatmap-filter-test')?.value || '').trim();
+      heatmaps.filters.questionId = String(document.getElementById('heatmap-filter-question')?.value || '').trim();
+      heatmaps.filters.device = String(document.getElementById('heatmap-filter-device')?.value || 'all').trim().toLowerCase() || 'all';
+      heatmaps.filters.audience = String(document.getElementById('heatmap-filter-audience')?.value || 'all').trim().toLowerCase() || 'all';
+      this.refreshAdminHeatmapDashboard({ silent: false });
     });
 
     document.getElementById('auth-close-btn')?.addEventListener('click', () => this.closeAuthModal());
@@ -1082,6 +1703,7 @@ Object.assign(MCQApp, {
   async signOut() {
     this.clearPendingSyncTimer();
     this.stopAdminDashboardAutoRefresh();
+    this.stopAdminHeatmapAutoRefresh();
     try {
       await this.fetchAuthJson('/api/auth/signout', { method: 'POST', body: JSON.stringify({}) });
     } catch (error) {
@@ -1098,6 +1720,17 @@ Object.assign(MCQApp, {
     this.state.auth.admin.selectedStudentDetail = null;
     this.state.auth.admin.error = '';
     this.state.auth.admin.detailError = '';
+    this.ensureHeatmapDashboardState();
+    this.state.auth.heatmaps.overview = null;
+    this.state.auth.heatmaps.questions = [];
+    this.state.auth.heatmaps.selectedQuestionId = '';
+    this.state.auth.heatmaps.selectedQuestion = null;
+    this.state.auth.heatmaps.replays = [];
+    this.state.auth.heatmaps.selectedReplaySessionId = '';
+    this.state.auth.heatmaps.selectedReplay = null;
+    this.state.auth.heatmaps.error = '';
+    this.state.auth.heatmaps.questionError = '';
+    this.state.auth.heatmaps.replayError = '';
     this.state.currentTopic = null;
     this.state.currentPracticeTest = null;
     this.state.practiceTestParent = null;

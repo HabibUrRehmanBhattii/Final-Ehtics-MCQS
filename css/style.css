@@ -3503,9 +3503,9 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 .admin-toolbar-actions {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) auto auto auto;
+  grid-template-columns: minmax(180px, 1fr) auto auto auto auto;
   gap: .55rem;
-  width: min(720px, 100%);
+  width: min(860px, 100%);
 }
 
 .admin-search-input {
@@ -3670,6 +3670,189 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   font-size: .82rem;
 }
 
+.heatmap-toolbar-actions {
+  grid-template-columns: repeat(4, auto);
+  width: auto;
+}
+
+.heatmap-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: .6rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+  padding: .85rem;
+}
+
+.heatmap-filter-grid label {
+  display: grid;
+  gap: .3rem;
+  font-size: .78rem;
+  color: var(--c-text2);
+}
+
+.heatmap-filter-grid input,
+.heatmap-filter-grid select {
+  width: 100%;
+  min-height: 40px;
+  padding: .55rem .62rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--c-border);
+  background: var(--c-surface2);
+  color: var(--c-text);
+}
+
+.heatmap-filter-grid button {
+  align-self: end;
+}
+
+.heatmap-overlay-wrap {
+  display: grid;
+  gap: .6rem;
+}
+
+.heatmap-overlay-box {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  border-radius: 14px;
+  border: 1px solid var(--c-border);
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, .12), transparent 38%),
+    linear-gradient(180deg, rgba(12, 18, 29, .95), rgba(10, 14, 22, .98));
+  overflow: hidden;
+}
+
+.heatmap-overlay-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 8% 8%;
+  opacity: .25;
+}
+
+.heatmap-overlay-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.heatmap-point {
+  position: absolute;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.heatmap-point.is-click {
+  background: rgba(248, 113, 113, .85);
+  box-shadow: 0 0 0 1px rgba(248, 113, 113, .25), 0 0 18px rgba(248, 113, 113, .35);
+}
+
+.heatmap-point.is-move {
+  background: rgba(56, 189, 248, .7);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, .22), 0 0 16px rgba(56, 189, 248, .3);
+}
+
+.heatmap-overlay-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  color: var(--c-text2);
+  font-size: .82rem;
+}
+
+.heatmap-overlay-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.heatmap-overlay-legend .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.heatmap-overlay-legend .dot-click {
+  background: rgba(248, 113, 113, .9);
+}
+
+.heatmap-overlay-legend .dot-move {
+  background: rgba(56, 189, 248, .85);
+}
+
+.heatmap-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: .8rem;
+  margin-top: .7rem;
+}
+
+.heatmap-detail-grid article {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  padding: .7rem;
+}
+
+.heatmap-detail-grid h5 {
+  margin: 0 0 .55rem;
+}
+
+.heatmap-bars {
+  display: grid;
+  gap: .45rem;
+}
+
+.heatmap-bar-row {
+  display: grid;
+  grid-template-columns: minmax(64px, 78px) minmax(150px, 1fr) minmax(72px, auto);
+  gap: .45rem;
+  align-items: center;
+  font-size: .82rem;
+}
+
+.heatmap-bar-track {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  overflow: hidden;
+}
+
+.heatmap-bar-fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #fb7185, #f97316);
+}
+
+.heatmap-bar-fill.is-scroll {
+  background: linear-gradient(90deg, #38bdf8, #14b8a6);
+}
+
+.heatmap-replay-list {
+  display: grid;
+  gap: .5rem;
+  max-height: 360px;
+  overflow: auto;
+}
+
+.heatmap-replay-item {
+  display: grid;
+  grid-template-columns: minmax(120px, 180px) minmax(80px, 100px) 1fr;
+  gap: .55rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  padding: .55rem .65rem;
+  font-size: .8rem;
+}
+
 @media (max-width: 980px) {
   .admin-kpi-grid {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
@@ -3682,10 +3865,46 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   .admin-toolbar-actions {
     grid-template-columns: 1fr 1fr;
   }
+
+  .heatmap-toolbar-actions {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .heatmap-filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heatmap-detail-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
   .admin-toolbar-actions {
     grid-template-columns: 1fr;
+  }
+
+  .heatmap-toolbar-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .heatmap-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .heatmap-overlay-box {
+    min-height: 220px;
+  }
+
+  .heatmap-bar-row {
+    grid-template-columns: minmax(52px, 70px) minmax(120px, 1fr) minmax(68px, auto);
+    font-size: .78rem;
+  }
+
+  .heatmap-replay-item {
+    grid-template-columns: 1fr;
+    gap: .25rem;
+    font-size: .76rem;
   }
 }
