@@ -580,6 +580,124 @@ test('/api/admin/students/overview aggregates student payload metrics correctly'
   assert.equal(alpha.totalStudyTimeMs, 210000);
 });
 
+test('/api/admin/students includes signed-in admin progress but still excludes other admin accounts', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+
+  const ownAdminPayload = JSON.stringify({
+    version: 1,
+    items: {
+      'progress_llqp-ethics_ethics-01': JSON.stringify({
+        viewed: ['1'],
+        bookmarked: [],
+        revealed: ['1'],
+        timers: { '1': 45000 },
+        firstAttemptCorrect: { '1': true },
+        questionLayout: { questionOrder: ['1', '2'] },
+        lastUpdated: '2026-03-25T09:00:00.000Z'
+      })
+    }
+  });
+
+  const adminSelfRow = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    status: 'active',
+    created_at: '2026-01-01T00:00:00.000Z',
+    updated_at: '2026-03-25T09:00:00.000Z',
+    last_login_at: '2026-03-25T08:59:00.000Z',
+    payload: ownAdminPayload,
+    progress_updated_at: '2026-03-25T09:01:00.000Z'
+  };
+
+  const otherAdminRow = {
+    id: 'admin-2',
+    email: 'teammate.admin@example.com',
+    status: 'active',
+    created_at: '2026-01-03T00:00:00.000Z',
+    updated_at: '2026-03-25T09:00:00.000Z',
+    last_login_at: '2026-03-25T08:59:00.000Z',
+    payload: ownAdminPayload,
+    progress_updated_at: '2026-03-25T09:01:00.000Z'
+  };
+
+  const regularStudentRow = {
+    id: 'student-1',
+    email: 'alpha.student@example.com',
+    status: 'active',
+    created_at: '2026-01-02T00:00:00.000Z',
+    updated_at: '2026-03-25T09:00:00.000Z',
+    last_login_at: '2026-03-25T08:59:00.000Z',
+    payload: null,
+    progress_updated_at: null
+  };
+
+  const db = createDbMock({
+    sessionRow: {
+      session_id: 'sess-5',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    studentRows: [adminSelfRow, regularStudentRow, otherAdminRow],
+    studentById: {
+      'admin-1': adminSelfRow,
+      'admin-2': otherAdminRow
+    }
+  });
+
+  const env = {
+    DB: db,
+    SESSION_SECRET: secret,
+    ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com,teammate.admin@example.com'
+  };
+
+  const overviewResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/overview', {
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-token')
+      }
+    }),
+    env
+  );
+
+  assert.equal(overviewResponse.status, 200);
+  const overviewPayload = await overviewResponse.json();
+  assert.deepEqual(
+    overviewPayload.students.map((student) => student.id).sort(),
+    ['admin-1', 'student-1']
+  );
+  const ownRow = overviewPayload.students.find((student) => student.id === 'admin-1');
+  assert.equal(ownRow.answeredCount, 1);
+
+  const selfDetailResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/admin-1', {
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-token-detail')
+      }
+    }),
+    env
+  );
+
+  assert.equal(selfDetailResponse.status, 200);
+  const selfDetailPayload = await selfDetailResponse.json();
+  assert.equal(selfDetailPayload.student.id, 'admin-1');
+  assert.equal(selfDetailPayload.summary.answeredCount, 1);
+
+  const otherAdminDetailResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/admin-2', {
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-token-other')
+      }
+    }),
+    env
+  );
+
+  assert.equal(otherAdminDetailResponse.status, 404);
+});
+
 test('/api/admin/students/:userId returns deep analytics and reset endpoint removes only targeted keys', async () => {
   const worker = loadWorkerModule();
   const secret = 'session-secret';

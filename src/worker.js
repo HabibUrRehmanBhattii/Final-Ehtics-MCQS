@@ -1292,7 +1292,8 @@ function isTimestampWithinDays(isoTimestamp, days = ADMIN_ACTIVE_WINDOW_DAYS) {
   return parsed >= (Date.now() - (days * 24 * 60 * 60 * 1000));
 }
 
-async function listStudentRows(env) {
+async function listStudentRows(env, options = {}) {
+  const includeUserId = String(options.includeUserId || '').trim();
   const rows = await env.DB.prepare(
     `SELECT users.id, users.email, users.status, users.created_at, users.updated_at, users.last_login_at,
             user_progress.payload, user_progress.updated_at AS progress_updated_at
@@ -1302,10 +1303,17 @@ async function listStudentRows(env) {
      ORDER BY users.email ASC`
   ).all();
 
-  return (rows?.results || []).filter((row) => !isAdminEmail(env, row.email));
+  return (rows?.results || []).filter((row) => {
+    const isAdminRow = isAdminEmail(env, row.email);
+    if (!isAdminRow) {
+      return true;
+    }
+    return Boolean(includeUserId && String(row.id) === includeUserId);
+  });
 }
 
-async function getStudentRowById(env, userId) {
+async function getStudentRowById(env, userId, options = {}) {
+  const allowAdminUserId = String(options.allowAdminUserId || '').trim();
   const row = await env.DB.prepare(
     `SELECT users.id, users.email, users.status, users.created_at, users.updated_at, users.last_login_at,
             user_progress.payload, user_progress.updated_at AS progress_updated_at
@@ -1315,7 +1323,10 @@ async function getStudentRowById(env, userId) {
      LIMIT 1`
   ).bind(userId).first();
 
-  if (!row || row.status !== 'active' || isAdminEmail(env, row.email)) {
+  if (!row || row.status !== 'active') {
+    return null;
+  }
+  if (isAdminEmail(env, row.email) && (!allowAdminUserId || String(row.id) !== allowAdminUserId)) {
     return null;
   }
 
@@ -1328,10 +1339,12 @@ async function handleAdminStudentsOverview(request, env) {
   }
 
   try {
-    await requireAdminSession(env, request);
+    const adminSession = await requireAdminSession(env, request);
     const url = new URL(request.url);
     const query = normalizeEmail(url.searchParams.get('q') || url.searchParams.get('email') || '');
-    const studentRows = await listStudentRows(env);
+    const studentRows = await listStudentRows(env, {
+      includeUserId: adminSession.user.id
+    });
     const filteredRows = query
       ? studentRows.filter((row) => normalizeEmail(row.email).includes(query))
       : studentRows;
@@ -1398,8 +1411,10 @@ async function handleAdminStudentDetail(request, env, userId) {
   }
 
   try {
-    await requireAdminSession(env, request);
-    const row = await getStudentRowById(env, userId);
+    const adminSession = await requireAdminSession(env, request);
+    const row = await getStudentRowById(env, userId, {
+      allowAdminUserId: adminSession.user.id
+    });
     if (!row) {
       return jsonResponse(request, { error: 'Student not found.' }, { status: 404 });
     }
@@ -1444,7 +1459,9 @@ async function handleAdminResetStudentTestProgress(request, env, userId) {
       return jsonResponse(request, { error: 'topicId and testId are required.' }, { status: 400 });
     }
 
-    const row = await getStudentRowById(env, userId);
+    const row = await getStudentRowById(env, userId, {
+      allowAdminUserId: adminSession.user.id
+    });
     if (!row) {
       return jsonResponse(request, { error: 'Student not found.' }, { status: 404 });
     }

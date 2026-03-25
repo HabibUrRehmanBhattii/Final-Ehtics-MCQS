@@ -2,8 +2,8 @@
 // MCQ Study Platform - Main Application
 // ===================================
 const MCQApp = {
-  appBuildVersion: '20260325a',
-  cacheVersion: 'v1.8.1',
+  appBuildVersion: '20260325b',
+  cacheVersion: 'v1.8.2',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
