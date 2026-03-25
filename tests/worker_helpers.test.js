@@ -68,6 +68,113 @@ function createDbMock({ sessionRow = null, studentRows = [], studentById = {} } 
   };
 }
 
+function createAuthDbMock() {
+  const state = {
+    usersById: new Map(),
+    usersByEmail: new Map(),
+    sessions: [],
+    authAttempts: [],
+    auditLogWrites: []
+  };
+
+  const getUserByEmail = (rawEmail) => {
+    const email = String(rawEmail || '').trim().toLowerCase();
+    return state.usersByEmail.get(email) || null;
+  };
+
+  return {
+    state,
+    prepare(sql) {
+      const statement = {
+        sql,
+        bound: []
+      };
+
+      return {
+        bind(...args) {
+          statement.bound = args;
+          return this;
+        },
+        async first() {
+          if (sql.includes('SELECT COUNT(*) AS count FROM auth_attempts')) {
+            return { count: 0 };
+          }
+
+          if (sql.includes('SELECT id FROM users WHERE email = ? LIMIT 1')) {
+            const user = getUserByEmail(statement.bound[0]);
+            return user ? { id: user.id } : null;
+          }
+
+          if (sql.includes('SELECT id, email, password_hash, status FROM users WHERE email = ? LIMIT 1')) {
+            const user = getUserByEmail(statement.bound[0]);
+            return user ? {
+              id: user.id,
+              email: user.email,
+              password_hash: user.password_hash,
+              status: user.status
+            } : null;
+          }
+
+          return null;
+        },
+        async all() {
+          return { results: [] };
+        },
+        async run() {
+          if (sql.includes('INSERT INTO users (id, email, password_hash, status, created_at, updated_at, last_login_at)')) {
+            const [id, rawEmail, passwordHash, status, createdAt, updatedAt, lastLoginAt] = statement.bound;
+            const email = String(rawEmail || '').trim().toLowerCase();
+            const user = {
+              id,
+              email,
+              password_hash: passwordHash,
+              status,
+              created_at: createdAt,
+              updated_at: updatedAt,
+              last_login_at: lastLoginAt
+            };
+            state.usersById.set(id, user);
+            state.usersByEmail.set(email, user);
+          }
+
+          if (sql.includes('UPDATE users SET last_login_at = ?, updated_at = ? WHERE id = ?')) {
+            const [lastLoginAt, updatedAt, userId] = statement.bound;
+            const user = state.usersById.get(userId);
+            if (user) {
+              user.last_login_at = lastLoginAt;
+              user.updated_at = updatedAt;
+            }
+          }
+
+          if (sql.includes('INSERT INTO sessions (id, user_id, session_token_hash, created_at, expires_at, revoked_at, ip_address, user_agent)')) {
+            const [id, userId, tokenHash, createdAt, expiresAt, revokedAt, ipAddress, userAgent] = statement.bound;
+            state.sessions.push({
+              id,
+              userId,
+              tokenHash,
+              createdAt,
+              expiresAt,
+              revokedAt,
+              ipAddress,
+              userAgent
+            });
+          }
+
+          if (sql.includes('INSERT INTO auth_attempts')) {
+            state.authAttempts.push(statement.bound);
+          }
+
+          if (sql.includes('INSERT INTO audit_logs')) {
+            state.auditLogWrites.push(statement.bound);
+          }
+
+          return { success: true };
+        }
+      };
+    }
+  };
+}
+
 test('getClientIp prefers CF headers and falls back to the first forwarded IP', () => {
   const worker = loadWorkerModule();
 
@@ -222,6 +329,113 @@ test('admin allowlist utilities normalize emails and mark admin users in session
   assert.equal(payload.authenticated, true);
   assert.equal(payload.user.email, 'habibcanad@gmail.com');
   assert.equal(payload.user.isAdmin, true);
+});
+
+test('signup and signin responses include user.isAdmin from allowlist-matched emails', async () => {
+  const worker = loadWorkerModule({
+    fetchImpl: async (url) => {
+      if (String(url).startsWith('https://challenges.cloudflare.com/turnstile/')) {
+        return new Response(JSON.stringify({ success: true }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
+      throw new Error(`Unexpected outbound fetch: ${url}`);
+    }
+  });
+
+  const db = createAuthDbMock();
+  const env = {
+    DB: db,
+    SESSION_SECRET: 'session-secret',
+    TURNSTILE_SECRET_KEY: 'turnstile-secret',
+    TURNSTILE_SITE_KEY: 'site-key',
+    ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+  };
+
+  const signupAdminResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: 'HabibCanad@gmail.com',
+        password: 'StrongPass123',
+        turnstileToken: 'pass'
+      })
+    }),
+    env
+  );
+
+  assert.equal(signupAdminResponse.status, 200);
+  const signupAdminPayload = await signupAdminResponse.json();
+  assert.equal(signupAdminPayload.authenticated, true);
+  assert.equal(signupAdminPayload.user.email, 'habibcanad@gmail.com');
+  assert.equal(signupAdminPayload.user.isAdmin, true);
+
+  const signupStudentResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: 'student@example.com',
+        password: 'StrongPass123',
+        turnstileToken: 'pass'
+      })
+    }),
+    env
+  );
+
+  assert.equal(signupStudentResponse.status, 200);
+  const signupStudentPayload = await signupStudentResponse.json();
+  assert.equal(signupStudentPayload.authenticated, true);
+  assert.equal(signupStudentPayload.user.email, 'student@example.com');
+  assert.equal(signupStudentPayload.user.isAdmin, false);
+
+  const signinAdminResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/auth/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: 'habibcanad@gmail.com',
+        password: 'StrongPass123',
+        turnstileToken: 'pass'
+      })
+    }),
+    env
+  );
+
+  assert.equal(signinAdminResponse.status, 200);
+  const signinAdminPayload = await signinAdminResponse.json();
+  assert.equal(signinAdminPayload.authenticated, true);
+  assert.equal(signinAdminPayload.user.email, 'habibcanad@gmail.com');
+  assert.equal(signinAdminPayload.user.isAdmin, true);
+
+  const signinStudentResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/auth/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: 'student@example.com',
+        password: 'StrongPass123',
+        turnstileToken: 'pass'
+      })
+    }),
+    env
+  );
+
+  assert.equal(signinStudentResponse.status, 200);
+  const signinStudentPayload = await signinStudentResponse.json();
+  assert.equal(signinStudentPayload.authenticated, true);
+  assert.equal(signinStudentPayload.user.email, 'student@example.com');
+  assert.equal(signinStudentPayload.user.isAdmin, false);
 });
 
 test('/api/admin/students/overview rejects unauthenticated and non-admin sessions', async () => {

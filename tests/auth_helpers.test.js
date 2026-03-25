@@ -279,6 +279,92 @@ test('admin auto-refresh interval starts in admin view and stops when leaving ad
   assert.deepEqual(clearedIds, [1]);
 });
 
+test('admin view entry triggers an immediate refresh even with cached overview data', () => {
+  const homeView = new ElementStub({ classes: ['view', 'active'] });
+  const adminView = new ElementStub({ classes: ['view'] });
+  const adminRoot = new ElementStub();
+  let refreshCalls = 0;
+
+  const { app } = loadMCQAppWithAuth({
+    'home-view': homeView,
+    'admin-view': adminView,
+    'admin-dashboard-root': adminRoot
+  }, {
+    documentQuerySelectorAll: (selector) => selector === '.view' ? [homeView, adminView] : [],
+    onSetInterval: () => 1,
+    onClearInterval: () => {}
+  });
+
+  app.state.auth.authenticated = true;
+  app.state.auth.user = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    isAdmin: true
+  };
+  app.ensureAdminDashboardState();
+  app.state.auth.admin.overview = { studentsCount: 5 };
+  app.refreshAdminDashboard = async () => {
+    refreshCalls += 1;
+    return true;
+  };
+  app.renderAdminDashboard = () => {};
+  app.clearAutoAdvanceTimer = () => {};
+  app.stopQuestionTimer = () => {};
+  app.saveProgress = () => {};
+  app.resetAdvanceTapState = () => {};
+  app.stopSpeech = () => {};
+  app.cleanupQuizKeyboardListeners = () => {};
+  app.renderTopicsGrid = () => {};
+
+  app.showView('admin');
+  assert.equal(refreshCalls, 1);
+});
+
+test('signOut clears admin auto-refresh timer and resets admin dashboard state', async () => {
+  const clearedIds = [];
+  const { app } = loadMCQAppWithAuth({}, {
+    onClearInterval: (id) => {
+      clearedIds.push(id);
+    }
+  });
+
+  app.fetchAuthJson = async () => ({ success: true });
+  app.showView = () => {};
+  app.renderAuthPanel = () => {};
+  app.showToast = () => {};
+  app.applyProgressSnapshot = () => {};
+  app.getEmptyProgressSnapshot = () => ({ version: 1, items: {} });
+
+  app.state.auth.authenticated = true;
+  app.state.auth.user = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    isAdmin: true
+  };
+  app.ensureAdminDashboardState();
+  app.state.auth.admin.refreshIntervalId = 42;
+  app.state.auth.admin.overview = { studentsCount: 1 };
+  app.state.auth.admin.students = [{ id: 'student-1' }];
+  app.state.auth.admin.selectedStudentId = 'student-1';
+  app.state.auth.admin.selectedStudentDetail = { student: { id: 'student-1' } };
+  app.state.auth.admin.error = 'x';
+  app.state.auth.admin.detailError = 'y';
+
+  await app.signOut();
+
+  assert.deepEqual(clearedIds, [42]);
+  assert.equal(app.state.auth.authenticated, false);
+  assert.equal(app.state.auth.user, null);
+  assert.equal(app.state.auth.admin.refreshIntervalId, null);
+  assert.equal(app.state.auth.admin.overview, null);
+  assert.equal(Array.isArray(app.state.auth.admin.students), true);
+  assert.equal(app.state.auth.admin.students.length, 0);
+  assert.equal(app.state.auth.admin.selectedStudentId, '');
+  assert.equal(app.state.auth.admin.selectedStudentDetail, null);
+  assert.equal(app.state.auth.admin.error, '');
+  assert.equal(app.state.auth.admin.detailError, '');
+});
+
 test('resetAdminStudentTestProgress posts the expected payload and refreshes dashboard state', async () => {
   const fetchCalls = [];
   let refreshCalls = 0;

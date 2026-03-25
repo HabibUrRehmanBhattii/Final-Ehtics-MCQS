@@ -85,12 +85,10 @@ Object.assign(MCQApp, {
       return;
     }
 
-    const admin = this.ensureAdminDashboardState();
+    this.ensureAdminDashboardState();
     this.renderAdminDashboard();
     this.startAdminDashboardAutoRefresh();
-    if (!admin.overview) {
-      this.refreshAdminDashboard({ silent: false, preserveSelection: true });
-    }
+    this.refreshAdminDashboard({ silent: false, preserveSelection: true });
   },
 
   onLeaveAdminView() {
