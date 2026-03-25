@@ -1,5 +1,5 @@
-AUTO VERSIONING QUICK REFERENCE
-===============================
+AUTO VERSION + AUTO PUSH QUICK REFERENCE
+========================================
 
 SETUP (ONCE)
 ------------
@@ -11,30 +11,43 @@ If blocked by execution policy:
 macOS/Linux/Git Bash:
   sh setup-hooks.sh
 
-NORMAL COMMIT
--------------
-  git add .
-  git commit -m "message"
+DEFAULT COMMIT + PUSH
+---------------------
+Windows (PowerShell):
+  .\tools\commit-all.ps1 -Message "message"
 
-WHAT AUTO-UPDATES
------------------
+macOS/Linux/Git Bash:
+  sh tools/commit-all.sh "message"
+
+WHAT PRE-COMMIT AUTO-UPDATES
+----------------------------
   - index.html (v=YYYYMMDDx)
   - data/topics.json
   - data/topics-updated.json (if present)
   - js/app.js (appBuildVersion + cacheVersion patch)
 
-VERIFY BEFORE COMMIT
---------------------
-  git status
-  git diff --cached --name-only
+AUTO-PUSH BEHAVIOR
+------------------
+  - post-commit pushes to origin/<current-branch>
+  - if push fails, commit remains local
+  - retry with: git push origin <current-branch>
 
 IF AUTOMATION FAILS
 -------------------
   1) Re-run setup script
   2) Confirm .git/hooks/pre-commit exists
-  3) Confirm node -v works
-  4) Commit again
+  3) Confirm .git/hooks/post-commit exists
+  4) Confirm node -v works
+  5) Commit again
 
-EMERGENCY BYPASS
-----------------
-  git commit --no-verify -m "message"
+SKIP AUTO-PUSH (ONE COMMIT)
+---------------------------
+PowerShell helper:
+  .\tools\commit-all.ps1 -Message "message" -SkipAutoPush
+
+Shell helper:
+  sh tools/commit-all.sh --skip-auto-push "message"
+
+Manual:
+  PowerShell: $env:SKIP_AUTO_PUSH='1'; git commit -m "message"
+  Bash:       SKIP_AUTO_PUSH=1 git commit -m "message"

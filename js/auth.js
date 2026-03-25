@@ -77,6 +77,22 @@ Object.assign(MCQApp, {
     return Boolean(this.state.auth.authenticated && this.state.auth.user && this.state.auth.user.isAdmin);
   },
 
+  isAdminMobileViewport() {
+    return Number(window.innerWidth || 0) <= 640;
+  },
+
+  collectHeatmapFilterFormValues() {
+    return {
+      from: String(document.getElementById('heatmap-filter-from')?.value || '').trim(),
+      to: String(document.getElementById('heatmap-filter-to')?.value || '').trim(),
+      topicId: String(document.getElementById('heatmap-filter-topic')?.value || '').trim(),
+      testId: String(document.getElementById('heatmap-filter-test')?.value || '').trim(),
+      questionId: String(document.getElementById('heatmap-filter-question')?.value || '').trim(),
+      device: String(document.getElementById('heatmap-filter-device')?.value || 'all').trim().toLowerCase() || 'all',
+      audience: String(document.getElementById('heatmap-filter-audience')?.value || 'all').trim().toLowerCase() || 'all'
+    };
+  },
+
   formatAdminDuration(ms = 0) {
     const totalSeconds = Math.max(0, Math.floor(Number(ms || 0) / 1000));
     const hours = Math.floor(totalSeconds / 3600);
@@ -531,6 +547,7 @@ Object.assign(MCQApp, {
     const selectedDetail = admin.selectedStudentDetail || null;
     const selectedSummary = selectedDetail?.summary || null;
     const topics = Array.isArray(selectedDetail?.topics) ? selectedDetail.topics : [];
+    const isMobileLayout = this.isAdminMobileViewport();
     const lastRefreshed = admin.lastRefreshedAt
       ? new Date(admin.lastRefreshedAt).toLocaleString()
       : 'Not refreshed yet';
@@ -560,6 +577,31 @@ Object.assign(MCQApp, {
         `;
       }).join('');
 
+    const studentCardsHtml = students.length === 0
+      ? '<div class="admin-empty-card"><p>No students matched this filter.</p></div>'
+      : students.map((student) => {
+        const isSelected = String(student.id) === String(admin.selectedStudentId);
+        return `
+          <article class="admin-data-card ${isSelected ? 'is-selected' : ''}">
+            <div class="admin-card-head">
+              <strong>${this.escapeHtml(student.email || '')}</strong>
+            </div>
+            <div class="admin-card-metrics">
+              <span><small>Tests</small><strong>${Number(student.totalTests || 0)}</strong></span>
+              <span><small>Answered</small><strong>${Number(student.answeredCount || 0)}</strong></span>
+              <span><small>Completion</small><strong>${Number(student.completionPct || 0)}%</strong></span>
+              <span><small>First try</small><strong>${Number(student.firstTryAccuracyPct || 0)}%</strong></span>
+              <span><small>Study time</small><strong>${this.escapeHtml(this.formatAdminDuration(student.totalStudyTimeMs || 0))}</strong></span>
+            </div>
+            <div class="admin-card-actions">
+              <button class="btn-outline admin-table-btn" type="button" data-admin-action="load-student" data-user-id="${this.escapeHtml(String(student.id))}">
+                View
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+
     const detailTopicsHtml = topics.length === 0
       ? '<div class="admin-empty-card"><p>No synced test payload available for this student yet.</p></div>'
       : topics.map((topic) => {
@@ -585,6 +627,33 @@ Object.assign(MCQApp, {
           `;
         }).join('');
 
+        const testsCardsHtml = (topic.tests || []).map((testItem) => {
+          const resetKey = `${testItem.topicId}_${testItem.testId}`;
+          const isResetting = admin.loadingResetKey === resetKey;
+          const updatedLabel = testItem.lastUpdatedAt ? new Date(testItem.lastUpdatedAt).toLocaleString() : 'n/a';
+          return `
+            <article class="admin-data-card">
+              <div class="admin-card-head">
+                <strong>${this.escapeHtml(testItem.testId || '')}</strong>
+              </div>
+              <div class="admin-card-metrics">
+                <span><small>Answered</small><strong>${Number(testItem.answeredCount || 0)}</strong></span>
+                <span><small>Viewed</small><strong>${Number(testItem.viewedCount || 0)}</strong></span>
+                <span><small>Revealed</small><strong>${Number(testItem.revealedCount || 0)}</strong></span>
+                <span><small>Bookmarked</small><strong>${Number(testItem.bookmarkedCount || 0)}</strong></span>
+                <span><small>First try</small><strong>${Number(testItem.firstTryAccuracyPct || 0)}%</strong></span>
+                <span><small>Study time</small><strong>${this.escapeHtml(this.formatAdminDuration(testItem.studyTimeMs || 0))}</strong></span>
+                <span><small>Updated</small><strong>${this.escapeHtml(updatedLabel)}</strong></span>
+              </div>
+              <div class="admin-card-actions">
+                <button class="btn-outline admin-reset-btn" type="button" data-admin-action="reset-test" data-topic-id="${this.escapeHtml(testItem.topicId || '')}" data-test-id="${this.escapeHtml(testItem.testId || '')}" ${isResetting ? 'disabled' : ''}>
+                  ${isResetting ? 'Resetting...' : 'Reset'}
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('');
+
         return `
           <section class="admin-topic-card">
             <header class="admin-topic-head">
@@ -595,7 +664,7 @@ Object.assign(MCQApp, {
                 <span>Accuracy ${Number(topic.firstTryAccuracyPct || 0)}%</span>
               </div>
             </header>
-            <div class="admin-table-wrap">
+            <div class="admin-table-wrap admin-desktop-only">
               <table class="admin-table">
                 <thead>
                   <tr>
@@ -613,6 +682,9 @@ Object.assign(MCQApp, {
                 <tbody>${testsHtml}</tbody>
               </table>
             </div>
+            <div class="admin-card-list admin-mobile-only">
+              ${testsCardsHtml || '<div class="admin-empty-card"><p>No test rows available.</p></div>'}
+            </div>
           </section>
         `;
       }).join('');
@@ -625,8 +697,8 @@ Object.assign(MCQApp, {
         </div>
         <div class="admin-toolbar-actions">
           <input id="admin-search-input" class="admin-search-input" type="search" placeholder="Search student email" value="${this.escapeHtml(admin.searchQuery || '')}">
-          <button class="btn-outline" type="button" data-admin-action="search">Search</button>
           <button class="btn-outline" type="button" data-admin-action="refresh">${admin.loadingOverview ? 'Refreshing...' : 'Refresh'}</button>
+          <button class="btn-outline" type="button" data-admin-action="search">Search</button>
           <button class="btn-outline" type="button" data-admin-action="open-heatmaps">Heatmaps</button>
           <button class="btn-outline" type="button" data-admin-action="back-home">Home</button>
         </div>
@@ -644,7 +716,7 @@ Object.assign(MCQApp, {
 
       <section class="admin-table-section">
         <h4>Students</h4>
-        <div class="admin-table-wrap">
+        <div class="admin-table-wrap admin-desktop-only">
           <table class="admin-table">
             <thead>
               <tr>
@@ -660,6 +732,9 @@ Object.assign(MCQApp, {
             <tbody>${studentRowsHtml}</tbody>
           </table>
         </div>
+        <div class="admin-card-list admin-mobile-only">
+          ${studentCardsHtml}
+        </div>
       </section>
 
       <section class="admin-detail-section">
@@ -671,6 +746,7 @@ Object.assign(MCQApp, {
             <div><strong>${this.escapeHtml(selectedDetail.student?.email || '')}</strong></div>
             <div>Answered: ${Number(selectedSummary?.answeredCount || 0)} | Completion: ${Number(selectedSummary?.completionPct || 0)}% | First-try: ${Number(selectedSummary?.firstTryAccuracyPct || 0)}%</div>
             <div>Total study time: ${this.escapeHtml(this.formatAdminDuration(selectedSummary?.totalStudyTimeMs || 0))}</div>
+            ${isMobileLayout ? '<div class="admin-mobile-tip">Tip: tap Reset inside each test card to clear a single test.</div>' : ''}
           </div>
           ${detailTopicsHtml}
         ` : '<div class="admin-empty-card"><p>Select a student to inspect topic/test detail.</p></div>'}
@@ -725,6 +801,7 @@ Object.assign(MCQApp, {
     const optionStats = Array.isArray(selectedQuestion?.optionStats) ? selectedQuestion.optionStats : [];
     const scrollBuckets = Array.isArray(selectedQuestion?.scrollBuckets) ? selectedQuestion.scrollBuckets : [];
     const selectedReplay = heatmaps.selectedReplay || null;
+    const isMobileLayout = this.isAdminMobileViewport();
 
     const questionRows = questions.length === 0
       ? `<tr><td colspan="8" class="admin-empty-row">No question analytics matched this filter.</td></tr>`
@@ -797,12 +874,9 @@ Object.assign(MCQApp, {
         </div>
       </section>
 
-      <section class="heatmap-filter-grid">
+      <section class="heatmap-filter-grid heatmap-filter-grid-quick">
         <label>From <input id="heatmap-filter-from" type="date" value="${this.escapeHtml(heatmaps.filters.from || '')}"></label>
         <label>To <input id="heatmap-filter-to" type="date" value="${this.escapeHtml(heatmaps.filters.to || '')}"></label>
-        <label>Topic <input id="heatmap-filter-topic" type="text" placeholder="topic id" value="${this.escapeHtml(heatmaps.filters.topicId || '')}"></label>
-        <label>Test <input id="heatmap-filter-test" type="text" placeholder="test id" value="${this.escapeHtml(heatmaps.filters.testId || '')}"></label>
-        <label>Question <input id="heatmap-filter-question" type="text" placeholder="question id" value="${this.escapeHtml(heatmaps.filters.questionId || '')}"></label>
         <label>Device
           <select id="heatmap-filter-device">
             <option value="all" ${heatmaps.filters.device === 'all' ? 'selected' : ''}>All</option>
@@ -820,6 +894,14 @@ Object.assign(MCQApp, {
         </label>
         <button class="btn-outline" type="button" data-heatmap-action="apply-filters">Apply Filters</button>
       </section>
+      <details class="heatmap-filter-more" ${isMobileLayout ? '' : 'open'}>
+        <summary>More filters</summary>
+        <div class="heatmap-filter-grid heatmap-filter-grid-more">
+          <label>Topic <input id="heatmap-filter-topic" type="text" placeholder="topic id" value="${this.escapeHtml(heatmaps.filters.topicId || '')}"></label>
+          <label>Test <input id="heatmap-filter-test" type="text" placeholder="test id" value="${this.escapeHtml(heatmaps.filters.testId || '')}"></label>
+          <label>Question <input id="heatmap-filter-question" type="text" placeholder="question id" value="${this.escapeHtml(heatmaps.filters.questionId || '')}"></label>
+        </div>
+      </details>
 
       ${heatmaps.error ? `<div class="admin-error">${this.escapeHtml(heatmaps.error)}</div>` : ''}
 
@@ -833,6 +915,7 @@ Object.assign(MCQApp, {
 
       <section class="admin-table-section">
         <h4>Question Analytics</h4>
+        ${isMobileLayout ? '<p class="admin-swipe-hint">Swipe left/right to see all columns.</p>' : ''}
         <div class="admin-table-wrap">
           <table class="admin-table">
             <thead>
@@ -899,6 +982,7 @@ Object.assign(MCQApp, {
       <section class="admin-table-section">
         <h4>Replay Sessions</h4>
         ${heatmaps.replayError ? `<div class="admin-error">${this.escapeHtml(heatmaps.replayError)}</div>` : ''}
+        ${isMobileLayout ? '<p class="admin-swipe-hint">Swipe left/right to see all columns.</p>' : ''}
         <div class="admin-table-wrap">
           <table class="admin-table">
             <thead>
@@ -1282,13 +1366,7 @@ Object.assign(MCQApp, {
 
       if (action === 'apply-filters') {
         const heatmaps = this.ensureHeatmapDashboardState();
-        heatmaps.filters.from = String(document.getElementById('heatmap-filter-from')?.value || '').trim();
-        heatmaps.filters.to = String(document.getElementById('heatmap-filter-to')?.value || '').trim();
-        heatmaps.filters.topicId = String(document.getElementById('heatmap-filter-topic')?.value || '').trim();
-        heatmaps.filters.testId = String(document.getElementById('heatmap-filter-test')?.value || '').trim();
-        heatmaps.filters.questionId = String(document.getElementById('heatmap-filter-question')?.value || '').trim();
-        heatmaps.filters.device = String(document.getElementById('heatmap-filter-device')?.value || 'all').trim().toLowerCase() || 'all';
-        heatmaps.filters.audience = String(document.getElementById('heatmap-filter-audience')?.value || 'all').trim().toLowerCase() || 'all';
+        Object.assign(heatmaps.filters, this.collectHeatmapFilterFormValues());
         heatmaps.selectedQuestion = null;
         heatmaps.selectedReplay = null;
         this.refreshAdminHeatmapDashboard({ silent: false });
@@ -1317,13 +1395,7 @@ Object.assign(MCQApp, {
       if (!target || !target.id || !target.id.startsWith('heatmap-filter-')) return;
       event.preventDefault();
       const heatmaps = this.ensureHeatmapDashboardState();
-      heatmaps.filters.from = String(document.getElementById('heatmap-filter-from')?.value || '').trim();
-      heatmaps.filters.to = String(document.getElementById('heatmap-filter-to')?.value || '').trim();
-      heatmaps.filters.topicId = String(document.getElementById('heatmap-filter-topic')?.value || '').trim();
-      heatmaps.filters.testId = String(document.getElementById('heatmap-filter-test')?.value || '').trim();
-      heatmaps.filters.questionId = String(document.getElementById('heatmap-filter-question')?.value || '').trim();
-      heatmaps.filters.device = String(document.getElementById('heatmap-filter-device')?.value || 'all').trim().toLowerCase() || 'all';
-      heatmaps.filters.audience = String(document.getElementById('heatmap-filter-audience')?.value || 'all').trim().toLowerCase() || 'all';
+      Object.assign(heatmaps.filters, this.collectHeatmapFilterFormValues());
       this.refreshAdminHeatmapDashboard({ silent: false });
     });
 

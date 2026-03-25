@@ -232,6 +232,84 @@ test('refreshAdminDashboard renders overview, student table, and deep detail fro
   assert.match(adminRoot.innerHTML, /Heatmaps/);
 });
 
+test('renderAdminDashboard uses mobile card layout at 390px and includes reset actions in topic cards', () => {
+  const adminRoot = new ElementStub();
+  const { app } = loadMCQAppWithAuth({
+    'admin-dashboard-root': adminRoot
+  }, {
+    innerWidth: 390
+  });
+
+  app.state.auth.authenticated = true;
+  app.state.auth.user = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    isAdmin: true
+  };
+
+  const admin = app.ensureAdminDashboardState();
+  admin.overview = {
+    studentsCount: 1,
+    activeStudents: 1,
+    totalAnswered: 12,
+    avgCompletionPct: 66.7,
+    avgFirstTryAccuracyPct: 72.5
+  };
+  admin.students = [
+    {
+      id: 'student-1',
+      email: 'alpha.student@example.com',
+      totalTests: 2,
+      answeredCount: 12,
+      completionPct: 66.7,
+      firstTryAccuracyPct: 72.5,
+      totalStudyTimeMs: 300000
+    }
+  ];
+  admin.selectedStudentId = 'student-1';
+  admin.selectedStudentDetail = {
+    student: {
+      id: 'student-1',
+      email: 'alpha.student@example.com'
+    },
+    summary: {
+      answeredCount: 12,
+      completionPct: 66.7,
+      firstTryAccuracyPct: 72.5,
+      totalStudyTimeMs: 300000
+    },
+    topics: [
+      {
+        topicId: 'llqp-life',
+        answeredCount: 12,
+        completionPct: 66.7,
+        firstTryAccuracyPct: 72.5,
+        tests: [
+          {
+            topicId: 'llqp-life',
+            testId: 'life-01',
+            answeredCount: 6,
+            viewedCount: 8,
+            revealedCount: 6,
+            bookmarkedCount: 2,
+            firstTryAccuracyPct: 70,
+            studyTimeMs: 180000,
+            lastUpdatedAt: '2026-03-24T11:40:00.000Z'
+          }
+        ]
+      }
+    ]
+  };
+
+  app.renderAdminDashboard();
+
+  assert.match(adminRoot.innerHTML, /admin-card-list admin-mobile-only/);
+  assert.match(adminRoot.innerHTML, /alpha\.student@example\.com/);
+  assert.match(adminRoot.innerHTML, /data-admin-action="reset-test"/);
+  assert.match(adminRoot.innerHTML, /data-topic-id="llqp-life"/);
+  assert.match(adminRoot.innerHTML, /data-test-id="life-01"/);
+});
+
 test('admin auto-refresh interval starts in admin view and stops when leaving admin view', () => {
   const homeView = new ElementStub({ classes: ['view', 'active'] });
   const adminView = new ElementStub({ classes: ['view'] });
@@ -548,6 +626,64 @@ test('refreshAdminHeatmapDashboard renders overview, question analytics, and rep
   assert.match(heatmapRoot.innerHTML, /Replay Sessions/);
   assert.match(heatmapRoot.innerHTML, /q-1/);
   assert.match(heatmapRoot.innerHTML, /session-1/);
+});
+
+test('renderAdminHeatmapDashboard shows quick filters and collapsed more-filters by default on mobile', () => {
+  const heatmapRoot = new ElementStub();
+  const { app } = loadMCQAppWithAuth({
+    'admin-heatmaps-root': heatmapRoot
+  }, {
+    innerWidth: 390
+  });
+
+  app.state.auth.authenticated = true;
+  app.state.auth.user = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    isAdmin: true
+  };
+
+  const heatmaps = app.ensureHeatmapDashboardState();
+  heatmaps.overview = {
+    sessionCount: 4,
+    eventCount: 120,
+    clickCount: 45,
+    moveCount: 55,
+    scrollCount: 20,
+    avgScrollPercent: 63.2
+  };
+  heatmaps.questions = [
+    {
+      questionId: 'q-1',
+      topicId: 'llqp-life',
+      testId: 'life-01',
+      clickCount: 25,
+      moveCount: 31,
+      scrollCount: 10,
+      distractorPressurePct: 42.5
+    }
+  ];
+  heatmaps.replays = [
+    {
+      sessionId: 'session-1',
+      isAuthenticated: true,
+      deviceType: 'mobile',
+      topicId: 'llqp-life',
+      testId: 'life-01',
+      eventCount: 55,
+      replayChunkCount: 1
+    }
+  ];
+
+  app.renderAdminHeatmapDashboard();
+
+  assert.match(heatmapRoot.innerHTML, /heatmap-filter-grid heatmap-filter-grid-quick/);
+  assert.match(heatmapRoot.innerHTML, /id="heatmap-filter-from"/);
+  assert.match(heatmapRoot.innerHTML, /id="heatmap-filter-device"/);
+  assert.match(heatmapRoot.innerHTML, /<details class="heatmap-filter-more"\s*>/);
+  assert.doesNotMatch(heatmapRoot.innerHTML, /<details class="heatmap-filter-more" open>/);
+  assert.match(heatmapRoot.innerHTML, /id="heatmap-filter-topic"/);
+  assert.match(heatmapRoot.innerHTML, /Swipe left\/right to see all columns/);
 });
 
 test('heatmap auto-refresh interval starts in heatmap view and stops when leaving the view', () => {

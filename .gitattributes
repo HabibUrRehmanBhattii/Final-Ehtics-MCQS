@@ -1,3 +1,5 @@
 *.sh text eol=lf
 githooks/pre-commit text eol=lf
+githooks/post-commit text eol=lf
 tools/pre-commit-version-bump.cjs text eol=lf
+tools/commit-all.sh text eol=lf

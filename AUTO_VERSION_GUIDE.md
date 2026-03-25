@@ -1,14 +1,17 @@
-# Auto Version + Commit Automation Guide
+# Auto Version + Auto Push Guide
 
-This repo uses a **pre-commit hook** to automatically bump version tags before each commit.
+This repo uses two Git hooks:
 
-## What it updates
+- **pre-commit**: bumps version tags/cache values when source files change
+- **post-commit**: auto-pushes each commit to `origin/<current-branch>`
+
+## Pre-commit updates
 - `index.html` (`v=YYYYMMDDx` tags)
 - `data/topics.json` (`v=...` query tags)
 - `data/topics-updated.json` (if present)
 - `js/app.js`
   - `appBuildVersion`
-  - `cacheVersion` patch (for example `v1.8.2` -> `v1.8.3`)
+  - `cacheVersion` patch (example: `v1.8.2` -> `v1.8.3`)
 
 ## One-time setup
 
@@ -17,7 +20,7 @@ This repo uses a **pre-commit hook** to automatically bump version tags before e
 .\setup-hooks.ps1
 ```
 
-If your PowerShell blocks scripts, use:
+If your PowerShell blocks scripts:
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\setup-hooks.ps1
 ```
@@ -27,34 +30,48 @@ powershell -ExecutionPolicy Bypass -File .\setup-hooks.ps1
 sh setup-hooks.sh
 ```
 
-## Normal commit flow
-```bash
-git add .
-git commit -m "your message"
+## Default workflow (stage all + commit + auto-push)
+
+### Windows (PowerShell)
+```powershell
+.\tools\commit-all.ps1 -Message "your message"
 ```
 
-If source files changed, the hook auto-bumps versions and stages those updates in the same commit.
-
-## Quick pre-commit check
-Run this before committing:
+### macOS/Linux/Git Bash
 ```bash
-git status
-git diff --cached --name-only
+sh tools/commit-all.sh "your message"
 ```
 
 ## If automation fails
-1. Reinstall hook:
+1. Reinstall hooks:
    - Windows: `.\setup-hooks.ps1`
    - macOS/Linux/Git Bash: `sh setup-hooks.sh`
-2. Verify hook file exists:
+2. Verify hook files exist:
    - `.git/hooks/pre-commit`
-3. Verify Node is installed:
+   - `.git/hooks/post-commit`
+3. Verify Node is available:
    - `node -v`
 4. Retry commit.
 
-## Emergency bypass (not recommended)
+If post-commit auto-push fails, your commit is still local and safe.
+Retry with:
 ```bash
-git commit --no-verify -m "your message"
+git push origin <current-branch>
 ```
 
-Use bypass only if you accept manual version management for that commit.
+## Skip auto-push for one commit
+- PowerShell helper:
+```powershell
+.\tools\commit-all.ps1 -Message "your message" -SkipAutoPush
+```
+- Shell helper:
+```bash
+sh tools/commit-all.sh --skip-auto-push "your message"
+```
+- Manual commit:
+```powershell
+$env:SKIP_AUTO_PUSH='1'; git commit -m "your message"
+```
+```bash
+SKIP_AUTO_PUSH=1 git commit -m "your message"
+```

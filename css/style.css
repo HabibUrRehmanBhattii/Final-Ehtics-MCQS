@@ -3510,12 +3510,17 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 .admin-search-input {
   width: 100%;
-  min-height: 42px;
+  min-height: 44px;
   padding: .6rem .7rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--c-border);
   background: var(--c-surface2);
   color: var(--c-text);
+}
+
+.admin-dashboard .btn-outline,
+.admin-dashboard .btn-primary {
+  min-height: 44px;
 }
 
 .admin-kpi-grid {
@@ -3551,6 +3556,68 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   border-radius: var(--radius);
   background: var(--c-surface);
   padding: 1rem;
+}
+
+.admin-desktop-only {
+  display: block;
+}
+
+.admin-mobile-only {
+  display: none;
+}
+
+.admin-card-list {
+  display: grid;
+  gap: .65rem;
+}
+
+.admin-data-card {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  padding: .7rem;
+  display: grid;
+  gap: .6rem;
+}
+
+.admin-data-card.is-selected {
+  border-color: color-mix(in srgb, var(--c-primary) 45%, var(--c-border));
+  background: color-mix(in srgb, var(--c-primary-a) 80%, var(--c-surface2));
+}
+
+.admin-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.admin-card-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: .45rem;
+}
+
+.admin-card-metrics span {
+  display: grid;
+  gap: .15rem;
+}
+
+.admin-card-metrics small {
+  font-size: .72rem;
+  color: var(--c-text2);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.admin-card-metrics strong {
+  font-size: .9rem;
+  line-height: 1.2;
+}
+
+.admin-card-actions {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .admin-table-section h4,
@@ -3597,7 +3664,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 .admin-table-btn,
 .admin-reset-btn {
-  min-height: 34px;
+  min-height: 44px;
   padding: .35rem .65rem;
   font-size: .8rem;
 }
@@ -3670,6 +3737,12 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   font-size: .82rem;
 }
 
+.admin-mobile-tip {
+  margin-top: .35rem;
+  font-size: .8rem;
+  color: var(--c-text2);
+}
+
 .heatmap-toolbar-actions {
   grid-template-columns: repeat(4, auto);
   width: auto;
@@ -3683,6 +3756,10 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   border-radius: var(--radius);
   background: var(--c-surface);
   padding: .85rem;
+}
+
+.heatmap-filter-grid-quick {
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
 }
 
 .heatmap-filter-grid label {
@@ -3705,6 +3782,50 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 .heatmap-filter-grid button {
   align-self: end;
+}
+
+.heatmap-filter-more {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+  padding: .2rem .85rem .85rem;
+}
+
+.heatmap-filter-more > summary {
+  cursor: pointer;
+  color: var(--c-text2);
+  font-size: .82rem;
+  font-weight: 600;
+  padding: .45rem 0 .35rem;
+  user-select: none;
+}
+
+.heatmap-filter-more[open] > summary {
+  margin-bottom: .2rem;
+}
+
+.heatmap-filter-grid-more {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.admin-swipe-hint {
+  margin: 0 0 .55rem;
+  font-size: .8rem;
+  color: var(--c-text2);
+}
+
+@media (min-width: 641px) {
+  .heatmap-filter-more {
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .heatmap-filter-more > summary {
+    display: none;
+  }
 }
 
 .heatmap-overlay-wrap {
@@ -3891,6 +4012,30 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
   .heatmap-filter-grid {
     grid-template-columns: 1fr;
+  }
+
+  .heatmap-filter-grid-quick {
+    grid-template-columns: 1fr;
+  }
+
+  .heatmap-filter-more {
+    padding-inline: .75rem;
+  }
+
+  .heatmap-filter-more > summary {
+    font-size: .84rem;
+  }
+
+  .admin-desktop-only {
+    display: none !important;
+  }
+
+  .admin-mobile-only {
+    display: block;
+  }
+
+  .admin-card-metrics {
+    grid-template-columns: 1fr 1fr;
   }
 
   .heatmap-overlay-box {

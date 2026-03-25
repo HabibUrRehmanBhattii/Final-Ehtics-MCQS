@@ -141,15 +141,41 @@ The app is currently configured for:
 
 ## Commit automation
 
-This repo has a pre-commit hook that auto-bumps version tags and cache version when source files are committed.
+This repo has hook-driven commit automation:
+
+- `pre-commit`: auto-bumps version tags and cache version when source files are committed
+- `post-commit`: auto-pushes the commit to `origin/<current-branch>`
 
 Install hooks once:
 
 - Windows PowerShell: `.\setup-hooks.ps1`
 - macOS/Linux/Git Bash: `sh setup-hooks.sh`
 
-Hook source is stored at `githooks/pre-commit` and installed to `.git/hooks/pre-commit`.
-The hook calls `tools/pre-commit-version-bump.cjs`.
+Hook sources are stored at:
+
+- `githooks/pre-commit`
+- `githooks/post-commit`
+
+Both are installed into `.git/hooks/` by the setup scripts.
+
+Default one-command flow:
+
+- PowerShell: `.\tools\commit-all.ps1 -Message "your message"`
+- macOS/Linux/Git Bash: `sh tools/commit-all.sh "your message"`
+
+The helper runs `git add -A`, then `git commit -m ...`.
+Pre-commit and post-commit hooks run automatically as part of that commit.
+
+Skip auto-push for one commit (keep pre-commit active):
+
+- PowerShell helper: `.\tools\commit-all.ps1 -Message "your message" -SkipAutoPush`
+- Shell helper: `sh tools/commit-all.sh --skip-auto-push "your message"`
+- Manual commit:
+  - PowerShell: `$env:SKIP_AUTO_PUSH='1'; git commit -m "your message"`
+  - macOS/Linux/Git Bash: `SKIP_AUTO_PUSH=1 git commit -m "your message"`
+
+If auto-push fails, the commit still remains safely local.
+Retry with: `git push origin <current-branch>`.
 
 ## Working with quiz data
 

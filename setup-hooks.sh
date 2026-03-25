@@ -13,10 +13,16 @@ if [ ! -f "githooks/pre-commit" ]; then
   echo "[hooks] Error: githooks/pre-commit not found."
   exit 1
 fi
+if [ ! -f "githooks/post-commit" ]; then
+  echo "[hooks] Error: githooks/post-commit not found."
+  exit 1
+fi
 
 mkdir -p .git/hooks
 cp githooks/pre-commit .git/hooks/pre-commit
+cp githooks/post-commit .git/hooks/post-commit
 chmod +x .git/hooks/pre-commit || true
+chmod +x .git/hooks/post-commit || true
 
-echo "[hooks] Installed .git/hooks/pre-commit"
+echo "[hooks] Installed .git/hooks/pre-commit and .git/hooks/post-commit"
 echo "[hooks] Tip: if your team shares hooks, run: git config core.hooksPath githooks"

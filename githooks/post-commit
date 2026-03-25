@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+
+const { spawnSync } = require('node:child_process');
+
+function writeIfPresent(stream, text) {
+  if (text) {
+    stream.write(text);
+  }
+}
+
+function runGit(args) {
+  return spawnSync('git', args, {
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe']
+  });
+}
+
+function toTruthyEnv(value) {
+  const normalized = String(value || '').trim().toLowerCase();
+  return normalized === '1' || normalized === 'true' || normalized === 'yes' || normalized === 'on';
+}
+
+function skip(message) {
+  process.stdout.write(`${message}\n`);
+  process.exit(0);
+}
+
+if (toTruthyEnv(process.env.SKIP_AUTO_PUSH)) {
+  skip('[post-commit] SKIP_AUTO_PUSH is enabled. Skipping auto-push.');
+}
+
+const originResult = runGit(['remote', 'get-url', 'origin']);
+if (originResult.status !== 0) {
+  skip('[post-commit] Remote "origin" is not configured. Skipping auto-push.');
+}
+
+const branchResult = runGit(['rev-parse', '--abbrev-ref', 'HEAD']);
+if (branchResult.status !== 0) {
+  writeIfPresent(process.stderr, branchResult.stderr);
+  skip('[post-commit] Could not detect the current branch. Skipping auto-push.');
+}
+
+const branchName = String(branchResult.stdout || '').trim();
+if (!branchName || branchName === 'HEAD') {
+  skip('[post-commit] Detached HEAD detected. Skipping auto-push.');
+}
+
+process.stdout.write(`[post-commit] Auto-pushing ${branchName} -> origin/${branchName}...\n`);
+const pushResult = runGit(['push', 'origin', branchName]);
+writeIfPresent(process.stdout, pushResult.stdout);
+writeIfPresent(process.stderr, pushResult.stderr);
+
+if (pushResult.status !== 0) {
+  process.stderr.write('[post-commit] Auto-push failed. Your commit is still saved locally.\n');
+  process.stderr.write(`[post-commit] Retry manually: git push origin ${branchName}\n`);
+  process.exit(0);
+}
+
+process.stdout.write(`[post-commit] Auto-push complete for ${branchName}.\n`);
+process.exit(0);
