@@ -1,23 +1,97 @@
-#!/bin/sh
+#!/usr/bin/env node
 
-set -eu
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-if ! command -v node >/dev/null 2>&1; then
-  echo "[pre-commit] node is not available on PATH. Skipping auto-version bump."
-  exit 0
-fi
+const repoRoot = process.cwd();
+const bumpScript = path.join(repoRoot, 'tools', 'pre-commit-version-bump.cjs');
 
-STAGED_FILES="$(git diff --cached --name-only --diff-filter=ACM || true)"
-if [ -z "$STAGED_FILES" ]; then
-  echo "[pre-commit] No staged files. Skipping auto-version bump."
-  exit 0
-fi
+function writeIfPresent(stream, text) {
+  if (text) {
+    stream.write(text);
+  }
+}
 
-PRECOMMIT_STAGED_FILES="$STAGED_FILES" node tools/pre-commit-version-bump.cjs
+function run(command, args, options = {}) {
+  const result = spawnSync(command, args, {
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+    ...options
+  });
 
-git add index.html data/topics.json js/app.js
-if [ -f "data/topics-updated.json" ]; then
-  git add data/topics-updated.json
-fi
+  if (result.error) {
+    throw result.error;
+  }
 
-exit 0
+  return result;
+}
+
+function skip(message) {
+  process.stdout.write(`${message}\n`);
+  process.exit(0);
+}
+
+if (!fs.existsSync(bumpScript)) {
+  skip('[pre-commit] tools/pre-commit-version-bump.cjs not found. Skipping auto-version bump.');
+}
+
+let stagedDiff;
+try {
+  stagedDiff = run('git', ['diff', '--cached', '--name-only', '--diff-filter=ACM']);
+} catch (error) {
+  skip(`[pre-commit] Unable to read staged files (${error.message}). Skipping auto-version bump.`);
+}
+
+if (stagedDiff.status !== 0) {
+  writeIfPresent(process.stdout, stagedDiff.stdout);
+  writeIfPresent(process.stderr, stagedDiff.stderr);
+  skip('[pre-commit] Failed to inspect staged files. Skipping auto-version bump.');
+}
+
+const stagedFiles = String(stagedDiff.stdout || '').trim();
+if (!stagedFiles) {
+  skip('[pre-commit] No staged files. Skipping auto-version bump.');
+}
+
+let bumpRun;
+try {
+  bumpRun = run(process.execPath, [bumpScript], {
+    env: {
+      ...process.env,
+      PRECOMMIT_STAGED_FILES: stagedFiles
+    }
+  });
+} catch (error) {
+  process.stderr.write(`[pre-commit] Failed to run version bump script: ${error.message}\n`);
+  process.exit(1);
+}
+
+writeIfPresent(process.stdout, bumpRun.stdout);
+writeIfPresent(process.stderr, bumpRun.stderr);
+
+if (bumpRun.status !== 0) {
+  process.exit(bumpRun.status || 1);
+}
+
+const addArgs = ['add', 'index.html', 'data/topics.json', 'js/app.js'];
+if (fs.existsSync(path.join(repoRoot, 'data', 'topics-updated.json'))) {
+  addArgs.push('data/topics-updated.json');
+}
+
+let addRun;
+try {
+  addRun = run('git', addArgs);
+} catch (error) {
+  process.stderr.write(`[pre-commit] Failed to stage version files: ${error.message}\n`);
+  process.exit(1);
+}
+
+writeIfPresent(process.stdout, addRun.stdout);
+writeIfPresent(process.stderr, addRun.stderr);
+
+if (addRun.status !== 0) {
+  process.exit(addRun.status || 1);
+}
+
+process.exit(0);

@@ -2,8 +2,8 @@
 // MCQ Study Platform - Main Application
 // ===================================
 const MCQApp = {
-  appBuildVersion: '20260325b',
-  cacheVersion: 'v1.8.2',
+  appBuildVersion: '20260325d',
+  cacheVersion: 'v1.8.4',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
@@ -74,7 +74,8 @@ const MCQApp = {
       scrollLastSentAt: 0,
       hoverLastEventKey: '',
       hoverLastAt: 0,
-      replayChunkIndex: 0
+      replayChunkIndex: 0,
+      profile: null
     },
     autoAdvanceEnabled: localStorage.getItem('auto-advance') === 'true',
     autoAdvanceDelay: 1500,
@@ -309,9 +310,9 @@ const MCQApp = {
     );
   },
 
-  getHeatmapTrackingContext() {
-    const question = this.getCurrentQuestion();
-    const questionId = question ? this.getQuestionStateKey(question) : '';
+  getHeatmapTrackingProfile() {
+    const viewportWidth = Math.max(0, Math.floor(window.innerWidth || 0));
+    const viewportHeight = Math.max(0, Math.floor(window.innerHeight || 0));
     const userAgent = String(navigator?.userAgent || '').toLowerCase();
     const uaClass = /ipad|tablet/.test(userAgent)
       ? 'tablet'
@@ -320,6 +321,81 @@ const MCQApp = {
         : userAgent
           ? 'desktop'
           : 'unknown';
+    const coarsePointer = typeof window.matchMedia === 'function'
+      ? Boolean(window.matchMedia('(pointer: coarse)').matches)
+      : false;
+    const connection = navigator?.connection || navigator?.mozConnection || navigator?.webkitConnection || null;
+    const saveData = Boolean(connection?.saveData);
+    const effectiveType = String(connection?.effectiveType || '').toLowerCase();
+    const lowPowerDevice = (
+      (Number(navigator?.deviceMemory || 0) > 0 && Number(navigator?.deviceMemory || 0) <= 4)
+      || (Number(navigator?.hardwareConcurrency || 0) > 0 && Number(navigator?.hardwareConcurrency || 0) <= 4)
+    );
+    const slowNetwork = saveData || effectiveType === '2g' || effectiveType === 'slow-2g';
+
+    const isTablet = uaClass === 'tablet';
+    const isMobile = !isTablet && (uaClass === 'mobile' || viewportWidth <= 820 || coarsePointer);
+    const deviceType = isTablet ? 'tablet' : isMobile ? 'mobile' : uaClass === 'desktop' ? 'desktop' : 'unknown';
+
+    let profile = {
+      deviceType,
+      uaClass,
+      viewportWidth,
+      viewportHeight,
+      effectiveType,
+      saveData,
+      moveSampleMs: 150,
+      touchMoveSampleMs: 260,
+      scrollSampleMs: 300,
+      hoverSampleMs: 900,
+      flushDelayMs: 5000,
+      queueFlushCount: 120,
+      replayFlushCount: 220,
+      maxBatchEvents: 500,
+      maxReplayEvents: 500,
+      maxPayloadBytes: 256 * 1024
+    };
+
+    if (deviceType === 'tablet') {
+      profile = {
+        ...profile,
+        moveSampleMs: 180,
+        touchMoveSampleMs: 320,
+        scrollSampleMs: 420,
+        flushDelayMs: 6000,
+        queueFlushCount: 90,
+        replayFlushCount: 150,
+        maxBatchEvents: 140,
+        maxReplayEvents: 170,
+        maxPayloadBytes: 72 * 1024
+      };
+    }
+
+    if (deviceType === 'mobile') {
+      const constrained = lowPowerDevice || slowNetwork;
+      profile = {
+        ...profile,
+        moveSampleMs: constrained ? 360 : 280,
+        touchMoveSampleMs: constrained ? 700 : 460,
+        scrollSampleMs: constrained ? 900 : 600,
+        hoverSampleMs: constrained ? 1800 : 1400,
+        flushDelayMs: constrained ? 9000 : 7000,
+        queueFlushCount: constrained ? 45 : 60,
+        replayFlushCount: constrained ? 72 : 96,
+        maxBatchEvents: constrained ? 60 : 80,
+        maxReplayEvents: constrained ? 80 : 110,
+        maxPayloadBytes: constrained ? 24 * 1024 : 36 * 1024
+      };
+    }
+
+    this.state.analytics.profile = profile;
+    return profile;
+  },
+
+  getHeatmapTrackingContext() {
+    const question = this.getCurrentQuestion();
+    const questionId = question ? this.getQuestionStateKey(question) : '';
+    const profile = this.getHeatmapTrackingProfile();
     return {
       routePath: `${window.location.pathname}#${this.state.currentView}`,
       topicId: this.state.currentTopic?.id || '',
@@ -328,12 +404,14 @@ const MCQApp = {
       quizKey: this.state.currentTopic?.id && this.state.currentPracticeTest?.id
         ? `${this.state.currentTopic.id}_${this.state.currentPracticeTest.id}`
         : '',
-      deviceType: window.innerWidth <= 820 ? 'mobile' : 'desktop',
+      deviceType: profile.deviceType,
       viewport: {
-        width: Math.max(0, Math.floor(window.innerWidth || 0)),
-        height: Math.max(0, Math.floor(window.innerHeight || 0))
+        width: profile.viewportWidth,
+        height: profile.viewportHeight
       },
-      uaClass,
+      uaClass: profile.uaClass,
+      networkType: profile.effectiveType || '',
+      saveData: profile.saveData,
       timezoneOffset: new Date().getTimezoneOffset()
     };
   },
@@ -360,11 +438,12 @@ const MCQApp = {
       normalized.scrollPercent = Math.max(0, Math.min(100, normalized.scrollPercent));
     }
 
+    const profile = this.getHeatmapTrackingProfile();
     analytics.queue.push(normalized);
     this.queueReplayEvent(normalized);
     this.scheduleHeatmapFlush();
 
-    if (analytics.queue.length >= 120) {
+    if (analytics.queue.length >= profile.queueFlushCount) {
       this.flushHeatmapEvents();
     }
   },
@@ -385,19 +464,24 @@ const MCQApp = {
       safeEvent.value = '[masked]';
     }
 
+    const profile = this.getHeatmapTrackingProfile();
     analytics.replayQueue.push(safeEvent);
-    if (analytics.replayQueue.length >= 220) {
+    if (analytics.replayQueue.length >= profile.replayFlushCount) {
       this.flushHeatmapEvents();
     }
   },
 
-  scheduleHeatmapFlush(delayMs = 5000) {
+  scheduleHeatmapFlush(delayMs = null) {
     const analytics = this.state.analytics;
     if (analytics.flushTimer) return;
+    const profile = this.getHeatmapTrackingProfile();
+    const waitMs = Number.isFinite(Number(delayMs))
+      ? Math.max(1000, Number(delayMs))
+      : Math.max(1000, Number(profile.flushDelayMs || 5000));
     analytics.flushTimer = window.setTimeout(() => {
       analytics.flushTimer = null;
       this.flushHeatmapEvents();
-    }, delayMs);
+    }, waitMs);
   },
 
   stopHeatmapFlushTimer() {
@@ -408,6 +492,64 @@ const MCQApp = {
     }
   },
 
+  estimateHeatmapPayloadBytes(payload) {
+    const serialized = JSON.stringify(payload || {});
+    if (typeof TextEncoder !== 'undefined') {
+      try {
+        return new TextEncoder().encode(serialized).length;
+      } catch {}
+    }
+    return serialized.length;
+  },
+
+  buildHeatmapFlushPayload() {
+    const analytics = this.state.analytics;
+    const profile = this.getHeatmapTrackingProfile();
+    const maxBatchEvents = Math.max(1, Math.min(500, Number(profile.maxBatchEvents || 500)));
+    const maxReplayEvents = Math.max(0, Math.min(500, Number(profile.maxReplayEvents || 500)));
+    const maxPayloadBytes = Math.max(12 * 1024, Number(profile.maxPayloadBytes || (64 * 1024)));
+    let events = analytics.queue.slice(0, maxBatchEvents);
+    let replayEvents = analytics.replayQueue.slice(0, maxReplayEvents);
+
+    const buildPayload = () => ({
+      sessionId: analytics.sessionId || '',
+      context: this.getHeatmapTrackingContext(),
+      events,
+      replayChunk: replayEvents.length > 0
+        ? {
+          chunkIndex: analytics.replayChunkIndex,
+          events: replayEvents
+        }
+        : null
+    });
+
+    let payload = buildPayload();
+    let attempts = 0;
+    while (
+      attempts < 12
+      && this.estimateHeatmapPayloadBytes(payload) > maxPayloadBytes
+      && (events.length > 1 || replayEvents.length > 1)
+    ) {
+      attempts += 1;
+      if (replayEvents.length >= events.length && replayEvents.length > 1) {
+        replayEvents = replayEvents.slice(0, Math.max(1, Math.floor(replayEvents.length * 0.75)));
+      } else if (events.length > 1) {
+        events = events.slice(0, Math.max(1, Math.floor(events.length * 0.75)));
+      } else if (replayEvents.length > 1) {
+        replayEvents = replayEvents.slice(0, Math.max(1, Math.floor(replayEvents.length * 0.75)));
+      } else {
+        break;
+      }
+      payload = buildPayload();
+    }
+
+    return {
+      payload,
+      eventCount: events.length,
+      replayEventCount: replayEvents.length
+    };
+  },
+
   async flushHeatmapEvents({ useBeacon = false, force = false } = {}) {
     const analytics = this.state.analytics;
     if (!analytics.enabled || analytics.flushing) return false;
@@ -416,19 +558,10 @@ const MCQApp = {
 
     analytics.flushing = true;
     try {
-      const events = analytics.queue.slice(0, 500);
-      const replayEvents = analytics.replayQueue.slice(0, 500);
-      const payload = {
-        sessionId: analytics.sessionId || '',
-        context: this.getHeatmapTrackingContext(),
-        events,
-        replayChunk: replayEvents.length > 0
-          ? {
-            chunkIndex: analytics.replayChunkIndex,
-            events: replayEvents
-          }
-          : null
-      };
+      const { payload, eventCount, replayEventCount } = this.buildHeatmapFlushPayload();
+      if (eventCount === 0 && replayEventCount === 0) {
+        return false;
+      }
 
       let accepted = false;
       if (useBeacon && typeof navigator !== 'undefined' && typeof navigator.sendBeacon === 'function') {
@@ -453,9 +586,9 @@ const MCQApp = {
       }
 
       if (accepted) {
-        analytics.queue.splice(0, events.length);
-        analytics.replayQueue.splice(0, replayEvents.length);
-        if (replayEvents.length > 0) {
+        analytics.queue.splice(0, eventCount);
+        analytics.replayQueue.splice(0, replayEventCount);
+        if (replayEventCount > 0) {
           analytics.replayChunkIndex += 1;
         }
       }
@@ -474,12 +607,18 @@ const MCQApp = {
     if (analytics.initialized) return;
     analytics.initialized = true;
     analytics.enabled = this.state.auth.heatmapEnabled !== false;
+    analytics.profile = this.getHeatmapTrackingProfile();
     analytics.sessionId = `s_${Math.random().toString(36).slice(2, 12)}${Date.now().toString(36).slice(-4)}`;
+
+    window.addEventListener('resize', () => {
+      analytics.profile = this.getHeatmapTrackingProfile();
+    }, { passive: true });
 
     window.addEventListener('mousemove', (event) => {
       if (!this.isHeatmapTrackingActive()) return;
+      const profile = this.getHeatmapTrackingProfile();
       const now = Date.now();
-      if (now - analytics.moveLastSentAt < (window.innerWidth <= 820 ? 240 : 150)) return;
+      if (now - analytics.moveLastSentAt < profile.moveSampleMs) return;
       analytics.moveLastSentAt = now;
       const width = Math.max(window.innerWidth || 1, 1);
       const height = Math.max(window.innerHeight || 1, 1);
@@ -494,8 +633,9 @@ const MCQApp = {
       if (!this.isHeatmapTrackingActive()) return;
       const touch = event.touches && event.touches[0];
       if (!touch) return;
+      const profile = this.getHeatmapTrackingProfile();
       const now = Date.now();
-      if (now - analytics.moveLastSentAt < 260) return;
+      if (now - analytics.moveLastSentAt < profile.touchMoveSampleMs) return;
       analytics.moveLastSentAt = now;
       const width = Math.max(window.innerWidth || 1, 1);
       const height = Math.max(window.innerHeight || 1, 1);
@@ -508,8 +648,9 @@ const MCQApp = {
 
     window.addEventListener('scroll', () => {
       if (!this.isHeatmapTrackingActive()) return;
+      const profile = this.getHeatmapTrackingProfile();
       const now = Date.now();
-      if (now - analytics.scrollLastSentAt < 300) return;
+      if (now - analytics.scrollLastSentAt < profile.scrollSampleMs) return;
       analytics.scrollLastSentAt = now;
       const doc = document.documentElement || document.body;
       const scrollTop = window.scrollY || doc.scrollTop || 0;
@@ -524,6 +665,11 @@ const MCQApp = {
       this.stopHeatmapFlushTimer();
       this.flushHeatmapEvents({ useBeacon: true, force: true });
     });
+
+    window.addEventListener('pagehide', () => {
+      this.stopHeatmapFlushTimer();
+      this.flushHeatmapEvents({ useBeacon: true, force: true });
+    }, { passive: true });
 
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden) return;
@@ -3105,7 +3251,6 @@ const MCQApp = {
              data-index="${index}" 
              tabindex="0"
              onmouseenter="MCQApp.trackOptionHover(${index}, event)"
-             ontouchstart="MCQApp.trackOptionHover(${index}, event)"
              onclick="MCQApp.selectOption(${index}, event)">
           <div class="option-main">
             <span class="option-letter">${letters[index] || index + 1}</span>
@@ -4564,12 +4709,20 @@ const MCQApp = {
 
   trackOptionHover(optionIndex, pointerEvent = null) {
     if (!this.isHeatmapTrackingActive()) return;
+    if (
+      pointerEvent?.pointerType === 'touch'
+      || String(pointerEvent?.type || '').startsWith('touch')
+      || Boolean(pointerEvent?.touches?.length)
+    ) {
+      return;
+    }
     const question = this.getCurrentQuestion();
     if (!question) return;
     const questionId = this.getQuestionStateKey(question);
     const hoverKey = `${questionId}:${optionIndex}`;
     const now = Date.now();
-    if (this.state.analytics.hoverLastEventKey === hoverKey && (now - this.state.analytics.hoverLastAt) < 900) {
+    const profile = this.getHeatmapTrackingProfile();
+    if (this.state.analytics.hoverLastEventKey === hoverKey && (now - this.state.analytics.hoverLastAt) < profile.hoverSampleMs) {
       return;
     }
     this.state.analytics.hoverLastEventKey = hoverKey;

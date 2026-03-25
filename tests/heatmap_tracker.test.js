@@ -100,6 +100,11 @@ test('heatmap tracker schedules timed flushes and forces beacon flush on unload'
 
   assert.equal(Boolean(unloadFlushOptions?.useBeacon), true);
   assert.equal(Boolean(unloadFlushOptions?.force), true);
+
+  unloadFlushOptions = null;
+  dispatchWindowEvent('pagehide');
+  assert.equal(Boolean(unloadFlushOptions?.useBeacon), true);
+  assert.equal(Boolean(unloadFlushOptions?.force), true);
 });
 
 test('mobile touchmove sampling applies throttle guardrails', () => {
@@ -126,10 +131,97 @@ test('mobile touchmove sampling applies throttle guardrails', () => {
 
   setNow(1000);
   dispatchWindowEvent('touchmove', { touches: [{ clientX: 20, clientY: 40 }] });
-  setNow(1100);
+  setNow(1200);
   dispatchWindowEvent('touchmove', { touches: [{ clientX: 25, clientY: 45 }] });
-  setNow(1300);
+  setNow(1500);
   dispatchWindowEvent('touchmove', { touches: [{ clientX: 30, clientY: 50 }] });
 
   assert.equal(moveEvents, 2);
+});
+
+test('trackOptionHover ignores touch events to avoid duplicate mobile telemetry', () => {
+  const { app } = loadMCQApp();
+  setupQuizState(app, {
+    id: 'q-1',
+    question: 'Question',
+    options: ['A', 'B'],
+    correctAnswer: 0
+  });
+  app.state.currentView = 'mcq';
+  app.state.analytics.enabled = true;
+
+  const emitted = [];
+  app.queueHeatmapEvent = (payload) => emitted.push(payload);
+
+  const target = {
+    getBoundingClientRect() {
+      return { left: 100, top: 200, width: 200, height: 100 };
+    }
+  };
+
+  app.trackOptionHover(0, {
+    type: 'touchstart',
+    touches: [{ clientX: 140, clientY: 230 }],
+    currentTarget: target
+  });
+  assert.equal(emitted.length, 0);
+
+  app.trackOptionHover(0, {
+    type: 'mouseenter',
+    clientX: 150,
+    clientY: 220,
+    currentTarget: target
+  });
+
+  assert.equal(emitted.length, 1);
+  assert.equal(emitted[0].type, 'hover');
+});
+
+test('mobile flush uses compact batch sizes to protect phone performance', async () => {
+  let capturedPayload = null;
+  const { app } = loadMCQApp({}, {
+    innerWidth: 390,
+    navigator: {
+      userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
+    },
+    fetchImpl: async (_url, options = {}) => {
+      capturedPayload = JSON.parse(String(options.body || '{}'));
+      return {
+        ok: true,
+        json: async () => ({})
+      };
+    }
+  });
+
+  setupQuizState(app, {
+    id: 'q-1',
+    question: 'Question',
+    options: ['A', 'B'],
+    correctAnswer: 0
+  });
+  app.state.currentView = 'mcq';
+  app.state.analytics.enabled = true;
+  app.state.analytics.queue = Array.from({ length: 140 }, (_, index) => ({
+    type: 'move',
+    ts: Date.now() + index,
+    xPercent: 40,
+    yPercent: 50,
+    selector: '.option[data-index="0"]'
+  }));
+  app.state.analytics.replayQueue = Array.from({ length: 160 }, (_, index) => ({
+    type: 'move',
+    ts: new Date(Date.now() + index).toISOString(),
+    xPercent: 40,
+    yPercent: 50,
+    selector: '.option[data-index="0"]',
+    value: ''
+  }));
+
+  const accepted = await app.flushHeatmapEvents();
+  assert.equal(accepted, true);
+  assert.ok(capturedPayload);
+  assert.ok(Array.isArray(capturedPayload.events));
+  assert.ok(capturedPayload.events.length <= 80);
+  assert.ok(capturedPayload.replayChunk && Array.isArray(capturedPayload.replayChunk.events));
+  assert.ok(capturedPayload.replayChunk.events.length <= 110);
 });
