@@ -15,6 +15,7 @@ Run:
 
 import json
 import sys
+import re
 from pathlib import Path
 
 # Test setup
@@ -157,8 +158,7 @@ class TestAuthHandlers:
         ]
         
         def is_valid_email(email):
-            # Simple regex: must have @ and domain
-            return "@" in email and "." in email.split("@")[-1] and len(email) > 5
+            return bool(re.match(r'^[^\s@]+@[^\s@]+\.[^\s@]+$', email))
         
         for email in valid_emails:
             assert is_valid_email(email), f"{email} should be valid"
