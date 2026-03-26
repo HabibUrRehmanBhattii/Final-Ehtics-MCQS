@@ -622,12 +622,34 @@ async function handleAdminAuthLogin(request, env) {
 
     await enforceRateLimit(env.DB, email, ip);
 
-    const user = await env.DB.prepare(
+    const allowAutoProvision = String(env.ADMIN_AUTO_PROVISION || 'true').trim().toLowerCase() !== 'false';
+
+    let user = await env.DB.prepare(
       'SELECT id, email, password_hash, status FROM users WHERE email = ? LIMIT 1'
     ).bind(email).first();
 
+    const requestedIsAdmin = isAdminEmail(env, email);
+    if (!user && requestedIsAdmin && allowAutoProvision) {
+      const now = new Date().toISOString();
+      const userId = crypto.randomUUID();
+      const passwordHash = await hashPassword(password);
+
+      await env.DB.prepare(
+        'INSERT INTO users (id, email, password_hash, status, created_at, updated_at, last_login_at) VALUES (?, ?, ?, ?, ?, ?, ?)'
+      ).bind(userId, email, passwordHash, 'active', now, now, now).run();
+
+      user = {
+        id: userId,
+        email,
+        password_hash: passwordHash,
+        status: 'active'
+      };
+
+      await logAuditEvent(env.DB, request, 'admin.auth.bootstrap', 'success', userId, { email });
+    }
+
     const isValid = Boolean(user && user.status === 'active' && (await verifyPassword(password, user.password_hash)));
-    const isAdmin = isAdminEmail(env, email);
+    const isAdmin = requestedIsAdmin;
 
     if (!isValid || !isAdmin) {
       await recordAuthAttempt(env.DB, 'ip', ip, false);
