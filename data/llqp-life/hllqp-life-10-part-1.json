@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Government benefits do not replace full household income.",
-        "The surviving working spouse will need to hire someone to assume the caregiving duties, resulting in additional expenses.",
+        null,
         "Household expenses do not disappear; caregiving costs replace other expenses.",
         "Assets may be insufficient without life insurance planning."
       ],
@@ -42,7 +42,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Wills can be contested and may not be sufficient for court-ordered obligations.",
-        "By requiring Arthur to obtain sufficient life insurance naming his ex-spouse as a beneficiary.",
+        null,
         "Court orders continue until death unless modified; remarriage rules vary by jurisdiction.",
         "Investment in a trust does not guarantee the funds will be sufficient."
       ],
@@ -68,7 +68,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Employers have no automatic responsibility for court-ordered child support.",
-        "The payor must obtain sufficient life insurance to cover the child support obligations.",
+        null,
         "Child support obligations do not automatically terminate at death.",
         "The receiving parent cannot unilaterally insure the payor's life."
       ],
@@ -94,7 +94,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Disabled family members are often financial dependents.",
-        "The need to provide funding over a time frame that could extend 50 years or more.",
+        null,
         "Life insurance can effectively fund care for disabled family members.",
         "Government programs may provide some coverage but typically require additional private funding."
       ],
@@ -119,7 +119,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The elderly parents' care needs should be factored into the life insurance needs analysis as financial dependents.",
+        null,
         "CPP income may be insufficient for elderly parents' care expenses.",
         "Aging parents can be financial dependents requiring life insurance protection.",
         "Life insurance provides more reliable protection than government programs alone."
@@ -146,12 +146,12 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Gross income overstates the actual funds available to the family.",
-        "The take-home pay, or income after all taxes and deductions.",
+        null,
         "Industry averages do not reflect the individual's actual circumstances.",
         "Previous year's highest salary may not reflect current or future income."
       ],
       "explanation": "Step 1: Identify the question focuses on which income figure to use in needs analysis.\nStep 2: Apply the LLQP principle that needs analysis should be based on actual cash flow available to the family.\nStep 3: Eliminate distractors - gross income includes government taxes; averages don't fit individual; highest past salary is not current.\nStep 4: Select the best answer. Option B: The take-home pay, or income after all taxes and deductions.",
-      "kidExplanation": "When we figure out how much money your family loses if you die, we don't look at your big official salary. We only look at your take-home pay\u2014the actual cash that lands in your bank account after the government takes out all their taxes!",
+      "kidExplanation": "When we figure out how much money your family loses if you die, we don't look at your big official salary. We only look at your take-home pay—the actual cash that lands in your bank account after the government takes out all their taxes!",
       "difficulty": "easy",
       "tags": [
         "needs-analysis",
@@ -172,7 +172,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Using only current salary underestimates the lifestyle the family will enjoy.",
-        "The client's expected future income, plus increases for inflation if appropriate.",
+        null,
         "Ignoring future increases contradicts the goal of maintaining lifestyle.",
         "Conservative estimates underprotect the family's future lifestyle."
       ],
@@ -199,7 +199,7 @@
       "optionFeedback": [
         "Employment affects insurance needs but does not determine exact amounts alone.",
         "Employment stability is highly relevant to premium payment ability.",
-        "It indicates whether the policyholder might have trouble paying life insurance premiums in the future, suggesting a need for a product with flexible premiums.",
+        null,
         "All individuals with financial dependents need life insurance."
       ],
       "explanation": "Step 1: Identify the question focuses on the relationship between employment stability and premium payment capacity.\nStep 2: Apply the LLQP principle that agents must consider the client's ability to sustain premium payments.\nStep 3: Eliminate distractors - employment affects needs but doesn't determine amounts; employment matters; employed people need insurance.\nStep 4: Select the best answer. Option C: It indicates whether the policyholder might have trouble paying life insurance premiums in the future, suggesting a need for a product with flexible premiums.",
@@ -225,7 +225,7 @@
       "optionFeedback": [
         "Office equipment belongs to the employer, not the family.",
         "Death does not trigger back-tax liabilities for surviving family.",
-        "The loss of employer-sponsored group benefits, such as medical and dental coverage.",
+        null,
         "Families are not liable for employer business debts."
       ],
       "explanation": "Step 1: Identify the question focuses on ancillary financial losses from employment beyond wages.\nStep 2: Apply the LLQP principle that group benefits have real value and their loss creates financial need.\nStep 3: Eliminate distractors - equipment is not family property; death doesn't trigger back-taxes; families aren't liable for business debts.\nStep 4: Select the best answer. Option C: The loss of employer-sponsored group benefits, such as medical and dental coverage.",
@@ -251,7 +251,7 @@
       "optionFeedback": [
         "Sole proprietorships do not automatically transfer without legal documentation.",
         "Creditors may have claims but the business does not transfer to them.",
-        "The business ceases to exist, as there is no legal separation between the owner and the business.",
+        null,
         "A sole proprietorship cannot unilaterally become a corporation."
       ],
       "explanation": "Step 1: Identify the question focuses on the legal nature of sole proprietorships and what happens at death.\nStep 2: Apply the LLQP principle that a sole proprietorship is an extension of the individual owner.\nStep 3: Eliminate distractors - no automatic transfer; creditors don't acquire the business; conversion to corporation requires intent.\nStep 4: Select the best answer. Option C: The business ceases to exist, as there is no legal separation between the owner and the business.",

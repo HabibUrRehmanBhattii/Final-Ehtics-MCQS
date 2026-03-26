@@ -13,9 +13,15 @@
         "C": "To pay off the policyholder's credit card debt while they are alive.",
         "D": "To provide tax-free income during retirement."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "To protect against the financial consequences of an individual's death",
-      "kidExplanation": "Life insurance is a safety net. If someone passes away, the net catches their family so they don't crash and run out of money to buy food and keep their house."
+      "kidExplanation": "Life insurance is a safety net. If someone passes away, the net catches their family so they don't crash and run out of money to buy food and keep their house.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 2,
@@ -26,9 +32,15 @@
         "C": "It provides temporary coverage for a specific period and pays out only if death occurs during that period.",
         "D": "The premiums are guaranteed to decrease every year."
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "It provides temporary coverage for a specific period and pays out only if death occurs during that period.",
-      "kidExplanation": "Term insurance is like renting an apartment for a year. You only have it for the time you pay for it. If you move out (or the term ends), you don't get to keep it!"
+      "kidExplanation": "Term insurance is like renting an apartment for a year. You only have it for the time you pay for it. If you move out (or the term ends), you don't get to keep it!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 3,
@@ -39,9 +51,15 @@
         "C": "Convert the policy to a whole life policy.",
         "D": "Cancel the policy and get all their premiums back."
       },
-      "correctAnswer": "A",
+      "correctAnswer": 0,
       "explanation": "Renew the policy for another term without providing medical evidence of insurability.",
-      "kidExplanation": "\"Renewable\" means you can hit the \"Continue\" button on your insurance when it expires, and the company is NOT allowed to make you take a doctor's test, even if you got sick!"
+      "kidExplanation": "\"Renewable\" means you can hit the \"Continue\" button on your insurance when it expires, and the company is NOT allowed to make you take a doctor's test, even if you got sick!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 4,
@@ -52,9 +70,15 @@
         "C": "They start low and increase every year as the insured gets older and the risk of death increases.",
         "D": "They are only paid once as a single lump sum."
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "They start low and increase every year as the insured gets older and the risk of death increases.",
-      "kidExplanation": "Every time you have a birthday, you get a little bit older and a little bit closer to heaven. Because the risk goes up every year, the price tag of a YRT policy goes up every year, too!"
+      "kidExplanation": "Every time you have a birthday, you get a little bit older and a little bit closer to heaven. Because the risk goes up every year, the price tag of a YRT policy goes up every year, too!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 5,
@@ -65,9 +89,15 @@
         "C": "A guaranteed 10% investment return and a guaranteed cash value.",
         "D": "Guaranteed acceptance with no medical questions."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "A guaranteed level premium and a guaranteed death benefit for life.",
-      "kidExplanation": "Whole life is a forever promise! The company promises that your price will never, ever go up, and your family will definitely get the prize money no matter how old you are when you pass away."
+      "kidExplanation": "Whole life is a forever promise! The company promises that your price will never, ever go up, and your family will definitely get the prize money no matter how old you are when you pass away.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 6,
@@ -78,9 +108,15 @@
         "C": "The total amount of premiums paid into the policy.",
         "D": "A penalty fee charged for cancelling early."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "A savings component that grows over time and is available to the policyholder if they cancel (surrender) the policy.",
-      "kidExplanation": "Whole life insurance has a secret piggy bank inside it. If you decide you don't want the insurance anymore, you can smash the piggy bank and walk away with the cash inside!"
+      "kidExplanation": "Whole life insurance has a secret piggy bank inside it. If you decide you don't want the insurance anymore, you can smash the piggy bank and walk away with the cash inside!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 7,
@@ -91,9 +127,15 @@
         "C": "A partial refund of premiums paid out when the insurance company experiences favorable mortality, interest, or expense results.",
         "D": "A mandatory tax paid to the government."
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "A partial refund of premiums paid out when the insurance company experiences favorable mortality, interest, or expense results.",
-      "kidExplanation": "If the insurance company makes extra profit because not many people got sick and their investments did well, they share that extra profit with you! It's like a special bonus check."
+      "kidExplanation": "If the insurance company makes extra profit because not many people got sick and their investments did well, they share that extra profit with you! It's like a special bonus check.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 8,
@@ -104,9 +146,15 @@
         "C": "Paid-Up Additions (PUA)",
         "D": "Term additions"
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "Paid-Up Additions (PUA)",
-      "kidExplanation": "Instead of taking the bonus money in cash, you use it to buy tiny, extra shields that you never have to pay for again. Every year you get a bonus, your total shield gets bigger!"
+      "kidExplanation": "Instead of taking the bonus money in cash, you use it to buy tiny, extra shields that you never have to pay for again. Every year you get a bonus, your total shield gets bigger!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 9,
@@ -117,9 +165,15 @@
         "C": "It guarantees a 5% return on all investments.",
         "D": "It does not allow the policyholder to choose their investments."
       },
-      "correctAnswer": "A",
+      "correctAnswer": 0,
       "explanation": "It unbundles the insurance cost and the investment account, making it completely transparent and flexible.",
-      "kidExplanation": "UL is a \"build-it-yourself\" policy! Instead of the company hiding the math, you can see exactly how much goes to the insurance shield and how much goes into your investment bucket."
+      "kidExplanation": "UL is a \"build-it-yourself\" policy! Instead of the company hiding the math, you can see exactly how much goes to the insurance shield and how much goes into your investment bucket.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 10,
@@ -130,9 +184,15 @@
         "C": "The total premium paid by the policyholder.",
         "D": "The minimum guaranteed return on the investment account."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "The actual cost the insurer charges each month to provide the death benefit protection, deducted from the investment account.",
-      "kidExplanation": "The NCPI is the actual price tag of the insurance shield. Every month, the insurance company reaches into your UL savings bucket and takes out just enough coins to pay for that month's shield."
+      "kidExplanation": "The NCPI is the actual price tag of the insurance shield. Every month, the insurance company reaches into your UL savings bucket and takes out just enough coins to pay for that month's shield.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 11,
@@ -143,9 +203,15 @@
         "C": "The death benefit is cut in half.",
         "D": "The insurer cancels the investment account."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "The insurer will continue to deduct the monthly NCPI and expenses from the investment account, keeping the policy in force until the account runs dry.",
-      "kidExplanation": "Because it's a flexible policy, you can take a vacation from paying bills! As long as your savings bucket has enough coins in it to pay the monthly shield cost, the policy stays turned on."
+      "kidExplanation": "Because it's a flexible policy, you can take a vacation from paying bills! As long as your savings bucket has enough coins in it to pay the monthly shield cost, the policy stays turned on.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 12,
@@ -156,9 +222,15 @@
         "C": "Face amount plus fund value (increasing death benefit)",
         "D": "Decreasing term benefit"
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "Face amount plus fund value (increasing death benefit)",
-      "kidExplanation": "With this option, your family gets the main prize (the face amount) AND they get to keep the entire piggy bank of savings you built up inside the policy!"
+      "kidExplanation": "With this option, your family gets the main prize (the face amount) AND they get to keep the entire piggy bank of savings you built up inside the policy!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 13,
@@ -169,9 +241,15 @@
         "C": "It waives the requirement for a medical exam.",
         "D": "It allows the policyholder to skip premiums whenever they want."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "It pays the policy premiums on behalf of the policyholder if they become totally disabled.",
-      "kidExplanation": "If you get super sick or hurt and can't go to work to make money, this special rule steps in and pays your monthly insurance bill for you until you get better!"
+      "kidExplanation": "If you get super sick or hurt and can't go to work to make money, this special rule steps in and pays your monthly insurance bill for you until you get better!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 14,
@@ -182,9 +260,15 @@
         "C": "It guarantees the insured will never be diagnosed with a terminal illness.",
         "D": "It ensures the premium will decrease over time."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "It allows the insured to purchase additional insurance at specific future dates or life events (like marriage) without proving they are healthy.",
-      "kidExplanation": "The GIB rider is a VIP pass for the future! It lets you buy a bigger shield later on when you get married or have kids, and the company isn't allowed to ask you any health questions."
+      "kidExplanation": "The GIB rider is a VIP pass for the future! It lets you buy a bigger shield later on when you get married or have kids, and the company isn't allowed to ask you any health questions.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 15,
@@ -195,9 +279,15 @@
         "C": "It covers funeral expenses only.",
         "D": "It refunds all premiums if the insured dies in an accident."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "It pays an additional amount (often double the base face amount) if the insured dies as a direct result of an accident.",
-      "kidExplanation": "If you buy this extra sticker for your policy and you pass away in a tragic accident (like a car crash), the insurance company pays your family DOUBLE the prize money!"
+      "kidExplanation": "If you buy this extra sticker for your policy and you pass away in a tragic accident (like a car crash), the insurance company pays your family DOUBLE the prize money!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 16,
@@ -208,9 +298,15 @@
         "C": "It pays a cash bonus on their 18th birthday.",
         "D": "The parents receive a refund of all premiums."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "It can usually be converted into individual permanent policies for the children without medical evidence of insurability.",
-      "kidExplanation": "When the kids grow up and leave the house, they can take their mini-shield with them and turn it into a big adult shield, and they don't have to take a doctor's test to do it!"
+      "kidExplanation": "When the kids grow up and leave the house, they can take their mini-shield with them and turn it into a big adult shield, and they don't have to take a doctor's test to do it!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 17,
@@ -221,9 +317,15 @@
         "C": "The plan sponsor (usually the employer)",
         "D": "The beneficiary"
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "The plan sponsor (usually the employer)",
-      "kidExplanation": "The boss owns the giant group policy. The employees just get a little booklet saying they are allowed to stand under the boss's giant umbrella!"
+      "kidExplanation": "The boss owns the giant group policy. The employees just get a little booklet saying they are allowed to stand under the boss's giant umbrella!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 18,
@@ -234,9 +336,15 @@
         "C": "The period during which the insurer can cancel the master contract.",
         "D": "The 31-day grace period for paying premiums."
       },
-      "correctAnswer": "A",
+      "correctAnswer": 0,
       "explanation": "The time an employee has to wait after being hired before they are eligible to join the group plan.",
-      "kidExplanation": "When you are the new kid at work, the boss makes you wait a few months to prove you are going to stay before they let you use the cool company insurance perks."
+      "kidExplanation": "When you are the new kid at work, the boss makes you wait a few months to prove you are going to stay before they let you use the cool company insurance perks.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 19,
@@ -247,9 +355,15 @@
         "C": "Force their new employer to match their old coverage.",
         "D": "Cash out the master contract."
       },
-      "correctAnswer": "A",
+      "correctAnswer": 0,
       "explanation": "Convert their group coverage to an individual permanent policy without providing proof of insurability within 31 days.",
-      "kidExplanation": "If you quit your job, you have exactly 31 days to trade your company \"team jersey\" for your own \"personal jersey,\" and you don't even have to pass a health test to do it!"
+      "kidExplanation": "If you quit your job, you have exactly 31 days to trade your company \"team jersey\" for your own \"personal jersey,\" and you don't even have to pass a health test to do it!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 20,
@@ -260,9 +374,15 @@
         "C": "They are not deductible for the employer.",
         "D": "They are treated as a capital gain."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "They are a deductible business expense for the employer, but a taxable benefit to the employee.",
-      "kidExplanation": "The boss gets a tax discount for buying the insurance, but the government sees the insurance as an extra \"prize\" for the employee, so the employee has to pay a little bit of tax on that prize!"
+      "kidExplanation": "The boss gets a tax discount for buying the insurance, but the government sees the insurance as an extra \"prize\" for the employee, so the employee has to pay a little bit of tax on that prize!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 21,
@@ -273,9 +393,15 @@
         "C": "No, they are received entirely tax-free.",
         "D": "Only if the benefit exceeds $1 million."
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "No, they are received entirely tax-free.",
-      "kidExplanation": "The government keeps its hands completely off the giant prize money. Your family gets to keep every single penny of the death benefit completely tax-free!"
+      "kidExplanation": "The government keeps its hands completely off the giant prize money. Your family gets to keep every single penny of the death benefit completely tax-free!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 22,
@@ -286,9 +412,15 @@
         "C": "The cash value is confiscated by the government.",
         "D": "The policyholder goes to jail."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "The policyholder must pay tax on the \"policy gain\" (Proceeds of Disposition minus the Adjusted Cost Basis).",
-      "kidExplanation": "If you turn your policy back into the store for cash, you have to do some math. If you got back more money than the policy actually \"cost\" you, that extra money is profit, and you have to pay taxes on the profit!"
+      "kidExplanation": "If you turn your policy back into the store for cash, you have to do some math. If you got back more money than the policy actually \"cost\" you, that extra money is profit, and you have to pay taxes on the profit!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 23,
@@ -299,9 +431,15 @@
         "C": "If it is transferred to a business partner.",
         "D": "If it is transferred to a parent."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "If it is transferred absolutely to a spouse or common-law partner.",
-      "kidExplanation": "The government lets you pass your policy to your husband or wife like a hot potato! Because they are your spouse, the tax monster won't bite you when you hand it over."
+      "kidExplanation": "The government lets you pass your policy to your husband or wife like a hot potato! Because they are your spouse, the tax monster won't bite you when you hand it over.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 24,
@@ -312,9 +450,15 @@
         "C": "To limit the death benefit to $5 million.",
         "D": "To regulate how much agents get paid."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "To ensure a policy is primarily for life insurance protection and not just a giant, tax-sheltered investment account.",
-      "kidExplanation": "The MTAR rule is a speed limit for your policy's savings account. It stops people from using insurance as a secret treasure chest to hide millions of dollars from the tax man!"
+      "kidExplanation": "The MTAR rule is a speed limit for your policy's savings account. It stops people from using insurance as a secret treasure chest to hide millions of dollars from the tax man!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 25,
@@ -325,9 +469,15 @@
         "C": "To avoid paying corporate taxes.",
         "D": "To provide a death benefit to the key person's spouse."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "To provide a tax-free cash injection to the business to cover lost revenue and the costs of finding a replacement if a crucial employee dies.",
-      "kidExplanation": "If the company's star quarterback passes away, the team is in big trouble. Key Person insurance gives the team a pile of cash to survive while they search for a new star player!"
+      "kidExplanation": "If the company's star quarterback passes away, the team is in big trouble. Key Person insurance gives the team a pile of cash to survive while they search for a new star player!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 26,
@@ -338,9 +488,15 @@
         "C": "To sell the business to a foreign investor.",
         "D": "To buy new equipment for the office."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "To dictate exactly what happens to a partner's shares if they die, using the insurance money to guarantee the surviving partners can buy out the deceased's family.",
-      "kidExplanation": "It's a \"What If\" rulebook! If a partner passes away, the insurance company hands the surviving partners a pile of cash so they can instantly buy the shares back from the partner's family, keeping strangers out of the business!"
+      "kidExplanation": "It's a \"What If\" rulebook! If a partner passes away, the insurance company hands the surviving partners a pile of cash so they can instantly buy the shares back from the partner's family, keeping strangers out of the business!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 27,
@@ -351,9 +507,15 @@
         "C": "A high-risk mutual fund.",
         "D": "The government's tax collection account."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "A notional tracking account that allows the corporation to pass the tax-free life insurance death benefit down to the surviving shareholders completely tax-free.",
-      "kidExplanation": "The CDA is a magic tax-free scorecard! It proves to the government that the insurance money the company just received is special, so the company can hand that cash to the owners without anyone paying taxes."
+      "kidExplanation": "The CDA is a magic tax-free scorecard! It proves to the government that the insurance money the company just received is special, so the company can hand that cash to the owners without anyone paying taxes.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 28,
@@ -364,9 +526,15 @@
         "C": "The loan is automatically forgiven.",
         "D": "The business pays zero income tax that year."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "The business may be able to deduct a portion of the premiums (the NCPI) as a business expense.",
-      "kidExplanation": "Normally, you can't deduct insurance costs from your taxes. But if the bank makes you buy it just to get a loan for your business, the government feels bad and lets you write off part of the cost!"
+      "kidExplanation": "Normally, you can't deduct insurance costs from your taxes. But if the bank makes you buy it just to get a loan for your business, the government feels bad and lets you write off part of the cost!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 29,
@@ -377,9 +545,15 @@
         "C": "To force clients to take blood tests.",
         "D": "To sell medical data to advertisers."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "To share coded medical information among insurers to detect fraud and omissions on applications.",
-      "kidExplanation": "The MIB is a secret group chat for insurance companies. If you tell Company A you have a bad heart, they put a code in the chat. If you lie to Company B later, they check the chat and catch you!"
+      "kidExplanation": "The MIB is a secret group chat for insurance companies. If you tell Company A you have a bad heart, they put a code in the chat. If you lie to Company B later, they check the chat and catch you!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 30,
@@ -390,9 +564,15 @@
         "C": "It gives the applicant a 10-day free look.",
         "D": "It waives the first year's premium."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "It provides a limited amount of temporary coverage immediately while the application is being medically underwritten.",
-      "kidExplanation": "A TIA is a \"temporary shield\" that protects you while you wait for your real shield to be built in the factory. You only get it if you pay today and promise you are healthy!"
+      "kidExplanation": "A TIA is a \"temporary shield\" that protects you while you wait for your real shield to be built in the factory. You only get it if you pay today and promise you are healthy!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 31,
@@ -403,9 +583,15 @@
         "C": "They adjust the age on the policy.",
         "D": "They charge a 10% penalty."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "They can void the policy entirely and deny the claim, because fraud invalidates the 2-year contestability limit.",
-      "kidExplanation": "The insurance company has a 2-year safety window for honest mistakes. But if you lied ON PURPOSE to trick them, that safety window disappears! They can rip up your contract even 5 years later."
+      "kidExplanation": "The insurance company has a 2-year safety window for honest mistakes. But if you lied ON PURPOSE to trick them, that safety window disappears! They can rip up your contract even 5 years later.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 32,
@@ -416,9 +602,15 @@
         "C": "A contract signed by the agent.",
         "D": "A death certificate."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "A report written by the applicant's personal doctor detailing their medical history, requested by the underwriter.",
-      "kidExplanation": "An APS is just a fancy letter the insurance company asks your personal doctor to write. The letter tells the company exactly how healthy you are and what medicines you take!"
+      "kidExplanation": "An APS is just a fancy letter the insurance company asks your personal doctor to write. The letter tells the company exactly how healthy you are and what medicines you take!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 33,
@@ -429,9 +621,15 @@
         "C": "Because it is legally required by the CRA.",
         "D": "Because they have a high income."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "Because replacing their caregiving duties (e.g., childcare, household management) will result in significant new expenses for the surviving spouse.",
-      "kidExplanation": "Even if mom or dad doesn't bring home a paycheck, the work they do is super valuable! If they aren't there, the family has to pay for a nanny or babysitter, which costs a lot of money."
+      "kidExplanation": "Even if mom or dad doesn't bring home a paycheck, the work they do is super valuable! If they aren't there, the family has to pay for a nanny or babysitter, which costs a lot of money.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 34,
@@ -442,9 +640,15 @@
         "C": "Assets like cash, savings accounts, or life insurance that can be quickly converted to cash to pay final expenses.",
         "D": "A private business."
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "Assets like cash, savings accounts, or life insurance that can be quickly converted to cash to pay final expenses.",
-      "kidExplanation": "Liquid assets are things that can be turned into cold, hard cash instantly. If you don't have cash ready when you pass away, your family might have to sell your house in a panic just to pay the bills!"
+      "kidExplanation": "Liquid assets are things that can be turned into cold, hard cash instantly. If you don't have cash ready when you pass away, your family might have to sell your house in a panic just to pay the bills!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 35,
@@ -455,9 +659,15 @@
         "C": "It forces the children to live in the cottage.",
         "D": "It transfers the cottage to a corporation."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "It provides the liquid cash needed to pay the capital gains tax, preventing the children from having to sell the cottage to pay the CRA.",
-      "kidExplanation": "The government taxes the profit on your cottage when you pass away! Life insurance gives your kids a giant pile of cash so they can pay the tax monster and keep the family cabin."
+      "kidExplanation": "The government taxes the profit on your cottage when you pass away! Life insurance gives your kids a giant pile of cash so they can pay the tax monster and keep the family cabin.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 36,
@@ -468,9 +678,15 @@
         "C": "Moving all money to the nation's capital.",
         "D": "Paying off the mortgage entirely."
       },
-      "correctAnswer": "A",
+      "correctAnswer": 0,
       "explanation": "Dividing the needed annual income by the expected interest rate to determine the lump sum required.",
-      "kidExplanation": "Capitalization asks a math question: \"How giant does a pile of money need to be so that the interest it earns every year perfectly replaces the paycheck you used to bring home?\""
+      "kidExplanation": "Capitalization asks a math question: \"How giant does a pile of money need to be so that the interest it earns every year perfectly replaces the paycheck you used to bring home?\"",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 37,
@@ -481,9 +697,15 @@
         "C": "It creates a comprehensive list of all specific capital needs (debts, taxes, education funds, and income shortfalls) to calculate the exact lump sum required.",
         "D": "It assumes the capital is never spent."
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "It creates a comprehensive list of all specific capital needs (debts, taxes, education funds, and income shortfalls) to calculate the exact lump sum required.",
-      "kidExplanation": "Instead of just replacing a paycheck, the Capital Needs Approach makes a giant shopping list! It adds up the missing paychecks, the funeral cost, the credit card bills, and the kids' college funds to get one perfect total!"
+      "kidExplanation": "Instead of just replacing a paycheck, the Capital Needs Approach makes a giant shopping list! It adds up the missing paychecks, the funeral cost, the credit card bills, and the kids' college funds to get one perfect total!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 38,
@@ -494,9 +716,15 @@
         "C": "Because cash flow determines the death benefit.",
         "D": "Because the agent gets a cash flow bonus."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "Because permanent insurance is expensive; if the client doesn't have positive cash flow (extra money at the end of the month), they cannot afford the premium and the policy will lapse.",
-      "kidExplanation": "It doesn't matter if the math says you need a permanent shield if you don't have enough allowance money to pay for it! The agent has to make sure you can actually afford the monthly bill."
+      "kidExplanation": "It doesn't matter if the math says you need a permanent shield if you don't have enough allowance money to pay for it! The agent has to make sure you can actually afford the monthly bill.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 39,
@@ -507,9 +735,15 @@
         "C": "A Term Life insurance policy, as it provides the highest death benefit for the lowest initial premium.",
         "D": "No insurance until they make more money."
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "A Term Life insurance policy, as it provides the highest death benefit for the lowest initial premium.",
-      "kidExplanation": "If you need a giant shield right now but you don't have a lot of money, you rent a temporary shield (Term insurance). It's super cheap and gives your family maximum protection!"
+      "kidExplanation": "If you need a giant shield right now but you don't have a lot of money, you rent a temporary shield (Term insurance). It's super cheap and gives your family maximum protection!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 40,
@@ -520,9 +754,15 @@
         "C": "The removal of the agent from the contract.",
         "D": "A tax-free dividend."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "A specific condition or activity (like suicide within 2 years, or a dangerous hobby) that the policy will NOT cover.",
-      "kidExplanation": "Exclusions are the \"Fine Print.\" It's a rule that says, \"We will cover you for EVERYTHING... except if you die doing this one specific dangerous thing, like skydiving.\""
+      "kidExplanation": "Exclusions are the \"Fine Print.\" It's a rule that says, \"We will cover you for EVERYTHING... except if you die doing this one specific dangerous thing, like skydiving.\"",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 41,
@@ -533,9 +773,15 @@
         "C": "The grace period for late premiums.",
         "D": "The waiting period before a claim is paid."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "The policyholder's right to review the newly delivered policy for 10 days and return it for a full, 100% refund if they change their mind.",
-      "kidExplanation": "It's a 10-day return policy! When you get your new insurance book, you have 10 days to read it. If you decide you don't want it, you give it back and get all your money back!"
+      "kidExplanation": "It's a 10-day return policy! When you get your new insurance book, you have 10 days to read it. If you decide you don't want it, you give it back and get all your money back!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 42,
@@ -546,9 +792,15 @@
         "C": "60 days",
         "D": "6 months"
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "30 or 31 days",
-      "kidExplanation": "If you accidentally forget to pay your bill on time, the company doesn't take your shield away instantly. They give you a 30-day \"grace period\" to pay up before you lose your protection!"
+      "kidExplanation": "If you accidentally forget to pay your bill on time, the company doesn't take your shield away instantly. They give you a 30-day \"grace period\" to pay up before you lose your protection!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 43,
@@ -559,9 +811,15 @@
         "C": "The insurer pays the full death benefit but deducts the unpaid premium from the payout.",
         "D": "The beneficiary goes to jail."
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "The insurer pays the full death benefit but deducts the unpaid premium from the payout.",
-      "kidExplanation": "If you pass away during the grace period, the company still pays your family the giant prize! BUT, because you forgot to pay your last bill, they subtract that one bill from the prize before handing it over."
+      "kidExplanation": "If you pass away during the grace period, the company still pays your family the giant prize! BUT, because you forgot to pay your last bill, they subtract that one bill from the prize before handing it over.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 44,
@@ -572,9 +830,15 @@
         "C": "The current irrevocable beneficiary must provide written consent.",
         "D": "A judge."
       },
-      "correctAnswer": "C",
+      "correctAnswer": 0,
       "explanation": "The current irrevocable beneficiary must provide written consent.",
-      "kidExplanation": "\"Irrevocable\" means locked tight! You can never take that person's name off the policy unless they actually sign a piece of paper saying they agree to give up the prize."
+      "kidExplanation": "\"Irrevocable\" means locked tight! You can never take that person's name off the policy unless they actually sign a piece of paper saying they agree to give up the prize.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 45,
@@ -585,9 +849,15 @@
         "C": "The original application form.",
         "D": "The deceased's bank statements."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "A valid Proof of Death (such as a provincial Death Certificate).",
-      "kidExplanation": "The insurance company needs absolute proof that the person went to heaven before they hand out a million dollars! An official Death Certificate is the ultimate proof."
+      "kidExplanation": "The insurance company needs absolute proof that the person went to heaven before they hand out a million dollars! An official Death Certificate is the ultimate proof.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 46,
@@ -598,9 +868,15 @@
         "C": "Sue the estate.",
         "D": "Pay the full face amount anyway."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "Adjust the death benefit to the amount the premiums would have purchased at the correct, older age.",
-      "kidExplanation": "If you accidentally said you were younger, you were paying a cheaper price! The company won't cancel the policy, but they will shrink the prize money to match the cheaper price you were actually paying."
+      "kidExplanation": "If you accidentally said you were younger, you were paying a cheaper price! The company won't cancel the policy, but they will shrink the prize money to match the cheaper price you were actually paying.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 47,
@@ -611,9 +887,15 @@
         "C": "As an interest-only payment.",
         "D": "As a stock portfolio."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "As a series of regular payments guaranteed to last for the rest of their life.",
-      "kidExplanation": "Instead of getting one giant mountain of cash, you trade it for a magical machine! This machine promises to spit out a little bit of money every single month for the rest of your life."
+      "kidExplanation": "Instead of getting one giant mountain of cash, you trade it for a magical machine! This machine promises to spit out a little bit of money every single month for the rest of your life.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 48,
@@ -624,9 +906,15 @@
         "C": "So the insurer can cancel the policy.",
         "D": "So the premium can be increased."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "So the agent can remind the client to convert the policy to permanent insurance before the deadline, guaranteeing coverage without a medical exam.",
-      "kidExplanation": "Term insurance has an expiration date! A good agent calls you before that date to say, \"Hey! Your temporary shield is about to expire. Do you want to trade it in for a permanent shield before it's too late?\""
+      "kidExplanation": "Term insurance has an expiration date! A good agent calls you before that date to say, \"Hey! Your temporary shield is about to expire. Do you want to trade it in for a permanent shield before it's too late?\"",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 49,
@@ -637,9 +925,15 @@
         "C": "Nothing, the policy is legally void.",
         "D": "Hire a lawyer to sue the company."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "Sign a \"Declaration of Lost Policy\" so the insurer can issue a duplicate contract.",
-      "kidExplanation": "The actual paper isn't magic! If your paper burns up or gets lost, you just sign a form promising you lost it, and the insurance company prints you a brand new copy of your rulebook!"
+      "kidExplanation": "The actual paper isn't magic! If your paper burns up or gets lost, you just sign a form promising you lost it, and the insurance company prints you a brand new copy of your rulebook!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 50,
@@ -650,9 +944,15 @@
         "C": "To force the client to buy more insurance.",
         "D": "To reset the grace period."
       },
-      "correctAnswer": "B",
+      "correctAnswer": 0,
       "explanation": "To ensure the coverage, beneficiaries, and policy type still match the client's current life situation (e.g., new house, new baby, marriage).",
-      "kidExplanation": "Life changes fast! The agent visits you every year to check if your old shield is still the right size for your new life, and fixes it if it's not!"
+      "kidExplanation": "Life changes fast! The agent visits you every year to check if your old shield is still the right size for your new life, and fixes it if it's not!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     }
   ]
 }

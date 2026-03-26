@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "PUAs purchase permanent whole life insurance with each dividend, but at a lower face amount per dollar than one-year term insurance.",
-        "Term insurance.",
+        null,
         "Accumulation leaves dividends on deposit earning interest — it does not add life insurance coverage.",
         "Premium reduction reduces the out-of-pocket premium but does not increase coverage."
       ],
@@ -43,7 +43,7 @@
       "optionFeedback": [
         "A non-participating policy pays no dividends — dividend effects are irrelevant.",
         "Higher interest rates mean the insurer earns more on reserves, reducing the required premium — not increasing it.",
-        "It would decrease his premium.",
+        null,
         "A non-participating policy pays no dividends regardless of investment performance."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A non-participating policy pays no dividends — dividend effects are irrelevant; Higher interest rates mean the insurer earns more on reserves, reducing the required premium — not increasing it.\nStep 4: Select the best answer. Option C: It would decrease his premium.",
@@ -66,7 +66,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "PUA.",
+        null,
         "Premium reduction uses the dividend to offset the next premium payment — it does not purchase additional insurance coverage.",
         "The one-year term insurance dividend option purchases temporary one-year term coverage — not permanent insurance.",
         "Accumulation leaves dividends on deposit with the insurer earning interest — it does not purchase additional insurance."
@@ -93,7 +93,7 @@
       "optionFeedback": [
         "One-year term insurance is a standard dividend option — the dividend is used to purchase a temporary term rider.",
         "PUAs are a standard dividend option — the dividend is used to purchase paid-up whole life additions.",
-        "Reduced paid-up insurance.",
+        null,
         "Premium reduction is a standard dividend option — the dividend reduces the next scheduled premium payment."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. One-year term insurance is a standard dividend option — the dividend is used to purchase a temporary term rider; PUAs are a standard dividend option — the dividend is used to purchase paid-up whole life additions.\nStep 4: Select the best answer. Option C: Reduced paid-up insurance.",
@@ -116,7 +116,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "One-year term insurance.",
+        null,
         "PUA adds permanent coverage, but not as much near-term coverage per dividend dollar as one-year term insurance.",
         "Accumulation leaves dividends on deposit and does not maximize coverage over the next few years.",
         "Cash payment does not add insurance coverage."
@@ -141,7 +141,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Reduced paid-up insurance non-forfeiture option.",
+        null,
         "There is no 'reduced paid-up insurance dividend option' — reduced paid-up insurance is a non-forfeiture option, not a dividend option.",
         "There is no 'extended term insurance dividend option' — extended term insurance is a non-forfeiture option, not a dividend option.",
         "Extended term insurance is a non-forfeiture option that preserves the original face amount but for a limited term — Michael wants permanent coverage, not temporary term coverage."
@@ -168,7 +168,7 @@
       "optionFeedback": [
         "This is a guaranteed whole life policy — the premium is fixed for life and is not reduced if experience is better than assumed.",
         "A guaranteed whole life policy does not allow the insurer to increase the premium after issue.",
-        "The insurer cannot change the premium even if their actual experience is different from their assumptions.",
+        null,
         "The insurer cannot change the premium at all, so policyholder consent does not create such a right."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is a guaranteed whole life policy — the premium is fixed for life and is not reduced if experience is better than assumed; A guaranteed whole life policy does not allow the insurer to increase the premium after issue.\nStep 4: Select the best answer. Option C: The insurer cannot change the premium even if their actual experience is different from their assumptions.",
@@ -193,7 +193,7 @@
       "optionFeedback": [
         "On a participating policy, if there is a shortfall, the insurer absorbs the loss — the policyholder is never charged an additional assessment.",
         "The ability to name multiple beneficiaries has nothing to do with whether the policy is participating or non-participating.",
-        "On a participating policy, if the policy realizes a surplus, the insurer will share the surplus with policy owners in the form of policy dividends.",
+        null,
         "Participating policies have a HIGHER premium than non-participating policies, not lower — the higher premium reflects conservative pricing for potential dividend distribution."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. On a participating policy, if there is a shortfall, the insurer absorbs the loss — the policyholder is never charged an additional assessment; The ability to name multiple beneficiaries has nothing to do with whether the policy is participating or non-participating.\nStep 4: Select the best answer. Option C: On a participating policy, if the policy realizes a surplus, the insurer will share the surplus with policy owners in the form of policy dividends.",
@@ -218,7 +218,7 @@
       "optionFeedback": [
         "Single premium requires only one lump-sum payment upfront — Jack wants to make annual payments over a period of years, not one single payment.",
         "Adjustable whole life refers to the insurer's ability to adjust the premium — it is a product type, not a payment option, and does not describe paying until age 80.",
-        "Limited payment.",
+        null,
         "Ongoing premium (straight life) means paying annually until death or age 100 — Jack specifically wants to stop at age 80."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Single premium requires only one lump-sum payment upfront — Jack wants to make annual payments over a period of years, not one single payment; Adjustable whole life refers to the insurer's ability to adjust the premium — it is a product type, not a payment option, and does not describe paying until age 80.\nStep 4: Select the best answer. Option C: Limited payment.",

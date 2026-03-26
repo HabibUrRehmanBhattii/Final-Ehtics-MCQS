@@ -18,7 +18,7 @@
         "No waiting period maximises premiums; as a single person with RRSP savings, Rachel can afford a longer elimination period to reduce cost.",
         "A short-term policy with a 5-year benefit period leaves her exposed to long-term disability risk, which is Rachel's greatest financial threat.",
         "A 30% co-insurance factor means Rachel bears 30% of loss herself; with no dependants and savings, this is not the optimal concern here.",
-        "A long-term disability insurance policy with a 90-day elimination period and coverage up to age 65."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. No waiting period maximises premiums; as a single person with RRSP savings, Rachel can afford a longer elimination period to reduce cost; A short-term policy with a 5-year benefit period leaves her exposed to long-term disability risk, which is Rachel's greatest financial threat.\nStep 4: Select the best answer. Option D: A long-term disability insurance policy with a 90-day elimination period and coverage up to age 65.",
       "difficulty": "medium",
@@ -43,7 +43,7 @@
         "CI lump-sum benefits paid to an individual under a personally owned policy are not taxable income.",
         "CI benefits are not classified as employment income regardless of the relationship between premiums and benefits.",
         "CI benefits are not investment income; they are insurance proceeds paid upon a qualifying diagnosis.",
-        "The lump-sum payment is tax free and does not need to be reported as income."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. CI lump-sum benefits paid to an individual under a personally owned policy are not taxable income; CI benefits are not classified as employment income regardless of the relationship between premiums and benefits.\nStep 4: Select the best answer. Option D: The lump-sum payment is tax free and does not need to be reported as income.",
       "difficulty": "easy",
@@ -65,7 +65,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The 30-day condition requires survival, not death; the policy pays a living benefit.",
-        "The illness must be diagnosed after the policy was issued, and he must survive for 30 days after the diagnosis.",
+        null,
         "There is no requirement that the diagnosis occur 30 days after policy issuance; the standard condition is survival post-diagnosis.",
         "CI benefits are paid as a lump sum upon diagnosis and survival; incurring specific medical expenses is not a required condition."
       ],
@@ -91,7 +91,7 @@
         "A joint life insurance policy pays a death benefit; it does not fund ongoing care services during the insured's lifetime.",
         "A self-employed health trust reimburses health and dental expenses but does not provide long-term custodial care coverage.",
         "Critical illness insurance pays a one-time lump sum upon diagnosis; it does not provide ongoing funding for activities-of-daily-living care services.",
-        "Long-term care insurance."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A joint life insurance policy pays a death benefit; it does not fund ongoing care services during the insured's lifetime; A self-employed health trust reimburses health and dental expenses but does not provide long-term custodial care coverage.\nStep 4: Select the best answer. Option D: Long-term care insurance.",
       "difficulty": "easy",
@@ -114,7 +114,7 @@
       "optionFeedback": [
         "Home care refers to health and support services delivered in the individual's own home, not temporary institutional stays.",
         "Assisted living is a residential care option where individuals live independently with support services; it is not a temporary relief arrangement.",
-        "Respite care.",
+        null,
         "Facility care refers to full-time residency in a nursing home or care facility, not a temporary short-term stay designed to give caregivers a break."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Home care refers to health and support services delivered in the individual's own home, not temporary institutional stays; Assisted living is a residential care option where individuals live independently with support services; it is not a temporary relief arrangement.\nStep 4: Select the best answer. Option C: Respite care.",
@@ -137,7 +137,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Stroke is one of the most commonly covered conditions under CI policies, including basic four-condition coverage.",
-        "The full benefit will be paid because Merrick survived more than 30 days after diagnosis.",
+        null,
         "CI policies pay the full benefit amount, not a prorated partial benefit based on how long the insured survived.",
         "Death from the covered illness does not disqualify the claim; the full benefit is payable as long as the insured survived the required 30-day period."
       ],
@@ -163,7 +163,7 @@
       "optionFeedback": [
         "$720 does not accurately reflect the combined co-insurance calculations for both eligible procedures.",
         "$1,025 overcounts the extraction benefit by using the billed amount ($875) rather than the provincial schedule fee ($750).",
-        "$495.",
+        null,
         "$2,245 would significantly overestimate benefits by including the dental implant, which is considered cosmetic and therefore not covered."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. $720 does not accurately reflect the combined co-insurance calculations for both eligible procedures; $1,025 overcounts the extraction benefit by using the billed amount ($875) rather than the provincial schedule fee ($750).\nStep 4: Select the best answer. Option C: $495.",
@@ -187,7 +187,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "In most provinces, employer-paid group health premiums are NOT a taxable benefit to the employee (Quebec is the main exception and is not applicable here).",
-        "Premiums paid by Greenfields are a tax-deductible expense for Greenfields.",
+        null,
         "Benefits received under a group extended health plan, including prescription drugs, are not taxable to the employee.",
         "Employee-paid premiums for group health insurance are not deductible by the employee for income tax purposes."
       ],
@@ -210,7 +210,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Devon would typically not be covered if he was injured while scuba diving.",
+        null,
         "Travel insurance benefits are not always provided on an indemnity basis; some benefits may be provided on a reimbursement or other basis depending on the policy.",
         "Travel insurance typically does not require a medical examination; it usually involves a health questionnaire.",
         "Credit card travel insurance usually provides limited coverage with significant exclusions and is generally not comparable to comprehensive individual travel insurance."
@@ -235,7 +235,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Personal DI premiums paid by a business owner for their own individual policy are not deductible; only BOE premiums are.",
-        "BOE insurance premiums are deductible for the business, but premiums for his personal DI policy are not.",
+        null,
         "BOE (Business Overhead Expense) premiums are also deductible as a business expense because the benefits received are taxable income.",
         "BOE premiums are deductible; the blanket statement that no income protection premiums are deductible is incorrect."
       ],

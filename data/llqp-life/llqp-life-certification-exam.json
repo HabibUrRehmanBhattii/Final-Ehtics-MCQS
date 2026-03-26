@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
-        "$0.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
       ],
@@ -42,7 +42,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "Loss of a caregiver."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The human life value approach focuses on replacing lost income and services of a caregiver. Joint first-to-die can address this early-family need.\nStep 4: Select the best answer. Option D: Loss of a caregiver.",
       "kidExplanation": "If one parent dies, the family loses the person who cooks, drives, and earns money for the baby. The insurance money replaces that caregiver role.",
@@ -66,7 +66,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "With the exception of the first few years of life, the probability of death starts low, increases slowly until age 40, then increases more dramatically."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This reflects the mortality curve used in pricing life insurance: relatively low early-adult mortality, then accelerating mortality at older ages.\nStep 4: Select the best answer. Option D: With the exception of the first few years of life, the probability of death starts low, increases slowly until age 40, then increases more dramatically.",
       "kidExplanation": "Early years are riskier, then it is safer for a while, and after about age 40 the curve gets steeper.",
@@ -89,7 +89,7 @@
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "$0.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Dividends on participating whole life are generally treated as return of premium for tax purposes and are not taxed as ordinary income.\nStep 4: Select the best answer. Option C: $0.",
@@ -111,7 +111,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "A UL policyholder can adjust deposits, but cannot go below a minimum amount needed to keep the policy in force.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -138,7 +138,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "After satisfying the probation period on or about September 1st."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Group eligibility is generally based on hire date plus waiting period terms, not postponed solely because of a later leave event unless plan wording says so.\nStep 4: Select the best answer. Option D: After satisfying the probation period on or about September 1st.",
       "kidExplanation": "The waiting-period clock started when she was hired, so the eligibility date is tied to that timeline.",
@@ -162,7 +162,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "There would be no tax consequences today; however, the death benefit will be subject to taxation."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Failing exemption status changes tax treatment of the policy going forward. Immediate tax depends on the event; policy status and future taxation consequences become the key issue.\nStep 4: Select the best answer. Option D: There would be no tax consequences today; however, the death benefit will be subject to taxation.",
       "kidExplanation": "The policy can lose special tax treatment without creating an immediate tax bill on that exact day.",
@@ -186,7 +186,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "$500,000 less any balance owing under an APL."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Automatic Premium Loan keeps policy in force by loaning against cash value. At claim time, outstanding APL principal and interest are deducted from death proceeds.\nStep 4: Select the best answer. Option D: $500,000 less any balance owing under an APL.",
       "kidExplanation": "APL uses the policy value to pay missed premiums, so coverage stays alive and the death benefit is reduced only by what was borrowed.",
@@ -207,7 +207,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "0.51 (semi-annually).",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -231,7 +231,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "A $25,000 policy gain upon disposal of an exempt life insurance policy.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -256,7 +256,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
-        "Grow UL cash value to a level that can cover mortality and expense deductions indefinitely.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
       ],
@@ -282,7 +282,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "$75,000."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. General charitable donation claim limit is 75% of net income, with carry-forward rules for excess donations.\nStep 4: Select the best answer. Option D: $75,000.",
       "kidExplanation": "In a standard year, donation claim limit is 75% of net income.",
@@ -303,7 +303,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "A maximum-funded UL policy.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -327,7 +327,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "a) Participating whole life insurance with a waiver of premium.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -354,7 +354,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Insurable interest can arise in family, dependency, and business contexts where financial loss is reasonably connected to the insured person's death.\nStep 4: Select the best answer. Option D: All of the above.",
       "kidExplanation": "Insurable interest exists when death creates real loss, including economic services and dependency impacts.",
@@ -375,7 +375,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Option #1, as it would cost $240 more.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -400,7 +400,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
-        "$410,000.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
       ],
@@ -424,7 +424,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
-        "Universal life insurance.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
       ],
@@ -448,7 +448,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
-        "$400,000.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
       ],
@@ -474,7 +474,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "PUAA."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Paid-Up Additions apply dividends to purchase additional paid-up whole life coverage, typically increasing cash value and death benefit.\nStep 4: Select the best answer. Option D: PUAA.",
       "kidExplanation": "PUA uses dividends to buy extra paid-up insurance units that raise death benefit.",
@@ -498,7 +498,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Mortality assessment considers demographic factors, socio-economic context, and occupational exposure, among other underwriting inputs.\nStep 4: Select the best answer. Option D: All of the above.",
       "kidExplanation": "Mortality risk is influenced by multiple demographic and lifestyle factors.",
@@ -520,7 +520,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
-        "A non-refundable tax credit would be of no use to him.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
       ],
@@ -543,7 +543,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "To pay off their mortgage upon death.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -570,7 +570,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "Obtain a policy loan from the insurer."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Policy-loan strategies can provide liquidity while potentially deferring disposition-style tax consequences compared with direct surrender or withdrawal actions.\nStep 4: Select the best answer. Option D: Obtain a policy loan from the insurer.",
       "kidExplanation": "Borrowing can avoid immediate realization compared with surrender or taxable disposition events.",
@@ -593,7 +593,7 @@
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "The claim can be denied on the basis of material misrepresentation.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. During the contestability period, material misrepresentation can permit rescission or denial under policy and insurance-law rules.\nStep 4: Select the best answer. Option C: The claim can be denied on the basis of material misrepresentation.",
@@ -615,7 +615,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$1,250,000.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -641,7 +641,7 @@
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "Probability of death.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Probability of death (qx) measures annual death likelihood, while life expectancy is the expected average remaining years.\nStep 4: Select the best answer. Option C: Probability of death.",
@@ -663,7 +663,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "A 20-year term insurance policy on a joint last-to-die basis.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -690,7 +690,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "d) Showing more than one possible outcome helps the client understand dividend illustrations are not guaranteed."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Dividend scales are not guaranteed. Multi-scenario illustrations reduce misrepresentation risk and improve suitability conversations.\nStep 4: Select the best answer. Option D: d) Showing more than one possible outcome helps the client understand dividend illustrations are not guaranteed.",
       "kidExplanation": "Different projection paths help clients see that dividends are not promises.",
@@ -712,7 +712,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This option does not best match the rule or calculation tested in this scenario.",
-        "b) The policy can renew repeatedly, but premium increases at each renewal and may become very expensive later in life.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
       ],
@@ -735,7 +735,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Increasing term insurance.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -759,7 +759,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$0, due to the LCGE.",
+        null,
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario."
@@ -786,7 +786,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. MIB and related underwriting data sources help insurers validate disclosures and detect inconsistencies across prior applications and risk indicators.\nStep 4: Select the best answer. Option D: All of the above.",
       "kidExplanation": "MIB-related underwriting checks can surface coded prior-insurance and risk-related clues from industry sharing.",
@@ -810,7 +810,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "The full $2,000,000 is taxed as regular income, creating about $800,000 tax."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. On death, RRSP value is typically included in income unless rollover provisions apply (for example, spouse or qualifying dependent routes).\nStep 4: Select the best answer. Option D: The full $2,000,000 is taxed as regular income, creating about $800,000 tax.",
       "kidExplanation": "Without rollover eligibility, the RRSP balance is generally treated as income on final return.",
@@ -834,7 +834,7 @@
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
         "This option does not best match the rule or calculation tested in this scenario.",
-        "Investment account, mortality costs, and expenses."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. UL unbundles key components: account value/funding side, mortality charges, and policy expense charges.\nStep 4: Select the best answer. Option D: Investment account, mortality costs, and expenses.",
       "kidExplanation": "UL separates the policy into visible pieces so funding and costs are easier to track.",

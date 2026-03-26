@@ -15,7 +15,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The withdrawal from her RRSP.",
+        null,
         "A Locked-In Retirement Account (LIRA) provides tax-deferred growth; interest, dividends, and capital gains earned within the plan are not taxed until they are withdrawn, usually during retirement.",
         "Withdrawing your own money from a non-registered savings account is not a taxable event. While the interest earned on that account is taxable, the act of withdrawal itself is not.",
         "Any income earned, including dividends from a segregated fund, is exempt from tax as long as it remains within the RRSP."
@@ -43,7 +43,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Leonard is entitled to name a beneficiary.",
+        null,
         "The contributor (Marsha) does not gain ownership rights or automatic beneficiary status; she only receives the tax deduction for the contribution.",
         "Although Marsha provides the funds, she is not the annuitant (owner) of the spousal RRSP and therefore cannot control the beneficiary designation.",
         "Beneficiary status must be explicitly named by the annuitant; it is not automatically granted to the contributor by law."
@@ -70,7 +70,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Inflation risk.",
+        null,
         "While Stan's net worth is largely tied up in his $500,000 home (an illiquid asset), he has a combined monthly income of at least $2,500 plus government benefits, which provides sufficient cash flow for daily needs.",
         "Market risk typically refers to the fluctuation of investment values like stocks or mutual funds. Since Stan relies on a guaranteed life annuity and real estate, he is not directly exposed to equity market volatility.",
         "Credit risk involves the possibility that a borrower or issuer will default on their debt obligations. This is not the primary concern for Stan's personal retirement income streams."
@@ -99,7 +99,7 @@
       "optionFeedback": [
         "While Mark (iv) and Martha (v) are fully covered, Patrick (ii) invested $100,000 in principal alone. Since the CDIC limit is $100,000 total (principal + interest), any accrued interest would push him over the limit, meaning his \"entire\" investment is not covered.",
         "Patrick (ii) is not fully covered because his $100,000 principal already reaches the CDIC maximum, leaving no room for his accrued interest.",
-        "This option best matches the definition, rule, or outcome the question is testing. Martha, who invested $75,000 in a GIC in Canadian dollars with an initial term of seven years.",
+        null,
         "This choice includes Scott (iii), but CDIC explicitly does not cover cryptocurrency or digital assets."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While Mark (iv) and Martha (v) are fully covered, Patrick (ii) invested $100,000 in principal alone. Since the CDIC limit is $100,000 total (principal + interest), any accrued interest would push him over the limit, meaning his \"entire\" investment is not covered; Patrick (ii) is not fully covered because his $100,000 principal already reaches the CDIC maximum, leaving no room for his accrued interest.\nStep 4: Select the best answer. Option C: i, iv, v.",
@@ -126,7 +126,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The reduction for early retirement is 0.6% per month, not 0.5%, and the reduced rate is permanent.",
-        "$513.60 today, which will not increase when he reaches age 65.",
+        null,
         "While the math for the reduction is correct, the reduced CPP amount is permanent and will not automatically \"step up\" to the age 65 level when the recipient reaches that age.",
         "This reflects a 12% reduction (0.5% per month), but the current CPP rules mandate a 0.6% monthly reduction for early retirement."
       ],
@@ -156,7 +156,7 @@
         "While maturity guarantees require waiting until the maturity date, a death benefit guarantee is triggered immediately upon the death of the annuitant.",
         "Because the market value ($118,000) is lower than the guaranteed amount, the insurance protection \"tops up\" the payment to the guaranteed level.",
         "Resets specifically \"crystallize\" or lock in gains for the benefit of the legacy (the death benefit), ensuring the beneficiary receives the higher reset value.",
-        "They would receive the guaranteed amount of $125,000."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While maturity guarantees require waiting until the maturity date, a death benefit guarantee is triggered immediately upon the death of the annuitant; Because the market value ($118,000) is lower than the guaranteed amount, the insurance protection \"tops up\" the payment to the guaranteed level.\nStep 4: Select the best answer. Option D: They would receive the guaranteed amount of $125,000.",
       "difficulty": "medium",
@@ -182,7 +182,7 @@
       "optionFeedback": [
         "While it is true that group segregated funds typically do not offer maturity or death benefit guarantees, the other statements (1, 2, and 4) are also accurate descriptions of these funds in a group setting.",
         "Although group segregated funds generally have no sales charges, this is not the only correct statement; points 2, 3, and 4 are also correct.",
-        "This option best matches the definition, rule, or outcome the question is testing. If the partners ask him about the advantages and disadvantages of offering group segregated funds in the pension plan, how should Brad answer?.",
+        null,
         "This option excludes statement 3. However, the lack of a maturity or death benefit guarantee is a defining characteristic (and a cost-saving \"disadvantage\" relative to retail funds) of group segregated funds."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While it is true that group segregated funds typically do not offer maturity or death benefit guarantees, the other statements (1, 2, and 4) are also accurate descriptions of these funds in a group setting; Although group segregated funds generally have no sales charges, this is not the only correct statement; points 2, 3, and 4 are also correct.\nStep 4: Select the best answer. Option C: 1, 2, 3, and 4.",
@@ -209,7 +209,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Shifting to aggressive investments only seven years before retirement significantly increases the risk of a market downturn depleting his capital when he has little time to recover.",
-        "He should consider delaying his retirement age in order to earn more pension funding and decrease his longevity risk.",
+        null,
         "Using leverage (an equity loan) to invest in a retirement account increases financial risk and adds a new debt obligation just before retirement, which is generally not recommended for resolving a basic income shortfall.",
         "Withdrawing a large sum from an RRSP while still working would trigger a high tax bill and significantly reduce the tax-sheltered growth potential of his retirement savings."
       ],
@@ -238,7 +238,7 @@
       "optionFeedback": [
         "While death benefits paid to a named beneficiary are typically received tax-free, top-up payments from a maturity guarantee received by the policy owner are subject to tax.",
         "While some treat it as a capital gain, the Canada Revenue Agency (CRA) has not provided a definitive ruling on this specific treatment.",
-        "There is a lack of consensus among tax experts regarding whether the guarantee is taxed as a capital gain or income.",
+        null,
         "Treating it as interest is one possible interpretation, but because the CRA has not issued a formal definition, this is not a confirmed rule."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While death benefits paid to a named beneficiary are typically received tax-free, top-up payments from a maturity guarantee received by the policy owner are subject to tax; While some treat it as a capital gain, the Canada Revenue Agency (CRA) has not provided a definitive ruling on this specific treatment.\nStep 4: Select the best answer. Option C: There is a lack of consensus among tax experts regarding whether the guarantee is taxed as a capital gain or income.",
@@ -264,7 +264,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The guaranteed amount will be adjusted downwards to $350,000.",
+        null,
         "A withdrawal does not terminate the insurance protection; it simply adjusts the guaranteed base downward. The remaining investment continues to be protected by the maturity and death guarantees.",
         "Guarantees are always affected by withdrawals. Even if the market value remains higher than the original investment, any removal of capital reduces the insurer's liability and the corresponding guaranteed amount.",
         "There is no such thing as a \"250% anti-withdrawal rule\" in the context of Canadian segregated funds or individual variable insurance contracts (IVICs)."
@@ -294,7 +294,7 @@
         "A Locked-in Retirement Income Fund (LRIF) is an income-generating vehicle that requires minimum annual withdrawals. Since Karl does not need income for at least five years, starting an LRIF now would trigger unnecessary taxable income.",
         "Similar to an LRIF, a Life Income Fund (LIF) is designed for the payout phase of retirement. It mandates minimum withdrawals starting the year after it is opened, which contradicts Karl's goal of deferring income.",
         "A Prescribed Registered Retirement Income Fund (PRIF) also requires minimum annual withdrawals. While it offers more flexibility than a LIF in some provinces, it is still an income vehicle and not ideal for a client seeking long-term deferral.",
-        "The funds can be transferred to a LIRA and be used to purchase a life annuity upon retirement."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A Locked-in Retirement Income Fund (LRIF) is an income-generating vehicle that requires minimum annual withdrawals. Since Karl does not need income for at least five years, starting an LRIF now would trigger unnecessary taxable income; Similar to an LRIF, a Life Income Fund (LIF) is designed for the payout phase of retirement. It mandates minimum withdrawals starting the year after it is opened, which contradicts Karl's goal of deferring income.\nStep 4: Select the best answer. Option D: The funds can be transferred to a LIRA and be used to purchase a life annuity upon retirement.",
       "difficulty": "medium",
@@ -324,7 +324,7 @@
         "While it is highly recommended that the contract holder name a beneficiary to ensure the death benefit bypasses probate, it is not a mandatory requirement to process the application.",
         "Normally, non-registered accounts require identity verification; however, because the agent has a prior relationship with Chad consisting of at least two previous transactions (life and CI policies), further identification is not required in this instance.",
         "A rider election form is specifically used when a client chooses optional features like Guaranteed Minimum Withdrawal Benefits (GMWBs). Since Chad did not opt for these, this form is not necessary.",
-        "A cheque for the first deposit."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While it is highly recommended that the contract holder name a beneficiary to ensure the death benefit bypasses probate, it is not a mandatory requirement to process the application; Normally, non-registered accounts require identity verification; however, because the agent has a prior relationship with Chad consisting of at least two previous transactions (life and CI policies), further identification is not required in this instance.\nStep 4: Select the best answer. Option D: A cheque for the first deposit.",
       "difficulty": "medium",
@@ -350,7 +350,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$113.75.",
+        null,
         "This value does not correspond to the correct application of the 50% inclusion rate for capital gains and the 100% inclusion for interest at a 35% MTR.",
         "This result comes from taxing the entire $500 distribution at the 35% marginal rate ($500 × 0.35 = $175). It fails to account for the 50% tax preference given to capital gains.",
         "This value does not reflect the standard tax calculation for a split distribution of interest and capital gains."
@@ -385,7 +385,7 @@
         "Under provincial insurance legislation, if an insurance-based product (like an annuity or segregated fund) has a beneficiary in the \"family class\" (spouse, child, parent, or grandchild), the entire contract is typically exempt from seizure, not just the income stream.",
         "While Jake is the owner, the presence of a \"family class\" beneficiary (his wife) triggers specific protections under the Insurance Act that shield the asset from creditors, provided the contract wasn't purchased with the intent to defraud them.",
         "Creditor protection for insurance products is generally \"all or nothing\" based on the beneficiary designation. There is no standard provision that allows creditors to seize exactly half of a protected annuity's value.",
-        "His creditors would not have a valid claim against the annuity."
+        null
       ],
       "options": [
         "A. His creditors would have a valid claim on the principal portion but not the annuity payments, which are being paid to his spouse.",
@@ -407,7 +407,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Gerald is the account owner, and Fiona is the contributor. Fiona will receive the RRSP contribution (tax) receipt, and her contribution room will be reduced by $8,000.",
+        null,
         "If Gerald were both the owner and the contributor, it would simply be an individual RRSP, not a spousal RRSP. Furthermore, Gerald only has $3,000 in room, so he could not contribute $8,000 without incurring over-contribution penalties.",
         "RRSP contribution room is not \"shared\" or combined in this manner. A single contribution to a spousal RRSP must be attributed to one specific contributor's room. Additionally, it would be tax-inefficient for Gerald (the lower earner) to be the contributor.",
         "This describes a standard individual RRSP for Fiona. In a spousal RRSP, the spouse (Gerald) must be the owner of the account so that the income-splitting benefit can be realized in the future."
@@ -436,7 +436,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Unlike traditional life insurance, which requires medical underwriting to assess risk, segregated funds are investment products with an insurance \"wrapper.\" Insurers generally do not decline applications based on the annuitant's health.",
-        "Segregated funds are not subject to a health underwriting; therefore, she can invest in the fund and take advantage of both guarantees.",
+        null,
         "The death benefit guarantee is a core contractual feature of an Individual Variable Insurance Contract (IVIC). If the contract is issued, the guarantee applies regardless of the owner's health at the time of purchase.",
         "While 75% is the statutory minimum guarantee in Canada, the reduction from 100% to 75% is typically a choice made by the investor (often to reduce fees) or a restriction based on age (e.g., after age 80), not a result of medical underwriting."
       ],
@@ -465,7 +465,7 @@
       "optionFeedback": [
         "Probate fees are a concern for estate planning after death. They do not impact the taxation of RRSP withdrawals made by a living annuitant.",
         "RRSP withdrawals are taxed as ordinary income, not capital gains. The preferential 50% inclusion rate for capital gains does not apply to funds coming out of any RRSP.",
-        "Attribution rules.",
+        null,
         "While there is a \"90-day rule\" related to the Home Buyers' Plan (where funds must be in the RRSP for 90 days before withdrawal to be deductible), it does not govern general income splitting or spousal attribution."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Probate fees are a concern for estate planning after death. They do not impact the taxation of RRSP withdrawals made by a living annuitant; RRSP withdrawals are taxed as ordinary income, not capital gains. The preferential 50% inclusion rate for capital gains does not apply to funds coming out of any RRSP.\nStep 4: Select the best answer. Option C: Attribution rules.",
@@ -492,7 +492,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This is the net amount that was initially invested. This choice fails to account for the market drop and the specific rules regarding the refund of front-end loads.",
-        "$18,600.",
+        null,
         "This is only the current market value. While the rescission calculation uses the market value if it is lower than the amount invested, it also mandates the return of the initial sales charges (the front-end load).",
         "This would imply that the right of rescission is a \"money-back guarantee\" regardless of market performance. However, the rule states the investor receives the lesser of the investment or market value, meaning the investor still bears the market loss during those two days."
       ],
@@ -520,7 +520,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The annuity was purchased in order to escape her financial obligations to her creditors and therefore would not be creditor-proof.",
+        null,
         "Under provincial Insurance Acts, a spouse is indeed a protected family class member. However, these statutes do not provide a \"get out of jail free\" card for someone already facing a legal judgment. Fraudulent conveyance laws take precedence when the intent is to hide existing assets from known liabilities.",
         "Both registered and non-registered insurance products (like annuities and segregated funds) can qualify for creditor protection. The issue here is not the tax status of the plan, but the timing and intent of the purchase relative to the lawsuit settlement.",
         "An irrevocable beneficiary designation is powerful in good-faith scenarios, but if the initial act of setting up that designation was done to move assets out of the reach of a current creditor, courts can still classify it as a fraudulent conveyance and overturn the protection."

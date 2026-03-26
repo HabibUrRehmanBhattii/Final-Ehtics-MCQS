@@ -14,21 +14,21 @@
           "name": "Practice Test 1",
           "description": "Ultra-tricky ethics scenarios with detailed explanations",
           "questionCount": 10,
-            "dataFile": "data/llqp-ethics/llqp-ethics-1.json?v=20260205b"
+          "dataFile": "data/llqp-ethics/llqp-ethics-1.json?v=20260205b"
         },
         {
           "id": "practice-2",
           "name": "Practice Test 2",
           "description": "Additional ethics scenarios",
           "questionCount": 20,
-            "dataFile": "data/llqp-ethics/llqp-ethics-2.json?v=20260205b"
+          "dataFile": "data/llqp-ethics/llqp-ethics-2.json?v=20260205b"
         },
         {
           "id": "practice-3",
           "name": "Practice Test 3",
           "description": "LLQP Scenario-Heavy Ethics + Legal MCQs",
           "questionCount": 26,
-            "dataFile": "data/llqp-ethics/llqp-ethics-3.json?v=20260207f"
+          "dataFile": "data/llqp-ethics/llqp-ethics-3.json?v=20260207f"
         },
         {
           "id": "mock-exam-test",
@@ -36,6 +36,13 @@
           "description": "Full 25-question exam covering insurance legislation, licensing, contract law, and ethics scenarios",
           "questionCount": 25,
           "dataFile": "data/insurance-legislation-ethics/insurance-legislation-ethics-1.json?v=20260315a"
+        },
+        {
+          "id": "llqp-ethics-manual-1",
+          "name": "CISRO Manual - Ethics",
+          "description": "Reference PDF manual for Ethics and professional conduct",
+          "questionCount": 0,
+          "dataFile": "data/llqp-ethics/Manual/EthicsCanada-E112-2025-12ED.pdf?v=20260321a"
         }
       ]
     },
@@ -298,66 +305,263 @@
         {
           "id": "llqp-life-06",
           "name": "HLLQP - LIFE 06 QZ - Group Life Insurance",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-06.json"
+          "description": "Chapter quiz covering master contracts, actively-at-work requirements, taxation of premiums and benefits, AD&D coverage, conversion rights, and underwriting practices",
+          "questionCount": 30,
+          "dataFile": "data/llqp-life/hllqp-life-06.json?v=20260323i",
+          "subTests": [
+            {
+              "id": "llqp-life-06-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-06-part-1.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-06-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-06-part-2.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-06-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-06-part-3.json?v=20260323i"
+            }
+          ]
         },
         {
           "id": "llqp-life-07",
           "name": "HLLQP - LIFE 07 QZ - Taxation of Life Insurance and Tax Strategies",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-07.json"
+          "description": "Chapter quiz covering investment income tax implications, tax-deferred growth, policy loans and surrender tax treatment, principal residence exemption, estate tax planning, insurance-linked strategies, prescribed policy rules, and hedging cost considerations",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-07.json?v=20260323i",
+          "subTests": [
+            {
+              "id": "llqp-life-07-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-07-part-1.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-07-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-07-part-2.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-07-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-07-part-3.json?v=20260323i"
+            }
+          ]
         },
         {
           "id": "llqp-life-08",
           "name": "HLLQP - LIFE 08 QZ - Business Life Insurance",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-08.json"
+          "description": "Chapter quiz covering key person insurance, buy-sell agreements, business structures (sole proprietorships, partnerships, corporations), split-dollar arrangements, cross-purchase and share redemption plans, criss-cross insurance, business-owned insurance, Capital Dividend Account, and funded succession planning strategies",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-08.json?v=20260323i",
+          "subTests": [
+            {
+              "id": "llqp-life-08-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-08-part-1.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-08-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-08-part-2.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-08-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-08-part-3.json?v=20260323i"
+            }
+          ]
         },
         {
           "id": "llqp-life-09",
           "name": "HLLQP - LIFE 09 QZ - Application and Underwriting",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-09.json"
+          "description": "Chapter quiz covering insurable interest, underwriting process, TIA, MIB, MVR, risk classification, misrepresentation, incontestability, and age calculations",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-09.json?v=20260323i",
+          "subTests": [
+            {
+              "id": "llqp-life-09-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-09-part-1.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-09-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-09-part-2.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-09-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-09-part-3.json?v=20260323i"
+            }
+          ]
         },
         {
           "id": "llqp-life-10",
           "name": "HLLQP - LIFE 10 QZ - Assessing the Client's Needs and Situations",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-10.json"
+          "description": "Chapter quiz covering assessing client needs, financial dependents, income analysis, insurance planning, employer benefits, business succession, tax implications, pension planning, and government benefits",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-10.json?v=20260323i",
+          "subTests": [
+            {
+              "id": "llqp-life-10-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-10-part-1.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-10-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-10-part-2.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-10-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-10-part-3.json?v=20260323i"
+            }
+          ]
         },
         {
           "id": "llqp-life-11",
           "name": "HLLQP - LIFE 11 QZ - Recommending an Insurance Policy",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-11.json"
+          "description": "Chapter quiz covering risk assessment, income replacement approach, capital needs approach, financial analysis, tax considerations, beneficiary designations, policy exclusions, grace periods, and free-look provisions",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-11.json?v=20260323i",
+          "subTests": [
+            {
+              "id": "llqp-life-11-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-11-part-1.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-11-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-11-part-2.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-11-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-11-part-3.json?v=20260323i"
+            }
+          ]
         },
         {
           "id": "llqp-life-12",
           "name": "HLLQP - LIFE 12 QZ - Ongoing Service",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-12.json"
+          "description": "Chapter quiz covering policy delivery, rescission period, grace period, policy lapses, reinstatement, beneficiary designations, claim procedures, settlement options, and ongoing agent service",
+          "questionCount": 30,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-12.json?v=20260323i",
+          "subTests": [
+            {
+              "id": "llqp-life-12-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-12-part-1.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-12-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-12-part-2.json?v=20260323i"
+            },
+            {
+              "id": "llqp-life-12-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-12-part-3.json?v=20260323i"
+            }
+          ]
         },
         {
           "id": "llqp-life-13",
           "name": "HLLQP - LIFE 13 QZ - Chapter 1 - 12 Review Test",
-          "description": "Coming soon",
-          "questionCount": 0,
-          "status": "coming-soon",
-          "dataFile": "data/llqp-life/hllqp-life-13.json"
+          "description": "Comprehensive 50-question review test covering all chapters 1-12 of life insurance concepts including term insurance, permanent insurance, riders, group insurance, taxation, business insurance, underwriting, needs analysis, policy recommendations, and ongoing service",
+          "questionCount": 50,
+          "status": "active",
+          "dataFile": "data/llqp-life/hllqp-life-13.json?v=20260323a",
+          "subTests": [
+            {
+              "id": "llqp-life-13-part-1",
+              "name": "Section 1",
+              "description": "Questions 1-10",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-13-part-1.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-13-part-2",
+              "name": "Section 2",
+              "description": "Questions 11-20",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-13-part-2.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-13-part-3",
+              "name": "Section 3",
+              "description": "Questions 21-30",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-13-part-3.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-13-part-4",
+              "name": "Section 4",
+              "description": "Questions 31-40",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-13-part-4.json?v=20260323a"
+            },
+            {
+              "id": "llqp-life-13-part-5",
+              "name": "Section 5",
+              "description": "Questions 41-50",
+              "questionCount": 10,
+              "dataFile": "data/llqp-life/hllqp-life-13-part-5.json?v=20260323a"
+            }
+          ]
         },
         {
           "id": "llqp-life-certification",
@@ -365,6 +569,13 @@
           "description": "Comprehensive 35-question certification exam covering life insurance needs analysis, policy types, riders, underwriting, claims, and tax implications",
           "questionCount": 35,
           "dataFile": "data/llqp-life/llqp-life-certification-exam.json?v=20260324c"
+        },
+        {
+          "id": "llqp-life-manual-1",
+          "name": "CISRO Manual - Life Insurance",
+          "description": "Reference PDF manual for Life Insurance",
+          "questionCount": 0,
+          "dataFile": "data/llqp-life/Manual/LifeInsur-E311-2025-11ED_R.pdf?v=20260321a"
         }
       ]
     },
@@ -378,39 +589,82 @@
       "status": "active",
       "practiceTests": [
         {
-          "id": "llqp-accident-1",
-          "name": "Practice Test 1",
-          "description": "A&S Insurance — LTC, disability calculations, and policy types (Questions 1–10)",
-          "questionCount": 10,
-          "dataFile": "data/llqp-accident/llqp-accident-1.json"
+          "id": "hllqp-accident-01",
+          "name": "HLLQP - A&S 01 QZ - Financial Protection Provided by Accident and Sickness Insurance",
+          "description": "Chapter quiz covering financial protection mechanisms in accident and sickness insurance",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-accident/hllqp-accident-01.json?v=20260323i"
         },
         {
-          "id": "llqp-accident-2",
-          "name": "Practice Test 2",
-          "description": "A&S Insurance — CI, dental, travel, and tax treatment (Questions 11–20)",
-          "questionCount": 10,
-          "dataFile": "data/llqp-accident/llqp-accident-2.json"
+          "id": "hllqp-accident-02",
+          "name": "HLLQP - A&S 02 QZ - Insurance to Protect Income",
+          "description": "Chapter quiz covering income protection strategies and disability benefits",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-accident/hllqp-accident-02.json?v=20260323i"
         },
         {
-          "id": "llqp-accident-3",
-          "name": "Practice Test 3",
-          "description": "A&S Insurance — Business insurance, buy-sell, underwriting, and claims (Questions 21–30)",
-          "questionCount": 10,
-          "dataFile": "data/llqp-accident/llqp-accident-3.json"
+          "id": "hllqp-accident-03",
+          "name": "HLLQP - A&S 03 QZ - Insurance to Protect Assets",
+          "description": "Chapter quiz covering asset protection through accident and sickness insurance",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-accident/hllqp-accident-03.json?v=20260323i"
         },
         {
-          "id": "llqp-accident-4",
-          "name": "Practice Test 4",
-          "description": "A&S Insurance — FPO, group benefits, EAP, and coordination of benefits (Questions 31–35)",
-          "questionCount": 5,
-          "dataFile": "data/llqp-accident/llqp-accident-4.json"
+          "id": "hllqp-accident-04",
+          "name": "HLLQP - A&S 04 QZ - Insurance to Protect Savings",
+          "description": "Chapter quiz covering savings protection and critical illness coverage",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-accident/hllqp-accident-04.json?v=20260323i"
+        },
+        {
+          "id": "hllqp-accident-05",
+          "name": "HLLQP - A&S 05 QZ - Insurance to Protect Businesses",
+          "description": "Chapter quiz covering business protection strategies and key person insurance",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-accident/hllqp-accident-05.json?v=20260323i"
+        },
+        {
+          "id": "hllqp-accident-06",
+          "name": "HLLQP - A&S 06 QZ - Client Profile",
+          "description": "Chapter quiz covering client needs assessment and profile analysis",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-accident/hllqp-accident-06.json?v=20260323i"
+        },
+        {
+          "id": "hllqp-accident-07",
+          "name": "HLLQP - A&S 07 QZ - Insurance Recommendation, Contract and Service Needs",
+          "description": "Chapter quiz covering policy recommendations, contract details, and ongoing service",
+          "questionCount": 0,
+          "status": "coming-soon"
+        },
+        {
+          "id": "hllqp-accident-08",
+          "name": "HLLQP - A&S 08 QZ - Group Plan Specifics",
+          "description": "Chapter quiz covering group accident and sickness plan structures and features",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-accident/hllqp-accident-08.json?v=20260323i"
+        },
+        {
+          "id": "hllqp-accident-09",
+          "name": "HLLQP - A&S 09 QZ - Chapter 1 - 8 Review Test",
+          "description": "Comprehensive review test covering all chapters 1-8 of accident and sickness insurance",
+          "questionCount": 0,
+          "status": "coming-soon",
+          "dataFile": "data/llqp-accident/hllqp-accident-09.json?v=20260323i"
         },
         {
           "id": "llqp-accident-manual-1",
           "name": "CISRO Manuals - Accident and Sickness",
           "description": "Reference PDF manual for Accident and Sickness Insurance",
           "questionCount": 0,
-          "dataFile": "data/llqp-accident/Manual/Accident-and-Sickness.pdf?v=20260316b"
+          "dataFile": "data/llqp-accident/Manual/Sickness-E312-2025-11ED.pdf?v=20260321a"
         }
       ]
     },
@@ -436,6 +690,13 @@
           "description": "Only do this before certification exam",
           "questionCount": 35,
           "dataFile": "data/llqp-segregated/llqp-segregated-certification-exam.json?v=20260319a"
+        },
+        {
+          "id": "llqp-segregated-manual-1",
+          "name": "CISRO Manual - Segregated Funds",
+          "description": "Reference PDF manual for Segregated Funds and Annuities",
+          "questionCount": 0,
+          "dataFile": "data/llqp-segregated/Manual/Segfunds-E313-2025-11ED.pdf?v=20260321a"
         }
       ]
     }

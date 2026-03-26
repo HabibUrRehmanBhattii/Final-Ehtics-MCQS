@@ -15,7 +15,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "If a policy gain was triggered by a loan, repaying that loan allows a deduction of up to the amount of the previous gain in the year of repayment.",
-      "kidExplanation": "If you had to pay taxes when you borrowed the money, and then you put the money back, the government lets you undo that tax on your next tax return. It's like getting a giant \"do-over\"!"
+      "kidExplanation": "If you had to pay taxes when you borrowed the money, and then you put the money back, the government lets you undo that tax on your next tax return. It's like getting a giant \"do-over\"!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 12,
@@ -28,7 +34,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "Policy loan interest is only deductible if the loan proceeds are used to earn business or property income. Personal use loans do not qualify.",
-      "kidExplanation": "If you borrow money to buy a video game for fun, you get no tax breaks. But if you borrow money to build a lemonade stand that makes you more money (a business), the government gives you a break on the interest you pay!"
+      "kidExplanation": "If you borrow money to buy a video game for fun, you get no tax breaks. But if you borrow money to build a lemonade stand that makes you more money (a business), the government gives you a break on the interest you pay!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 13,
@@ -41,7 +53,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "The exempt test (MTAR) ensures that a policy maintains an appropriate balance between insurance protection and cash value accumulation to preserve its tax-exempt status.",
-      "kidExplanation": "The government wants to make sure your life insurance is actually being used as life insurance to protect your family, and not just being used as a secret, giant treasure chest hiding your savings from taxes!"
+      "kidExplanation": "The government wants to make sure your life insurance is actually being used as life insurance to protect your family, and not just being used as a secret, giant treasure chest hiding your savings from taxes!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 14,
@@ -54,7 +72,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "MTAR establishes a ceiling for the policy's cash surrender value relative to the death benefit. If cash value exceeds MTAR, the policy loses its tax-exempt status and becomes non-exempt.",
-      "kidExplanation": "MTAR is like a speed limit sign for your policy's savings account. It tells your savings exactly how big it is allowed to grow. If it grows too fast, it breaks the speed limit!"
+      "kidExplanation": "MTAR is like a speed limit sign for your policy's savings account. It tells your savings exactly how big it is allowed to grow. If it grows too fast, it breaks the speed limit!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 15,
@@ -67,7 +91,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "Many UL policies include an automatic increase in death benefit (often 8% per year) to keep the cash value within the MTAR limit and maintain exempt status.",
-      "kidExplanation": "If your savings get too big for their container, the insurance company will automatically build a bigger container (increase your insurance coverage) so you don't get in trouble with the tax rules!"
+      "kidExplanation": "If your savings get too big for their container, the insurance company will automatically build a bigger container (increase your insurance coverage) so you don't get in trouble with the tax rules!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 16,
@@ -80,7 +110,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "The 250% rule limits the amount of premium that can be deposited into a policy to prevent aggressive premium deposits that would convert the policy into an investment vehicle.",
-      "kidExplanation": "The dump-in rule stops you from dumping a massive bucket of money into your policy all at once. You can't suddenly make your piggy bank explode with cash without the government noticing!"
+      "kidExplanation": "The dump-in rule stops you from dumping a massive bucket of money into your policy all at once. You can't suddenly make your piggy bank explode with cash without the government noticing!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 17,
@@ -93,7 +129,13 @@
       ],
       "correctAnswer": 0,
       "explanation": "A non-exempt policy loses its tax-deferred status. All investment income earned within the policy becomes taxable to the policyholder annually.",
-      "kidExplanation": "If your policy breaks the rules, it loses its special tax-free shield. From then on, it gets taxed every single year, just like a normal, boring savings account at the bank."
+      "kidExplanation": "If your policy breaks the rules, it loses its special tax-free shield. From then on, it gets taxed every single year, just like a normal, boring savings account at the bank.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 18,
@@ -106,7 +148,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "Replacing a policy involves a disposition of the old policy. If the surrendered value exceeds the ACB, a taxable policy gain occurs.",
-      "kidExplanation": "To replace an old policy with a new one, you first have to \"cancel\" the old one. If you made a profit on the old one, you have to pay taxes on that profit before you can move on to your new toy."
+      "kidExplanation": "To replace an old policy with a new one, you first have to \"cancel\" the old one. If you made a profit on the old one, you have to pay taxes on that profit before you can move on to your new toy.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 19,
@@ -119,7 +167,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "G1 policies are grandfathered and have more favorable tax treatment. Replacing them with newer policies removes those advantages.",
-      "kidExplanation": "G1 policies are the super-old, rare ones. They have magical old rules that let you save way more money without ever paying taxes. If you trade it for a new one, you lose the magic!"
+      "kidExplanation": "G1 policies are the super-old, rare ones. They have magical old rules that let you save way more money without ever paying taxes. If you trade it for a new one, you lose the magic!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 20,
@@ -132,7 +186,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "An absolute assignment to an arm's length party is a disposition. The transferor realizes a gain equal to the transfer price less the ACB.",
-      "kidExplanation": "An \"arm's length party\" is just a stranger. If you sell your policy to a stranger, the government treats it like a normal sale. You have to pay taxes on any profit you made from the sale."
+      "kidExplanation": "An \"arm's length party\" is just a stranger. If you sell your policy to a stranger, the government treats it like a normal sale. You have to pay taxes on any profit you made from the sale.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     }
   ]
 }

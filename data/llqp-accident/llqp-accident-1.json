@@ -17,7 +17,7 @@
       "optionFeedback": [
         "Longevity risk refers to outliving one's assets; the LTC policy here is preserving assets rather than addressing lifespan length.",
         "Edith is retired and not earning employment income; the policy protects her investment assets from being depleted by care costs.",
-        "Protection of assets.",
+        null,
         "Protection of income applies to earning individuals who need to replace lost wages; Edith's concern is preserving her existing assets for herself and her granddaughter."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Longevity risk refers to outliving one's assets; the LTC policy here is preserving assets rather than addressing lifespan length; Edith is retired and not earning employment income; the policy protects her investment assets from being depleted by care costs.\nStep 4: Select the best answer. Option C: Protection of assets.",
@@ -39,7 +39,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Adjust the policy benefits or deductibles to reduce premiums while retaining core coverage.",
+        null,
         "Adding riders would increase premiums, which is contrary to the client's goal of reducing costs.",
         "Funding premiums through a loan increases debt and financial risk, which is not in the client's best interest.",
         "Self-insuring after health changes is risky and inappropriate given the client's health concerns."
@@ -66,7 +66,7 @@
         "Gender alone does not determine the type or cancellability of a disability policy.",
         "The insurer's right to cancel a policy is based on occupational risk classification, not the insured's likelihood of wanting to cancel.",
         "This statement confuses the definition of disability ('regular occupation' vs. 'any occupation') but does not explain the cancellability difference.",
-        "Fateh works in a higher risk occupational class than Mahaan."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Gender alone does not determine the type or cancellability of a disability policy; The insurer's right to cancel a policy is based on occupational risk classification, not the insured's likelihood of wanting to cancel.\nStep 4: Select the best answer. Option D: Fateh works in a higher risk occupational class than Mahaan.",
       "difficulty": "medium",
@@ -87,7 +87,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$90,000.",
+        null,
         "$100,000 would imply 20 months of benefits, but he has already used 6 months of his 24-month benefit period.",
         "The recurrent disability clause means no new elimination period is required and the original benefit period continues.",
         "$120,000 would be the full 24 months × $5,000, ignoring the 6 months already paid."
@@ -113,7 +113,7 @@
       "optionFeedback": [
         "$2,000 additional would bring total benefits to $5,000, which equals 100% of income — exceeding the 85% all-source maximum.",
         "$2,550 additional would bring total to $5,550, far exceeding the 85% maximum of $4,250.",
-        "Take out an individual disability income policy with a monthly disability benefit of $1,250.",
+        null,
         "$3,000 additional would bring total to $6,000, which greatly exceeds the 85% all-source maximum."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. $2,000 additional would bring total benefits to $5,000, which equals 100% of income — exceeding the 85% all-source maximum; $2,550 additional would bring total to $5,550, far exceeding the 85% maximum of $4,250.\nStep 4: Select the best answer. Option C: Take out an individual disability income policy with a monthly disability benefit of $1,250.",
@@ -138,7 +138,7 @@
         "The CI rider cannot pay because Witt did not survive for the required 30-day survival period after diagnosis.",
         "The CI rider requires the insured to survive 30 days post-diagnosis; Witt passed away in hospital, so this condition is not met.",
         "This is too broad. It is not true that neither rider would pay because the accidental-death trigger can still allow the AD&D rider to respond.",
-        "The AD&D rider."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The CI rider cannot pay because Witt did not survive for the required 30-day survival period after diagnosis; The CI rider requires the insured to survive 30 days post-diagnosis; Witt passed away in hospital, so this condition is not met.\nStep 4: Select the best answer. Option D: The AD&D rider.",
       "difficulty": "hard",
@@ -162,7 +162,7 @@
       "optionFeedback": [
         "Only the amount above the non-evidence maximum requires additional underwriting; not the entire amount.",
         "Exceeding the non-evidence maximum triggers financial underwriting (confirmation of income), not medical evidence of insurability.",
-        "Part of the coverage in the amount of $19,992 would require confirmation of income.",
+        null,
         "Medical evidence of insurability applies in different contexts; exceeding the non-evidence maximum for LTD requires confirmation of income."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Only the amount above the non-evidence maximum requires additional underwriting; not the entire amount; Exceeding the non-evidence maximum triggers financial underwriting (confirmation of income), not medical evidence of insurability.\nStep 4: Select the best answer. Option C: Part of the coverage in the amount of $19,992 would require confirmation of income.",
@@ -185,7 +185,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "$90,000 would represent 18 months of benefits, but the recurrent disability clause preserves remaining benefit period from the first claim, not a new 18-month count.",
-        "$75,000.",
+        null,
         "$60,000 would represent 12 months; this understates the remaining benefit period after the first claim.",
         "The recurrent disability clause means benefits continue without a new elimination period; $0 would only apply if the benefit period were exhausted."
       ],
@@ -209,7 +209,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Returns of premium under an ROP rider on a disability policy are generally received tax-free, not as taxable income.",
-        "A return of premium rider would typically not return premiums if the total benefits paid out over the life of the policy exceeded the total premiums paid.",
+        null,
         "A waiver of premium rider waives premium payments during a period of disability; it does not refund the difference between premiums and benefits at expiry.",
         "A waiver of premium rider suspends premium obligations while disabled; it does not provide a cash refund at policy expiry."
       ],
@@ -232,7 +232,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$5,406.",
+        null,
         "$5,350 would result from applying exactly 5% in year 2 without using the carry-forward, then not applying carry-forward correctly.",
         "$5,355 does not accurately reflect the compounded carry-forward calculation.",
         "$5,100 would result from applying only the 2% first-year increase without any year-2 adjustment."

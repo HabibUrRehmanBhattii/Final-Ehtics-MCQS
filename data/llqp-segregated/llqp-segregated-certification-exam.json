@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Gifts trigger capital gains on the donor.",
-        "Max will owe capital gains tax on the appreciated value of the assets.",
+        null,
         "Gifts are not considered income to the recipient.",
         "The donor (Max) is responsible for capital gains tax on the gift."
       ],
@@ -39,7 +39,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Annie will have tax owing of $105 for the current year.",
+        null,
         "Annie's ACB is not $6,500.",
         "Annie has 500 units ($5,000 ÷ $10).",
         "There is no capital gain yet; she still owns the fund."
@@ -67,7 +67,7 @@
         "Segregated funds are protected by provincial regulators and insurance guarantees, not CIPF.",
         "Segregated funds typically have higher MERs due to the guarantees.",
         "Only segregated funds offer maturity and death benefit guarantees.",
-        "Unlike mutual funds, segregated funds offer the opportunity to bypass probate."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Segregated funds are protected by provincial regulators and insurance guarantees, not CIPF; Segregated funds typically have higher MERs due to the guarantees.\nStep 4: Select the best answer. Option D: Unlike mutual funds, segregated funds offer the opportunity to bypass probate.",
       "difficulty": "medium",
@@ -91,7 +91,7 @@
       "optionFeedback": [
         "Prescribed status doesn't determine death benefits.",
         "A straight life annuity has no refund upon death unless guaranteed.",
-        "If the life annuity offered a guarantee.",
+        null,
         "A straight life annuity with no guarantee provides no death benefit."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Prescribed status doesn't determine death benefits; A straight life annuity has no refund upon death unless guaranteed.\nStep 4: Select the best answer. Option C: If the life annuity offered a guarantee.",
@@ -114,7 +114,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This does not account for the 50% inclusion rate.",
-        "$7,807.50.",
+        null,
         "This overstates the tax owing.",
         "This is too high; losses offset gains."
       ],
@@ -139,7 +139,7 @@
       "optionFeedback": [
         "Real return = Nominal return - Inflation rate.",
         "This is the inflation rate, not the real return.",
-        "This option best matches the definition, rule, or outcome the question is testing. What was the investor's approximate real return?.",
+        null,
         "This is too low for the calculation."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Real return = Nominal return - Inflation rate; This is the inflation rate, not the real return.\nStep 4: Select the best answer. Option C: -2%.",
@@ -163,7 +163,7 @@
       "optionFeedback": [
         "GICs don't trade like stocks.",
         "Segregated funds don't trade like stocks.",
-        "Exchange-traded fund.",
+        null,
         "Mutual funds cannot be sold with stop loss orders as they don't trade continuously."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. GICs don't trade like stocks; Segregated funds don't trade like stocks.\nStep 4: Select the best answer. Option C: Exchange-traded fund.",
@@ -186,7 +186,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "This option best matches the definition, rule, or outcome the question is testing. Which of the following statements about Trina's investment are CORRECT?.",
+        null,
         "Annual coupon is $750, so semi-annual would be $375, not $750.",
         "Coupon payments on bonds are taxed as interest income, same as GICs.",
         "Statement iii is incorrect; coupon payments are not taxed more favorably."
@@ -213,7 +213,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "A fund of funds invests in other funds, not an index mirror.",
-        "One of the main concerns associated with real estate equity funds would be liquidity risk.",
+        null,
         "Money market funds invest in short-term, highly liquid assets, typically more than 50%.",
         "Dividend funds do not guarantee dividends and may use active strategies."
       ],
@@ -238,7 +238,7 @@
       "optionFeedback": [
         "When a guarantee is reset, the original guarantee is replaced.",
         "Averages are not calculated in guarantee resets.",
-        "$170,000, the reset guaranteed amount.",
+        null,
         "The guarantee applies because the current value is below the reset guarantee."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. When a guarantee is reset, the original guarantee is replaced; Averages are not calculated in guarantee resets.\nStep 4: Select the best answer. Option C: $170,000, the reset guaranteed amount.",
@@ -262,7 +262,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Naming the estate does not avoid probate.",
-        "The segregated fund would not be creditor-proof.",
+        null,
         "Capital gains tax would still apply if the estate is the beneficiary.",
         "Death benefit guarantees are not affected by the beneficiary designation."
       ],
@@ -289,7 +289,7 @@
         "Naming the estate increases probate fees.",
         "This would trigger unnecessary tax liability.",
         "Probate fees can be minimized through proper beneficiary designation.",
-        "Name a beneficiary other than his estate."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Naming the estate increases probate fees; This would trigger unnecessary tax liability.\nStep 4: Select the best answer. Option D: Name a beneficiary other than his estate.",
       "difficulty": "medium",
@@ -311,7 +311,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$25,000.",
+        null,
         "This is 75% of the initial deposit, not the correct guarantee amount.",
         "The death benefit guarantee is $25,000, higher than current value.",
         "The death benefit guarantee does not reset unless explicitly done."
@@ -337,7 +337,7 @@
       "optionFeedback": [
         "Frequent switching charges may be assessed.",
         "A switch within a non-registered account may trigger a deemed disposition and capital gain.",
-        "Gilbert may incur a tax liability when he switches from one fund to another.",
+        null,
         "Switch fees apply regardless of load type."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Frequent switching charges may be assessed; A switch within a non-registered account may trigger a deemed disposition and capital gain.\nStep 4: Select the best answer. Option C: Gilbert may incur a tax liability when he switches from one fund to another.",
@@ -363,7 +363,7 @@
         "This is 67.5% of the original investment.",
         "The guarantee provides more than the current value.",
         "This is 75% of the original investment.",
-        "$150,000."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is 67.5% of the original investment; The guarantee provides more than the current value.\nStep 4: Select the best answer. Option D: $150,000.",
       "difficulty": "medium",
@@ -386,7 +386,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Partial withdrawals generally reduce guarantees.",
-        "She is withdrawing 25% of the current value, and therefore the guarantee will be reduced by that percentage.",
+        null,
         "The guarantee remains the same unless explicitly reset.",
         "The guarantee is applied to the original or reset amount, not remaining value."
       ],
@@ -410,7 +410,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Life annuities typically provide higher annual payments due to mortality risk.",
-        "The life annuity guarantees payments for longer than the term certain annuity.",
+        null,
         "Rates are based on mortality tables and vary by insurer.",
         "Term certain annuities have higher rates since they're for a fixed period."
       ],
@@ -435,7 +435,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Life insurance doesn't help manage current funds.",
-        "Purchase a 10-year term certain annuity.",
+        null,
         "A target date fund could appreciate but doesn't control spending.",
         "A life annuity would be too long-term for this goal."
       ],
@@ -461,7 +461,7 @@
       "optionFeedback": [
         "Prescribed annuities spread tax evenly; accrual annuities have more tax in early years.",
         "An accrual annuity with a lower premium has less tax liability.",
-        "An accrual annuity with a $120,000 premium.",
+        null,
         "Prescribed annuities have lower first-year tax than accrual annuities."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Prescribed annuities spread tax evenly; accrual annuities have more tax in early years; An accrual annuity with a lower premium has less tax liability.\nStep 4: Select the best answer. Option C: An accrual annuity with a $120,000 premium.",
@@ -485,7 +485,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The stated rate is the income payment, not before expenses.",
-        "She will receive annual income payments of $18,000.",
+        null,
         "Annuity payments are income received, not premiums paid.",
         "The deposit is the premium; there's no additional commission in this context."
       ],
@@ -509,7 +509,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This is not the Assuris coverage limit.",
-        "$5,400 per month.",
+        null,
         "This is too low for annuity coverage.",
         "This does not match the Assuris limit."
       ],
@@ -535,7 +535,7 @@
       "optionFeedback": [
         "The contributions may be within limits; earned income must be verified.",
         "A single contribution limit applies to all RRSPs combined.",
-        "Hugo's earned income must be determined to calculate what percentage he can contribute.",
+        null,
         "Employer contributions do impact Hugo's room through the Pension Adjustment."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The contributions may be within limits; earned income must be verified; A single contribution limit applies to all RRSPs combined.\nStep 4: Select the best answer. Option C: Hugo's earned income must be determined to calculate what percentage he can contribute.",
@@ -561,7 +561,7 @@
         "The tax difference must be applied to the split amount.",
         "This is not the correct tax calculation.",
         "This is 22% of the split amount, not the tax savings.",
-        "$3,200."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The tax difference must be applied to the split amount; This is not the correct tax calculation.\nStep 4: Select the best answer. Option D: $3,200.",
       "difficulty": "medium",
@@ -582,7 +582,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$5,160.",
+        null,
         "This is too low; the raise increases contribution room.",
         "Contribution room for this year is based on last year's earned income.",
         "This doesn't account for the increase in earned income."
@@ -607,7 +607,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "I and iii.",
+        null,
         "DPSP benefits are based on employer profit-sharing, not a formula.",
         "Statement ii has a grammatical error and is unclear.",
         "DCPP allows withdrawals in some cases."
@@ -634,7 +634,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Interest income from non-registered accounts is not eligible for splitting.",
-        "Defined benefit pension income.",
+        null,
         "Employment income is not eligible for splitting.",
         "Dividend income from non-registered accounts is not eligible for splitting."
       ],
@@ -659,7 +659,7 @@
       "optionFeedback": [
         "Once he leaves, the value typically must be transferred.",
         "Immediate annuity is one option, but not typical for DCPPs.",
-        "Sanjay may transfer the pension amount to his RRSP.",
+        null,
         "Cashing out is not usually permitted; the amount is locked in."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Once he leaves, the value typically must be transferred; Immediate annuity is one option, but not typical for DCPPs.\nStep 4: Select the best answer. Option C: Sanjay may transfer the pension amount to his RRSP.",
@@ -685,7 +685,7 @@
         "Minimum required RRIF withdrawals are not subject to withholding tax.",
         "Minimum withdrawals are still taxable income, even though withholding tax does not apply at source.",
         "RRIF withdrawals are subject to both withholding tax and income tax.",
-        "Dominique can withdraw $6,700 without paying any withholding tax."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Minimum required RRIF withdrawals are not subject to withholding tax; Minimum withdrawals are still taxable income, even though withholding tax does not apply at source.\nStep 4: Select the best answer. Option D: Dominique can withdraw $6,700 without paying any withholding tax.",
       "difficulty": "medium",
@@ -707,7 +707,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "If Abbas withdraws the entire $38,500 to buy a car, his capital gain will be taxed as regular income.",
+        null,
         "RRSP withdrawals are taxed as regular income, not capital gains.",
         "In an RRSP, gains are not taxed annually until withdrawal.",
         "Segregated funds are not protected by CIPF."
@@ -734,7 +734,7 @@
       "optionFeedback": [
         "PRPPs are more flexible; benefits aren't predetermined.",
         "DPSPs depend on employer profits and don't guarantee income.",
-        "Defined Benefit Pension Plan (DBPP).",
+        null,
         "DCPPs don't guarantee future income; they depend on investment returns."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. PRPPs are more flexible; benefits aren't predetermined; DPSPs depend on employer profits and don't guarantee income.\nStep 4: Select the best answer. Option C: Defined Benefit Pension Plan (DBPP).",
@@ -759,7 +759,7 @@
       "optionFeedback": [
         "An immediate annuity would lock in current rates; Ryan has time to grow funds.",
         "DCPP cash-outs are typically not permitted due to locking-in rules.",
-        "Transfer the funds to a LIRA and use them to purchase an annuity upon retirement.",
+        null,
         "A RRIF requires minimum withdrawals; a LIRA is more appropriate for growth."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. An immediate annuity would lock in current rates; Ryan has time to grow funds; DCPP cash-outs are typically not permitted due to locking-in rules.\nStep 4: Select the best answer. Option C: Transfer the funds to a LIRA and use them to purchase an annuity upon retirement.",
@@ -783,7 +783,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "An eligible transfer from DPSP to RRSP does not use regular RRSP contribution room.",
-        "It will remain unchanged at $20,000.",
+        null,
         "The transfer reduces the available room.",
         "The full $12,000 uses contribution room."
       ],
@@ -810,7 +810,7 @@
         "This is not the reset guarantee amount.",
         "The guarantee is higher than the current value.",
         "This is the original guarantee, but a reset occurred.",
-        "$180,000."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is not the reset guarantee amount; The guarantee is higher than the current value.\nStep 4: Select the best answer. Option D: $180,000.",
       "difficulty": "medium",
@@ -832,7 +832,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "There could be 12 separate guarantees with different maturity dates.",
+        null,
         "Guarantees apply to each periodic deposit as it's made.",
         "Each deposit has its own guarantee; they don't share.",
         "Periodic deposits do offer maturity guarantees."
@@ -859,7 +859,7 @@
       "optionFeedback": [
         "Switch fees are typically waived in group plans.",
         "Management fees still apply in group plans.",
-        "No sales charges, lower management expense ratio, and no switch fees.",
+        null,
         "Sales charges are waived, not just lowered."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Switch fees are typically waived in group plans; Management fees still apply in group plans.\nStep 4: Select the best answer. Option C: No sales charges, lower management expense ratio, and no switch fees.",

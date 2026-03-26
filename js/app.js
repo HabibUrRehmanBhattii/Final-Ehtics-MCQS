@@ -2,8 +2,8 @@
 // MCQ Study Platform - Main Application
 // ===================================
 const MCQApp = {
-  appBuildVersion: '20260326b',
-  cacheVersion: 'v1.8.7',
+  appBuildVersion: '20260326c',
+  cacheVersion: 'v1.8.8',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
@@ -1214,7 +1214,14 @@ const MCQApp = {
     return '';
   },
 
+  /**
+   * @deprecated Use new feedback generation system instead
+   * Checks if feedback matches legacy AI-generated patterns
+   * @param {string} feedbackText - Feedback text to check
+   * @returns {boolean} True if matches legacy pattern
+   */
   isLegacyGeneratedFeedback(feedbackText) {
+    console.warn('⚠️  isLegacyGeneratedFeedback() is deprecated. Use new feedback system.');
     return /does not fit the key fact this question is testing|stated too absolutely for the facts given|too broad\. Re-check whether|At least one listed option fits the rule better|amount, percentage, or time period in this choice is off|This choice is too absolute\. Re-check whether the facts allow/i.test(String(feedbackText || ''));
   },
 
@@ -1444,7 +1451,13 @@ const MCQApp = {
     );
   },
 
+  /**
+   * @deprecated Use modern localStorage management
+   * Compacts legacy shuffle cache to free up storage space
+   * Removes old/invalid shuffle entries from localStorage
+   */
   compactLegacyShuffleCaches() {
+    console.warn('⚠️  compactLegacyShuffleCaches() is deprecated. Use new cache system.');
     const shuffleKeys = [];
     for (let index = 0; index < localStorage.length; index += 1) {
       const key = localStorage.key(index);

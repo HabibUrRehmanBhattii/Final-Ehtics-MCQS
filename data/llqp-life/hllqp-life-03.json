@@ -15,7 +15,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "To provide for the payment of future death claims.",
+        null,
         "The reserve is not primarily intended to pay the insurer's administrative expenses.",
         "Policy dividends may come from surplus on participating policies, but that is not the primary purpose of the reserve.",
         "Cash surrender value is supported by the reserve, but the reserve's primary purpose is to ensure future death claims can be paid."
@@ -42,7 +42,7 @@
         "A parent can purchase life insurance on a minor child; the age of majority is not a barrier.",
         "Evidence of insurability for the insured today does not lock in future insurability for a different person (Turner).",
         "The life-insured cannot simply be changed to a different person on an existing policy.",
-        "Caleb could purchase a life insurance policy with Turner as the life-insured. When his son is older, Caleb can absolutely assign (transfer) the policy to him."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A parent can purchase life insurance on a minor child; the age of majority is not a barrier; Evidence of insurability for the insured today does not lock in future insurability for a different person (Turner).\nStep 4: Select the best answer. Option D: Caleb could purchase a life insurance policy with Turner as the life-insured. When his son is older, Caleb can absolutely assign (transfer) the policy to him.",
       "difficulty": "medium",
@@ -66,7 +66,7 @@
       "optionFeedback": [
         "The extended term insurance option does eliminate premiums while keeping the full face amount intact.",
         "Reduced paid-up insurance eliminates premiums but reduces the death benefit to a lesser permanent amount.",
-        "The extended term insurance non-forfeiture option.",
+        null,
         "The APL keeps the policy in force but creates a growing loan that reduces the net death benefit below $500,000."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The extended term insurance option does eliminate premiums while keeping the full face amount intact; Reduced paid-up insurance eliminates premiums but reduces the death benefit to a lesser permanent amount.\nStep 4: Select the best answer. Option C: The extended term insurance non-forfeiture option.",
@@ -91,7 +91,7 @@
       "optionFeedback": [
         "Reduced paid-up insurance is a non-forfeiture option that permanently reduces the face amount; it is not a premium-offset strategy.",
         "The PUA dividend option is how the dividends were accumulated — it is not the same as using accumulated PUAs to cover future premiums.",
-        "Premium offset.",
+        null,
         "Limited payment whole life has a set number of payment years decided at purchase, not a strategy using accumulated PUAs."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Reduced paid-up insurance is a non-forfeiture option that permanently reduces the face amount; it is not a premium-offset strategy; The PUA dividend option is how the dividends were accumulated — it is not the same as using accumulated PUAs to cover future premiums.\nStep 4: Select the best answer. Option C: Premium offset.",
@@ -114,7 +114,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "They apply a level premium approach throughout the life of the policy.",
+        null,
         "T-100 is not a yearly renewable term policy; the premium does not increase annually.",
         "This describes an adjustable T-100 variant, not most standard T-100 policies.",
         "While adjustable versions exist, most T-100 policies carry a fully level and guaranteed premium."
@@ -141,7 +141,7 @@
         "The death benefit is guaranteed, but it is not the only guaranteed feature.",
         "The cash value is also guaranteed on a whole life policy, but it is not the only guaranteed feature.",
         "The premium is also guaranteed on a whole life policy, but it is not the only guaranteed feature.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The death benefit is guaranteed, but it is not the only guaranteed feature; The cash value is also guaranteed on a whole life policy, but it is not the only guaranteed feature.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "easy",
@@ -166,7 +166,7 @@
         "Non-participating whole life is less expensive than participating WL, but still more expensive than T-100.",
         "Universal life premiums depend on the deposit chosen, but for basic permanent coverage, T-100 is typically cheaper.",
         "Participating whole life is the most expensive due to built-in conservative pricing for dividend potential.",
-        "Term-100."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Non-participating whole life is less expensive than participating WL, but still more expensive than T-100; Universal life premiums depend on the deposit chosen, but for basic permanent coverage, T-100 is typically cheaper.\nStep 4: Select the best answer. Option D: Term-100.",
       "difficulty": "easy",
@@ -190,7 +190,7 @@
         "Lower mortality than expected can contribute to a surplus.",
         "Higher investment returns can contribute to a surplus.",
         "Lower expenses can contribute to a surplus.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Lower mortality than expected can contribute to a surplus; Higher investment returns can contribute to a surplus.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "medium",
@@ -213,7 +213,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "With $90,000+ in CSV, the APL non-forfeiture option would have automatically taken over — the policy would not have lapsed, and no CSV cheque would have been sent.",
-        "$500,000 less any balance owing under an APL.",
+        null,
         "The policy would not have lapsed because the APL feature automatically uses the CSV to pay overdue premiums when the CSV is sufficient.",
         "\"$500,000 less any balance owing under an APL.\" is a different beneficiary designation than the one this question is testing. The better answer here is \"$500,000 less any balance owing under an APL.\"."
       ],
@@ -237,7 +237,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "To illustrate the impact of different dividend scales.",
+        null,
         "The purpose is not simply to satisfy a provincial regulation requirement.",
         "The core reason is to compare how different dividend scales affect outcomes, not merely to show general flexibility.",
         "Policy loans are separate from dividend scale illustrations."
@@ -265,7 +265,7 @@
         "T-100 does not grow, so it cannot keep pace with the increasing capital gains tax liability as the cottage continues to appreciate.",
         "A single $500,000 T-100 overfunds the permanent need (capital gains) and inefficiently insures the temporary mortgage need as permanent coverage.",
         "Universal life is more expensive than whole life participating for this purpose, and the 10-year decreasing term does not cover the full 15-year mortgage amortization.",
-        "$300,000 whole life participating policy with a PUA dividend option, and a $200,000 Term 10 removable rider."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. T-100 does not grow, so it cannot keep pace with the increasing capital gains tax liability as the cottage continues to appreciate; A single $500,000 T-100 overfunds the permanent need (capital gains) and inefficiently insures the temporary mortgage need as permanent coverage.\nStep 4: Select the best answer. Option D: $300,000 whole life participating policy with a PUA dividend option, and a $200,000 Term 10 removable rider.",
       "difficulty": "hard",
@@ -289,7 +289,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Investing the dividend in a segregated fund is not a standard participating policy dividend option.",
-        "One-year term addition dividend option.",
+        null,
         "Accumulation leaves the dividend on deposit with the insurer earning interest — it does not purchase additional life insurance coverage.",
         "PUAs purchase paid-up whole life insurance, which provides less face amount per dividend dollar than one-year term."
       ],
@@ -315,7 +315,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Surrendering the policy permanently terminates coverage — it cannot be undone.",
-        "APL.",
+        null,
         "Extended term insurance converts the policy to a paid-up term plan — while it can sometimes be reinstated, it is not easily reversible.",
         "Reduced paid-up insurance permanently reduces the face amount — it is not easily reversible."
       ],
@@ -342,7 +342,7 @@
         "Reduced paid-up insurance is a standard non-forfeiture option.",
         "Extended term insurance is a standard non-forfeiture option.",
         "Cash surrender value is a standard non-forfeiture option.",
-        "Policy loan."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Reduced paid-up insurance is a standard non-forfeiture option; Extended term insurance is a standard non-forfeiture option.\nStep 4: Select the best answer. Option D: Policy loan.",
       "difficulty": "medium",
@@ -363,7 +363,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Whole life can be renewable and convertible.",
+        null,
         "Whole life policies do offer non-forfeiture options (APL, extended term, reduced paid-up, and surrender for CSV).",
         "Whole life coverage continues for the life of the insured (to age 100 when it endows).",
         "Whole life can indeed be structured as either participating or non-participating."
@@ -387,7 +387,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Single premium.",
+        null,
         "20-pay whole life requires 20 years of higher annual premiums, which totals more than a single premium in nominal terms.",
         "10-pay whole life compresses payments into 10 years at an even higher annual amount, totalling more than a single premium.",
         "Paying annually until age 100 results in many decades of payments that in nominal total exceed the single lump-sum premium."
@@ -414,7 +414,7 @@
       "optionFeedback": [
         "A critical illness policy on Robert addresses Robert's health events, not the loss of parental income to fund his care.",
         "Insuring Robert's life would pay upon Robert's death — it does not address the income gap created by a parent's death.",
-        "Purchase joint first-to-die with Caleb and Mona as the lives-insured.",
+        null,
         "Joint last-to-die pays only after both parents have died — but the concern is that the care cannot be funded after the FIRST death."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A critical illness policy on Robert addresses Robert's health events, not the loss of parental income to fund his care; Insuring Robert's life would pay upon Robert's death — it does not address the income gap created by a parent's death.\nStep 4: Select the best answer. Option C: Purchase joint first-to-die with Caleb and Mona as the lives-insured.",
@@ -439,7 +439,7 @@
         "$1,000 is far too low for a 99-year-old because the probability of death is extremely high.",
         "$5,000 still significantly underestimates the near-certain probability of death at age 99.",
         "$10,000 remains far too low given the near-certainty of death within one year at age 99.",
-        "$90,000."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. $1,000 is far too low for a 99-year-old because the probability of death is extremely high; $5,000 still significantly underestimates the near-certain probability of death at age 99.\nStep 4: Select the best answer. Option D: $90,000.",
       "difficulty": "easy",
@@ -462,7 +462,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The YRT premium does not plateau at the level of the permanent plan premium — it continues to increase and will eventually exceed it.",
-        "The premium on a yearly renewable term insurance policy would be lower than the premium on a permanent plan in the first year. The premium on the yearly renewable term policy would increase at each renewal period and would eventually be more than the premium on the permanent plan.",
+        null,
         "The premiums are not similar in all years; YRT starts much lower and increases each year.",
         "Permanent insurance is more expensive in the early years, but the YRT premium will eventually surpass it — permanent insurance is NOT more expensive in all policy years."
       ],
@@ -487,7 +487,7 @@
       "optionFeedback": [
         "Whole life insurance is permanent but more expensive than T-100 due to its cash value component.",
         "Renewable term insurance is not permanent — the coverage may lapse or become too expensive later in life, and the capital gains tax liability is a permanent need.",
-        "Term-to-100.",
+        null,
         "Universal life is permanent with investment flexibility but carries higher premiums than T-100 for basic coverage."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life insurance is permanent but more expensive than T-100 due to its cash value component; Renewable term insurance is not permanent — the coverage may lapse or become too expensive later in life, and the capital gains tax liability is a permanent need.\nStep 4: Select the best answer. Option C: Term-to-100.",
@@ -513,7 +513,7 @@
         "A guaranteed whole life policy has fixed, unchangeable premiums regardless of economic conditions.",
         "Non-participating whole life also has guaranteed, fixed premiums that the insurer cannot adjust.",
         "Traditional whole life (guaranteed) premiums are locked in at issue and are not subject to interest rate changes.",
-        "Adjustable whole life."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A guaranteed whole life policy has fixed, unchangeable premiums regardless of economic conditions; Non-participating whole life also has guaranteed, fixed premiums that the insurer cannot adjust.\nStep 4: Select the best answer. Option D: Adjustable whole life.",
       "difficulty": "medium",
@@ -536,7 +536,7 @@
       "optionFeedback": [
         "The term insurance dividend option adds only temporary coverage — it would not grow the permanent death benefit to keep pace with increasing capital gains taxes.",
         "Premium offset uses dividends to pay the base premium — it does not increase the death benefit to address a growing tax liability.",
-        "Paid-up additions (PUAs).",
+        null,
         "Accumulation leaves dividends on deposit earning interest, but does not add permanent insurance coverage to match the growing capital gains tax liability."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The term insurance dividend option adds only temporary coverage — it would not grow the permanent death benefit to keep pace with increasing capital gains taxes; Premium offset uses dividends to pay the base premium — it does not increase the death benefit to address a growing tax liability.\nStep 4: Select the best answer. Option C: Paid-up additions (PUAs).",
@@ -563,7 +563,7 @@
         "This is mostly correct but misleading — at age 100, the policy does not simply 'end with no coverage.' It endows, meaning the insured receives the face value as an endowment payment.",
         "This omits the important age-100 endowment provision — premiums stop and the policy matures at age 100.",
         "Whole life policies endow at age 100, not age 90.",
-        "He is required to pay the premium until he dies, until the policy is surrendered, or until he reaches age 100, whichever comes first."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is mostly correct but misleading — at age 100, the policy does not simply 'end with no coverage.' It endows, meaning the insured receives the face value as an endowment payment; This omits the important age-100 endowment provision — premiums stop and the policy matures at age 100.\nStep 4: Select the best answer. Option D: He is required to pay the premium until he dies, until the policy is surrendered, or until he reaches age 100, whichever comes first.",
       "difficulty": "medium",
@@ -585,7 +585,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Participating whole life insurance with a waiver of premium.",
+        null,
         "Non-participating WL is less expensive than participating WL and has no additional rider.",
         "\"Participating whole life insurance\" is a different statement than the one this question is testing. The correct answer is \"Participating whole life insurance with a waiver of premium\" because this feature keeps the policy in force when the insured qualifies for a disability waiver.",
         "A convertible feature adds a small cost, but non-participating WL + convertible is still less expensive than participating WL + waiver of premium."
@@ -613,7 +613,7 @@
         "Non-participating WL is less expensive than participating WL annually.",
         "Participating WL has a higher annual premium than non-participating WL and T-100, but limited-pay compresses all premiums into fewer years.",
         "T-100 is the lowest-cost permanent insurance option with no cash value.",
-        "Limited payment participating whole life insurance."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Non-participating WL is less expensive than participating WL annually; Participating WL has a higher annual premium than non-participating WL and T-100, but limited-pay compresses all premiums into fewer years.\nStep 4: Select the best answer. Option D: Limited payment participating whole life insurance.",
       "difficulty": "medium",
@@ -635,7 +635,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "He can continue to pay the premiums, keep the policy in force, and upon his death, the beneficiary will receive exactly $500,000.",
+        null,
         "The death benefit on a whole life policy is the face value ($500,000) — not the face value plus the cash value. Cash value is not paid in addition to the death benefit.",
         "The death benefit is the face value only, not face value plus cash value. Adding them to get $700,000 is incorrect.",
         "While using APL is an option, the net death benefit would be the face value LESS the accumulated APL loan — not exactly $500,000."
@@ -661,7 +661,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$9,700.",
+        null,
         "$10,500 exceeds the stated cash value of $10,000; the surrender value is typically slightly less than, not more than, the cash value due to surrender charges.",
         "$498,000 and $508,000 are far too large to be a life insurance surrender value — these are more consistent with a cottage listing price or home renovation quote.",
         "$508,000 is far too large to be a life insurance surrender value."
@@ -687,7 +687,7 @@
       "optionFeedback": [
         "The insurer can adjust the premium in either direction (up or down), not only decrease it.",
         "Adjustable whole life refers to premium adjustments by the insurer, not the insurer unilaterally increasing coverage without evidence.",
-        "The premium and coverage are guaranteed only for a certain number of years. After the guaranteed period, the insurer reserves the right to adjust the premium.",
+        null,
         "The insurer can adjust the premium both upward and downward based on actual experience — not only upward."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The insurer can adjust the premium in either direction (up or down), not only decrease it; Adjustable whole life refers to premium adjustments by the insurer, not the insurer unilaterally increasing coverage without evidence.\nStep 4: Select the best answer. Option C: The premium and coverage are guaranteed only for a certain number of years. After the guaranteed period, the insurer reserves the right to adjust the premium.",
@@ -710,7 +710,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Participating policies do not inherently offer higher death benefits than non-participating policies.",
-        "The insurer charges a higher premium to cover the possibility of poor performance and potential dividends.",
+        null,
         "Higher administrative costs are not the main reason for the higher premium.",
         "Riders are optional and not the reason participating policies cost more."
       ],
@@ -736,7 +736,7 @@
       "optionFeedback": [
         "Surrendering the policy permanently terminates coverage — the beneficiary would receive nothing upon death.",
         "APL keeps the policy in force, but the death benefit would be $800,000 MINUS the accumulated APL loan balance — not exactly $800,000 as required.",
-        "He could choose the extended term insurance non-forfeiture option.",
+        null,
         "Reduced paid-up insurance provides permanent coverage for a lesser face amount — not exactly $800,000 as required."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Surrendering the policy permanently terminates coverage — the beneficiary would receive nothing upon death; APL keeps the policy in force, but the death benefit would be $800,000 MINUS the accumulated APL loan balance — not exactly $800,000 as required.\nStep 4: Select the best answer. Option C: He could choose the extended term insurance non-forfeiture option.",
@@ -760,7 +760,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Monthly total = $90 × 12 = $1,080. That is 8% more than $1,000, not 9%.",
-        "If the policyholder opts for monthly payments, he or she will pay $80 more than the stated annual premium.",
+        null,
         "Monthly total ($1,080) is higher than semi-annual total ($510 × 2 = $1,020) — monthly results in the highest total annual premium.",
         "1/12 of $1,000 = $83.33, but the modal factor gives a monthly payment of $90 — these are not equal."
       ],
@@ -783,7 +783,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Marcy will only be required to pay premiums for 30 years, after which point the policy would be paid-up and she would retain the coverage.",
+        null,
         "A limited pay T-100 does not need to be converted — it is already permanent (T-100). After the payment period, the policy is simply paid-up.",
         "A paid-up T-100 does not mature at the end of the payment period — coverage continues for life (to age 100).",
         "'Limited' refers to the premium payment period being limited to 30 years, not the duration of the coverage."
@@ -810,7 +810,7 @@
         "Administrative costs are one factor but not the only one.",
         "Interest rates are one factor but not the only one.",
         "Mortality rates are one factor but not the only one.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Administrative costs are one factor but not the only one; Interest rates are one factor but not the only one.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "easy",
@@ -835,7 +835,7 @@
         "Paid-up additions are whole life insurance and do accumulate their own cash value.",
         "PUAs are paid-up whole life additions — they do not carry a separate term insurance option.",
         "PUAs are 'paid-up' — no additional premiums are ever required for them.",
-        "The PUA is permanent insurance."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Paid-up additions are whole life insurance and do accumulate their own cash value; PUAs are paid-up whole life additions — they do not carry a separate term insurance option.\nStep 4: Select the best answer. Option D: The PUA is permanent insurance.",
       "difficulty": "easy",
@@ -859,7 +859,7 @@
       "optionFeedback": [
         "PUAs are not term riders — they are paid-up whole life additions that do not expire.",
         "One-year term insurance is a separate dividend option — not the PUA option.",
-        "Whole life insurance.",
+        null,
         "PUAs are whole life insurance, not T-100. T-100 is a different permanent product."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. PUAs are not term riders — they are paid-up whole life additions that do not expire; One-year term insurance is a separate dividend option — not the PUA option.\nStep 4: Select the best answer. Option C: Whole life insurance.",
@@ -883,7 +883,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Surrendering the policy permanently ends coverage — not appropriate for a temporary financial hardship.",
-        "APL.",
+        null,
         "Extended term insurance converts the policy to a paid-up term plan; while it suspends premium payments, it is harder to reverse if Larry wants to resume original coverage later.",
         "Reduced paid-up insurance permanently reduces the face amount — not ideal for a temporary situation."
       ],
@@ -907,7 +907,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "T-100.",
+        null,
         "A limited payment T-100 that has completed its payment period requires no further premiums and cannot lapse due to missed payments.",
         "A participating whole life policy accumulates cash value, which can fund the APL non-forfeiture option to prevent lapsing.",
         "A non-participating whole life policy also accumulates cash value, which can fund the APL to prevent lapsing."
@@ -934,7 +934,7 @@
       "optionFeedback": [
         "Whole life insurance provides a CSV upon surrender but carries a higher premium than universal life for the same basic coverage.",
         "10-year term insurance is not permanent — it would not allow her to gift money to charities upon death at an unknown future date.",
-        "Universal life insurance.",
+        null,
         "T-100 has the lowest premium among permanent policies, but it typically has no cash surrender value — if Becky surrenders it, she receives nothing."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life insurance provides a CSV upon surrender but carries a higher premium than universal life for the same basic coverage; 10-year term insurance is not permanent — it would not allow her to gift money to charities upon death at an unknown future date.\nStep 4: Select the best answer. Option C: Universal life insurance.",
@@ -959,7 +959,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "PUAs purchase permanent whole life insurance with each dividend, but at a lower face amount per dollar than one-year term insurance.",
-        "Term insurance.",
+        null,
         "Accumulation leaves dividends on deposit earning interest — it does not add life insurance coverage.",
         "Premium reduction reduces the out-of-pocket premium but does not increase coverage."
       ],
@@ -986,7 +986,7 @@
       "optionFeedback": [
         "A non-participating policy pays no dividends — dividend effects are irrelevant.",
         "Higher interest rates mean the insurer earns more on reserves, reducing the required premium — not increasing it.",
-        "It would decrease his premium.",
+        null,
         "A non-participating policy pays no dividends regardless of investment performance."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A non-participating policy pays no dividends — dividend effects are irrelevant; Higher interest rates mean the insurer earns more on reserves, reducing the required premium — not increasing it.\nStep 4: Select the best answer. Option C: It would decrease his premium.",
@@ -1009,7 +1009,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "PUA.",
+        null,
         "Premium reduction uses the dividend to offset the next premium payment — it does not purchase additional insurance coverage.",
         "The one-year term insurance dividend option purchases temporary one-year term coverage — not permanent insurance.",
         "Accumulation leaves dividends on deposit with the insurer earning interest — it does not purchase additional insurance."
@@ -1036,7 +1036,7 @@
       "optionFeedback": [
         "One-year term insurance is a standard dividend option — the dividend is used to purchase a temporary term rider.",
         "PUAs are a standard dividend option — the dividend is used to purchase paid-up whole life additions.",
-        "Reduced paid-up insurance.",
+        null,
         "Premium reduction is a standard dividend option — the dividend reduces the next scheduled premium payment."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. One-year term insurance is a standard dividend option — the dividend is used to purchase a temporary term rider; PUAs are a standard dividend option — the dividend is used to purchase paid-up whole life additions.\nStep 4: Select the best answer. Option C: Reduced paid-up insurance.",
@@ -1059,7 +1059,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "One-year term insurance.",
+        null,
         "PUA adds permanent coverage, but not as much near-term coverage per dividend dollar as one-year term insurance.",
         "Accumulation leaves dividends on deposit and does not maximize coverage over the next few years.",
         "Cash payment does not add insurance coverage."
@@ -1084,7 +1084,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Reduced paid-up insurance non-forfeiture option.",
+        null,
         "There is no 'reduced paid-up insurance dividend option' — reduced paid-up insurance is a non-forfeiture option, not a dividend option.",
         "There is no 'extended term insurance dividend option' — extended term insurance is a non-forfeiture option, not a dividend option.",
         "Extended term insurance is a non-forfeiture option that preserves the original face amount but for a limited term — Michael wants permanent coverage, not temporary term coverage."
@@ -1111,7 +1111,7 @@
       "optionFeedback": [
         "This is a guaranteed whole life policy — the premium is fixed for life and is not reduced if experience is better than assumed.",
         "A guaranteed whole life policy does not allow the insurer to increase the premium after issue.",
-        "The insurer cannot change the premium even if their actual experience is different from their assumptions.",
+        null,
         "The insurer cannot change the premium at all, so policyholder consent does not create such a right."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is a guaranteed whole life policy — the premium is fixed for life and is not reduced if experience is better than assumed; A guaranteed whole life policy does not allow the insurer to increase the premium after issue.\nStep 4: Select the best answer. Option C: The insurer cannot change the premium even if their actual experience is different from their assumptions.",
@@ -1136,7 +1136,7 @@
       "optionFeedback": [
         "On a participating policy, if there is a shortfall, the insurer absorbs the loss — the policyholder is never charged an additional assessment.",
         "The ability to name multiple beneficiaries has nothing to do with whether the policy is participating or non-participating.",
-        "On a participating policy, if the policy realizes a surplus, the insurer will share the surplus with policy owners in the form of policy dividends.",
+        null,
         "Participating policies have a HIGHER premium than non-participating policies, not lower — the higher premium reflects conservative pricing for potential dividend distribution."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. On a participating policy, if there is a shortfall, the insurer absorbs the loss — the policyholder is never charged an additional assessment; The ability to name multiple beneficiaries has nothing to do with whether the policy is participating or non-participating.\nStep 4: Select the best answer. Option C: On a participating policy, if the policy realizes a surplus, the insurer will share the surplus with policy owners in the form of policy dividends.",
@@ -1161,7 +1161,7 @@
       "optionFeedback": [
         "Single premium requires only one lump-sum payment upfront — Jack wants to make annual payments over a period of years, not one single payment.",
         "Adjustable whole life refers to the insurer's ability to adjust the premium — it is a product type, not a payment option, and does not describe paying until age 80.",
-        "Limited payment.",
+        null,
         "Ongoing premium (straight life) means paying annually until death or age 100 — Jack specifically wants to stop at age 80."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Single premium requires only one lump-sum payment upfront — Jack wants to make annual payments over a period of years, not one single payment; Adjustable whole life refers to the insurer's ability to adjust the premium — it is a product type, not a payment option, and does not describe paying until age 80.\nStep 4: Select the best answer. Option C: Limited payment.",

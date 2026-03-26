@@ -15,7 +15,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$450.",
+        null,
         "$1,000 exceeds the maximum allowable increase under the FPO rider and would not be supported by the income increase.",
         "$750 would represent the entire income increase converted to a monthly amount ($9,000 ÷ 12), but the coverage must remain within the 60% income replacement ratio.",
         "$1,500 would bring total coverage to $6,000/month, far exceeding 60% of Liam's new income and the FPO rider's 20% cap on the original coverage."
@@ -40,7 +40,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Flexibility to modify coverage levels based on personal preferences.",
+        null,
         "Coverage amounts are determined by the employer and insurer; a cafeteria structure does not inherently offer higher maximums than individual policies.",
         "Lower premiums from risk pooling and employer contributions are features of group plans generally, not unique to a cafeteria plan structure.",
         "Guaranteed issue for group members is a feature of group underwriting generally, not a defining characteristic of cafeteria plans."
@@ -64,7 +64,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Financial counselling.",
+        null,
         "Vision care is a component of extended health benefit plans, not typically part of an Employee Assistance Program.",
         "Dental care is covered under a separate dental benefit in group plans; EAPs focus on personal and counselling support services.",
         "Prescription drugs are covered under extended health benefit plans; they are not an EAP service."
@@ -90,7 +90,7 @@
       "optionFeedback": [
         "Plan member enrolment is administered by the plan sponsor (the employer), not the insurance company.",
         "Premium billing is handled by the insurance company, which invoices the plan sponsor; the plan sponsor pays the premiums.",
-        "The insurance company is responsible for claims.",
+        null,
         "The payment of approved benefits is the responsibility of the insurance company (the insurer), not the plan sponsor."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Plan member enrolment is administered by the plan sponsor (the employer), not the insurance company; Premium billing is handled by the insurance company, which invoices the plan sponsor; the plan sponsor pays the premiums.\nStep 4: Select the best answer. Option C: The insurance company is responsible for claims.",
@@ -113,7 +113,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Stu's plan does pay as the secondary plan; coordination of benefits allows both plans to contribute up to 100% of eligible expenses.",
-        "$125.00.",
+        null,
         "$93.75 would result from incorrectly applying 75% to the $125 unpaid balance rather than using the coordination of benefits rules.",
         "$375.00 is what each plan would pay as primary; Stu's plan is secondary, so it only covers the balance remaining after Svetlana's plan pays."
       ],

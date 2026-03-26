@@ -15,7 +15,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "To provide for the payment of future death claims.",
+        null,
         "The reserve is not primarily intended to pay the insurer's administrative expenses.",
         "Policy dividends may come from surplus on participating policies, but that is not the primary purpose of the reserve.",
         "Cash surrender value is supported by the reserve, but the reserve's primary purpose is to ensure future death claims can be paid."
@@ -42,7 +42,7 @@
         "A parent can purchase life insurance on a minor child; the age of majority is not a barrier.",
         "Evidence of insurability for the insured today does not lock in future insurability for a different person (Turner).",
         "The life-insured cannot simply be changed to a different person on an existing policy.",
-        "Caleb could purchase a life insurance policy with Turner as the life-insured. When his son is older, Caleb can absolutely assign (transfer) the policy to him."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A parent can purchase life insurance on a minor child; the age of majority is not a barrier; Evidence of insurability for the insured today does not lock in future insurability for a different person (Turner).\nStep 4: Select the best answer. Option D: Caleb could purchase a life insurance policy with Turner as the life-insured. When his son is older, Caleb can absolutely assign (transfer) the policy to him.",
       "difficulty": "medium",
@@ -66,7 +66,7 @@
       "optionFeedback": [
         "The extended term insurance option does eliminate premiums while keeping the full face amount intact.",
         "Reduced paid-up insurance eliminates premiums but reduces the death benefit to a lesser permanent amount.",
-        "The extended term insurance non-forfeiture option.",
+        null,
         "The APL keeps the policy in force but creates a growing loan that reduces the net death benefit below $500,000."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The extended term insurance option does eliminate premiums while keeping the full face amount intact; Reduced paid-up insurance eliminates premiums but reduces the death benefit to a lesser permanent amount.\nStep 4: Select the best answer. Option C: The extended term insurance non-forfeiture option.",
@@ -91,7 +91,7 @@
       "optionFeedback": [
         "Reduced paid-up insurance is a non-forfeiture option that permanently reduces the face amount; it is not a premium-offset strategy.",
         "The PUA dividend option is how the dividends were accumulated — it is not the same as using accumulated PUAs to cover future premiums.",
-        "Premium offset.",
+        null,
         "Limited payment whole life has a set number of payment years decided at purchase, not a strategy using accumulated PUAs."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Reduced paid-up insurance is a non-forfeiture option that permanently reduces the face amount; it is not a premium-offset strategy; The PUA dividend option is how the dividends were accumulated — it is not the same as using accumulated PUAs to cover future premiums.\nStep 4: Select the best answer. Option C: Premium offset.",
@@ -114,7 +114,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "They apply a level premium approach throughout the life of the policy.",
+        null,
         "T-100 is not a yearly renewable term policy; the premium does not increase annually.",
         "This describes an adjustable T-100 variant, not most standard T-100 policies.",
         "While adjustable versions exist, most T-100 policies carry a fully level and guaranteed premium."
@@ -141,7 +141,7 @@
         "The death benefit is guaranteed, but it is not the only guaranteed feature.",
         "The cash value is also guaranteed on a whole life policy, but it is not the only guaranteed feature.",
         "The premium is also guaranteed on a whole life policy, but it is not the only guaranteed feature.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The death benefit is guaranteed, but it is not the only guaranteed feature; The cash value is also guaranteed on a whole life policy, but it is not the only guaranteed feature.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "easy",
@@ -166,7 +166,7 @@
         "Non-participating whole life is less expensive than participating WL, but still more expensive than T-100.",
         "Universal life premiums depend on the deposit chosen, but for basic permanent coverage, T-100 is typically cheaper.",
         "Participating whole life is the most expensive due to built-in conservative pricing for dividend potential.",
-        "Term-100."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Non-participating whole life is less expensive than participating WL, but still more expensive than T-100; Universal life premiums depend on the deposit chosen, but for basic permanent coverage, T-100 is typically cheaper.\nStep 4: Select the best answer. Option D: Term-100.",
       "difficulty": "easy",
@@ -190,7 +190,7 @@
         "Lower mortality than expected can contribute to a surplus.",
         "Higher investment returns can contribute to a surplus.",
         "Lower expenses can contribute to a surplus.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Lower mortality than expected can contribute to a surplus; Higher investment returns can contribute to a surplus.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "medium",
@@ -213,7 +213,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "With $90,000+ in CSV, the APL non-forfeiture option would have automatically taken over — the policy would not have lapsed, and no CSV cheque would have been sent.",
-        "$500,000 less any balance owing under an APL.",
+        null,
         "The policy would not have lapsed because the APL feature automatically uses the CSV to pay overdue premiums when the CSV is sufficient.",
         "\"$500,000 less any balance owing under an APL.\" is a different beneficiary designation than the one this question is testing. The better answer here is \"$500,000 less any balance owing under an APL.\"."
       ],
@@ -237,7 +237,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "To illustrate the impact of different dividend scales.",
+        null,
         "The purpose is not simply to satisfy a provincial regulation requirement.",
         "The core reason is to compare how different dividend scales affect outcomes, not merely to show general flexibility.",
         "Policy loans are separate from dividend scale illustrations."

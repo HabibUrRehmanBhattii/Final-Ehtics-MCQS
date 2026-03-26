@@ -873,7 +873,8 @@ async function handleAIExplain(request, env) {
       followUpQuestion
     } = await request.json();
 
-    const systemPrompt = `You are an expert LLQP/HLLQP ethics tutor.
+    const systemPrompt = `You are an expert LLQP and HLLQP exam coach.
+You teach across ethics, life insurance, accident & sickness, segregated funds, and annuities topics.
 Teach the student, do not just state the answer.
 Use plain language, short sentences, and exam-focused coaching.
 If the student is wrong, explain the misconception respectfully.
@@ -3223,10 +3224,22 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    if (path === '/health') {
+    // Health check endpoint - /api/health or /health
+    if (path === '/health' || path === '/api/health') {
+      const now = new Date().toISOString();
+      const uptime = (typeof process !== 'undefined' && typeof process.uptime === 'function')
+        ? process.uptime()
+        : 'N/A';
       return jsonResponse(request, {
         status: 'ok',
-        authConfigured: Boolean(env.DB && env.SESSION_SECRET && env.TURNSTILE_SECRET_KEY && env.TURNSTILE_SITE_KEY)
+        version: '1.0.0',
+        timestamp: now,
+        uptime,
+        authConfigured: Boolean(env.DB && env.SESSION_SECRET && env.TURNSTILE_SECRET_KEY && env.TURNSTILE_SITE_KEY),
+        heatmapEnabled: Boolean(env.HEATMAP_DATABASE),
+        emailConfigured: Boolean(env.RESEND_API_KEY || env.POSTMARK_API_TOKEN),
+        environment: env.ENVIRONMENT || 'production',
+        region: env.CF_REGION || 'unknown'
       });
     }
 

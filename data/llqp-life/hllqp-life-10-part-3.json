@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Total assets are separate from cash flow.",
-        "The difference between net income coming in and cash going out (expenses and savings).",
+        null,
         "A savings account balance is one type of asset, not cash flow.",
         "Tax refunds are occasional, not a measure of ongoing cash flow."
       ],
@@ -42,7 +42,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Policy exclusions don't affect premium deductibility.",
-        "To find out if the policy excludes coverage for death resulting from certain causes or activities, like hazardous hobbies.",
+        null,
         "Beneficiary designations don't affect premium costs.",
         "Exclusions don't affect cash value growth calculations."
       ],
@@ -68,7 +68,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Split-dollar arrangements share benefits between business and employee.",
-        "The business owns the death benefit up to the face amount, and the employee owns the policy's cash value.",
+        null,
         "Split-dollar arrangements are not typically equal 50-50 splits.",
         "This reverses the typical split-dollar arrangement."
       ],
@@ -95,7 +95,7 @@
       "optionFeedback": [
         "Group insurance is typically less expensive than individual policies.",
         "Group insurance minimizes underwriting; this is an advantage.",
-        "The employer (policyholder) may decide to terminate the contract or switch providers without consulting the group members.",
+        null,
         "Group and individual policies offer similar benefits."
       ],
       "explanation": "Step 1: Identify the question focuses on vulnerabilities of group insurance reliance.\nStep 2: Apply the LLQP principle that employees have no direct control over group contracts.\nStep 3: Eliminate distractors - group is cheaper; minimal underwriting is an advantage; benefits are similar.\nStep 4: Select the best answer. Option C: The employer (policyholder) may decide to terminate the contract or switch providers without consulting the group members.",
@@ -120,7 +120,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The CPP death benefit is $2,500, not $1,500.",
-        "$2,500",
+        null,
         "The CPP death benefit is $2,500, not $5,000.",
         "The CPP death benefit is $2,500, not $10,000."
       ],
@@ -145,7 +145,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The child must be under 18 years of age, or between 18 and 25 and enrolled in school full-time.",
+        null,
         "The age limit extends to 25 for full-time students.",
         "There are age and school enrollment restrictions.",
         "The limit is 25 for full-time students, and working status doesn't preclude benefits."
@@ -172,7 +172,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Benefit amounts vary; the issue is scope of coverage.",
-        "WC benefits are only payable if the death is caused by a work-related accident or illness.",
+        null,
         "WC covers only the employee, not family members.",
         "WC premiums are typically lower, but coverage is limited."
       ],
@@ -198,7 +198,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Clients (not employers) determine insurance needs.",
-        "It helps identify whether the surviving spouse will need to return to work immediately or stay home, and whether additional funds for daycare or a nanny are required.",
+        null,
         "Understanding the client's wishes is central to needs analysis.",
         "The surviving spouse's employment decisions directly affect insurance needs."
       ],
@@ -224,7 +224,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Debt payoff is separate from final expenses planning.",
-        "Whether a contract for funeral expenses has already been entered into, and if there is an outstanding balance.",
+        null,
         "Family agreement doesn't replace contractual planning.",
         "Cremation vs. burial affects costs but doesn't address pre-existing contracts."
       ],
@@ -250,7 +250,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Parental retirement is addressed through RRSP planning, not life insurance.",
-        "Ensuring funds are available to help pay for the children's post-secondary education.",
+        null,
         "Investment properties are optional goals, not primary needs.",
         "Vacations are discretionary, not essential planning objectives."
       ],

@@ -15,7 +15,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "They can void the policy entirely and deny the claim, because fraud invalidates the 2-year contestability limit",
-      "kidExplanation": "The insurance company has a 2-year safety window for honest mistakes. But if you lied ON PURPOSE to trick them, that safety window disappears! They can rip up your contract even 5 years later."
+      "kidExplanation": "The insurance company has a 2-year safety window for honest mistakes. But if you lied ON PURPOSE to trick them, that safety window disappears! They can rip up your contract even 5 years later.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 32,
@@ -28,7 +34,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A report written by the applicant's personal doctor detailing their medical history, requested by the underwriter",
-      "kidExplanation": "An APS is just a fancy letter the insurance company asks your personal doctor to write. The letter tells the company exactly how healthy you are and what medicines you take!"
+      "kidExplanation": "An APS is just a fancy letter the insurance company asks your personal doctor to write. The letter tells the company exactly how healthy you are and what medicines you take!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 33,
@@ -41,7 +53,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "Because replacing their caregiving duties (e.g., childcare, household management) will result in significant new expenses for the surviving spouse",
-      "kidExplanation": "Even if mom or dad doesn't bring home a paycheck, the work they do is super valuable! If they aren't there, the family has to pay for a nanny or babysitter, which costs a lot of money."
+      "kidExplanation": "Even if mom or dad doesn't bring home a paycheck, the work they do is super valuable! If they aren't there, the family has to pay for a nanny or babysitter, which costs a lot of money.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 34,
@@ -54,7 +72,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "Assets like cash, savings accounts, or life insurance that can be quickly converted to cash to pay final expenses",
-      "kidExplanation": "Liquid assets are things that can be turned into cold, hard cash instantly. If you don't have cash ready when you pass away, your family might have to sell your house in a panic just to pay the bills!"
+      "kidExplanation": "Liquid assets are things that can be turned into cold, hard cash instantly. If you don't have cash ready when you pass away, your family might have to sell your house in a panic just to pay the bills!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 35,
@@ -67,7 +91,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "It provides the liquid cash needed to pay the capital gains tax, preventing the children from having to sell the cottage to pay the CRA",
-      "kidExplanation": "The government taxes the profit on your cottage when you pass away! Life insurance gives your kids a giant pile of cash so they can pay the tax monster and keep the family cabin."
+      "kidExplanation": "The government taxes the profit on your cottage when you pass away! Life insurance gives your kids a giant pile of cash so they can pay the tax monster and keep the family cabin.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 36,
@@ -80,7 +110,13 @@
       ],
       "correctAnswer": 0,
       "explanation": "Dividing the needed annual income by the expected interest rate to determine the lump sum required",
-      "kidExplanation": "Capitalization asks a math question: How giant does a pile of money need to be so that the interest it earns every year perfectly replaces the paycheck you used to bring home?"
+      "kidExplanation": "Capitalization asks a math question: How giant does a pile of money need to be so that the interest it earns every year perfectly replaces the paycheck you used to bring home?",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 37,
@@ -93,7 +129,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "It creates a comprehensive list of all specific capital needs (debts, taxes, education funds, and income shortfalls) to calculate the exact lump sum required",
-      "kidExplanation": "Instead of just replacing a paycheck, the Capital Needs Approach makes a giant shopping list! It adds up the missing paychecks, the funeral cost, the credit card bills, and the kids' college funds to get one perfect total!"
+      "kidExplanation": "Instead of just replacing a paycheck, the Capital Needs Approach makes a giant shopping list! It adds up the missing paychecks, the funeral cost, the credit card bills, and the kids' college funds to get one perfect total!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 38,
@@ -106,7 +148,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "Because permanent insurance is expensive; if the client doesn't have positive cash flow (extra money at the end of the month), they cannot afford the premium and the policy will lapse",
-      "kidExplanation": "It doesn't matter if the math says you need a permanent shield if you don't have enough allowance money to pay for it! The agent has to make sure you can actually afford the monthly bill."
+      "kidExplanation": "It doesn't matter if the math says you need a permanent shield if you don't have enough allowance money to pay for it! The agent has to make sure you can actually afford the monthly bill.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 39,
@@ -119,7 +167,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "A Term Life insurance policy, as it provides the highest death benefit for the lowest initial premium",
-      "kidExplanation": "If you need a giant shield right now but you don't have a lot of money, you rent a temporary shield (Term insurance). It's super cheap and gives your family maximum protection!"
+      "kidExplanation": "If you need a giant shield right now but you don't have a lot of money, you rent a temporary shield (Term insurance). It's super cheap and gives your family maximum protection!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 40,
@@ -132,7 +186,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A specific condition or activity (like suicide within 2 years, or a dangerous hobby) that the policy will NOT cover",
-      "kidExplanation": "Exclusions are the Fine Print. It's a rule that says, We will cover you for EVERYTHING... except if you die doing this one specific dangerous thing, like skydiving."
+      "kidExplanation": "Exclusions are the Fine Print. It's a rule that says, We will cover you for EVERYTHING... except if you die doing this one specific dangerous thing, like skydiving.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     }
   ]
 }

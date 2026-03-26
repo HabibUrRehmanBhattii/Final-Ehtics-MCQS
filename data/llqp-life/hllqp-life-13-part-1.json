@@ -15,7 +15,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "To protect against the financial consequences of an individual's death",
-      "kidExplanation": "Life insurance is a safety net. If someone passes away, the net catches their family so they don't crash and run out of money to buy food and keep their house."
+      "kidExplanation": "Life insurance is a safety net. If someone passes away, the net catches their family so they don't crash and run out of money to buy food and keep their house.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 2,
@@ -28,7 +34,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "It provides temporary coverage for a specific period and pays out only if death occurs during that period",
-      "kidExplanation": "Term insurance is like renting an apartment for a year. You only have it for the time you pay for it. If you move out (or the term ends), you don't get to keep it!"
+      "kidExplanation": "Term insurance is like renting an apartment for a year. You only have it for the time you pay for it. If you move out (or the term ends), you don't get to keep it!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 3,
@@ -41,7 +53,13 @@
       ],
       "correctAnswer": 0,
       "explanation": "Renew the policy for another term without providing medical evidence of insurability",
-      "kidExplanation": "Renewable means you can hit the Continue button on your insurance when it expires, and the company is NOT allowed to make you take a doctor's test, even if you got sick!"
+      "kidExplanation": "Renewable means you can hit the Continue button on your insurance when it expires, and the company is NOT allowed to make you take a doctor's test, even if you got sick!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 4,
@@ -54,7 +72,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "They start low and increase every year as the insured gets older and the risk of death increases",
-      "kidExplanation": "Every time you have a birthday, you get a little bit older and a little bit closer to heaven. Because the risk goes up every year, the price tag of a YRT policy goes up every year, too!"
+      "kidExplanation": "Every time you have a birthday, you get a little bit older and a little bit closer to heaven. Because the risk goes up every year, the price tag of a YRT policy goes up every year, too!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 5,
@@ -67,7 +91,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A guaranteed level premium and a guaranteed death benefit for life",
-      "kidExplanation": "Whole life is a forever promise! The company promises that your price will never, ever go up, and your family will definitely get the prize money no matter how old you are when you pass away."
+      "kidExplanation": "Whole life is a forever promise! The company promises that your price will never, ever go up, and your family will definitely get the prize money no matter how old you are when you pass away.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 6,
@@ -80,7 +110,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A savings component that grows over time and is available to the policyholder if they cancel (surrender) the policy",
-      "kidExplanation": "Whole life insurance has a secret piggy bank inside it. If you decide you don't want the insurance anymore, you can smash the piggy bank and walk away with the cash inside!"
+      "kidExplanation": "Whole life insurance has a secret piggy bank inside it. If you decide you don't want the insurance anymore, you can smash the piggy bank and walk away with the cash inside!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 7,
@@ -93,7 +129,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "A partial refund of premiums paid out when the insurance company experiences favorable mortality, interest, or expense results",
-      "kidExplanation": "If the insurance company makes extra profit because not many people got sick and their investments did well, they share that extra profit with you! It's like a special bonus check."
+      "kidExplanation": "If the insurance company makes extra profit because not many people got sick and their investments did well, they share that extra profit with you! It's like a special bonus check.",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 8,
@@ -106,7 +148,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "The dividend is used as a single premium to buy a small chunk of additional, fully paid-up permanent life insurance, increasing the total death benefit",
-      "kidExplanation": "Instead of taking the bonus money in cash, you use it to buy tiny, extra shields that you never have to pay for again. Every year you get a bonus, your total shield gets bigger!"
+      "kidExplanation": "Instead of taking the bonus money in cash, you use it to buy tiny, extra shields that you never have to pay for again. Every year you get a bonus, your total shield gets bigger!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 9,
@@ -119,7 +167,13 @@
       ],
       "correctAnswer": 0,
       "explanation": "It unbundles the insurance cost and the investment account, making it completely transparent and flexible",
-      "kidExplanation": "UL is a build-it-yourself policy! Instead of the company hiding the math, you can see exactly how much goes to the insurance shield and how much goes into your investment bucket."
+      "kidExplanation": "UL is a build-it-yourself policy! Instead of the company hiding the math, you can see exactly how much goes to the insurance shield and how much goes into your investment bucket.",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 10,
@@ -132,7 +186,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "The actual cost the insurer charges each month to provide the death benefit protection, deducted from the investment account",
-      "kidExplanation": "The NCPI is the actual price tag of the insurance shield. Every month, the insurance company reaches into your UL savings bucket and takes out just enough coins to pay for that month's shield."
+      "kidExplanation": "The NCPI is the actual price tag of the insurance shield. Every month, the insurance company reaches into your UL savings bucket and takes out just enough coins to pay for that month's shield.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     }
   ]
 }

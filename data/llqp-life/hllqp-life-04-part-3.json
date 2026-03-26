@@ -17,7 +17,7 @@
       "optionFeedback": [
         "Surrender can trigger immediate taxable policy gain.",
         "Partial withdrawals may create immediate taxation depending on policy gain/ACB.",
-        "This option best matches the definition, rule, or outcome the question is testing. Which of the following strategies would you suggest?.",
+        null,
         "This is not a standard tax-free mechanism to access full account value."
       ],
       "explanation": "If the objective is liquidity with minimal immediate tax impact, collateral borrowing against policy value is generally the preferred planning approach.",
@@ -43,7 +43,7 @@
         "These are policy roles, not UL cost/account components.",
         "NCPI is not the standard unbundling trio in this exam framing.",
         "This is incomplete because expenses are also separated in UL.",
-        "This option best matches the definition, rule, or outcome the question is testing. What is \"unbundled\" in a universal life policy?."
+        null
       ],
       "explanation": "UL unbundles the policy into separate components: investment account, mortality deductions, and policy expenses.",
       "difficulty": "easy",
@@ -65,7 +65,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Added restrictions may reduce flexibility for a self-directed investor profile.",
-        "This option best matches the definition, rule, or outcome the question is testing. Which of the following UL options would best match Terrence's needs?.",
+        null,
         "Open-ended adjustments add complexity/risk beyond what is needed for this objective.",
         "LCOI is typically less aligned with maximizing early investable surplus than YRT."
       ],
@@ -89,7 +89,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This reverses the core definitions.",
-        "This option best matches the definition, rule, or outcome the question is testing. Which of the following statements is true?.",
+        null,
         "Their deduction patterns differ materially over time.",
         "Relative cost depends on age/timing and policy duration, not a universal always-lower rule."
       ],
@@ -116,7 +116,7 @@
         "YRT usually becomes more expensive in later years due to annual increases.",
         "This reverses the definitions of YRT and LCOI.",
         "UL policy performance is affected by mortality deductions and policy charges.",
-        "This option best matches the definition, rule, or outcome the question is testing. Which of the following statements is correct?."
+        null
       ],
       "explanation": "YRT usually has lower early-year deductions than LCOI, leaving more early cash flow available for account buildup.",
       "difficulty": "easy",
@@ -139,7 +139,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This contradicts UL’s core flexibility design.",
-        "This option best matches the definition, rule, or outcome the question is testing. Which one of the following statements is true of universal life insurance?.",
+        null,
         "UL is commonly used in business insurance planning when appropriate.",
         "Death benefit growth depends on selected design/options, not an automatic guarantee."
       ],
@@ -162,7 +162,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "This option best matches the definition, rule, or outcome the question is testing. Which of the following best describes the taxation associated with the policy?.",
+        null,
         "This overstates taxation on death proceeds to the beneficiary in an exempt-compliant UL context.",
         "Exempt UL investment growth is not generally taxed annually as stated.",
         "This does not reflect standard exempt UL death-benefit tax treatment."

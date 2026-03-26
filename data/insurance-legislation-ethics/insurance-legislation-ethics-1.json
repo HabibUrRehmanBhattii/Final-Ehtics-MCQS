@@ -15,7 +15,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "An independent agent.",
+        null,
         "Career agents are tied to a single carrier.",
         "Captive agents work exclusively with one insurer.",
         "Enhanced supervision is a compliance status, not a distribution model."
@@ -41,7 +41,7 @@
       "optionFeedback": [
         "The Uniform Law Conference provides model laws but does not override the Constitution.",
         "Common law is subordinate to constitutional requirements.",
-        "The Canadian Constitution.",
+        null,
         "The Life Insurance Act is ordinary legislation and must comply with the Constitution."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The Uniform Law Conference provides model laws but does not override the Constitution; Common law is subordinate to constitutional requirements.\nStep 4: Select the best answer. Option C: The Canadian Constitution.",
@@ -65,7 +65,7 @@
         "CPP benefits are taxable income.",
         "OAS benefits are taxable and subject to clawback.",
         "Self-employed EI benefits would be taxable if payable.",
-        "Guaranteed Income Supplement (GIS)."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. CPP benefits are taxable income; OAS benefits are taxable and subject to clawback.\nStep 4: Select the best answer. Option D: Guaranteed Income Supplement (GIS).",
       "difficulty": "medium",
@@ -85,7 +85,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Ying can enter into an insurance contract today.",
+        null,
         "Age of majority in BC is 19, but insurance capacity is granted at 16.",
         "There is no 17-year threshold in BC insurance legislation.",
         "Insurance capacity for minors starts at 16 under provincial law."
@@ -108,7 +108,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The Insurance Regulator in the Province/Territory.",
+        null,
         "CISRO coordinates standards but does not issue licenses.",
         "CLHIA is an industry association, not the licensing authority.",
         "OSFI regulates federally incorporated insurers, not individual agents."
@@ -133,7 +133,7 @@
       "optionFeedback": [
         "That describes an independent advisor, not a career (captive) agent.",
         "Career status refers to exclusivity to one carrier, not full-time hours.",
-        "He represents only one insurer.",
+        null,
         "Length of licensing does not define a career agent."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. That describes an independent advisor, not a career (captive) agent; Career status refers to exclusivity to one carrier, not full-time hours.\nStep 4: Select the best answer. Option C: He represents only one insurer.",
@@ -157,7 +157,7 @@
         "Guardianship is typically court-appointed after incapacity arises.",
         "A trustee arrangement alone does not grant broad decision-making authority for personal affairs.",
         "A will only takes effect on death, not incapacity.",
-        "Enduring power of attorney."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Guardianship is typically court-appointed after incapacity arises; A trustee arrangement alone does not grant broad decision-making authority for personal affairs.\nStep 4: Select the best answer. Option D: Enduring power of attorney.",
       "difficulty": "medium",
@@ -177,7 +177,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Divorce will cause each of the wills to be interpreted as if the ex-spouse predeceased the other spouse.",
+        null,
         "A separation alone does not revoke a will.",
         "A separation agreement does not trigger the same effect as a divorce on will interpretation.",
         "Most provinces treat a former spouse as having predeceased upon divorce."
@@ -202,7 +202,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "An assumption reinsurance transfers all covered policies, not a case-by-case decision afterward.",
-        "Shield will be responsible for all rights and obligations of Andrew's policy.",
+        null,
         "The acquiring insurer assumes the risk; the policyholder does not take on non-payment risk.",
         "A valid assumption agreement keeps policies in force rather than cancelling them."
       ],
@@ -226,7 +226,7 @@
       "optionFeedback": [
         "RRSP limits still apply and the award itself is not taxable.",
         "Personal injury damages for lost capacity are not treated as income.",
-        "It is received tax free.",
+        null,
         "Such settlements are excluded from income and are not taxed."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. RRSP limits still apply and the award itself is not taxable; Personal injury damages for lost capacity are not treated as income.\nStep 4: Select the best answer. Option C: It is received tax free.",
@@ -249,7 +249,7 @@
       "optionFeedback": [
         "TIAs generally extend longer than 30 days.",
         "120 days is longer than standard TIA periods.",
-        "90 days.",
+        null,
         "60 days is shorter than common TIA maximums."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. TIAs generally extend longer than 30 days; 120 days is longer than standard TIA periods.\nStep 4: Select the best answer. Option C: 90 days.",
@@ -273,7 +273,7 @@
         "Payment is part of acceptance, not the insurer's offer.",
         "The application is a request from the client, not the insurer's offer.",
         "Delivery alone does not constitute the offer under common law formation.",
-        "When the insurer approved the policy."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Payment is part of acceptance, not the insurer's offer; The application is a request from the client, not the insurer's offer.\nStep 4: Select the best answer. Option D: When the insurer approved the policy.",
       "difficulty": "medium",
@@ -296,7 +296,7 @@
         "Mark’s policy pays to Leo as beneficiary; Leo’s own policy pays to his estate.",
         "Leo’s death occurred after the contestability/suicide period, so his policy can still pay.",
         "A valid beneficiary designation directs proceeds before intestacy rules apply.",
-        "The policy on Mark's life will pay the death benefit to Leo's estate, and the policy on Leo's life will pay the death benefit to his own estate."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Mark’s policy pays to Leo as beneficiary; Leo’s own policy pays to his estate; Leo’s death occurred after the contestability/suicide period, so his policy can still pay.\nStep 4: Select the best answer. Option D: The policy on Mark's life will pay the death benefit to Leo's estate, and the policy on Leo's life will pay the death benefit to his own estate.",
       "difficulty": "medium",
@@ -318,7 +318,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Term policies have a final expiry age even if renewable.",
-        "The policy conversion option will eventually expire.",
+        null,
         "Renewal is usually available only to a certain terminal age.",
         "Policyholders may cancel; they are not locked in after the first premium."
       ],
@@ -343,7 +343,7 @@
         "Voidable refers to contract validity, not unilateral obligations.",
         "The insurer generally cannot unilaterally amend the contract.",
         "Insurers are bound once conditions are met; they cannot cancel at will.",
-        "The policy owner can cancel the policy at any time."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Voidable refers to contract validity, not unilateral obligations; The insurer generally cannot unilaterally amend the contract.\nStep 4: Select the best answer. Option D: The policy owner can cancel the policy at any time.",
       "difficulty": "easy",
@@ -363,7 +363,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Carl is successor policyholder.",
+        null,
         "The insured life is Greta, not Bo.",
         "Bo currently owns the policy, not Greta.",
         "Moesha is the primary beneficiary; Carl is contingent."
@@ -386,7 +386,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "If the employer cancels the group insurance plan, Barlow will continue to receive his disability benefits.",
+        null,
         "Employers generally can amend or cancel plans without member consent.",
         "Group plans can be cancelled entirely; vesting protects existing disability claims only.",
         "Governing law follows the province where the contract was made, not necessarily the current workplace."
@@ -412,7 +412,7 @@
         "Irrevocable beneficiaries generally must consent to surrenders.",
         "A revocable designation can be changed without the beneficiary’s consent.",
         "Creditor protection depends on class and provincial rules, not simply revocable status.",
-        "If Yolanda is an irrevocable beneficiary, Pedro and Alejandra would need her consent before taking a policy loan."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Irrevocable beneficiaries generally must consent to surrenders; A revocable designation can be changed without the beneficiary’s consent.\nStep 4: Select the best answer. Option D: If Yolanda is an irrevocable beneficiary, Pedro and Alejandra would need her consent before taking a policy loan.",
       "difficulty": "medium",
@@ -434,7 +434,7 @@
       "optionFeedback": [
         "Minimal restrictions alone do not require extensive investigation.",
         "Suicide provisions are usually time-limited and separate from accidental benefits.",
-        "The policy provides for an additional benefit where the death is by accident.",
+        null,
         "Lack of exclusions does not specifically drive coroner and toxicology involvement."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Minimal restrictions alone do not require extensive investigation; Suicide provisions are usually time-limited and separate from accidental benefits.\nStep 4: Select the best answer. Option C: The policy provides for an additional benefit where the death is by accident.",
@@ -456,7 +456,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Dismemberment benefits are living benefits paid to the insured, not the death beneficiary.",
-        "The policy will pay Norm the benefit.",
+        null,
         "AD&D policies pay for covered losses like dismemberment, not only death.",
         "The benefit is payable now to the insured, not deferred to the estate."
       ],
@@ -479,7 +479,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Statement i allows any occupation with client approval, which is too broad.",
-        "Ii and iii.",
+        null,
         "\"i and iv\" is a different statement than the one this question is testing. The correct answer is \"ii and iii\" because that statement is the one that matches the rule being tested.",
         "\"i and ii\" is a different statement than the one this question is testing. The correct answer is \"ii and iii\" because that statement is the one that matches the rule being tested."
       ],
@@ -501,7 +501,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Timothy must be appropriately licensed in order for Hannah to split commissions with him.",
+        null,
         "Referral fee rules vary; the scenario focuses on commission splitting requirements.",
         "Commission splits are allowed between licensed agents.",
         "Armando is unlicensed; commissions cannot be split with him even with disclosure."
@@ -524,7 +524,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "No, the agent’s actions constitute trafficking in insurance.",
+        null,
         "Viatical/trafficking arrangements are generally prohibited despite discussion of options.",
         "The issue is trafficking, not tied selling.",
         "A replacement declaration does not legalize trafficking transactions."
@@ -549,7 +549,7 @@
       "optionFeedback": [
         "The $15,000 trigger does not apply to registered plan openings.",
         "A SIN card is not acceptable for identity verification on its own.",
-        "Identification is not required because it is a registered plan.",
+        null,
         "Registered plans are exempt from standard PCMLTF identification at account opening."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The $15,000 trigger does not apply to registered plan openings; A SIN card is not acceptable for identity verification on its own.\nStep 4: Select the best answer. Option C: Identification is not required because it is a registered plan.",
@@ -572,7 +572,7 @@
       "optionFeedback": [
         "CISRO is not a legislative body.",
         "Consumer protection is a broad objective but CISRO's direct mandate is standard setting.",
-        "To develop consistent qualification standards for insurance agents.",
+        null,
         "Complaints are not CISRO's primary role."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. CISRO is not a legislative body; Consumer protection is a broad objective but CISRO's direct mandate is standard setting.\nStep 4: Select the best answer. Option C: To develop consistent qualification standards for insurance agents.",

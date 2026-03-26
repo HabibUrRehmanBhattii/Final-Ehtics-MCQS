@@ -17,7 +17,7 @@
       "optionFeedback": [
         "Recommending permanent coverage can be suitable in some cases; the ethical issue isn’t the product type by itself.",
         "A best-interest breach isn’t established just because a different product exists; the core duty at issue is transparency.",
-        "Failing to disclose a potential conflict of interest.",
+        null,
         "Higher compensation alone isn’t unethical if the recommendation is suitable and properly disclosed."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Recommending permanent coverage can be suitable in some cases; the ethical issue isn’t the product type by itself; A best-interest breach isn’t established just because a different product exists; the core duty at issue is transparency.\nStep 4: Select the best answer. Option C: Failing to disclose a potential conflict of interest.",
@@ -40,7 +40,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Unintentional errors can still be material, and material misrepresentation can jeopardize coverage.",
-        "The insurer may void the policy for material misrepresentation.",
+        null,
         "Protecting the client doesn’t justify submitting incomplete information; accuracy is mandatory.",
         "Materiality is assessed by the insurer, not by the client’s personal view of relevance."
       ],
@@ -65,7 +65,7 @@
       "optionFeedback": [
         "Accuracy alone doesn’t solve capacity concerns; the client must be able to understand and consent.",
         "Family help can cross into undue influence if the client is confused and not independently informed.",
-        "Delay the transaction and ensure the client fully understands.",
+        null,
         "Documentation is useful, but it doesn’t cure proceeding with a potentially vulnerable or confused client."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Accuracy alone doesn’t solve capacity concerns; the client must be able to understand and consent; Family help can cross into undue influence if the client is confused and not independently informed.\nStep 4: Select the best answer. Option C: Delay the transaction and ensure the client fully understands.",
@@ -89,7 +89,7 @@
       "optionFeedback": [
         "Consent must be informed; a brief or incomplete explanation doesn’t make replacement automatically acceptable.",
         "New features don’t erase material disadvantages like reset contestability or suicide periods.",
-        "Replacement may be unethical if disadvantages were not fully explained.",
+        null,
         "Motivation matters, but nondisclosure of disadvantages is an ethical problem regardless of commission."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Consent must be informed; a brief or incomplete explanation doesn’t make replacement automatically acceptable; New features don’t erase material disadvantages like reset contestability or suicide periods.\nStep 4: Select the best answer. Option C: Replacement may be unethical if disadvantages were not fully explained.",
@@ -113,7 +113,7 @@
       "optionFeedback": [
         "Agents must proactively explain material limitations; clients aren’t expected to discover them alone.",
         "Disclosure duties apply even when the client doesn’t ask about exclusions.",
-        "Failure to disclose material policy limitations.",
+        null,
         "Clear wording doesn’t eliminate the duty to highlight material exclusions and limitations."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Agents must proactively explain material limitations; clients aren’t expected to discover them alone; Disclosure duties apply even when the client doesn’t ask about exclusions.\nStep 4: Select the best answer. Option C: Failure to disclose material policy limitations.",
@@ -137,7 +137,7 @@
       "optionFeedback": [
         "A client’s signature doesn’t excuse knowingly submitting false information.",
         "A warning helps but does not permit filing an application the agent knows is inaccurate.",
-        "Full, because agent knowingly submitted false information.",
+        null,
         "The insurer relies on the agent’s duty of accuracy; liability isn’t shifted by submitting known falsehoods."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. A client’s signature doesn’t excuse knowingly submitting false information; A warning helps but does not permit filing an application the agent knows is inaccurate.\nStep 4: Select the best answer. Option C: Full, because agent knowingly submitted false information.",
@@ -161,7 +161,7 @@
       "optionFeedback": [
         "Disclosure must occur before the client’s decision, not after the sale or premium payment.",
         "Harm is not required; the duty is to disclose potential conflicts upfront.",
-        "Invalid because disclosure must be timely.",
+        null,
         "Later documentation doesn’t fix disclosure that was too late to inform the decision."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Disclosure must occur before the client’s decision, not after the sale or premium payment; Harm is not required; the duty is to disclose potential conflicts upfront.\nStep 4: Select the best answer. Option C: Invalid because disclosure must be timely.",
@@ -186,7 +186,7 @@
         "Seeking advice is normal and doesn’t indicate coercion or pressure by itself.",
         "A recommendation alone isn’t undue influence unless it involves pressure or manipulation.",
         "Relying on expertise can be appropriate; undue influence requires pressure or exploitation.",
-        "Client is pressured to act quickly while vulnerable."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Seeking advice is normal and doesn’t indicate coercion or pressure by itself; A recommendation alone isn’t undue influence unless it involves pressure or manipulation.\nStep 4: Select the best answer. Option D: Client is pressured to act quickly while vulnerable.",
       "difficulty": "medium",
@@ -209,7 +209,7 @@
       "optionFeedback": [
         "Implying government approval or endorsement is not acceptable marketing in insurance sales.",
         "Saying a policy is “approved by the government” goes beyond oversight and implies endorsement.",
-        "Misleading representation.",
+        null,
         "Even if a statement has a kernel of truth, it is still improper if it misleads clients."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Implying government approval or endorsement is not acceptable marketing in insurance sales; Saying a policy is “approved by the government” goes beyond oversight and implies endorsement.\nStep 4: Select the best answer. Option C: Misleading representation.",
@@ -233,7 +233,7 @@
       "optionFeedback": [
         "Client satisfaction doesn’t reduce the seriousness of an ethical breach.",
         "Intent matters, but regulators weigh client harm more heavily in severity decisions.",
-        "Financial harm to the client.",
+        null,
         "Tenure doesn’t offset the impact of a breach; consequences drive severity."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Client satisfaction doesn’t reduce the seriousness of an ethical breach; Intent matters, but regulators weigh client harm more heavily in severity decisions.\nStep 4: Select the best answer. Option C: Financial harm to the client.",

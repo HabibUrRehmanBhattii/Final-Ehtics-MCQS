@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The small business deduction applies to taxable income, not capital gains.",
-        "The lifetime capital gains exemption (LCGE).",
+        null,
         "The dividend tax credit is for dividend income, not capital gains.",
         "Capital loss carrybacks offset losses, not gains."
       ],
@@ -42,7 +42,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Partnership interests do not get automatic spousal rollover treatment.",
-        "He is deemed to have disposed of his partnership interest for its fair market value, which could trigger a large capital gain.",
+        null,
         "Partnership interests are personal assets that may not continue operating.",
         "Partnerships do not automatically dissolve upon a partner's death."
       ],
@@ -68,7 +68,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Buy-sell agreements are binding contracts and override wills.",
-        "The buy-sell agreement usually prevents the owner from leaving the interest to their spouse, as it dictates the business interest must be sold to the surviving partners or the corporation.",
+        null,
         "Buy-sell agreements limit the spouse's choices by mandating a sale.",
         "Buy-sell agreements significantly constrain estate planning flexibility."
       ],
@@ -94,7 +94,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Pension beneficiaries are usually limited to spouses and dependents.",
-        "Pension legislation generally requires the DBPP to provide a 60% to 66% survivor's pension to the surviving spouse, which reduces the dependency needs.",
+        null,
         "DBPPs do not automatically revert to the estate.",
         "Pension benefits are not automatically forfeited."
       ],
@@ -120,7 +120,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Optimal pricing is not guaranteed without liquid assets available.",
-        "Without them, the executor may be forced to sell estate assets at an inopportune time or at fire sale prices to pay final expenses, taxes, and debts.",
+        null,
         "Real property alone cannot quickly satisfy immediate cash demands.",
         "The government does not provide automatic loans for estate expenses."
       ],
@@ -147,7 +147,7 @@
       "optionFeedback": [
         "RRSPs are not tax-free upon death; they are subject to deemed disposition.",
         "The full amount is included, not a partial amount.",
-        "The full amount must be included in the deceased's income on their final tax return for the year of death.",
+        null,
         "RRSPs do not automatically split among children without a will or beneficiary designation."
       ],
       "explanation": "Step 1: Identify the question focuses on RRSP taxation at death without a spouse as beneficiary.\nStep 2: Apply the LLQP principle that RRSPs without a spousal beneficiary trigger deemed disposition.\nStep 3: Eliminate distractors - RRSPs are not tax-free; 100% is included; automatic distribution to children doesn't occur.\nStep 4: Select the best answer. Option C: The full amount must be included in the deceased's income on their final tax return for the year of death.",
@@ -173,7 +173,7 @@
       "optionFeedback": [
         "Mortgages are not automatically forgiven upon death.",
         "The mortgage does not automatically transfer to the spouse without lender approval.",
-        "The lender may or may not be willing to extend the mortgage to the surviving spouse alone, depending on their ability to make the payments.",
+        null,
         "Parents do not automatically assume mortgage obligations."
       ],
       "explanation": "Step 1: Identify the question focuses on mortgage obligations upon a joint borrower's death.\nStep 2: Apply the LLQP principle that lenders evaluate creditworthiness independently.\nStep 3: Eliminate distractors - mortgages are not forgiven; automatic transfer doesn't occur; parents don't assume obligations.\nStep 4: Select the best answer. Option C: The lender may or may not be willing to extend the mortgage to the surviving spouse alone, depending on their ability to make the payments.",
@@ -198,7 +198,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "LOCs are not automatically closed upon death.",
-        "The lender may allow the LOC to remain open since it is secured by assets that remain in the hands of the surviving spouse.",
+        null,
         "New joint holders cannot automatically replace deceased holders.",
         "LOCs are not automatically forgiven."
       ],
@@ -224,7 +224,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The capital gain is $600,000 - $250,000 = $350,000, not $250,000.",
-        "The deemed disposition triggers a capital gain of $350,000, 50% of which is taxable on the client's final tax return.",
+        null,
         "Deemed disposition occurs at FMV, not at ACB.",
         "Capital gains tax is not deferred upon deemed disposition; it applies on the final return."
       ],
@@ -251,7 +251,7 @@
       "optionFeedback": [
         "Mortgage and rent are necessary family expenses.",
         "Education expenses support the family's lifestyle choices.",
-        "The deceased's personal expenses, such as their cell phone or transportation costs.",
+        null,
         "Food and utilities are essential family expenses."
       ],
       "explanation": "Step 1: Identify the question focuses on which expenses to exclude from needs analysis.\nStep 2: Apply the LLQP principle that only expenses the family will continue after death should be counted.\nStep 3: Eliminate distractors - housing, education, and utilities are family needs that continue.\nStep 4: Select the best answer. Option C: The deceased's personal expenses, such as their cell phone or transportation costs.",

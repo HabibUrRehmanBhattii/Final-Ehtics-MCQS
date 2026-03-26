@@ -18,7 +18,7 @@
         "\"Limited coverage\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Nonoccupational coverage\" because that is the contract feature that matches the fact pattern.",
         "\"Workers' Compensation coverage\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Nonoccupational coverage\" because that is the contract feature that matches the fact pattern.",
         "\"Occupational coverage\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Nonoccupational coverage\" because that is the contract feature that matches the fact pattern.",
-        "Nonoccupational coverage."
+        null
       ]
     },
     {
@@ -35,7 +35,7 @@
       "optionFeedback": [
         "\"hospital charges\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"experimental and investigative services\".",
         "\"physician fees\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"experimental and investigative services\".",
-        "Experimental and investigative services.",
+        null,
         "\"nursing services\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"experimental and investigative services\"."
       ]
     },
@@ -51,7 +51,7 @@
       "correctAnswer": 0,
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: A specific disease or illness.",
       "optionFeedback": [
-        "A specific disease or illness.",
+        null,
         "This choice is too absolute for the facts given. The better answer here is \"specific disease or illness\".",
         "This choice is too absolute for the facts given. The better answer here is \"specific disease or illness\".",
         "This choice is too absolute for the facts given. The better answer here is \"specific disease or illness\"."
@@ -69,7 +69,7 @@
       "correctAnswer": 0,
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: domestic.",
       "optionFeedback": [
-        "Domestic.",
+        null,
         "\"alien\" is a different answer than the one this question is testing. The better answer here is \"domestic\".",
         "\"foreign\" is a different answer than the one this question is testing. The better answer here is \"domestic\".",
         "\"authorized\" is a different answer than the one this question is testing. The better answer here is \"domestic\"."
@@ -88,7 +88,7 @@
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Defamation.",
       "optionFeedback": [
         "\"Boycotting\" is a different statement than the one this question is testing. The correct answer is \"Defamation\" because that statement is the one that matches the rule being tested.",
-        "Defamation.",
+        null,
         "\"Unfair discrimination\" is a different statement than the one this question is testing. The correct answer is \"Defamation\" because that statement is the one that matches the rule being tested.",
         "\"Misrepresentation\" is a different statement than the one this question is testing. The correct answer is \"Defamation\" because that statement is the one that matches the rule being tested."
       ]
@@ -105,7 +105,7 @@
       "correctAnswer": 0,
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: 0%.",
       "optionFeedback": [
-        "This option best matches the definition, rule, or outcome the question is testing. What is the required minimum percentage of employee participation for a noncontributory group health insurance plan according to Florida Law?.",
+        null,
         "The number in this choice is off. The correct answer is \"0%\".",
         "The number in this choice is off. The correct answer is \"0%\".",
         "The number in this choice is off. The correct answer is \"0%\"."
@@ -124,7 +124,7 @@
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Small group benefit plans are to be issued on a \"guarantee-issue\" basis.",
       "optionFeedback": [
         "\"Small group benefit plans are to be issued on a \"conditionally-issue\" basis\" is a different group plan feature than the one this question is testing. The better answer here is \"Small group benefit plans are to be issued on a \"guarantee-issue\" basis\".",
-        "Small group benefit plans are to be issued on a \"guarantee-issue\" basis.",
+        null,
         "This choice is too absolute for the facts given. The better answer here is \"Small group benefit plans are to be issued on a \"guarantee-issue\" basis\".",
         "This choice is too absolute for the facts given. The better answer here is \"Small group benefit plans are to be issued on a \"guarantee-issue\" basis\"."
       ]
@@ -143,7 +143,7 @@
       "optionFeedback": [
         "\"Financial Industry Regulatory Agency (FINRA)\" is a different statement than the one this question is testing. The correct answer is \"National Association of Insurance and Financial Advisors (NAIFA)\" because that statement is the one that matches the rule being tested.",
         "\"National Association of Insurance Commissioners (NAIC)\" is a different statement than the one this question is testing. The correct answer is \"National Association of Insurance and Financial Advisors (NAIFA)\" because that statement is the one that matches the rule being tested.",
-        "National Association of Insurance and Financial Advisors (NAIFA).",
+        null,
         "\"The American College of Life Insurance\" is a different statement than the one this question is testing. The correct answer is \"National Association of Insurance and Financial Advisors (NAIFA)\" because that statement is the one that matches the rule being tested."
       ]
     },
@@ -159,7 +159,7 @@
       "correctAnswer": 0,
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: 15 years.",
       "optionFeedback": [
-        "15 years.",
+        null,
         "The number in this choice is off. The correct answer is \"15 years\".",
         "The number in this choice is off. The correct answer is \"15 years\".",
         "The number in this choice is off. The correct answer is \"15 years\"."
@@ -179,7 +179,7 @@
       "optionFeedback": [
         "\"month\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"months\".",
         "\"months\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"months\".",
-        "6 months.",
+        null,
         "\"12 months\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"months\"."
       ]
     },
@@ -198,7 +198,7 @@
         "The number in this choice is off. The correct answer is \"48 months\".",
         "The number in this choice is off. The correct answer is \"48 months\".",
         "The number in this choice is off. The correct answer is \"48 months\".",
-        "48 months."
+        null
       ]
     },
     {
@@ -213,7 +213,7 @@
       "correctAnswer": 0,
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: are eligible to participate, regardless of their individual health history.",
       "optionFeedback": [
-        "Are eligible to participate, regardless of their individual health history.",
+        null,
         "\"need to be individually approved or declined during the underwriting process\" is a different group plan feature than the one this question is testing. The better answer here is \"are eligible to participate, regardless of their individual health history\".",
         "This choice is too absolute for the facts given. The better answer here is \"are eligible to participate, regardless of their individual health history\".",
         "\"take a physical examination before the master policy is issued\" is a different group plan feature than the one this question is testing. The better answer here is \"are eligible to participate, regardless of their individual health history\"."
@@ -232,7 +232,7 @@
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: Pay monetary restitution to the client.",
       "optionFeedback": [
         "\"Sell the client a more appropriate annuity\" is a different statement than the one this question is testing. The correct answer is \"Pay monetary restitution to the client\" because that statement is the one that matches the rule being tested.",
-        "Pay monetary restitution to the client.",
+        null,
         "\"Provide a written apology letter\" is a different statement than the one this question is testing. The correct answer is \"Pay monetary restitution to the client\" because that statement is the one that matches the rule being tested.",
         "\"Pay a penalty of three times the client's loss\" is a different statement than the one this question is testing. The correct answer is \"Pay monetary restitution to the client\" because that statement is the one that matches the rule being tested."
       ]
@@ -252,7 +252,7 @@
         "This choice is too absolute for the facts given. The correct answer is \"Group Life coverage can be converted to an individual policy at regular rates on an attained-age basis\" because that statement is the one that matches the rule being tested.",
         "\"Group Life coverage can normally be converted to an individual policy within 6 months\" is a different statement than the one this question is testing. The correct answer is \"Group Life coverage can be converted to an individual policy at regular rates on an attained-age basis\" because that statement is the one that matches the rule being tested.",
         "This choice is too absolute for the facts given. The correct answer is \"Group Life coverage can be converted to an individual policy at regular rates on an attained-age basis\" because that statement is the one that matches the rule being tested.",
-        "Group Life coverage can be converted to an individual policy at regular rates on an attained-age basis."
+        null
       ]
     },
     {
@@ -270,7 +270,7 @@
         "\"Optometrists\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Naturopaths\" because that statement is the one that matches the rule being tested.",
         "\"Pediatricians\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Naturopaths\" because that statement is the one that matches the rule being tested.",
         "\"Dentists\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"Naturopaths\" because that statement is the one that matches the rule being tested.",
-        "Naturopaths."
+        null
       ]
     },
     {
@@ -285,7 +285,7 @@
       "correctAnswer": 0,
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: they are insured by an authorized insurer.",
       "optionFeedback": [
-        "They are insured by an authorized insurer.",
+        null,
         "\"they conduct business in Florida\" is a different application requirement than the one this question is testing. The better answer here is \"they are insured by an authorized insurer\".",
         "\"they provide a service to their members\" is a different application requirement than the one this question is testing. The better answer here is \"they are insured by an authorized insurer\".",
         "\"they require a certain level of member participation\" is a different application requirement than the one this question is testing. The better answer here is \"they are insured by an authorized insurer\"."
@@ -306,7 +306,7 @@
         "The number in this choice is off. The correct answer is \"100%\".",
         "The number in this choice is off. The correct answer is \"100%\".",
         "The number in this choice is off. The correct answer is \"100%\".",
-        "100%."
+        null
       ]
     },
     {
@@ -322,7 +322,7 @@
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: acting with fiduciary responsibility.",
       "optionFeedback": [
         "\"intentionally misrepresenting the provisions of a policy\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"acting with fiduciary responsibility\".",
-        "Acting with fiduciary responsibility.",
+        null,
         "\"forging a name on an insurance application\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"acting with fiduciary responsibility\".",
         "\"being convicted of a felony\" is not the exception here. It is one of the items that is normally true or required. The better answer here is \"acting with fiduciary responsibility\"."
       ]
@@ -340,7 +340,7 @@
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option B: First degree misdemeanor.",
       "optionFeedback": [
         "\"Third degree felony\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"First degree misdemeanor\" because that statement is the one that matches the rule being tested.",
-        "First degree misdemeanor.",
+        null,
         "\"Insurance license revoked\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"First degree misdemeanor\" because that statement is the one that matches the rule being tested.",
         "\"Responsible for unpaid claims\" is not the exception here. It is one of the items that is normally true or required. The correct answer is \"First degree misdemeanor\" because that statement is the one that matches the rule being tested."
       ]
@@ -357,7 +357,7 @@
       "correctAnswer": 0,
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts and remove options that conflict with the scenario.\nStep 4: Select the best answer. Option A: viatical settlement provider.",
       "optionFeedback": [
-        "Viatical settlement provider.",
+        null,
         "\"broker\" is a different answer than the one this question is testing. The better answer here is \"viatical settlement provider\".",
         "\"insurer\" is a different answer than the one this question is testing. The better answer here is \"viatical settlement provider\".",
         "\"viator agent\" is a different answer than the one this question is testing. The better answer here is \"viatical settlement provider\"."

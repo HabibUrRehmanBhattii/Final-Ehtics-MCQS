@@ -15,7 +15,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Absolutely.",
+        null,
         "In a timed exam like the LLQP, every strategy counts! Understanding how to navigate long ethics scenarios is key to passing.",
         "You definitely want this one. Reading the question before the scenario helps you avoid 'distractor' information in the case study.",
         "Skipping strategies can lead to running out of time on the 20-question Ethics module."
@@ -41,7 +41,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "There is no provision in the Income Tax Act that taxes only half of a personal injury award.",
-        "He would receive it tax free.",
+        null,
         "Personal injury awards are not considered 'income' for taxation purposes under Section 81(1)(g.1) of the Income Tax Act.",
         "While structured settlements allow for periodic payments, the principal award for personal injury remains non-taxable regardless of the payout timing."
       ],
@@ -65,7 +65,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Dante should report the transaction to FINTRAC within 30 days as a suspicious transaction.",
+        null,
         "CISRO is not the correct agency for reporting suspicious financial transactions in Canada.",
         "FSCO (Financial Services Commission of Ontario) is not the federal agency responsible for anti-money laundering reports.",
         "PIPEDA is privacy legislation, not the agency for reporting suspicious transactions."
@@ -91,7 +91,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "While Nancy's death could be excluded under drug/alcohol clauses, she is not the only one.",
-        "I, III, IV.",
+        null,
         "This omitted Joel, whose death while racing is also a standard exclusion for hazardous hobbies.",
         "Paul (II) lost a leg but did not die. Since the question asks specifically for 'deaths,' Paul's scenario does not fit the criteria."
       ],
@@ -115,7 +115,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The TIA would not be in force.",
+        null,
         "Unlike a policy already in force, a TIA is strictly conditional upon the actual payment of the initial premium.",
         "Grace periods (typically 30-31 days) only apply to existing policies that have already taken effect, not to the initial TIA application process.",
         "The TIA and the main policy application are linked by the same initial premium; without the payment, the interim coverage fails."
@@ -142,7 +142,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Even if a client's goals seem difficult to reach, an agent cannot unilaterally ignore their stated risk tolerance.",
-        "No, Victor did not act in the client's best interest.",
+        null,
         "A positive investment result does not retroactively justify an unsuitable recommendation that violated the client's risk tolerance at the time of sale.",
         "In Canada, a life insurance license allows an agent to sell segregated funds (individual variable insurance contracts) without needing a separate mutual fund or securities license."
       ],
@@ -170,7 +170,7 @@
         "While Lory is a child, the law does not automatically jump to the next child without following the legal process for a lapsed gift or intestacy.",
         "Because Linda predeceased Lorence, the gift to her 'lapses.' A dead person cannot inherit property to then pass it through their own will.",
         "This assumes a specific distribution (3 people) that may not match the actual provincial intestate laws regarding a surviving spouse and children.",
-        "His assets will go to his estate and be distributed in accordance with applicable provincial rules."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While Lory is a child, the law does not automatically jump to the next child without following the legal process for a lapsed gift or intestacy; Because Linda predeceased Lorence, the gift to her 'lapses.' A dead person cannot inherit property to then pass it through their own will.\nStep 4: Select the best answer. Option D: His assets will go to his estate and be distributed in accordance with applicable provincial rules.",
       "difficulty": "medium",
@@ -195,7 +195,7 @@
       "optionFeedback": [
         "Jules cannot be the annuitant in a life insurance policy; annuitants are only used in annuity contracts. Additionally, the child would not be the primary beneficiary when the purpose is to protect Amanda's spousal and child support payments.",
         "While Amanda has a strong insurable interest in Jules' life, having the two-year-old child as a contingent owner is impractical and legally problematic. The child cannot hold legal title to insurance.",
-        "Jules is the policy owner, and Amanda is the beneficiary.",
+        null,
         "Jules cannot be the 'insurer'—he is the insured. An 'insurer' is the insurance company. Amanda is not the 'contract holder' because Jules, who makes the premium payments, is responsible for holding and maintaining the contract."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Jules cannot be the annuitant in a life insurance policy; annuitants are only used in annuity contracts. Additionally, the child would not be the primary beneficiary when the purpose is to protect Amanda's spousal and child support payments; While Amanda has a strong insurable interest in Jules' life, having the two-year-old child as a contingent owner is impractical and legally problematic. The child cannot hold legal title to insurance.\nStep 4: Select the best answer. Option C: Jules is the policy owner, and Amanda is the beneficiary.",
@@ -220,7 +220,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This describes an \"incidental sale of insurance,\" which often applies to employees of businesses like banks or dealerships who offer insurance secondary to their main business.",
-        "One who represents only one insurer.",
+        null,
         "While some career agents may receive a training stipend, they are primarily commission-based professionals rather than salaried employees.",
         "Agents working through an MGA are typically independent advisors who can represent multiple carriers."
       ],
@@ -246,7 +246,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The bank's premium is $85 twice per month, totaling $170 per month. Sunny's recommendation is $100 per month, which is significantly cheaper.",
-        "They should replace the creditor (mortgage) insurance with the policy offered by Sunny but make sure that the new policy is approved before cancelling the original policy.",
+        null,
         "A Renewable and Convertible (RC) T-10 policy allows for continued coverage or conversion to permanent insurance, making it a flexible and appropriate option for a long-term mortgage.",
         "Offering insurance at the time of a mortgage is not 'coercive tied selling' unless it was made a mandatory condition of obtaining the mortgage itself, which is not indicated here."
       ],
@@ -272,7 +272,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Correct! The plan sponsor (usually the employer or an association) is the entity that owns the group contract and is legally recognized as the policyholder.",
+        null,
         "While employees are often the ones covered, the employer is the one acting as the policyholder in the group insurance contract.",
         "The certificate holder is the individual (such as an employee) who is covered under the plan and receives a certificate of insurance rather than the master policy.",
         "A plan member is the person belonging to the group who is insured under the policy; they do not own the master contract."
@@ -302,7 +302,7 @@
         "The 'paid-up' status refers to the premium payment schedule; it does not restrict the policyholder's right to manage or change beneficiary designations.",
         "There is no maximum age limit in Canadian insurance law that prevents a mentally competent policyholder from changing their beneficiaries.",
         "Policyholders can generally name as many beneficiaries as they wish; there is no statutory limit of two for permanent insurance policies.",
-        "Ernest is the policyholder. As long as Grayson and Nelson were not listed as irrevocable beneficiaries, he is free to change the beneficiary to whomever he chooses."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. The 'paid-up' status refers to the premium payment schedule; it does not restrict the policyholder's right to manage or change beneficiary designations; There is no maximum age limit in Canadian insurance law that prevents a mentally competent policyholder from changing their beneficiaries.\nStep 4: Select the best answer. Option D: Ernest is the policyholder. As long as Grayson and Nelson were not listed as irrevocable beneficiaries, he is free to change the beneficiary to whomever he chooses.",
       "difficulty": "medium",
@@ -327,7 +327,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The submission of the application is typically considered an \"invitation to treat\" rather than the formal legal offer in this specific exam context.",
-        "On November 13th, when the policy was delivered to Michael.",
+        null,
         "While Michael expressed intent on this day, the legal \"offer\" in the formation of this contract is the delivery of the policy by the insurer.",
         "The insurer's internal approval is a step in the process, but the offer is not legally communicated until the policy is delivered on November 13th."
       ],
@@ -352,7 +352,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The agent is guilty of trafficking in insurance, which is prohibited in some jurisdictions and discouraged in others.",
+        null,
         "Tied selling involves making the purchase of one product a condition for obtaining another; this scenario describes a policy sale to a third party, which is trafficking.",
         "A Life Insurance Replacement Declaration (LIRD) is used for replacing policies, not for assigning ownership to a third-party investor for cash.",
         "While presenting options is good practice, assisting in a transaction that constitutes \"trafficking in insurance\" remains a violation in many jurisdictions regardless of other options presented."
@@ -379,7 +379,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Under Ontario's Succession Law Reform Act (SLRA), gifts to children do not lapse if they leave surviving issue.",
-        "Michael's children will be considered contingent beneficiaries and be entitled to what Michael would have otherwise inherited.",
+        null,
         "The death of a beneficiary does not invalidate a will; statutory rules or \"gift-over\" provisions determine how the share is redistributed.",
         "Section 31 specifically distributes the gift as if the child had died intestate after the testator, which bypasses the deceased child's own will to protect their heirs."
       ],
@@ -408,7 +408,7 @@
         "While FSCO was the former regulator in Ontario, the question often aims for a more general answer if the jurisdiction is not specified.",
         "An insurance company can terminate an agent's contract or employment, but they do not have the legal authority to revoke a professional license.",
         "CISRO is an inter-jurisdictional association of regulatory authorities, but it does not directly license or revoke individual agent licenses.",
-        "The provincial regulator."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While FSCO was the former regulator in Ontario, the question often aims for a more general answer if the jurisdiction is not specified; An insurance company can terminate an agent's contract or employment, but they do not have the legal authority to revoke a professional license.\nStep 4: Select the best answer. Option D: The provincial regulator.",
       "difficulty": "medium",
@@ -433,7 +433,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$500,000.",
+        null,
         "While Jake receives nothing from the estate itself because the debts exceed the assets, he still receives the full life insurance death benefit because he is a named beneficiary.",
         "This figure incorrectly assumes Jake receives the insurance plus the gross value of the bank account and house equity without paying the unsecured creditors.",
         "This total likely assumes Jake receives the insurance plus the $50,000 house equity, but it ignores the unsecured debts (LOC and Credit Card) that must be paid before any estate distribution to an heir."
@@ -462,7 +462,7 @@
       "optionFeedback": [
         "This is the original benefit. Assuris never guarantees 100% of the promised benefit when an insurer becomes insolvent.",
         "This amount does not match any Assuris protection formula or cap for individual disability income benefits.",
-        "$5,000 per month.",
+        null,
         "This cap applies to life insurance death benefits, not disability income. Different product = different Assuris protection limits."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is the original benefit. Assuris never guarantees 100% of the promised benefit when an insurer becomes insolvent; This amount does not match any Assuris protection formula or cap for individual disability income benefits.\nStep 4: Select the best answer. Option C: $5,000 per month.",
@@ -487,7 +487,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The 10-day free look period generally applies to accident and sickness contracts, which includes critical illness insurance.",
-        "Individual variable insurance contracts.",
+        null,
         "Long-term care insurance is considered an accident and sickness contract, which typically carries the 10-day right of rescission.",
         "Term insurance is a form of life insurance, and all life insurance contracts are mandated to include at least a 10-day free look period."
       ],
@@ -513,7 +513,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The bank would be entitled to $45,000 of the death benefit. The balance would be paid to Betty's husband.",
+        null,
         "A collateral assignment does not transfer ownership of the policy; it only provides a claim against the proceeds to secure a debt. An absolute assignment would be required to change the policy owner.",
         "The cash surrender value ($12,000) is what the owner can access while alive or upon surrendering the policy. Upon death, the much larger death benefit is triggered to cover the debt.",
         "While a spouse may belong to a protected class, the policy owner (Betty) waived that protection for the portion of the debt when she signed the collateral assignment."
@@ -541,7 +541,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "$680,000 does not correspond to the Assuris protection calculation for a $210,000 cash value.",
-        "$189,000.",
+        null,
         "$60,000 was the previous fixed limit for cash value protection before the recent increase in Assuris coverage levels.",
         "$200,000 was a previous limit for death benefit protection, but it does not apply to the cash value surrender calculation."
       ],
@@ -570,7 +570,7 @@
         "While it is true that insurable interest generally only needs to exist at the time of issue, this specific arrangement is considered \"trafficking\".",
         "The validity of the insurable interest at application does not override the prohibitions against the subsequent sale of the policy for profit.",
         "In most jurisdictions, an assignee does not strictly need an insurable interest for a gift or legitimate transfer, but the issue here is the \"inducement\" and exchange for payment.",
-        "The absolute assignment would be considered a form of trafficking in insurance, which is specifically prohibited in some jurisdictions and generally discouraged in others."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. While it is true that insurable interest generally only needs to exist at the time of issue, this specific arrangement is considered \"trafficking\"; The validity of the insurable interest at application does not override the prohibitions against the subsequent sale of the policy for profit.\nStep 4: Select the best answer. Option D: The absolute assignment would be considered a form of trafficking in insurance, which is specifically prohibited in some jurisdictions and generally discouraged in others.",
       "difficulty": "hard",
@@ -594,7 +594,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Neither policy will pay the claim.",
+        null,
         "Because both Bonnie and Clyde were involved in the criminal act (the bank robbery), neither can profit from the crime, and the exclusions apply to both policies.",
         "While innocent beneficiaries are sometimes protected, the exclusion for \"death or injury while committing a criminal act\" typically voids the claim regardless of who is named as the payee.",
         "Public policy in Canada dictates that insurance cannot be used to benefit from illegal activities. Since the accident occurred during the getaway, both claims are barred."
@@ -621,7 +621,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The agent should explain the risk that Michael faces if he does not provide complete and accurate disclosure.",
+        null,
         "While agents must act in the client's best interest, recording a known or suspected false statement is a breach of the agent's fiduciary duty to the insurer and can result in the claim being denied later.",
         "Clarifying the consequences of providing false information is not considered improper \"coaching\"; it is part of the agent's duty to provide proper advice and ensure the application is accurate.",
         "The agent must never alter a client's answer without the client's consent and initialling of the change. The correct process is to discuss it with the client first."
@@ -650,7 +650,7 @@
       "optionFeedback": [
         "Even if offered consistently to a similar demographic, giving back a portion of a commission is a prohibited practice in the insurance industry.",
         "Offering commissions as an inducement to purchase a policy is considered an unfair trade practice regardless of how many clients it is offered to.",
-        "No. George's actions constitute rebating, which is an unfair or deceptive sales practice.",
+        null,
         "While the product may be suitable, the method of assisting with the premium (rebating) is unethical and illegal under insurance regulations."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Even if offered consistently to a similar demographic, giving back a portion of a commission is a prohibited practice in the insurance industry; Offering commissions as an inducement to purchase a policy is considered an unfair trade practice regardless of how many clients it is offered to.\nStep 4: Select the best answer. Option C: No. George's actions constitute rebating, which is an unfair or deceptive sales practice.",
@@ -675,7 +675,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Yes, since he was declared dead by the courts and the death occurred while the policy was in force.",
+        null,
         "While a seven-year absence is a general rule for declaring someone dead, a court can declare someone deceased much sooner if there is strong evidence of immediate peril, such as a terrorist attack.",
         "Terrorism is an illegal activity committed against the insured, not by the insured. Being a victim of a crime does not trigger the criminal act exclusion.",
         "The date of the court declaration is not what determines coverage; rather, it is the established date of death relative to the policy's active status."

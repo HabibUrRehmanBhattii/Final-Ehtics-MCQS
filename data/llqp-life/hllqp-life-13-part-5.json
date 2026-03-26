@@ -15,7 +15,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "The policyholder's right to review the newly delivered policy for 10 days and return it for a full, 100% refund if they change their mind",
-      "kidExplanation": "It's a 10-day return policy! When you get your new insurance book, you have 10 days to read it. If you decide you don't want it, you give it back and get all your money back!"
+      "kidExplanation": "It's a 10-day return policy! When you get your new insurance book, you have 10 days to read it. If you decide you don't want it, you give it back and get all your money back!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 42,
@@ -28,7 +34,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "30 or 31 days",
-      "kidExplanation": "If you accidentally forget to pay your bill on time, the company doesn't take your shield away instantly. They give you a 30-day grace period to pay up before you lose your protection!"
+      "kidExplanation": "If you accidentally forget to pay your bill on time, the company doesn't take your shield away instantly. They give you a 30-day grace period to pay up before you lose your protection!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 43,
@@ -41,7 +53,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "The insurer pays the full death benefit but deducts the unpaid premium from the payout",
-      "kidExplanation": "If you pass away during the grace period, the company still pays your family the giant prize! BUT, because you forgot to pay your last bill, they subtract that one bill from the prize before handing it over."
+      "kidExplanation": "If you pass away during the grace period, the company still pays your family the giant prize! BUT, because you forgot to pay your last bill, they subtract that one bill from the prize before handing it over.",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 44,
@@ -54,7 +72,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "The current irrevocable beneficiary must provide written consent",
-      "kidExplanation": "Irrevocable means locked tight! You can never take that person's name off the policy unless they actually sign a piece of paper saying they agree to give up the prize."
+      "kidExplanation": "Irrevocable means locked tight! You can never take that person's name off the policy unless they actually sign a piece of paper saying they agree to give up the prize.",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 45,
@@ -67,7 +91,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A valid Proof of Death (such as a provincial Death Certificate)",
-      "kidExplanation": "The insurance company needs absolute proof that the person went to heaven before they hand out a million dollars! An official Death Certificate is the ultimate proof."
+      "kidExplanation": "The insurance company needs absolute proof that the person went to heaven before they hand out a million dollars! An official Death Certificate is the ultimate proof.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 46,
@@ -80,7 +110,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "Adjust the death benefit to the amount the premiums would have purchased at the correct, older age",
-      "kidExplanation": "If you accidentally said you were younger, you were paying a cheaper price! The company won't cancel the policy, but they will shrink the prize money to match the cheaper price you were actually paying."
+      "kidExplanation": "If you accidentally said you were younger, you were paying a cheaper price! The company won't cancel the policy, but they will shrink the prize money to match the cheaper price you were actually paying.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 47,
@@ -93,7 +129,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "As a series of regular payments guaranteed to last for the rest of their life",
-      "kidExplanation": "Instead of getting one giant mountain of cash, you trade it for a magical machine! This machine promises to spit out a little bit of money every single month for the rest of your life."
+      "kidExplanation": "Instead of getting one giant mountain of cash, you trade it for a magical machine! This machine promises to spit out a little bit of money every single month for the rest of your life.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 48,
@@ -106,7 +148,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "So the agent can remind the client to convert the policy to permanent insurance before the deadline, guaranteeing coverage without a medical exam",
-      "kidExplanation": "Term insurance has an expiration date! A good agent calls you before that date to say, Hey! Your temporary shield is about to expire. Do you want to trade it in for a permanent shield before it's too late?"
+      "kidExplanation": "Term insurance has an expiration date! A good agent calls you before that date to say, Hey! Your temporary shield is about to expire. Do you want to trade it in for a permanent shield before it's too late?",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 49,
@@ -119,7 +167,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "Sign a Declaration of Lost Policy so the insurer can issue a duplicate contract",
-      "kidExplanation": "The actual paper isn't magic! If your paper burns up or gets lost, you just sign a form promising you lost it, and the insurance company prints you a brand new copy of your rulebook!"
+      "kidExplanation": "The actual paper isn't magic! If your paper burns up or gets lost, you just sign a form promising you lost it, and the insurance company prints you a brand new copy of your rulebook!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 50,
@@ -132,7 +186,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "To ensure the coverage, beneficiaries, and policy type still match the client's current life situation (e.g., new house, new baby, marriage)",
-      "kidExplanation": "Life changes fast! The agent visits you every year to check if your old shield is still the right size for your new life, and fixes it if it's not!"
+      "kidExplanation": "Life changes fast! The agent visits you every year to check if your old shield is still the right size for your new life, and fixes it if it's not!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     }
   ]
 }

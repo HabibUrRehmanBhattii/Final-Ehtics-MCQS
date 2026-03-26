@@ -15,7 +15,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "A transfer of a policy to a spouse is a tax-free rollover. The spouse assumes the ACB of the transferor.",
-      "kidExplanation": "A \"rollover\" means you can pass the policy to your husband or wife like a hot potato, and the tax monster won't bite you! It transfers totally tax-free."
+      "kidExplanation": "A \"rollover\" means you can pass the policy to your husband or wife like a hot potato, and the tax monster won't bite you! It transfers totally tax-free.",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 22,
@@ -28,7 +34,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "Income attribution rules attribute the policy gain back to the transferor spouse, even though the recipient spouse is the one who triggered the disposition.",
-      "kidExplanation": "Even if you give the policy to your spouse, the government might still think the profit belongs to YOU. It's like giving your sibling the TV remote, but you still get blamed if they put on a scary movie!"
+      "kidExplanation": "Even if you give the policy to your spouse, the government might still think the profit belongs to YOU. It's like giving your sibling the TV remote, but you still get blamed if they put on a scary movie!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 23,
@@ -41,7 +53,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A tax-free rollover to a child is allowed only if the transfer is for no consideration (no payment) and the child becomes the policyholder of a policy on their own life.",
-      "kidExplanation": "You can pass the policy to your kid for free, but ONLY if the life insurance is actually covering the kid's life, and you don't ask for any allowance money in return!"
+      "kidExplanation": "You can pass the policy to your kid for free, but ONLY if the life insurance is actually covering the kid's life, and you don't ask for any allowance money in return!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 24,
@@ -54,7 +72,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "If the policyholder dies and they are not the life insured, the policy is deemed disposed of on death. Any policy gain is included in the final tax return.",
-      "kidExplanation": "If you own a policy on someone else's life and YOU pass away, the policy has to go to someone else. The government treats this like you sold it right before you went to heaven, and your estate might have to pay taxes on it."
+      "kidExplanation": "If you own a policy on someone else's life and YOU pass away, the policy has to go to someone else. The government treats this like you sold it right before you went to heaven, and your estate might have to pay taxes on it.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 25,
@@ -67,7 +91,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A contingent policyholder succeeds to ownership automatically upon the original owner's death, avoiding probate and allowing continuity of coverage.",
-      "kidExplanation": "A \"contingent policyholder\" is the backup owner. If you pass away, the backup owner gets the policy instantly, without having to wait in long legal lines or pay extra court fees."
+      "kidExplanation": "A \"contingent policyholder\" is the backup owner. If you pass away, the backup owner gets the policy instantly, without having to wait in long legal lines or pay extra court fees.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 26,
@@ -80,7 +110,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "When a policy is assigned as collateral for a business loan, a portion of the premiums paid (the NCPI portion) may be deductible as a business expense.",
-      "kidExplanation": "If you use your policy to guarantee a loan for your lemonade stand (a business), the government might let you deduct a small part of the cost of your insurance from your taxes as a reward for running a business!"
+      "kidExplanation": "If you use your policy to guarantee a loan for your lemonade stand (a business), the government might let you deduct a small part of the cost of your insurance from your taxes as a reward for running a business!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 27,
@@ -93,7 +129,13 @@
       ],
       "correctAnswer": 0,
       "explanation": "Annuitizing means exchanging the cash surrender value for an annuity contract that provides regular income payments for life or a specified period.",
-      "kidExplanation": "Instead of taking all your savings at once and spending it, you trade your savings for a magical machine (an annuity) that promises to give you a little bit of money every single month for the rest of your life!"
+      "kidExplanation": "Instead of taking all your savings at once and spending it, you trade your savings for a magical machine (an annuity) that promises to give you a little bit of money every single month for the rest of your life!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 28,
@@ -106,7 +148,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "An insured retirement strategy uses the life insurance policy's cash value as collateral to secure bank loans. Loan proceeds are received tax-free and used for retirement income.",
-      "kidExplanation": "You use your policy's savings to prove to the bank that you are good for a loan. The bank gives you tax-free cash to live on, and when you pass away someday, the insurance money pays the bank back!"
+      "kidExplanation": "You use your policy's savings to prove to the bank that you are good for a loan. The bank gives you tax-free cash to live on, and when you pass away someday, the insurance money pays the bank back!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 29,
@@ -119,7 +167,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "In a normal tax year, charitable donations can be claimed up to 75% of net income. Excess donations can be carried forward to future years.",
-      "kidExplanation": "The government loves when you give money to charity! But in a normal year, they only let you use the tax discount on donations up to 75% of the money you made that year. (If you donate more, you have to save the rest of the discount for next year)."
+      "kidExplanation": "The government loves when you give money to charity! But in a normal year, they only let you use the tax discount on donations up to 75% of the money you made that year. (If you donate more, you have to save the rest of the discount for next year).",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 30,
@@ -132,7 +186,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A new policy has minimal or no cash surrender value. The charity can only issue a tax receipt based on the actual value received, not the future death benefit.",
-      "kidExplanation": "If you give a brand new policy to a charity, it doesn't have any savings built up inside it yet, so it's technically worth zero dollars today. Since it's worth zero today, the charity can't give you a tax receipt until you start paying the premiums!"
+      "kidExplanation": "If you give a brand new policy to a charity, it doesn't have any savings built up inside it yet, so it's technically worth zero dollars today. Since it's worth zero today, the charity can't give you a tax receipt until you start paying the premiums!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     }
   ]
 }

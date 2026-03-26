@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "First-to-die pays too early for this tax liability.",
-        "A joint-last-to-die permanent life insurance policy on Nancy and Robert's life that is equal to the anticipated income taxes owing upon death.",
+        null,
         "Ronald's life is not the trigger for parents' RRSP tax at death.",
         "A non-dependent adult child does not get automatic RRSP tax-deferred rollover."
       ],
@@ -39,7 +39,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$200,000 non-renewable T-10 level term insurance.",
+        null,
         "Convertibility adds cost not required for this temporary need.",
         "T-100 is permanent and typically more expensive.",
         "Permanent insurance is not the minimum-cost fit for a 10-year debt."
@@ -63,7 +63,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The life-insured.",
+        null,
         "Underwriting risk is driven by the life insured, not owner/beneficiary health.",
         "Beneficiary health is not relevant to mortality risk.",
         "Owner health matters only if owner is also life insured."
@@ -86,7 +86,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "The only way to get any financial benefit from the policy is if the life-insured dies while the policy is in force.",
+        null,
         "Term renewability is not indefinite in practice and age 40 statement is inaccurate.",
         "Term premiums generally increase at renewal.",
         "Life premiums are primarily tied to mortality risk, not morbidity."
@@ -112,7 +112,7 @@
         "Each can be material depending on underwriting impact.",
         "Each can be material depending on underwriting impact.",
         "Each can be material depending on underwriting impact.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Each can be material depending on underwriting impact; Each can be material depending on underwriting impact.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "easy",
@@ -133,7 +133,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Re-entry addresses renewal pricing, not the full permanent planning decision.",
-        "Compare the premium on a brand new policy to the premium of the proposed converted policy. If it is cheaper, they should consider buying a brand-new policy.",
+        null,
         "Indefinite renewal is not an efficient permanent strategy.",
         "Conversion is valuable but should be compared to new policy pricing when health is strong."
       ],
@@ -157,7 +157,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Convertibility adds cost.",
-        "Renewable term insurance with a re-entry term.",
+        null,
         "Convertibility usually increases premium versus non-convertible equivalent.",
         "Without re-entry, guaranteed renewal risk is priced in more heavily."
       ],
@@ -183,7 +183,7 @@
         "Education funding is usually temporary.",
         "Mortgage protection is typically temporary/declining.",
         "Key-person needs may be temporary based on business context.",
-        "To pay taxes at death."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Education funding is usually temporary; Mortgage protection is typically temporary/declining.\nStep 4: Select the best answer. Option D: To pay taxes at death.",
       "difficulty": "easy",
@@ -205,7 +205,7 @@
       "optionFeedback": [
         "Suicide exclusion is generally time-limited, not absolute forever.",
         "Insurable interest concerns are not the key issue here.",
-        "The new policy will likely be treated as a continuation of the original policy. Therefore, the suicide exclusion period has passed, and the benefit will be paid.",
+        null,
         "On many conversions, continuity rules can preserve original policy timelines."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Suicide exclusion is generally time-limited, not absolute forever; Insurable interest concerns are not the key issue here.\nStep 4: Select the best answer. Option C: The new policy will likely be treated as a continuation of the original policy. Therefore, the suicide exclusion period has passed, and the benefit will be paid.",
@@ -228,7 +228,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Last-to-die generally pays later, often reducing cost relative to first-to-die.",
-        "A joint first-to-die policy.",
+        null,
         "Single-life is often less expensive than first-to-die for equivalent assumptions.",
         "General actuarial pattern here is determinable."
       ],

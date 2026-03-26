@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "$450,000 represents half the business value, not one-third. Each equal partner's share is $300,000.",
-        "$300,000 will be paid after a long elimination period so that a buyout occurs only due to serious disability.",
+        null,
         "Disability buyout insurance is not restricted to 60% coverage in the same way income replacement disability insurance is; the payout corresponds to the partner's share value.",
         "Disability buyout insurance typically uses a long elimination period (often 12–24 months) to confirm the disability is permanent before triggering the buyout, not a short one."
       ],
@@ -40,7 +40,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$2,000,000.",
+        null,
         "$600,000 is the annual salary, not the partner's equity share; salary is irrelevant to the buyout calculation.",
         "$4,000,000 represents one partner's entire one-third share of the firm, not each remaining partner's share of the purchase responsibility.",
         "$1,450,000 does not reflect any standard calculation based on the given information."
@@ -68,7 +68,7 @@
         "Business loan protection disability insurance covers loan payments specifically; it does not cover general operating expenses like rent, utilities, or employee salaries.",
         "Disability buyout insurance is used to fund a buy-sell agreement between partners; Jensen is the sole owner with no partners.",
         "Key person disability insurance compensates the business for the financial loss caused by a key employee's disability; it does not specifically cover ongoing operating expenses.",
-        "Disability business overhead expense insurance."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Business loan protection disability insurance covers loan payments specifically; it does not cover general operating expenses like rent, utilities, or employee salaries; Disability buyout insurance is used to fund a buy-sell agreement between partners; Jensen is the sole owner with no partners.\nStep 4: Select the best answer. Option D: Disability business overhead expense insurance.",
       "difficulty": "medium",
@@ -93,7 +93,7 @@
         "Workers Compensation occupational class records are not typically required to underwrite an individual DI policy; the insurer uses its own classification.",
         "A full asset and liability statement is relevant to some financial planning but is not the core document needed for DI underwriting in this scenario.",
         "An estate plan is relevant for life insurance planning but is not required to assess disability insurance needs and existing coverage.",
-        "A copy of Steve's Group Benefits Booklet and his T1 Income Tax Returns and Notice of Assessments for the past 2 years."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Workers Compensation occupational class records are not typically required to underwrite an individual DI policy; the insurer uses its own classification; A full asset and liability statement is relevant to some financial planning but is not the core document needed for DI underwriting in this scenario.\nStep 4: Select the best answer. Option D: A copy of Steve's Group Benefits Booklet and his T1 Income Tax Returns and Notice of Assessments for the past 2 years.",
       "difficulty": "medium",
@@ -117,7 +117,7 @@
         "At age 65, CPP disability benefits automatically convert to CPP retirement benefits; a person cannot receive both simultaneously.",
         "CPP contributions are split between employee and employer; a self-employed person pays both the employee and employer portions.",
         "CPP disability requires the claimant to have a 'severe and prolonged' disability that prevents any substantially gainful work; it does not pay if the person can work in any capacity.",
-        "The CPP definition for disability is generally more severe than that of individual policies."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. At age 65, CPP disability benefits automatically convert to CPP retirement benefits; a person cannot receive both simultaneously; CPP contributions are split between employee and employer; a self-employed person pays both the employee and employer portions.\nStep 4: Select the best answer. Option D: The CPP definition for disability is generally more severe than that of individual policies.",
       "difficulty": "medium",
@@ -140,7 +140,7 @@
       "optionFeedback": [
         "Member companies must obtain the applicant's authorization before searching MIB records; searches are not automatic.",
         "MIB information is used as a tool to identify potential non-disclosure or inconsistencies, not to make the final insurability determination on its own.",
-        "The information from the MIB will be used by the insurance companies to protect themselves against applicants seeking to 'over-insure' themselves.",
+        null,
         "The MIB stores coded information reported by member insurers; it does not itself collect medical test results such as paramedical exams or blood work."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Member companies must obtain the applicant's authorization before searching MIB records; searches are not automatic; MIB information is used as a tool to identify potential non-disclosure or inconsistencies, not to make the final insurability determination on its own.\nStep 4: Select the best answer. Option C: The information from the MIB will be used by the insurance companies to protect themselves against applicants seeking to 'over-insure' themselves.",
@@ -166,7 +166,7 @@
         "Whether making premiums a taxable benefit is most beneficial depends on the individual's tax situation and the value of receiving tax-free benefits; 'always' is too absolute.",
         "Deferring tax is not always the optimal strategy; individual circumstances, tax brackets, and preferences matter.",
         "If the employer pays premiums and the premiums are not a taxable benefit to the employee, the disability benefits received are generally taxable, not tax-free.",
-        "Either structure is acceptable, but the employer and employee should understand the tax consequences of each approach."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whether making premiums a taxable benefit is most beneficial depends on the individual's tax situation and the value of receiving tax-free benefits; 'always' is too absolute; Deferring tax is not always the optimal strategy; individual circumstances, tax brackets, and preferences matter.\nStep 4: Select the best answer. Option D: Either structure is acceptable, but the employer and employee should understand the tax consequences of each approach.",
       "difficulty": "hard",
@@ -191,7 +191,7 @@
         "Neither individual presents unusual risk factors — both are in good health, non-smokers, with no family health history concerns. Rating is not warranted.",
         "A standard risk assessment would not result in a premium rating without unusual risk factors.",
         "Non-standard risks involve elevated risk indicators; none are present in this scenario.",
-        "The contract will be considered a standard insurable risk and will not be rated."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Neither individual presents unusual risk factors — both are in good health, non-smokers, with no family health history concerns. Rating is not warranted; A standard risk assessment would not result in a premium rating without unusual risk factors.\nStep 4: Select the best answer. Option D: The contract will be considered a standard insurable risk and will not be rated.",
       "difficulty": "medium",
@@ -214,7 +214,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Investment returns affect the insurer's overall portfolio; they are not a factor specific to Kumar's individual premium assessment.",
-        "Ratings.",
+        null,
         "Lapse rate is an industry-wide actuarial factor used in premium pricing; it is not specific to Kumar's individual risk profile.",
         "Morbidity rate is an industry-wide actuarial statistic; it affects base premium rates but is not specific to Kumar's individual health and lifestyle situation."
       ],
@@ -239,7 +239,7 @@
       "optionFeedback": [
         "In a group plan, the group plan administrator or agent may assist with initiating a claim; direct notification to the insurer by the claimant is not always required as the first step.",
         "The agent's verbal confirmation is not sufficient; a completed and signed claim form along with supporting medical documentation is required.",
-        "Suzanne must send ongoing proof of diagnosis or treatment to the insurance company.",
+        null,
         "The insurer (not the agent) adjudicates claims; the agent facilitates the process but does not make the decision to pay or deny."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. In a group plan, the group plan administrator or agent may assist with initiating a claim; direct notification to the insurer by the claimant is not always required as the first step; The agent's verbal confirmation is not sufficient; a completed and signed claim form along with supporting medical documentation is required.\nStep 4: Select the best answer. Option C: Suzanne must send ongoing proof of diagnosis or treatment to the insurance company.",

@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Only the group policyholder can negotiate with the insurer.",
-        "The insurer will deny the request because only the group policyholder can amend the terms of the master contract.",
+        null,
         "Employees cannot directly negotiate terms of the master contract.",
         "Direct negotiation is not available to individual employees."
       ],
@@ -41,7 +41,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Completing the probationary period is not sufficient without meeting the actively-at-work requirement.",
-        "Friday, assuming he returns to work and meets the \"actively-at-work\" requirement.",
+        null,
         "The first day of the month is not the standard trigger for coverage.",
         "Retroactive premium payment does not override the actively-at-work requirement."
       ],
@@ -67,7 +67,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Employer-paid premiums for group insurance are not tax-free gifts.",
-        "It is considered a taxable benefit and added to David's taxable income.",
+        null,
         "David cannot deduct premiums paid by the employer.",
         "Premium payments do not trigger capital gains tax."
       ],
@@ -92,7 +92,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "$0; the death benefit is received entirely tax-free.",
+        null,
         "Death benefits are not partially taxable; they are entirely tax-free.",
         "Death benefits are tax-free to the beneficiary regardless of who paid premiums.",
         "Death benefits are not reduced by premiums paid."
@@ -119,11 +119,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "This is only the base salary, not the multiple amount.",
-        "$120,000"
-      ],
-      "optionFeedback": [
-        "This is only the base salary, not the multiple amount.",
-        "$120,000 - two times the base salary of $60,000.",
+        null,
         "Bonuses are not included in the calculation for group insurance coverage.",
         "This incorrectly includes the bonus in the calculation."
       ],
@@ -150,7 +146,7 @@
       "optionFeedback": [
         "Coverage adjustments are made for cost management, not to encourage retirement.",
         "Provincial regulations do not mandate age-based reductions in group insurance.",
-        "To manage costs, as the risk of death—and therefore the cost of insurance—increases significantly with age.",
+        null,
         "Government death benefits do not replace group insurance coverage."
       ],
       "explanation": "Step 1: Identify the question concerns the business reason for age-based coverage reductions.\nStep 2: Apply the LLQP principle that premiums and coverage are adjusted based on mortality risk.\nStep 3: Recognize that mortality risk increases with age, making insurance more expensive.\nStep 4: Eliminate distractors - regulations do not mandate this; government benefits do not replace it; retirement encouragement is not a standard insurance principle.\nStep 5: Select the best answer. Option C: To manage costs, as the risk of death—and therefore the cost of insurance—increases significantly with age.",
@@ -176,7 +172,7 @@
       "optionFeedback": [
         "Optional coverage requested after the initial enrolment period requires evidence of insurability.",
         "No penalty fee is charged for optional coverage.",
-        "Provide evidence of insurability to protect the insurer against adverse selection.",
+        null,
         "Upgrading base coverage is not a prerequisite."
       ],
       "explanation": "Step 1: Identify that this question concerns the requirements for obtaining optional group insurance after initial enrolment.\nStep 2: Apply the LLQP principle that optional coverage requested after the initial period requires evidence of insurability.\nStep 3: Understand that this protects the insurer from adverse selection - people buying extra insurance may be doing so because they have health concerns.\nStep 4: Eliminate distractors - automatic coverage only applies during initial enrolment; no penalty is charged; base upgrade is not required.\nStep 5: Select the best answer. Option C: Provide evidence of insurability to protect the insurer against adverse selection.",
@@ -201,7 +197,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "His common-law partner and his 16-year-old biological daughter.",
+        null,
         "A 65-year-old parent would typically exceed age limits for dependent coverage.",
         "A 22-year-old working full-time would not qualify as a dependent.",
         "Extended family members such as brothers are not eligible for dependent coverage."
@@ -228,7 +224,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Dependant coverage premiums are flat, not based on number of dependants.",
-        "Liam and Sophia will pay the exact same premium, regardless of the number of eligible children.",
+        null,
         "Dependant coverage premiums are not calculated by combined ages.",
         "Premiums are flat regardless of the number of dependants."
       ],
@@ -255,7 +251,7 @@
       "optionFeedback": [
         "Survivor income benefits are paid monthly, not as a lump sum.",
         "Survivor income benefits are not based on insurer dividends.",
-        "As a monthly benefit expressed as a percentage of Trevor's monthly salary just prior to his death.",
+        null,
         "The benefit is paid directly by the insurer, not through a third-party annuity."
       ],
       "explanation": "Step 1: Identify that this question concerns how survivor income benefits are structured and paid.\nStep 2: Apply the LLQP principle that survivor income benefits are designed to provide ongoing income replacement to the surviving spouse.\nStep 3: Recognize that these benefits typically provide monthly payments based on a percentage of the deceased's salary.\nStep 4: Eliminate distractors - they are monthly payments, not lump sums; not based on dividends; paid directly, not through a third party.\nStep 5: Select the best answer. Option C: As a monthly benefit expressed as a percentage of Trevor's monthly salary just prior to his death.",

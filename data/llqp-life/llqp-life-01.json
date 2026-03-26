@@ -15,7 +15,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Probability of death.",
+        null,
         "Longevity risk is the danger of living longer than expected and outliving assets.",
         "Morbidity risk deals with illness or disability, not death.",
         "Life expectancy is the average years remaining, not the annual probability of dying."
@@ -42,7 +42,7 @@
         "Belinda predeceased the payout, so proceeds cannot be paid directly to her.",
         "The contingent only applies if the primary beneficiary dies before the insured.",
         "Public policy/suicide clauses apply to the insured, not to a beneficiary who dies after the insured.",
-        "It would be paid to Belinda’s estate."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Belinda predeceased the payout, so proceeds cannot be paid directly to her; The contingent only applies if the primary beneficiary dies before the insured.\nStep 4: Select the best answer. Option D: It would be paid to Belinda’s estate.",
       "difficulty": "medium",
@@ -65,7 +65,7 @@
       "optionFeedback": [
         "Mortality rates differ by gender well before age 40.",
         "Gender is a significant mortality factor.",
-        "A 40-year-old male would have a higher probability of death in a given year as compared to a 40-year-old female.",
+        null,
         "Females typically have higher life expectancy than males."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Mortality rates differ by gender well before age 40; Gender is a significant mortality factor.\nStep 4: Select the best answer. Option C: A 40-year-old male would have a higher probability of death in a given year as compared to a 40-year-old female.",
@@ -89,7 +89,7 @@
       "optionFeedback": [
         "Avoidance would be not driving or not owning the car.",
         "Reduction would be using safety features or defensive driving.",
-        "Risk transfer.",
+        null,
         "Retention means paying for losses yourself."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Avoidance would be not driving or not owning the car; Reduction would be using safety features or defensive driving.\nStep 4: Select the best answer. Option C: Risk transfer.",
@@ -112,7 +112,7 @@
       "optionFeedback": [
         "She could retain some risk by self-insuring, though it may be impractical.",
         "She can reduce risk via healthy living and planning.",
-        "Risk avoidance.",
+        null,
         "She can transfer financial risk by buying life insurance."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. She could retain some risk by self-insuring, though it may be impractical; She can reduce risk via healthy living and planning.\nStep 4: Select the best answer. Option C: Risk avoidance.",
@@ -133,7 +133,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "As the probability of death increases, the individual’s life expectancy decreases.",
+        null,
         "They are related but not identical; one is a probability, the other an average duration.",
         "There is a clear inverse relationship between mortality and life expectancy.",
         "Higher mortality shortens, not lengthens, life expectancy."
@@ -159,7 +159,7 @@
       "optionFeedback": [
         "85.12 does not match the table values for age 50 male.",
         "75.52 is incorrect math.",
-        "He would be expected to live to age 81.56.",
+        null,
         "31.56 is the remaining years, not the projected age at death."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. 85.12 does not match the table values for age 50 male; 75.52 is incorrect math.\nStep 4: Select the best answer. Option C: He would be expected to live to age 81.56.",
@@ -182,7 +182,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Life expectancy is the average remaining years of life.",
-        "Mortality rate.",
+        null,
         "Catastrophic loss refers to large, low-frequency events, not mortality probabilities.",
         "Morbidity rate measures illness/disability frequency."
       ],
@@ -205,7 +205,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Family history is an underwriting factor, not a primary quantification method.",
-        "‘Life expectancy’ and ‘probability of death’.",
+        null,
         "Current age is an input, but the key measures are probability of death and life expectancy.",
         "Current age alone does not quantify risk; it feeds into the two primary measures."
       ],
@@ -229,7 +229,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Death is high severity and relatively low probability, not high probability/low severity.",
-        "Death is a high-severity risk.",
+        null,
         "Affordability is not the main reason retention is unsuitable.",
         "The issue is severity of loss, not the inability to experience the consequences personally."
       ],
@@ -254,7 +254,7 @@
         "70.44 uses the male expectancy figure from age 20 plus age 20; it does not match the female data.",
         "64.17 is the remaining years, not the total age at death.",
         "50.44 is the male remaining life expectancy at age 30.",
-        "84.17 years."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. 70.44 uses the male expectancy figure from age 20 plus age 20; it does not match the female data; 64.17 is the remaining years, not the total age at death.\nStep 4: Select the best answer. Option D: 84.17 years.",
       "difficulty": "medium",
@@ -278,7 +278,7 @@
         "Annex chart is unrelated terminology.",
         "Premium factor tables relate to pricing inputs, not life expectancy data.",
         "Morbidity tables track illness/disability rates, not death.",
-        "Mortality table."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Annex chart is unrelated terminology; Premium factor tables relate to pricing inputs, not life expectancy data.\nStep 4: Select the best answer. Option D: Mortality table.",
       "difficulty": "easy",
@@ -301,7 +301,7 @@
         "Mortality increases more sharply after age 40, not more slowly.",
         "Accident risk is only one factor; overall mortality is age dependent.",
         "Increase is not uniform; it accelerates later in life.",
-        "With the exception of the first few years of life, the probability of death starts low and then increases slowly until age 40. At age 40, it begins to increase more dramatically."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Mortality increases more sharply after age 40, not more slowly; Accident risk is only one factor; overall mortality is age dependent.\nStep 4: Select the best answer. Option D: With the exception of the first few years of life, the probability of death starts low and then increases slowly until age 40. At age 40, it begins to increase more dramatically.",
       "difficulty": "medium",
@@ -323,7 +323,7 @@
       "optionFeedback": [
         "This swaps the male probabilities between ages.",
         "The female probabilities are reversed.",
-        "30-year-old male: 0.076%; 50-year-old male: 0.305%; 30-year-old female: 0.038%; 50-year-old female: 0.199%.",
+        null,
         "Older females should not have lower probabilities than younger females or males."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This swaps the male probabilities between ages; The female probabilities are reversed.\nStep 4: Select the best answer. Option C: 30-year-old male: 0.076%; 50-year-old male: 0.305%; 30-year-old female: 0.038%; 50-year-old female: 0.199%.",
@@ -345,7 +345,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Estate creation.",
+        null,
         "Guardianship addresses caregiving, but the policy is about funding an estate for the child.",
         "Education is a possible use, but the primary goal stated is creating funds broadly for support.",
         "No charitable intent is mentioned."
@@ -372,7 +372,7 @@
         "Mortgage repayment is one concern, but not the only one raised.",
         "His income would cease, affecting affordability of the home.",
         "A deemed disposition could trigger taxes at death.",
-        "All of the above."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Mortgage repayment is one concern, but not the only one raised; His income would cease, affecting affordability of the home.\nStep 4: Select the best answer. Option D: All of the above.",
       "difficulty": "medium",
@@ -394,7 +394,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Life insurance, not an annuity, covers dying too soon.",
-        "Risk of living too long.",
+        null,
         "Disability insurance addresses disability risk.",
         "Annuities mainly mitigate longevity risk."
       ],
@@ -419,7 +419,7 @@
         "She has the lowest mortality of the group.",
         "Higher than Anita, but not the highest overall.",
         "Lower mortality than the 50-year-old male.",
-        "Blake, a 50-year-old male."
+        null
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. She has the lowest mortality of the group; Higher than Anita, but not the highest overall.\nStep 4: Select the best answer. Option D: Blake, a 50-year-old male.",
       "difficulty": "easy",
@@ -441,7 +441,7 @@
       "optionFeedback": [
         "This goal is not about replacing Justin’s income.",
         "No charitable element is mentioned.",
-        "Leaving a legacy.",
+        null,
         "Estate creation is a tool; his goal is to leave a legacy for his children."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This goal is not about replacing Justin’s income; No charitable element is mentioned.\nStep 4: Select the best answer. Option C: Leaving a legacy.",

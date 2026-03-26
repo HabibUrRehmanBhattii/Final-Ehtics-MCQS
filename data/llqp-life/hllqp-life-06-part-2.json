@@ -16,7 +16,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The basic life insurance will still pay out.",
-        "$100,000 from the basic life insurance only.",
+        null,
         "AD&D only covers accidental death; a heart attack is a natural death.",
         "Basic life insurance covers all causes of death, including natural causes."
       ],
@@ -44,7 +44,7 @@
       "optionFeedback": [
         "This is only the AD&D portion; it excludes the base life benefit.",
         "This is only the base benefit; it excludes the voluntary AD&D.",
-        "$80,000 - base life benefit $50,000 plus 3 units × $10,000 AD&D = $30,000.",
+        null,
         "This exceeds the actual coverage."
       ],
       "explanation": "Step 1: Identify that this question requires calculating total combined benefits.\nStep 2: Apply the rules: base life insurance pays for accidental death; voluntary AD&D also pays for accidental death.\nStep 3: Calculate: Base life = $50,000; AD&D = 3 units × $10,000 = $30,000; Total = $50,000 + $30,000 = $80,000.\nStep 4: Recognize that both benefits pay out when death is from an accident.\nStep 5: Select the best answer. Option C: $80,000",
@@ -69,7 +69,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "He can convert his group coverage to an individual policy without providing proof of insurability.",
+        null,
         "Porting the group policy itself is not available; only conversion to individual is offered.",
         "Group term insurance does not accumulate cash surrender value.",
         "CLHIA guidelines provide conversion rights upon termination of employment."
@@ -97,7 +97,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "The conversion period is longer than 14 days.",
-        "July 2 (within 31 days) - she must apply within 31 days of termination.",
+        null,
         "The conversion period is 31 days, not 60 days.",
         "The conversion period is 31 days, not 6 months."
       ],
@@ -125,7 +125,7 @@
       "optionFeedback": [
         "Commission recoupment is not the reason for higher conversion rates.",
         "Converted policies are not required to be participating whole life.",
-        "Adverse selection; individuals who choose to convert without a medical exam are statistically a higher risk.",
+        null,
         "The employer does not add a surcharge to conversion rates."
       ],
       "explanation": "Step 1: Identify that this question concerns why converted group policies have higher premiums.\nStep 2: Apply the LLQP principle of adverse selection - people who purchase insurance without a medical exam are likely doing so because they anticipate higher risk.\nStep 3: Recognize that the insurer has no medical information to assess the individual's actual health status.\nStep 4: Eliminate distractors - commissions, policy type, and employer surcharges are not the driving factors.\nStep 5: Select the best answer. Option C: Adverse selection; individuals who choose to convert without a medical exam are statistically a higher risk.",
@@ -151,7 +151,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Quebec has expanded conversion rights that include dependant coverage.",
-        "She can convert her own coverage and must be given the option to convert the dependant coverage on her husband as well.",
+        null,
         "Quebec allows conversion regardless of tenure; 5-year requirement applies to mandatory conversion upon contract termination.",
         "Medical underwriting is not required for conversion within the 31-day window."
       ],
@@ -179,7 +179,7 @@
       "optionFeedback": [
         "When the entire contract is terminated, conversion rights are limited to certain minimums.",
         "Quebec law provides conversion rights even when the employer terminates the master contract.",
-        "He must be given the option of converting at least $10,000 or 25% of his life insurance (whichever is greater) into an individual policy.",
+        null,
         "The government does not assume group insurance coverage."
       ],
       "explanation": "Step 1: Identify that this question concerns mandatory conversion rights when an entire group contract is terminated.\nStep 2: Apply the Quebec rule that when a master contract is terminated, employees who have been insured for 5+ years have the right to convert a minimum amount.\nStep 3: Recognize the formula: greater of $10,000 or 25% of coverage.\nStep 4: Calculate for George: 25% of coverage (assuming significant coverage) likely exceeds $10,000.\nStep 5: Select the best answer. Option C: He must be given the option of converting at least $10,000 or 25% of his life insurance (whichever is greater) into an individual policy.",
@@ -205,7 +205,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Post-claim underwriting does not affect premium adjustments.",
-        "The bank will only thoroughly investigate his medical history to confirm eligibility after he dies and a claim is submitted.",
+        null,
         "No medical exam is required after issuance in post-claim underwriting.",
         "Death benefits are not delayed by probate clearance."
       ],
@@ -232,7 +232,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Individual medical exams are not required for group underwriting.",
-        "By looking at the demographics of the group as a whole (mix of ages, genders) and calculating an average risk per person.",
+        null,
         "Insurers do not charge maximum rates for group insurance.",
         "Employer profitability is not relevant to insurance premiums."
       ],
@@ -259,7 +259,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Evidence of insurability is not specifically to guarantee non-smoker status.",
-        "To protect the insurance company from adverse selection.",
+        null,
         "Tax regulations do not drive evidence of insurability requirements.",
         "CLHIA guidelines do not specifically require evidence of insurability for optional coverage."
       ],

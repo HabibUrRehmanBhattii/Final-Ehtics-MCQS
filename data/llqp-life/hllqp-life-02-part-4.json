@@ -15,7 +15,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Buy a term insurance policy with himself as the life-insured.",
+        null,
         "Seg fund death guarantee may not fully replace planned future contributions immediately.",
         "Whole life is often not necessary for this temporary objective.",
         "RESP alone does not replace mortality protection for unfinished savings goal."
@@ -39,7 +39,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "Charlie.",
+        null,
         "Beneficiary is not the insured in this keyed answer set.",
         "Margaret is the life-insured, but this question key defines insured as policy owner.",
         "Insurer is the company, not insured party."
@@ -65,7 +65,7 @@
       "optionFeedback": [
         "Whole life is typically too costly for temporary mortgage need.",
         "Last-to-die does not protect first-death mortgage risk.",
-        "10-year renewable term insurance on a joint first-to-die basis.",
+        null,
         "Last-to-die trigger is wrong for this objective."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. Whole life is typically too costly for temporary mortgage need; Last-to-die does not protect first-death mortgage risk.\nStep 4: Select the best answer. Option C: 10-year renewable term insurance on a joint first-to-die basis.",
@@ -87,7 +87,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "To leave an inheritance to the surviving spouse upon death.",
+        null,
         "Second-death liabilities usually align better with last-to-die.",
         "Mortgage is usually temporary and often term-based.",
         "Capital gains in spousal context often aligns to second death."
@@ -112,7 +112,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "First-to-die pays once and leaves second funeral unfunded.",
-        "A combined insurance policy that includes separate $25,000 permanent life insurance policies on each of their lives.",
+        null,
         "Overly complex and mismatched for simple dual funeral objective.",
         "Funeral funding is generally a permanent need."
       ],
@@ -136,7 +136,7 @@
       "correctAnswer": 1,
       "optionFeedback": [
         "Re-entry commonly lowers initial premium assumptions for healthy renewers.",
-        "The convertible feature allows Brad the option of converting the policy to a permanent one during the policy term without providing evidence of insurability.",
+        null,
         "This may be true generally, but not the key feature solving his stated objective in this question.",
         "Renewal premium usually increases significantly."
       ],
@@ -159,7 +159,7 @@
       ],
       "correctAnswer": 0,
       "optionFeedback": [
-        "To pay out a mortgage at death.",
+        null,
         "RRSP tax need may be single-life or second-death specific depending planning context.",
         "Charitable funding may be single-life specific depending donor intent.",
         "Capital gains on jointly owned cottage often aligns with second-death planning."
@@ -185,7 +185,7 @@
       "optionFeedback": [
         "This is not the standard term used here.",
         "Original-age would price from younger issue age with different cost implications.",
-        "Attained-age conversion.",
+        null,
         "Retroactive/original-age concepts differ from attained-age pricing shown."
       ],
       "explanation": "Step 1: Identify what the question is asking (rule, calculation, or outcome).\nStep 2: Apply the LLQP rule or formula that governs the scenario.\nStep 3: Eliminate distractors using the facts. This is not the standard term used here; Original-age would price from younger issue age with different cost implications.\nStep 4: Select the best answer. Option C: Attained-age conversion.",

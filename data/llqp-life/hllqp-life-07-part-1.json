@@ -15,7 +15,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "Death benefits from life insurance are not subject to income tax in Canada. Only investment income earned within a policy is taxable.",
-      "kidExplanation": "Imagine you have a magical piggy bank. When the person with the life insurance passes away, the insurance company gives the piggy bank to their family. The government doesn't take any of the coins out of this piggy bank—the family gets to keep every single penny tax-free!"
+      "kidExplanation": "Imagine you have a magical piggy bank. When the person with the life insurance passes away, the insurance company gives the piggy bank to their family. The government doesn't take any of the coins out of this piggy bank—the family gets to keep every single penny tax-free!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 2,
@@ -28,7 +34,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "A disposition occurs when a policy is surrendered for cash value, when interest or dividends are not taken in cash, or when there is a change in control of the policy.",
-      "kidExplanation": "A \"disposition\" is just a fancy adult word for \"getting rid of something.\" If you give your toy away, sell it, or trade it in for cash at the store, you have \"disposed\" of it. Surrendering an insurance policy means you are turning it in for cash."
+      "kidExplanation": "A \"disposition\" is just a fancy adult word for \"getting rid of something.\" If you give your toy away, sell it, or trade it in for cash at the store, you have \"disposed\" of it. Surrendering an insurance policy means you are turning it in for cash.",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 3,
@@ -41,7 +53,13 @@
       ],
       "correctAnswer": 0,
       "explanation": "Policy gain = Proceeds of disposition (usually the cash surrender value) minus the Adjusted Cost Basis (ACB). Any gain is taxable as income to the policyholder.",
-      "kidExplanation": "If you bought a video game for $10 (your cost) and sold it later for $15 (your proceeds), you made $5 of profit. For life insurance, that $5 profit is called a \"policy gain,\" and you might have to pay a little bit of tax on that extra money!"
+      "kidExplanation": "If you bought a video game for $10 (your cost) and sold it later for $15 (your proceeds), you made $5 of profit. For life insurance, that $5 profit is called a \"policy gain,\" and you might have to pay a little bit of tax on that extra money!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 4,
@@ -54,7 +72,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "ACB is the tax cost basis of the policy, calculated as the total premiums paid minus any dividends received in cash, minus any amounts deducted under policy gain rules.",
-      "kidExplanation": "ACB is basically a scorecard of what the insurance policy \"cost\" you. Keeping track of the exact cost helps the government figure out how much profit you made later so they know how much to tax you."
+      "kidExplanation": "ACB is basically a scorecard of what the insurance policy \"cost\" you. Keeping track of the exact cost helps the government figure out how much profit you made later so they know how much to tax you.",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 5,
@@ -67,7 +91,13 @@
       ],
       "correctAnswer": 0,
       "explanation": "G1 policies are grandfathered policies acquired before December 2, 1982. They are not subject to the exempt test (MTAR) and other restrictions that apply to newer policies.",
-      "kidExplanation": "Think of G1 policies as super-old, ultra-rare trading cards. Because they are so old, they get to follow the original, older rules. Those old rules are often much better than the new rules!"
+      "kidExplanation": "Think of G1 policies as super-old, ultra-rare trading cards. Because they are so old, they get to follow the original, older rules. Those old rules are often much better than the new rules!",
+      "optionFeedback": [
+        null,
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": 6,
@@ -80,7 +110,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "Cash dividends reduce the ACB of the policy, since they represent a return of cost basis to the policyholder.",
-      "kidExplanation": "Sometimes the insurance company makes extra money and shares it with you as a \"dividend.\" If you take the cash, it lowers the original \"cost\" of your policy—kind of like getting a partial refund on a toy you bought!"
+      "kidExplanation": "Sometimes the insurance company makes extra money and shares it with you as a \"dividend.\" If you take the cash, it lowers the original \"cost\" of your policy—kind of like getting a partial refund on a toy you bought!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 7,
@@ -93,7 +129,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "The proceeds of disposition equal the cash surrender value received minus any outstanding policy loans and unpaid premiums owed to the insurer.",
-      "kidExplanation": "Surrendering means returning your policy to the store for cash. The money you get back is the cash value. But, if you borrowed money from the store or forgot to pay a bill, they will subtract what you owe them before giving you your cash!"
+      "kidExplanation": "Surrendering means returning your policy to the store for cash. The money you get back is the cash value. But, if you borrowed money from the store or forgot to pay a bill, they will subtract what you owe them before giving you your cash!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 8,
@@ -106,7 +148,13 @@
       ],
       "correctAnswer": 2,
       "explanation": "A reduction in coverage is a partial disposition. The ACB is apportioned based on the proportion of the death benefit being reduced.",
-      "kidExplanation": "Reducing coverage is like cutting a slice out of a big pie. The government only looks at the little slice you took out to see if you made a profit, not the whole pie!"
+      "kidExplanation": "Reducing coverage is like cutting a slice out of a big pie. The government only looks at the little slice you took out to see if you made a profit, not the whole pie!",
+      "optionFeedback": [
+        "",
+        "",
+        null,
+        ""
+      ]
     },
     {
       "id": 9,
@@ -119,7 +167,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A withdrawal from the investment account of a G2 or G3 policy is a partial disposition. A prorated portion of the ACB is deducted from the withdrawal to calculate the taxable policy gain.",
-      "kidExplanation": "If you take a little bit of money out of your policy's savings account, you have to figure out the profit on just that little bit. It's like taking a handful of jellybeans from a jar and only calculating the cost of that one handful."
+      "kidExplanation": "If you take a little bit of money out of your policy's savings account, you have to figure out the profit on just that little bit. It's like taking a handful of jellybeans from a jar and only calculating the cost of that one handful.",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     },
     {
       "id": 10,
@@ -132,7 +186,13 @@
       ],
       "correctAnswer": 1,
       "explanation": "A policy loan itself is not taxable (it's borrowed money). However, if the loan amount exceeds the ACB, the excess is treated as a policy gain and is taxable.",
-      "kidExplanation": "If you borrow more money from your policy than the policy actually \"cost\" you to set up, the government treats the extra money like a profit. And yup, you have to pay taxes on that extra profit!"
+      "kidExplanation": "If you borrow more money from your policy than the policy actually \"cost\" you to set up, the government treats the extra money like a profit. And yup, you have to pay taxes on that extra profit!",
+      "optionFeedback": [
+        "",
+        null,
+        "",
+        ""
+      ]
     }
   ]
 }
