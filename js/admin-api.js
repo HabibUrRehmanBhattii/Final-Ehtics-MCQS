@@ -50,10 +50,16 @@ class AdminAPI {
     async getQuestions(topic, testId) {
         try {
             const response = await fetch(
-                `${this.baseUrl}/questions?topic=${topic}&test=${testId}`
+                `${this.baseUrl}/questions?topic=${encodeURIComponent(topic)}&test=${encodeURIComponent(testId)}`,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('admin_token')}`
+                    }
+                }
             );
             if (!response.ok) throw new Error('Failed to fetch questions');
-            return await response.json();
+            const data = await response.json();
+            return Array.isArray(data?.questions) ? data.questions : [];
         } catch (error) {
             console.error('Failed to get questions:', error);
             return [];
@@ -65,7 +71,11 @@ class AdminAPI {
      */
     async getQuestion(questionId) {
         try {
-            const response = await fetch(`${this.baseUrl}/questions/${questionId}`);
+            const response = await fetch(`${this.baseUrl}/questions/${questionId}`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('admin_token')}`
+                }
+            });
             if (!response.ok) throw new Error('Question not found');
             return await response.json();
         } catch (error) {
@@ -90,7 +100,7 @@ class AdminAPI {
             
             if (!response.ok) {
                 const error = await response.json();
-                throw new Error(error.message || 'Failed to create question');
+                throw new Error(error.error || error.message || 'Failed to create question');
             }
             
             return await response.json();
@@ -116,7 +126,7 @@ class AdminAPI {
             
             if (!response.ok) {
                 const error = await response.json();
-                throw new Error(error.message || 'Failed to update question');
+                throw new Error(error.error || error.message || 'Failed to update question');
             }
             
             return await response.json();
@@ -166,7 +176,7 @@ class AdminAPI {
             
             if (!response.ok) {
                 const error = await response.json();
-                throw new Error(error.message || 'Bulk import failed');
+                throw new Error(error.error || error.message || 'Bulk import failed');
             }
             
             return await response.json();
@@ -201,10 +211,13 @@ class AdminAPI {
     /**
      * Export questions
      */
-    async exportQuestions(topic, format = 'json') {
+    async exportQuestions(topic, testId = '01', format = 'json') {
         try {
+            if (format === 'pdf') {
+                throw new Error('PDF export is not available yet. Use JSON or CSV.');
+            }
             const response = await fetch(
-                `${this.baseUrl}/export?topic=${topic}&format=${format}`,
+                `${this.baseUrl}/export?topic=${encodeURIComponent(topic)}&test=${encodeURIComponent(testId)}&format=${encodeURIComponent(format)}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('admin_token')}`

@@ -627,6 +627,8 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
     
     <script src="/js/admin-api.js"></script>
     <script>
+        let loadedQuestions = [];
+
         // Initialize admin panel
         document.addEventListener('DOMContentLoaded', async function() {
             const isAuthed = await adminAPI.checkAuth();
@@ -636,6 +638,7 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
             }
             
             loadDashboardStats();
+            document.getElementById('topic-select').addEventListener('change', loadQuestionsList);
         });
 
         // Navigation
@@ -742,14 +745,20 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
 
             try {
                 const questions = await adminAPI.getQuestions(topic, '01');
+                loadedQuestions = Array.isArray(questions) ? questions : [];
                 const list = document.getElementById('questionsList');
-                list.innerHTML = questions.map(q => `
+                list.innerHTML = loadedQuestions.map(q => `
                     <div class="question-item" data-id="${q.id}">
                         <div class="question-item-text">${q.question}</div>
                         <div class="question-item-id">${q.id}</div>
                         <span class="validation-status validation-ok">✓ Valid</span>
                     </div>
                 `).join('');
+
+                if (!loadedQuestions.length) {
+                    list.innerHTML = '<div class="question-item"><div class="question-item-text">No questions found for this topic/test.</div></div>';
+                    return;
+                }
 
                 list.querySelectorAll('.question-item').forEach(item => {
                     item.addEventListener('click', () => editQuestion(item.dataset.id));
@@ -761,10 +770,13 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
 
         async function editQuestion(questionId) {
             try {
-                const question = await adminAPI.getQuestion(questionId);
+                const question = loadedQuestions.find(q => String(q.id) === String(questionId));
+                if (!question) {
+                    throw new Error('Question not found');
+                }
                 // Populate form with question data
-                document.getElementById('q-topic').value = question.topic;
-                document.getElementById('q-testid').value = question.testId;
+                document.getElementById('q-topic').value = document.getElementById('topic-select').value;
+                document.getElementById('q-testid').value = '01';
                 document.getElementById('q-text').value = question.question;
                 
                 question.options.forEach((opt, idx) => {
@@ -883,7 +895,7 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
             }
 
             try {
-                const blob = await adminAPI.exportQuestions(topic, format);
+                const blob = await adminAPI.exportQuestions(topic, '01', format);
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;

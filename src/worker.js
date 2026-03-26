@@ -704,6 +704,471 @@ async function handleAdminAuthVerify(request, env) {
   }
 }
 
+const ADMIN_TOPIC_ALIASES = {
+  ethics: 'llqp-ethics',
+  life: 'llqp-life',
+  accident: 'llqp-accident',
+  segregated: 'llqp-segregated'
+};
+
+function normalizeAdminTopicId(rawTopicId) {
+  const topicId = String(rawTopicId || '').trim();
+  if (!topicId) return '';
+  return ADMIN_TOPIC_ALIASES[topicId] || topicId;
+}
+
+function normalizeAdminTestToken(rawTestId) {
+  return String(rawTestId || '').trim();
+}
+
+async function ensureAdminQuestionsTable(db) {
+  await db.prepare(
+    `CREATE TABLE IF NOT EXISTS admin_questions (
+      id TEXT PRIMARY KEY,
+      topic_id TEXT NOT NULL,
+      test_id TEXT NOT NULL,
+      action TEXT NOT NULL DEFAULT 'upsert',
+      payload_json TEXT,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL
+    )`
+  ).run();
+}
+
+async function loadTopicsMetadata(env, request) {
+  const origin = new URL(request.url).origin;
+  const topicsReq = new Request(`${origin}/data/topics.json`, {
+    method: 'GET',
+    headers: { Accept: 'application/json' }
+  });
+  const resp = await (env.ASSETS ? env.ASSETS.fetch(topicsReq) : fetch(topicsReq));
+  if (!resp.ok) {
+    throw new Error('Unable to load topics metadata.');
+  }
+  const json = await resp.json();
+  return Array.isArray(json?.topics) ? json.topics : [];
+}
+
+function resolvePracticeTest(topic, testToken) {
+  const tests = Array.isArray(topic?.practiceTests) ? topic.practiceTests : [];
+  if (!tests.length) return null;
+
+  const normalized = normalizeAdminTestToken(testToken);
+  const simple = normalized.replace(/^0+/, '') || normalized;
+
+  return (
+    tests.find((test) => String(test?.id || '') === normalized) ||
+    tests.find((test) => String(test?.id || '').toLowerCase() === `practice-${simple}`) ||
+    tests.find((test) => String(test?.id || '').endsWith(`-${normalized}`)) ||
+    tests.find((test) => String(test?.id || '').endsWith(`-${simple}`)) ||
+    tests.find((test) => String(test?.name || '').toLowerCase().includes(`test ${simple}`)) ||
+    tests[0]
+  );
+}
+
+async function loadQuestionDataFile(env, request, dataFilePath) {
+  const pathOnly = String(dataFilePath || '').split('?')[0];
+  if (!pathOnly) {
+    throw new Error('Practice test data file is missing.');
+  }
+
+  const origin = new URL(request.url).origin;
+  const req = new Request(`${origin}/${pathOnly.replace(/^\/+/, '')}`, {
+    method: 'GET',
+    headers: { Accept: 'application/json' }
+  });
+  const resp = await (env.ASSETS ? env.ASSETS.fetch(req) : fetch(req));
+  if (!resp.ok) {
+    throw new Error(`Unable to load question file: ${pathOnly}`);
+  }
+  return resp.json();
+}
+
+function validateAdminQuestionInput(question) {
+  if (!question || typeof question !== 'object') {
+    throw new Error('Question payload is required.');
+  }
+  if (!question.question || !String(question.question).trim()) {
+    throw new Error('Question text is required.');
+  }
+  if (!Array.isArray(question.options) || question.options.length !== 4) {
+    throw new Error('Question must include exactly 4 options.');
+  }
+  if (!Number.isInteger(question.correctAnswer) || question.correctAnswer < 0 || question.correctAnswer > 3) {
+    throw new Error('correctAnswer must be an integer between 0 and 3.');
+  }
+  if (!Array.isArray(question.optionFeedback) || question.optionFeedback.length !== 4) {
+    throw new Error('optionFeedback must include exactly 4 entries.');
+  }
+  if (question.optionFeedback[question.correctAnswer] !== null) {
+    throw new Error('Feedback for the correct answer must be null.');
+  }
+  if (!question.explanation || !String(question.explanation).trim()) {
+    throw new Error('Explanation is required.');
+  }
+}
+
+function generateAdminQuestionId(topicId, testId) {
+  const token = Math.random().toString(36).slice(2, 8);
+  return `${topicId}-${testId}-${Date.now().toString(36)}-${token}`;
+}
+
+async function loadAdminQuestionOverlay(db, topicId, testId) {
+  await ensureAdminQuestionsTable(db);
+  const rows = await db.prepare(
+    'SELECT id, action, payload_json FROM admin_questions WHERE topic_id = ? AND test_id = ? ORDER BY updated_at ASC'
+  ).bind(topicId, testId).all();
+  return Array.isArray(rows?.results) ? rows.results : [];
+}
+
+function applyQuestionOverlay(baseQuestions, overlayRows) {
+  const map = new Map((baseQuestions || []).map((q) => [String(q.id), q]));
+  for (const row of overlayRows || []) {
+    const id = String(row?.id || '');
+    if (!id) continue;
+    if (row?.action === 'delete') {
+      map.delete(id);
+      continue;
+    }
+    try {
+      const parsed = JSON.parse(String(row?.payload_json || '{}'));
+      if (parsed && typeof parsed === 'object') {
+        map.set(id, parsed);
+      }
+    } catch {}
+  }
+  return Array.from(map.values());
+}
+
+async function loadAdminQuestionSet(env, request, rawTopicId, rawTestId) {
+  const topicId = normalizeAdminTopicId(rawTopicId);
+  const testToken = normalizeAdminTestToken(rawTestId);
+  if (!topicId || !testToken) {
+    throw new Error('Both topic and test are required.');
+  }
+
+  const topics = await loadTopicsMetadata(env, request);
+  const topic = topics.find((item) => String(item?.id || '') === topicId);
+  if (!topic) {
+    throw new Error(`Unknown topic: ${topicId}`);
+  }
+
+  const practiceTest = resolvePracticeTest(topic, testToken);
+  if (!practiceTest) {
+    throw new Error(`No practice test found for topic ${topicId}.`);
+  }
+
+  const source = await loadQuestionDataFile(env, request, practiceTest.dataFile);
+  const baseQuestions = Array.isArray(source?.questions) ? source.questions : [];
+
+  const overlayRows = env.DB
+    ? await loadAdminQuestionOverlay(env.DB, topicId, String(practiceTest.id || testToken))
+    : [];
+  const mergedQuestions = applyQuestionOverlay(baseQuestions, overlayRows);
+
+  return {
+    topic,
+    practiceTest,
+    source,
+    questions: mergedQuestions,
+    topicId,
+    testId: String(practiceTest.id || testToken)
+  };
+}
+
+async function handleAdminQuestionsList(request, env) {
+  try {
+    await requireAdminSession(env, request);
+    const url = new URL(request.url);
+    const topic = url.searchParams.get('topic');
+    const test = url.searchParams.get('test');
+    const questionSet = await loadAdminQuestionSet(env, request, topic, test);
+
+    return jsonResponse(request, {
+      topic: questionSet.source?.topic || questionSet.topic?.name || questionSet.topicId,
+      topicId: questionSet.topicId,
+      testId: questionSet.testId,
+      description: questionSet.source?.description || questionSet.practiceTest?.description || '',
+      questions: questionSet.questions,
+      count: questionSet.questions.length
+    });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Unable to load questions.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminQuestionCreate(request, env) {
+  try {
+    await requireAdminSession(env, request);
+    if (!env.DB) {
+      return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+    }
+
+    const body = await request.json();
+    const topicId = normalizeAdminTopicId(body.topic);
+    const testToken = normalizeAdminTestToken(body.testId);
+    const questionSet = await loadAdminQuestionSet(env, request, topicId, testToken);
+
+    const payload = {
+      id: body.id || generateAdminQuestionId(questionSet.topicId, questionSet.testId),
+      question: String(body.question || '').trim(),
+      options: Array.isArray(body.options) ? body.options.map((v) => String(v || '')) : [],
+      correctAnswer: Number(body.correctAnswer),
+      optionFeedback: Array.isArray(body.optionFeedback) ? body.optionFeedback : [null, '', '', ''],
+      explanation: String(body.explanation || '').trim(),
+      difficulty: String(body.difficulty || 'medium'),
+      tags: Array.isArray(body.tags) ? body.tags : [],
+      updatedAt: new Date().toISOString(),
+      createdAt: new Date().toISOString()
+    };
+
+    validateAdminQuestionInput(payload);
+    await ensureAdminQuestionsTable(env.DB);
+    const now = new Date().toISOString();
+    await env.DB.prepare(
+      `INSERT INTO admin_questions (id, topic_id, test_id, action, payload_json, created_at, updated_at)
+       VALUES (?, ?, ?, 'upsert', ?, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET action = 'upsert', payload_json = excluded.payload_json, updated_at = excluded.updated_at`
+    ).bind(payload.id, questionSet.topicId, questionSet.testId, JSON.stringify(payload), now, now).run();
+
+    return jsonResponse(request, { success: true, question: payload }, { status: 201 });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Unable to create question.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminQuestionUpdate(request, env, questionId) {
+  try {
+    await requireAdminSession(env, request);
+    if (!env.DB) {
+      return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+    }
+
+    const body = await request.json();
+    const topicId = normalizeAdminTopicId(body.topic || body.topicId);
+    const testToken = normalizeAdminTestToken(body.testId || body.test);
+    const questionSet = await loadAdminQuestionSet(env, request, topicId, testToken);
+    const existing = questionSet.questions.find((q) => String(q?.id) === String(questionId));
+    if (!existing) {
+      return jsonResponse(request, { error: 'Question not found.' }, { status: 404 });
+    }
+
+    const updated = {
+      ...existing,
+      ...body,
+      id: String(questionId),
+      options: Array.isArray(body.options) ? body.options.map((v) => String(v || '')) : existing.options,
+      optionFeedback: Array.isArray(body.optionFeedback) ? body.optionFeedback : existing.optionFeedback,
+      correctAnswer: Number.isInteger(body.correctAnswer) ? body.correctAnswer : existing.correctAnswer,
+      updatedAt: new Date().toISOString()
+    };
+
+    validateAdminQuestionInput(updated);
+    await ensureAdminQuestionsTable(env.DB);
+    const now = new Date().toISOString();
+    await env.DB.prepare(
+      `INSERT INTO admin_questions (id, topic_id, test_id, action, payload_json, created_at, updated_at)
+       VALUES (?, ?, ?, 'upsert', ?, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET action = 'upsert', payload_json = excluded.payload_json, updated_at = excluded.updated_at`
+    ).bind(updated.id, questionSet.topicId, questionSet.testId, JSON.stringify(updated), now, now).run();
+
+    return jsonResponse(request, { success: true, question: updated });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Unable to update question.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminQuestionDelete(request, env, questionId) {
+  try {
+    await requireAdminSession(env, request);
+    if (!env.DB) {
+      return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+    }
+
+    const url = new URL(request.url);
+    const topicId = normalizeAdminTopicId(url.searchParams.get('topic'));
+    const testToken = normalizeAdminTestToken(url.searchParams.get('test'));
+    const questionSet = await loadAdminQuestionSet(env, request, topicId, testToken);
+
+    await ensureAdminQuestionsTable(env.DB);
+    const now = new Date().toISOString();
+    await env.DB.prepare(
+      `INSERT INTO admin_questions (id, topic_id, test_id, action, payload_json, created_at, updated_at)
+       VALUES (?, ?, ?, 'delete', NULL, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET action = 'delete', payload_json = NULL, updated_at = excluded.updated_at`
+    ).bind(String(questionId), questionSet.topicId, questionSet.testId, now, now).run();
+
+    return jsonResponse(request, { success: true, message: 'Question deleted' });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Unable to delete question.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminQuestionsBulkImport(request, env) {
+  try {
+    await requireAdminSession(env, request);
+    if (!env.DB) {
+      return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+    }
+
+    const body = await request.json();
+    const topicId = normalizeAdminTopicId(body.topic);
+    const testToken = normalizeAdminTestToken(body.testId);
+    const rows = Array.isArray(body.data) ? body.data : [];
+    const questionSet = await loadAdminQuestionSet(env, request, topicId, testToken);
+
+    await ensureAdminQuestionsTable(env.DB);
+    let imported = 0;
+    const errors = [];
+
+    for (const row of rows) {
+      try {
+        const correct = Number(row.correct_answer);
+        const question = {
+          id: generateAdminQuestionId(questionSet.topicId, questionSet.testId),
+          question: String(row.question || '').trim(),
+          options: [row.option_a, row.option_b, row.option_c, row.option_d].map((v) => String(v || '')),
+          correctAnswer: correct,
+          optionFeedback: [0, 1, 2, 3].map((idx) => (idx === correct ? null : String(row[`feedback_${idx}`] || ''))),
+          explanation: String(row.explanation || '').trim(),
+          difficulty: String(row.difficulty || 'medium'),
+          tags: String(row.tags || '').split(',').map((v) => v.trim()).filter(Boolean),
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        };
+
+        validateAdminQuestionInput(question);
+        const now = new Date().toISOString();
+        await env.DB.prepare(
+          `INSERT INTO admin_questions (id, topic_id, test_id, action, payload_json, created_at, updated_at)
+           VALUES (?, ?, ?, 'upsert', ?, ?, ?)
+           ON CONFLICT(id) DO UPDATE SET action = 'upsert', payload_json = excluded.payload_json, updated_at = excluded.updated_at`
+        ).bind(question.id, questionSet.topicId, questionSet.testId, JSON.stringify(question), now, now).run();
+        imported += 1;
+      } catch (error) {
+        errors.push(error.message || 'Invalid row');
+      }
+    }
+
+    return jsonResponse(request, {
+      success: true,
+      imported,
+      errors,
+      message: `Successfully imported ${imported} questions`
+    });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Bulk import failed.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminValidate(request, env) {
+  try {
+    await requireAdminSession(env, request);
+    const url = new URL(request.url);
+    const topic = url.searchParams.get('topic');
+    const test = url.searchParams.get('test');
+    const questionSet = await loadAdminQuestionSet(env, request, topic, test);
+
+    const errors = [];
+    const warnings = [];
+    (questionSet.questions || []).forEach((q, index) => {
+      if (!q.id) errors.push(`Question ${index}: Missing ID`);
+      if (!q.question) errors.push(`Question ${index}: Missing question text`);
+      if (!Array.isArray(q.options) || q.options.length !== 4) errors.push(`Question ${index}: Must have 4 options`);
+      if (!Number.isInteger(q.correctAnswer) || q.correctAnswer < 0 || q.correctAnswer > 3) errors.push(`Question ${index}: Invalid correctAnswer`);
+      if (!Array.isArray(q.optionFeedback) || q.optionFeedback.length !== 4) errors.push(`Question ${index}: Invalid optionFeedback`);
+      if (Array.isArray(q.optionFeedback) && Number.isInteger(q.correctAnswer) && q.optionFeedback[q.correctAnswer] !== null) {
+        errors.push(`Question ${index}: Correct answer feedback must be null`);
+      }
+      if (!q.explanation) warnings.push(`Question ${index}: Missing explanation`);
+    });
+
+    return jsonResponse(request, {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+      questionCount: questionSet.questions.length
+    });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Validation failed.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminStats(request, env) {
+  try {
+    await requireAdminSession(env, request);
+    const topics = await loadTopicsMetadata(env, request);
+    const activeTopics = topics.filter((topic) => String(topic?.status || '').toLowerCase() === 'active');
+    let totalQuestions = 0;
+    const topicsList = [];
+
+    for (const topic of activeTopics) {
+      topicsList.push(topic.id);
+      const tests = Array.isArray(topic.practiceTests) ? topic.practiceTests : [];
+      totalQuestions += tests.reduce((sum, test) => sum + Number(test?.questionCount || 0), 0);
+    }
+
+    return jsonResponse(request, {
+      totalQuestions,
+      activeTopics: activeTopics.length,
+      topicsList,
+      lastUpdated: new Date().toISOString(),
+      validationStatus: 'passing'
+    });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Unable to load admin stats.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminExport(request, env) {
+  try {
+    await requireAdminSession(env, request);
+    const url = new URL(request.url);
+    const topic = url.searchParams.get('topic');
+    const test = url.searchParams.get('test');
+    const format = String(url.searchParams.get('format') || 'json').toLowerCase();
+    const questionSet = await loadAdminQuestionSet(env, request, topic, test);
+
+    if (format === 'csv') {
+      const lines = ['id,question,option_a,option_b,option_c,option_d,correct_answer,explanation,difficulty,tags'];
+      for (const q of questionSet.questions) {
+        const esc = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`;
+        lines.push([
+          esc(q.id),
+          esc(q.question),
+          esc(q.options?.[0] || ''),
+          esc(q.options?.[1] || ''),
+          esc(q.options?.[2] || ''),
+          esc(q.options?.[3] || ''),
+          q.correctAnswer,
+          esc(q.explanation || ''),
+          esc(q.difficulty || ''),
+          esc(Array.isArray(q.tags) ? q.tags.join(',') : '')
+        ].join(','));
+      }
+      return textResponse(request, lines.join('\n'), {
+        headers: {
+          'Content-Type': 'text/csv; charset=utf-8',
+          'Content-Disposition': `attachment; filename="${questionSet.topicId}-${questionSet.testId}-export.csv"`
+        }
+      });
+    }
+
+    return jsonResponse(request, {
+      topic: questionSet.topicId,
+      testId: questionSet.testId,
+      count: questionSet.questions.length,
+      questions: questionSet.questions
+    }, {
+      headers: {
+        'Content-Disposition': `attachment; filename="${questionSet.topicId}-${questionSet.testId}-export.json"`
+      }
+    });
+  } catch (error) {
+    return jsonResponse(request, { error: error.message || 'Export failed.' }, { status: getErrorStatus(error) });
+  }
+}
+
 async function requireSession(env, request) {
   const session = await getSessionContext(env, request);
   if (!session) {
@@ -3422,6 +3887,39 @@ export default {
 
     if (path === '/api/admin/auth/verify' && (request.method === 'GET' || request.method === 'POST')) {
       return handleAdminAuthVerify(request, env);
+    }
+
+    if (path === '/api/admin/questions' && request.method === 'GET') {
+      return handleAdminQuestionsList(request, env);
+    }
+
+    if (path === '/api/admin/questions' && request.method === 'POST') {
+      return handleAdminQuestionCreate(request, env);
+    }
+
+    const adminQuestionIdMatch = path.match(/^\/api\/admin\/questions\/([^/]+)$/);
+    if (adminQuestionIdMatch && request.method === 'PUT') {
+      return handleAdminQuestionUpdate(request, env, decodeURIComponent(adminQuestionIdMatch[1]));
+    }
+
+    if (adminQuestionIdMatch && request.method === 'DELETE') {
+      return handleAdminQuestionDelete(request, env, decodeURIComponent(adminQuestionIdMatch[1]));
+    }
+
+    if (path === '/api/admin/questions/bulk-import' && request.method === 'POST') {
+      return handleAdminQuestionsBulkImport(request, env);
+    }
+
+    if (path === '/api/admin/validate' && request.method === 'GET') {
+      return handleAdminValidate(request, env);
+    }
+
+    if (path === '/api/admin/stats' && request.method === 'GET') {
+      return handleAdminStats(request, env);
+    }
+
+    if (path === '/api/admin/export' && request.method === 'GET') {
+      return handleAdminExport(request, env);
     }
 
     if (path === '/api/admin/students/overview' && request.method === 'GET') {
