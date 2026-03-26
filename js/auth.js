@@ -22,12 +22,21 @@ Object.assign(MCQApp, {
         loadingOverview: false,
         loadingDetail: false,
         loadingResetKey: '',
+        pendingResetConfirm: null,
+        lastUndoAction: null,
+        undoIntervalId: null,
+        mobileTab: 'overview',
         error: '',
         detailError: '',
         refreshIntervalId: null,
         lastRefreshedAt: null
       };
     }
+    const admin = this.state.auth.admin;
+    if (typeof admin.pendingResetConfirm === 'undefined') admin.pendingResetConfirm = null;
+    if (typeof admin.lastUndoAction === 'undefined') admin.lastUndoAction = null;
+    if (typeof admin.undoIntervalId === 'undefined') admin.undoIntervalId = null;
+    if (typeof admin.mobileTab !== 'string') admin.mobileTab = 'overview';
     return this.state.auth.admin;
   },
 
@@ -57,12 +66,16 @@ Object.assign(MCQApp, {
         error: '',
         questionError: '',
         replayError: '',
+        mobileTab: 'overview',
         refreshIntervalId: null,
         lastRefreshedAt: null
       };
     }
 
     const heatmaps = this.state.auth.heatmaps;
+    if (typeof heatmaps.mobileTab !== 'string') {
+      heatmaps.mobileTab = 'overview';
+    }
     if (!heatmaps.filters.from || !heatmaps.filters.to) {
       const now = new Date();
       const toDate = now.toISOString().slice(0, 10);
@@ -106,6 +119,84 @@ Object.assign(MCQApp, {
       return `${minutes}m ${seconds}s`;
     }
     return `${seconds}s`;
+  },
+
+  formatUndoCountdown(expiresAt) {
+    const expiresMs = Date.parse(String(expiresAt || ''));
+    if (!Number.isFinite(expiresMs)) {
+      return '00:00';
+    }
+    const remainingMs = Math.max(0, expiresMs - Date.now());
+    const totalSeconds = Math.floor(remainingMs / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  },
+
+  getAdminMobileTab() {
+    const admin = this.ensureAdminDashboardState();
+    const tab = String(admin.mobileTab || '').trim().toLowerCase();
+    if (tab === 'students' || tab === 'detail') {
+      return tab;
+    }
+    return 'overview';
+  },
+
+  setAdminMobileTab(tab) {
+    const admin = this.ensureAdminDashboardState();
+    const normalized = String(tab || '').trim().toLowerCase();
+    admin.mobileTab = (normalized === 'students' || normalized === 'detail') ? normalized : 'overview';
+    this.renderAdminDashboard();
+  },
+
+  getHeatmapMobileTab() {
+    const heatmaps = this.ensureHeatmapDashboardState();
+    const tab = String(heatmaps.mobileTab || '').trim().toLowerCase();
+    if (tab === 'question' || tab === 'replays') {
+      return tab;
+    }
+    return 'overview';
+  },
+
+  setHeatmapMobileTab(tab) {
+    const heatmaps = this.ensureHeatmapDashboardState();
+    const normalized = String(tab || '').trim().toLowerCase();
+    heatmaps.mobileTab = (normalized === 'question' || normalized === 'replays') ? normalized : 'overview';
+    this.renderAdminHeatmapDashboard();
+  },
+
+  stopAdminUndoCountdown() {
+    const admin = this.ensureAdminDashboardState();
+    if (admin.undoIntervalId) {
+      window.clearInterval(admin.undoIntervalId);
+      admin.undoIntervalId = null;
+    }
+  },
+
+  startAdminUndoCountdown() {
+    const admin = this.ensureAdminDashboardState();
+    const selectedDetail = admin.selectedStudentDetail || null;
+    const pendingUndo = Array.isArray(selectedDetail?.pendingResetUndoActions)
+      ? selectedDetail.pendingResetUndoActions
+      : [];
+    const hasActiveUndo = pendingUndo.some((entry) => Date.parse(entry?.expiresAt || '') > Date.now()) ||
+      (admin.lastUndoAction && Date.parse(admin.lastUndoAction?.undoExpiresAt || '') > Date.now());
+
+    if (!hasActiveUndo || this.state.currentView !== 'admin' || !this.isCurrentUserAdmin()) {
+      this.stopAdminUndoCountdown();
+      return;
+    }
+    if (admin.undoIntervalId) {
+      return;
+    }
+
+    admin.undoIntervalId = window.setInterval(() => {
+      if (this.state.currentView !== 'admin' || !this.isCurrentUserAdmin()) {
+        this.stopAdminUndoCountdown();
+        return;
+      }
+      this.renderAdminDashboard();
+    }, 1000);
   },
 
   stopAdminDashboardAutoRefresh() {
@@ -153,14 +244,19 @@ Object.assign(MCQApp, {
 
     this.stopAdminHeatmapAutoRefresh();
     this.ensureAdminDashboardState();
+    if (this.isAdminMobileViewport()) {
+      this.state.auth.admin.mobileTab = this.getAdminMobileTab();
+    }
     this.renderAdminDashboard();
     this.startAdminDashboardAutoRefresh();
+    this.startAdminUndoCountdown();
     this.refreshAdminDashboard({ silent: false, preserveSelection: true });
   },
 
   onLeaveAdminView() {
     this.stopAdminDashboardAutoRefresh();
     this.stopAdminHeatmapAutoRefresh();
+    this.stopAdminUndoCountdown();
   },
 
   stopAdminHeatmapAutoRefresh() {
@@ -394,6 +490,9 @@ Object.assign(MCQApp, {
     }
     this.stopAdminDashboardAutoRefresh();
     this.ensureHeatmapDashboardState();
+    if (this.isAdminMobileViewport()) {
+      this.state.auth.heatmaps.mobileTab = this.getHeatmapMobileTab();
+    }
     this.renderAdminHeatmapDashboard();
     this.startAdminHeatmapAutoRefresh();
     this.refreshAdminHeatmapDashboard({ silent: false });
@@ -428,6 +527,7 @@ Object.assign(MCQApp, {
       if (admin.students.length === 0) {
         admin.selectedStudentId = '';
         admin.selectedStudentDetail = null;
+        this.stopAdminUndoCountdown();
       } else {
         const hasSelectedStudent = preserveSelection &&
           admin.selectedStudentId &&
@@ -436,6 +536,7 @@ Object.assign(MCQApp, {
           ? String(admin.selectedStudentId)
           : String(admin.students[0].id);
         await this.loadAdminStudentDetail(admin.selectedStudentId, { silent: true });
+        this.startAdminUndoCountdown();
       }
 
       return true;
@@ -460,6 +561,7 @@ Object.assign(MCQApp, {
       admin.selectedStudentId = '';
       admin.selectedStudentDetail = null;
       admin.detailError = '';
+      this.stopAdminUndoCountdown();
       this.renderAdminDashboard();
       return true;
     }
@@ -475,10 +577,12 @@ Object.assign(MCQApp, {
       const data = await this.fetchAuthJson(`/api/admin/students/${encodeURIComponent(String(userId))}`, { method: 'GET' });
       admin.selectedStudentDetail = data;
       admin.detailError = '';
+      this.startAdminUndoCountdown();
       return true;
     } catch (error) {
       admin.selectedStudentDetail = null;
       admin.detailError = error.message || 'Unable to load student details.';
+      this.stopAdminUndoCountdown();
       if (!silent) {
         this.showToast(admin.detailError, 'warning');
       }
@@ -489,31 +593,151 @@ Object.assign(MCQApp, {
     }
   },
 
-  async resetAdminStudentTestProgress(topicId, testId) {
+  getAdminResetLoadingKey(scope, topicId = '', testId = '') {
+    const normalizedScope = String(scope || '').trim().toLowerCase();
+    if (normalizedScope === 'topic') {
+      return `topic:${topicId || ''}`;
+    }
+    if (normalizedScope === 'all-tests') {
+      return 'all-tests';
+    }
+    return `test:${topicId || ''}:${testId || ''}`;
+  },
+
+  promptAdminResetProgress(scope, { topicId = '', testId = '' } = {}) {
+    const admin = this.ensureAdminDashboardState();
+    const normalizedScope = String(scope || '').trim().toLowerCase();
+    if (normalizedScope !== 'test' && normalizedScope !== 'topic' && normalizedScope !== 'all-tests') {
+      return false;
+    }
+
+    if (normalizedScope === 'test' && (!topicId || !testId)) {
+      return false;
+    }
+    if (normalizedScope === 'topic' && !topicId) {
+      return false;
+    }
+
+    let label = 'Reset all test progress';
+    if (normalizedScope === 'test') {
+      label = `Reset test ${topicId} / ${testId}`;
+    } else if (normalizedScope === 'topic') {
+      label = `Reset topic ${topicId}`;
+    }
+
+    admin.pendingResetConfirm = {
+      scope: normalizedScope,
+      topicId,
+      testId,
+      label
+    };
+    this.renderAdminDashboard();
+    return true;
+  },
+
+  cancelAdminResetPrompt() {
+    const admin = this.ensureAdminDashboardState();
+    admin.pendingResetConfirm = null;
+    this.renderAdminDashboard();
+  },
+
+  async performAdminStudentProgressReset(scope, { topicId = '', testId = '' } = {}) {
     const admin = this.ensureAdminDashboardState();
     const userId = admin.selectedStudentId;
-    if (!this.isCurrentUserAdmin() || !userId || !topicId || !testId) {
+    if (!this.isCurrentUserAdmin() || !userId) {
       return false;
     }
 
-    if (!confirm(`Reset progress for ${topicId} / ${testId} for this student?`)) {
+    const normalizedScope = String(scope || '').trim().toLowerCase();
+    if (normalizedScope === 'test' && (!topicId || !testId)) {
+      return false;
+    }
+    if (normalizedScope === 'topic' && !topicId) {
+      return false;
+    }
+    if (normalizedScope !== 'test' && normalizedScope !== 'topic' && normalizedScope !== 'all-tests') {
       return false;
     }
 
-    const resetKey = `${topicId}_${testId}`;
+    const resetKey = this.getAdminResetLoadingKey(normalizedScope, topicId, testId);
     admin.loadingResetKey = resetKey;
     this.renderAdminDashboard();
 
+    let endpoint = `/api/admin/students/${encodeURIComponent(String(userId))}/reset-test-progress`;
+    let payload = { topicId, testId };
+    if (normalizedScope === 'topic') {
+      endpoint = `/api/admin/students/${encodeURIComponent(String(userId))}/reset-topic-progress`;
+      payload = { topicId };
+    } else if (normalizedScope === 'all-tests') {
+      endpoint = `/api/admin/students/${encodeURIComponent(String(userId))}/reset-all-tests-progress`;
+      payload = {};
+    }
+
     try {
-      await this.fetchAuthJson(`/api/admin/students/${encodeURIComponent(String(userId))}/reset-test-progress`, {
+      const response = await this.fetchAuthJson(endpoint, {
         method: 'POST',
-        body: JSON.stringify({ topicId, testId })
+        body: JSON.stringify(payload)
       });
-      this.showToast('Student test progress reset.', 'success');
+      admin.pendingResetConfirm = null;
+      admin.lastUndoAction = response && response.resetActionId
+        ? {
+            resetActionId: String(response.resetActionId),
+            scope: String(response.scope || normalizedScope),
+            topicId: response.topicId || topicId || null,
+            testId: response.testId || testId || null,
+            undoExpiresAt: response.undoExpiresAt || null
+          }
+        : null;
+      this.showToast('Student progress reset. Undo is available for 15 minutes.', 'success');
       await this.refreshAdminDashboard({ silent: true, preserveSelection: true });
+      this.startAdminUndoCountdown();
       return true;
     } catch (error) {
-      this.showToast(error.message || 'Unable to reset test progress.', 'warning');
+      this.showToast(error.message || 'Unable to reset student progress.', 'warning');
+      return false;
+    } finally {
+      admin.loadingResetKey = '';
+      this.renderAdminDashboard();
+    }
+  },
+
+  async resetAdminStudentTestProgress(topicId, testId) {
+    return this.performAdminStudentProgressReset('test', { topicId, testId });
+  },
+
+  async resetAdminStudentTopicProgress(topicId) {
+    return this.performAdminStudentProgressReset('topic', { topicId });
+  },
+
+  async resetAdminStudentAllTestsProgress() {
+    return this.performAdminStudentProgressReset('all-tests', {});
+  },
+
+  async undoAdminStudentResetProgress(resetActionId) {
+    const admin = this.ensureAdminDashboardState();
+    const userId = admin.selectedStudentId;
+    const normalizedActionId = String(resetActionId || '').trim();
+    if (!this.isCurrentUserAdmin() || !userId || !normalizedActionId) {
+      return false;
+    }
+
+    const loadingKey = `undo:${normalizedActionId}`;
+    admin.loadingResetKey = loadingKey;
+    this.renderAdminDashboard();
+
+    try {
+      await this.fetchAuthJson(`/api/admin/students/${encodeURIComponent(String(userId))}/undo-reset-progress`, {
+        method: 'POST',
+        body: JSON.stringify({ resetActionId: normalizedActionId })
+      });
+      admin.lastUndoAction = null;
+      admin.pendingResetConfirm = null;
+      this.showToast('Reset action undone and progress restored.', 'success');
+      await this.refreshAdminDashboard({ silent: true, preserveSelection: true });
+      this.startAdminUndoCountdown();
+      return true;
+    } catch (error) {
+      this.showToast(error.message || 'Unable to undo reset action.', 'warning');
       return false;
     } finally {
       admin.loadingResetKey = '';
@@ -547,10 +771,31 @@ Object.assign(MCQApp, {
     const selectedDetail = admin.selectedStudentDetail || null;
     const selectedSummary = selectedDetail?.summary || null;
     const topics = Array.isArray(selectedDetail?.topics) ? selectedDetail.topics : [];
+    const pendingUndoActions = Array.isArray(selectedDetail?.pendingResetUndoActions)
+      ? selectedDetail.pendingResetUndoActions
+      : [];
     const isMobileLayout = this.isAdminMobileViewport();
+    const activeMobileTab = this.getAdminMobileTab();
+    const showOverviewPanel = !isMobileLayout || activeMobileTab === 'overview';
+    const showStudentsPanel = !isMobileLayout || activeMobileTab === 'students';
+    const showDetailPanel = !isMobileLayout || activeMobileTab === 'detail';
     const lastRefreshed = admin.lastRefreshedAt
       ? new Date(admin.lastRefreshedAt).toLocaleString()
       : 'Not refreshed yet';
+
+    if (admin.lastUndoAction && Date.parse(admin.lastUndoAction.undoExpiresAt || '') <= Date.now()) {
+      admin.lastUndoAction = null;
+    }
+
+    const mobileTabsHtml = isMobileLayout
+      ? `
+        <nav class="admin-mobile-tabs" aria-label="Admin dashboard sections">
+          <button class="btn-outline ${activeMobileTab === 'overview' ? 'is-active' : ''}" type="button" data-admin-action="tab-overview">Overview</button>
+          <button class="btn-outline ${activeMobileTab === 'students' ? 'is-active' : ''}" type="button" data-admin-action="tab-students">Students</button>
+          <button class="btn-outline ${activeMobileTab === 'detail' ? 'is-active' : ''}" type="button" data-admin-action="tab-detail">Detail</button>
+        </nav>
+      `
+      : '';
 
     const studentRowsHtml = students.length === 0
       ? `
@@ -605,8 +850,10 @@ Object.assign(MCQApp, {
     const detailTopicsHtml = topics.length === 0
       ? '<div class="admin-empty-card"><p>No synced test payload available for this student yet.</p></div>'
       : topics.map((topic) => {
+        const topicResetKey = this.getAdminResetLoadingKey('topic', topic.topicId || '', '');
+        const isTopicResetting = admin.loadingResetKey === topicResetKey;
         const testsHtml = (topic.tests || []).map((testItem) => {
-          const resetKey = `${testItem.topicId}_${testItem.testId}`;
+          const resetKey = this.getAdminResetLoadingKey('test', testItem.topicId || '', testItem.testId || '');
           const isResetting = admin.loadingResetKey === resetKey;
           return `
             <tr>
@@ -620,7 +867,7 @@ Object.assign(MCQApp, {
               <td>${this.escapeHtml(testItem.lastUpdatedAt ? new Date(testItem.lastUpdatedAt).toLocaleString() : 'n/a')}</td>
               <td>
                 <button class="btn-outline admin-reset-btn" type="button" data-admin-action="reset-test" data-topic-id="${this.escapeHtml(testItem.topicId || '')}" data-test-id="${this.escapeHtml(testItem.testId || '')}" ${isResetting ? 'disabled' : ''}>
-                  ${isResetting ? 'Resetting...' : 'Reset'}
+                  ${isResetting ? 'Resetting...' : 'Reset Test'}
                 </button>
               </td>
             </tr>
@@ -628,7 +875,7 @@ Object.assign(MCQApp, {
         }).join('');
 
         const testsCardsHtml = (topic.tests || []).map((testItem) => {
-          const resetKey = `${testItem.topicId}_${testItem.testId}`;
+          const resetKey = this.getAdminResetLoadingKey('test', testItem.topicId || '', testItem.testId || '');
           const isResetting = admin.loadingResetKey === resetKey;
           const updatedLabel = testItem.lastUpdatedAt ? new Date(testItem.lastUpdatedAt).toLocaleString() : 'n/a';
           return `
@@ -647,7 +894,7 @@ Object.assign(MCQApp, {
               </div>
               <div class="admin-card-actions">
                 <button class="btn-outline admin-reset-btn" type="button" data-admin-action="reset-test" data-topic-id="${this.escapeHtml(testItem.topicId || '')}" data-test-id="${this.escapeHtml(testItem.testId || '')}" ${isResetting ? 'disabled' : ''}>
-                  ${isResetting ? 'Resetting...' : 'Reset'}
+                  ${isResetting ? 'Resetting...' : 'Reset Test'}
                 </button>
               </div>
             </article>
@@ -663,6 +910,9 @@ Object.assign(MCQApp, {
                 <span>Completion ${Number(topic.completionPct || 0)}%</span>
                 <span>Accuracy ${Number(topic.firstTryAccuracyPct || 0)}%</span>
               </div>
+              <button class="btn-outline admin-reset-btn" type="button" data-admin-action="reset-topic" data-topic-id="${this.escapeHtml(topic.topicId || '')}" ${isTopicResetting ? 'disabled' : ''}>
+                ${isTopicResetting ? 'Resetting...' : 'Reset Topic'}
+              </button>
             </header>
             <div class="admin-table-wrap admin-desktop-only">
               <table class="admin-table">
@@ -689,6 +939,71 @@ Object.assign(MCQApp, {
         `;
       }).join('');
 
+    const pendingResetHtml = pendingUndoActions.length === 0
+      ? ''
+      : `
+        <div class="admin-pending-undo-list">
+          <h5>Pending Undo Actions</h5>
+          ${pendingUndoActions.map((action) => {
+            const resetActionId = String(action.resetActionId || '');
+            const scope = String(action.scope || '');
+            const scopeLabel = scope === 'test'
+              ? `Test ${action.topicId || ''}/${action.testId || ''}`
+              : scope === 'topic'
+                ? `Topic ${action.topicId || ''}`
+                : 'All tests';
+            const undoLoadingKey = `undo:${resetActionId}`;
+            const isUndoing = admin.loadingResetKey === undoLoadingKey;
+            const isExpired = Date.parse(action.expiresAt || '') <= Date.now();
+            return `
+              <article class="admin-undo-card ${isExpired ? 'is-expired' : ''}">
+                <div>
+                  <strong>${this.escapeHtml(scopeLabel)}</strong>
+                  <p>Expires in ${this.escapeHtml(this.formatUndoCountdown(action.expiresAt || ''))}</p>
+                </div>
+                <button class="btn-outline admin-reset-btn" type="button" data-admin-action="undo-reset" data-reset-action-id="${this.escapeHtml(resetActionId)}" ${isUndoing || isExpired ? 'disabled' : ''}>
+                  ${isUndoing ? 'Undoing...' : 'Undo'}
+                </button>
+              </article>
+            `;
+          }).join('')}
+        </div>
+      `;
+
+    const activeUndoBanner = admin.lastUndoAction && Date.parse(admin.lastUndoAction.undoExpiresAt || '') > Date.now()
+      ? `
+        <section class="admin-undo-banner">
+          <div>
+            <strong>Reset completed</strong>
+            <p>Undo available for ${this.escapeHtml(this.formatUndoCountdown(admin.lastUndoAction.undoExpiresAt || ''))}</p>
+          </div>
+          <button class="btn-outline admin-reset-btn" type="button" data-admin-action="undo-reset" data-reset-action-id="${this.escapeHtml(admin.lastUndoAction.resetActionId || '')}" ${admin.loadingResetKey === `undo:${admin.lastUndoAction.resetActionId}` ? 'disabled' : ''}>
+            ${admin.loadingResetKey === `undo:${admin.lastUndoAction.resetActionId}` ? 'Undoing...' : 'Undo'}
+          </button>
+        </section>
+      `
+      : '';
+
+    const pendingResetConfirm = admin.pendingResetConfirm || null;
+    const resetConfirmHtml = pendingResetConfirm
+      ? `
+        <section class="admin-confirm-card">
+          <h4>Confirm Reset</h4>
+          <p>${this.escapeHtml(pendingResetConfirm.label)} for this student?</p>
+          <p>This action can be undone for 15 minutes.</p>
+          <div class="admin-confirm-actions">
+            <button class="btn-primary" type="button" data-admin-action="confirm-reset" data-scope="${this.escapeHtml(pendingResetConfirm.scope)}" data-topic-id="${this.escapeHtml(pendingResetConfirm.topicId || '')}" data-test-id="${this.escapeHtml(pendingResetConfirm.testId || '')}">
+              Confirm Reset
+            </button>
+            <button class="btn-outline" type="button" data-admin-action="cancel-reset">Cancel</button>
+          </div>
+        </section>
+      `
+      : '';
+
+    const resetAllKey = this.getAdminResetLoadingKey('all-tests');
+    const isResettingAllTests = admin.loadingResetKey === resetAllKey;
+
     root.innerHTML = `
       <section class="admin-toolbar">
         <div>
@@ -696,17 +1011,20 @@ Object.assign(MCQApp, {
           <p>Last refresh: ${this.escapeHtml(lastRefreshed)}</p>
         </div>
         <div class="admin-toolbar-actions">
-          <input id="admin-search-input" class="admin-search-input" type="search" placeholder="Search student email" value="${this.escapeHtml(admin.searchQuery || '')}">
           <button class="btn-outline" type="button" data-admin-action="refresh">${admin.loadingOverview ? 'Refreshing...' : 'Refresh'}</button>
           <button class="btn-outline" type="button" data-admin-action="search">Search</button>
+          <input id="admin-search-input" class="admin-search-input" type="search" placeholder="Search student email" value="${this.escapeHtml(admin.searchQuery || '')}">
           <button class="btn-outline" type="button" data-admin-action="open-heatmaps">Heatmaps</button>
           <button class="btn-outline" type="button" data-admin-action="back-home">Home</button>
         </div>
       </section>
 
+      ${mobileTabsHtml}
       ${admin.error ? `<div class="admin-error">${this.escapeHtml(admin.error)}</div>` : ''}
+      ${resetConfirmHtml}
+      ${activeUndoBanner}
 
-      <section class="admin-kpi-grid">
+      <section class="admin-kpi-grid ${showOverviewPanel ? '' : 'admin-mobile-hidden'}">
         <article class="admin-kpi-card"><span>Students</span><strong>${Number(overview.studentsCount || 0)}</strong></article>
         <article class="admin-kpi-card"><span>Active (7d)</span><strong>${Number(overview.activeStudents || 0)}</strong></article>
         <article class="admin-kpi-card"><span>Total Answered</span><strong>${Number(overview.totalAnswered || 0)}</strong></article>
@@ -714,7 +1032,7 @@ Object.assign(MCQApp, {
         <article class="admin-kpi-card"><span>Avg First-Try</span><strong>${Number(overview.avgFirstTryAccuracyPct || 0)}%</strong></article>
       </section>
 
-      <section class="admin-table-section">
+      <section class="admin-table-section ${showStudentsPanel ? '' : 'admin-mobile-hidden'}">
         <h4>Students</h4>
         <div class="admin-table-wrap admin-desktop-only">
           <table class="admin-table">
@@ -737,7 +1055,7 @@ Object.assign(MCQApp, {
         </div>
       </section>
 
-      <section class="admin-detail-section">
+      <section class="admin-detail-section ${showDetailPanel ? '' : 'admin-mobile-hidden'}">
         <h4>Student Detail</h4>
         ${admin.loadingDetail ? '<div class="admin-empty-card"><p>Loading student details...</p></div>' : ''}
         ${admin.detailError ? `<div class="admin-error">${this.escapeHtml(admin.detailError)}</div>` : ''}
@@ -746,12 +1064,20 @@ Object.assign(MCQApp, {
             <div><strong>${this.escapeHtml(selectedDetail.student?.email || '')}</strong></div>
             <div>Answered: ${Number(selectedSummary?.answeredCount || 0)} | Completion: ${Number(selectedSummary?.completionPct || 0)}% | First-try: ${Number(selectedSummary?.firstTryAccuracyPct || 0)}%</div>
             <div>Total study time: ${this.escapeHtml(this.formatAdminDuration(selectedSummary?.totalStudyTimeMs || 0))}</div>
-            ${isMobileLayout ? '<div class="admin-mobile-tip">Tip: tap Reset inside each test card to clear a single test.</div>' : ''}
+            <div class="admin-detail-actions">
+              <button class="btn-outline admin-reset-btn" type="button" data-admin-action="reset-all-tests" ${isResettingAllTests ? 'disabled' : ''}>
+                ${isResettingAllTests ? 'Resetting...' : 'Reset All Tests'}
+              </button>
+            </div>
+            ${isMobileLayout ? '<div class="admin-mobile-tip">Tip: use Reset Test / Reset Topic / Reset All Tests controls, then undo if needed.</div>' : ''}
           </div>
+          ${pendingResetHtml}
           ${detailTopicsHtml}
         ` : '<div class="admin-empty-card"><p>Select a student to inspect topic/test detail.</p></div>'}
       </section>
     `;
+
+    this.startAdminUndoCountdown();
   },
 
   formatHeatmapPercent(value) {
@@ -802,6 +1128,19 @@ Object.assign(MCQApp, {
     const scrollBuckets = Array.isArray(selectedQuestion?.scrollBuckets) ? selectedQuestion.scrollBuckets : [];
     const selectedReplay = heatmaps.selectedReplay || null;
     const isMobileLayout = this.isAdminMobileViewport();
+    const activeMobileTab = this.getHeatmapMobileTab();
+    const showOverviewPanel = !isMobileLayout || activeMobileTab === 'overview';
+    const showQuestionPanel = !isMobileLayout || activeMobileTab === 'question';
+    const showReplaysPanel = !isMobileLayout || activeMobileTab === 'replays';
+    const mobileTabsHtml = isMobileLayout
+      ? `
+        <nav class="admin-mobile-tabs" aria-label="Heatmap sections">
+          <button class="btn-outline ${activeMobileTab === 'overview' ? 'is-active' : ''}" type="button" data-heatmap-action="tab-overview">Overview</button>
+          <button class="btn-outline ${activeMobileTab === 'question' ? 'is-active' : ''}" type="button" data-heatmap-action="tab-question">Question</button>
+          <button class="btn-outline ${activeMobileTab === 'replays' ? 'is-active' : ''}" type="button" data-heatmap-action="tab-replays">Replays</button>
+        </nav>
+      `
+      : '';
 
     const questionRows = questions.length === 0
       ? `<tr><td colspan="8" class="admin-empty-row">No question analytics matched this filter.</td></tr>`
@@ -874,6 +1213,7 @@ Object.assign(MCQApp, {
         </div>
       </section>
 
+      ${mobileTabsHtml}
       <section class="heatmap-filter-grid heatmap-filter-grid-quick">
         <label>From <input id="heatmap-filter-from" type="date" value="${this.escapeHtml(heatmaps.filters.from || '')}"></label>
         <label>To <input id="heatmap-filter-to" type="date" value="${this.escapeHtml(heatmaps.filters.to || '')}"></label>
@@ -905,7 +1245,7 @@ Object.assign(MCQApp, {
 
       ${heatmaps.error ? `<div class="admin-error">${this.escapeHtml(heatmaps.error)}</div>` : ''}
 
-      <section class="admin-kpi-grid">
+      <section class="admin-kpi-grid ${showOverviewPanel ? '' : 'admin-mobile-hidden'}">
         <article class="admin-kpi-card"><span>Sessions</span><strong>${Number(overview.sessionCount || 0)}</strong></article>
         <article class="admin-kpi-card"><span>Total Events</span><strong>${Number(overview.eventCount || 0)}</strong></article>
         <article class="admin-kpi-card"><span>Clicks</span><strong>${Number(overview.clickCount || 0)}</strong></article>
@@ -913,7 +1253,7 @@ Object.assign(MCQApp, {
         <article class="admin-kpi-card"><span>Avg Scroll</span><strong>${this.formatHeatmapPercent(overview.avgScrollPercent || 0)}</strong></article>
       </section>
 
-      <section class="admin-table-section">
+      <section class="admin-table-section ${showQuestionPanel ? '' : 'admin-mobile-hidden'}">
         <h4>Question Analytics</h4>
         ${isMobileLayout ? '<p class="admin-swipe-hint">Swipe left/right to see all columns.</p>' : ''}
         <div class="admin-table-wrap">
@@ -935,7 +1275,7 @@ Object.assign(MCQApp, {
         </div>
       </section>
 
-      <section class="admin-detail-section">
+      <section class="admin-detail-section ${showQuestionPanel ? '' : 'admin-mobile-hidden'}">
         <h4>Question Heatmap</h4>
         ${heatmaps.loadingQuestion ? '<div class="admin-empty-card"><p>Loading question heatmap...</p></div>' : ''}
         ${heatmaps.questionError ? `<div class="admin-error">${this.escapeHtml(heatmaps.questionError)}</div>` : ''}
@@ -979,7 +1319,7 @@ Object.assign(MCQApp, {
         ` : '<div class="admin-empty-card"><p>Select a question to render click/move/scroll heatmaps.</p></div>'}
       </section>
 
-      <section class="admin-table-section">
+      <section class="admin-table-section ${showReplaysPanel ? '' : 'admin-mobile-hidden'}">
         <h4>Replay Sessions</h4>
         ${heatmaps.replayError ? `<div class="admin-error">${this.escapeHtml(heatmaps.replayError)}</div>` : ''}
         ${isMobileLayout ? '<p class="admin-swipe-hint">Swipe left/right to see all columns.</p>' : ''}
@@ -1002,7 +1342,7 @@ Object.assign(MCQApp, {
         </div>
       </section>
 
-      <section class="admin-detail-section">
+      <section class="admin-detail-section ${showReplaysPanel ? '' : 'admin-mobile-hidden'}">
         <h4>Replay Player</h4>
         ${heatmaps.loadingReplayDetail ? '<div class="admin-empty-card"><p>Loading replay timeline...</p></div>' : ''}
         ${selectedReplay ? `
@@ -1292,6 +1632,18 @@ Object.assign(MCQApp, {
       const action = actionEl?.getAttribute('data-admin-action');
       if (!action) return;
 
+      if (action === 'tab-overview') {
+        this.setAdminMobileTab('overview');
+        return;
+      }
+      if (action === 'tab-students') {
+        this.setAdminMobileTab('students');
+        return;
+      }
+      if (action === 'tab-detail') {
+        this.setAdminMobileTab('detail');
+        return;
+      }
       if (action === 'back-home') {
         this.showView('home');
         return;
@@ -1314,6 +1666,9 @@ Object.assign(MCQApp, {
       if (action === 'load-student') {
         const userId = String(actionEl?.getAttribute('data-user-id') || '').trim();
         if (userId) {
+          if (this.isAdminMobileViewport()) {
+            this.setAdminMobileTab('detail');
+          }
           this.loadAdminStudentDetail(userId, { silent: false });
         }
         return;
@@ -1322,8 +1677,38 @@ Object.assign(MCQApp, {
         const topicId = String(actionEl?.getAttribute('data-topic-id') || '').trim();
         const testId = String(actionEl?.getAttribute('data-test-id') || '').trim();
         if (topicId && testId) {
-          this.resetAdminStudentTestProgress(topicId, testId);
+          this.promptAdminResetProgress('test', { topicId, testId });
         }
+        return;
+      }
+      if (action === 'reset-topic') {
+        const topicId = String(actionEl?.getAttribute('data-topic-id') || '').trim();
+        if (topicId) {
+          this.promptAdminResetProgress('topic', { topicId });
+        }
+        return;
+      }
+      if (action === 'reset-all-tests') {
+        this.promptAdminResetProgress('all-tests', {});
+        return;
+      }
+      if (action === 'confirm-reset') {
+        const scope = String(actionEl?.getAttribute('data-scope') || '').trim().toLowerCase();
+        const topicId = String(actionEl?.getAttribute('data-topic-id') || '').trim();
+        const testId = String(actionEl?.getAttribute('data-test-id') || '').trim();
+        this.performAdminStudentProgressReset(scope, { topicId, testId });
+        return;
+      }
+      if (action === 'cancel-reset') {
+        this.cancelAdminResetPrompt();
+        return;
+      }
+      if (action === 'undo-reset') {
+        const resetActionId = String(actionEl?.getAttribute('data-reset-action-id') || '').trim();
+        if (resetActionId) {
+          this.undoAdminStudentResetProgress(resetActionId);
+        }
+        return;
       }
     });
 
@@ -1344,6 +1729,18 @@ Object.assign(MCQApp, {
       const action = actionEl?.getAttribute('data-heatmap-action');
       if (!action) return;
 
+      if (action === 'tab-overview') {
+        this.setHeatmapMobileTab('overview');
+        return;
+      }
+      if (action === 'tab-question') {
+        this.setHeatmapMobileTab('question');
+        return;
+      }
+      if (action === 'tab-replays') {
+        this.setHeatmapMobileTab('replays');
+        return;
+      }
       if (action === 'back-home') {
         this.showView('home');
         return;
@@ -1376,6 +1773,9 @@ Object.assign(MCQApp, {
       if (action === 'load-question') {
         const questionId = String(actionEl?.getAttribute('data-question-id') || '').trim();
         if (questionId) {
+          if (this.isAdminMobileViewport()) {
+            this.setHeatmapMobileTab('question');
+          }
           this.loadAdminHeatmapQuestion(questionId, { silent: false });
         }
         return;
@@ -1384,6 +1784,9 @@ Object.assign(MCQApp, {
       if (action === 'load-replay') {
         const replayId = String(actionEl?.getAttribute('data-replay-id') || '').trim();
         if (replayId) {
+          if (this.isAdminMobileViewport()) {
+            this.setHeatmapMobileTab('replays');
+          }
           this.loadAdminHeatmapReplayDetail(replayId, { silent: false });
         }
       }
@@ -1776,6 +2179,7 @@ Object.assign(MCQApp, {
     this.clearPendingSyncTimer();
     this.stopAdminDashboardAutoRefresh();
     this.stopAdminHeatmapAutoRefresh();
+    this.stopAdminUndoCountdown();
     try {
       await this.fetchAuthJson('/api/auth/signout', { method: 'POST', body: JSON.stringify({}) });
     } catch (error) {
@@ -1790,6 +2194,10 @@ Object.assign(MCQApp, {
     this.state.auth.admin.students = [];
     this.state.auth.admin.selectedStudentId = '';
     this.state.auth.admin.selectedStudentDetail = null;
+    this.state.auth.admin.pendingResetConfirm = null;
+    this.state.auth.admin.lastUndoAction = null;
+    this.state.auth.admin.undoIntervalId = null;
+    this.state.auth.admin.mobileTab = 'overview';
     this.state.auth.admin.error = '';
     this.state.auth.admin.detailError = '';
     this.ensureHeatmapDashboardState();
@@ -1800,6 +2208,7 @@ Object.assign(MCQApp, {
     this.state.auth.heatmaps.replays = [];
     this.state.auth.heatmaps.selectedReplaySessionId = '';
     this.state.auth.heatmaps.selectedReplay = null;
+    this.state.auth.heatmaps.mobileTab = 'overview';
     this.state.auth.heatmaps.error = '';
     this.state.auth.heatmaps.questionError = '';
     this.state.auth.heatmaps.replayError = '';

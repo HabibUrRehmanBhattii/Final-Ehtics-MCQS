@@ -734,3 +734,203 @@ test('heatmap auto-refresh interval starts in heatmap view and stops when leavin
   app.showView('home');
   assert.deepEqual(clearedIds, [1]);
 });
+
+test('renderAdminDashboard mobile view includes sticky tabs, bulk reset actions, and undo cards', () => {
+  const adminRoot = new ElementStub();
+  const { app } = loadMCQAppWithAuth({
+    'admin-dashboard-root': adminRoot
+  }, {
+    innerWidth: 390
+  });
+
+  app.state.auth.authenticated = true;
+  app.state.auth.user = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    isAdmin: true
+  };
+
+  const admin = app.ensureAdminDashboardState();
+  admin.mobileTab = 'detail';
+  admin.selectedStudentId = 'student-1';
+  admin.selectedStudentDetail = {
+    student: {
+      id: 'student-1',
+      email: 'alpha.student@example.com'
+    },
+    summary: {
+      answeredCount: 12,
+      completionPct: 66.7,
+      firstTryAccuracyPct: 72.5,
+      totalStudyTimeMs: 300000
+    },
+    pendingResetUndoActions: [
+      {
+        resetActionId: 'undo-1',
+        scope: 'topic',
+        topicId: 'llqp-life',
+        testId: null,
+        createdAt: '2026-03-25T10:00:00.000Z',
+        expiresAt: new Date(Date.now() + 10 * 60 * 1000).toISOString()
+      }
+    ],
+    topics: [
+      {
+        topicId: 'llqp-life',
+        answeredCount: 12,
+        completionPct: 66.7,
+        firstTryAccuracyPct: 72.5,
+        tests: [
+          {
+            topicId: 'llqp-life',
+            testId: 'life-01',
+            answeredCount: 6,
+            viewedCount: 8,
+            revealedCount: 6,
+            bookmarkedCount: 2,
+            firstTryAccuracyPct: 70,
+            studyTimeMs: 180000,
+            lastUpdatedAt: '2026-03-24T11:40:00.000Z'
+          }
+        ]
+      }
+    ]
+  };
+  admin.pendingResetConfirm = {
+    scope: 'topic',
+    topicId: 'llqp-life',
+    testId: '',
+    label: 'Reset topic llqp-life'
+  };
+
+  app.renderAdminDashboard();
+
+  assert.match(adminRoot.innerHTML, /admin-mobile-tabs/);
+  assert.match(adminRoot.innerHTML, /data-admin-action="tab-overview"/);
+  assert.match(adminRoot.innerHTML, /data-admin-action="tab-students"/);
+  assert.match(adminRoot.innerHTML, /data-admin-action="tab-detail"/);
+  assert.match(adminRoot.innerHTML, /data-admin-action="reset-topic"/);
+  assert.match(adminRoot.innerHTML, /data-admin-action="reset-all-tests"/);
+  assert.match(adminRoot.innerHTML, /data-admin-action="undo-reset"/);
+  assert.match(adminRoot.innerHTML, /Confirm Reset/);
+  assert.match(adminRoot.innerHTML, /data-admin-action="confirm-reset"/);
+});
+
+test('reset topic, reset all-tests, and undo actions call expected admin endpoints', async () => {
+  const fetchCalls = [];
+  let refreshCalls = 0;
+  const { app } = loadMCQAppWithAuth({}, {
+    location: { href: 'https://hllqpmcqs.com/' },
+    fetchImpl: async (url, options) => {
+      fetchCalls.push({ url, options });
+      const parsed = new URL(url);
+      if (parsed.pathname.endsWith('/reset-topic-progress')) {
+        return new Response(JSON.stringify({
+          success: true,
+          scope: 'topic',
+          resetActionId: 'reset-topic-1',
+          undoExpiresAt: '2026-03-25T12:15:00.000Z'
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+      if (parsed.pathname.endsWith('/reset-all-tests-progress')) {
+        return new Response(JSON.stringify({
+          success: true,
+          scope: 'all-tests',
+          resetActionId: 'reset-all-1',
+          undoExpiresAt: '2026-03-25T12:15:00.000Z'
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+      if (parsed.pathname.endsWith('/undo-reset-progress')) {
+        return new Response(JSON.stringify({
+          success: true,
+          resetActionId: 'reset-all-1'
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+      return new Response(JSON.stringify({ success: true }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }
+  });
+
+  app.state.auth.authenticated = true;
+  app.state.auth.user = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    isAdmin: true
+  };
+  app.ensureAdminDashboardState();
+  app.state.auth.admin.selectedStudentId = 'student-1';
+  app.refreshAdminDashboard = async () => {
+    refreshCalls += 1;
+    return true;
+  };
+  app.renderAdminDashboard = () => {};
+  app.showToast = () => {};
+
+  await app.resetAdminStudentTopicProgress('llqp-life');
+  await app.resetAdminStudentAllTestsProgress();
+  await app.undoAdminStudentResetProgress('reset-all-1');
+
+  assert.equal(fetchCalls.length, 3);
+  assert.equal(fetchCalls[0].url, 'https://hllqpmcqs.com/api/admin/students/student-1/reset-topic-progress');
+  assert.deepEqual(JSON.parse(fetchCalls[0].options.body), { topicId: 'llqp-life' });
+  assert.equal(fetchCalls[1].url, 'https://hllqpmcqs.com/api/admin/students/student-1/reset-all-tests-progress');
+  assert.deepEqual(JSON.parse(fetchCalls[1].options.body), {});
+  assert.equal(fetchCalls[2].url, 'https://hllqpmcqs.com/api/admin/students/student-1/undo-reset-progress');
+  assert.deepEqual(JSON.parse(fetchCalls[2].options.body), { resetActionId: 'reset-all-1' });
+  assert.equal(refreshCalls, 3);
+});
+
+test('renderAdminHeatmapDashboard mobile view includes sticky top tabs', () => {
+  const heatmapRoot = new ElementStub();
+  const { app } = loadMCQAppWithAuth({
+    'admin-heatmaps-root': heatmapRoot
+  }, {
+    innerWidth: 390
+  });
+
+  app.state.auth.authenticated = true;
+  app.state.auth.user = {
+    id: 'admin-1',
+    email: 'habibcanad@gmail.com',
+    isAdmin: true
+  };
+
+  const heatmaps = app.ensureHeatmapDashboardState();
+  heatmaps.mobileTab = 'question';
+  heatmaps.overview = {
+    sessionCount: 4,
+    eventCount: 120,
+    clickCount: 45,
+    moveCount: 55,
+    scrollCount: 20,
+    avgScrollPercent: 63.2
+  };
+  heatmaps.questions = [
+    {
+      questionId: 'q-1',
+      topicId: 'llqp-life',
+      testId: 'life-01',
+      clickCount: 25,
+      moveCount: 31,
+      scrollCount: 10,
+      distractorPressurePct: 42.5
+    }
+  ];
+  heatmaps.replays = [
+    {
+      sessionId: 'session-1',
+      isAuthenticated: true,
+      deviceType: 'mobile',
+      topicId: 'llqp-life',
+      testId: 'life-01',
+      eventCount: 55,
+      replayChunkCount: 1
+    }
+  ];
+
+  app.renderAdminHeatmapDashboard();
+
+  assert.match(heatmapRoot.innerHTML, /admin-mobile-tabs/);
+  assert.match(heatmapRoot.innerHTML, /data-heatmap-action="tab-overview"/);
+  assert.match(heatmapRoot.innerHTML, /data-heatmap-action="tab-question"/);
+  assert.match(heatmapRoot.innerHTML, /data-heatmap-action="tab-replays"/);
+});

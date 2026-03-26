@@ -20,10 +20,28 @@ function createSessionCookie(secret, token = 'session-token') {
   return `mcq_session=${encodeURIComponent(`${token}.${signature}`)}`;
 }
 
-function createDbMock({ sessionRow = null, studentRows = [], studentById = {} } = {}) {
+function createDbMock({
+  sessionRow = null,
+  studentRows = [],
+  studentById = {},
+  resetActionById = {},
+  pendingResetUndoByUser = {}
+} = {}) {
+  const resetActionStore = new Map(Object.entries(resetActionById));
+  const pendingUndoStore = new Map(
+    Object.entries(pendingResetUndoByUser).map(([userId, rows]) => [
+      userId,
+      Array.isArray(rows) ? rows.slice() : []
+    ])
+  );
+
   const state = {
     progressWrites: [],
-    auditLogWrites: []
+    auditLogWrites: [],
+    resetActionWrites: [],
+    resetActionUpdateWrites: [],
+    resetActionDeleteWrites: [],
+    deleteRuns: []
   };
 
   return {
@@ -46,20 +64,107 @@ function createDbMock({ sessionRow = null, studentRows = [], studentById = {} } 
           if (sql.includes('WHERE users.id = ?')) {
             return studentById[statement.bound[0]] || null;
           }
+          if (sql.includes('FROM admin_progress_reset_actions') && sql.includes('WHERE id = ?')) {
+            return resetActionStore.get(statement.bound[0]) || null;
+          }
           return null;
         },
         async all() {
           if (sql.includes("WHERE users.status = 'active'")) {
             return { results: studentRows };
           }
+          if (sql.includes('FROM admin_progress_reset_actions') && sql.includes('WHERE target_user_id = ?')) {
+            const [userId, nowIso] = statement.bound;
+            const nowMs = Date.parse(nowIso || '');
+            const rows = pendingUndoStore.get(userId) || [];
+            const filteredRows = rows.filter((row) => {
+              if (row?.undone_at) return false;
+              const expiresMs = Date.parse(row?.expires_at || '');
+              if (!Number.isFinite(expiresMs) || !Number.isFinite(nowMs)) return true;
+              return expiresMs > nowMs;
+            });
+            return { results: filteredRows };
+          }
           return { results: [] };
         },
         async run() {
           if (sql.includes('INSERT INTO user_progress')) {
             state.progressWrites.push(statement.bound);
+            const [userId, payload, updatedAt] = statement.bound;
+            if (studentById[userId]) {
+              studentById[userId] = {
+                ...studentById[userId],
+                payload,
+                progress_updated_at: updatedAt
+              };
+            }
           }
           if (sql.includes('INSERT INTO audit_logs')) {
             state.auditLogWrites.push(statement.bound);
+          }
+          if (sql.includes('INSERT INTO admin_progress_reset_actions')) {
+            const [
+              id,
+              actorAdminUserId,
+              targetUserId,
+              scope,
+              topicId,
+              testId,
+              beforePayload,
+              afterPayload,
+              removedKeysJson,
+              createdAt,
+              expiresAt
+            ] = statement.bound;
+            const row = {
+              id,
+              actor_admin_user_id: actorAdminUserId,
+              target_user_id: targetUserId,
+              scope,
+              topic_id: topicId,
+              test_id: testId,
+              before_payload: beforePayload,
+              after_payload: afterPayload,
+              removed_keys_json: removedKeysJson,
+              created_at: createdAt,
+              expires_at: expiresAt,
+              undone_at: null,
+              undone_by_user_id: null
+            };
+            resetActionStore.set(id, row);
+            const currentRows = pendingUndoStore.get(targetUserId) || [];
+            currentRows.unshift(row);
+            pendingUndoStore.set(targetUserId, currentRows);
+            state.resetActionWrites.push(statement.bound);
+          }
+          if (sql.includes('UPDATE admin_progress_reset_actions')) {
+            const [undoneAt, undoneByUserId, resetActionId] = statement.bound;
+            const row = resetActionStore.get(resetActionId) || null;
+            if (!row || row.undone_at) {
+              state.resetActionUpdateWrites.push({ bound: statement.bound, changes: 0 });
+              return { success: true, meta: { changes: 0 } };
+            }
+            row.undone_at = undoneAt;
+            row.undone_by_user_id = undoneByUserId;
+            state.resetActionUpdateWrites.push({ bound: statement.bound, changes: 1 });
+            return { success: true, meta: { changes: 1 } };
+          }
+          if (sql.includes('DELETE FROM admin_progress_reset_actions WHERE id = ?')) {
+            const [resetActionId] = statement.bound;
+            const existing = resetActionStore.get(resetActionId) || null;
+            if (existing) {
+              const userRows = pendingUndoStore.get(existing.target_user_id) || [];
+              pendingUndoStore.set(
+                existing.target_user_id,
+                userRows.filter((row) => String(row.id) !== String(resetActionId))
+              );
+            }
+            resetActionStore.delete(resetActionId);
+            state.resetActionDeleteWrites.push(statement.bound);
+            return { success: true, meta: { changes: existing ? 1 : 0 } };
+          }
+          if (sql.includes('DELETE FROM admin_progress_reset_actions WHERE expires_at < ?')) {
+            state.deleteRuns.push({ sql, bound: statement.bound });
           }
           return { success: true };
         }
@@ -253,7 +358,8 @@ function createHeatmapDbMock({
           if (sql.includes('DELETE FROM heatmap_events')
             || sql.includes('DELETE FROM heatmap_daily_aggregates')
             || sql.includes('DELETE FROM heatmap_replay_chunks')
-            || sql.includes('DELETE FROM heatmap_sessions')) {
+            || sql.includes('DELETE FROM heatmap_sessions')
+            || sql.includes('DELETE FROM admin_progress_reset_actions')) {
             state.deleteRuns.push({ sql, bound: statement.bound });
           }
           return { success: true, meta: { changes: 1 } };
@@ -838,6 +944,19 @@ test('/api/admin/students/:userId returns deep analytics and reset endpoint remo
     },
     studentById: {
       'student-1': studentRow
+    },
+    pendingResetUndoByUser: {
+      'student-1': [
+        {
+          id: 'undo-1',
+          scope: 'topic',
+          topic_id: 'llqp-life',
+          test_id: null,
+          created_at: new Date(Date.now() - 60_000).toISOString(),
+          expires_at: new Date(Date.now() + 10 * 60_000).toISOString(),
+          undone_at: null
+        }
+      ]
     }
   });
 
@@ -864,6 +983,9 @@ test('/api/admin/students/:userId returns deep analytics and reset endpoint remo
   assert.equal(detailPayload.summary.totalStudyTimeMs, 210000);
   assert.equal(detailPayload.lastSession.topicId, 'llqp-life');
   assert.equal(detailPayload.lastSession.testId, 'life-01');
+  assert.equal(Array.isArray(detailPayload.pendingResetUndoActions), true);
+  assert.equal(detailPayload.pendingResetUndoActions[0].resetActionId, 'undo-1');
+  assert.equal(detailPayload.pendingResetUndoActions[0].scope, 'topic');
 
   const resetResponse = await worker.defaultExport.fetch(
     new Request('https://hllqpmcqs.com/api/admin/students/student-1/reset-test-progress', {
@@ -891,6 +1013,9 @@ test('/api/admin/students/:userId returns deep analytics and reset endpoint remo
     'progress_llqp-life_life-01',
     'shuffle_llqp-life_life-01'
   ]);
+  assert.equal(resetPayload.scope, 'test');
+  assert.equal(typeof resetPayload.resetActionId, 'string');
+  assert.equal(typeof resetPayload.undoExpiresAt, 'string');
 
   assert.equal(db.state.progressWrites.length, 1);
   const [, serializedSnapshot] = db.state.progressWrites[0];
@@ -906,6 +1031,449 @@ test('/api/admin/students/:userId returns deep analytics and reset endpoint remo
   assert.equal(details.actorAdminUserId, 'admin-1');
   assert.equal(details.targetUserId, 'student-1');
   assert.equal(details.testKey, 'llqp-life_life-01');
+});
+
+test('new admin reset and undo routes reject unauthenticated and non-admin sessions', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+  const routes = [
+    '/api/admin/students/student-1/reset-topic-progress',
+    '/api/admin/students/student-1/reset-all-tests-progress',
+    '/api/admin/students/student-1/undo-reset-progress'
+  ];
+
+  for (const route of routes) {
+    const unauthenticatedResponse = await worker.defaultExport.fetch(
+      new Request(`https://hllqpmcqs.com${route}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      }),
+      {
+        DB: createDbMock({ sessionRow: null }),
+        SESSION_SECRET: secret,
+        ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+      }
+    );
+    assert.equal(unauthenticatedResponse.status, 401, `expected 401 for ${route}`);
+
+    const nonAdminResponse = await worker.defaultExport.fetch(
+      new Request(`https://hllqpmcqs.com${route}`, {
+        method: 'POST',
+        headers: {
+          Cookie: createSessionCookie(secret, `non-admin-${route}`),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({})
+      }),
+      {
+        DB: createDbMock({
+          sessionRow: {
+            session_id: `sess-non-admin-${route}`,
+            user_id: 'student-1',
+            expires_at: new Date(Date.now() + 60_000).toISOString(),
+            revoked_at: null,
+            email: 'student@example.com',
+            status: 'active'
+          }
+        }),
+        SESSION_SECRET: secret,
+        ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+      }
+    );
+    assert.equal(nonAdminResponse.status, 403, `expected 403 for ${route}`);
+  }
+});
+
+test('topic and all-tests reset scopes remove scoped keys and preserve wrong-question stats', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+
+  const baseSnapshot = {
+    version: 1,
+    items: {
+      'progress_llqp-life_life-01': JSON.stringify({ revealed: ['1'] }),
+      'shuffle_llqp-life_life-01': JSON.stringify({ order: ['1', '2'] }),
+      'progress_llqp-life_life-02': JSON.stringify({ revealed: ['3'] }),
+      'shuffle_llqp-life_life-02': JSON.stringify({ order: ['3', '4'] }),
+      'progress_llqp-ethics_ethics-01': JSON.stringify({ revealed: ['5'] }),
+      'shuffle_llqp-ethics_ethics-01': JSON.stringify({ order: ['5', '6'] }),
+      wrong_questions: JSON.stringify([{ topicId: 'llqp-life', questionId: 'q-1' }]),
+      study_daily_stats: JSON.stringify({ '2026-03-25': { answered: 20 } }),
+      last_session: JSON.stringify({ topicId: 'llqp-life', testId: 'life-02' })
+    }
+  };
+
+  const topicDb = createDbMock({
+    sessionRow: {
+      session_id: 'sess-topic-reset',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    studentById: {
+      'student-1': {
+        id: 'student-1',
+        email: 'alpha.student@example.com',
+        status: 'active',
+        created_at: '2026-01-01T00:00:00.000Z',
+        updated_at: '2026-03-25T10:00:00.000Z',
+        last_login_at: '2026-03-25T10:00:00.000Z',
+        payload: JSON.stringify(baseSnapshot),
+        progress_updated_at: '2026-03-25T10:00:00.000Z'
+      }
+    }
+  });
+
+  const topicResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/student-1/reset-topic-progress', {
+      method: 'POST',
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-topic-reset'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ topicId: 'llqp-life' })
+    }),
+    {
+      DB: topicDb,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  assert.equal(topicResponse.status, 200);
+  const topicPayload = await topicResponse.json();
+  assert.equal(topicPayload.scope, 'topic');
+  assert.equal(topicPayload.topicId, 'llqp-life');
+  assert.equal(Array.isArray(topicPayload.removedKeys), true);
+  assert.equal(typeof topicPayload.resetActionId, 'string');
+  assert.equal(typeof topicPayload.undoExpiresAt, 'string');
+
+  const topicWrittenSnapshot = JSON.parse(topicDb.state.progressWrites[0][1]);
+  assert.equal(topicWrittenSnapshot.items['progress_llqp-life_life-01'], undefined);
+  assert.equal(topicWrittenSnapshot.items['shuffle_llqp-life_life-01'], undefined);
+  assert.equal(topicWrittenSnapshot.items['progress_llqp-life_life-02'], undefined);
+  assert.equal(topicWrittenSnapshot.items['shuffle_llqp-life_life-02'], undefined);
+  assert.equal(topicWrittenSnapshot.items.last_session, undefined);
+  assert.ok(topicWrittenSnapshot.items['progress_llqp-ethics_ethics-01']);
+  assert.ok(topicWrittenSnapshot.items['shuffle_llqp-ethics_ethics-01']);
+  assert.ok(topicWrittenSnapshot.items.wrong_questions);
+  assert.ok(topicWrittenSnapshot.items.study_daily_stats);
+  assert.ok(topicDb.state.auditLogWrites.find((entry) => entry[2] === 'admin.progress_reset_topic'));
+
+  const allTestsDb = createDbMock({
+    sessionRow: {
+      session_id: 'sess-all-tests-reset',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    studentById: {
+      'student-1': {
+        id: 'student-1',
+        email: 'alpha.student@example.com',
+        status: 'active',
+        created_at: '2026-01-01T00:00:00.000Z',
+        updated_at: '2026-03-25T10:00:00.000Z',
+        last_login_at: '2026-03-25T10:00:00.000Z',
+        payload: JSON.stringify(baseSnapshot),
+        progress_updated_at: '2026-03-25T10:00:00.000Z'
+      }
+    }
+  });
+
+  const allTestsResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/student-1/reset-all-tests-progress', {
+      method: 'POST',
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-all-tests-reset'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({})
+    }),
+    {
+      DB: allTestsDb,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  assert.equal(allTestsResponse.status, 200);
+  const allTestsPayload = await allTestsResponse.json();
+  assert.equal(allTestsPayload.scope, 'all-tests');
+  assert.equal(typeof allTestsPayload.resetActionId, 'string');
+  assert.equal(typeof allTestsPayload.undoExpiresAt, 'string');
+
+  const allTestsWrittenSnapshot = JSON.parse(allTestsDb.state.progressWrites[0][1]);
+  Object.keys(allTestsWrittenSnapshot.items).forEach((key) => {
+    assert.equal(key.startsWith('progress_') || key.startsWith('shuffle_') || key === 'last_session', false);
+  });
+  assert.ok(allTestsWrittenSnapshot.items.wrong_questions);
+  assert.ok(allTestsWrittenSnapshot.items.study_daily_stats);
+  assert.equal(allTestsWrittenSnapshot.items.last_session, undefined);
+  assert.ok(allTestsDb.state.auditLogWrites.find((entry) => entry[2] === 'admin.progress_reset_all_tests'));
+});
+
+test('undo reset restores pre-reset snapshot and rejects expired, already-undone, and foreign reset actions', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+
+  const beforeSnapshot = {
+    version: 1,
+    items: {
+      'progress_llqp-life_life-01': JSON.stringify({ revealed: ['1', '2'] }),
+      'shuffle_llqp-life_life-01': JSON.stringify({ order: ['1', '2', '3'] }),
+      wrong_questions: JSON.stringify([{ questionId: 'q-3' }]),
+      study_daily_stats: JSON.stringify({ '2026-03-25': { answered: 10 } })
+    }
+  };
+  const afterSnapshot = {
+    version: 1,
+    items: {
+      wrong_questions: JSON.stringify([{ questionId: 'q-3' }]),
+      study_daily_stats: JSON.stringify({ '2026-03-25': { answered: 10 } })
+    }
+  };
+
+  const validActionId = 'reset-action-valid';
+  const validDb = createDbMock({
+    sessionRow: {
+      session_id: 'sess-undo',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    studentById: {
+      'student-1': {
+        id: 'student-1',
+        email: 'alpha.student@example.com',
+        status: 'active',
+        created_at: '2026-01-01T00:00:00.000Z',
+        updated_at: '2026-03-25T10:00:00.000Z',
+        last_login_at: '2026-03-25T10:00:00.000Z',
+        payload: JSON.stringify(afterSnapshot),
+        progress_updated_at: '2026-03-25T10:00:00.000Z'
+      }
+    },
+    resetActionById: {
+      [validActionId]: {
+        id: validActionId,
+        actor_admin_user_id: 'admin-1',
+        target_user_id: 'student-1',
+        scope: 'all-tests',
+        topic_id: null,
+        test_id: null,
+        before_payload: JSON.stringify(beforeSnapshot),
+        after_payload: JSON.stringify(afterSnapshot),
+        removed_keys_json: JSON.stringify(['progress_llqp-life_life-01', 'shuffle_llqp-life_life-01']),
+        created_at: '2026-03-25T10:05:00.000Z',
+        expires_at: new Date(Date.now() + 10 * 60 * 1000).toISOString(),
+        undone_at: null,
+        undone_by_user_id: null
+      }
+    }
+  });
+
+  const undoResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/student-1/undo-reset-progress', {
+      method: 'POST',
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-undo-reset'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ resetActionId: validActionId })
+    }),
+    {
+      DB: validDb,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  assert.equal(undoResponse.status, 200);
+  const undoPayload = await undoResponse.json();
+  assert.equal(undoPayload.success, true);
+  assert.equal(undoPayload.scope, 'all-tests');
+  assert.equal(undoPayload.resetActionId, validActionId);
+  assert.equal(validDb.state.progressWrites.length, 1);
+  assert.deepEqual(JSON.parse(validDb.state.progressWrites[0][1]), beforeSnapshot);
+  assert.equal(validDb.state.resetActionUpdateWrites.length, 1);
+  assert.equal(validDb.state.resetActionUpdateWrites[0].changes, 1);
+  assert.ok(validDb.state.auditLogWrites.find((entry) => entry[2] === 'admin.progress_reset_undo'));
+
+  const expiredDb = createDbMock({
+    sessionRow: {
+      session_id: 'sess-undo-expired',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    studentById: {
+      'student-1': {
+        id: 'student-1',
+        email: 'alpha.student@example.com',
+        status: 'active',
+        created_at: '2026-01-01T00:00:00.000Z',
+        updated_at: '2026-03-25T10:00:00.000Z',
+        last_login_at: '2026-03-25T10:00:00.000Z',
+        payload: JSON.stringify(afterSnapshot),
+        progress_updated_at: '2026-03-25T10:00:00.000Z'
+      }
+    },
+    resetActionById: {
+      expired: {
+        id: 'expired',
+        actor_admin_user_id: 'admin-1',
+        target_user_id: 'student-1',
+        scope: 'test',
+        topic_id: 'llqp-life',
+        test_id: 'life-01',
+        before_payload: JSON.stringify(beforeSnapshot),
+        after_payload: JSON.stringify(afterSnapshot),
+        removed_keys_json: JSON.stringify(['progress_llqp-life_life-01']),
+        created_at: '2026-03-25T10:05:00.000Z',
+        expires_at: new Date(Date.now() - 60 * 1000).toISOString(),
+        undone_at: null,
+        undone_by_user_id: null
+      }
+    }
+  });
+  const expiredResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/student-1/undo-reset-progress', {
+      method: 'POST',
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-undo-expired'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ resetActionId: 'expired' })
+    }),
+    {
+      DB: expiredDb,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+  assert.equal(expiredResponse.status, 410);
+
+  const undoneDb = createDbMock({
+    sessionRow: {
+      session_id: 'sess-undo-already',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    studentById: {
+      'student-1': {
+        id: 'student-1',
+        email: 'alpha.student@example.com',
+        status: 'active',
+        created_at: '2026-01-01T00:00:00.000Z',
+        updated_at: '2026-03-25T10:00:00.000Z',
+        last_login_at: '2026-03-25T10:00:00.000Z',
+        payload: JSON.stringify(afterSnapshot),
+        progress_updated_at: '2026-03-25T10:00:00.000Z'
+      }
+    },
+    resetActionById: {
+      alreadyUndone: {
+        id: 'alreadyUndone',
+        actor_admin_user_id: 'admin-1',
+        target_user_id: 'student-1',
+        scope: 'topic',
+        topic_id: 'llqp-life',
+        test_id: null,
+        before_payload: JSON.stringify(beforeSnapshot),
+        after_payload: JSON.stringify(afterSnapshot),
+        removed_keys_json: JSON.stringify(['progress_llqp-life_life-01']),
+        created_at: '2026-03-25T10:05:00.000Z',
+        expires_at: new Date(Date.now() + 60 * 1000).toISOString(),
+        undone_at: '2026-03-25T10:07:00.000Z',
+        undone_by_user_id: 'admin-1'
+      }
+    }
+  });
+  const alreadyUndoneResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/student-1/undo-reset-progress', {
+      method: 'POST',
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-undo-already'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ resetActionId: 'alreadyUndone' })
+    }),
+    {
+      DB: undoneDb,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+  assert.equal(alreadyUndoneResponse.status, 409);
+
+  const foreignDb = createDbMock({
+    sessionRow: {
+      session_id: 'sess-undo-foreign',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: null,
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    },
+    studentById: {
+      'student-1': {
+        id: 'student-1',
+        email: 'alpha.student@example.com',
+        status: 'active',
+        created_at: '2026-01-01T00:00:00.000Z',
+        updated_at: '2026-03-25T10:00:00.000Z',
+        last_login_at: '2026-03-25T10:00:00.000Z',
+        payload: JSON.stringify(afterSnapshot),
+        progress_updated_at: '2026-03-25T10:00:00.000Z'
+      }
+    },
+    resetActionById: {
+      foreign: {
+        id: 'foreign',
+        actor_admin_user_id: 'admin-1',
+        target_user_id: 'student-2',
+        scope: 'all-tests',
+        topic_id: null,
+        test_id: null,
+        before_payload: JSON.stringify(beforeSnapshot),
+        after_payload: JSON.stringify(afterSnapshot),
+        removed_keys_json: JSON.stringify([]),
+        created_at: '2026-03-25T10:05:00.000Z',
+        expires_at: new Date(Date.now() + 60 * 1000).toISOString(),
+        undone_at: null,
+        undone_by_user_id: null
+      }
+    }
+  });
+  const foreignResponse = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/student-1/undo-reset-progress', {
+      method: 'POST',
+      headers: {
+        Cookie: createSessionCookie(secret, 'admin-undo-foreign'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ resetActionId: 'foreign' })
+    }),
+    {
+      DB: foreignDb,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+  assert.equal(foreignResponse.status, 404);
 });
 
 test('/api/auth/config reports heatmapEnabled based on HEATMAP_ENABLED env flag', async () => {
@@ -1229,7 +1797,7 @@ test('/api/admin/heatmaps/replays/:sessionId returns replay chunks and session m
   assert.equal(payload.chunks[1].payload.events[0].type, 'scroll');
 });
 
-test('scheduled cleanup runs retention deletes for events, aggregates, replay chunks, and orphan sessions', async () => {
+test('scheduled cleanup runs retention deletes for events, aggregates, replay chunks, orphan sessions, and expired reset undo rows', async () => {
   const worker = loadWorkerModule();
   const db = createHeatmapDbMock();
   const waits = [];
@@ -1246,4 +1814,5 @@ test('scheduled cleanup runs retention deletes for events, aggregates, replay ch
   assert.equal(deleteSql.some((sql) => sql.includes('DELETE FROM heatmap_daily_aggregates')), true);
   assert.equal(deleteSql.some((sql) => sql.includes('DELETE FROM heatmap_replay_chunks')), true);
   assert.equal(deleteSql.some((sql) => sql.includes('DELETE FROM heatmap_sessions')), true);
+  assert.equal(deleteSql.some((sql) => sql.includes('DELETE FROM admin_progress_reset_actions')), true);
 });

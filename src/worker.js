@@ -23,6 +23,7 @@ const HEATMAP_RATE_LIMIT_WINDOW_MINUTES = 10;
 const HEATMAP_RATE_LIMIT_IP_MAX = 1500;
 const HEATMAP_EVENT_RETENTION_DAYS = 90;
 const HEATMAP_REPLAY_RETENTION_DAYS = 14;
+const ADMIN_RESET_UNDO_TTL_MS = 15 * 60 * 1000;
 
 const jsonResponse = (request, payload, init = {}) => {
   const headers = new Headers(init.headers || {});
@@ -77,6 +78,13 @@ function getErrorStatus(error) {
   if (/authentication required/i.test(message)) return 401;
   if (/admin access denied/i.test(message)) return 403;
   return 500;
+}
+
+function isNoSuchTableError(error, tableName = '') {
+  const message = String(error?.message || '').toLowerCase();
+  if (!message.includes('no such table')) return false;
+  if (!tableName) return true;
+  return message.includes(`no such table: ${String(tableName).toLowerCase()}`);
 }
 
 function getCookie(request, name) {
@@ -1132,6 +1140,122 @@ function parseProgressStorageKey(key, prefix) {
   };
 }
 
+function normalizeAdminResetScope(rawScope) {
+  const scope = String(rawScope || '').trim().toLowerCase();
+  if (scope === 'test' || scope === 'topic' || scope === 'all-tests') {
+    return scope;
+  }
+  return '';
+}
+
+function getAdminResetEventType(scope) {
+  if (scope === 'topic') return 'admin.progress_reset_topic';
+  if (scope === 'all-tests') return 'admin.progress_reset_all_tests';
+  return 'admin.progress_reset_test';
+}
+
+function collectResetCandidateKeys(items, scope, topicId, testId) {
+  const removedKeys = [];
+  if (!items || typeof items !== 'object') {
+    return removedKeys;
+  }
+
+  const allKeys = Object.keys(items);
+  if (scope === 'test') {
+    const progressKey = `progress_${topicId}_${testId}`;
+    const shuffleKey = `shuffle_${topicId}_${testId}`;
+    if (Object.prototype.hasOwnProperty.call(items, progressKey)) {
+      removedKeys.push(progressKey);
+    }
+    if (Object.prototype.hasOwnProperty.call(items, shuffleKey)) {
+      removedKeys.push(shuffleKey);
+    }
+    return removedKeys;
+  }
+
+  if (scope === 'topic') {
+    const progressPrefix = `progress_${topicId}_`;
+    const shufflePrefix = `shuffle_${topicId}_`;
+    allKeys.forEach((key) => {
+      if (key.startsWith(progressPrefix) || key.startsWith(shufflePrefix)) {
+        removedKeys.push(key);
+      }
+    });
+    return removedKeys;
+  }
+
+  if (scope === 'all-tests') {
+    allKeys.forEach((key) => {
+      if (key.startsWith('progress_') || key.startsWith('shuffle_')) {
+        removedKeys.push(key);
+      }
+    });
+    return removedKeys;
+  }
+
+  return removedKeys;
+}
+
+function shouldRemoveLastSessionForScope(items, scope, topicId, testId) {
+  if (!items || typeof items !== 'object') return false;
+  if (!Object.prototype.hasOwnProperty.call(items, 'last_session')) return false;
+  if (scope === 'all-tests') return true;
+
+  const lastSession = parseJsonString(items.last_session, null);
+  if (!lastSession || typeof lastSession !== 'object') {
+    return false;
+  }
+
+  const sessionTopicId = String(lastSession.topicId || '').trim();
+  const sessionTestId = String(lastSession.testId || '').trim();
+
+  if (scope === 'topic') {
+    return sessionTopicId === topicId;
+  }
+  if (scope === 'test') {
+    return sessionTopicId === topicId && sessionTestId === testId;
+  }
+
+  return false;
+}
+
+function sanitizeResetUndoRow(row) {
+  if (!row || typeof row !== 'object') return null;
+  return {
+    resetActionId: row.id,
+    scope: String(row.scope || ''),
+    topicId: row.topic_id || null,
+    testId: row.test_id || null,
+    expiresAt: row.expires_at || null,
+    createdAt: row.created_at || null
+  };
+}
+
+async function listPendingResetUndoActions(db, userId) {
+  if (!db || !userId) return [];
+  const nowIso = new Date().toISOString();
+
+  try {
+    const rows = await db.prepare(
+      `SELECT id, scope, topic_id, test_id, created_at, expires_at
+       FROM admin_progress_reset_actions
+       WHERE target_user_id = ?
+         AND undone_at IS NULL
+         AND expires_at > ?
+       ORDER BY created_at DESC`
+    ).bind(userId, nowIso).all();
+
+    return (rows?.results || [])
+      .map((row) => sanitizeResetUndoRow(row))
+      .filter(Boolean);
+  } catch (error) {
+    if (isNoSuchTableError(error, 'admin_progress_reset_actions')) {
+      return [];
+    }
+    throw error;
+  }
+}
+
 function countUniqueEntries(list) {
   if (!Array.isArray(list)) return 0;
   return new Set(list.map((value) => String(value))).size;
@@ -1516,6 +1640,7 @@ async function handleAdminStudentDetail(request, env, userId) {
 
     const analytics = buildStudentAnalyticsFromPayload(row.payload);
     const lastSyncedAt = row.progress_updated_at || analytics.summary.lastUpdatedAt || null;
+    const pendingResetUndoActions = await listPendingResetUndoActions(env.DB, row.id);
 
     return jsonResponse(request, {
       student: {
@@ -1531,6 +1656,7 @@ async function handleAdminStudentDetail(request, env, userId) {
       topics: analytics.topics,
       tests: analytics.tests,
       lastSession: analytics.lastSession,
+      pendingResetUndoActions,
       generatedAt: new Date().toISOString()
     });
   } catch (error) {
@@ -1538,21 +1664,42 @@ async function handleAdminStudentDetail(request, env, userId) {
   }
 }
 
-async function handleAdminResetStudentTestProgress(request, env, userId) {
+function normalizeResetIdentifiersForScope(scope, body) {
+  const topicId = String(body?.topicId || '').trim();
+  const testId = String(body?.testId || '').trim();
+
+  if (scope === 'test') {
+    if (!topicId || !testId) {
+      throw new Error('topicId and testId are required.');
+    }
+  } else if (scope === 'topic') {
+    if (!topicId) {
+      throw new Error('topicId is required.');
+    }
+  }
+
+  return {
+    topicId,
+    testId
+  };
+}
+
+async function executeAdminStudentProgressReset(request, env, userId, scope) {
   if (!env.DB) {
     return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  const normalizedScope = normalizeAdminResetScope(scope);
+  const eventType = getAdminResetEventType(normalizedScope);
+  if (!normalizedScope) {
+    return jsonResponse(request, { error: 'Invalid reset scope.' }, { status: 400 });
   }
 
   let adminSession = null;
   try {
     adminSession = await requireAdminSession(env, request);
     const body = await request.json();
-    const topicId = String(body?.topicId || '').trim();
-    const testId = String(body?.testId || '').trim();
-
-    if (!topicId || !testId) {
-      return jsonResponse(request, { error: 'topicId and testId are required.' }, { status: 400 });
-    }
+    const { topicId, testId } = normalizeResetIdentifiersForScope(normalizedScope, body);
 
     const row = await getStudentRowById(env, userId, {
       allowAdminUserId: adminSession.user.id
@@ -1572,70 +1719,221 @@ async function handleAdminResetStudentTestProgress(request, env, userId) {
     const items = snapshot.items && typeof snapshot.items === 'object'
       ? { ...snapshot.items }
       : {};
-    const progressKey = `progress_${topicId}_${testId}`;
-    const shuffleKey = `shuffle_${topicId}_${testId}`;
-    const removedKeys = [];
+    const removedKeys = collectResetCandidateKeys(items, normalizedScope, topicId, testId);
+    removedKeys.forEach((key) => {
+      delete items[key];
+    });
 
-    if (Object.prototype.hasOwnProperty.call(items, progressKey)) {
-      delete items[progressKey];
-      removedKeys.push(progressKey);
-    }
-    if (Object.prototype.hasOwnProperty.call(items, shuffleKey)) {
-      delete items[shuffleKey];
-      removedKeys.push(shuffleKey);
-    }
-
-    const lastSession = parseJsonString(items.last_session, null);
-    if (
-      lastSession &&
-      typeof lastSession === 'object' &&
-      String(lastSession.topicId || '') === topicId &&
-      String(lastSession.testId || '') === testId
-    ) {
+    if (shouldRemoveLastSessionForScope(items, normalizedScope, topicId, testId)) {
       delete items.last_session;
       removedKeys.push('last_session');
     }
+    removedKeys.sort();
 
     const now = new Date().toISOString();
+    const undoExpiresAt = new Date(Date.now() + ADMIN_RESET_UNDO_TTL_MS).toISOString();
+    const resetActionId = crypto.randomUUID();
     const nextSnapshot = {
       ...snapshot,
       version: Number(snapshot.version || 1),
       items
     };
+    const nextPayloadRaw = JSON.stringify(nextSnapshot);
+    let undoInserted = false;
 
-    await env.DB.prepare(
-      `INSERT INTO user_progress (user_id, payload, updated_at)
-       VALUES (?, ?, ?)
-       ON CONFLICT(user_id) DO UPDATE SET payload = excluded.payload, updated_at = excluded.updated_at`
-    ).bind(
-      row.id,
-      JSON.stringify(nextSnapshot),
-      now
-    ).run();
+    try {
+      await env.DB.prepare(
+        `INSERT INTO admin_progress_reset_actions
+         (id, actor_admin_user_id, target_user_id, scope, topic_id, test_id, before_payload, after_payload, removed_keys_json, created_at, expires_at, undone_at, undone_by_user_id)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL)`
+      ).bind(
+        resetActionId,
+        adminSession.user.id,
+        row.id,
+        normalizedScope,
+        topicId || null,
+        testId || null,
+        row.payload,
+        nextPayloadRaw,
+        JSON.stringify(removedKeys),
+        now,
+        undoExpiresAt
+      ).run();
+      undoInserted = true;
 
-    await logAuditEvent(env.DB, request, 'admin.progress_reset_test', 'success', adminSession.user.id, {
+      await env.DB.prepare(
+        `INSERT INTO user_progress (user_id, payload, updated_at)
+         VALUES (?, ?, ?)
+         ON CONFLICT(user_id) DO UPDATE SET payload = excluded.payload, updated_at = excluded.updated_at`
+      ).bind(
+        row.id,
+        nextPayloadRaw,
+        now
+      ).run();
+    } catch (error) {
+      if (undoInserted) {
+        try {
+          await env.DB.prepare(
+            'DELETE FROM admin_progress_reset_actions WHERE id = ?'
+          ).bind(resetActionId).run();
+        } catch {}
+      }
+      throw error;
+    }
+
+    await logAuditEvent(env.DB, request, eventType, 'success', adminSession.user.id, {
       actorAdminUserId: adminSession.user.id,
       targetUserId: row.id,
-      testKey: `${topicId}_${testId}`,
+      scope: normalizedScope,
+      topicId: topicId || null,
+      testId: testId || null,
+      testKey: topicId && testId ? `${topicId}_${testId}` : null,
       removedKeys
     });
 
     return jsonResponse(request, {
       success: true,
       targetUserId: row.id,
-      testKey: `${topicId}_${testId}`,
+      scope: normalizedScope,
+      topicId: topicId || null,
+      testId: testId || null,
+      testKey: topicId && testId ? `${topicId}_${testId}` : null,
+      resetActionId,
+      undoExpiresAt,
       removedKeys,
       updatedAt: now
     });
   } catch (error) {
+    const isUndoTableMissing = isNoSuchTableError(error, 'admin_progress_reset_actions');
     try {
-      await logAuditEvent(env.DB, request, 'admin.progress_reset_test', 'failed', adminSession?.user?.id || null, {
+      await logAuditEvent(env.DB, request, eventType, 'failed', adminSession?.user?.id || null, {
+        actorAdminUserId: adminSession?.user?.id || null,
+        targetUserId: userId,
+        scope: normalizedScope,
+        reason: error.message
+      });
+    } catch {}
+    return jsonResponse(
+      request,
+      { error: isUndoTableMissing ? 'Admin undo storage is missing. Apply latest database migrations.' : (error.message || 'Unable to reset student progress.') },
+      { status: isUndoTableMissing ? 503 : getErrorStatus(error) }
+    );
+  }
+}
+
+async function handleAdminResetStudentTestProgress(request, env, userId) {
+  return executeAdminStudentProgressReset(request, env, userId, 'test');
+}
+
+async function handleAdminResetStudentTopicProgress(request, env, userId) {
+  return executeAdminStudentProgressReset(request, env, userId, 'topic');
+}
+
+async function handleAdminResetStudentAllTestsProgress(request, env, userId) {
+  return executeAdminStudentProgressReset(request, env, userId, 'all-tests');
+}
+
+async function handleAdminUndoStudentResetProgress(request, env, userId) {
+  if (!env.DB) {
+    return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  let adminSession = null;
+  try {
+    adminSession = await requireAdminSession(env, request);
+    const body = await request.json();
+    const resetActionId = String(body?.resetActionId || '').trim();
+
+    if (!resetActionId) {
+      return jsonResponse(request, { error: 'resetActionId is required.' }, { status: 400 });
+    }
+
+    const row = await getStudentRowById(env, userId, {
+      allowAdminUserId: adminSession.user.id
+    });
+    if (!row) {
+      return jsonResponse(request, { error: 'Student not found.' }, { status: 404 });
+    }
+
+    const action = await env.DB.prepare(
+      `SELECT id, actor_admin_user_id, target_user_id, scope, topic_id, test_id,
+              before_payload, after_payload, removed_keys_json, created_at, expires_at,
+              undone_at, undone_by_user_id
+       FROM admin_progress_reset_actions
+       WHERE id = ?
+       LIMIT 1`
+    ).bind(resetActionId).first();
+
+    if (!action || String(action.target_user_id || '') !== String(row.id)) {
+      return jsonResponse(request, { error: 'Reset action not found for this student.' }, { status: 404 });
+    }
+    if (action.undone_at) {
+      return jsonResponse(request, { error: 'Reset action was already undone.' }, { status: 409 });
+    }
+
+    const expiresAtMs = Date.parse(action.expires_at || '');
+    if (!Number.isFinite(expiresAtMs) || expiresAtMs <= Date.now()) {
+      return jsonResponse(request, { error: 'Undo window has expired for this reset action.' }, { status: 410 });
+    }
+
+    const previousPayload = String(action.before_payload || '').trim();
+    if (!previousPayload) {
+      return jsonResponse(request, { error: 'Unable to restore this reset action snapshot.' }, { status: 500 });
+    }
+
+    const now = new Date().toISOString();
+    await env.DB.prepare(
+      `INSERT INTO user_progress (user_id, payload, updated_at)
+       VALUES (?, ?, ?)
+       ON CONFLICT(user_id) DO UPDATE SET payload = excluded.payload, updated_at = excluded.updated_at`
+    ).bind(
+      row.id,
+      previousPayload,
+      now
+    ).run();
+
+    await env.DB.prepare(
+      `UPDATE admin_progress_reset_actions
+       SET undone_at = ?, undone_by_user_id = ?
+       WHERE id = ? AND undone_at IS NULL`
+    ).bind(
+      now,
+      adminSession.user.id,
+      action.id
+    ).run();
+
+    await logAuditEvent(env.DB, request, 'admin.progress_reset_undo', 'success', adminSession.user.id, {
+      actorAdminUserId: adminSession.user.id,
+      targetUserId: row.id,
+      resetActionId: action.id,
+      scope: action.scope,
+      topicId: action.topic_id || null,
+      testId: action.test_id || null
+    });
+
+    return jsonResponse(request, {
+      success: true,
+      targetUserId: row.id,
+      resetActionId: action.id,
+      scope: action.scope,
+      topicId: action.topic_id || null,
+      testId: action.test_id || null,
+      restoredAt: now
+    });
+  } catch (error) {
+    const isUndoTableMissing = isNoSuchTableError(error, 'admin_progress_reset_actions');
+    try {
+      await logAuditEvent(env.DB, request, 'admin.progress_reset_undo', 'failed', adminSession?.user?.id || null, {
         actorAdminUserId: adminSession?.user?.id || null,
         targetUserId: userId,
         reason: error.message
       });
     } catch {}
-    return jsonResponse(request, { error: error.message || 'Unable to reset student test progress.' }, { status: getErrorStatus(error) });
+    return jsonResponse(
+      request,
+      { error: isUndoTableMissing ? 'Admin undo storage is missing. Apply latest database migrations.' : (error.message || 'Unable to undo reset action.') },
+      { status: isUndoTableMissing ? 503 : getErrorStatus(error) }
+    );
   }
 }
 
@@ -2870,6 +3168,7 @@ async function runHeatmapRetentionCleanup(env) {
   if (!env?.DB) return null;
 
   const now = Date.now();
+  const nowIso = new Date(now).toISOString();
   const eventCutoffIso = new Date(now - (HEATMAP_EVENT_RETENTION_DAYS * 24 * 60 * 60 * 1000)).toISOString();
   const replayCutoffIso = new Date(now - (HEATMAP_REPLAY_RETENTION_DAYS * 24 * 60 * 60 * 1000)).toISOString();
   const aggregateCutoffDay = eventCutoffIso.slice(0, 10);
@@ -2893,13 +3192,25 @@ async function runHeatmapRetentionCleanup(env) {
        AND id NOT IN (SELECT DISTINCT heatmap_session_id FROM heatmap_replay_chunks)`
   ).bind(eventCutoffIso).run();
 
+  let deletedResetUndoActions = { meta: { changes: 0 } };
+  try {
+    deletedResetUndoActions = await env.DB.prepare(
+      'DELETE FROM admin_progress_reset_actions WHERE expires_at < ?'
+    ).bind(nowIso).run();
+  } catch (error) {
+    if (!isNoSuchTableError(error, 'admin_progress_reset_actions')) {
+      throw error;
+    }
+  }
+
   return {
     eventCutoffIso,
     replayCutoffIso,
     deletedEvents: Number(deletedEvents?.meta?.changes || 0),
     deletedAggregates: Number(deletedAggregates?.meta?.changes || 0),
     deletedReplayChunks: Number(deletedReplayChunks?.meta?.changes || 0),
-    deletedSessions: Number(deletedSessions?.meta?.changes || 0)
+    deletedSessions: Number(deletedSessions?.meta?.changes || 0),
+    deletedResetUndoActions: Number(deletedResetUndoActions?.meta?.changes || 0)
   };
 }
 
@@ -3000,6 +3311,21 @@ export default {
     const adminStudentResetMatch = path.match(/^\/api\/admin\/students\/([^/]+)\/reset-test-progress$/);
     if (adminStudentResetMatch && request.method === 'POST') {
       return handleAdminResetStudentTestProgress(request, env, decodeURIComponent(adminStudentResetMatch[1]));
+    }
+
+    const adminStudentTopicResetMatch = path.match(/^\/api\/admin\/students\/([^/]+)\/reset-topic-progress$/);
+    if (adminStudentTopicResetMatch && request.method === 'POST') {
+      return handleAdminResetStudentTopicProgress(request, env, decodeURIComponent(adminStudentTopicResetMatch[1]));
+    }
+
+    const adminStudentAllTestsResetMatch = path.match(/^\/api\/admin\/students\/([^/]+)\/reset-all-tests-progress$/);
+    if (adminStudentAllTestsResetMatch && request.method === 'POST') {
+      return handleAdminResetStudentAllTestsProgress(request, env, decodeURIComponent(adminStudentAllTestsResetMatch[1]));
+    }
+
+    const adminStudentUndoResetMatch = path.match(/^\/api\/admin\/students\/([^/]+)\/undo-reset-progress$/);
+    if (adminStudentUndoResetMatch && request.method === 'POST') {
+      return handleAdminUndoStudentResetProgress(request, env, decodeURIComponent(adminStudentUndoResetMatch[1]));
     }
 
     if (path === '/api/admin/password-reset-link' && request.method === 'POST') {

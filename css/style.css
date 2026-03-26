@@ -3492,6 +3492,14 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   background: var(--c-surface);
 }
 
+.admin-mobile-tabs {
+  display: none;
+}
+
+.admin-mobile-hidden {
+  display: none !important;
+}
+
 .admin-toolbar h3 {
   margin: 0 0 .3rem;
 }
@@ -3503,7 +3511,7 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
 .admin-toolbar-actions {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) auto auto auto auto;
+  grid-template-columns: auto auto minmax(180px, 1fr) auto auto;
   gap: .55rem;
   width: min(860px, 100%);
 }
@@ -3707,6 +3715,90 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
   background: var(--c-surface2);
   display: grid;
   gap: .25rem;
+}
+
+.admin-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .35rem;
+}
+
+.admin-confirm-card {
+  border: 1px solid color-mix(in srgb, var(--c-warn) 70%, var(--c-border));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--c-warn-bg) 92%, var(--c-surface));
+  padding: .85rem;
+  display: grid;
+  gap: .45rem;
+}
+
+.admin-confirm-card h4 {
+  margin: 0;
+}
+
+.admin-confirm-card p {
+  margin: 0;
+  color: var(--c-text2);
+  font-size: .9rem;
+}
+
+.admin-confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.admin-undo-banner {
+  border: 1px solid color-mix(in srgb, var(--c-ok) 45%, var(--c-border));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--c-ok-bg) 92%, var(--c-surface));
+  padding: .8rem .85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+}
+
+.admin-undo-banner p {
+  margin: .2rem 0 0;
+  color: var(--c-text2);
+  font-size: .86rem;
+}
+
+.admin-pending-undo-list {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  padding: .75rem;
+  margin-bottom: .8rem;
+  display: grid;
+  gap: .55rem;
+}
+
+.admin-pending-undo-list h5 {
+  margin: 0;
+}
+
+.admin-undo-card {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: .6rem .65rem;
+  background: var(--c-surface);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .7rem;
+}
+
+.admin-undo-card p {
+  margin: .2rem 0 0;
+  color: var(--c-text2);
+  font-size: .8rem;
+}
+
+.admin-undo-card.is-expired {
+  opacity: .66;
 }
 
 .admin-topic-card {
@@ -4002,6 +4094,32 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 }
 
 @media (max-width: 640px) {
+  .admin-mobile-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 8;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .45rem;
+    padding: .55rem;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    background: color-mix(in srgb, var(--c-surface) 88%, rgba(12, 18, 29, .12));
+    backdrop-filter: blur(6px);
+  }
+
+  .admin-mobile-tabs .btn-outline {
+    min-height: 44px;
+    padding: .45rem .55rem;
+    font-size: .82rem;
+  }
+
+  .admin-mobile-tabs .btn-outline.is-active {
+    border-color: var(--c-primary);
+    background: var(--c-primary-a);
+    color: var(--c-primary);
+  }
+
   .admin-toolbar-actions {
     grid-template-columns: 1fr;
   }
@@ -4036,6 +4154,26 @@ button, .option, .question-dot, .topic-card, .practice-test-card,
 
   .admin-card-metrics {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-detail-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .admin-confirm-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .admin-undo-banner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .admin-undo-card {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .heatmap-overlay-box {
