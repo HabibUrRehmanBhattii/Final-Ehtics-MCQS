@@ -565,7 +565,12 @@ async function createSession(env, request, userId) {
 }
 
 async function getSessionContext(env, request) {
-  const rawCookie = getCookie(request, COOKIE_NAME);
+  const authHeader = String(request.headers.get('Authorization') || '').trim();
+  const bearerToken = authHeader.toLowerCase().startsWith('bearer ')
+    ? authHeader.slice(7).trim()
+    : '';
+  const rawCookie = getCookie(request, COOKIE_NAME) || bearerToken;
+
   if (!rawCookie || !env.SESSION_SECRET || !env.DB) {
     return null;
   }
@@ -598,6 +603,83 @@ async function getSessionContext(env, request) {
     sessionId: row.session_id,
     user: buildAuthUser(env, row.user_id, row.email)
   };
+}
+
+async function handleAdminAuthLogin(request, env) {
+  if (!env.DB) {
+    return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
+  }
+
+  try {
+    const body = await request.json();
+    const email = normalizeEmail(body.email);
+    const password = String(body.password || '');
+    const ip = getClientIp(request);
+
+    if (!validateEmail(email) || !password) {
+      return jsonResponse(request, { error: 'Email and password are required.' }, { status: 400 });
+    }
+
+    await enforceRateLimit(env.DB, email, ip);
+
+    const user = await env.DB.prepare(
+      'SELECT id, email, password_hash, status FROM users WHERE email = ? LIMIT 1'
+    ).bind(email).first();
+
+    const isValid = Boolean(user && user.status === 'active' && (await verifyPassword(password, user.password_hash)));
+    const isAdmin = isAdminEmail(env, email);
+
+    if (!isValid || !isAdmin) {
+      await recordAuthAttempt(env.DB, 'ip', ip, false);
+      await recordAuthAttempt(env.DB, 'email', email, false);
+      await logAuditEvent(env.DB, request, 'admin.auth.login', 'failed', user?.id || null, {
+        reason: !isValid ? 'invalid_credentials' : 'not_admin',
+        email
+      });
+      return jsonResponse(request, { error: 'Invalid admin credentials.' }, { status: 401 });
+    }
+
+    const session = await createSession(env, request, user.id);
+    await env.DB.prepare('UPDATE users SET last_login_at = ?, updated_at = ? WHERE id = ?')
+      .bind(new Date().toISOString(), new Date().toISOString(), user.id)
+      .run();
+
+    await recordAuthAttempt(env.DB, 'ip', ip, true);
+    await recordAuthAttempt(env.DB, 'email', email, true);
+    await logAuditEvent(env.DB, request, 'admin.auth.login', 'success', user.id, { email });
+
+    const cookieValue = String(session.cookie || '').split(';')[0].split('=').slice(1).join('=');
+    const sessionToken = decodeURIComponent(cookieValue || '');
+
+    return jsonResponse(request, {
+      success: true,
+      token: sessionToken,
+      authenticated: true,
+      user: buildAuthUser(env, user.id, user.email)
+    }, {
+      headers: {
+        'Set-Cookie': session.cookie
+      }
+    });
+  } catch (error) {
+    try {
+      await logAuditEvent(env.DB, request, 'admin.auth.login', 'failed', null, { reason: error.message });
+    } catch {}
+    return jsonResponse(request, { error: error.message || 'Admin login failed.' }, { status: getErrorStatus(error) });
+  }
+}
+
+async function handleAdminAuthVerify(request, env) {
+  try {
+    const session = await requireAdminSession(env, request);
+    return jsonResponse(request, {
+      valid: true,
+      authenticated: true,
+      user: session.user
+    });
+  } catch {
+    return jsonResponse(request, { valid: false, authenticated: false }, { status: 401 });
+  }
 }
 
 async function requireSession(env, request) {
@@ -3310,6 +3392,14 @@ export default {
 
     if (path === '/api/auth/password-change' && request.method === 'POST') {
       return handlePasswordChange(request, env);
+    }
+
+    if (path === '/api/admin/auth/login' && request.method === 'POST') {
+      return handleAdminAuthLogin(request, env);
+    }
+
+    if (path === '/api/admin/auth/verify' && (request.method === 'GET' || request.method === 'POST')) {
+      return handleAdminAuthVerify(request, env);
     }
 
     if (path === '/api/admin/students/overview' && request.method === 'GET') {
