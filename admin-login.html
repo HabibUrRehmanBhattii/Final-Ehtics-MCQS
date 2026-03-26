@@ -295,13 +295,27 @@
                         password: password.value
                     })
                 });
-                
-                if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.message || 'Login failed');
+
+                const rawBody = await response.text();
+                let parsedBody = null;
+                try {
+                    parsedBody = rawBody ? JSON.parse(rawBody) : null;
+                } catch {
+                    parsedBody = null;
                 }
                 
-                const data = await response.json();
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        throw new Error('Admin API is not deployed on this domain yet. Please use localhost admin or deploy /api/admin/auth/login backend.');
+                    }
+                    const errorMessage = parsedBody?.message || parsedBody?.error || rawBody || 'Login failed';
+                    throw new Error(errorMessage);
+                }
+                
+                const data = parsedBody || {};
+                if (!data.token) {
+                    throw new Error('Login succeeded but token was not returned by the API.');
+                }
                 
                 // Store token
                 localStorage.setItem('admin_token', data.token);
