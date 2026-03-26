@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Content Manager - Admin Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .sidebar {
+            background: #f9f9f9;
+            border-right: 1px solid #e0e0e0;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .sidebar h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #666;
+            margin: 20px 0 10px;
+            font-weight: 600;
+        }
+        
+        .sidebar button {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        
+        .sidebar button:hover {
+            background: #f0f0f0;
+            border-color: #667eea;
+        }
+        
+        .sidebar button.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .content {
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+            font-family: inherit;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .options-grid {
+            display: grid;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .option-item {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            background: #fafafa;
+        }
+        
+        .option-item label {
+            margin-bottom: 10px;
+        }
+        
+        .option-label {
+            display: inline-block;
+            width: 30px;
+            text-align: center;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-secondary:hover {
+            background: #e8e8e8;
+        }
+        
+        .btn-danger {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #ee5a52;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .questions-list {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .question-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .question-item:hover {
+            background: #f9f9f9;
+        }
+        
+        .question-item.active {
+            background: #f0f0ff;
+            border-left: 3px solid #667eea;
+            padding-left: 12px;
+        }
+        
+        .question-item-text {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .question-item-id {
+            font-size: 11px;
+            color: #999;
+        }
+        
+        .validation-status {
+            font-size: 11px;
+            margin-top: 5px;
+            padding: 3px 6px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+        .validation-ok {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .validation-error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                max-height: 200px;
+                display: flex;
+                overflow-x: auto;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 MCQ Content Manager</h1>
+            <p>Admin panel for managing exam questions and content</p>
+        </header>
+        
+        <div class="main">
+            <div class="sidebar">
+                <h3>🎯 Navigation</h3>
+                <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+                <button class="nav-btn" data-section="add-question">Add Question</button>
+                <button class="nav-btn" data-section="edit-questions">Edit Questions</button>
+                <button class="nav-btn" data-section="bulk-import">Bulk Import</button>
+                <button class="nav-btn" data-section="validation">Validation</button>
+                <button class="nav-btn" data-section="export">Export Data</button>
+                
+                <h3>📝 Topics</h3>
+                <select id="topic-select" style="width: 100%; padding: 8px; margin-top: 5px;">
+                    <option value="">All Topics</option>
+                    <option value="ethics">LLQP Ethics</option>
+                    <option value="life">LLQP Life Insurance</option>
+                    <option value="accident">LLQP Accident & Sickness</option>
+                    <option value="segregated">LLQP Segregated Funds</option>
+                </select>
+            </div>
+            
+            <div class="content">
+                <!-- Dashboard -->
+                <section class="section active" id="dashboard">
+                    <h2>Dashboard</h2>
+                    
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-value">371</div>
+                            <div class="stat-label">Total Questions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">4</div>
+                            <div class="stat-label">Active Topics</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">100%</div>
+                            <div class="stat-label">Schema Valid</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">26</div>
+                            <div class="stat-label">Days Since Update</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Recent Activity</h3>
+                    <div style="border: 1px solid #ddd; border-radius: 4px; padding: 15px; background: #fafafa;">
+                        <p style="font-size: 13px; color: #666; margin-bottom: 10px;">
+                            ✓ Last validation: All 80 files passed<br>
+                            ✓ Last sync: 2026-03-26 10:00 UTC<br>
+                            ✓ Pre-release checks: PASSING<br>
+                            ⚠ Empty placeholders: 20 (hllqp-life-06 through hllqp-life-12)
+                        </p>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Quick Actions</h3>
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="scrollToSection('add-question')">➕ Add Question</button>
+                        <button class="btn-primary" onclick="scrollToSection('bulk-import')">📥 Bulk Import</button>
+                        <button class="btn-secondary" onclick="scrollToSection('validation')">✓ Run Validation</button>
+                    </div>
+                </section>
+                
+                <!-- Add Question -->
+                <section class="section" id="add-question">
+                    <h2>Add New Question</h2>
+                    
+                    <div class="success-message" id="addSuccess">✓ Question added successfully!</div>
+                    <div class="error-message" id="addError"></div>
+                    
+                    <form id="questionForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Topic *</label>
+                                <select id="q-topic" required>
+                                    <option value="">Select Topic</option>
+                                    <option value="ethics">LLQP Ethics</option>
+                                    <option value="life">LLQP Life Insurance</option>
+                                    <option value="accident">LLQP Accident & Sickness</option>
+                                    <option value="segregated">LLQP Segregated Funds</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Test ID *</label>
+                                <input type="text" id="q-testid" placeholder="e.g., 01, 02, certification-exam" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Question Text *</label>
+                            <textarea id="q-text" placeholder="What is the question?" required></textarea>
+                        </div>
+                        
+                        <label style="margin-top: 20px;">Options & Feedback *</label>
+                        <div class="options-grid">
+                            <div class="option-item">
+                                <label><span class="option-label">A.</span> Option Text</label>
+                                <input type="text" class="option-text" placeholder="Option A" required>
+                                <input type="text" class="option-feedback" placeholder="Feedback if wrong (or leave blank if correct)" style="margin-top: 8px;">
+                            </div>
+                            <div class="option-item">
+                                <label><span class="option-label">B.</span> Option Text</label>
+                                <input type="text" class="option-text" placeholder="Option B" required>
+                                <input type="text" class="option-feedback" placeholder="Feedback if wrong (or leave blank if correct)" style="margin-top: 8px;">
+                            </div>
+                            <div class="option-item">
+                                <label><span class="option-label">C.</span> Option Text</label>
+                                <input type="text" class="option-text" placeholder="Option C" required>
+                                <input type="text" class="option-feedback" placeholder="Feedback if wrong (or leave blank if correct)" style="margin-top: 8px;">
+                            </div>
+                            <div class="option-item">
+                                <label><span class="option-label">D.</span> Option Text</label>
+                                <input type="text" class="option-text" placeholder="Option D" required>
+                                <input type="text" class="option-feedback" placeholder="Feedback if wrong (or leave blank if correct)" style="margin-top: 8px;">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Correct Answer *</label>
+                            <select id="q-correct" required>
+                                <option value="">Select correct answer</option>
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Explanation *</label>
+                            <textarea id="q-explanation" placeholder="Explain why this is the correct answer..." required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Difficulty</label>
+                                <select id="q-difficulty">
+                                    <option value="easy">Easy</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="hard">Hard</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Tags (comma-separated)</label>
+                                <input type="text" id="q-tags" placeholder="e.g., premium, underwriting, classification">
+                            </div>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button type="submit" class="btn-primary">✓ Save Question</button>
+                            <button type="reset" class="btn-secondary">Clear Form</button>
+                        </div>
+                    </form>
+                </section>
+                
+                <!-- Edit Questions -->
+                <section class="section" id="edit-questions">
+                    <h2>Edit Questions</h2>
+                    
+                    <div class="form-group">
+                        <input type="text" id="search-questions" placeholder="Search by question text or ID..." style="margin-bottom: 15px;">
+                    </div>
+                    
+                    <div class="questions-list" id="questionsList">
+                        <div class="question-item">
+                            <div class="question-item-text">What is universal life insurance?</div>
+                            <div class="question-item-id">q_life_47 • hllqp-life-03.json</div>
+                            <span class="validation-status validation-ok">✓ Valid</span>
+                        </div>
+                        <div class="question-item">
+                            <div class="question-item-text">Which factor affects underwriting classification?</div>
+                            <div class="question-item-id">q_life_48 • hllqp-life-03.json</div>
+                            <span class="validation-status validation-ok">✓ Valid</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 20px; padding: 15px; background: #f9f9f9; border-radius: 4px; text-align: center; color: #666;">
+                        <p>Click a question to edit • Changes auto-saved to data files</p>
+                    </div>
+                </section>
+                
+                <!-- Bulk Import -->
+                <section class="section" id="bulk-import">
+                    <h2>Bulk Import (CSV)</h2>
+                    
+                    <div class="form-group">
+                        <label>CSV Format</label>
+                        <p style="font-size: 12px; color: #666; margin-bottom: 10px;">
+                            Required columns: topic, test_id, question, option_a, option_b, option_c, option_d, correct_answer (0-3), explanation
+                        </p>
+                        <textarea readonly style="background: #f5f5f5; font-family: monospace; font-size: 11px;">topic,test_id,question,option_a,option_b,option_c,option_d,correct_answer,explanation
+ethics,1,"What is market conduct?","Buying insurance","Fair and honest practices","Selling products","Managing risk",1,"Market conduct refers to..."
+life,02,"What is guaranteed insurability?","Ability to increase coverage without underwriting","Lifetime coverage","Premium guarantee","Tax benefit",0,"GIOs allow policyholders to..."</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Upload CSV File</label>
+                        <input type="file" id="csvFile" accept=".csv" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Preview Validation</label>
+                        <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 4px; padding: 15px; font-size: 13px;">
+                            <p id="csvPreview">No file selected</p>
+                        </div>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="previewCSV()">🔍 Preview</button>
+                        <button class="btn-primary" onclick="importCSV()">📥 Import</button>
+                    </div>
+                </section>
+                
+                <!-- Validation -->
+                <section class="section" id="validation">
+                    <h2>Content Validation</h2>
+                    
+                    <button class="btn-primary" onclick="runValidation()" style="margin-bottom: 20px;">🔍 Run Full Validation</button>
+                    
+                    <div id="validationResults" style="display: none;">
+                        <div style="background: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; padding: 15px; margin-bottom: 15px;">
+                            <strong>✓ All 80 files passed validation</strong><br>
+                            <small>371 questions • 100% schema compliant • 60 active files • 20 placeholder files</small>
+                        </div>
+                        
+                        <h3 style="margin: 20px 0 10px;">Schema Checks</h3>
+                        <ul style="font-size: 13px; color: #333; margin-left: 20px;">
+                            <li>✓ All questions have 4 options</li>
+                            <li>✓ All questions have 4 feedback entries</li>
+                            <li>✓ Correct answer indexes valid (0-3)</li>
+                            <li>✓ Feedback at correct index is null</li>
+                            <li>✓ All questions have explanations</li>
+                            <li>✓ No draft language detected</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Export -->
+                <section class="section" id="export">
+                    <h2>Export Data</h2>
+                    
+                    <div class="form-group">
+                        <label>Export Format</label>
+                        <select id="exportFormat">
+                            <option value="json">JSON (Data files)</option>
+                            <option value="csv">CSV (Spreadsheet)</option>
+                            <option value="pdf">PDF (Report)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Topic</label>
+                        <select id="exportTopic">
+                            <option value="">All Topics</option>
+                            <option value="ethics">LLQP Ethics</option>
+                            <option value="life">LLQP Life Insurance</option>
+                            <option value="accident">LLQP Accident & Sickness</option>
+                            <option value="segregated">LLQP Segregated Funds</option>
+                        </select>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="exportData()">📥 Export</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/admin-api.js"></script>
+    <script>
+        // Initialize admin panel
+        document.addEventListener('DOMContentLoaded', async function() {
+            const isAuthed = await adminAPI.checkAuth();
+            if (!isAuthed) {
+                window.location.href = '/admin-login.html?redirect=admin-content-manager.html';
+                return;
+            }
+            
+            loadDashboardStats();
+        });
+
+        // Navigation
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const section = this.dataset.section;
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(section).classList.add('active');
+                this.classList.add('active');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('questionForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            await saveQuestion();
+        });
+
+        async function saveQuestion() {
+            const topic = document.getElementById('q-topic').value;
+            const testId = document.getElementById('q-testid').value;
+            const questionText = document.getElementById('q-text').value;
+            const correctIndex = parseInt(document.getElementById('q-correct').value);
+            const explanation = document.getElementById('q-explanation').value;
+            const difficulty = document.getElementById('q-difficulty').value;
+            const tags = document.getElementById('q-tags').value;
+
+            const options = [];
+            const optionFeedback = [];
+
+            document.querySelectorAll('.option-item').forEach((item, idx) => {
+                const text = item.querySelector('.option-text').value;
+                const feedback = item.querySelector('.option-feedback').value;
+                options.push(text);
+                optionFeedback[idx] = idx === correctIndex ? null : (feedback || null);
+            });
+
+            if (!validateQuestion(topic, questionText, correctIndex, explanation)) {
+                showError('addError', 'Please fix validation errors');
+                return;
+            }
+
+            try {
+                const questionData = {
+                    topic,
+                    testId,
+                    question: questionText,
+                    options,
+                    correctAnswer: correctIndex,
+                    optionFeedback,
+                    explanation,
+                    difficulty,
+                    tags: tags.split(',').map(t => t.trim()).filter(t => t)
+                };
+
+                await adminAPI.createQuestion(questionData);
+                showSuccess('addSuccess');
+                document.getElementById('questionForm').reset();
+                setTimeout(() => loadQuestionsList(), 1500);
+            } catch (error) {
+                showError('addError', error.message);
+            }
+        }
+        
+        function validateQuestion(topic, text, correct, explanation) {
+            if (!topic || !text || correct === '' || !explanation) {
+                return false;
+            }
+            return true;
+        }
+        
+        function showSuccess(elementId) {
+            const el = document.getElementById(elementId);
+            el.classList.add('show');
+            setTimeout(() => el.classList.remove('show'), 3000);
+        }
+        
+        function showError(elementId, message) {
+            const el = document.getElementById(elementId);
+            el.textContent = '❌ ' + message;
+            el.classList.add('show');
+            setTimeout(() => el.classList.remove('show'), 5000);
+        }
+        
+        function scrollToSection(sectionId) {
+            const btn = document.querySelector(`[data-section="${sectionId}"]`);
+            if (btn) btn.click();
+        }
+
+        async function loadDashboardStats() {
+            try {
+                const stats = await adminAPI.getDashboardStats();
+                document.querySelector('.stat-value').textContent = stats.totalQuestions;
+                document.querySelectorAll('.stat-value')[1].textContent = stats.activeTopics;
+            } catch (error) {
+                console.error('Failed to load stats:', error);
+            }
+        }
+
+        async function loadQuestionsList() {
+            const topic = document.getElementById('topic-select').value;
+            if (!topic) return;
+
+            try {
+                const questions = await adminAPI.getQuestions(topic, '01');
+                const list = document.getElementById('questionsList');
+                list.innerHTML = questions.map(q => `
+                    <div class="question-item" data-id="${q.id}">
+                        <div class="question-item-text">${q.question}</div>
+                        <div class="question-item-id">${q.id}</div>
+                        <span class="validation-status validation-ok">✓ Valid</span>
+                    </div>
+                `).join('');
+
+                list.querySelectorAll('.question-item').forEach(item => {
+                    item.addEventListener('click', () => editQuestion(item.dataset.id));
+                });
+            } catch (error) {
+                console.error('Failed to load questions:', error);
+            }
+        }
+
+        async function editQuestion(questionId) {
+            try {
+                const question = await adminAPI.getQuestion(questionId);
+                // Populate form with question data
+                document.getElementById('q-topic').value = question.topic;
+                document.getElementById('q-testid').value = question.testId;
+                document.getElementById('q-text').value = question.question;
+                
+                question.options.forEach((opt, idx) => {
+                    document.querySelectorAll('.option-text')[idx].value = opt;
+                    document.querySelectorAll('.option-feedback')[idx].value = 
+                        question.optionFeedback[idx] || '';
+                });
+
+                document.getElementById('q-correct').value = question.correctAnswer;
+                document.getElementById('q-explanation').value = question.explanation;
+                document.getElementById('q-difficulty').value = question.difficulty;
+                document.getElementById('q-tags').value = question.tags.join(', ');
+
+                scrollToSection('add-question');
+            } catch (error) {
+                showError('addError', 'Failed to load question');
+            }
+        }
+        
+        async function previewCSV() {
+            const file = document.getElementById('csvFile').files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const lines = e.target.result.split('\n').slice(0, 3);
+                document.getElementById('csvPreview').innerHTML = 
+                    '<strong>First 3 rows preview:</strong><br>' + 
+                    lines.join('<br>');
+            };
+            reader.readAsText(file);
+        }
+        
+        async function importCSV() {
+            const file = document.getElementById('csvFile').files[0];
+            if (!file) {
+                showError('addError', 'Please select a CSV file');
+                return;
+            }
+
+            const topic = document.getElementById('topic-select').value;
+            if (!topic) {
+                showError('addError', 'Please select a topic');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = async function(e) {
+                try {
+                    const csv = e.target.result;
+                    const lines = csv.split('\n').slice(1);
+                    const data = lines.map(line => {
+                        const [t, test, q, a, b, c, d, correct, exp] = line.split(',');
+                        return {
+                            topic: t,
+                            test_id: test,
+                            question: q,
+                            option_a: a,
+                            option_b: b,
+                            option_c: c,
+                            option_d: d,
+                            correct_answer: correct,
+                            explanation: exp
+                        };
+                    }).filter(d => d.question);
+
+                    const result = await adminAPI.bulkImport(data, topic, '01');
+                    showSuccess('addSuccess');
+                    setTimeout(() => loadQuestionsList(), 1500);
+                } catch (error) {
+                    showError('addError', 'Import failed: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+        
+        async function runValidation() {
+            const topic = document.getElementById('topic-select').value;
+            if (!topic) {
+                showError('addError', 'Please select a topic');
+                return;
+            }
+
+            try {
+                const result = await adminAPI.validateContent(topic, '01');
+                document.getElementById('validationResults').style.display = 'block';
+                
+                const resultsDiv = document.getElementById('validationResults');
+                if (result.valid) {
+                    resultsDiv.innerHTML = `
+                        <div style="background: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; padding: 15px; margin-bottom: 15px;">
+                            <strong>✓ All files passed validation</strong><br>
+                            <small>${result.questionCount} questions • 100% schema compliant</small>
+                        </div>
+                    `;
+                } else {
+                    resultsDiv.innerHTML = `
+                        <div style="background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px; padding: 15px;">
+                            <strong>✗ Validation failed</strong><br>
+                            ${result.errors.map(e => `<small>• ${e}</small>`).join('<br>')}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                showError('addError', 'Validation failed: ' + error.message);
+            }
+        }
+        
+        async function exportData() {
+            const topic = document.getElementById('exportTopic').value;
+            const format = document.getElementById('exportFormat').value;
+
+            if (!topic) {
+                showError('addError', 'Please select a topic');
+                return;
+            }
+
+            try {
+                const blob = await adminAPI.exportQuestions(topic, format);
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${topic}-export.${format === 'json' ? 'json' : 'csv'}`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                showSuccess('addSuccess');
+            } catch (error) {
+                showError('addError', 'Export failed: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

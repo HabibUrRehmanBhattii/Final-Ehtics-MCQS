@@ -1,0 +1,596 @@
+{
+  "info": {
+    "name": "MCQ Platform APIs",
+    "description": "Complete API collection for MCQ Learning Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health & Status",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/health",
+              "host": ["{{BASE_URL}}"],
+              "path": ["health"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Auth Config",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/auth/config",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "auth", "config"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Debug Reset Email Config",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/debug/reset-email",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "debug", "reset-email"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Sign Up",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"SecurePassword123!\",\n  \"turnstileToken\": \"token-from-turnstile\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/auth/signup",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "auth", "signup"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Sign In",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"SecurePassword123!\",\n  \"turnstileToken\": \"token-from-turnstile\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/auth/signin",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "auth", "signin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Session",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/auth/session",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "auth", "session"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Sign Out",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/auth/signout",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "auth", "signout"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Request Password Reset",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/auth/forgot-password",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "auth", "forgot-password"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reset Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"resetToken\": \"token-from-email\",\n  \"newPassword\": \"NewSecurePassword456!\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/auth/reset-password",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "auth", "reset-password"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Questions",
+      "item": [
+        {
+          "name": "Get Question",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/questions/{{questionId}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "questions", "{{questionId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Topic Questions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/questions?topic={{topicId}}&test={{testId}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "questions"],
+              "query": [
+                {
+                  "key": "topic",
+                  "value": "{{topicId}}"
+                },
+                {
+                  "key": "test",
+                  "value": "{{testId}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Answer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"questionId\": \"q_ethics_47\",\n  \"selectedAnswer\": 1,\n  \"timeTaken\": 45\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/questions/submit",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "questions", "submit"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Progress & Analytics",
+      "item": [
+        {
+          "name": "Get User Progress",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/progress/user",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "progress", "user"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Test Progress",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/progress/test/{{topicId}}/{{testId}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "progress", "test", "{{topicId}}", "{{testId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Track Analytics Event",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event\": \"question_answered\",\n  \"topic\": \"ethics\",\n  \"testId\": \"01\",\n  \"timestamp\": \"2026-03-26T10:00:00Z\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/analytics/track",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "analytics", "track"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Heatmap Data",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/heatmap/data?topic={{topicId}}&test={{testId}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "heatmap", "data"],
+              "query": [
+                {
+                  "key": "topic",
+                  "value": "{{topicId}}"
+                },
+                {
+                  "key": "test",
+                  "value": "{{testId}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Heatmap Replay",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/heatmap/replay?sessionId={{sessionId}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "heatmap", "replay"],
+              "query": [
+                {
+                  "key": "sessionId",
+                  "value": "{{sessionId}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Track Heatmap Events",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"events\": [\n    {\n      \"type\": \"click\",\n      \"x\": 100,\n      \"y\": 200,\n      \"timestamp\": 1648299600000,\n      \"targetId\": \"button-submit\",\n      \"targetClass\": \"btn-primary\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/heatmap/track",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "heatmap", "track"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admin API",
+      "item": [
+        {
+          "name": "Admin - List Questions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ADMIN_TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/api/admin/questions?topic={{topicId}}&test={{testId}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "admin", "questions"],
+              "query": [
+                {
+                  "key": "topic",
+                  "value": "{{topicId}}"
+                },
+                {
+                  "key": "test",
+                  "value": "{{testId}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin - Create Question",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ADMIN_TOKEN}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"topic\": \"ethics\",\n  \"testId\": \"01\",\n  \"question\": \"What is market conduct?\",\n  \"options\": [\"Option A\", \"Option B\", \"Option C\", \"Option D\"],\n  \"correctAnswer\": 1,\n  \"optionFeedback\": [\"Wrong\", null, \"Wrong\", \"Wrong\"],\n  \"explanation\": \"Market conduct refers to...\",\n  \"difficulty\": \"medium\",\n  \"tags\": [\"market\", \"conduct\"]\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/admin/questions",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "admin", "questions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin - Update Question",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ADMIN_TOKEN}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"question\": \"Updated question text\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/admin/questions/{{questionId}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "admin", "questions", "{{questionId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin - Delete Question",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ADMIN_TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/api/admin/questions/{{questionId}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "admin", "questions", "{{questionId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin - Bulk Import",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ADMIN_TOKEN}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"topic\": \"ethics\",\n  \"testId\": \"01\",\n  \"data\": [\n    {\n      \"question\": \"Question 1\",\n      \"option_a\": \"A\",\n      \"option_b\": \"B\",\n      \"option_c\": \"C\",\n      \"option_d\": \"D\",\n      \"correct_answer\": 0,\n      \"explanation\": \"Explanation here\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/admin/questions/bulk-import",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "admin", "questions", "bulk-import"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin - Validate Content",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ADMIN_TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/api/admin/validate?topic={{topicId}}&test={{testId}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "admin", "validate"],
+              "query": [
+                {
+                  "key": "topic",
+                  "value": "{{topicId}}"
+                },
+                {
+                  "key": "test",
+                  "value": "{{testId}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin - Get Statistics",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ADMIN_TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/api/admin/stats",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "admin", "stats"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin - Export Data",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ADMIN_TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/api/admin/export?topic={{topicId}}&format=json",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "admin", "export"],
+              "query": [
+                {
+                  "key": "topic",
+                  "value": "{{topicId}}"
+                },
+                {
+                  "key": "format",
+                  "value": "json"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "ADMIN_TOKEN",
+      "value": "your-admin-token-here",
+      "type": "string"
+    },
+    {
+      "key": "topicId",
+      "value": "ethics",
+      "type": "string"
+    },
+    {
+      "key": "testId",
+      "value": "01",
+      "type": "string"
+    },
+    {
+      "key": "questionId",
+      "value": "q_ethics_47",
+      "type": "string"
+    },
+    {
+      "key": "sessionId",
+      "value": "session-id-here",
+      "type": "string"
+    }
+  ]
+}

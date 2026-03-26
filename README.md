@@ -139,6 +139,75 @@ The app is currently configured for:
 - `https://hllqpmcqs.com`
 - `https://www.hllqpmcqs.com`
 
+## Pre-Release Checklist
+
+Before committing or pushing to `main`, run the pre-release quality gates:
+
+```bash
+python tools/pre_release_check.py
+```
+
+This runs 4 mandatory checks:
+
+1. **Version Tag Consistency** - Ensures `appBuildVersion`, HTML `?v=` tags, and `sw.js` `CACHE_VERSION` all match
+2. **Metadata Parity** - Verifies `data/topics.json` ≡ `data/topics-updated.json`
+3. **Production Script Hygiene** - Confirms no test scripts are loaded in `index.html`
+4. **MCQ Quality** - Validates all questions have correct schema (4 options, 4 feedback entries, non-empty explanations)
+
+Expected output on success:
+
+```
+[CHECK] Version Tag Consistency...
+  [PASS]
+[CHECK] Metadata Parity...
+  [PASS]
+[CHECK] Production Shell...
+  [PASS]
+[CHECK] MCQ Quality...
+  [PASS]
+[PASS] All checks passed! Ready to release.
+```
+
+Exit code `0` means OK to commit and push. Exit code `1` means stop and fix the reported issues.
+
+### Fixing common issues
+
+**Version tag mismatch:**
+```bash
+node tools/pre-commit-version-bump.cjs
+```
+
+**Metadata drift:**
+```bash
+python tools/sync_topics_metadata.py
+```
+
+**MCQ schema violations:**
+```bash
+# Preview fixes
+python tools/fix_qa_issues.py --dry-run
+
+# Apply fixes
+python tools/fix_qa_issues.py
+```
+
+**Test scripts in HTML:**
+- Manually remove any `<script src="tests/...">` tags from `index.html`
+
+### Automated CI/CD
+
+When you push to `main`, GitHub Actions automatically runs:
+
+1. **Pre-Release Checks** - Runs the same `pre_release_check.py` validation
+   - **Blocks deployment** if any check fails (exit code 1)
+   - Must all pass to proceed
+
+2. **Deploy to Cloudflare** - Only runs if pre-release checks pass
+   - Deploys Worker to `https://hllqpmcqs.com`
+   - Verifies deployment success
+
+For details, see [CI/CD_INTEGRATION_COMPLETE.md](CI_CD_INTEGRATION_COMPLETE.md), [DEPLOYMENT_RUNBOOK.md](DEPLOYMENT_RUNBOOK.md), or [CI_CD_QUICK_REFERENCE.md](CI_CD_QUICK_REFERENCE.md).
+
 ## Commit automation
 
 This repo has hook-driven commit automation:
@@ -207,6 +276,9 @@ That helper currently regenerates section files for:
 - `CODEBASE_REFERENCE.md` - implementation-oriented repo map for maintainers and coding agents
 - `AI_TECHNICAL_DETAILS.md` - current AI explanation request/response pipeline
 - `AI_IMPROVEMENTS.md` - recent AI and feedback-related UX changes
+- `CI_CD_INTEGRATION_COMPLETE.md` - detailed CI/CD workflow setup and usage
+- `DEPLOYMENT_RUNBOOK.md` - complete pre-release and deployment procedures
+- `CI_CD_QUICK_REFERENCE.md` - one-page developer guide for common tasks
 - `data/topics.json` - source of truth for what the homepage renders
 - `src/worker.js` - auth, progress sync, password reset, AI, and asset serving
 - `js/app.js` - main quiz behavior, review mode, manuals, speech, resume flow
