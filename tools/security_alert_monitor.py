@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 
@@ -75,6 +76,15 @@ def main() -> None:
         raise SystemExit(1)
 
     # 2) Repeated admin login failure monitoring
+    cloudflare_api_token = os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
+    if not cloudflare_api_token:
+        print(
+            "SKIP: CLOUDFLARE_API_TOKEN is not set — "
+            "skipping D1 auth_attempts check."
+        )
+        print("OK: Security alert monitor checks passed (smoke checks only)")
+        return
+
     sql = (
         "SELECT COUNT(*) AS failed_count "
         "FROM auth_attempts "
