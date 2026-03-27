@@ -25,6 +25,7 @@ logs/
 .env.production
 .dev.vars
 .secrets/
+data/admin-users.json
 
 # Build outputs (if you add a build process later)
 dist/
