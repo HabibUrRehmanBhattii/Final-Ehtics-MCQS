@@ -326,9 +326,102 @@
             font-size: 12px;
             opacity: 0.9;
         }
+
+        .panel-chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .panel-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: #eef1ff;
+            color: #3a4ab4;
+            border: 1px solid #dfe5ff;
+        }
+
+        .section-toolbar {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .muted-note {
+            background: #f7f8fb;
+            border: 1px solid #e5e8f3;
+            color: #5a6272;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+
+        .editor-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .preview-card {
+            border: 1px solid #e4e7f0;
+            border-radius: 10px;
+            background: #fbfcff;
+            padding: 14px;
+            position: sticky;
+            top: 16px;
+        }
+
+        .preview-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #4f5773;
+            margin-bottom: 10px;
+        }
+
+        .preview-question {
+            font-size: 13px;
+            color: #222;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .preview-option {
+            font-size: 12px;
+            color: #444;
+            background: #fff;
+            border: 1px solid #eceff6;
+            border-radius: 6px;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+
+        .preview-option.correct {
+            border-color: #7fdfa0;
+            background: #ebfff2;
+        }
+
+        .status-inline {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
         
         @media (max-width: 768px) {
             .main {
+                grid-template-columns: 1fr;
+            }
+
+            .section-toolbar,
+            .editor-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -422,11 +515,21 @@
                 <!-- Add Question -->
                 <section class="section" id="add-question">
                     <h2>Add New Question</h2>
+
+                    <div class="panel-chip-row">
+                        <span class="panel-chip">✨ New UI</span>
+                        <span class="panel-chip">💾 Auto Draft Save</span>
+                        <span class="panel-chip">👁️ Live Preview</span>
+                    </div>
+
+                    <div class="status-inline" id="editModeStatus">Mode: Create new question</div>
                     
                     <div class="success-message" id="addSuccess">✓ Question added successfully!</div>
                     <div class="error-message" id="addError"></div>
                     
                     <form id="questionForm">
+                        <div class="editor-grid">
+                            <div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Topic *</label>
@@ -506,7 +609,17 @@
                         
                         <div class="button-group">
                             <button type="submit" class="btn-primary">✓ Save Question</button>
+                            <button type="button" class="btn-primary" id="updateQuestionBtn" style="display:none;">📝 Update Selected</button>
+                            <button type="button" class="btn-secondary" id="duplicateQuestionBtn" style="display:none;">📄 Duplicate as New</button>
+                            <button type="button" class="btn-secondary" id="clearDraftBtn">🧹 Clear Draft</button>
                             <button type="reset" class="btn-secondary">Clear Form</button>
+                        </div>
+                            </div>
+                            <aside class="preview-card">
+                                <div class="preview-title">Live Preview</div>
+                                <div class="preview-question" id="previewQuestion">Question preview will appear here…</div>
+                                <div id="previewOptions"></div>
+                            </aside>
                         </div>
                     </form>
                 </section>
@@ -514,10 +627,20 @@
                 <!-- Edit Questions -->
                 <section class="section" id="edit-questions">
                     <h2>Edit Questions</h2>
+
+                    <div class="muted-note">New feature: Use search + difficulty filter, then click a question to edit. Update and duplicate actions are available in the form section.</div>
                     
-                    <div class="form-group">
-                        <input type="text" id="search-questions" placeholder="Search by question text or ID..." style="margin-bottom: 15px;">
+                    <div class="section-toolbar">
+                        <input type="text" id="search-questions" placeholder="Search by question text or ID..." style="margin-bottom: 0;">
+                        <select id="filter-difficulty">
+                            <option value="">All Difficulties</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
                     </div>
+
+                    <div class="status-inline" id="questionListMeta">0 questions loaded</div>
                     
                     <div class="questions-list" id="questionsList">
                         <div class="question-item">
@@ -628,6 +751,9 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
     <script src="/js/admin-api.js"></script>
     <script>
         let loadedQuestions = [];
+        let filteredQuestions = [];
+        let currentEditingQuestionId = null;
+        const draftStorageKey = 'admin_question_draft_v2';
 
         // Initialize admin panel
         document.addEventListener('DOMContentLoaded', async function() {
@@ -639,6 +765,15 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
             
             loadDashboardStats();
             document.getElementById('topic-select').addEventListener('change', loadQuestionsList);
+            document.getElementById('search-questions').addEventListener('input', applyQuestionFilters);
+            document.getElementById('filter-difficulty').addEventListener('change', applyQuestionFilters);
+            document.getElementById('updateQuestionBtn').addEventListener('click', updateSelectedQuestion);
+            document.getElementById('duplicateQuestionBtn').addEventListener('click', duplicateAsNewQuestion);
+            document.getElementById('clearDraftBtn').addEventListener('click', clearQuestionDraft);
+
+            bindFormLiveEnhancements();
+            restoreQuestionDraft();
+            refreshLivePreview();
         });
 
         // Navigation
@@ -658,11 +793,55 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
             await saveQuestion();
         });
 
-        async function saveQuestion() {
+        document.getElementById('questionForm').addEventListener('reset', function() {
+            setTimeout(() => {
+                currentEditingQuestionId = null;
+                updateEditModeUI();
+                saveQuestionDraft();
+                refreshLivePreview();
+            }, 0);
+        });
+
+        function bindFormLiveEnhancements() {
+            const watchedSelectors = [
+                '#q-topic', '#q-testid', '#q-text', '#q-correct', '#q-explanation', '#q-difficulty', '#q-tags',
+                '.option-text', '.option-feedback'
+            ];
+            watchedSelectors.forEach((selector) => {
+                document.querySelectorAll(selector).forEach((el) => {
+                    el.addEventListener('input', () => {
+                        saveQuestionDraft();
+                        refreshLivePreview();
+                    });
+                    el.addEventListener('change', () => {
+                        saveQuestionDraft();
+                        refreshLivePreview();
+                    });
+                });
+            });
+        }
+
+        function updateEditModeUI() {
+            const mode = document.getElementById('editModeStatus');
+            const updateBtn = document.getElementById('updateQuestionBtn');
+            const duplicateBtn = document.getElementById('duplicateQuestionBtn');
+
+            if (currentEditingQuestionId) {
+                mode.textContent = `Mode: Editing ${currentEditingQuestionId}`;
+                updateBtn.style.display = 'inline-block';
+                duplicateBtn.style.display = 'inline-block';
+            } else {
+                mode.textContent = 'Mode: Create new question';
+                updateBtn.style.display = 'none';
+                duplicateBtn.style.display = 'none';
+            }
+        }
+
+        function buildQuestionPayload() {
             const topic = document.getElementById('q-topic').value;
             const testId = document.getElementById('q-testid').value;
             const questionText = document.getElementById('q-text').value;
-            const correctIndex = parseInt(document.getElementById('q-correct').value);
+            const correctIndex = parseInt(document.getElementById('q-correct').value, 10);
             const explanation = document.getElementById('q-explanation').value;
             const difficulty = document.getElementById('q-difficulty').value;
             const tags = document.getElementById('q-tags').value;
@@ -677,31 +856,116 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
                 optionFeedback[idx] = idx === correctIndex ? null : (feedback || null);
             });
 
-            if (!validateQuestion(topic, questionText, correctIndex, explanation)) {
+            return {
+                topic,
+                testId,
+                question: questionText,
+                options,
+                correctAnswer: correctIndex,
+                optionFeedback,
+                explanation,
+                difficulty,
+                tags: tags.split(',').map(t => t.trim()).filter(t => t)
+            };
+        }
+
+        function saveQuestionDraft() {
+            try {
+                localStorage.setItem(draftStorageKey, JSON.stringify(buildQuestionPayload()));
+            } catch (error) {
+                console.warn('Draft save skipped:', error);
+            }
+        }
+
+        function restoreQuestionDraft() {
+            try {
+                const raw = localStorage.getItem(draftStorageKey);
+                if (!raw) return;
+                const draft = JSON.parse(raw);
+                if (!draft || !draft.question) return;
+
+                document.getElementById('q-topic').value = draft.topic || '';
+                document.getElementById('q-testid').value = draft.testId || '';
+                document.getElementById('q-text').value = draft.question || '';
+                document.getElementById('q-correct').value = Number.isInteger(draft.correctAnswer) ? String(draft.correctAnswer) : '';
+                document.getElementById('q-explanation').value = draft.explanation || '';
+                document.getElementById('q-difficulty').value = draft.difficulty || 'medium';
+                document.getElementById('q-tags').value = Array.isArray(draft.tags) ? draft.tags.join(', ') : '';
+
+                document.querySelectorAll('.option-item').forEach((item, idx) => {
+                    item.querySelector('.option-text').value = draft.options?.[idx] || '';
+                    item.querySelector('.option-feedback').value = draft.optionFeedback?.[idx] || '';
+                });
+            } catch (error) {
+                console.warn('Draft restore skipped:', error);
+            }
+        }
+
+        function clearQuestionDraft() {
+            localStorage.removeItem(draftStorageKey);
+            showSuccess('addSuccess');
+        }
+
+        function refreshLivePreview() {
+            const questionText = document.getElementById('q-text').value?.trim() || 'Question preview will appear here…';
+            const correctIndex = parseInt(document.getElementById('q-correct').value, 10);
+            document.getElementById('previewQuestion').textContent = questionText;
+
+            const optionsHtml = Array.from(document.querySelectorAll('.option-text')).map((el, idx) => {
+                const value = (el.value || '').trim() || `Option ${String.fromCharCode(65 + idx)}`;
+                const isCorrect = idx === correctIndex;
+                return `<div class="preview-option ${isCorrect ? 'correct' : ''}">${String.fromCharCode(65 + idx)}. ${value}</div>`;
+            }).join('');
+
+            document.getElementById('previewOptions').innerHTML = optionsHtml;
+        }
+
+        async function saveQuestion() {
+            const questionData = buildQuestionPayload();
+
+            if (!validateQuestion(questionData.topic, questionData.question, questionData.correctAnswer, questionData.explanation)) {
                 showError('addError', 'Please fix validation errors');
                 return;
             }
 
             try {
-                const questionData = {
-                    topic,
-                    testId,
-                    question: questionText,
-                    options,
-                    correctAnswer: correctIndex,
-                    optionFeedback,
-                    explanation,
-                    difficulty,
-                    tags: tags.split(',').map(t => t.trim()).filter(t => t)
-                };
-
                 await adminAPI.createQuestion(questionData);
                 showSuccess('addSuccess');
                 document.getElementById('questionForm').reset();
+                localStorage.removeItem(draftStorageKey);
+                currentEditingQuestionId = null;
+                updateEditModeUI();
                 setTimeout(() => loadQuestionsList(), 1500);
             } catch (error) {
                 showError('addError', error.message);
             }
+        }
+
+        async function updateSelectedQuestion() {
+            if (!currentEditingQuestionId) {
+                showError('addError', 'Select a question first from Edit Questions');
+                return;
+            }
+
+            const questionData = buildQuestionPayload();
+            if (!validateQuestion(questionData.topic, questionData.question, questionData.correctAnswer, questionData.explanation)) {
+                showError('addError', 'Please fix validation errors');
+                return;
+            }
+
+            try {
+                await adminAPI.updateQuestion(currentEditingQuestionId, questionData);
+                showSuccess('addSuccess');
+                setTimeout(() => loadQuestionsList(), 1000);
+            } catch (error) {
+                showError('addError', error.message);
+            }
+        }
+
+        function duplicateAsNewQuestion() {
+            currentEditingQuestionId = null;
+            updateEditModeUI();
+            showSuccess('addSuccess');
         }
         
         function validateQuestion(topic, text, correct, explanation) {
@@ -741,31 +1005,58 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
 
         async function loadQuestionsList() {
             const topic = document.getElementById('topic-select').value;
-            if (!topic) return;
+            if (!topic) {
+                loadedQuestions = [];
+                filteredQuestions = [];
+                renderQuestionsList();
+                return;
+            }
 
             try {
                 const questions = await adminAPI.getQuestions(topic, '01');
                 loadedQuestions = Array.isArray(questions) ? questions : [];
-                const list = document.getElementById('questionsList');
-                list.innerHTML = loadedQuestions.map(q => `
+                applyQuestionFilters();
+            } catch (error) {
+                console.error('Failed to load questions:', error);
+            }
+        }
+
+        function applyQuestionFilters() {
+            const query = (document.getElementById('search-questions').value || '').trim().toLowerCase();
+            const difficulty = (document.getElementById('filter-difficulty').value || '').trim().toLowerCase();
+
+            filteredQuestions = loadedQuestions.filter((q) => {
+                const matchesQuery = !query ||
+                    String(q.id || '').toLowerCase().includes(query) ||
+                    String(q.question || '').toLowerCase().includes(query);
+                const matchesDifficulty = !difficulty || String(q.difficulty || '').toLowerCase() === difficulty;
+                return matchesQuery && matchesDifficulty;
+            });
+
+            renderQuestionsList();
+        }
+
+        function renderQuestionsList() {
+            const list = document.getElementById('questionsList');
+
+            if (!filteredQuestions.length) {
+                list.innerHTML = '<div class="question-item"><div class="question-item-text">No questions match this filter.</div></div>';
+                document.getElementById('questionListMeta').textContent = `${loadedQuestions.length} loaded • 0 shown`;
+                return;
+            }
+
+            list.innerHTML = filteredQuestions.map(q => `
                     <div class="question-item" data-id="${q.id}">
                         <div class="question-item-text">${q.question}</div>
-                        <div class="question-item-id">${q.id}</div>
+                        <div class="question-item-id">${q.id} • ${(q.difficulty || 'medium')}</div>
                         <span class="validation-status validation-ok">✓ Valid</span>
                     </div>
                 `).join('');
 
-                if (!loadedQuestions.length) {
-                    list.innerHTML = '<div class="question-item"><div class="question-item-text">No questions found for this topic/test.</div></div>';
-                    return;
-                }
-
-                list.querySelectorAll('.question-item').forEach(item => {
-                    item.addEventListener('click', () => editQuestion(item.dataset.id));
-                });
-            } catch (error) {
-                console.error('Failed to load questions:', error);
-            }
+            list.querySelectorAll('.question-item').forEach(item => {
+                item.addEventListener('click', () => editQuestion(item.dataset.id));
+            });
+            document.getElementById('questionListMeta').textContent = `${loadedQuestions.length} loaded • ${filteredQuestions.length} shown`;
         }
 
         async function editQuestion(questionId) {
@@ -788,7 +1079,12 @@ life,02,"What is guaranteed insurability?","Ability to increase coverage without
                 document.getElementById('q-correct').value = question.correctAnswer;
                 document.getElementById('q-explanation').value = question.explanation;
                 document.getElementById('q-difficulty').value = question.difficulty;
-                document.getElementById('q-tags').value = question.tags.join(', ');
+                document.getElementById('q-tags').value = Array.isArray(question.tags) ? question.tags.join(', ') : '';
+
+                currentEditingQuestionId = questionId;
+                updateEditModeUI();
+                refreshLivePreview();
+                saveQuestionDraft();
 
                 scrollToSection('add-question');
             } catch (error) {
