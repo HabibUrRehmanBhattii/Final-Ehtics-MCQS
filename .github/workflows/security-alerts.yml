@@ -51,6 +51,11 @@ jobs:
           echo "- blocked paths return 404" >> $GITHUB_STEP_SUMMARY
           echo "- admin auto-provision remains disabled" >> $GITHUB_STEP_SUMMARY
           echo "- admin login failure threshold not exceeded" >> $GITHUB_STEP_SUMMARY
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "⚠️ D1 auth_attempts check skipped (CLOUDFLARE_API_TOKEN not configured)" >> $GITHUB_STEP_SUMMARY
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
       - name: Create GitHub issue alert on failure
         if: failure()
