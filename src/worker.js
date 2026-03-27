@@ -3801,8 +3801,24 @@ export default {
     const path = url.pathname;
     const normalizedPath = String(path || '').toLowerCase();
 
+    const blockedPathPrefixes = [
+      '/.git/',
+      '/.wrangler/',
+      '/.venv/',
+      '/.secrets/',
+      '/node_modules/',
+      '/tests/',
+      '/tools/',
+      '/migrations/',
+      '/src/'
+    ];
+
     // Never expose admin credential files through static asset serving.
     if (normalizedPath === '/data/admin-users.json' || normalizedPath === '/admin-users.json' || normalizedPath.endsWith('/.secrets/admin-users.local.json')) {
+      return new Response('Not Found', { status: 404 });
+    }
+
+    if (blockedPathPrefixes.some((prefix) => normalizedPath.startsWith(prefix))) {
       return new Response('Not Found', { status: 404 });
     }
 

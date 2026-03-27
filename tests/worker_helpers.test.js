@@ -504,6 +504,26 @@ test('worker fetch blocks direct access to admin credential files', async () => 
   assert.equal(assetFetches, 0);
 });
 
+test('worker fetch blocks sensitive development path prefixes', async () => {
+  const worker = loadWorkerModule();
+  let assetFetches = 0;
+
+  const response = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/.venv/Lib/site-packages/_pytest/py.typed'),
+    {
+      ASSETS: {
+        fetch() {
+          assetFetches += 1;
+          return new Response('asset');
+        }
+      }
+    }
+  );
+
+  assert.equal(response.status, 404);
+  assert.equal(assetFetches, 0);
+});
+
 test('admin allowlist utilities normalize emails and mark admin users in session responses', async () => {
   const worker = loadWorkerModule();
 
