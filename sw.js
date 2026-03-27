@@ -9,57 +9,14 @@ const CORE_ASSETS = [
   '/css/style.css',
   '/js/app.js',
   '/js/auth.js',
+  '/js/storage-manager.js',
+  '/js/quiz-renderer.js',
   '/manifest.webmanifest',
   '/assets/icons/icon-192.svg',
   '/assets/icons/icon-512.svg',
   '/data/topics.json',
   '/data/topics-updated.json',
-  '/data/user_data.json',
-  '/data/llqp-ethics/llqp-ethics-1.json',
-  '/data/llqp-ethics/llqp-ethics-2.json',
-  '/data/llqp-ethics/llqp-ethics-3.json',
-  '/data/llqp-segregated/llqp-segregated-1.json',
-  '/data/llqp-segregated/llqp-segregated-certification-exam.json',
-  '/data/llqp-life/llqp-life-01.json',
-  '/data/llqp-life/llqp-life-01-part-1.json',
-  '/data/llqp-life/llqp-life-01-part-2.json',
-  '/data/llqp-life/hllqp-life-02.json',
-  '/data/llqp-life/hllqp-life-02-part-1.json',
-  '/data/llqp-life/hllqp-life-02-part-2.json',
-  '/data/llqp-life/hllqp-life-02-part-3.json',
-  '/data/llqp-life/hllqp-life-02-part-4.json',
-  '/data/llqp-life/hllqp-life-03.json',
-  '/data/llqp-life/hllqp-life-03-part-1.json',
-  '/data/llqp-life/hllqp-life-03-part-2.json',
-  '/data/llqp-life/hllqp-life-03-part-3.json',
-  '/data/llqp-life/hllqp-life-03-part-4.json',
-  '/data/llqp-life/hllqp-life-03-part-5.json',
-  '/data/llqp-life/hllqp-life-04.json',
-  '/data/llqp-life/hllqp-life-04-part-1.json',
-  '/data/llqp-life/hllqp-life-04-part-2.json',
-  '/data/llqp-life/hllqp-life-04-part-3.json',
-  '/data/llqp-life/hllqp-life-04-part-4.json',
-  '/data/llqp-life/hllqp-life-05.json',
-  '/data/llqp-life/hllqp-life-05-part-1.json',
-  '/data/llqp-life/hllqp-life-05-part-2.json',
-  '/data/llqp-life/hllqp-life-05-part-3.json',
-  '/data/llqp-life/hllqp-life-06.json',
-  '/data/llqp-life/hllqp-life-06-part-1.json',
-  '/data/llqp-life/hllqp-life-06-part-2.json',
-  '/data/llqp-life/hllqp-life-06-part-3.json',
-  '/data/llqp-life/llqp-life-certification-exam.json',
-  '/data/insurance-legislation-ethics/insurance-legislation-ethics-1.json',
-  '/data/flashcards/flashcards-1.json',
-  '/data/flashcards/flashcards-2.json',
-  '/data/flashcards/flashcards-2-full.json',
-  '/data/flashcards/flashcards-2-part-1.json',
-  '/data/flashcards/flashcards-2-part-2.json',
-  '/data/flashcards/flashcards-2-part-3.json',
-  '/data/flashcards/flashcards-2-part-4.json',
-  '/data/flashcards/flashcards-2-part-5.json',
-  '/data/flashcards/flashcards-2-part-6.json',
-  '/data/flashcards/flashcards-2-part-7.json',
-  '/data/flashcards/flashcards-2-part-8.json'
+  '/data/user_data.json'
 ];
 
 function cacheIfOk(cacheName, key, response) {
@@ -70,6 +27,25 @@ function cacheIfOk(cacheName, key, response) {
   const copy = response.clone();
   caches.open(cacheName).then((cache) => cache.put(key, copy));
   return response;
+}
+
+async function staleWhileRevalidate(request, cacheName, fallbackPath = null) {
+  const cache = await caches.open(cacheName);
+  const cached = await caches.match(request) || (fallbackPath ? await caches.match(fallbackPath) : null);
+
+  const networkPromise = fetch(request)
+    .then((response) => {
+      cacheIfOk(cacheName, request, response);
+      return response;
+    })
+    .catch(() => null);
+
+  if (cached) {
+    return cached;
+  }
+
+  const network = await networkPromise;
+  return network || new Response('Offline', { status: 503 });
 }
 
 self.addEventListener('install', (event) => {
@@ -135,29 +111,26 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // JSON data: network-first (prevents stale content after deploy)
+  // JSON data: stale-while-revalidate (fast repeat loads + background freshness)
   if (url.pathname.startsWith('/data/') && url.pathname.endsWith('.json')) {
     event.respondWith(
-      fetch(request)
-        .then((response) => cacheIfOk(DATA_CACHE, request, response))
-        .catch(() => caches.match(request).then((cached) => cached || caches.match(url.pathname)))
-        .then((fallback) => fallback || new Response('Offline', { status: 503 }))
+      staleWhileRevalidate(request, DATA_CACHE, url.pathname)
     );
     return;
   }
 
-  // Core UI assets: network-first so users get latest JS/CSS quickly after deploy
+  // Core UI assets: stale-while-revalidate for fast startup while refreshing in background
   if (
     url.pathname === '/js/app.js' ||
     url.pathname === '/js/auth.js' ||
+    url.pathname === '/js/storage-manager.js' ||
+    url.pathname === '/js/quiz-renderer.js' ||
     url.pathname === '/css/style.css' ||
     url.pathname === '/index.html' ||
     url.pathname === '/manifest.webmanifest'
   ) {
     event.respondWith(
-      fetch(request)
-        .then((response) => cacheIfOk(STATIC_CACHE, request, response))
-        .catch(() => caches.match(request).then((cached) => cached || caches.match(url.pathname)))
+      staleWhileRevalidate(request, STATIC_CACHE, url.pathname)
     );
     return;
   }

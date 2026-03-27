@@ -10,7 +10,8 @@ const TARGET_FILES = [
   'index.html',
   'data/topics.json',
   'data/topics-updated.json',
-  'js/app.js'
+  'js/app.js',
+  'sw.js'
 ];
 
 const SOURCE_PATTERNS = [
@@ -127,6 +128,7 @@ function main() {
   const topicsPath = 'data/topics.json';
   const topicsUpdatedPath = 'data/topics-updated.json';
   const appPath = 'js/app.js';
+  const swPath = 'sw.js';
 
   const indexText = readText(indexPath);
   const oldTagMatch = indexText.match(/v=([0-9]{8}[a-z])/);
@@ -192,6 +194,19 @@ function main() {
 
   if (nextAppText !== appText) {
     writeText(appPath, nextAppText);
+  }
+
+  const swText = readText(swPath);
+  const swCachePattern = /const\s+CACHE_VERSION\s*=\s*'v([0-9]+\.[0-9]+\.[0-9]+)'/;
+  const swCacheMatch = swText.match(swCachePattern);
+  if (swCacheMatch && cacheMatch) {
+    const nextCache = incrementCacheVersion(cacheMatch[1]);
+    if (nextCache) {
+      const nextSwText = swText.replace(swCachePattern, `const CACHE_VERSION = 'v${nextCache}'`);
+      if (nextSwText !== swText) {
+        writeText(swPath, nextSwText);
+      }
+    }
   }
 
   log('[pre-commit] Version files updated. Hook will stage target files next.');

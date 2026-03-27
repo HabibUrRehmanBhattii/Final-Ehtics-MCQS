@@ -1866,7 +1866,7 @@ const MCQApp = {
   // Load Topics Configuration
   async loadTopics() {
     try {
-      const response = await fetch('data/topics.json?v=20260316e', { cache: 'no-store' });
+      const response = await fetch(`data/topics.json?v=${this.appBuildVersion}`, { cache: 'force-cache' });
       if (!response.ok) {
         throw new Error(`Failed to load topics (${response.status})`);
       }
