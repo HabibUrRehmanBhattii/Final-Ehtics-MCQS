@@ -14,6 +14,7 @@ Object.assign(MCQApp, {
   ensureAdminDashboardState() {
     if (!this.state.auth.admin || typeof this.state.auth.admin !== 'object') {
       this.state.auth.admin = {
+        initialized: false,
         overview: null,
         students: [],
         selectedStudentId: '',
@@ -43,6 +44,7 @@ Object.assign(MCQApp, {
   ensureHeatmapDashboardState() {
     if (!this.state.auth.heatmaps || typeof this.state.auth.heatmaps !== 'object') {
       this.state.auth.heatmaps = {
+        initialized: false,
         filters: {
           from: '',
           to: '',
@@ -1500,10 +1502,31 @@ Object.assign(MCQApp, {
   },
 
   async initAuth() {
-    this.ensureAdminDashboardState();
+    // Lazy-init: Only prepare admin state if needed (when navigating to admin view)
     await this.loadAuthConfig();
     await this.refreshAuthSession({ restoreProgress: true, silent: true });
     this.renderAuthPanel();
+  },
+
+  lazyInitAdminState() {
+    if (!this.isCurrentUserAdmin()) {
+      return;
+    }
+    // Initialize admin state on first admin view access
+    this.ensureAdminDashboardState();
+    this.ensureHeatmapDashboardState();
+    if (!this.state.auth.admin.initialized) {
+      this.state.auth.admin.initialized = true;
+      if (typeof this.loadAdminOverview === 'function') {
+        this.loadAdminOverview();
+      }
+    }
+    if (!this.state.auth.heatmaps.initialized) {
+      this.state.auth.heatmaps.initialized = true;
+      if (typeof this.loadHeatmapOverview === 'function') {
+        this.loadHeatmapOverview();
+      }
+    }
   },
 
   async refreshAuthSession({ restoreProgress = false, silent = false } = {}) {

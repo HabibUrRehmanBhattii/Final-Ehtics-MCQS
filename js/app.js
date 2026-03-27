@@ -2,8 +2,8 @@
 // MCQ Study Platform - Main Application
 // ===================================
 const MCQApp = {
-  appBuildVersion: '20260327a',
-  cacheVersion: 'v1.8.16',
+  appBuildVersion: '20260327b',
+  cacheVersion: 'v1.8.17',
   shuffleSchemaVersion: '20260323-session-layout-v5',
   // State Management
   state: {
@@ -136,6 +136,10 @@ const MCQApp = {
   getLoadedQuestionSetKey(topicId = this.state.currentTopic?.id, testId = this.state.currentPracticeTest?.id) {
     if (!topicId || !testId) return null;
     return `${topicId}:${testId}`;
+  },
+
+  getWebVitals() {
+    return { ...this.state.coreWebVitals };
   },
 
   buildQuestionFromOptionOrder(question, optionOrder = null) {
@@ -1743,6 +1747,7 @@ const MCQApp = {
     this.initDarkMode();
     this.initSpeech();
     this.registerServiceWorker();
+    this.initWebVitalsTracking(); // Track Core Web Vitals for RUM
     this.beginLoading('Loading topics...');
     try {
       await this.loadTopics();
@@ -1755,13 +1760,115 @@ const MCQApp = {
       this.endLoading();
     }
     this.setupEventListeners();
-    this.initHeatmapTracking();
+    // Defer heatmap tracking init to reduce startup burden
+    if (typeof requestIdleCallback !== 'undefined') {
+      requestIdleCallback(() => {
+        this.initHeatmapTracking();
+      }, { timeout: 3000 });
+    } else {
+      // Fallback for browsers without requestIdleCallback
+      setTimeout(() => {
+        this.initHeatmapTracking();
+      }, 2000);
+    }
     this.renderTopicsGrid();
     this.renderVersionChip();
     if (window.history && typeof window.history.replaceState === 'function') {
       window.history.replaceState(this.buildNavigationState('home'), '', window.location.href);
     }
     console.log('✅ App initialized successfully');
+  },
+
+  // Initialize Web Vitals Tracking (RUM)
+  initWebVitalsTracking() {
+    // Track Core Web Vitals: LCP, FID/INP, CLS
+    if (typeof PerformanceObserver === 'undefined') return;
+
+    // Store vitals in state for analytics
+    this.state.coreWebVitals = {
+      lcp: null,
+      inp: null,
+      cls: null,
+      fcp: null,
+      ttfb: null
+    };
+
+    // LCP: Largest Contentful Paint
+    try {
+      const lcpObserver = new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const lastEntry = entries[entries.length - 1];
+        this.state.coreWebVitals.lcp = Math.round(lastEntry.renderTime || lastEntry.loadTime);
+        // Send to analytics if configured
+        if (this.isHeatmapTrackingActive()) {
+          this.queueHeatmapEvent({
+            type: 'metric',
+            metric: 'lcp',
+            value: this.state.coreWebVitals.lcp
+          });
+        }
+      });
+      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch (e) {
+      // LCP not supported
+    }
+
+    // INP: Interaction to Next Paint (replaces FID)
+    try {
+      const inpObserver = new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const worstEntry = entries.reduce((worst, entry) => {
+          return (entry.duration || 0) > (worst.duration || 0) ? entry : worst;
+        });
+        this.state.coreWebVitals.inp = Math.round(worstEntry.duration || 0);
+        if (this.isHeatmapTrackingActive()) {
+          this.queueHeatmapEvent({
+            type: 'metric',
+            metric: 'inp',
+            value: this.state.coreWebVitals.inp
+          });
+        }
+      });
+      inpObserver.observe({ type: 'event', durationThreshold: 40, buffered: true });
+    } catch (e) {
+      // INP not supported
+    }
+
+    // CLS: Cumulative Layout Shift
+    try {
+      const clsObserver = new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const clsValue = entries.reduce((sum, entry) => sum + (entry.value || 0), 0);
+        this.state.coreWebVitals.cls = Math.round(clsValue * 10000) / 10000; // 4 decimals
+        if (this.isHeatmapTrackingActive()) {
+          this.queueHeatmapEvent({
+            type: 'metric',
+            metric: 'cls',
+            value: this.state.coreWebVitals.cls
+          });
+        }
+      });
+      clsObserver.observe({ type: 'layout-shift', buffered: true });
+    } catch (e) {
+      // CLS not supported
+    }
+
+    // FCP: First Contentful Paint + TTFB: Time to First Byte
+    try {
+      const navigationEntries = performance.getEntriesByType('navigation');
+      if (navigationEntries.length > 0) {
+        const navTiming = navigationEntries[0];
+        this.state.coreWebVitals.ttfb = Math.round(navTiming.responseStart - navTiming.fetchStart);
+      }
+      const paintEntries = performance.getEntriesByType('paint');
+      for (const entry of paintEntries) {
+        if (entry.name === 'first-contentful-paint') {
+          this.state.coreWebVitals.fcp = Math.round(entry.startTime);
+        }
+      }
+    } catch (e) {
+      // Paint timing not supported
+    }
   },
 
   // Initialize Speech Synthesis (Accessibility)
@@ -3144,6 +3251,10 @@ const MCQApp = {
   showView(viewName, options = {}) {
     const { updateHistory = true, historyMode = 'push' } = options;
     this.clearAutoAdvanceTimer();
+    // Lazy-init admin state on first admin view access
+    if ((viewName === 'admin' || viewName === 'admin-heatmaps') && typeof this.lazyInitAdminState === 'function') {
+      this.lazyInitAdminState();
+    }
     if (viewName !== 'admin' && viewName !== 'admin-heatmaps' && typeof this.onLeaveAdminView === 'function') {
       this.onLeaveAdminView();
     }
