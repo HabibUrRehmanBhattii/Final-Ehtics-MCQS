@@ -75,8 +75,8 @@ echo Creating admin user setup script...
     echo const fs = require('fs');
     echo const path = require('path');
     echo.
-    echo // Simple in-memory admin store (replace with DB in production^)
-    echo const ADMIN_FILE = path.join(__dirname, 'data', 'admin-users.json'^);
+    echo // Local-only admin store for development (never publicly served^)
+    echo const ADMIN_FILE = path.join(__dirname, '.secrets', 'admin-users.local.json'^);
     echo.
     echo function loadAdmins(^) {
     echo     if (fs.existsSync(ADMIN_FILE^)^) {
@@ -117,15 +117,14 @@ echo Creating admin user setup script...
     echo     return true;
     echo }
     echo.
-    echo // Create default admin if none exists
-    echo const admins = loadAdmins(^);
-    echo if (admins.length === 0^) {
-    echo     console.log('Creating default admin user...'^);
-    echo     addAdmin('admin@example.com', 'change-me-immediately'^);
-    echo     console.log('Default credentials: admin@example.com / change-me-immediately'^);
-    echo     console.log('WARNING: Please change password immediately!'^);
+    echo const emailArg = String(process.argv[2] || ''^).trim(^).toLowerCase(^);
+    echo const passwordArg = String(process.argv[3] || ''^);
+    echo if (emailArg ^&^& passwordArg^) {
+    echo     addAdmin(emailArg, passwordArg^);
     echo } else {
-    echo     console.log('Found ' + admins.length + ' admin user(s)'^);
+    echo     const admins = loadAdmins(^);
+    echo     console.log('Found ' + admins.length + ' local admin user(s)'^);
+    echo     console.log('Usage: node setup-admin-user.js ^<email^> ^<strong-password^>'^);
     echo }
 ) > setup-admin-user.js
 

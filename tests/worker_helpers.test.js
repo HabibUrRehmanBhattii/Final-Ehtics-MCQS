@@ -484,8 +484,30 @@ test('worker fetch serves the health and auth config endpoints without hitting s
   assert.equal(assetFetches, 0);
 });
 
+test('worker fetch blocks direct access to admin credential files', async () => {
+  const worker = loadWorkerModule();
+  let assetFetches = 0;
+
+  const response = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/data/admin-users.json'),
+    {
+      ASSETS: {
+        fetch() {
+          assetFetches += 1;
+          return new Response('asset');
+        }
+      }
+    }
+  );
+
+  assert.equal(response.status, 404);
+  assert.equal(assetFetches, 0);
+});
+
 test('admin allowlist utilities normalize emails and mark admin users in session responses', async () => {
   const worker = loadWorkerModule();
+
+  assert.deepEqual(Array.from(worker.getAdminEmailAllowlist({})), []);
 
   const allowlist = worker.getAdminEmailAllowlist({
     ADMIN_EMAIL_ALLOWLIST: ' HABIBCANAD@gmail.com, teammate@example.com '
@@ -523,6 +545,31 @@ test('admin allowlist utilities normalize emails and mark admin users in session
   assert.equal(payload.authenticated, true);
   assert.equal(payload.user.email, 'habibcanad@gmail.com');
   assert.equal(payload.user.isAdmin, true);
+});
+
+test('admin login requires explicit allowlist configuration', async () => {
+  const worker = loadWorkerModule();
+
+  const response = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: 'admin@example.com',
+        password: 'StrongPass123'
+      })
+    }),
+    {
+      DB: createAuthDbMock(),
+      SESSION_SECRET: 'session-secret'
+    }
+  );
+
+  assert.equal(response.status, 503);
+  const payload = await response.json();
+  assert.equal(payload.error, 'Admin auth is not configured.');
 });
 
 test('signup and signin responses include user.isAdmin from allowlist-matched emails', async () => {

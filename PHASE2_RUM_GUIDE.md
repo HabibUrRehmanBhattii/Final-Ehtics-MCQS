@@ -308,7 +308,7 @@ node --test tests/*.test.js  # 102/102 passing
 **Solution**: Check if heatmap tracking is enabled
 ```javascript
 MCQApp.isHeatmapTrackingActive()  // Should be true
-// If false, check: data/admin-users.json and auth settings
+// If false, check auth configuration and session state
 ```
 
 ### Issue: Admin panel still slow

@@ -24,6 +24,7 @@ logs/
 .env.local
 .env.production
 .dev.vars
+.secrets/
 
 # Build outputs (if you add a build process later)
 dist/

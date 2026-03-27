@@ -30,7 +30,7 @@ function verifyAdminToken(token) {
 async function verifyAdminCredentials(email, password) {
     if (!email || !password) return false;
 
-    const adminFilePath = path.join(__dirname, '..', 'data', 'admin-users.json');
+        const adminFilePath = path.join(__dirname, '..', '.secrets', 'admin-users.local.json');
     let admins = [];
 
     try {

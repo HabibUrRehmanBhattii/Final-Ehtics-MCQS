@@ -164,10 +164,15 @@ ADMIN_TOKEN=<secure-token>
   Format: 32+ character random string
   Generation: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 
-DEFAULT_ADMIN_EMAIL=habibcanad@gmail.com
-  Description: Default admin email
-  Required: No
-  Format: Valid email address
+ADMIN_EMAIL_ALLOWLIST=admin1@example.com,admin2@example.com
+  Description: Comma-separated admin emails allowed to access admin routes
+  Required: Yes for admin panel access
+  Format: Comma-separated valid email addresses
+
+ADMIN_AUTO_PROVISION=false
+  Description: Whether admin login can auto-create missing allowlisted users
+  Required: No (default: false)
+  Format: true/false
 
 ADMIN_SESSION_TTL_MS=2592000000
   Description: Admin session time-to-live (30 days default)
@@ -446,7 +451,8 @@ ANALYTICS_RETENTION_DAYS=90
 
 # Admin
 ADMIN_TOKEN=<32-char-random>
-DEFAULT_ADMIN_EMAIL=admin@example.com
+ADMIN_EMAIL_ALLOWLIST=admin@example.com
+ADMIN_AUTO_PROVISION=false
 
 # Platform
 ENVIRONMENT=production

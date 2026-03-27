@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const ADMIN_FILE = path.join(__dirname, 'data', 'admin-users.json');
+const ADMIN_FILE = path.join(__dirname, '.secrets', 'admin-users.local.json');
 
 function loadAdmins() {
   if (fs.existsSync(ADMIN_FILE)) {
@@ -47,12 +47,20 @@ function addAdmin(email, password) {
   return true;
 }
 
-const admins = loadAdmins();
-if (admins.length === 0) {
-  console.log('Creating default admin user...');
-  addAdmin('admin@example.com', 'change-me-immediately');
-  console.log('Default credentials: admin@example.com / change-me-immediately');
-  console.log('WARNING: Please change password immediately!');
+const emailArg = String(process.argv[2] || '').trim().toLowerCase();
+const passwordArg = String(process.argv[3] || '');
+
+if (emailArg && passwordArg) {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailArg)) {
+    console.error('Invalid email format.');
+    process.exitCode = 1;
+  } else {
+    addAdmin(emailArg, passwordArg);
+  }
 } else {
-  console.log(`Found ${admins.length} admin user(s)`);
+  const admins = loadAdmins();
+  console.log(`Local admin file: ${ADMIN_FILE}`);
+  console.log(`Found ${admins.length} local admin user(s).`);
+  console.log('Usage: node setup-admin-user.js <email> <strong-password>');
+  console.log('Security note: production admin access should use Worker env vars + D1 users, not public /data files.');
 }

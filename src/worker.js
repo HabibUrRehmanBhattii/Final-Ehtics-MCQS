@@ -13,7 +13,6 @@ const PASSWORD_RESET_TTL_MS = 1000 * 60 * 30;
 const RESEND_API_URL = 'https://api.resend.com/emails';
 const POSTMARK_API_URL = 'https://api.postmarkapp.com/email';
 const ADMIN_ACTIVE_WINDOW_DAYS = 7;
-const DEFAULT_ADMIN_EMAIL = 'habibcanad@gmail.com';
 const HEATMAP_VISITOR_COOKIE = 'mcq_visitor';
 const HEATMAP_VISITOR_TTL_SECONDS = 60 * 60 * 24 * 365;
 const HEATMAP_BATCH_MAX_EVENTS = 500;
@@ -149,15 +148,19 @@ function normalizeEmail(email) {
 
 function getAdminEmailAllowlist(env) {
   const configuredRaw = String(env?.ADMIN_EMAIL_ALLOWLIST || '').trim();
-  const source = configuredRaw || DEFAULT_ADMIN_EMAIL;
+  if (!configuredRaw) return [];
   return Array.from(
     new Set(
-      source
+      configuredRaw
         .split(',')
         .map((email) => normalizeEmail(email))
         .filter(Boolean)
     )
   );
+}
+
+function isAdminAllowlistConfigured(env) {
+  return getAdminEmailAllowlist(env).length > 0;
 }
 
 function isAdminEmail(env, email) {
@@ -610,6 +613,10 @@ async function handleAdminAuthLogin(request, env) {
     return jsonResponse(request, { error: 'D1 database is not configured.' }, { status: 503 });
   }
 
+  if (!isAdminAllowlistConfigured(env)) {
+    return jsonResponse(request, { error: 'Admin auth is not configured.' }, { status: 503 });
+  }
+
   try {
     const body = await request.json();
     const email = normalizeEmail(body.email);
@@ -622,7 +629,7 @@ async function handleAdminAuthLogin(request, env) {
 
     await enforceRateLimit(env.DB, email, ip);
 
-    const allowAutoProvision = String(env.ADMIN_AUTO_PROVISION || 'true').trim().toLowerCase() !== 'false';
+    const allowAutoProvision = String(env.ADMIN_AUTO_PROVISION || 'false').trim().toLowerCase() === 'true';
 
     let user = await env.DB.prepare(
       'SELECT id, email, password_hash, status FROM users WHERE email = ? LIMIT 1'
@@ -3792,6 +3799,12 @@ export default {
 
     const url = new URL(request.url);
     const path = url.pathname;
+    const normalizedPath = String(path || '').toLowerCase();
+
+    // Never expose admin credential files through static asset serving.
+    if (normalizedPath === '/data/admin-users.json' || normalizedPath === '/admin-users.json' || normalizedPath.endsWith('/.secrets/admin-users.local.json')) {
+      return new Response('Not Found', { status: 404 });
+    }
 
     // Health check endpoint - /api/health or /health
     if (path === '/health' || path === '/api/health') {
@@ -3816,6 +3829,8 @@ export default {
       const resetEmailConfig = getResetEmailConfig(env, request);
       return jsonResponse(request, {
         enabled: Boolean(env.DB && env.SESSION_SECRET && env.TURNSTILE_SECRET_KEY && env.TURNSTILE_SITE_KEY),
+        adminConfigured: isAdminAllowlistConfigured(env),
+        adminAutoProvision: String(env.ADMIN_AUTO_PROVISION || 'false').trim().toLowerCase() === 'true',
         heatmapEnabled: isHeatmapEnabled(env),
         turnstileSiteKey: env.TURNSTILE_SITE_KEY || '',
         authMode: 'email-password',

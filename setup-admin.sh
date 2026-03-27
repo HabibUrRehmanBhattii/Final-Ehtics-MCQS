@@ -71,8 +71,8 @@ cat > setup-admin-user.js << 'EOF'
 const fs = require('fs');
 const path = require('path');
 
-// Simple in-memory admin store (replace with DB in production)
-const ADMIN_FILE = path.join(__dirname, 'data', 'admin-users.json');
+// Local-only admin store for development (never publicly served)
+const ADMIN_FILE = path.join(__dirname, '.secrets', 'admin-users.local.json');
 
 function loadAdmins() {
     if (fs.existsSync(ADMIN_FILE)) {
@@ -113,15 +113,15 @@ function addAdmin(email, password) {
     return true;
 }
 
-// Create default admin if none exists
-const admins = loadAdmins();
-if (admins.length === 0) {
-    console.log('Creating default admin user...');
-    addAdmin('admin@example.com', 'change-me-immediately');
-    console.log('Default credentials: admin@example.com / change-me-immediately');
-    console.log('⚠️  Please change password immediately!');
+const emailArg = String(process.argv[2] || '').trim().toLowerCase();
+const passwordArg = String(process.argv[3] || '');
+
+if (emailArg && passwordArg) {
+    addAdmin(emailArg, passwordArg);
 } else {
-    console.log(`✓ ${admins.length} admin user(s) found`);
+    const admins = loadAdmins();
+    console.log(`✓ ${admins.length} local admin user(s) found`);
+    console.log('Usage: node setup-admin-user.js <email> <strong-password>');
 }
 EOF
 
