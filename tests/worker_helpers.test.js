@@ -739,6 +739,37 @@ test('/api/admin/students/overview rejects unauthenticated and non-admin session
   assert.equal(nonAdminResponse.status, 403);
 });
 
+test('/api/admin/students/overview rejects revoked admin sessions', async () => {
+  const worker = loadWorkerModule();
+  const secret = 'session-secret';
+
+  const revokedDb = createDbMock({
+    sessionRow: {
+      session_id: 'sess-revoked',
+      user_id: 'admin-1',
+      expires_at: new Date(Date.now() + 60_000).toISOString(),
+      revoked_at: new Date().toISOString(),
+      email: 'habibcanad@gmail.com',
+      status: 'active'
+    }
+  });
+
+  const response = await worker.defaultExport.fetch(
+    new Request('https://hllqpmcqs.com/api/admin/students/overview', {
+      headers: {
+        Cookie: createSessionCookie(secret, 'revoked-token')
+      }
+    }),
+    {
+      DB: revokedDb,
+      SESSION_SECRET: secret,
+      ADMIN_EMAIL_ALLOWLIST: 'habibcanad@gmail.com'
+    }
+  );
+
+  assert.equal(response.status, 401);
+});
+
 test('/api/admin/students/overview aggregates student payload metrics correctly', async () => {
   const worker = loadWorkerModule();
   const secret = 'session-secret';

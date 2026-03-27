@@ -23,6 +23,11 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -37,6 +42,9 @@ jobs:
             exit 1
           fi
           echo "✅ All pre-release checks PASSED"
+
+      - name: Run security/session JS checks (BLOCKING)
+        run: node --test tests/worker_helpers.test.js
 
       - name: Report gate status
         run: |
