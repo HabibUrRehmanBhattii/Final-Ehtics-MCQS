@@ -67,9 +67,70 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
+      - name: Run production security smoke checks
+        run: |
+          python - <<'PY'
+          import json
+          import urllib.error
+          import urllib.request
+
+          BASE_URL = "https://hllqpmcqs.com"
+
+          def request(path, method="GET", headers=None, body=None):
+            req = urllib.request.Request(
+              url=f"{BASE_URL}{path}",
+              method=method,
+              headers={
+                "User-Agent": "ci-security-smoke-checks/1.0",
+                "Accept": "application/json,text/plain,*/*",
+                **(headers or {}),
+              },
+              data=body,
+            )
+            try:
+              with urllib.request.urlopen(req, timeout=20) as resp:
+                return int(resp.getcode()), resp.read().decode("utf-8", errors="replace")
+            except urllib.error.HTTPError as err:
+              return int(err.code), err.read().decode("utf-8", errors="replace")
+
+          def require(condition, message):
+            if not condition:
+              raise SystemExit(f"FAIL: {message}")
+            print(f"OK: {message}")
+
+          status, body = request("/api/auth/config")
+          require(status == 200, f"GET /api/auth/config returns 200 (got {status})")
+          cfg = json.loads(body)
+          require(cfg.get("enabled") is True, "Auth config enabled=true")
+          require(cfg.get("adminConfigured") is True, "Admin allowlist configured")
+          require(cfg.get("adminAutoProvision") is False, "Admin auto-provision disabled")
+
+          for blocked in [
+            "/data/admin-users.json",
+            "/.venv/Lib/site-packages/_pytest/py.typed",
+            "/tests/worker_helpers.test.js",
+          ]:
+            status, _ = request(blocked, headers={"Cache-Control": "no-cache", "Pragma": "no-cache"})
+            require(status == 404, f"{blocked} returns 404 (got {status})")
+
+          payload = json.dumps({
+            "email": "security.probe@example.com",
+            "password": "definitely-wrong-password",
+          }).encode("utf-8")
+          status, _ = request(
+            "/api/admin/auth/login",
+            method="POST",
+            headers={"Content-Type": "application/json"},
+            body=payload,
+          )
+          require(status == 401, f"POST /api/admin/auth/login invalid credentials returns 401 (got {status})")
+          print("OK: Security smoke checks passed")
+          PY
+
       - name: Verify deployment
         run: |
           echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
           echo "✅ Worker deployed to hllqpmcqs.com" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Security smoke checks passed" >> $GITHUB_STEP_SUMMARY
           echo "📋 Deployment ID: ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
           echo "🕒 Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
