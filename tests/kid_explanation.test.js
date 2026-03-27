@@ -300,14 +300,18 @@ const KidExplanationTests = {
   }
 };
 
-// Auto-run tests when page loads
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
+// Auto-run tests when page loads (browser only)
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      KidExplanationTests.runAllTests();
+    });
+  } else {
     KidExplanationTests.runAllTests();
-  });
-} else {
-  KidExplanationTests.runAllTests();
+  }
 }
 
-// Make tests globally accessible
-window.KidExplanationTests = KidExplanationTests;
+// Make tests globally accessible (browser only)
+if (typeof window !== 'undefined') {
+  window.KidExplanationTests = KidExplanationTests;
+}

@@ -476,10 +476,10 @@ test('worker fetch serves the health and auth config endpoints without hitting s
     }
   );
 
-  assert.deepEqual(await healthResponse.json(), {
-    status: 'ok',
-    authConfigured: true
-  });
+  const healthJson = await healthResponse.json();
+  assert.equal(healthJson.status, 'ok');
+  assert.equal(healthJson.authConfigured, true);
+  assert.equal(typeof healthJson.version, 'string');
   assert.equal((await configResponse.json()).enabled, true);
   assert.equal(assetFetches, 0);
 });
